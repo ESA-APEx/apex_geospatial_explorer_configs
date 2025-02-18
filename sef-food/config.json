@@ -9,6 +9,7 @@
     "WorldCover",
     "WORLDSOILS",
     "WorldCereal",
+    "Digital Elevation Models",
     "Basemaps"
   ],
   "exclusivitySets": [
@@ -287,6 +288,84 @@
           ]
         },
         "exclusivitySet": "WORLDSOILS"
+      }
+    },
+    {
+      "name": "Copernicus DEM",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Global evelation model at 30m resolution.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch",
+            "visible": true,
+            "data": [
+              {
+                "color": "rgba(33,10,240,89)",
+                "label": "-200"
+              },
+              {
+                "color": "rgba(19,30,255,89)",
+                "label": "0"
+              },
+              {
+                "color": "rgba(229,252,178,255)",
+                "label": "50"
+              },
+              {
+                "color": "rgba(203,230,132,255)",
+                "label": "150"
+              },
+              {
+                "color": "rgba(84,185,61,255)",
+                "label": "300"
+              },
+              {
+                "color": "rgba(12,140,54,255)",
+                "label": "700"
+              },
+              {
+                "color": "rgba(80,143,58,255)",
+                "label": "1000"
+              },
+              {
+                "color": "rgba(239,182,13,255)",
+                "label": "2000"
+              },
+              {
+                "color": "rgba(169,42,2,255)",
+                "label": "4000"
+              },
+              {
+                "color": "rgba(116,23,5,255)",
+                "label": "5000"
+              },
+              {
+                "color": "rgba(112,55,21,255)",
+                "label": "6000"
+              },
+              {
+                "color": "rgba(179,179,179,255)",
+                "label": "7000"
+              },
+              {
+                "color": "rgba(235,233,235,255)",
+                "label": "8000"
+              }
+            ]
+          }
+        },
+        "interfaceGroup": "Digital Elevation Models"
+      },
+      "data": {
+        "url": "https://services.terrascope.be/wmts/v2",
+        "layers": "COP_DEM_GLO_30M_COG",
+        "zIndex": 2,
+        "type": "wmts"
       }
     }
   ]
