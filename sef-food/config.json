@@ -1,0 +1,293 @@
+{
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "APEx Geospatial Explorer"
+    }
+  },
+  "interfaceGroups": [
+    "WorldCover",
+    "WORLDSOILS",
+    "WorldCereal",
+    "Basemaps"
+  ],
+  "exclusivitySets": [
+    "WorldCover",
+    "WORLDSOILS",
+    "WorldCereal"
+  ],
+  "sources": [
+    {
+      "name": "Open Street Map",
+      "isActive": true,
+      "layout": {
+        "interfaceGroup": "Basemaps"
+      },
+      "data": {
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "type": "xyz",
+        "zIndex": 0
+      }
+    },
+    {
+      "name": "Maize 2021",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "WorldCereal"
+      },
+      "data": {
+        "url": "https://services.terrascope.be/wms/v2",
+        "layers": "WORLDCEREAL_MAIZE_V1",
+        "exclusivitySet": "WorldCereal",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Spring Cereals 2021",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "WorldCereal"
+      },
+      "data": {
+        "url": "https://services.terrascope.be/wms/v2",
+        "layers": "WORLDCEREAL_SPRINGCEREALS_V1",
+        "exclusivitySet": "WorldCereal",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Temporary Crops 2021",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "WorldCereal"
+      },
+      "data": {
+        "url": "https://services.terrascope.be/wms/v2",
+        "layers": "WORLDCEREAL_TEMPORARYCROPS_V1",
+        "exclusivitySet": "WorldCereal",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Winter Cereals 2021",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "WorldCereal"
+      },
+      "data": {
+        "url": "https://services.terrascope.be/wms/v2",
+        "layers": "WORLDCEREAL_WINTERCEREALS_V1",
+        "exclusivitySet": "WorldCereal",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "WorldCover 2020",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch",
+            "visible": true,
+            "data": [
+              {
+                "color": "rgb(0, 100, 0)",
+                "label": "Tree cover"
+              },
+              {
+                "color": "rgb(255, 187, 34)",
+                "label": "Shrubland"
+              },
+              {
+                "color": "rgb(255, 255, 76)",
+                "label": "Grassland"
+              },
+              {
+                "color": "rgb(240, 150, 255)",
+                "label": "Cropland"
+              },
+              {
+                "color": "rgb(255, 0, 0)",
+                "label": "Built up"
+              },
+              {
+                "color": "rgb(180, 180, 180)",
+                "label": "Bare"
+              },
+              {
+                "color": "rgb(240, 240, 240)",
+                "label": "Snow and ice"
+              },
+              {
+                "color": "rgb(0, 100, 200)",
+                "label": "Permanent water bodies"
+              },
+              {
+                "color": "rgb(0, 150, 160)",
+                "label": "Herbaceous wetland"
+              },
+              {
+                "color": "rgb(0, 207, 117)",
+                "label": "Mangroves"
+              },
+              {
+                "color": "rgb(250, 230, 160)",
+                "label": "Moss and lichen"
+              }
+            ]
+          }
+        },
+        "interfaceGroup": "WorldCover"
+      },
+      "data": {
+        "url": "https://services.terrascope.be/wms/v2",
+        "layers": "WORLDCOVER_2020_MAP",
+        "exclusivitySet": "WorldCover",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "WorldCover 2021",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch",
+            "visible": true,
+            "data": [
+              {
+                "color": "rgb(0, 100, 0)",
+                "label": "Tree cover"
+              },
+              {
+                "color": "rgb(255, 187, 34)",
+                "label": "Shrubland"
+              },
+              {
+                "color": "rgb(255, 255, 76)",
+                "label": "Grassland"
+              },
+              {
+                "color": "rgb(240, 150, 255)",
+                "label": "Cropland"
+              },
+              {
+                "color": "rgb(255, 0, 0)",
+                "label": "Built up"
+              },
+              {
+                "color": "rgb(180, 180, 180)",
+                "label": "Bare"
+              },
+              {
+                "color": "rgb(240, 240, 240)",
+                "label": "Snow and ice"
+              },
+              {
+                "color": "rgb(0, 100, 200)",
+                "label": "Permanent water bodies"
+              },
+              {
+                "color": "rgb(0, 150, 160)",
+                "label": "Herbaceous wetland"
+              },
+              {
+                "color": "rgb(0, 207, 117)",
+                "label": "Mangroves"
+              },
+              {
+                "color": "rgb(250, 230, 160)",
+                "label": "Moss and lichen"
+              }
+            ]
+          }
+        },
+        "interfaceGroup": "WorldCover"
+      },
+      "data": {
+        "url": "https://services.terrascope.be/wms/v2",
+        "layers": "WORLDCOVER_2021_MAP",
+        "exclusivitySet": "WorldCover",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "WORLDSOILS",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true
+        },
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "zIndex": 3,
+        "projection": "EPSG:3035",
+        "type": "cog",
+        "normalize": false,
+        "images": [
+          {
+            "url": "http://eoresults.esa.int/d/APEX_TEST/2020/03/01/europe_aggr-orgc_00-020_mean_100_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif"
+          }
+        ],
+        "style": {
+          "color": [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "band",
+              1
+            ],
+            0,
+            "rgba(0, 0, 0, 0)",
+            22,
+            "rgb(10,10,40)",
+            5344,
+            "rgb(173,216,230)"
+          ]
+        },
+        "exclusivitySet": "WORLDSOILS"
+      }
+    }
+  ]
+}
