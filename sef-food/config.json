@@ -377,7 +377,7 @@
       "isActive": false,
       "layout": {
         "layerCard": {
-          "description": "Fractional Cover 2019: Cropland",
+          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2019 base year. The data are updated annually and are available for the 2015-2019 years.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
@@ -401,7 +401,7 @@
       "isActive": false,
       "layout": {
         "layerCard": {
-          "description": "Fractional Cover 2018: Cropland",
+          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2018 base year. The data are updated annually and are available for the 2015-2019 years.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
@@ -425,7 +425,7 @@
       "isActive": false,
       "layout": {
         "layerCard": {
-          "description": "Fractional Cover 2017: Cropland",
+          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2017 base year. The data are updated annually and are available for the 2015-2019 years.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
@@ -449,7 +449,7 @@
       "isActive": false,
       "layout": {
         "layerCard": {
-          "description": "Fractional Cover 2016: Cropland",
+          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2016 base year. The data are updated annually and are available for the 2015-2019 years.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
@@ -473,7 +473,7 @@
       "isActive": false,
       "layout": {
         "layerCard": {
-          "description": "Fractional Cover 2015: Cropland",
+          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2015 base year. The data are updated annually and are available for the 2015-2019 years.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
@@ -501,7 +501,12 @@
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Soil Moisture"
       },
@@ -521,7 +526,12 @@
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Soil Moisture"
       },
@@ -541,7 +551,12 @@
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Soil Moisture"
       },
@@ -561,7 +576,12 @@
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Soil Moisture"
       },
@@ -581,7 +601,12 @@
           "toggleable": true,
           "control": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/fcover_300m-1km-v1-v2.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
@@ -601,7 +626,12 @@
           "toggleable": true,
           "control": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/fcover.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
@@ -621,7 +651,12 @@
           "toggleable": true,
           "control": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/fcover_300m-1km-v1-v2.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
@@ -641,7 +676,12 @@
           "toggleable": true,
           "control": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/hrvpp-legends/legend_fapar.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
@@ -661,7 +701,12 @@
           "toggleable": true,
           "control": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/clms_global_fapar_300m_v1_10daily.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
@@ -681,7 +726,12 @@
           "toggleable": true,
           "control": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/clms_global_fapar_1km_v1_10daily.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
@@ -701,7 +751,12 @@
           "toggleable": true,
           "control": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/clms_global_fapar_1km_v2_10daily.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
@@ -721,7 +776,12 @@
           "toggleable": true,
           "control": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/hrvpp-legends/lailegend.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
@@ -741,7 +801,12 @@
           "toggleable": true,
           "control": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/leafareaindexlegend-300m-1km-v1-v2.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
@@ -761,7 +826,12 @@
           "toggleable": true,
           "control": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/lailegend.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
@@ -781,7 +851,12 @@
           "toggleable": true,
           "control": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/leafareaindexlegend-300m-1km-v1-v2.png/@@images/image"
+          }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
