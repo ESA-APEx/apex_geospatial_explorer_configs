@@ -10,6 +10,10 @@
     "WORLDSOILS",
     "WorldCereal",
     "Digital Elevation Models",
+    "Copernicus Land - Land Cover",
+    "Copernicus Land - Soil Moisture",
+    "Copernicus Land - Vegetation",
+    "Copernicus Land - High Resolution Layer Forest Type",
     "Basemaps"
   ],
   "exclusivitySets": [
@@ -366,6 +370,498 @@
         "layers": "COP_DEM_GLO_30M_COG",
         "zIndex": 2,
         "type": "wmts"
+      }
+    },
+    {
+      "name": "Land Cover 2019 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Fractional Cover 2019: Cropland",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Land Cover"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2019/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    },
+    {
+      "name": "Land Cover 2018 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Fractional Cover 2018: Cropland",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Land Cover"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2018/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    },
+    {
+      "name": "Land Cover 2017 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Fractional Cover 2017: Cropland",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Land Cover"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2017/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    },
+    {
+      "name": "Land Cover 2016 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Fractional Cover 2016: Cropland",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Land Cover"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2016/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    },
+    {
+      "name": "Land Cover 2015 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Fractional Cover 2015: Cropland",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Land Cover"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2015/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    },
+    {
+      "name": "Surface Soil Moisture 2014-present (raster 1km), Europe, daily - version 1",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides information on the relative water content of the top few centimeters soil, describing how wet or dry the soil is in its topmost layer, expressed in percent saturation. Daily observations are available for the continental Europe in the spatial resolution of 1 km and with the temporal extent from October 2014 to present.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Soil Moisture"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_ssm_1km_v1_daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Soil Water Index 2015-present (raster 1 km), Europe, daily – version 1",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Quantifies the moisture condition at various depths in the soil. Daily observations are available for the continental Europe in the spatial resolution of 1 km and with the temporal extent from January 2015 to present.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Soil Moisture"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_swi_1km_v1_daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Soil Water Index 2007-present (raster 12.5 km), global, daily – version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides daily updates on the moisture conditions in different soil layers. The data are available over the globe at the spatial resolution of 0.1° and with the temporal extent from January 2007 to present.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Soil Moisture"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_swi_12.5km_v3_daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Soil Water Index 2007-present (raster 12.5 km), global, 10-daily – version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Averages the daily Soil Water Index product over 10 days. The data are produced every 10 days over the globe at the spatial resolution of 0.1° and with the temporal extent from January 2007 to present.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Soil Moisture"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_swi_12.5km_v3_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Fraction of Green Vegetation Cover 2014-present (raster 300 m), global, 10-daily – version 1",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Corresponds to the fraction of ground covered by green vegetation. It quantifies the spatial extent of the vegetation. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to June 2020 based upon PROBA-V data with version 1.0 and from July 2020 onwards based upon Sentinel-3/OLCI data with version 1.1.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_fcover_300m_v1_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Fraction of Green Vegetation Cover 1999-2020 (raster 1 km), global, 10-daily – version 1",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Corresponds to the fraction of ground covered by green vegetation. It quantifies the spatial extent of the vegetation. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to May 2014 in version 1.4 from SPOT/VEGETATION data and from June 2014 to June 2020 in version 1.5 from PROBA-V data.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_fcover_1km_v1_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Fraction of Green Vegetation Cover 1999-2020 (raster 1 km), global, 10-daily – version 2",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Corresponds to the fraction of ground covered by green vegetation. It quantifies the spatial extent of the vegetation. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to June 2020 from SPOT/VEGETATION and PROBA-V data.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_fcover_1km_v2_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Fraction of Absorbed Photosynthetically Active Radiation 2016-present (raster 10 m), Europe, daily",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at pan-European level and in near real time daily updates of the fraction of the solar radiation absorbed by live leaves for the photosynthesis activity. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://phenology.vgt.vito.be/wmts",
+        "layers": "CLMS_HRVPP_VI_FAPAR_10M",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Fraction of Absorbed Photosynthetically Active Radiation 2014-present (raster 300 m), global, 10-daily – version 1",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Quantifies the fraction of the solar radiation absorbed by live plants for photosynthesis. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to June 2020 based upon PROBA-V data with version 1.0 and from July 2020 onwards based upon Sentinel-3/OLCI data with version 1.1.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_fapar_300m_v1_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Fraction of Absorbed Photosynthetically Active Radiation 1999-2020 (raster 1 km), global, 10-daily – version 1",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Quantifies the fraction of the solar radiation absorbed by live plants for photosynthesis. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to May 2014 in version 1.4 from SPOT/VEGETATION data and from June 2014 to June 2020 in version 1.5 from PROBA-V data.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_fapar_1km_v1_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Fraction of Absorbed Photosynthetically Active Radiation 1999-2020 (raster 1 km), global, 10-daily – version 2",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Quantifies the fraction of the solar radiation absorbed by live plants for photosynthesis. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to June 2020 from SPOT/VEGETATION and PROBA-V data.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_fapar_1km_v2_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Leaf Area Index 2016-present (raster 10 m), Europe, daily",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Defined as half of the total area of green elements of the canopy per unit horizontal ground area daily updates of Leaf Area Index are provided at pan-European level and in near real time. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://phenology.vgt.vito.be/wmts",
+        "layers": "CLMS_HRVPP_VI_LAI_10M",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Leaf Area Index 2014-present (raster 300 m), global, 10-daily – version 1",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Defined as half the total area of green elements of the canopy per unit horizontal ground area. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to June 2020 based upon PROBA-V data with version 1.0 and from July 2020 onwards based upon Sentinel-3/OLCI data with version 1.1.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_lai_300m_v1_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Leaf Area Index 1999-2020 (raster 1 km), global, 10-daily – version 1",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Defined as half the total area of green elements of the canopy per unit horizontal ground area. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to May 2014 in version 1.4 from SPOT/VEGETATION data and from June 2014 to June 2020 in version 1.5 from PROBA-V data.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_lai_1km_v1_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Leaf Area Index 1999-2020 (raster 1 km), global, 10-daily – version 2",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Defined as half the total area of green elements of the canopy per unit horizontal ground area. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to June 2020 from SPOT/VEGETATION and PROBA-V data.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ]
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_lai_1km_v2_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Forest Type 2018 (raster 10 m and 100 m), Europe, 3-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at pan-European level in the spatial resolution of 10 m and 100 m a forest classification for three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) with the agricultural/urban trees removed for the 2018 reference year.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "data": "https://land.copernicus.eu/en/products/high-resolution-layer-forest-type/map-legends/hrl_forest_type_2018_10m.jpg/@@images/image"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
+      },
+      "data": {
+        "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2018/ImageServer/WMSServer",
+        "layers": "HRL_ForestType_2018:FTY_MosaicSymbology",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Forest Type 2015 (raster 20 m and 100 m), Europe, 3-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at pan-European level in the spatial resolution of 20 m and 100 m a forest classification with three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) for the 2015 reference year. In the 100 m spatial resolution the dataset has the agricultural/urban trees removed.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2015/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2015_20m795"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
+      },
+      "data": {
+        "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2015/MapServer/WMSServer",
+        "layers": "HRL_Forest_Type_2015_20m795",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Forest Type 2012 (raster 20 m and 100 m), Europe, 3-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at pan-European level in the spatial resolution of 20 m and 100 m a forest classification with three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) for the 2012 reference year. In the 100 m spatial resolution the dataset has the agricultural/urban trees removed.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Forest_Cover_Type_2012/MapServer/WmsServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2012_20m30052"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
+      },
+      "data": {
+        "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Forest_Cover_Type_2012/MapServer/WmsServer",
+        "layers": "HRL_Forest_Type_2012_20m30052",
+        "zIndex": 2,
+        "type": "wms"
       }
     }
   ]
