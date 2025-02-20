@@ -938,6 +938,181 @@
         "zIndex": 2,
         "type": "wms"
       }
+    },
+    {
+      "name": "Normalised Difference Vegetation Index 2016-present (raster 10 m), Europe, daily",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Describes the difference between visible and near infrared reflectance of vegetation cover. Daily updates of Normalised Difference Vegetation Index are provided at pan-European level and in near real time. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/hrvpp-legends/legend_ndvi.png/@@images/image"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://phenology.vgt.vito.be/wmts",
+        "layers": "CLMS_HRVPP_VI_NDVI_10M",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Normalised Difference Vegetation Index 2014-2020 (raster 300 m), global, 10-daily – version 1",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available at global scale in the spatial resolution of about 300 m from 2014 to June 2020.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_ndvi_300m_v1_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Normalised Difference Vegetation Index 2020-present (raster 300 m), global, 10-daily – version 2",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from July 2020 to the present.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_ndvi_300m_v2_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Normalised Difference Vegetation Index 1998-2020 (raster 1 km), global, 10-daily – version 2",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km from April 1998 to 2013 based upon SPOT/VEGETATION data and from 2014 to 2020 based upon PROBA-V data.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_ndvi_1km_v2_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Normalised Difference Vegetation Index 1999-2020 (raster 1 km), global, 10-daily – version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km from 1999 to 2013 based upon SPOT/VEGETATION data and from 2014 to June 2020 based upon PROBA-V data.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_ndvi_1km_v3_10daily",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Normalised Difference Vegetation Index (Long Term Statistics) 1999-2017 (raster 1 km), global, 10-daily – version 2",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Based upon SPOT/VEGETATION and PROBA-V NDVI 1km version 2, long-term statistics include the minimum, median, maximum, mean, standard deviation and the number of observations over the 19-years period 1999-2017.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_ndvi_1km_v2_statistics",
+        "zIndex": 2,
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Normalised Difference Vegetation Index (Long Term Statistics) 1999-2019 (raster 1 km), global, 10-daily – version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Based upon SPOT/VEGETATION and PROBA-V NDVI 1km version 3, long-term statistics include the minimum, median, maximum, mean, standard deviation and the number of observations over the 21-years period 1999-2019.\n",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Vegetation"
+      },
+      "data": {
+        "url": "https://globalland.vito.be/wmts",
+        "layers": "clms_global_ndvi_1km_v3_statistics",
+        "zIndex": 2,
+        "type": "wmts"
+      }
     }
   ]
 }
