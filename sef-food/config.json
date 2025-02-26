@@ -17,9 +17,7 @@
     "Basemaps"
   ],
   "exclusivitySets": [
-    "WorldCover",
-    "WORLDSOILS",
-    "WorldCereal"
+    "labels"
   ],
   "sources": [
     {
@@ -35,21 +33,48 @@
       }
     },
     {
-      "name": "Maize 2021",
+      "name": "Geo Service - Labels",
       "isActive": false,
       "layout": {
         "layerCard": {
           "toggleable": true,
+          "attribution": {
+            "text": "EOC Basemap Map Service",
+            "url": "https://geoservice.dlr.de/web/"
+          }
+        },
+        "interfaceGroup": "Basemaps"
+      },
+      "data": {
+        "zIndex": 100,
+        "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+        "layers": "baseoverlay",
+        "type": "wms",
+        "exclusivitySets": [
+          "labels"
+        ]
+      }
+    },
+    {
+      "name": "Maize 2021",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "WorldCereal maize, globally, at 10m resolution in specific seasons throughout the year.",
+          "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ]
+          ],
+          "attribution": {
+            "text": "WorldCereal",
+            "url": "https://esa-worldcereal.org/"
+          }
         },
         "interfaceGroup": "WorldCereal"
       },
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
         "layers": "WORLDCEREAL_MAIZE_V1",
-        "exclusivitySet": "WorldCereal",
         "zIndex": 2,
         "type": "wms"
       }
@@ -59,17 +84,21 @@
       "isActive": false,
       "layout": {
         "layerCard": {
+          "description": "WorldCereal spring cereals, globally, at 10m resolution in specific seasons throughout the year.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ]
+          ],
+          "attribution": {
+            "text": "WorldCereal",
+            "url": "https://esa-worldcereal.org/"
+          }
         },
         "interfaceGroup": "WorldCereal"
       },
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
         "layers": "WORLDCEREAL_SPRINGCEREALS_V1",
-        "exclusivitySet": "WorldCereal",
         "zIndex": 2,
         "type": "wms"
       }
@@ -79,17 +108,21 @@
       "isActive": false,
       "layout": {
         "layerCard": {
+          "description": "Pixel-based, binary classification product at 10m spatial resolution distinguishing annual cropland from all other types of land cover. Annual cropland is defined according to the JECAM 2018 definition, in short: A piece of land that is sowed/planted and harvestable at least once within the 12 months after the sowing/planting date. The annual cropland produces an herbaceous cover which should reach a coverage of 30% and can be combined with some tree or woody vegetation not exceeding a coverage of 20%. Exception 1: Sugarcane and cassava, although perennial crops, are explicitly included. Exception 2: Frequently harvested, annual and/or perennial fodder crops such as grasslands and alfalfa are explicitly excluded. Exception 3: Greenhouse crops are excluded. This product is generated within one month after the end of the main growing season and looks back one year in time.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ]
+          ],
+          "attribution": {
+            "text": "WorldCereal",
+            "url": "https://esa-worldcereal.org/"
+          }
         },
         "interfaceGroup": "WorldCereal"
       },
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
         "layers": "WORLDCEREAL_TEMPORARYCROPS_V1",
-        "exclusivitySet": "WorldCereal",
         "zIndex": 2,
         "type": "wms"
       }
@@ -99,17 +132,21 @@
       "isActive": false,
       "layout": {
         "layerCard": {
+          "description": "WorldCereal winter cereals, globally, at 10m resolution in specific seasons throughout the year.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ]
+          ],
+          "attribution": {
+            "text": "WorldCereal",
+            "url": "https://esa-worldcereal.org/"
+          }
         },
         "interfaceGroup": "WorldCereal"
       },
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
         "layers": "WORLDCEREAL_WINTERCEREALS_V1",
-        "exclusivitySet": "WorldCereal",
         "zIndex": 2,
         "type": "wms"
       }
@@ -119,6 +156,7 @@
       "isActive": false,
       "layout": {
         "layerCard": {
+          "description": "Land cover map for 2020",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
@@ -172,6 +210,10 @@
                 "label": "Moss and lichen"
               }
             ]
+          },
+          "attribution": {
+            "text": "WorldCover",
+            "url": "https://esa-worldcover.org/"
           }
         },
         "interfaceGroup": "WorldCover"
@@ -179,7 +221,6 @@
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
         "layers": "WORLDCOVER_2020_MAP",
-        "exclusivitySet": "WorldCover",
         "zIndex": 2,
         "type": "wms"
       }
@@ -189,6 +230,7 @@
       "isActive": false,
       "layout": {
         "layerCard": {
+          "description": "Land cover map for 2021",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
@@ -242,6 +284,10 @@
                 "label": "Moss and lichen"
               }
             ]
+          },
+          "attribution": {
+            "text": "WorldCover",
+            "url": "https://esa-worldcover.org/"
           }
         },
         "interfaceGroup": "WorldCover"
@@ -249,17 +295,98 @@
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
         "layers": "WORLDCOVER_2021_MAP",
-        "exclusivitySet": "WorldCover",
         "zIndex": 2,
         "type": "wms"
       }
     },
     {
-      "name": "WORLDSOILS",
+      "name": "Sentinel-2 RGB Composite 2020",
       "isActive": false,
       "layout": {
         "layerCard": {
+          "toggleable": true,
+          "description": "Natural color image made from images in blue, green and red. Median composite for 2020.",
+          "attribution": {
+            "text": "WorldCover",
+            "url": "https://esa-worldcover.org/"
+          }
+        },
+        "interfaceGroup": "WorldCover"
+      },
+      "data": {
+        "zIndex": 1,
+        "url": "https://services.terrascope.be/wmts/v2",
+        "layers": "WORLDCOVER_2020_S2_TCC",
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Sentinel-2 RGB Composite 2021",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "description": "Natural color image made from images in blue, green and red. Median composite for 2021.",
+          "attribution": {
+            "text": "WorldCover",
+            "url": "https://esa-worldcover.org/"
+          }
+        },
+        "interfaceGroup": "WorldCover"
+      },
+      "data": {
+        "zIndex": 1,
+        "url": "https://services.terrascope.be/wmts/v2",
+        "layers": "WORLDCOVER_2021_S2_TCC",
+        "type": "wmts"
+      }
+    },
+    {
+      "name": "Sentinel-2 RGB vs WorldCover (2020)",
+      "isActive": false,
+      "layout": {
+        "interfaceGroup": "WorldCover",
+        "layerCard": {
           "toggleable": true
+        }
+      },
+      "data": {
+        "type": "swipe",
+        "clippedSource": "WorldCover 2020",
+        "baseSources": [
+          "Sentinel-2 RGB Composite 2020",
+          "Geo Service - Labels"
+        ]
+      }
+    },
+    {
+      "name": "Sentinel-2 RGB vs WorldCover (2021)",
+      "isActive": false,
+      "layout": {
+        "interfaceGroup": "WorldCover",
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": {
+        "type": "swipe",
+        "clippedSource": "WorldCover 2021",
+        "baseSources": [
+          "Sentinel-2 RGB Composite 2021",
+          "Geo Service - Labels"
+        ]
+      }
+    },
+    {
+      "name": "WorldSoils",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "attribution": {
+            "text": "WorldCover",
+            "url": "https://world-soils.com/"
+          }
         },
         "interfaceGroup": "WORLDSOILS"
       },
@@ -270,7 +397,7 @@
         "normalize": false,
         "images": [
           {
-            "url": "http://eoresults.esa.int/d/APEX_TEST/2020/03/01/europe_aggr-orgc_00-020_mean_100_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif"
+            "url": "https://eoresults.esa.int/d/APEX_TEST/2020/03/01/europe_aggr-orgc_00-020_mean_100_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif"
           }
         ],
         "style": {
@@ -290,8 +417,7 @@
             5344,
             "rgb(173,216,230)"
           ]
-        },
-        "exclusivitySet": "WORLDSOILS"
+        }
       }
     },
     {
@@ -361,6 +487,10 @@
                 "label": "8000"
               }
             ]
+          },
+          "attribution": {
+            "text": "TerraScope",
+            "url": "https://terrascope.be/"
           }
         },
         "interfaceGroup": "Digital Elevation Models"
@@ -386,6 +516,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -410,6 +544,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -434,6 +572,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -458,6 +600,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -482,6 +628,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -506,6 +656,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Soil Moisture"
@@ -531,6 +685,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Soil Moisture"
@@ -556,6 +714,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Soil Moisture"
@@ -581,6 +743,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Soil Moisture"
@@ -606,6 +772,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/fcover_300m-1km-v1-v2.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -631,6 +801,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/fcover.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -656,6 +830,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/fcover_300m-1km-v1-v2.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -681,6 +859,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/hrvpp-legends/legend_fapar.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -706,6 +888,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/clms_global_fapar_300m_v1_10daily.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -731,6 +917,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/clms_global_fapar_1km_v1_10daily.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -756,6 +946,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/clms_global_fapar_1km_v2_10daily.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -781,6 +975,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/hrvpp-legends/lailegend.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -806,6 +1004,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/leafareaindexlegend-300m-1km-v1-v2.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -831,6 +1033,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/lailegend.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -856,6 +1062,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/leafareaindexlegend-300m-1km-v1-v2.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -880,6 +1090,10 @@
           "legend": {
             "type": "image",
             "data": "https://land.copernicus.eu/en/products/high-resolution-layer-forest-type/map-legends/hrl_forest_type_2018_10m.jpg/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
@@ -904,6 +1118,10 @@
           "legend": {
             "type": "image",
             "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2015/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2015_20m795"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
@@ -928,6 +1146,10 @@
           "legend": {
             "type": "image",
             "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Forest_Cover_Type_2012/MapServer/WmsServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2012_20m30052"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
@@ -953,6 +1175,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/hrvpp-legends/legend_ndvi.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -978,6 +1204,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -1003,6 +1233,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -1028,6 +1262,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -1053,6 +1291,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -1078,6 +1320,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
@@ -1103,6 +1349,10 @@
             "type": "image",
             "visible": true,
             "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
           }
         },
         "interfaceGroup": "Copernicus Land - Vegetation"
