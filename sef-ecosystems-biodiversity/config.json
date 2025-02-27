@@ -1,0 +1,596 @@
+{
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "SEF Demo - Ecosystems and Biodiversity"
+    }
+  },
+  "interfaceGroups": [
+    "Copernicus Land - Land Cover",
+    "Copernicus Land - CLCplus Backbone",
+    "Copernicus Land - Priority Areas - N2K",
+    "Copernicus Land - High Resolution Layer Forest Type",
+    "Copernicus Land - High Resolution Layer Grassland",
+    "Basemaps"
+  ],
+  "exclusivitySets": [
+    "labels"
+  ],
+  "sources": [
+    {
+      "name": "Open Street Map",
+      "isActive": true,
+      "layout": {
+        "interfaceGroup": "Basemaps"
+      },
+      "data": {
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "type": "xyz",
+        "zIndex": 0
+      }
+    },
+    {
+      "name": "Geo Service - Labels",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "attribution": {
+            "text": "EOC Basemap Map Service",
+            "url": "https://geoservice.dlr.de/web/"
+          }
+        },
+        "interfaceGroup": "Basemaps"
+      },
+      "data": {
+        "zIndex": 100,
+        "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+        "layers": "baseoverlay",
+        "type": "wms",
+        "exclusivitySets": [
+          "labels"
+        ]
+      }
+    },
+    {
+      "name": "Land Cover 2019 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2019 base year. The data are updated annually and are available for the 2015-2019 years.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Land Cover"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2019/cog-full_l0-colored-full/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    },
+    {
+      "name": "Land Cover 2018 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2018 base year. The data are updated annually and are available for the 2015-2019 years.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Land Cover"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2018/cog-full_l0-colored-full/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    },
+    {
+      "name": "Land Cover 2017 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2017 base year. The data are updated annually and are available for the 2015-2019 years.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Land Cover"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2017/cog-full_l0-colored-full/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    },
+    {
+      "name": "Land Cover 2016 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2016 base year. The data are updated annually and are available for the 2015-2019 years.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Land Cover"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2016/cog-full_l0-colored-full/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    },
+    {
+      "name": "Land Cover 2015 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2015 base year. The data are updated annually and are available for the 2015-2019 years.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Land Cover"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2015/cog-full_l0-colored-full/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    },
+    {
+      "name": "CLCplus Backbone 2021 (raster 10 m), Europe, 3-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides a pan-European spatially consistent and seamless, detailed land cover inventory for the 2021 reference year, for each pixel showing the dominant land cover among the 11 basic land cover classes. The dataset is available as 10 m raster.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/clc-backbone/map-legends/clc-backbone-2018_raster-10-m.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - CLCplus Backbone"
+      },
+      "data": {
+        "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
+        "layers": "CLMS_CLCplus_RASTER_2021_010m_eu",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "CLCplus Backbone 2018 (raster 10 m), Europe, 3-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides a pan-European spatially consistent and seamless, detailed land cover inventory for the 2018 reference year, for each pixel showing the dominant land cover among the 11 basic land cover classes. The dataset is available as 10 m raster.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://land.copernicus.eu/en/products/clc-backbone/map-legends/clc-backbone-2018_raster-10-m.png/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - CLCplus Backbone"
+      },
+      "data": {
+        "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2018_010m_eu/ImageServer/WMSServer",
+        "layers": "CLMS_CLCplus_RASTER_2018_010m_eu",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "CLCplus Backbone 2018 (vector), Europe",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides a pan-European spatially consistent and seamless, detailed land cover inventory for the 2018 reference year, for each polygon showing the dominant land cover among the 18 basic land cover classes and additional attributes. The minimum mapping unit of the dataset is 0.5 ha.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLCplus2018_WM/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - CLCplus Backbone"
+      },
+      "data": {
+        "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLCplus2018_WM/MapServer/WMSServer",
+        "layers": "0",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "N2K Land Cover/Land Use 2018 (vector), Europe, 6-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides detailed land cover and land use information for 55 thematic classes in selected Natura2000 sites for the 2018 reference year. The dataset has a Minimum Mapping Unit (MMU) of 0.5 ha and a Minimum Mapping Width (MMW) of 10 m and is available as vector data.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Priority Areas - N2K"
+      },
+      "data": {
+        "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+        "layers": "0",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "N2K Land Cover/Land Use 2012 (vector), Europe, 6-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides detailed land cover and land use information for 55 thematic classes in selected Natura2000 sites for the 2012 reference year. The dataset has a Minimum Mapping Unit (MMU) of 0.5 ha and a Minimum Mapping Width (MMW) of 10 m and is available as vector data.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=0"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Priority Areas - N2K"
+      },
+      "data": {
+        "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+        "layers": "0",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "N2K Land Cover/Land Use 2006 (vector), Europe, 6-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides detailed land cover and land use information for 55 thematic classes in selected Natura2000 sites for the 2006 reference year. The dataset has a Minimum Mapping Unit (MMU) of 0.5 ha and a Minimum Mapping Width (MMW) of 10 m and is available as vector data.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Priority Areas - N2K"
+      },
+      "data": {
+        "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+        "layers": "0",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "N2K Land Cover/Land Use Change 2012-2018 (vector), Europe, 6-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides information on land cover and land use changes for 55 thematic classes in selected Natura2000 sites between the 2012 and 2018 reference years. The dataset has a Minimum Mapping Unit (MMU) of 0.5 ha and a Minimum Mapping Width (MMW) of 10 m and is available as vector data.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_Change_2012_2018/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Priority Areas - N2K"
+      },
+      "data": {
+        "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_Change_2012_2018/MapServer/WMSServer",
+        "layers": "0",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "N2K Land Cover/Land Use Change 2006-2012 (vector), Europe, 6-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides information on land cover and land use changes for 55 thematic classes in selected Natura2000 sites between the 2006 and 2012 reference years. The dataset has a Minimum Mapping Unit (MMU) of 0.5 ha and a Minimum Mapping Width (MMW) of 10 m and is available as vector data.",
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_Change_2006_2012/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - Priority Areas - N2K"
+      },
+      "data": {
+        "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_Change_2006_2012/MapServer/WMSServer",
+        "layers": "0",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Forest Type 2018 (raster 10 m and 100 m), Europe, 3-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at pan-European level in the spatial resolution of 10 m and 100 m a forest classification for three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) with the agricultural/urban trees removed for the 2018 reference year.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "data": "https://land.copernicus.eu/en/products/high-resolution-layer-forest-type/map-legends/hrl_forest_type_2018_10m.jpg/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
+      },
+      "data": {
+        "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2018/ImageServer/WMSServer",
+        "layers": "HRL_ForestType_2018:FTY_MosaicSymbology",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Forest Type 2015 (raster 20 m and 100 m), Europe, 3-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at pan-European level in the spatial resolution of 20 m and 100 m a forest classification with three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) for the 2015 reference year. In the 100 m spatial resolution the dataset has the agricultural/urban trees removed.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2015/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2015_20m795"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
+      },
+      "data": {
+        "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2015/MapServer/WMSServer",
+        "layers": "HRL_Forest_Type_2015_100m18936",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Forest Type 2012 (raster 20 m and 100 m), Europe, 3-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at pan-European level in the spatial resolution of 20 m and 100 m a forest classification with three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) for the 2012 reference year. In the 100 m spatial resolution the dataset has the agricultural/urban trees removed.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Forest_Cover_Type_2012/MapServer/WmsServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2012_20m30052"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
+      },
+      "data": {
+        "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Forest_Cover_Type_2012/MapServer/WmsServer",
+        "layers": "HRL_Forest_Type_2012_100m1103",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Grassland 2018 (raster 10 m and 100 m), Europe, 3-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at pan-European level in the spatial resolution of 10 m and 100 m a basic land cover classification with two thematic classes (grassland / non-grassland) for the 2018 reference year.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "data": "https://land.copernicus.eu/en/products/high-resolution-layer-grassland/map-legends/hrl_grassland_2018_10m.jpg/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - High Resolution Layer Grassland"
+      },
+      "data": {
+        "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Grassland_2018/ImageServer/WMSServer",
+        "layers": "HRL_Grassland_2018",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Grassland 2015 (raster 20 m and 100 m), Europe, 3-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at pan-European level in the spatial resolution of 20 m and 100 m a basic land cover classification with two thematic classes (grassland / non-grassland) for the 2015 reference year.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Grassland_2015/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - High Resolution Layer Grassland"
+      },
+      "data": {
+        "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Grassland_2015/MapServer/WMSServer",
+        "layers": "0",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Grassland Change 2015-2018 (raster 20 m), Europe, 3-yearly",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "description": "Provides at pan-European level in the spatial resolution of 20 m information on changes in grassland vegetation cover between the 2105 and 2018 reference years.",
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "image",
+            "data": "https://land.copernicus.eu/en/products/high-resolution-layer-grassland/map-legends/hrl_grassland_cha_1518_20m.jpg/@@images/image"
+          },
+          "attribution": {
+            "text": "Copernicus Land Monitoring Service",
+            "url": "https://land.copernicus.eu/en"
+          }
+        },
+        "interfaceGroup": "Copernicus Land - High Resolution Layer Grassland"
+      },
+      "data": {
+        "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_GrasslandChange_15_18/ImageServer/WMSServer",
+        "layers": "HRL_GrasslandChange_15_18:GRAC_MosaicSymbology",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    }
+  ]
+}
