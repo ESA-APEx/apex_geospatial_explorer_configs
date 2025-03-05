@@ -29,19 +29,22 @@
       "data": {
         "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
         "type": "xyz",
-        "zIndex": 0
+        "zIndex": 0,
+        "isBaseLayer": true
       }
     },
     {
       "name": "Geo Service - Labels",
       "isActive": false,
+      "meta": {
+        "attribution": {
+          "text": "EOC Basemap Map Service",
+          "url": "https://geoservice.dlr.de/web/"
+        }
+      },
       "layout": {
         "layerCard": {
-          "toggleable": true,
-          "attribution": {
-            "text": "EOC Basemap Map Service",
-            "url": "https://geoservice.dlr.de/web/"
-          }
+          "toggleable": true
         },
         "interfaceGroup": "Basemaps"
       },
@@ -58,17 +61,19 @@
     {
       "name": "Maize 2021",
       "isActive": false,
+      "meta": {
+        "description": "WorldCereal maize, globally, at 10m resolution in specific seasons throughout the year.",
+        "attribution": {
+          "text": "WorldCereal",
+          "url": "https://esa-worldcereal.org/"
+        }
+      },
       "layout": {
         "layerCard": {
-          "description": "WorldCereal maize, globally, at 10m resolution in specific seasons throughout the year.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ],
-          "attribution": {
-            "text": "WorldCereal",
-            "url": "https://esa-worldcereal.org/"
-          }
+          ]
         },
         "interfaceGroup": "WorldCereal"
       },
@@ -82,17 +87,19 @@
     {
       "name": "Spring Cereals 2021",
       "isActive": false,
+      "meta": {
+        "description": "WorldCereal spring cereals, globally, at 10m resolution in specific seasons throughout the year.",
+        "attribution": {
+          "text": "WorldCereal",
+          "url": "https://esa-worldcereal.org/"
+        }
+      },
       "layout": {
         "layerCard": {
-          "description": "WorldCereal spring cereals, globally, at 10m resolution in specific seasons throughout the year.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ],
-          "attribution": {
-            "text": "WorldCereal",
-            "url": "https://esa-worldcereal.org/"
-          }
+          ]
         },
         "interfaceGroup": "WorldCereal"
       },
@@ -106,17 +113,19 @@
     {
       "name": "Temporary Crops 2021",
       "isActive": false,
+      "meta": {
+        "description": "Pixel-based, binary classification product at 10m spatial resolution distinguishing annual cropland from all other types of land cover. Annual cropland is defined according to the JECAM 2018 definition, in short: A piece of land that is sowed/planted and harvestable at least once within the 12 months after the sowing/planting date. The annual cropland produces an herbaceous cover which should reach a coverage of 30% and can be combined with some tree or woody vegetation not exceeding a coverage of 20%. Exception 1: Sugarcane and cassava, although perennial crops, are explicitly included. Exception 2: Frequently harvested, annual and/or perennial fodder crops such as grasslands and alfalfa are explicitly excluded. Exception 3: Greenhouse crops are excluded. This product is generated within one month after the end of the main growing season and looks back one year in time.",
+        "attribution": {
+          "text": "WorldCereal",
+          "url": "https://esa-worldcereal.org/"
+        }
+      },
       "layout": {
         "layerCard": {
-          "description": "Pixel-based, binary classification product at 10m spatial resolution distinguishing annual cropland from all other types of land cover. Annual cropland is defined according to the JECAM 2018 definition, in short: A piece of land that is sowed/planted and harvestable at least once within the 12 months after the sowing/planting date. The annual cropland produces an herbaceous cover which should reach a coverage of 30% and can be combined with some tree or woody vegetation not exceeding a coverage of 20%. Exception 1: Sugarcane and cassava, although perennial crops, are explicitly included. Exception 2: Frequently harvested, annual and/or perennial fodder crops such as grasslands and alfalfa are explicitly excluded. Exception 3: Greenhouse crops are excluded. This product is generated within one month after the end of the main growing season and looks back one year in time.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ],
-          "attribution": {
-            "text": "WorldCereal",
-            "url": "https://esa-worldcereal.org/"
-          }
+          ]
         },
         "interfaceGroup": "WorldCereal"
       },
@@ -130,17 +139,19 @@
     {
       "name": "Winter Cereals 2021",
       "isActive": false,
+      "meta": {
+        "description": "WorldCereal winter cereals, globally, at 10m resolution in specific seasons throughout the year.",
+        "attribution": {
+          "text": "WorldCereal",
+          "url": "https://esa-worldcereal.org/"
+        }
+      },
       "layout": {
         "layerCard": {
-          "description": "WorldCereal winter cereals, globally, at 10m resolution in specific seasons throughout the year.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ],
-          "attribution": {
-            "text": "WorldCereal",
-            "url": "https://esa-worldcereal.org/"
-          }
+          ]
         },
         "interfaceGroup": "WorldCereal"
       },
@@ -155,67 +166,6 @@
       "name": "WorldCover 2020",
       "isActive": false,
       "layout": {
-        "layerCard": {
-          "description": "Land cover map for 2020",
-          "toggleable": true,
-          "controls": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "swatch",
-            "visible": true,
-            "data": [
-              {
-                "color": "rgb(0, 100, 0)",
-                "label": "Tree cover"
-              },
-              {
-                "color": "rgb(255, 187, 34)",
-                "label": "Shrubland"
-              },
-              {
-                "color": "rgb(255, 255, 76)",
-                "label": "Grassland"
-              },
-              {
-                "color": "rgb(240, 150, 255)",
-                "label": "Cropland"
-              },
-              {
-                "color": "rgb(255, 0, 0)",
-                "label": "Built up"
-              },
-              {
-                "color": "rgb(180, 180, 180)",
-                "label": "Bare"
-              },
-              {
-                "color": "rgb(240, 240, 240)",
-                "label": "Snow and ice"
-              },
-              {
-                "color": "rgb(0, 100, 200)",
-                "label": "Permanent water bodies"
-              },
-              {
-                "color": "rgb(0, 150, 160)",
-                "label": "Herbaceous wetland"
-              },
-              {
-                "color": "rgb(0, 207, 117)",
-                "label": "Mangroves"
-              },
-              {
-                "color": "rgb(250, 230, 160)",
-                "label": "Moss and lichen"
-              }
-            ]
-          },
-          "attribution": {
-            "text": "WorldCover",
-            "url": "https://esa-worldcover.org/"
-          }
-        },
         "interfaceGroup": "WorldCover"
       },
       "data": {
@@ -223,71 +173,126 @@
         "layers": "WORLDCOVER_2020_MAP",
         "zIndex": 2,
         "type": "wms"
+      },
+      "meta": {
+        "attribution": {
+          "text": "WorldCover",
+          "url": "https://esa-worldcover.org/"
+        },
+        "description": "Land cover map for 2020",
+        "categories": [
+          {
+            "color": "rgb(0, 100, 0)",
+            "label": "Tree cover"
+          },
+          {
+            "color": "rgb(255, 187, 34)",
+            "label": "Shrubland"
+          },
+          {
+            "color": "rgb(255, 255, 76)",
+            "label": "Grassland"
+          },
+          {
+            "color": "rgb(240, 150, 255)",
+            "label": "Cropland"
+          },
+          {
+            "color": "rgb(255, 0, 0)",
+            "label": "Built up"
+          },
+          {
+            "color": "rgb(180, 180, 180)",
+            "label": "Bare"
+          },
+          {
+            "color": "rgb(240, 240, 240)",
+            "label": "Snow and ice"
+          },
+          {
+            "color": "rgb(0, 100, 200)",
+            "label": "Permanent water bodies"
+          },
+          {
+            "color": "rgb(0, 150, 160)",
+            "label": "Herbaceous wetland"
+          },
+          {
+            "color": "rgb(0, 207, 117)",
+            "label": "Mangroves"
+          },
+          {
+            "color": "rgb(250, 230, 160)",
+            "label": "Moss and lichen"
+          }
+        ]
       }
     },
     {
       "name": "WorldCover 2021",
       "isActive": false,
+      "meta": {
+        "description": "Land cover map for 2021",
+        "attribution": {
+          "text": "WorldCover",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "rgb(0, 100, 0)",
+            "label": "Tree cover"
+          },
+          {
+            "color": "rgb(255, 187, 34)",
+            "label": "Shrubland"
+          },
+          {
+            "color": "rgb(255, 255, 76)",
+            "label": "Grassland"
+          },
+          {
+            "color": "rgb(240, 150, 255)",
+            "label": "Cropland"
+          },
+          {
+            "color": "rgb(255, 0, 0)",
+            "label": "Built up"
+          },
+          {
+            "color": "rgb(180, 180, 180)",
+            "label": "Bare"
+          },
+          {
+            "color": "rgb(240, 240, 240)",
+            "label": "Snow and ice"
+          },
+          {
+            "color": "rgb(0, 100, 200)",
+            "label": "Permanent water bodies"
+          },
+          {
+            "color": "rgb(0, 150, 160)",
+            "label": "Herbaceous wetland"
+          },
+          {
+            "color": "rgb(0, 207, 117)",
+            "label": "Mangroves"
+          },
+          {
+            "color": "rgb(250, 230, 160)",
+            "label": "Moss and lichen"
+          }
+        ]
+      },
       "layout": {
         "layerCard": {
-          "description": "Land cover map for 2021",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
           ],
           "legend": {
             "type": "swatch",
-            "visible": true,
-            "data": [
-              {
-                "color": "rgb(0, 100, 0)",
-                "label": "Tree cover"
-              },
-              {
-                "color": "rgb(255, 187, 34)",
-                "label": "Shrubland"
-              },
-              {
-                "color": "rgb(255, 255, 76)",
-                "label": "Grassland"
-              },
-              {
-                "color": "rgb(240, 150, 255)",
-                "label": "Cropland"
-              },
-              {
-                "color": "rgb(255, 0, 0)",
-                "label": "Built up"
-              },
-              {
-                "color": "rgb(180, 180, 180)",
-                "label": "Bare"
-              },
-              {
-                "color": "rgb(240, 240, 240)",
-                "label": "Snow and ice"
-              },
-              {
-                "color": "rgb(0, 100, 200)",
-                "label": "Permanent water bodies"
-              },
-              {
-                "color": "rgb(0, 150, 160)",
-                "label": "Herbaceous wetland"
-              },
-              {
-                "color": "rgb(0, 207, 117)",
-                "label": "Mangroves"
-              },
-              {
-                "color": "rgb(250, 230, 160)",
-                "label": "Moss and lichen"
-              }
-            ]
-          },
-          "attribution": {
-            "text": "WorldCover",
-            "url": "https://esa-worldcover.org/"
+            "visible": true
           }
         },
         "interfaceGroup": "WorldCover"
@@ -302,14 +307,16 @@
     {
       "name": "Sentinel-2 RGB Composite 2020",
       "isActive": false,
+      "meta": {
+        "description": "Natural color image made from images in blue, green and red. Median composite for 2020.",
+        "attribution": {
+          "text": "WorldCover",
+          "url": "https://esa-worldcover.org/"
+        }
+      },
       "layout": {
         "layerCard": {
-          "toggleable": true,
-          "description": "Natural color image made from images in blue, green and red. Median composite for 2020.",
-          "attribution": {
-            "text": "WorldCover",
-            "url": "https://esa-worldcover.org/"
-          }
+          "toggleable": true
         },
         "interfaceGroup": "WorldCover"
       },
@@ -323,14 +330,16 @@
     {
       "name": "Sentinel-2 RGB Composite 2021",
       "isActive": false,
+      "meta": {
+        "description": "Natural color image made from images in blue, green and red. Median composite for 2021.",
+        "attribution": {
+          "text": "WorldCover",
+          "url": "https://esa-worldcover.org/"
+        }
+      },
       "layout": {
         "layerCard": {
-          "toggleable": true,
-          "description": "Natural color image made from images in blue, green and red. Median composite for 2021.",
-          "attribution": {
-            "text": "WorldCover",
-            "url": "https://esa-worldcover.org/"
-          }
+          "toggleable": true
         },
         "interfaceGroup": "WorldCover"
       },
@@ -345,10 +354,7 @@
       "name": "Sentinel-2 RGB vs WorldCover (2020)",
       "isActive": false,
       "layout": {
-        "interfaceGroup": "WorldCover",
-        "layerCard": {
-          "toggleable": true
-        }
+        "interfaceGroup": "WorldCover"
       },
       "data": {
         "type": "swipe",
@@ -357,16 +363,14 @@
           "Sentinel-2 RGB Composite 2020",
           "Geo Service - Labels"
         ]
-      }
+      },
+      "meta": {}
     },
     {
       "name": "Sentinel-2 RGB vs WorldCover (2021)",
       "isActive": false,
       "layout": {
-        "interfaceGroup": "WorldCover",
-        "layerCard": {
-          "toggleable": true
-        }
+        "interfaceGroup": "WorldCover"
       },
       "data": {
         "type": "swipe",
@@ -375,18 +379,25 @@
           "Sentinel-2 RGB Composite 2021",
           "Geo Service - Labels"
         ]
-      }
+      },
+      "meta": {}
     },
     {
       "name": "WorldSoils",
       "isActive": false,
+      "meta": {
+        "attribution": {
+          "text": "WorldCover",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(10,10,40)",
+        "endColor": "rgb(173,216,230)",
+        "min": 22,
+        "max": 5344
+      },
       "layout": {
         "layerCard": {
-          "toggleable": true,
-          "attribution": {
-            "text": "WorldCover",
-            "url": "https://world-soils.com/"
-          }
+          "toggleable": true
         },
         "interfaceGroup": "WORLDSOILS"
       },
@@ -399,98 +410,82 @@
           {
             "url": "https://eoresults.esa.int/d/APEX_TEST/2020/03/01/europe_aggr-orgc_00-020_mean_100_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif"
           }
-        ],
-        "style": {
-          "color": [
-            "interpolate",
-            [
-              "linear"
-            ],
-            [
-              "band",
-              1
-            ],
-            0,
-            "rgba(0, 0, 0, 0)",
-            22,
-            "rgb(10,10,40)",
-            5344,
-            "rgb(173,216,230)"
-          ]
-        }
+        ]
       }
     },
     {
       "name": "Copernicus DEM",
       "isActive": false,
+      "meta": {
+        "description": "Global evelation model at 30m resolution.",
+        "attribution": {
+          "text": "TerraScope",
+          "url": "https://terrascope.be/"
+        },
+        "categories": [
+          {
+            "color": "rgba(33,10,240,89)",
+            "label": "-200"
+          },
+          {
+            "color": "rgba(19,30,255,89)",
+            "label": "0"
+          },
+          {
+            "color": "rgba(229,252,178,255)",
+            "label": "50"
+          },
+          {
+            "color": "rgba(203,230,132,255)",
+            "label": "150"
+          },
+          {
+            "color": "rgba(84,185,61,255)",
+            "label": "300"
+          },
+          {
+            "color": "rgba(12,140,54,255)",
+            "label": "700"
+          },
+          {
+            "color": "rgba(80,143,58,255)",
+            "label": "1000"
+          },
+          {
+            "color": "rgba(239,182,13,255)",
+            "label": "2000"
+          },
+          {
+            "color": "rgba(169,42,2,255)",
+            "label": "4000"
+          },
+          {
+            "color": "rgba(116,23,5,255)",
+            "label": "5000"
+          },
+          {
+            "color": "rgba(112,55,21,255)",
+            "label": "6000"
+          },
+          {
+            "color": "rgba(179,179,179,255)",
+            "label": "7000"
+          },
+          {
+            "color": "rgba(235,233,235,255)",
+            "label": "8000"
+          }
+        ]
+      },
       "layout": {
         "layerCard": {
-          "description": "Global evelation model at 30m resolution.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
           ],
           "legend": {
             "type": "swatch",
-            "visible": true,
-            "data": [
-              {
-                "color": "rgba(33,10,240,89)",
-                "label": "-200"
-              },
-              {
-                "color": "rgba(19,30,255,89)",
-                "label": "0"
-              },
-              {
-                "color": "rgba(229,252,178,255)",
-                "label": "50"
-              },
-              {
-                "color": "rgba(203,230,132,255)",
-                "label": "150"
-              },
-              {
-                "color": "rgba(84,185,61,255)",
-                "label": "300"
-              },
-              {
-                "color": "rgba(12,140,54,255)",
-                "label": "700"
-              },
-              {
-                "color": "rgba(80,143,58,255)",
-                "label": "1000"
-              },
-              {
-                "color": "rgba(239,182,13,255)",
-                "label": "2000"
-              },
-              {
-                "color": "rgba(169,42,2,255)",
-                "label": "4000"
-              },
-              {
-                "color": "rgba(116,23,5,255)",
-                "label": "5000"
-              },
-              {
-                "color": "rgba(112,55,21,255)",
-                "label": "6000"
-              },
-              {
-                "color": "rgba(179,179,179,255)",
-                "label": "7000"
-              },
-              {
-                "color": "rgba(235,233,235,255)",
-                "label": "8000"
-              }
-            ]
-          },
-          "attribution": {
-            "text": "TerraScope",
-            "url": "https://terrascope.be/"
+            "visible": true
           }
         },
         "interfaceGroup": "Digital Elevation Models"
@@ -505,9 +500,15 @@
     {
       "name": "Vegetation Land Cover 2019 (raster 100m), global, yearly - version 3",
       "isActive": false,
+      "meta": {
+        "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2019 base year. The data are updated annually and are available for the 2015-2019 years.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        }
+      },
       "layout": {
         "layerCard": {
-          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2019 base year. The data are updated annually and are available for the 2015-2019 years.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
@@ -515,11 +516,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
+            "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -533,23 +530,14 @@
     {
       "name": "Vegetation Land Cover 2018 (raster 100m), global, yearly - version 3",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2018 base year. The data are updated annually and are available for the 2015-2019 years.",
-          "toggleable": true,
-          "controls": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2018 base year. The data are updated annually and are available for the 2015-2019 years."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Land Cover"
       },
       "data": {
@@ -561,9 +549,15 @@
     {
       "name": "Vegetation Land Cover 2017 (raster 100m), global, yearly - version 3",
       "isActive": false,
+      "meta": {
+        "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2017 base year. The data are updated annually and are available for the 2015-2019 years.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        }
+      },
       "layout": {
         "layerCard": {
-          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2017 base year. The data are updated annually and are available for the 2015-2019 years.",
           "toggleable": true,
           "controls": [
             "zoomToCenter"
@@ -571,11 +565,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
+            "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -589,23 +579,14 @@
     {
       "name": "Vegetation Land Cover 2016 (raster 100m), global, yearly - version 3",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2016 base year. The data are updated annually and are available for the 2015-2019 years.",
-          "toggleable": true,
-          "controls": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2016 base year. The data are updated annually and are available for the 2015-2019 years."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Land Cover"
       },
       "data": {
@@ -617,23 +598,14 @@
     {
       "name": "VegetationLand Cover 2015 (raster 100m), global, yearly - version 3",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2015 base year. The data are updated annually and are available for the 2015-2019 years.",
-          "toggleable": true,
-          "controls": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2015 base year. The data are updated annually and are available for the 2015-2019 years."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Land Cover"
       },
       "data": {
@@ -645,23 +617,14 @@
     {
       "name": "Surface Soil Moisture 2014-present (raster 1km), Europe, daily - version 1",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Provides information on the relative water content of the top few centimeters soil, describing how wet or dry the soil is in its topmost layer, expressed in percent saturation. Daily observations are available for the continental Europe in the spatial resolution of 1 km and with the temporal extent from October 2014 to present.",
-          "toggleable": true,
-          "controls": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Provides information on the relative water content of the top few centimeters soil, describing how wet or dry the soil is in its topmost layer, expressed in percent saturation. Daily observations are available for the continental Europe in the spatial resolution of 1 km and with the temporal extent from October 2014 to present."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Soil Moisture"
       },
       "data": {
@@ -674,23 +637,14 @@
     {
       "name": "Soil Water Index 2015-present (raster 1 km), Europe, daily – version 1",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Quantifies the moisture condition at various depths in the soil. Daily observations are available for the continental Europe in the spatial resolution of 1 km and with the temporal extent from January 2015 to present.",
-          "toggleable": true,
-          "controls": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Quantifies the moisture condition at various depths in the soil. Daily observations are available for the continental Europe in the spatial resolution of 1 km and with the temporal extent from January 2015 to present."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Soil Moisture"
       },
       "data": {
@@ -703,23 +657,14 @@
     {
       "name": "Soil Water Index 2007-present (raster 12.5 km), global, daily – version 3",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Provides daily updates on the moisture conditions in different soil layers. The data are available over the globe at the spatial resolution of 0.1° and with the temporal extent from January 2007 to present.",
-          "toggleable": true,
-          "controls": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Provides daily updates on the moisture conditions in different soil layers. The data are available over the globe at the spatial resolution of 0.1° and with the temporal extent from January 2007 to present."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Soil Moisture"
       },
       "data": {
@@ -732,23 +677,14 @@
     {
       "name": "Soil Water Index 2007-present (raster 12.5 km), global, 10-daily – version 3",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Averages the daily Soil Water Index product over 10 days. The data are produced every 10 days over the globe at the spatial resolution of 0.1° and with the temporal extent from January 2007 to present.",
-          "toggleable": true,
-          "controls": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/soil-moisture/legends/legacy-legends/smlegend.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Averages the daily Soil Water Index product over 10 days. The data are produced every 10 days over the globe at the spatial resolution of 0.1° and with the temporal extent from January 2007 to present."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Soil Moisture"
       },
       "data": {
@@ -761,23 +697,14 @@
     {
       "name": "Fraction of Green Vegetation Cover 2014-present (raster 300 m), global, 10-daily – version 1",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Corresponds to the fraction of ground covered by green vegetation. It quantifies the spatial extent of the vegetation. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to June 2020 based upon PROBA-V data with version 1.0 and from July 2020 onwards based upon Sentinel-3/OLCI data with version 1.1.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/fcover_300m-1km-v1-v2.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Corresponds to the fraction of ground covered by green vegetation. It quantifies the spatial extent of the vegetation. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to June 2020 based upon PROBA-V data with version 1.0 and from July 2020 onwards based upon Sentinel-3/OLCI data with version 1.1."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -790,23 +717,14 @@
     {
       "name": "Fraction of Green Vegetation Cover 1999-2020 (raster 1 km), global, 10-daily – version 1",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Corresponds to the fraction of ground covered by green vegetation. It quantifies the spatial extent of the vegetation. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to May 2014 in version 1.4 from SPOT/VEGETATION data and from June 2014 to June 2020 in version 1.5 from PROBA-V data.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/fcover.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Corresponds to the fraction of ground covered by green vegetation. It quantifies the spatial extent of the vegetation. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to May 2014 in version 1.4 from SPOT/VEGETATION data and from June 2014 to June 2020 in version 1.5 from PROBA-V data."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -819,23 +737,14 @@
     {
       "name": "Fraction of Green Vegetation Cover 1999-2020 (raster 1 km), global, 10-daily – version 2",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Corresponds to the fraction of ground covered by green vegetation. It quantifies the spatial extent of the vegetation. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to June 2020 from SPOT/VEGETATION and PROBA-V data.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/fcover_300m-1km-v1-v2.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Corresponds to the fraction of ground covered by green vegetation. It quantifies the spatial extent of the vegetation. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to June 2020 from SPOT/VEGETATION and PROBA-V data."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -848,23 +757,14 @@
     {
       "name": "Fraction of Absorbed Photosynthetically Active Radiation 2016-present (raster 10 m), Europe, daily",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Provides at pan-European level and in near real time daily updates of the fraction of the solar radiation absorbed by live leaves for the photosynthesis activity. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/hrvpp-legends/legend_fapar.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Provides at pan-European level and in near real time daily updates of the fraction of the solar radiation absorbed by live leaves for the photosynthesis activity. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -877,23 +777,14 @@
     {
       "name": "Fraction of Absorbed Photosynthetically Active Radiation 2014-present (raster 300 m), global, 10-daily – version 1",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Quantifies the fraction of the solar radiation absorbed by live plants for photosynthesis. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to June 2020 based upon PROBA-V data with version 1.0 and from July 2020 onwards based upon Sentinel-3/OLCI data with version 1.1.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/clms_global_fapar_300m_v1_10daily.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Quantifies the fraction of the solar radiation absorbed by live plants for photosynthesis. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to June 2020 based upon PROBA-V data with version 1.0 and from July 2020 onwards based upon Sentinel-3/OLCI data with version 1.1."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -906,23 +797,14 @@
     {
       "name": "Fraction of Absorbed Photosynthetically Active Radiation 1999-2020 (raster 1 km), global, 10-daily – version 1",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Quantifies the fraction of the solar radiation absorbed by live plants for photosynthesis. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to May 2014 in version 1.4 from SPOT/VEGETATION data and from June 2014 to June 2020 in version 1.5 from PROBA-V data.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/clms_global_fapar_1km_v1_10daily.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Quantifies the fraction of the solar radiation absorbed by live plants for photosynthesis. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to May 2014 in version 1.4 from SPOT/VEGETATION data and from June 2014 to June 2020 in version 1.5 from PROBA-V data."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -935,23 +817,14 @@
     {
       "name": "Fraction of Absorbed Photosynthetically Active Radiation 1999-2020 (raster 1 km), global, 10-daily – version 2",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Quantifies the fraction of the solar radiation absorbed by live plants for photosynthesis. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to June 2020 from SPOT/VEGETATION and PROBA-V data.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/clms_global_fapar_1km_v2_10daily.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Quantifies the fraction of the solar radiation absorbed by live plants for photosynthesis. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to June 2020 from SPOT/VEGETATION and PROBA-V data."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -964,23 +837,14 @@
     {
       "name": "Leaf Area Index 2016-present (raster 10 m), Europe, daily",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Defined as half of the total area of green elements of the canopy per unit horizontal ground area daily updates of Leaf Area Index are provided at pan-European level and in near real time. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/hrvpp-legends/lailegend.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Defined as half of the total area of green elements of the canopy per unit horizontal ground area daily updates of Leaf Area Index are provided at pan-European level and in near real time. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -993,23 +857,14 @@
     {
       "name": "Leaf Area Index 2014-present (raster 300 m), global, 10-daily – version 1",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Defined as half the total area of green elements of the canopy per unit horizontal ground area. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to June 2020 based upon PROBA-V data with version 1.0 and from July 2020 onwards based upon Sentinel-3/OLCI data with version 1.1.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/leafareaindexlegend-300m-1km-v1-v2.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Defined as half the total area of green elements of the canopy per unit horizontal ground area. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to June 2020 based upon PROBA-V data with version 1.0 and from July 2020 onwards based upon Sentinel-3/OLCI data with version 1.1."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -1022,23 +877,14 @@
     {
       "name": "Leaf Area Index 1999-2020 (raster 1 km), global, 10-daily – version 1",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Defined as half the total area of green elements of the canopy per unit horizontal ground area. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to May 2014 in version 1.4 from SPOT/VEGETATION data and from June 2014 to June 2020 in version 1.5 from PROBA-V data.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/lailegend.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Defined as half the total area of green elements of the canopy per unit horizontal ground area. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to May 2014 in version 1.4 from SPOT/VEGETATION data and from June 2014 to June 2020 in version 1.5 from PROBA-V data."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -1051,23 +897,14 @@
     {
       "name": "Leaf Area Index 1999-2020 (raster 1 km), global, 10-daily – version 2",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Defined as half the total area of green elements of the canopy per unit horizontal ground area. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to June 2020 from SPOT/VEGETATION and PROBA-V data.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/leafareaindexlegend-300m-1km-v1-v2.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Defined as half the total area of green elements of the canopy per unit horizontal ground area. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km covering the period from 1999 to June 2020 from SPOT/VEGETATION and PROBA-V data."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -1080,22 +917,14 @@
     {
       "name": "Forest Type 2018 (raster 10 m and 100 m), Europe, 3-yearly",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Provides at pan-European level in the spatial resolution of 10 m and 100 m a forest classification for three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) with the agricultural/urban trees removed for the 2018 reference year.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "data": "https://land.copernicus.eu/en/products/high-resolution-layer-forest-type/map-legends/hrl_forest_type_2018_10m.jpg/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Provides at pan-European level in the spatial resolution of 10 m and 100 m a forest classification for three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) with the agricultural/urban trees removed for the 2018 reference year."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
       },
       "data": {
@@ -1108,22 +937,14 @@
     {
       "name": "Forest Type 2015 (raster 20 m and 100 m), Europe, 3-yearly",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Provides at pan-European level in the spatial resolution of 20 m and 100 m a forest classification with three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) for the 2015 reference year. In the 100 m spatial resolution the dataset has the agricultural/urban trees removed.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2015/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2015_20m795"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Provides at pan-European level in the spatial resolution of 20 m and 100 m a forest classification with three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) for the 2015 reference year. In the 100 m spatial resolution the dataset has the agricultural/urban trees removed."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
       },
       "data": {
@@ -1136,22 +957,14 @@
     {
       "name": "Forest Type 2012 (raster 20 m and 100 m), Europe, 3-yearly",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Provides at pan-European level in the spatial resolution of 20 m and 100 m a forest classification with three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) for the 2012 reference year. In the 100 m spatial resolution the dataset has the agricultural/urban trees removed.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Forest_Cover_Type_2012/MapServer/WmsServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2012_20m30052"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Provides at pan-European level in the spatial resolution of 20 m and 100 m a forest classification with three thematic classes (all non-forest areas / broadleaved forest / coniferous forest) for the 2012 reference year. In the 100 m spatial resolution the dataset has the agricultural/urban trees removed."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
       },
       "data": {
@@ -1164,23 +977,14 @@
     {
       "name": "Normalised Difference Vegetation Index 2016-present (raster 10 m), Europe, daily",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Describes the difference between visible and near infrared reflectance of vegetation cover. Daily updates of Normalised Difference Vegetation Index are provided at pan-European level and in near real time. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/hrvpp-legends/legend_ndvi.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Describes the difference between visible and near infrared reflectance of vegetation cover. Daily updates of Normalised Difference Vegetation Index are provided at pan-European level and in near real time. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -1193,23 +997,14 @@
     {
       "name": "Normalised Difference Vegetation Index 2014-2020 (raster 300 m), global, 10-daily – version 1",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available at global scale in the spatial resolution of about 300 m from 2014 to June 2020.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available at global scale in the spatial resolution of about 300 m from 2014 to June 2020."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -1222,23 +1017,14 @@
     {
       "name": "Normalised Difference Vegetation Index 2020-present (raster 300 m), global, 10-daily – version 2",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from July 2020 to the present.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from July 2020 to the present."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -1251,23 +1037,14 @@
     {
       "name": "Normalised Difference Vegetation Index 1998-2020 (raster 1 km), global, 10-daily – version 2",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km from April 1998 to 2013 based upon SPOT/VEGETATION data and from 2014 to 2020 based upon PROBA-V data.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km from April 1998 to 2013 based upon SPOT/VEGETATION data and from 2014 to 2020 based upon PROBA-V data."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -1280,23 +1057,14 @@
     {
       "name": "Normalised Difference Vegetation Index 1999-2020 (raster 1 km), global, 10-daily – version 3",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km from 1999 to 2013 based upon SPOT/VEGETATION data and from 2014 to June 2020 based upon PROBA-V data.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available at global scale in the spatial resolution of about 1 km from 1999 to 2013 based upon SPOT/VEGETATION data and from 2014 to June 2020 based upon PROBA-V data."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -1309,23 +1077,14 @@
     {
       "name": "Normalised Difference Vegetation Index (Long Term Statistics) 1999-2017 (raster 1 km), global, 10-daily – version 2",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Based upon SPOT/VEGETATION and PROBA-V NDVI 1km version 2, long-term statistics include the minimum, median, maximum, mean, standard deviation and the number of observations over the 19-years period 1999-2017.",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Based upon SPOT/VEGETATION and PROBA-V NDVI 1km version 2, long-term statistics include the minimum, median, maximum, mean, standard deviation and the number of observations over the 19-years period 1999-2017."
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
@@ -1338,23 +1097,14 @@
     {
       "name": "Normalised Difference Vegetation Index (Long Term Statistics) 1999-2019 (raster 1 km), global, 10-daily – version 3",
       "isActive": false,
-      "layout": {
-        "layerCard": {
-          "description": "Based upon SPOT/VEGETATION and PROBA-V NDVI 1km version 3, long-term statistics include the minimum, median, maximum, mean, standard deviation and the number of observations over the 21-years period 1999-2019.\n",
-          "toggleable": true,
-          "control": [
-            "zoomToCenter"
-          ],
-          "legend": {
-            "type": "image",
-            "visible": true,
-            "data": "https://land.copernicus.eu/en/products/vegetation/legends/legacy-legends/ndvi.png/@@images/image"
-          },
-          "attribution": {
-            "text": "Copernicus Land Monitoring Service",
-            "url": "https://land.copernicus.eu/en"
-          }
+      "meta": {
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
         },
+        "description": "Based upon SPOT/VEGETATION and PROBA-V NDVI 1km version 3, long-term statistics include the minimum, median, maximum, mean, standard deviation and the number of observations over the 21-years period 1999-2019.\n"
+      },
+      "layout": {
         "interfaceGroup": "Copernicus Land - Vegetation"
       },
       "data": {
