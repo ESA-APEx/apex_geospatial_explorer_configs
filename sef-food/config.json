@@ -411,37 +411,206 @@
       "meta": {}
     },
     {
-      "name": "WorldSoils",
+      "name": "European Topsoil SOC Content 2020-2022",
       "isActive": false,
       "meta": {
+        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
         "attribution": {
           "text": "WorldCover",
           "url": "https://world-soils.com/"
         },
-        "startColor": "rgb(10,10,40)",
-        "endColor": "rgb(173,216,230)",
-        "min": 22,
-        "max": 5344
+        "startColor": "rgb(255,255,255)",
+        "endColor": "rgb(114,64,50)",
+        "min": 0,
+        "max": 4471
       },
       "layout": {
         "layerCard": {
           "toggleable": true,
           "controls": [
             "zoomToCenter"
-          ]
+          ],
+          "legend": {
+            "type": "gradient"
+          }
         },
+
         "interfaceGroup": "WORLDSOILS"
       },
       "data": {
-        "zIndex": 3,
-        "projection": "EPSG:3035",
-        "type": "cog",
-        "normalize": false,
-        "images": [
-          {
-            "url": "https://eoresults.esa.int/d/APEX_TEST/2020/03/01/europe_aggr-orgc_00-020_mean_100_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif"
+        "url": "https://gui.world-soils.com/mapserver/Europe",
+        "layers": "soc_0-5cm_mean_europe_2020-2022",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "European Topsoil SOC Content 2020-2022 - Uncertainty",
+      "isActive": false,
+      "meta": {
+        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
+        "attribution": {
+          "text": "WorldCover",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(255,255,255)",
+        "endColor": "rgb(153,136,130)",
+        "min": 0,
+        "max": 125
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
           }
-        ]
+        },
+
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "url": "https://gui.world-soils.com/mapserver/Europe",
+        "layers": "soc_0-5cm_uncertainty_europe_2020-2022",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "European Topsoil SOC Content 2019-2021",
+      "isActive": false,
+      "meta": {
+        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
+        "attribution": {
+          "text": "WorldCover",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(255,255,255)",
+        "endColor": "rgb(114,64,50)",
+        "min": 0,
+        "max": 4471
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "url": "https://gui.world-soils.com/mapserver/Europe",
+        "layers": "soc_0-5cm_mean_europe_2019-2021",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "European Topsoil SOC Content 2019-2021 - Uncertainty",
+      "isActive": false,
+      "meta": {
+        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
+        "attribution": {
+          "text": "WorldCover",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(255,255,255)",
+        "endColor": "rgb(153,136,130)",
+        "min": 0,
+        "max": 125
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "url": "https://gui.world-soils.com/mapserver/Europe",
+        "layers": "soc_0-5cm_uncertainty_europe_2019-2021",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "European Topsoil SOC Content 2018-2020",
+      "isActive": false,
+      "meta": {
+        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
+        "attribution": {
+          "text": "WorldCover",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(255,255,255)",
+        "endColor": "rgb(114,64,50)",
+        "min": 0,
+        "max": 4471
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "url": "https://gui.world-soils.com/mapserver/Europe",
+        "layers": "soc_0-5cm_mean_europe_2018-2020",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },{
+      "name": "European Topsoil SOC Content 2018-2020 - Uncertainty",
+      "isActive": false,
+      "meta": {
+        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
+        "attribution": {
+          "text": "WorldCover",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(255,255,255)",
+        "endColor": "rgb(153,136,130)",
+        "min": 0,
+        "max": 125
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "url": "https://gui.world-soils.com/mapserver/Europe",
+        "layers": "soc_0-5cm_uncertainty_europe_2018-2020",
+        "zIndex": 2,
+        "type": "wms"
       }
     },
     {
