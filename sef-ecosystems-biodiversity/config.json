@@ -66,7 +66,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
+            "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -96,7 +96,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
+            "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -126,7 +126,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
+            "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -156,7 +156,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
+            "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -186,7 +186,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
+            "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/single_class_forest.png/@@images/image-220-1d593b046e598a8ba51609a1bd8afa5c.png"
           }
         },
         "interfaceGroup": "Copernicus Land - Land Cover"
@@ -216,7 +216,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://land.copernicus.eu/en/products/clc-backbone/map-legends/clc-backbone-2018_raster-10-m.png/@@images/image"
+            "url": "https://land.copernicus.eu/en/products/clc-backbone/map-legends/clc-backbone-2018_raster-10-m.png/@@images/image"
           }
         },
         "interfaceGroup": "Copernicus Land - CLCplus Backbone"
@@ -247,7 +247,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://land.copernicus.eu/en/products/clc-backbone/map-legends/clc-backbone-2018_raster-10-m.png/@@images/image"
+            "url": "https://land.copernicus.eu/en/products/clc-backbone/map-legends/clc-backbone-2018_raster-10-m.png/@@images/image"
           }
         },
         "interfaceGroup": "Copernicus Land - CLCplus Backbone"
@@ -278,7 +278,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLCplus2018_WM/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+            "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLCplus2018_WM/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
           }
         },
         "interfaceGroup": "Copernicus Land - CLCplus Backbone"
@@ -309,7 +309,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+            "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
           }
         },
         "interfaceGroup": "Copernicus Land - Priority Areas - N2K"
@@ -340,7 +340,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=0"
+            "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=0"
           }
         },
         "interfaceGroup": "Copernicus Land - Priority Areas - N2K"
@@ -371,7 +371,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+            "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
           }
         },
         "interfaceGroup": "Copernicus Land - Priority Areas - N2K"
@@ -402,7 +402,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_Change_2012_2018/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+            "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_Change_2012_2018/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
           }
         },
         "interfaceGroup": "Copernicus Land - Priority Areas - N2K"
@@ -433,7 +433,7 @@
           "legend": {
             "type": "image",
             "visible": true,
-            "data": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_Change_2006_2012/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+            "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_Change_2006_2012/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
           }
         },
         "interfaceGroup": "Copernicus Land - Priority Areas - N2K"
@@ -463,7 +463,7 @@
           ],
           "legend": {
             "type": "image",
-            "data": "https://land.copernicus.eu/en/products/high-resolution-layer-forest-type/map-legends/hrl_forest_type_2018_10m.jpg/@@images/image"
+            "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forest-type/map-legends/hrl_forest_type_2018_10m.jpg/@@images/image"
           }
         },
         "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
@@ -493,7 +493,7 @@
           ],
           "legend": {
             "type": "image",
-            "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2015/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2015_20m795"
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2015/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2015_20m795"
           }
         },
         "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
@@ -523,7 +523,7 @@
           ],
           "legend": {
             "type": "image",
-            "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Forest_Cover_Type_2012/MapServer/WmsServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2012_20m30052"
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Forest_Cover_Type_2012/MapServer/WmsServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2012_20m30052"
           }
         },
         "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
@@ -553,7 +553,7 @@
           ],
           "legend": {
             "type": "image",
-            "data": "https://land.copernicus.eu/en/products/high-resolution-layer-grassland/map-legends/hrl_grassland_2018_10m.jpg/@@images/image"
+            "url": "https://land.copernicus.eu/en/products/high-resolution-layer-grassland/map-legends/hrl_grassland_2018_10m.jpg/@@images/image"
           }
         },
         "interfaceGroup": "Copernicus Land - High Resolution Layer Grassland"
@@ -583,7 +583,7 @@
           ],
           "legend": {
             "type": "image",
-            "data": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Grassland_2015/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Grassland_2015/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
           }
         },
         "interfaceGroup": "Copernicus Land - High Resolution Layer Grassland"
@@ -613,7 +613,7 @@
           ],
           "legend": {
             "type": "image",
-            "data": "https://land.copernicus.eu/en/products/high-resolution-layer-grassland/map-legends/hrl_grassland_cha_1518_20m.jpg/@@images/image"
+            "url": "https://land.copernicus.eu/en/products/high-resolution-layer-grassland/map-legends/hrl_grassland_cha_1518_20m.jpg/@@images/image"
           }
         },
         "interfaceGroup": "Copernicus Land - High Resolution Layer Grassland"
