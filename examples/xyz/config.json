@@ -1,0 +1,46 @@
+{
+  "layout": {
+    "navigation": {
+      "title": "Example - XYZ Layer Configuration"
+    }
+  },
+  "interfaceGroups": [
+    "XYZ Layer"
+  ],
+  "exclusivitySets": [
+    "labels"
+  ],
+  "sources": [
+    {
+      "name": "Open Street Map",
+      "isActive": true,
+      "layout": {
+        "interfaceGroup": "Basemaps"
+      },
+      "data": {
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "type": "xyz",
+        "zIndex": 0,
+        "isBaseLayer": true
+      }
+    },
+    {
+      "name": "XYZ Example",
+      "isActive": false,
+      "meta": {
+        "description": "Example configuration of a XYZ layer"
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true
+        },
+        "interfaceGroup": "XYZ Layer"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2019/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    }
+  ]
+}
