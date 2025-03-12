@@ -13,7 +13,7 @@
     "Copernicus Land - Land Cover",
     "Copernicus Land - Soil Moisture",
     "Copernicus Land - Vegetation",
-    "Copernicus Land - High Resolution Layer Forest Type",
+    "Copernicus Land - HRL Forest Type",
     "Basemaps"
   ],
   "exclusivitySets": [
@@ -1329,7 +1329,7 @@
             "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forest-type/map-legends/hrl_forest_type_2018_10m.jpg/@@images/image"
           }
         },
-        "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
+        "interfaceGroup": "Copernicus Land - HRL Forest Type"
       },
       "data": {
         "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2018/ImageServer/WMSServer",
@@ -1360,7 +1360,7 @@
             "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2015/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2015_20m795"
           }
         },
-        "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
+        "interfaceGroup": "Copernicus Land - HRL Forest Type"
       },
       "data": {
         "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ForestType_2015/MapServer/WMSServer",
@@ -1391,7 +1391,7 @@
             "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Forest_Cover_Type_2012/MapServer/WmsServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=HRL_Forest_Type_2012_20m30052"
           }
         },
-        "interfaceGroup": "Copernicus Land - High Resolution Layer Forest Type"
+        "interfaceGroup": "Copernicus Land - HRL Forest Type"
       },
       "data": {
         "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_Forest_Cover_Type_2012/MapServer/WmsServer",
