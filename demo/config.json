@@ -11,6 +11,7 @@
     "WorldCereal",
     "Digital Elevation Models",
     "Copernicus Land - Land Cover",
+    "openEO Results",
     "Basemaps"
   ],
   "exclusivitySets": [
@@ -842,6 +843,39 @@
         "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2015/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
         "zIndex": 2,
         "type": "xyz"
+      }
+    },
+    {
+      "name": "Gran Canaria",
+      "isActive": false,
+      "meta": {
+        "startColor": "rgb(253,253,31)",
+        "endColor": "rgb(4,102,1)",
+        "min": 0,
+        "max": 1
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "openEO Results"
+      },
+      "data": {
+        "zIndex": 3,
+        "type": "cog",
+        "normalize": false,
+        "projection": "EPSG:3857",
+        "images": [
+          {
+            "url": "https://openeo.dataspace.copernicus.eu/openeo/1.2/jobs/j-250313110405469ea3095a5b2b06ce85/results/assets/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/0d37230fbb5a9719532ba747b15834a2/openEO_2019-08-19Z.tif?expires=1742470849"
+          }
+        ]
       }
     }
   ]
