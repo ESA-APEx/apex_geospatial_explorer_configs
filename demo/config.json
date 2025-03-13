@@ -873,7 +873,7 @@
         "projection": "EPSG:3857",
         "images": [
           {
-            "url": "https://openeo.dataspace.copernicus.eu/openeo/1.2/jobs/j-250313110405469ea3095a5b2b06ce85/results/assets/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/0d37230fbb5a9719532ba747b15834a2/openEO_2019-08-19Z.tif?expires=1742470849"
+            "url": "https://openeo.dataspace.copernicus.eu/openeo/1.2/jobs/j-250313110405469ea3095a5b2b06ce85/results/assets/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/c3b120ff13b6c9bae13fe9ea75c105b1/openEO_2019-08-19Z.tif?expires=1742471533"
           }
         ]
       }
