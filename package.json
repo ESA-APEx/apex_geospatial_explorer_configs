@@ -1,0 +1,22 @@
+{
+  "name": "apex_geospatial_explorer_configs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ESA-APEx/apex_geospatial_explorer_configs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ESA-APEx/apex_geospatial_explorer_configs/issues"
+  },
+  "homepage": "https://github.com/ESA-APEx/apex_geospatial_explorer_configs#readme",
+  "description": "",
+  "dependencies": {
+    "xml-js": "^1.6.11"
+  }
+}
