@@ -1,0 +1,407 @@
+{
+    "layout": {
+      "navigation": {
+        "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+        "title": "APEx Demo - Geospatial Explorer"
+      }
+    },
+    "interfaceGroups": [
+      "WorldCover",
+      "WorldCereal"
+    ],
+    "exclusivitySets": [
+      "labels"
+    ],
+    "sources": [
+      {
+        "name": "Open Street Map",
+        "isActive": true,
+        "layout": {
+          "interfaceGroup": "Basemaps"
+        },
+        "data": {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "type": "xyz",
+          "zIndex": 0,
+          "isBaseLayer": true
+        }
+      },
+      {
+        "name": "Geo Service - Labels",
+        "isActive": false,
+        "meta": {
+          "attribution": {
+            "text": "EOC Basemap Map Service",
+            "url": "https://geoservice.dlr.de/web/"
+          }
+        },
+        "layout": {
+          "layerCard": {
+            "toggleable": true,
+            "controls": [
+              "zoomToCenter"
+            ]
+          },
+          "interfaceGroup": "Basemaps"
+        },
+        "data": {
+          "zIndex": 100,
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "layers": "baseoverlay",
+          "type": "wms",
+          "exclusivitySets": [
+            "labels"
+          ]
+        }
+      },
+      {
+        "name": "Maize 2021",
+        "isActive": false,
+        "meta": {
+          "description": "WorldCereal maize, globally, at 10m resolution in specific seasons throughout the year.",
+          "attribution": {
+            "text": "WorldCereal",
+            "url": "https://esa-worldcereal.org/"
+          }
+        },
+        "layout": {
+          "layerCard": {
+            "toggleable": true,
+            "controls": [
+              "zoomToCenter"
+            ]
+          },
+          "interfaceGroup": "WorldCereal"
+        },
+        "data": {
+          "url": "https://services.terrascope.be/wms/v2",
+          "layers": "WORLDCEREAL_MAIZE_V1",
+          "zIndex": 2,
+          "type": "wms"
+        }
+      },
+      {
+        "name": "Spring Cereals 2021",
+        "isActive": false,
+        "meta": {
+          "description": "WorldCereal spring cereals, globally, at 10m resolution in specific seasons throughout the year.",
+          "attribution": {
+            "text": "WorldCereal",
+            "url": "https://esa-worldcereal.org/"
+          }
+        },
+        "layout": {
+          "layerCard": {
+            "toggleable": true,
+            "controls": [
+              "zoomToCenter"
+            ]
+          },
+          "interfaceGroup": "WorldCereal"
+        },
+        "data": {
+          "url": "https://services.terrascope.be/wms/v2",
+          "layers": "WORLDCEREAL_SPRINGCEREALS_V1",
+          "zIndex": 2,
+          "type": "wms"
+        }
+      },
+      {
+        "name": "Temporary Crops 2021",
+        "isActive": false,
+        "meta": {
+          "description": "Pixel-based, binary classification product at 10m spatial resolution distinguishing annual cropland from all other types of land cover. Annual cropland is defined according to the JECAM 2018 definition, in short: A piece of land that is sowed/planted and harvestable at least once within the 12 months after the sowing/planting date. The annual cropland produces an herbaceous cover which should reach a coverage of 30% and can be combined with some tree or woody vegetation not exceeding a coverage of 20%. Exception 1: Sugarcane and cassava, although perennial crops, are explicitly included. Exception 2: Frequently harvested, annual and/or perennial fodder crops such as grasslands and alfalfa are explicitly excluded. Exception 3: Greenhouse crops are excluded. This product is generated within one month after the end of the main growing season and looks back one year in time.",
+          "attribution": {
+            "text": "WorldCereal",
+            "url": "https://esa-worldcereal.org/"
+          }
+        },
+        "layout": {
+          "layerCard": {
+            "toggleable": true,
+            "controls": [
+              "zoomToCenter"
+            ]
+          },
+          "interfaceGroup": "WorldCereal"
+        },
+        "data": {
+          "url": "https://services.terrascope.be/wms/v2",
+          "layers": "WORLDCEREAL_TEMPORARYCROPS_V1",
+          "zIndex": 2,
+          "type": "wms"
+        }
+      },
+      {
+        "name": "Winter Cereals 2021",
+        "isActive": false,
+        "meta": {
+          "description": "WorldCereal winter cereals, globally, at 10m resolution in specific seasons throughout the year.",
+          "attribution": {
+            "text": "WorldCereal",
+            "url": "https://esa-worldcereal.org/"
+          }
+        },
+        "layout": {
+          "layerCard": {
+            "toggleable": true,
+            "controls": [
+              "zoomToCenter"
+            ]
+          },
+          "interfaceGroup": "WorldCereal"
+        },
+        "data": {
+          "url": "https://services.terrascope.be/wms/v2",
+          "layers": "WORLDCEREAL_WINTERCEREALS_V1",
+          "zIndex": 2,
+          "type": "wms"
+        }
+      },
+      {
+        "name": "WorldCover 2020",
+        "isActive": false,
+        "layout": {
+          "layerCard": {
+            "toggleable": true,
+            "controls": [
+              "zoomToCenter"
+            ],
+            "legend": {
+              "type": "swatch",
+              "visible": true
+            }
+          },
+          "interfaceGroup": "WorldCover"
+        },
+        "data": {
+          "url": "https://services.terrascope.be/wms/v2",
+          "layers": "WORLDCOVER_2020_MAP",
+          "zIndex": 2,
+          "type": "wms"
+        },
+        "meta": {
+          "attribution": {
+            "text": "WorldCover",
+            "url": "https://esa-worldcover.org/"
+          },
+          "description": "Land cover map for 2020",
+          "categories": [
+            {
+              "color": "rgb(0, 100, 0)",
+              "label": "Tree cover"
+            },
+            {
+              "color": "rgb(255, 187, 34)",
+              "label": "Shrubland"
+            },
+            {
+              "color": "rgb(255, 255, 76)",
+              "label": "Grassland"
+            },
+            {
+              "color": "rgb(240, 150, 255)",
+              "label": "Cropland"
+            },
+            {
+              "color": "rgb(255, 0, 0)",
+              "label": "Built up"
+            },
+            {
+              "color": "rgb(180, 180, 180)",
+              "label": "Bare"
+            },
+            {
+              "color": "rgb(240, 240, 240)",
+              "label": "Snow and ice"
+            },
+            {
+              "color": "rgb(0, 100, 200)",
+              "label": "Permanent water bodies"
+            },
+            {
+              "color": "rgb(0, 150, 160)",
+              "label": "Herbaceous wetland"
+            },
+            {
+              "color": "rgb(0, 207, 117)",
+              "label": "Mangroves"
+            },
+            {
+              "color": "rgb(250, 230, 160)",
+              "label": "Moss and lichen"
+            }
+          ]
+        }
+      },
+      {
+        "name": "WorldCover 2021",
+        "isActive": false,
+        "meta": {
+          "description": "Land cover map for 2021",
+          "attribution": {
+            "text": "WorldCover",
+            "url": "https://esa-worldcover.org/"
+          },
+          "categories": [
+            {
+              "color": "rgb(0, 100, 0)",
+              "label": "Tree cover"
+            },
+            {
+              "color": "rgb(255, 187, 34)",
+              "label": "Shrubland"
+            },
+            {
+              "color": "rgb(255, 255, 76)",
+              "label": "Grassland"
+            },
+            {
+              "color": "rgb(240, 150, 255)",
+              "label": "Cropland"
+            },
+            {
+              "color": "rgb(255, 0, 0)",
+              "label": "Built up"
+            },
+            {
+              "color": "rgb(180, 180, 180)",
+              "label": "Bare"
+            },
+            {
+              "color": "rgb(240, 240, 240)",
+              "label": "Snow and ice"
+            },
+            {
+              "color": "rgb(0, 100, 200)",
+              "label": "Permanent water bodies"
+            },
+            {
+              "color": "rgb(0, 150, 160)",
+              "label": "Herbaceous wetland"
+            },
+            {
+              "color": "rgb(0, 207, 117)",
+              "label": "Mangroves"
+            },
+            {
+              "color": "rgb(250, 230, 160)",
+              "label": "Moss and lichen"
+            }
+          ]
+        },
+        "layout": {
+          "layerCard": {
+            "toggleable": true,
+            "controls": [
+              "zoomToCenter"
+            ],
+            "legend": {
+              "type": "swatch",
+              "visible": true
+            }
+          },
+          "interfaceGroup": "WorldCover"
+        },
+        "data": {
+          "url": "https://services.terrascope.be/wms/v2",
+          "layers": "WORLDCOVER_2021_MAP",
+          "zIndex": 2,
+          "type": "wms"
+        }
+      },
+      {
+        "name": "Sentinel-2 RGB Composite 2020",
+        "isActive": false,
+        "meta": {
+          "description": "Natural color image made from images in blue, green and red. Median composite for 2020.",
+          "attribution": {
+            "text": "WorldCover",
+            "url": "https://esa-worldcover.org/"
+          }
+        },
+        "layout": {
+          "layerCard": {
+            "toggleable": true
+          },
+          "interfaceGroup": "WorldCover"
+        },
+        "data": {
+          "zIndex": 1,
+          "url": "https://services.terrascope.be/wmts/v2",
+          "layers": "WORLDCOVER_2020_S2_TCC",
+          "type": "wmts"
+        }
+      },
+      {
+        "name": "Sentinel-2 RGB Composite 2021",
+        "isActive": false,
+        "meta": {
+          "description": "Natural color image made from images in blue, green and red. Median composite for 2021.",
+          "attribution": {
+            "text": "WorldCover",
+            "url": "https://esa-worldcover.org/"
+          }
+        },
+        "layout": {
+          "layerCard": {
+            "toggleable": true,
+            "controls": [
+              "zoomToCenter"
+            ]
+          },
+          "interfaceGroup": "WorldCover"
+        },
+        "data": {
+          "zIndex": 1,
+          "url": "https://services.terrascope.be/wmts/v2",
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "type": "wmts"
+        }
+      },
+      {
+        "name": "Sentinel-2 RGB vs WorldCover (2020)",
+        "isActive": false,
+        "layout": {
+          "layerCard": {
+            "toggleable": true,
+            "controls": [
+              "zoomToCenter"
+            ]
+          },
+          "interfaceGroup": "WorldCover"
+        },
+        "data": {
+          "type": "swipe",
+          "clippedSource": "WorldCover 2020",
+          "baseSources": [
+            "Sentinel-2 RGB Composite 2020",
+            "Geo Service - Labels"
+          ]
+        },
+        "meta": {}
+      },
+      {
+        "name": "Sentinel-2 RGB vs WorldCover (2021)",
+        "isActive": false,
+        "layout": {
+          "layerCard": {
+            "toggleable": true,
+            "controls": [
+              "zoomToCenter"
+            ]
+          },
+          "interfaceGroup": "WorldCover"
+        },
+        "data": {
+          "type": "swipe",
+          "clippedSource": "WorldCover 2021",
+          "baseSources": [
+            "Sentinel-2 RGB Composite 2021",
+            "Geo Service - Labels"
+          ]
+        },
+        "meta": {}
+      } 
+    ]
+  }
