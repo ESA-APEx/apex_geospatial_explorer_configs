@@ -1,0 +1,47 @@
+{
+  "layout": {
+    "navigation": {
+      "title": "Example - WMS Layer Configuration"
+    }
+  },
+  "interfaceGroups": [
+    "WMS Layer"
+  ],
+  "exclusivitySets": [
+    "labels"
+  ],
+  "sources": [
+    {
+      "name": "Open Street Map",
+      "isActive": true,
+      "layout": {
+        "interfaceGroup": "Basemaps"
+      },
+      "data": {
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "type": "xyz",
+        "zIndex": 0,
+        "isBaseLayer": true
+      }
+    },
+    {
+      "name": "WMS Example",
+      "isActive": false,
+      "meta": {
+        "description": "Example configuration of a WMS layer"
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true
+        },
+        "interfaceGroup": "WMS Layer"
+      },
+      "data": {
+        "url": "https://services.terrascope.be/wms/v2",
+        "layers": "WORLDCOVER_2020_MAP",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    }
+  ]
+}
