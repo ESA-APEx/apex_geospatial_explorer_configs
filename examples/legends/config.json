@@ -1,0 +1,146 @@
+{
+  "layout": {
+    "navigation": {
+      "title": "Example - Legend Configuration"
+    }
+  },
+  "interfaceGroups": [
+    "Legend Example"
+  ],
+  "exclusivitySets": [
+    "labels"
+  ],
+  "sources": [
+    {
+      "name": "Open Street Map",
+      "isActive": true,
+      "layout": {
+        "interfaceGroup": "Basemaps"
+      },
+      "data": {
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "type": "xyz",
+        "zIndex": 0,
+        "isBaseLayer": true
+      }
+    },
+    {
+      "name": "Categories Example",
+      "isActive": false,
+      "meta": {
+        "description": "Example configuration of a layer with categorical legend",
+        "categories": [
+          {
+            "color": "rgb(0, 100, 0)",
+            "label": "Tree cover"
+          },
+          {
+            "color": "rgb(255, 187, 34)",
+            "label": "Shrubland"
+          },
+          {
+            "color": "rgb(255, 255, 76)",
+            "label": "Grassland"
+          },
+          {
+            "color": "rgb(240, 150, 255)",
+            "label": "Cropland"
+          },
+          {
+            "color": "rgb(255, 0, 0)",
+            "label": "Built up"
+          },
+          {
+            "color": "rgb(180, 180, 180)",
+            "label": "Bare"
+          },
+          {
+            "color": "rgb(240, 240, 240)",
+            "label": "Snow and ice"
+          },
+          {
+            "color": "rgb(0, 100, 200)",
+            "label": "Permanent water bodies"
+          },
+          {
+            "color": "rgb(0, 150, 160)",
+            "label": "Herbaceous wetland"
+          },
+          {
+            "color": "rgb(0, 207, 117)",
+            "label": "Mangroves"
+          },
+          {
+            "color": "rgb(250, 230, 160)",
+            "label": "Moss and lichen"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch",
+            "visible": true
+          }
+        },
+        "interfaceGroup": "Legend Example"
+      },
+      "data": {
+        "url": "https://services.terrascope.be/wms/v2",
+        "layers": "WORLDCOVER_2020_MAP",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Gradient Example",
+      "isActive": false,
+      "meta": {
+        "description": "Example configuration of a layer with a gradient legend",
+        "startColor": "rgb(255,255,255)",
+        "endColor": "rgb(114,64,50)",
+        "min": 0,
+        "max": 4471
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "Legend Example"
+      },
+      "data": {
+        "url": "https://gui.world-soils.com/mapserver/Europe",
+        "layers": "soc_0-5cm_mean_europe_2020-2022",
+        "zIndex": 2,
+        "type": "wms"
+      }
+    },
+    {
+      "name": "Image Example",
+      "isActive": false,
+      "meta": {
+        "description": "Example configuration of a layer with an image legend"
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "image",
+            "visible": true,
+            "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
+          }
+        },
+        "interfaceGroup": "Legend Example"
+      },
+      "data": {
+        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2019/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
+        "zIndex": 2,
+        "type": "xyz"
+      }
+    }
+  ]
+}
