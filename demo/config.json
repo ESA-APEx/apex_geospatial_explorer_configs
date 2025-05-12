@@ -432,7 +432,6 @@
             "type": "gradient"
           }
         },
-
         "interfaceGroup": "WorldSoils"
       },
       "data": {
@@ -466,7 +465,6 @@
             "type": "gradient"
           }
         },
-
         "interfaceGroup": "WorldSoils"
       },
       "data": {
@@ -500,7 +498,6 @@
             "type": "gradient"
           }
         },
-
         "interfaceGroup": "WorldSoils"
       },
       "data": {
@@ -534,7 +531,6 @@
             "type": "gradient"
           }
         },
-
         "interfaceGroup": "WorldSoils"
       },
       "data": {
@@ -568,7 +564,6 @@
             "type": "gradient"
           }
         },
-
         "interfaceGroup": "WorldSoils"
       },
       "data": {
@@ -577,7 +572,8 @@
         "zIndex": 2,
         "type": "wms"
       }
-    },{
+    },
+    {
       "name": "European Topsoil SOC Content 2018-2020 - Uncertainty",
       "isActive": false,
       "meta": {
@@ -601,7 +597,6 @@
             "type": "gradient"
           }
         },
-
         "interfaceGroup": "WorldSoils"
       },
       "data": {
@@ -873,7 +868,7 @@
         "projection": "EPSG:3857",
         "images": [
           {
-            "url": "https://openeo.dataspace.copernicus.eu/openeo/1.2/jobs/j-2503260941234a188ad81c7e1a37651b/results/assets/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/d42301cb4381660419ec414119a31bae/openEO_2019-08-19Z.tif?expires=1743587312"
+            "url": "https://openeo.dataspace.copernicus.eu/openeo/1.1/jobs/j-250512072055449bb5102022048df153/results/assets/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/ac54e0c7ac563d0f31ec3a1d1a17990b/openEO_2019-08-19Z.tif?expires=1747640221"
           }
         ]
       }
