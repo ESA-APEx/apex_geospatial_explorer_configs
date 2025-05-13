@@ -11,7 +11,8 @@
     "WORLDSOILS",
     "People EA - Wood Provision Service Accounts",
     "People EA - Coastal Condition Accounts",
-    "People EA - Habitat Maps"
+    "People EA - Habitat Maps - Slovakia",
+    "People EA - Habitat Maps - Greece"
   ],
   "exclusivitySets": [
     "labels"
@@ -408,7 +409,7 @@
       "meta": {}
     },
     {
-      "name": "Greece - 2021",
+      "name": "Wood Provision Service Account - Greece - 2021",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -438,7 +439,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Quantification of the supply of wood products from forests, woodlands, or other ecosystems over time for Greece in 2021.",
         "startColor": "rgb(4,102,1)",
         "endColor": "rgb(253,253,31)",
         "min": 0.004,
@@ -446,7 +447,7 @@
       }
     },
     {
-      "name": "Norway - 2021",
+      "name": "Wood Provision Service Account - Norway - 2021",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -476,6 +477,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
+        "description": "Quantification of the supply of wood products from forests, woodlands, or other ecosystems over time for Norway in 2021.",
         "startColor": "rgb(4,102,1)",
         "endColor": "rgb(253,253,31)",
         "min": 0,
@@ -483,7 +485,7 @@
       }
     },
     {
-      "name": "Italy - 2021",
+      "name": "Wood Provision Service Account - Italy - 2021",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -513,7 +515,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Quantification of the supply of wood products from forests, woodlands, or other ecosystems over time for Italy in 2021.",
         "startColor": "rgb(4,102,1)",
         "endColor": "rgb(253,253,31)",
         "min": 0.01,
@@ -521,7 +523,7 @@
       }
     },
     {
-      "name": "Slovakia - 2021",
+      "name": "Wood Provision Service Account - Slovakia - 2021",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -551,7 +553,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Quantification of the supply of wood products from forests, woodlands, or other ecosystems over time for Slovakia in 2021.",
         "startColor": "rgb(4,102,1)",
         "endColor": "rgb(253,253,31)",
         "min": 0.01,
@@ -559,7 +561,7 @@
       }
     },
     {
-      "name": "Greece - 2018",
+      "name": "Coastal Condition Account - Greece - 2018",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -589,7 +591,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands for Greece in 2018.",
         "startColor": "rgb(4,102,1)",
         "endColor": "rgb(253,253,31)",
         "min": -19,
@@ -597,7 +599,7 @@
       }
     },
     {
-      "name": "Greece - 2022",
+      "name": "Coastal Condition Account - Greece - 2022",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -627,7 +629,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands for Greece in 2022.",
         "startColor": "rgb(4,102,1)",
         "endColor": "rgb(253,253,31)",
         "min": -19,
@@ -635,7 +637,7 @@
       }
     },
     {
-      "name": "Italy - 2018",
+      "name": "Coastal Condition Account - Italy - 2018",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -665,7 +667,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands for Italy in 2018.",
         "startColor": "rgb(4,102,1)",
         "endColor": "rgb(253,253,31)",
         "min": -10,
@@ -673,7 +675,7 @@
       }
     },
     {
-      "name": "Italy - 2022",
+      "name": "Coastal Condition Account - Italy - 2022",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -703,7 +705,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands for Italy in 2022.",
         "startColor": "rgb(4,102,1)",
         "endColor": "rgb(253,253,31)",
         "min": -10,
@@ -711,7 +713,7 @@
       }
     },
     {
-      "name": "Netherlands - 2018",
+      "name": "Coastal Condition Account - Netherlands - 2018",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -741,7 +743,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands for Netherlands in 2018.",
         "startColor": "rgb(4,102,1)",
         "endColor": "rgb(253,253,31)",
         "min": -10,
@@ -749,7 +751,7 @@
       }
     },
     {
-      "name": "Netherlands - 2022",
+      "name": "Coastal Condition Account - Netherlands - 2022",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -779,7 +781,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands for Netherlands in 2022.",
         "startColor": "rgb(4,102,1)",
         "endColor": "rgb(253,253,31)",
         "min": -10,
@@ -787,7 +789,7 @@
       }
     },
     {
-      "name": "Habitat Map - Level 1",
+      "name": "Habitat Map - Greece - Level 1",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -799,14 +801,14 @@
             "type": "swatch"
           }
         },
-        "interfaceGroup": "People EA - Habitat Maps"
+        "interfaceGroup": "People EA - Habitat Maps - Greece"
       },
       "data": {
         "normalize": false,
         "projection": "EPSG:3035",
         "images": [
           {
-            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012-SK_2020/SK_L1_pp_2020.tif"
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif"
           }
         ],
         "zIndex": 2,
@@ -817,7 +819,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Geospatial layer to distinguish natural ecosystem types based on the EUNIS habitat types hierarchical view of 2021.",
         "categories": [
           {
             "value": 20000,
@@ -873,7 +875,7 @@
       }
     },
     {
-      "name": "Habitat Map - Level 1 - Confidence",
+      "name": "Habitat Map - Greece - Level 1 - Confidence",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -885,7 +887,407 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "People EA - Habitat Maps"
+        "interfaceGroup": "People EA - Habitat Maps - Greece"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_conf_pp_2020.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      },
+      "meta": {
+        "attribution": {
+          "text": "ESA People-EA",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "description": "Confidence of the natural ecosystem types based on the EUNIS habitat types hierarchical view of 2021.",
+        "min": 0,
+        "max": 190,
+        "startColor": "rgba(255,255,255,1)",
+        "endColor": "rgba(0,0,0,1)"
+      }
+    },
+    {
+      "name": "Habitat Map - Greece - Level 2",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People EA - Habitat Maps - Greece"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L2_pp_2020.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      },
+      "meta": {
+        "attribution": {
+          "text": "ESA People-EA",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "description": "Geospatial layer to distinguish natural ecosystem types based on the EUNIS habitat types hierarchical view of 2021.",
+        "categories": [
+          {
+            "value": 20100,
+            "color": "rgba(230,230,230,255)",
+            "label": "Coastal dunes and sandy shores"
+          },
+          {
+            "value": 20200,
+            "color": "rgba(200,200,200,255)",
+            "label": "Coastal shingle"
+          },
+          {
+            "value": 20300,
+            "color": "rgba(170,170,170,255)",
+            "label": "Rock cliffs: ledges and shores: including the supralittoral"
+          },
+          {
+            "value": 30100,
+            "color": "rgba(128,242,230,255)",
+            "label": "Surface standing waters"
+          },
+          {
+            "value": 30200,
+            "color": "rgba(0,204,242,255)",
+            "label": "Surface running waters"
+          },
+          {
+            "value": 30300,
+            "color": "rgba(0,204,153,255)",
+            "label": "Littoral zone and inland surface waterbodies"
+          },
+          {
+            "value": 40100,
+            "color": "rgba(64,49,81,255)",
+            "label": "Raised and blanket bogs"
+          },
+          {
+            "value": 40200,
+            "color": "rgba(96,73,122,255)",
+            "label": "Valley mires: poor fens and transition mires"
+          },
+          {
+            "value": 40300,
+            "color": "rgba(177,160,99,255)",
+            "label": "Aapa: palsa and polygon mires"
+          },
+          {
+            "value": 40400,
+            "color": "rgba(204,192,218,255)",
+            "label": "rich fens and calcareous spring mires"
+          },
+          {
+            "value": 40500,
+            "color": "rgba(218,238,243,255)",
+            "label": "standing water"
+          },
+          {
+            "value": 40600,
+            "color": "rgba(183,222,232,255)",
+            "label": "Inland saline and brackish marshes and reedbeds"
+          },
+          {
+            "value": 50100,
+            "color": "rgba(240,240,150,255)",
+            "label": "Dry grasslands"
+          },
+          {
+            "value": 50200,
+            "color": "rgba(230,230,77,255)",
+            "label": "Mesic grasslands"
+          },
+          {
+            "value": 50300,
+            "color": "rgba(204,242,77,255)",
+            "label": "Seasonally wet and wet grasslands"
+          },
+          {
+            "value": 50400,
+            "color": "rgba(153,255,153,255)",
+            "label": "Alpine and subalpine grasslands"
+          },
+          {
+            "value": 50600,
+            "color": "rgba(204,255,255,255)",
+            "label": "Inland salt steppes"
+          },
+          {
+            "value": 50700,
+            "color": "rgba(242,204,166,255)",
+            "label": "Sparsely wooded grasslands"
+          },
+          {
+            "value": 60100,
+            "color": "rgba(151,71,6,255)",
+            "label": "Tundra"
+          },
+          {
+            "value": 60200,
+            "color": "rgba(226,107,10,255)",
+            "label": "Artic: alpine and subalpine scrub"
+          },
+          {
+            "value": 60300,
+            "color": "rgba(250,191,143,255)",
+            "label": "montane scrub"
+          },
+          {
+            "value": 60400,
+            "color": "rgba(252,213,180,255)",
+            "label": "Temperate shrub heathland"
+          },
+          {
+            "value": 60500,
+            "color": "rgba(253,233,217,255)",
+            "label": "Mediterranean brushes"
+          },
+          {
+            "value": 60600,
+            "color": "rgba(218,238,243,255)",
+            "label": "Garrigue"
+          },
+          {
+            "value": 60700,
+            "color": "rgba(183,222,232,255)",
+            "label": "heats and related coastal ciff vegetation)"
+          },
+          {
+            "value": 60800,
+            "color": "rgba(146,205,220,255)",
+            "label": "Atlantic xerophytic scrub"
+          },
+          {
+            "value": 60900,
+            "color": "rgba(49,200,155,255)",
+            "label": "Riverine and fen scrub"
+          },
+          {
+            "value": 61100,
+            "color": "rgba(230,128,0,255)",
+            "label": "Shrub plantations"
+          },
+          {
+            "value": 70100,
+            "color": "rgba(128,255,0,255)",
+            "label": "Broadleaved deciduous woodland"
+          },
+          {
+            "value": 70200,
+            "color": "rgba(230,166,0,255)",
+            "label": "Broadleaved evergreen woodland"
+          },
+          {
+            "value": 70300,
+            "color": "rgba(0,166,0,255)",
+            "label": "Coniferous woodland"
+          },
+          {
+            "value": 70400,
+            "color": "rgba(77,255,0,255)",
+            "label": "Mixed deciduous and coniferous woodland"
+          },
+          {
+            "value": 70500,
+            "color": "rgba(79,98,40,255)",
+            "label": "stage woodland and coppice"
+          },
+          {
+            "value": 80200,
+            "color": "rgba(242,242,242,255)",
+            "label": "Screes"
+          },
+          {
+            "value": 80300,
+            "color": "rgba(204,204,204,255)",
+            "label": "Inland cliffs: rock pavements and outcrops"
+          },
+          {
+            "value": 80400,
+            "color": "rgba(255,255,255,255)",
+            "label": "dominated habitats"
+          },
+          {
+            "value": 80500,
+            "color": "rgba(204,255,204,255)",
+            "label": "Miscellaneous inland habitats with very sparse or no vegetation"
+          },
+          {
+            "value": 90100,
+            "color": "rgba(255,255,168,255)",
+            "label": "Arable land and market gardens"
+          },
+          {
+            "value": 90200,
+            "color": "rgba(255,255,0,255)",
+            "label": "Cultivated areas of gardens and parks"
+          },
+          {
+            "value": 100100,
+            "color": "rgba(255,0,0,255)",
+            "label": "Buildings of cities: towns and villages"
+          },
+          {
+            "value": 100200,
+            "color": "rgba(255,125,125,255)",
+            "label": "Low density buildings"
+          },
+          {
+            "value": 100300,
+            "color": "rgba(166,0,204,255)",
+            "label": "Extractive industrial sites"
+          },
+          {
+            "value": 100400,
+            "color": "rgba(255,85,0,255)",
+            "label": "surfaced areas"
+          },
+          {
+            "value": 100500,
+            "color": "rgba(230,230,255,255)",
+            "label": "made waters and associates structures"
+          },
+          {
+            "value": 100600,
+            "color": "rgba(166,77,0,255)",
+            "label": "Waste deposits"
+          },
+          {
+            "value": 110100,
+            "color": "rgba(166,255,230,255)",
+            "label": "Estuaries"
+          },
+          {
+            "value": 110200,
+            "color": "rgba(0,255,166,255)",
+            "label": "Coastal lagoons"
+          },
+          {
+            "value": 110300,
+            "color": "rgba(0,255,166,255)",
+            "label": "Coastal lagoons"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Habitat Map - Slovakia - Level 1",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People EA - Habitat Maps - Slovakia"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012-SK_2020/SK_L1_pp_2020.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      },
+      "meta": {
+        "attribution": {
+          "text": "ESA People-EA",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "description": "Geospatial layer to distinguish natural ecosystem types based on the EUNIS habitat types hierarchical view of 2012.",
+        "categories": [
+          {
+            "value": 20000,
+            "color": "rgba(255,211,127,255)",
+            "label": "Costal Habitats"
+          },
+          {
+            "value": 30000,
+            "color": "rgba(0,112,255,255)",
+            "label": "Inland Surface Waters"
+          },
+          {
+            "value": 40000,
+            "color": "rgba(223,115,255,255)",
+            "label": "Mires, bogs and fens"
+          },
+          {
+            "value": 50000,
+            "color": "rgba(85,255,0,255)",
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens"
+          },
+          {
+            "value": 60000,
+            "color": "rgba(255,170,0,255)",
+            "label": "Heathland, scrub and tundra"
+          },
+          {
+            "value": 70000,
+            "color": "rgba(38,115,0,255)",
+            "label": "Woodland, forest and other wooded land"
+          },
+          {
+            "value": 80000,
+            "color": "rgba(178,178,178,255)",
+            "label": "Inland unvegetated or sparsely vegetated habitats"
+          },
+          {
+            "value": 90000,
+            "color": "rgba(255,255,115,255)",
+            "label": "Regularly or recently cultivated agricultural, horticultural and domestic habitats"
+          },
+          {
+            "value": 100000,
+            "color": "rgba(255,0,0,255)",
+            "label": "Constructed, industrial and other artificial habitats"
+          },
+          {
+            "value": 110000,
+            "color": "rgba(0,255,166,255)",
+            "label": "Complex Habitats"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Habitat Map - Slovakia - Level 1 - Confidence",
+      "isActive": false,
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "control": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "People EA - Habitat Maps - Slovakia"
       },
       "data": {
         "normalize": false,
@@ -903,7 +1305,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Confidence of the natural ecosystem types based on the EUNIS habitat types hierarchical view of 2012.",
         "min": 0,
         "max": 190,
         "startColor": "rgba(255,255,255,1)",
@@ -911,7 +1313,7 @@
       }
     },
     {
-      "name": "Habitat Map - Level 2",
+      "name": "Habitat Map - Slovakia - Level 2",
       "isActive": false,
       "layout": {
         "layerCard": {
@@ -923,7 +1325,7 @@
             "type": "swatch"
           }
         },
-        "interfaceGroup": "People EA - Habitat Maps"
+        "interfaceGroup": "People EA - Habitat Maps - Slovakia"
       },
       "data": {
         "normalize": false,
@@ -941,7 +1343,7 @@
           "text": "ESA People-EA",
           "url": "https://esa-people-ea.org/en"
         },
-        "description": "",
+        "description": "Geospatial layer to distinguish natural ecosystem types based on the EUNIS habitat types hierarchical view of 2012.",
         "categories": [
           {
             "value": 20100,
