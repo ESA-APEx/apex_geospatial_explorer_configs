@@ -2,15 +2,16 @@
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
-      "title": "APEx Demo - Geospatial Explorer"
+      "title": "APEx - Geospatial Explorer"
     }
   },
   "interfaceGroups": [
-    "ESA WorldCover",
-    "ESA WorldCereal",
-    "ESA People EA - Wood Provision Service Accounts",
-    "ESA People EA - Coastal Condition Accounts",
-    "ESA People EA - Habitat Maps"
+    "WorldCover",
+    "WorldCereal",
+    "WORLDSOILS",
+    "People EA - Wood Provision Service Accounts",
+    "People EA - Coastal Condition Accounts",
+    "People EA - Habitat Maps"
   ],
   "exclusivitySets": [
     "labels"
@@ -74,7 +75,7 @@
             "zoomToCenter"
           ]
         },
-        "interfaceGroup": "ESA WorldCereal"
+        "interfaceGroup": "WorldCereal"
       },
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
@@ -100,7 +101,7 @@
             "zoomToCenter"
           ]
         },
-        "interfaceGroup": "ESA WorldCereal"
+        "interfaceGroup": "WorldCereal"
       },
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
@@ -126,7 +127,7 @@
             "zoomToCenter"
           ]
         },
-        "interfaceGroup": "ESA WorldCereal"
+        "interfaceGroup": "WorldCereal"
       },
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
@@ -152,7 +153,7 @@
             "zoomToCenter"
           ]
         },
-        "interfaceGroup": "ESA WorldCereal"
+        "interfaceGroup": "WorldCereal"
       },
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
@@ -175,7 +176,7 @@
             "visible": true
           }
         },
-        "interfaceGroup": "ESA WorldCover"
+        "interfaceGroup": "WorldCover"
       },
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
@@ -304,7 +305,7 @@
             "visible": true
           }
         },
-        "interfaceGroup": "ESA WorldCover"
+        "interfaceGroup": "WorldCover"
       },
       "data": {
         "url": "https://services.terrascope.be/wms/v2",
@@ -327,7 +328,7 @@
         "layerCard": {
           "toggleable": true
         },
-        "interfaceGroup": "ESA WorldCover"
+        "interfaceGroup": "WorldCover"
       },
       "data": {
         "zIndex": 1,
@@ -353,7 +354,7 @@
             "zoomToCenter"
           ]
         },
-        "interfaceGroup": "ESA WorldCover"
+        "interfaceGroup": "WorldCover"
       },
       "data": {
         "zIndex": 1,
@@ -372,7 +373,7 @@
             "zoomToCenter"
           ]
         },
-        "interfaceGroup": "ESA WorldCover"
+        "interfaceGroup": "WorldCover"
       },
       "data": {
         "type": "swipe",
@@ -394,7 +395,7 @@
             "zoomToCenter"
           ]
         },
-        "interfaceGroup": "ESA WorldCover"
+        "interfaceGroup": "WorldCover"
       },
       "data": {
         "type": "swipe",
@@ -419,7 +420,7 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "ESA People EA - Wood Provision Service Accounts"
+        "interfaceGroup": "People EA - Wood Provision Service Accounts"
       },
       "data": {
         "normalize": false,
@@ -457,7 +458,7 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "ESA People EA - Wood Provision Service Accounts"
+        "interfaceGroup": "People EA - Wood Provision Service Accounts"
       },
       "data": {
         "normalize": false,
@@ -494,7 +495,7 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "ESA People EA - Wood Provision Service Accounts"
+        "interfaceGroup": "People EA - Wood Provision Service Accounts"
       },
       "data": {
         "normalize": false,
@@ -532,7 +533,7 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "ESA People EA - Wood Provision Service Accounts"
+        "interfaceGroup": "People EA - Wood Provision Service Accounts"
       },
       "data": {
         "normalize": false,
@@ -570,7 +571,7 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "ESA People EA - Coastal Condition Accounts"
+        "interfaceGroup": "People EA - Coastal Condition Accounts"
       },
       "data": {
         "normalize": false,
@@ -608,7 +609,7 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "ESA People EA - Coastal Condition Accounts"
+        "interfaceGroup": "People EA - Coastal Condition Accounts"
       },
       "data": {
         "normalize": false,
@@ -646,7 +647,7 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "ESA People EA - Coastal Condition Accounts"
+        "interfaceGroup": "People EA - Coastal Condition Accounts"
       },
       "data": {
         "normalize": false,
@@ -684,7 +685,7 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "ESA People EA - Coastal Condition Accounts"
+        "interfaceGroup": "People EA - Coastal Condition Accounts"
       },
       "data": {
         "normalize": false,
@@ -722,7 +723,7 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "ESA People EA - Coastal Condition Accounts"
+        "interfaceGroup": "People EA - Coastal Condition Accounts"
       },
       "data": {
         "normalize": false,
@@ -760,7 +761,7 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "ESA People EA - Coastal Condition Accounts"
+        "interfaceGroup": "People EA - Coastal Condition Accounts"
       },
       "data": {
         "normalize": false,
@@ -798,7 +799,7 @@
             "type": "swatch"
           }
         },
-        "interfaceGroup": "ESA People EA - Habitat Maps"
+        "interfaceGroup": "People EA - Habitat Maps"
       },
       "data": {
         "normalize": false,
@@ -884,7 +885,7 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "ESA People EA - Habitat Maps"
+        "interfaceGroup": "People EA - Habitat Maps"
       },
       "data": {
         "normalize": false,
@@ -922,7 +923,7 @@
             "type": "swatch"
           }
         },
-        "interfaceGroup": "ESA People EA - Habitat Maps"
+        "interfaceGroup": "People EA - Habitat Maps"
       },
       "data": {
         "normalize": false,
@@ -1183,6 +1184,237 @@
             "label": "Coastal lagoons"
           }
         ]
+      }
+    },
+    {
+      "name": "European Topsoil SOC Content 2020-2022 - Mean",
+      "isActive": false,
+      "meta": {
+        "description": "SOC content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
+        "attribution": {
+          "text": "WORLDSOILS",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(255,255,255)",
+        "endColor": "rgb(5,69,33)",
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 2500
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "European Topsoil SOC Content 2020-2022 - Uncertainty",
+      "isActive": false,
+      "meta": {
+        "description": "Prediction interval of the SOC content (2020-2022) in the 0-20 cm topsoil per pixel, expressed as (P95-P5)/median.",
+        "attribution": {
+          "text": "WORLDSOILS",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(255,254,198)",
+        "endColor": "rgb(163,11,38)",
+        "min": 0,
+        "max": 100
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_uncertainty_100_202003-202210.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "European Topsoil SOC Content 2019-2021 - Mean",
+      "isActive": false,
+      "meta": {
+        "description": "SOC content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2019-2021).",
+        "attribution": {
+          "text": "WORLDSOILS",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(255,255,255)",
+        "endColor": "rgb(5,69,33)",
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 2500
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_mean_100_201903-202110.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "European Topsoil SOC Content 2019-2021 - Uncertainty",
+      "isActive": false,
+      "meta": {
+        "description": "Prediction interval of the SOC content (2019-2021) in the 0-20 cm topsoil per pixel, expressed as (P95-P5)/median.",
+        "attribution": {
+          "text": "WORLDSOILS",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(255,254,198)",
+        "endColor": "rgb(163,11,38)",
+        "min": 0,
+        "max": 100
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_uncertainty_100_201903-202110.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "European Topsoil SOC Content 2018-2020 - Mean",
+      "isActive": false,
+      "meta": {
+        "description": "SOC content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2018-2020).",
+        "attribution": {
+          "text": "WORLDSOILS",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(255,255,255)",
+        "endColor": "rgb(5,69,33)",
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 2500
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "European Topsoil SOC Content 2018-2020 - Uncertainty",
+      "isActive": false,
+      "meta": {
+        "description": "Prediction interval of the SOC content (2018-2020) in the 0-20 cm topsoil per pixel, expressed as (P95-P5)/median.",
+        "attribution": {
+          "text": "WORLDSOILS",
+          "url": "https://world-soils.com/"
+        },
+        "startColor": "rgb(255,254,198)",
+        "endColor": "rgb(163,11,38)",
+        "min": 0,
+        "max": 100
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "WORLDSOILS"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_uncertainty_100_201803-202010.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
       }
     }
   ]
