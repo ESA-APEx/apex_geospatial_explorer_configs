@@ -7,7 +7,7 @@
   },
   "interfaceGroups": [
     "WorldCover",
-    "WorldSoils",
+    "WORLDSOILS",
     "WorldCereal",
     "Digital Elevation Models",
     "Copernicus Land - Land Cover",
@@ -409,18 +409,19 @@
       "meta": {}
     },
     {
-      "name": "European Topsoil SOC Content 2020-2022",
+      "name": "European Topsoil SOC Content 2020-2022 - Mean",
       "isActive": false,
       "meta": {
-        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
+        "description": "SOC content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
         "attribution": {
-          "text": "WorldCover",
+          "text": "WORLDSOILS",
           "url": "https://world-soils.com/"
         },
         "startColor": "rgb(255,255,255)",
-        "endColor": "rgb(114,64,50)",
+        "endColor": "rgb(5,69,33)",
+        "units": "g kg^(-1)",
         "min": 0,
-        "max": 4471
+        "max": 2500
       },
       "layout": {
         "layerCard": {
@@ -432,28 +433,33 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "WorldSoils"
+        "interfaceGroup": "WORLDSOILS"
       },
       "data": {
-        "url": "https://gui.world-soils.com/mapserver/Europe",
-        "layers": "soc_0-5cm_mean_europe_2020-2022",
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif"
+          }
+        ],
         "zIndex": 2,
-        "type": "wms"
+        "type": "cog"
       }
     },
     {
       "name": "European Topsoil SOC Content 2020-2022 - Uncertainty",
       "isActive": false,
       "meta": {
-        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
+        "description": "Prediction interval of the SOC content (2020-2022) in the 0-20 cm topsoil per pixel, expressed as (P95-P5)/median.",
         "attribution": {
-          "text": "WorldCover",
+          "text": "WORLDSOILS",
           "url": "https://world-soils.com/"
         },
-        "startColor": "rgb(255,255,255)",
-        "endColor": "rgb(153,136,130)",
+        "startColor": "rgb(255,254,198)",
+        "endColor": "rgb(163,11,38)",
         "min": 0,
-        "max": 125
+        "max": 100
       },
       "layout": {
         "layerCard": {
@@ -465,28 +471,34 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "WorldSoils"
+        "interfaceGroup": "WORLDSOILS"
       },
       "data": {
-        "url": "https://gui.world-soils.com/mapserver/Europe",
-        "layers": "soc_0-5cm_uncertainty_europe_2020-2022",
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_uncertainty_100_202003-202210.tif"
+          }
+        ],
         "zIndex": 2,
-        "type": "wms"
+        "type": "cog"
       }
     },
     {
-      "name": "European Topsoil SOC Content 2019-2021",
+      "name": "European Topsoil SOC Content 2019-2021 - Mean",
       "isActive": false,
       "meta": {
-        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
+        "description": "SOC content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2019-2021).",
         "attribution": {
-          "text": "WorldCover",
+          "text": "WORLDSOILS",
           "url": "https://world-soils.com/"
         },
         "startColor": "rgb(255,255,255)",
-        "endColor": "rgb(114,64,50)",
+        "endColor": "rgb(5,69,33)",
+        "units": "g kg^(-1)",
         "min": 0,
-        "max": 4471
+        "max": 2500
       },
       "layout": {
         "layerCard": {
@@ -498,28 +510,33 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "WorldSoils"
+        "interfaceGroup": "WORLDSOILS"
       },
       "data": {
-        "url": "https://gui.world-soils.com/mapserver/Europe",
-        "layers": "soc_0-5cm_mean_europe_2019-2021",
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_mean_100_201903-202110.tif"
+          }
+        ],
         "zIndex": 2,
-        "type": "wms"
+        "type": "cog"
       }
     },
     {
       "name": "European Topsoil SOC Content 2019-2021 - Uncertainty",
       "isActive": false,
       "meta": {
-        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
+        "description": "Prediction interval of the SOC content (2019-2021) in the 0-20 cm topsoil per pixel, expressed as (P95-P5)/median.",
         "attribution": {
-          "text": "WorldCover",
+          "text": "WORLDSOILS",
           "url": "https://world-soils.com/"
         },
-        "startColor": "rgb(255,255,255)",
-        "endColor": "rgb(153,136,130)",
+        "startColor": "rgb(255,254,198)",
+        "endColor": "rgb(163,11,38)",
         "min": 0,
-        "max": 125
+        "max": 100
       },
       "layout": {
         "layerCard": {
@@ -531,28 +548,34 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "WorldSoils"
+        "interfaceGroup": "WORLDSOILS"
       },
       "data": {
-        "url": "https://gui.world-soils.com/mapserver/Europe",
-        "layers": "soc_0-5cm_uncertainty_europe_2019-2021",
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_uncertainty_100_201903-202110.tif"
+          }
+        ],
         "zIndex": 2,
-        "type": "wms"
+        "type": "cog"
       }
     },
     {
-      "name": "European Topsoil SOC Content 2018-2020",
+      "name": "European Topsoil SOC Content 2018-2020 - Mean",
       "isActive": false,
       "meta": {
-        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
+        "description": "SOC content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2018-2020).",
         "attribution": {
-          "text": "WorldCover",
+          "text": "WORLDSOILS",
           "url": "https://world-soils.com/"
         },
         "startColor": "rgb(255,255,255)",
-        "endColor": "rgb(114,64,50)",
+        "endColor": "rgb(5,69,33)",
+        "units": "g kg^(-1)",
         "min": 0,
-        "max": 4471
+        "max": 2500
       },
       "layout": {
         "layerCard": {
@@ -564,28 +587,33 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "WorldSoils"
+        "interfaceGroup": "WORLDSOILS"
       },
       "data": {
-        "url": "https://gui.world-soils.com/mapserver/Europe",
-        "layers": "soc_0-5cm_mean_europe_2018-2020",
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif"
+          }
+        ],
         "zIndex": 2,
-        "type": "wms"
+        "type": "cog"
       }
     },
     {
       "name": "European Topsoil SOC Content 2018-2020 - Uncertainty",
       "isActive": false,
       "meta": {
-        "description": "Hybrid approach with separate models for permanently vegetated areas and croplands. Empirical models linking the SOC content in LUCAS sample points to spectra acquired by Sentinel 2 in corresponding pixel",
+        "description": "Prediction interval of the SOC content (2018-2020) in the 0-20 cm topsoil per pixel, expressed as (P95-P5)/median.",
         "attribution": {
-          "text": "WorldCover",
+          "text": "WORLDSOILS",
           "url": "https://world-soils.com/"
         },
-        "startColor": "rgb(255,255,255)",
-        "endColor": "rgb(153,136,130)",
+        "startColor": "rgb(255,254,198)",
+        "endColor": "rgb(163,11,38)",
         "min": 0,
-        "max": 125
+        "max": 100
       },
       "layout": {
         "layerCard": {
@@ -597,13 +625,18 @@
             "type": "gradient"
           }
         },
-        "interfaceGroup": "WorldSoils"
+        "interfaceGroup": "WORLDSOILS"
       },
       "data": {
-        "url": "https://gui.world-soils.com/mapserver/Europe",
-        "layers": "soc_0-5cm_uncertainty_europe_2018-2020",
+        "normalize": false,
+        "projection": "EPSG:3035",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_uncertainty_100_201803-202010.tif"
+          }
+        ],
         "zIndex": 2,
-        "type": "wms"
+        "type": "cog"
       }
     },
     {
