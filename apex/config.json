@@ -13,7 +13,8 @@
     "People EA - Coastal Condition Accounts",
     "People EA - Habitat Maps - Slovakia",
     "People EA - Habitat Maps - Greece",
-    "People Eco-Schemes - Crop Rotation"
+    "People Eco-Schemes - Crop Rotation",
+    "People Eco-Schemes - Crop Erosion Risk"
   ],
   "exclusivitySets": [
     "labels"
@@ -1859,8 +1860,7 @@
         "projection": "EPSG:32633",
         "images": [
           {
-            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_CLASS_L3_CLASS_33UVR.tif",
-            "nodata": 255
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_CLASS_L3_CLASS_33UVR.tif"
           }
         ],
         "zIndex": 2,
@@ -1911,8 +1911,7 @@
         "projection": "EPSG:32633",
         "images": [
           {
-            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_CLASS_L3_PROBgt85_33UVR.tif",
-            "nodata": 255
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_CLASS_L3_PROBgt85_33UVR.tif"
           }
         ],
         "zIndex": 2,
@@ -1950,8 +1949,7 @@
         "projection": "EPSG:32633",
         "images": [
           {
-            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_PROB_L3_33UVR.tif",
-            "nodata": 255
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_PROB_L3_33UVR.tif"
           }
         ],
         "zIndex": 2,
@@ -1997,8 +1995,7 @@
         "projection": "EPSG:32633",
         "images": [
           {
-            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CLASS_33UVR.tif",
-            "nodata": 255
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CLASS_33UVR.tif"
           }
         ],
         "zIndex": 2,
@@ -2049,8 +2046,7 @@
         "projection": "EPSG:32633",
         "images": [
           {
-            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_PROBgt85_33UVR.tif",
-            "nodata": 255
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_PROBgt85_33UVR.tif"
           }
         ],
         "zIndex": 2,
@@ -2088,8 +2084,7 @@
         "projection": "EPSG:32633",
         "images": [
           {
-            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_PROB_L3_33UVR.tif",
-            "nodata": 255
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_PROB_L3_33UVR.tif"
           }
         ],
         "zIndex": 2,
@@ -2135,8 +2130,7 @@
         "projection": "EPSG:32633",
         "images": [
           {
-            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CATCH_CLASS_33UVR.tif",
-            "nodata": 255
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CATCH_CLASS_33UVR.tif"
           }
         ],
         "zIndex": 2,
@@ -2187,8 +2181,247 @@
         "projection": "EPSG:32633",
         "images": [
           {
-            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CATCH_PROBgt85_33UVR.tif",
-            "nodata": 255
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CATCH_PROBgt85_33UVR.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Erosion Risk - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Declaration of erosion risk level.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "value": 0,
+            "color": "rgba(183,243,135,255)",
+            "label": "No Erosion Risk (NEO)"
+          },
+          {
+            "value": 1,
+            "color": "rgba(238,202,131,255)",
+            "label": "Medium Erosion Risk (MEO)"
+          },
+          {
+            "value": 2,
+            "color": "rgba(229,127,124,255)",
+            "label": "High Erosion Risk (SEO)"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Erosion Risk"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ErosionRisk_33UVR.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Forbidden Crops MEO - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Occurrence of the crops that are not allowed to grow at the parcels categorized into medium erosion risk (MEO).",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "value": 0,
+            "color": "rgba(183,243,135,255)",
+            "label": "Crop allowed on MEO parcels"
+          },
+          {
+            "value": 1,
+            "color": "rgba(189,124,238,255)",
+            "label": "Crop not allowed on MEO parcels"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Erosion Risk"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ForbiddenCrops_MEO_33UVR.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Forbidden Crops SEO - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Occurrence of the crops that are not allowed to grow at the parcels categorized into high erosion risk (SEO).",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "value": 0,
+            "color": "rgba(183,243,135,255)",
+            "label": "Crop allowed on SEO parcels"
+          },
+          {
+            "value": 1,
+            "color": "rgba(229,127,178,255)",
+            "label": "Crop not allowed on SEO parcels"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Erosion Risk"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ForbiddenCrops_SEO_33UVR.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Parcel Erosion Status - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Occurrence of the not allowed crops at the parcels categorized into medium (MEO) or high (SEO) erosion risk level.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "value": 0,
+            "color": "rgba(183,243,135,255)",
+            "label": "Parcels compliant with anti-erosion rules"
+          },
+          {
+            "value": 1,
+            "color": "rgba(229,127,124,255)",
+            "label": "Parcels not compliant with anti-erosion rules"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Erosion Risk"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ParcelErosionStatus_1_33UVR.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Parcel Erosion Status (>85% probability) - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Occurrence of the not allowed crops at the parcels categorized into medium (MEO) or high (SEO) erosion risk level limited to the cases where crop assignment probability is higher than 85%.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "value": 0,
+            "color": "rgba(183,243,135,255)",
+            "label": "Parcels compliant with anti-erosion rules"
+          },
+          {
+            "value": 1,
+            "color": "rgba(229,127,124,255)",
+            "label": "Parcels not compliant with anti-erosion rules"
+          },
+          {
+            "value": 254,
+            "color": "rgba(155,155,155,255)",
+            "label": "Decision not possible"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Erosion Risk"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ParcelErosionStatus_2_33UVR.tif"
           }
         ],
         "zIndex": 2,
