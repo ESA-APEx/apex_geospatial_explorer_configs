@@ -12,7 +12,8 @@
     "People EA - Wood Provision Service Accounts",
     "People EA - Coastal Condition Accounts",
     "People EA - Habitat Maps - Slovakia",
-    "People EA - Habitat Maps - Greece"
+    "People EA - Habitat Maps - Greece",
+    "People Eco-Schemes - Crop Rotation"
   ],
   "exclusivitySets": [
     "labels"
@@ -1813,6 +1814,381 @@
         "images": [
           {
             "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_uncertainty_100_201803-202010.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Rotation Analysis - 2021 - 2022 - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Crop comparison for 2021, 2022 and 2023 at the Level-3 (most detailed).",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "value": 0,
+            "color": "rgba(183,243,135,255)",
+            "label": "Different Crops"
+          },
+          {
+            "value": 1,
+            "color": "rgba(229,127,124,255)",
+            "label": "Same Crops"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Rotation"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_CLASS_L3_CLASS_33UVR.tif",
+            "nodata": 255
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type Comparison (>85% probability) - 2021 - 2022 - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Crop type comparison (2021/2022/2023) at the Level-3 limited to the cases where the combined crop assignment probability is higher than 85%.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "value": 0,
+            "color": "rgba(183,243,135,255)",
+            "label": "Different Crops"
+          },
+          {
+            "value": 1,
+            "color": "rgba(229,127,124,255)",
+            "label": "Same Crops"
+          },
+          {
+            "value": 254,
+            "color": "rgba(155,155,155,255)",
+            "label": "Decision not possible"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Rotation"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_CLASS_L3_PROBgt85_33UVR.tif",
+            "nodata": 255
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type Classification Probability - 2021 - 2022 - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Combined probability of crop type classification (2021/2022/2023) at Level-3.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "startColor": "rgba(229,127,124,255)",
+        "endColor": "rgba(183,243,135,255)",
+        "min": 0,
+        "max": 1
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Rotation"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_PROB_L3_33UVR.tif",
+            "nodata": 255
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Rotation Analysis - 2022 - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Crop comparison for 2022 and 2023 at the Level-3 (most detailed).",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "value": 0,
+            "color": "rgba(183,243,135,255)",
+            "label": "Different Crops"
+          },
+          {
+            "value": 1,
+            "color": "rgba(229,127,124,255)",
+            "label": "Same Crops"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Rotation"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CLASS_33UVR.tif",
+            "nodata": 255
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type Comparison (>85% probability) - 2022 - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Crop type comparison (2022/2023) at the Level-3 limited to the cases where the combined crop assignment probability is higher than 85%.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "value": 0,
+            "color": "rgba(183,243,135,255)",
+            "label": "Different Crops"
+          },
+          {
+            "value": 1,
+            "color": "rgba(229,127,124,255)",
+            "label": "Same Crops"
+          },
+          {
+            "value": 254,
+            "color": "rgba(155,155,155,255)",
+            "label": "Decision not possible"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Rotation"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_PROBgt85_33UVR.tif",
+            "nodata": 255
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type Classification Probability - 2022 - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Combined probability of crop type classification (2022/2023) at Level-3.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "startColor": "rgba(229,127,124,255)",
+        "endColor": "rgba(183,243,135,255)",
+        "min": 0,
+        "max": 1
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Rotation"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_PROB_L3_33UVR.tif",
+            "nodata": 255
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type Comparison with Catch Crop Occurrence Detection - 2022 - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Crop type comparison (2022/2023) at the Level-3 combined with catch crop occurrence detection.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "value": 0,
+            "color": "rgba(183,243,135,255)",
+            "label": "Different crops or same crops with catch crop presence"
+          },
+          {
+            "value": 1,
+            "color": "rgba(229,127,124,255)",
+            "label": "Same crops without presence of catch crop"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Rotation"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CATCH_CLASS_33UVR.tif",
+            "nodata": 255
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type Comparison with Catch Crop Occurrence Detection (>85% probability) - 2022 - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Crop type comparison (2022/2023) at the Level-3 combined with catch crop occurrence detection limited to the cases where the combined crop assignment probability is higher than 85%.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "value": 0,
+            "color": "rgba(183,243,135,255)",
+            "label": "Different crops or same crops with catch crop presence"
+          },
+          {
+            "value": 1,
+            "color": "rgba(229,127,124,255)",
+            "label": "Same crops without presence of catch crop"
+          },
+          {
+            "value": 254,
+            "color": "rgba(155,155,155,255)",
+            "label": "Decision not possible"
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Rotation"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CATCH_PROBgt85_33UVR.tif",
+            "nodata": 255
           }
         ],
         "zIndex": 2,
