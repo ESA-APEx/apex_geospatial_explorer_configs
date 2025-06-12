@@ -13,6 +13,7 @@
     "People EA - Coastal Condition Accounts",
     "People EA - Habitat Maps - Slovakia",
     "People EA - Habitat Maps - Greece",
+    "People Eco-Schemes - Crop Type",
     "People Eco-Schemes - Crop Rotation",
     "People Eco-Schemes - Crop Erosion Risk"
   ],
@@ -2422,6 +2423,693 @@
         "images": [
           {
             "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ParcelErosionStatus_2_33UVR.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type - Level 3 - 2021",
+      "isActive": false,
+      "meta": {
+        "description": "Level 3 classification of crop types for 2021.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#0a226e",
+            "label": "Winter Wheat",
+            "value": 111
+          },
+          {
+            "color": "#1d4aa2",
+            "label": "Winter Barley",
+            "value": 112
+          },
+          {
+            "color": "#2559de",
+            "label": "Winter Rye",
+            "value": 113
+          },
+          {
+            "color": "#2e6cf6",
+            "label": "Winter Tricicale",
+            "value": 114
+          },
+          {
+            "color": "#367efb",
+            "label": "Winter Oats",
+            "value": 115
+          },
+          {
+            "color": "#3f93d3",
+            "label": "Winter Tritordeum",
+            "value": 116
+          },
+          {
+            "color": "#49a3e0",
+            "label": "Winter Rapeseed",
+            "value": 120
+          },
+          {
+            "color": "#7c8bee",
+            "label": "Other Winter Crops",
+            "value": 130
+          },
+          {
+            "color": "#31714e",
+            "label": "Spring Wheat",
+            "value": 211
+          },
+          {
+            "color": "#49a384",
+            "label": "Spring Barley",
+            "value": 212
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Oats",
+            "value": 213
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Rye",
+            "value": 214
+          },
+          {
+            "color": "#99fcde",
+            "label": "Spring Triticale",
+            "value": 215
+          },
+          {
+            "color": "#ccfde7",
+            "label": "Millet",
+            "value": 216
+          },
+          {
+            "color": "#53856f",
+            "label": "Sorghum",
+            "value": 217
+          },
+          {
+            "color": "#a8d5bf",
+            "label": "Buckwheat",
+            "value": 218
+          },
+          {
+            "color": "#7be344",
+            "label": "Poppy",
+            "value": 220
+          },
+          {
+            "color": "#54721f",
+            "label": "Beans, Peas,  Lentil, Hose Peas, Chick Peas",
+            "value": 231
+          },
+          {
+            "color": "#7aa430",
+            "label": "Soybeans, Horse Beans",
+            "value": 232
+          },
+          {
+            "color": "#b1cc72",
+            "label": "Spring Brassicaceae",
+            "value": 240
+          },
+          {
+            "color": "#b7f387",
+            "label": "Other Spring Crops",
+            "value": 250
+          },
+          {
+            "color": "#e6e64b",
+            "label": "Sugarbeet",
+            "value": 310
+          },
+          {
+            "color": "#db9a35",
+            "label": "Maize",
+            "value": 320
+          },
+          {
+            "color": "#eeca83",
+            "label": "Sunflower",
+            "value": 330
+          },
+          {
+            "color": "#f3ae3d",
+            "label": "Potatoes",
+            "value": 340
+          },
+          {
+            "color": "#c7ab6e",
+            "label": "Vegetable",
+            "value": 350
+          },
+          {
+            "color": "#e9a47f",
+            "label": "Other Summar Crops",
+            "value": 360
+          },
+          {
+            "color": "#69110a",
+            "label": "Fodder Crops",
+            "value": 410
+          },
+          {
+            "color": "#ef8481",
+            "label": "Other Multi-annual Crops ",
+            "value": 420
+          },
+          {
+            "color": "#2c0501",
+            "label": "Woody Crops",
+            "value": 430
+          },
+          {
+            "color": "rgba(0,0,0,0)",
+            "label": "Unknown",
+            "value": 500
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Type"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2021_33UVR/CZ_CropType_2021_CLASS_L3_33UVR.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type Probability - Level 3 - 2021",
+      "isActive": false,
+      "meta": {
+        "description": "Level 3 classification probability of crop types for 2021.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "startColor": "rgba(229,127,124,255)",
+        "endColor": "rgba(183,243,135,255)",
+        "min": 0,
+        "max": 1
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Type"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2021_33UVR/CZ_CropType_2021_PROB_L3_33UVR.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type - Level 3 - 2022",
+      "isActive": false,
+      "meta": {
+        "description": "Level 3 classification of crop types for 2022.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#0a226e",
+            "label": "Winter Wheat",
+            "value": 111
+          },
+          {
+            "color": "#1d4aa2",
+            "label": "Winter Barley",
+            "value": 112
+          },
+          {
+            "color": "#2559de",
+            "label": "Winter Rye",
+            "value": 113
+          },
+          {
+            "color": "#2e6cf6",
+            "label": "Winter Tricicale",
+            "value": 114
+          },
+          {
+            "color": "#367efb",
+            "label": "Winter Oats",
+            "value": 115
+          },
+          {
+            "color": "#3f93d3",
+            "label": "Winter Tritordeum",
+            "value": 116
+          },
+          {
+            "color": "#49a3e0",
+            "label": "Winter Rapeseed",
+            "value": 120
+          },
+          {
+            "color": "#7c8bee",
+            "label": "Other Winter Crops",
+            "value": 130
+          },
+          {
+            "color": "#31714e",
+            "label": "Spring Wheat",
+            "value": 211
+          },
+          {
+            "color": "#49a384",
+            "label": "Spring Barley",
+            "value": 212
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Oats",
+            "value": 213
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Rye",
+            "value": 214
+          },
+          {
+            "color": "#99fcde",
+            "label": "Spring Triticale",
+            "value": 215
+          },
+          {
+            "color": "#ccfde7",
+            "label": "Millet",
+            "value": 216
+          },
+          {
+            "color": "#53856f",
+            "label": "Sorghum",
+            "value": 217
+          },
+          {
+            "color": "#a8d5bf",
+            "label": "Buckwheat",
+            "value": 218
+          },
+          {
+            "color": "#7be344",
+            "label": "Poppy",
+            "value": 220
+          },
+          {
+            "color": "#54721f",
+            "label": "Beans, Peas,  Lentil, Hose Peas, Chick Peas",
+            "value": 231
+          },
+          {
+            "color": "#7aa430",
+            "label": "Soybeans, Horse Beans",
+            "value": 232
+          },
+          {
+            "color": "#b1cc72",
+            "label": "Spring Brassicaceae",
+            "value": 240
+          },
+          {
+            "color": "#b7f387",
+            "label": "Other Spring Crops",
+            "value": 250
+          },
+          {
+            "color": "#e6e64b",
+            "label": "Sugarbeet",
+            "value": 310
+          },
+          {
+            "color": "#db9a35",
+            "label": "Maize",
+            "value": 320
+          },
+          {
+            "color": "#eeca83",
+            "label": "Sunflower",
+            "value": 330
+          },
+          {
+            "color": "#f3ae3d",
+            "label": "Potatoes",
+            "value": 340
+          },
+          {
+            "color": "#c7ab6e",
+            "label": "Vegetable",
+            "value": 350
+          },
+          {
+            "color": "#e9a47f",
+            "label": "Other Summar Crops",
+            "value": 360
+          },
+          {
+            "color": "#69110a",
+            "label": "Fodder Crops",
+            "value": 410
+          },
+          {
+            "color": "#ef8481",
+            "label": "Other Multi-annual Crops ",
+            "value": 420
+          },
+          {
+            "color": "#2c0501",
+            "label": "Woody Crops",
+            "value": 430
+          },
+          {
+            "color": "rgba(0,0,0,0)",
+            "label": "Unknown",
+            "value": 500
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Type"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2022_33UVR/CZ_CropType_2022_CLASS_L3_33UVR.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type Probability - Level 3 - 2022",
+      "isActive": false,
+      "meta": {
+        "description": "Level 3 classification probability of crop types for 2022.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "startColor": "rgba(229,127,124,255)",
+        "endColor": "rgba(183,243,135,255)",
+        "min": 0,
+        "max": 1
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Type"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2022_33UVR/CZ_CropType_2022_PROB_L3_33UVR.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type - Level 3 - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Level 3 classification of crop types for 2023.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#0a226e",
+            "label": "Winter Wheat",
+            "value": 111
+          },
+          {
+            "color": "#1d4aa2",
+            "label": "Winter Barley",
+            "value": 112
+          },
+          {
+            "color": "#2559de",
+            "label": "Winter Rye",
+            "value": 113
+          },
+          {
+            "color": "#2e6cf6",
+            "label": "Winter Tricicale",
+            "value": 114
+          },
+          {
+            "color": "#367efb",
+            "label": "Winter Oats",
+            "value": 115
+          },
+          {
+            "color": "#3f93d3",
+            "label": "Winter Tritordeum",
+            "value": 116
+          },
+          {
+            "color": "#49a3e0",
+            "label": "Winter Rapeseed",
+            "value": 120
+          },
+          {
+            "color": "#7c8bee",
+            "label": "Other Winter Crops",
+            "value": 130
+          },
+          {
+            "color": "#31714e",
+            "label": "Spring Wheat",
+            "value": 211
+          },
+          {
+            "color": "#49a384",
+            "label": "Spring Barley",
+            "value": 212
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Oats",
+            "value": 213
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Rye",
+            "value": 214
+          },
+          {
+            "color": "#99fcde",
+            "label": "Spring Triticale",
+            "value": 215
+          },
+          {
+            "color": "#ccfde7",
+            "label": "Millet",
+            "value": 216
+          },
+          {
+            "color": "#53856f",
+            "label": "Sorghum",
+            "value": 217
+          },
+          {
+            "color": "#a8d5bf",
+            "label": "Buckwheat",
+            "value": 218
+          },
+          {
+            "color": "#7be344",
+            "label": "Poppy",
+            "value": 220
+          },
+          {
+            "color": "#54721f",
+            "label": "Beans, Peas,  Lentil, Hose Peas, Chick Peas",
+            "value": 231
+          },
+          {
+            "color": "#7aa430",
+            "label": "Soybeans, Horse Beans",
+            "value": 232
+          },
+          {
+            "color": "#b1cc72",
+            "label": "Spring Brassicaceae",
+            "value": 240
+          },
+          {
+            "color": "#b7f387",
+            "label": "Other Spring Crops",
+            "value": 250
+          },
+          {
+            "color": "#e6e64b",
+            "label": "Sugarbeet",
+            "value": 310
+          },
+          {
+            "color": "#db9a35",
+            "label": "Maize",
+            "value": 320
+          },
+          {
+            "color": "#eeca83",
+            "label": "Sunflower",
+            "value": 330
+          },
+          {
+            "color": "#f3ae3d",
+            "label": "Potatoes",
+            "value": 340
+          },
+          {
+            "color": "#c7ab6e",
+            "label": "Vegetable",
+            "value": 350
+          },
+          {
+            "color": "#e9a47f",
+            "label": "Other Summar Crops",
+            "value": 360
+          },
+          {
+            "color": "#69110a",
+            "label": "Fodder Crops",
+            "value": 410
+          },
+          {
+            "color": "#ef8481",
+            "label": "Other Multi-annual Crops ",
+            "value": 420
+          },
+          {
+            "color": "#2c0501",
+            "label": "Woody Crops",
+            "value": 430
+          },
+          {
+            "color": "rgba(0,0,0,0)",
+            "label": "Unknown",
+            "value": 500
+          }
+        ]
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "swatch"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Type"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2023_33UVR/CZ_CropType_2023_CLASS_L3_33UVR.tif"
+          }
+        ],
+        "zIndex": 2,
+        "type": "cog"
+      }
+    },
+    {
+      "name": "Crop Type Probability - Level 3 - 2023",
+      "isActive": false,
+      "meta": {
+        "description": "Level 3 classification probability of crop types for 2023.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "startColor": "rgba(229,127,124,255)",
+        "endColor": "rgba(183,243,135,255)",
+        "min": 0,
+        "max": 1
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true,
+          "controls": [
+            "zoomToCenter"
+          ],
+          "legend": {
+            "type": "gradient"
+          }
+        },
+        "interfaceGroup": "People Eco-Schemes - Crop Type"
+      },
+      "data": {
+        "normalize": false,
+        "projection": "EPSG:32633",
+        "images": [
+          {
+            "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2023_33UVR/CZ_CropType_2023_PROB_L3_33UVR.tif"
           }
         ],
         "zIndex": 2,
