@@ -822,54 +822,49 @@
         "description": "Geospatial layer to distinguish natural ecosystem types based on the EUNIS habitat types hierarchical view of 2021.",
         "categories": [
           {
-            "value": 20000,
-            "color": "rgba(255,211,127,255)",
-            "label": "Costal Habitats"
-          },
-          {
-            "value": 30000,
-            "color": "rgba(0,112,255,255)",
-            "label": "Inland Surface Waters"
+            "value": 10000,
+            "color": "rgba(64,1,237,255)",
+            "label": "Marine benthic habitats (MA-MG)"
           },
           {
             "value": 40000,
-            "color": "rgba(223,115,255,255)",
-            "label": "Mires, bogs and fens"
+            "color": "rgba(68,202,238,255)",
+            "label": "Coastal habitats"
           },
           {
             "value": 50000,
-            "color": "rgba(85,255,0,255)",
-            "label": "Grasslands and lands dominated by forbs, mosses or lichens"
+            "color": "rgba(145,67,33,255)",
+            "label": "Wetlands"
           },
           {
             "value": 60000,
-            "color": "rgba(255,170,0,255)",
-            "label": "Heathland, scrub and tundra"
+            "color": "rgba(219,227,65,255)",
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens"
           },
           {
             "value": 70000,
-            "color": "rgba(38,115,0,255)",
-            "label": "Woodland, forest and other wooded land"
+            "color": "rgba(158,114,33,255)",
+            "label": "Heathland, scrub and tundra"
           },
           {
             "value": 80000,
-            "color": "rgba(178,178,178,255)",
-            "label": "Inland unvegetated or sparsely vegetated habitats"
+            "color": "rgba(11,101,26,255)",
+            "label": "Forest and other wooded land"
           },
           {
             "value": 90000,
-            "color": "rgba(255,255,115,255)",
-            "label": "Regularly or recently cultivated agricultural, horticultural and domestic habitats"
+            "color": "rgba(115,119,112,255)",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation"
           },
           {
             "value": 100000,
-            "color": "rgba(255,0,0,255)",
-            "label": "Constructed, industrial and other artificial habitats"
+            "color": "rgba(181,77,189,255)",
+            "label": "Vegetated man-made habitats"
           },
           {
             "value": 110000,
-            "color": "rgba(0,255,166,255)",
-            "label": "Complex Habitats"
+            "color": "rgba(255,8,16,255)",
+            "label": "Constructed, industrial or other Artificial types"
           }
         ]
       }
@@ -946,244 +941,144 @@
         "description": "Geospatial layer to distinguish natural ecosystem types based on the EUNIS habitat types hierarchical view of 2021.",
         "categories": [
           {
-            "value": 20100,
-            "color": "rgba(230,230,230,255)",
-            "label": "Coastal dunes and sandy shores"
-          },
-          {
-            "value": 20200,
-            "color": "rgba(200,200,200,255)",
-            "label": "Coastal shingle"
-          },
-          {
-            "value": 20300,
-            "color": "rgba(170,170,170,255)",
-            "label": "Rock cliffs: ledges and shores: including the supralittoral"
-          },
-          {
-            "value": 30100,
-            "color": "rgba(128,242,230,255)",
-            "label": "Surface standing waters"
-          },
-          {
-            "value": 30200,
-            "color": "rgba(0,204,242,255)",
-            "label": "Surface running waters"
-          },
-          {
-            "value": 30300,
-            "color": "rgba(0,204,153,255)",
-            "label": "Littoral zone and inland surface waterbodies"
+            "value": 19999,
+            "color": "rgba(4,0,135,255)",
+            "label": "Marine benthic habitats (MA-MG)"
           },
           {
             "value": 40100,
-            "color": "rgba(64,49,81,255)",
-            "label": "Raised and blanket bogs"
-          },
-          {
-            "value": 40200,
-            "color": "rgba(96,73,122,255)",
-            "label": "Valley mires: poor fens and transition mires"
+            "color": "rgba(68,202,238,255)",
+            "label": "Coastal dunes and sandy shores"
           },
           {
             "value": 40300,
-            "color": "rgba(177,160,99,255)",
-            "label": "Aapa: palsa and polygon mires"
-          },
-          {
-            "value": 40400,
-            "color": "rgba(204,192,218,255)",
-            "label": "rich fens and calcareous spring mires"
-          },
-          {
-            "value": 40500,
-            "color": "rgba(218,238,243,255)",
-            "label": "standing water"
-          },
-          {
-            "value": 40600,
-            "color": "rgba(183,222,232,255)",
-            "label": "Inland saline and brackish marshes and reedbeds"
-          },
-          {
-            "value": 50100,
-            "color": "rgba(240,240,150,255)",
-            "label": "Dry grasslands"
+            "color": "rgba(51,153,179,255)",
+            "label": "Rock cliffs, ledges and shores, including the supralittoral"
           },
           {
             "value": 50200,
-            "color": "rgba(230,230,77,255)",
-            "label": "Mesic grasslands"
+            "color": "rgba(80,37,18,255)",
+            "label": "Valley mires, poor fens and transition mires"
           },
           {
-            "value": 50300,
-            "color": "rgba(204,242,77,255)",
-            "label": "Seasonally wet and wet grasslands"
-          },
-          {
-            "value": 50400,
-            "color": "rgba(153,255,153,255)",
-            "label": "Alpine and subalpine grasslands"
+            "value": 50500,
+            "color": "rgba(118,54,27,255)",
+            "label": "Helophyte beds"
           },
           {
             "value": 50600,
-            "color": "rgba(204,255,255,255)",
-            "label": "Inland salt steppes"
-          },
-          {
-            "value": 50700,
-            "color": "rgba(242,204,166,255)",
-            "label": "Sparsely wooded grasslands"
+            "color": "rgba(172,79,39,255)",
+            "label": "Periodically exposed shores"
           },
           {
             "value": 60100,
-            "color": "rgba(151,71,6,255)",
-            "label": "Tundra"
-          },
-          {
-            "value": 60200,
-            "color": "rgba(226,107,10,255)",
-            "label": "Artic: alpine and subalpine scrub"
+            "color": "rgba(215,254,6,255)",
+            "label": "Dry grasslands"
           },
           {
             "value": 60300,
-            "color": "rgba(250,191,143,255)",
-            "label": "montane scrub"
+            "color": "rgba(150,162,70,255)",
+            "label": "Seasonally wet and wet grasslands"
           },
           {
             "value": 60400,
-            "color": "rgba(252,213,180,255)",
-            "label": "Temperate shrub heathland"
+            "color": "rgba(135,213,92,255)",
+            "label": "Alpine and subalpine grasslands"
           },
           {
             "value": 60500,
-            "color": "rgba(253,233,217,255)",
-            "label": "Mediterranean brushes"
+            "color": "rgba(117,169,58,255)",
+            "label": "Forest fringes and clearings and tall forb stands"
           },
           {
             "value": 60600,
-            "color": "rgba(218,238,243,255)",
-            "label": "Garrigue"
-          },
-          {
-            "value": 60700,
-            "color": "rgba(183,222,232,255)",
-            "label": "heats and related coastal ciff vegetation)"
-          },
-          {
-            "value": 60800,
-            "color": "rgba(146,205,220,255)",
-            "label": "Atlantic xerophytic scrub"
-          },
-          {
-            "value": 60900,
-            "color": "rgba(49,200,155,255)",
-            "label": "Riverine and fen scrub"
-          },
-          {
-            "value": 61100,
-            "color": "rgba(230,128,0,255)",
-            "label": "Shrub plantations"
-          },
-          {
-            "value": 70100,
-            "color": "rgba(128,255,0,255)",
-            "label": "Broadleaved deciduous woodland"
+            "color": "rgba(215,233,101,255)",
+            "label": "Inland salt steppes and salt marshes"
           },
           {
             "value": 70200,
-            "color": "rgba(230,166,0,255)",
-            "label": "Broadleaved evergreen woodland"
+            "color": "rgba(200,150,122,255)",
+            "label": "Arctic, alpine and subalpine scrub"
           },
           {
             "value": 70300,
-            "color": "rgba(0,166,0,255)",
-            "label": "Coniferous woodland"
-          },
-          {
-            "value": 70400,
-            "color": "rgba(77,255,0,255)",
-            "label": "Mixed deciduous and coniferous woodland"
+            "color": "rgba(205,139,92,255)",
+            "label": "Temperate and mediterranean-montane scrub"
           },
           {
             "value": 70500,
-            "color": "rgba(79,98,40,255)",
-            "label": "stage woodland and coppice"
+            "color": "rgba(205,109,41,255)",
+            "label": "Maquis, arborescent matorral and thermo-Mediterranean scrub"
+          },
+          {
+            "value": 70600,
+            "color": "rgba(205,90,23,255)",
+            "label": "Garrigue"
+          },
+          {
+            "value": 70700,
+            "color": "rgba(155,71,11,255)",
+            "label": "Spiny Mediterranean heaths (phrygana, hedgehog-heaths and related coastal cliff vegetation)"
+          },
+          {
+            "value": 70900,
+            "color": "rgba(126,60,13,255)",
+            "label": "Riverine and fen scrubs"
+          },
+          {
+            "value": 80100,
+            "color": "rgba(15,227,0,255)",
+            "label": "Deciduous broadleaved forest"
           },
           {
             "value": 80200,
-            "color": "rgba(242,242,242,255)",
-            "label": "Screes"
+            "color": "rgba(53,183,121,255)",
+            "label": "Broadleaved evergreen forest"
           },
           {
             "value": 80300,
-            "color": "rgba(204,204,204,255)",
-            "label": "Inland cliffs: rock pavements and outcrops"
-          },
-          {
-            "value": 80400,
-            "color": "rgba(255,255,255,255)",
-            "label": "dominated habitats"
-          },
-          {
-            "value": 80500,
-            "color": "rgba(204,255,204,255)",
-            "label": "Miscellaneous inland habitats with very sparse or no vegetation"
-          },
-          {
-            "value": 90100,
-            "color": "rgba(255,255,168,255)",
-            "label": "Arable land and market gardens"
+            "color": "rgba(73,248,160,255)",
+            "label": "Coniferous forest"
           },
           {
             "value": 90200,
-            "color": "rgba(255,255,0,255)",
-            "label": "Cultivated areas of gardens and parks"
+            "color": "rgba(158,150,42,255)",
+            "label": "Screes"
+          },
+          {
+            "value": 90300,
+            "color": "rgba(138,105,37,255)",
+            "label": "Inland cliffs, rock pavements and outcrops"
+          },
+          {
+            "value": 90500,
+            "color": "rgba(163,120,65,255)",
+            "label": "Miscellaneous inland habitats usually with very sparse or no vegetation"
+          },
+          {
+            "value": 90700,
+            "color": "rgba(134,108,75,255)",
+            "label": "Unvegetated or sparsely vegetated gravel bars"
           },
           {
             "value": 100100,
-            "color": "rgba(255,0,0,255)",
-            "label": "Buildings of cities: towns and villages"
-          },
-          {
-            "value": 100200,
-            "color": "rgba(255,125,125,255)",
-            "label": "Low density buildings"
-          },
-          {
-            "value": 100300,
-            "color": "rgba(166,0,204,255)",
-            "label": "Extractive industrial sites"
-          },
-          {
-            "value": 100400,
-            "color": "rgba(255,85,0,255)",
-            "label": "surfaced areas"
+            "color": "rgba(249,84,232,255)",
+            "label": "Arable land and market gardens"
           },
           {
             "value": 100500,
-            "color": "rgba(230,230,255,255)",
-            "label": "made waters and associates structures"
+            "color": "rgba(198,99,201,255)",
+            "label": "Shrub plantations"
           },
           {
             "value": 100600,
-            "color": "rgba(166,77,0,255)",
-            "label": "Waste deposits"
+            "color": "rgba(155,21,157,255)",
+            "label": "Tree dominated man-made habitats"
           },
           {
-            "value": 110100,
-            "color": "rgba(166,255,230,255)",
-            "label": "Estuaries"
-          },
-          {
-            "value": 110200,
-            "color": "rgba(0,255,166,255)",
-            "label": "Coastal lagoons"
-          },
-          {
-            "value": 110300,
-            "color": "rgba(0,255,166,255)",
-            "label": "Coastal lagoons"
+            "value": 110000,
+            "color": "rgba(255,8,16,255)",
+            "label": "Constructed, industrial or other Artificial types"
           }
         ]
       }
