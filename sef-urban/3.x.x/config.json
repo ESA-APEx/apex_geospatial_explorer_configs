@@ -271,54 +271,49 @@
         },
         "categories": [
           {
-            "color": "#ffd37f",
-            "label": "Costal Habitats",
-            "value": 0
+            "color": "rgba(64,1,237,255)",
+            "label": "Marine benthic habitats (MA-MG)",
+            "value": 10000
           },
           {
-            "color": "#0070ff",
-            "label": "Inland Surface Waters",
-            "value": 0
+            "color": "rgba(68,202,238,255)",
+            "label": "Coastal habitats",
+            "value": 40000
           },
           {
-            "color": "#df73ff",
-            "label": "Mires, bogs and fens",
-            "value": 0
+            "color": "rgba(145,67,33,255)",
+            "label": "Wetlands",
+            "value": 50000
           },
           {
-            "color": "#55ff00",
+            "color": "rgba(219,227,65,255)",
             "label": "Grasslands and lands dominated by forbs, mosses or lichens",
-            "value": 0
+            "value": 60000
           },
           {
-            "color": "#ffaa00",
+            "color": "rgba(158,114,33,255)",
             "label": "Heathland, scrub and tundra",
-            "value": 0
+            "value": 70000
           },
           {
-            "color": "#267300",
-            "label": "Woodland, forest and other wooded land",
-            "value": 0
+            "color": "rgba(11,101,26,255)",
+            "label": "Forest and other wooded land",
+            "value": 80000
           },
           {
-            "color": "#b2b2b2",
-            "label": "Inland unvegetated or sparsely vegetated habitats",
-            "value": 0
+            "color": "rgba(115,119,112,255)",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
           },
           {
-            "color": "#ffff73",
-            "label": "Regularly or recently cultivated agricultural, horticultural and domestic habitats",
-            "value": 0
+            "color": "rgba(181,77,189,255)",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
           },
           {
-            "color": "#ff0000",
-            "label": "Constructed, industrial and other artificial habitats",
-            "value": 0
-          },
-          {
-            "color": "#00ffa6",
-            "label": "Complex Habitats",
-            "value": 0
+            "color": "rgba(255,8,16,255)",
+            "label": "Constructed, industrial or other Artificial types",
+            "value": 110000
           }
         ]
       },
