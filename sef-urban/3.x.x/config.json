@@ -1517,8 +1517,8 @@
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 0,
-          "level": 50
+          "zIndex": 50,
+          "level": 0
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level01.fgb",
