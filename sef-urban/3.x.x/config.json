@@ -16,8 +16,7 @@
     "CAP Ecoshemes",
     "World Soils SOC",
     "CLMS Daily and 10 Daily Data",
-    "Basemaps",
-    "EOC Base Maps"
+    "Basemaps"
   ],
   "exclusivitySets": [
     "labels"
@@ -62,12 +61,12 @@
         {
           "url": "https://geoservice.dlr.de/eoc/basemap/wms",
           "format": "wms",
-          "zIndex": 100,
+          "zIndex": 104,
           "layers": "baseoverlay"
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Geo Service Labels",
+        "description": "Simple labels and borders from EOC which can be displayed over other layers.",
         "attribution": {
           "text": "EOC Basemap Map Service",
           "url": "https://geoservice.dlr.de/web/"
@@ -75,7 +74,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "EOC Base Maps",
+        "interfaceGroup": "Basemaps",
         "layerCard": {
           "toggleable": true,
           "legend": {
@@ -94,7 +93,7 @@
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
           "format": "xyz",
-          "zIndex": 2
+          "zIndex": 1
         }
       ],
       "isBaseLayer": true
@@ -199,19 +198,19 @@
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 0
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 1
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 2
         }
       ],
@@ -243,25 +242,25 @@
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 0
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 1
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 2
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 3
         }
       ],
@@ -359,57 +358,57 @@
           {
             "color": "#006400",
             "label": "Tree cover",
-            "value": 0
+            "value": 10
           },
           {
             "color": "#ffbb22",
             "label": "Shrubland",
-            "value": 0
+            "value": 20
           },
           {
             "color": "#ffff4c",
             "label": "Grassland",
-            "value": 0
+            "value": 30
           },
           {
             "color": "#f096ff",
             "label": "Cropland",
-            "value": 0
+            "value": 40
           },
           {
             "color": "#ff0000",
             "label": "Built up",
-            "value": 0
+            "value": 50
           },
           {
             "color": "#b4b4b4",
             "label": "Bare",
-            "value": 0
+            "value": 60
           },
           {
             "color": "#f0f0f0",
             "label": "Snow and ice",
-            "value": 0
+            "value": 70
           },
           {
             "color": "#0064c8",
             "label": "Permanent water bodies",
-            "value": 0
+            "value": 80
           },
           {
             "color": "#0096a0",
             "label": "Herbaceous wetland",
-            "value": 0
+            "value": 90
           },
           {
             "color": "#00cf75",
             "label": "Mangroves",
-            "value": 0
+            "value": 95
           },
           {
             "color": "#fae6a0",
             "label": "Moss and lichen",
-            "value": 0
+            "value": 100
           }
         ]
       },
@@ -442,25 +441,25 @@
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 0
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 1
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 2
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 3
         }
       ],
@@ -474,57 +473,57 @@
           {
             "color": "#006400",
             "label": "Tree cover",
-            "value": 0
+            "value": 10
           },
           {
             "color": "#ffbb22",
             "label": "Shrubland",
-            "value": 0
+            "value": 20
           },
           {
             "color": "#ffff4c",
             "label": "Grassland",
-            "value": 0
+            "value": 30
           },
           {
             "color": "#f096ff",
             "label": "Cropland",
-            "value": 0
+            "value": 40
           },
           {
             "color": "#ff0000",
             "label": "Built up",
-            "value": 0
+            "value": 50
           },
           {
             "color": "#b4b4b4",
             "label": "Bare",
-            "value": 0
+            "value": 60
           },
           {
             "color": "#f0f0f0",
             "label": "Snow and ice",
-            "value": 0
+            "value": 70
           },
           {
             "color": "#0064c8",
             "label": "Permanent water bodies",
-            "value": 0
+            "value": 80
           },
           {
             "color": "#0096a0",
             "label": "Herbaceous wetland",
-            "value": 0
+            "value": 90
           },
           {
             "color": "#00cf75",
             "label": "Mangroves",
-            "value": 0
+            "value": 95
           },
           {
             "color": "#fae6a0",
             "label": "Moss and lichen",
-            "value": 0
+            "value": 100
           }
         ]
       },
@@ -595,57 +594,57 @@
           {
             "color": "#ff0000",
             "label": "Sealed",
-            "value": 0
+            "value": 1
           },
           {
             "color": "#228b22",
             "label": "Woody needle leaved trees",
-            "value": 0
+            "value": 2
           },
           {
             "color": "#80ff00",
             "label": "Woody broadleaved deciduous trees",
-            "value": 0
+            "value": 3
           },
           {
             "color": "#00ff08",
             "label": "Woody broadleaved evergreen trees",
-            "value": 0
+            "value": 4
           },
           {
             "color": "#804000",
             "label": "Low-growing woody plants",
-            "value": 0
+            "value": 5
           },
           {
             "color": "#ccf24d",
             "label": "Permanently herbaceous",
-            "value": 0
+            "value": 6
           },
           {
             "color": "#ffff80",
             "label": "Periodically herbaceous",
-            "value": 0
+            "value": 7
           },
           {
             "color": "#ff80ff",
             "label": "Lichens and mosses",
-            "value": 0
+            "value": 8
           },
           {
             "color": "#bfbfbf",
             "label": "Non and sparsely vegetated",
-            "value": 0
+            "value": 9
           },
           {
             "color": "#0080ff",
             "label": "Water",
-            "value": 0
+            "value": 10
           },
           {
             "color": "#00ffff",
             "label": "Snow and ice",
-            "value": 0
+            "value": 11
           }
         ]
       },
@@ -1048,13 +1047,15 @@
           "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
           "format": "cog",
           "zIndex": 2,
-          "position": "left"
+          "position": "left",
+          "normalize": false
         },
         {
           "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L2_pp_2020.tif",
           "format": "cog",
           "zIndex": 2,
-          "position": "right"
+          "position": "right",
+          "normalize": false
         }
       ],
       "isSwipeLayer": true,
@@ -1086,6 +1087,7 @@
           "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
           "format": "cog",
           "zIndex": 2,
+          "normalize": false,
           "position": "right"
         },
         {
@@ -1106,7 +1108,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Ecosystem Accounting - Greece WIP",
+        "interfaceGroup": "Ecosystem Accounting - Greece",
         "layerCard": {
           "toggleable": true,
           "legend": {
@@ -1203,52 +1205,52 @@
           {
             "color": "#006400",
             "label": "Forests",
-            "value": 0
+            "value": 111
           },
           {
             "color": "#ffbb22",
             "label": "Shrubland",
-            "value": 0
+            "value": 20
           },
           {
             "color": "#ffff4c",
             "label": "Herbaceous Vegetation",
-            "value": 0
+            "value": 30
           },
           {
             "color": "#0096a0",
             "label": "Herbaceous Wetland",
-            "value": 0
+            "value": 90
           },
           {
             "color": "#fae6a0",
             "label": "Moss and lichen",
-            "value": 0
+            "value": 100
           },
           {
             "color": "#b4b4b4",
             "label": "Bare / sparse vegetation",
-            "value": 0
+            "value": 60
           },
           {
             "color": "#f096ff",
             "label": "Cropland",
-            "value": 0
+            "value": 40
           },
           {
             "color": "#fa0000",
             "label": "Built up",
-            "value": 0
+            "value": 50
           },
           {
             "color": "#b4b4b4",
             "label": "Snow and Ice",
-            "value": 0
+            "value": 70
           },
           {
             "color": "#0032c8",
             "label": "Permanent Water Bodies",
-            "value": 0
+            "value": 80
           }
         ]
       },
@@ -1341,25 +1343,25 @@
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 0
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 1
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 2
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 3
         }
       ],
@@ -1430,13 +1432,13 @@
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.esa_worldcover_2021.natura_2000.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 0,
-          "minZoom": 9
+          "minZoom": 8
         }
       ],
       "meta": {
-        "description": "Land cover map for 2021 with statistics using Natura 2000 boundaries.  Zoom in to country level to show Natura boundaries then click on a Natura area to view statisics.",
+        "description": "Land cover map for 2021 with statistics using Natura 2000 boundaries.  Zoom in until the scale bar shows 10km to show Natura boundaries then click on a Natura area to view statisics.",
         "attribution": {
           "text": "World Cover project",
           "url": "https://esa-worldcover.org/"
@@ -1445,57 +1447,57 @@
           {
             "color": "#006400",
             "label": "Tree cover",
-            "value": 0
+            "value": 10
           },
           {
             "color": "#ffbb22",
             "label": "Shrubland",
-            "value": 1
+            "value": 20
           },
           {
             "color": "#ffff4c",
             "label": "Grassland",
-            "value": 2
+            "value": 30
           },
           {
             "color": "#f096ff",
             "label": "Cropland",
-            "value": 3
+            "value": 40
           },
           {
             "color": "#ff0000",
             "label": "Built up",
-            "value": 4
+            "value": 50
           },
           {
             "color": "#b4b4b4",
             "label": "Bare",
-            "value": 5
+            "value": 60
           },
           {
             "color": "#f0f0f0",
             "label": "Snow and ice",
-            "value": 6
+            "value": 70
           },
           {
             "color": "#0064c8",
             "label": "Permanent water bodies",
-            "value": 7
+            "value": 80
           },
           {
             "color": "#0096a0",
             "label": "Herbaceous wetland",
-            "value": 8
+            "value": 90
           },
           {
             "color": "#00cf75",
             "label": "Mangroves",
-            "value": 9
+            "value": 95
           },
           {
             "color": "#fae6a0",
             "label": "Moss and lichen",
-            "value": 10
+            "value": 100
           }
         ]
       },
@@ -1520,25 +1522,25 @@
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
-          "level": 0
+          "zIndex": 0,
+          "level": 50
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 1
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 2
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 3
         }
       ],
@@ -1970,7 +1972,7 @@
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 1,
           "layers": "WORLDCOVER_2021_S2_TCC",
           "serviceId": "wms-service-1749555952736"
         }
@@ -2337,13 +2339,15 @@
           "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
           "format": "cog",
           "zIndex": 2,
-          "position": "left"
+          "position": "left",
+          "normalize": false
         },
         {
           "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L2_pp_2020.tif",
           "format": "cog",
           "zIndex": 2,
-          "position": "right"
+          "position": "right",
+          "normalize": false
         }
       ],
       "isSwipeLayer": true,
@@ -2372,9 +2376,10 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012-SK_2020/SK_L2_pp_2020.tif",
           "format": "cog",
           "zIndex": 2,
+          "normalize": false,
           "position": "right"
         },
         {
@@ -2388,7 +2393,7 @@
       ],
       "isSwipeLayer": true,
       "meta": {
-        "description": "Pending COG rendering for swipe layers",
+        "description": "Comparison between Slovakia Level 1 habitat maps and Sentinel 2",
         "attribution": {
           "text": ""
         },
@@ -2446,7 +2451,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Ecosystem Accounting - Slovakia WIP",
+        "interfaceGroup": "Ecosystem Accounting - Slovakia",
         "layerCard": {
           "toggleable": true,
           "legend": {
@@ -2501,7 +2506,8 @@
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
           "format": "cog",
-          "zIndex": 2
+          "zIndex": 2,
+          "normalize": false
         }
       ],
       "meta": {
@@ -2517,7 +2523,7 @@
         "endColor": "#054521"
       },
       "layout": {
-        "interfaceGroup": "World Soils SOC WIP",
+        "interfaceGroup": "World Soils SOC",
         "layerCard": {
           "toggleable": true,
           "legend": {
@@ -2537,25 +2543,25 @@
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 0
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 1
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 2
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 50,
           "level": 3
         }
       ],
@@ -2589,21 +2595,40 @@
     {
       "name": "Topsoil SOC Comparison 2018-20 vs 2020-22",
       "isActive": false,
-      "data": [],
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false,
+          "position": "left"
+        },
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false,
+          "position": "right"
+        }
+      ],
       "isSwipeLayer": true,
       "meta": {
         "description": "Auto-generated description for Topsoil SOC Comparison 2018-20 vs 2020-22",
         "attribution": {
           "text": "Data attribution not specified"
         },
-        "categories": []
+        "categories": [],
+        "min": 0,
+        "max": 2500,
+        "startColor": "#ffffff",
+        "endColor": "#054521"
       },
       "layout": {
-        "interfaceGroup": "World Soils SOC WIP",
+        "interfaceGroup": "World Soils SOC",
         "layerCard": {
           "toggleable": true,
           "legend": {
-            "type": "swatch"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true
@@ -4020,7 +4045,7 @@
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
           "format": "xyz",
-          "zIndex": 2
+          "zIndex": 0
         }
       ],
       "meta": {
@@ -4045,33 +4070,34 @@
       }
     },
     {
-      "name": "Base Map",
+      "name": "Simple base map",
       "isActive": false,
       "data": [
         {
           "url": "https://geoservice.dlr.de/eoc/basemap/wms",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 1,
           "layers": "litemap",
           "serviceId": "wms-service-1750351088731"
         },
         {
           "url": "https://geoservice.dlr.de/eoc/basemap/wms",
           "format": "wms",
-          "zIndex": 100,
+          "zIndex": 1,
           "layers": "baseoverlay",
           "serviceId": "wms-service-1750351088731"
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Base Map",
+        "description": "Simple base map of labels and borders suitable as a background map.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "EOC",
+          "url": "https://geoservice.dlr.de/web/services"
         },
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "EOC Base Maps",
+        "interfaceGroup": "Basemaps",
         "layerCard": {
           "toggleable": true,
           "legend": {
@@ -4084,33 +4110,27 @@
       }
     },
     {
-      "name": "Clean topographic 3D hillshade",
+      "name": "Simple hillshade map",
       "isActive": false,
       "data": [
         {
           "url": "https://geoservice.dlr.de/eoc/basemap/wms",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 1,
           "layers": "cleantopo2:CleanTOPO2_3D_hillshade",
-          "serviceId": "wms-service-1750351088731"
-        },
-        {
-          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
-          "format": "wms",
-          "zIndex": 2,
-          "layers": "eoc:Bathymetrie-und-DEM_43200x21600_unsigned_HILLSHADE-u-BlueWater_8bit_latlong",
           "serviceId": "wms-service-1750351088731"
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Clean topographic 3D hillshade",
+        "description": "Simple hillshade map",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "EOC",
+          "url": "https://geoservice.dlr.de/web/services"
         },
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "EOC Base Maps",
+        "interfaceGroup": "Basemaps",
         "layerCard": {
           "toggleable": true,
           "legend": {
@@ -4122,5 +4142,12 @@
         }
       }
     }
-  ]
+  ],
+  "_exportMeta": {
+    "version": "1.0.0",
+    "transformations": [
+      "addNormalizeFalseToCogs"
+    ],
+    "exportedAt": "2025-06-20T14:09:37.141Z"
+  }
 }
