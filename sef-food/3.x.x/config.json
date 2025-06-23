@@ -1,0 +1,4315 @@
+{
+  "version": "1.0.0",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "SEF Demo - Ecosystems and Biodiversity"
+    }
+  },
+  "interfaceGroups": [
+    "General Land Cover",
+    "Ecosystem Accounting - Greece",
+    "Ecosystem Accounting - Slovakia",
+    "Natura 2000 Areas",
+    "Carbon Monitoring",
+    "World Cereal Crop Maps",
+    "CAP Ecoshemes",
+    "World Soils SOC",
+    "CLMS Daily and 10 Daily Data",
+    "Basemaps"
+  ],
+  "exclusivitySets": [
+    "labels"
+  ],
+  "services": [
+    {
+      "id": "wms-service-1749555952736",
+      "name": "VITO Terrascope",
+      "url": "https://services.terrascope.be/wms/v2",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1749572624524",
+      "name": "Copernicus Urban Atlas",
+      "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1750143419665",
+      "name": "Brockmann Xcube",
+      "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wmts-service-1750331396152",
+      "name": "Terrascope WMTS",
+      "url": "https://globalland.vito.be/wmts",
+      "format": "wmts"
+    },
+    {
+      "id": "wms-service-1750351088731",
+      "name": "EOX BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "s3-service-1750499655684",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Labels and borders",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 104,
+          "layers": "baseoverlay"
+        }
+      ],
+      "meta": {
+        "description": "Simple labels and borders from EOC which can be displayed over other layers.",
+        "attribution": {
+          "text": "EOC Basemap Map Service",
+          "url": "https://geoservice.dlr.de/web/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Basemaps",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Open StreetMap",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 1
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Land Cover 2019 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2019/cog-full_l0-colored-full/{z}/{x}/{-y}.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2019 base year. The data are updated annually and are available for the 2015-2019 years.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/copernicus-global-land-service-land-cover-100m-collection-3-epoch-2019-globe"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Miscellaneous",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Land Cover 2018 (raster 100m), global, yearly - version 3",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2018/cog-full_l0-colored-full/{z}/{x}/{-y}.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2018 base year. The data are updated annually and are available for the 2015-2019 years.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Miscellaneous",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Land Cover 2017 (raster 100m), global, yearly",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2017/cog-full_l0-colored-full/{z}/{x}/{-y}.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Provides at global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2017 base year. The data are updated annually and are available for the 2015-2019 years.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Miscellaneous",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS stats",
+      "isActive": false,
+      "data": [],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 2
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon statistics - 2020-2022",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Miscellaneous",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Habitat Map GR Level 1 2020 - statistics by NUTS",
+      "isActive": false,
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2021 habitat type hierarchy, with statistics using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#4001ed",
+            "label": "Marine benthic habitats (MA-MG)",
+            "value": 10000
+          },
+          {
+            "color": "#44caee",
+            "label": "Coastal habitats",
+            "value": 40000
+          },
+          {
+            "color": "#914321",
+            "label": "Wetlands",
+            "value": 50000
+          },
+          {
+            "color": "#dbe341",
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
+            "value": 60000
+          },
+          {
+            "color": "#9e7221",
+            "label": "Heathland, scrub and tundra",
+            "value": 70000
+          },
+          {
+            "color": "#0b651a",
+            "label": "Forest and other wooded land",
+            "value": 80000
+          },
+          {
+            "color": "#737770",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
+          },
+          {
+            "color": "#b54dbd",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
+          },
+          {
+            "color": "#ff0810",
+            "label": "Constructed, industrial or other Artificial types",
+            "value": 110000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Greece",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false
+          }
+        }
+      },
+      "data": [],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 3
+        }
+      ]
+    },
+    {
+      "name": "World Cover 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCOVER_2021_MAP",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "statistics": [],
+      "meta": {
+        "description": "Land cover map for 2021",
+        "attribution": {
+          "text": "World Cover Project",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "General Land Cover",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "World Cover 2021 with NUTS statistics",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCOVER_2021_MAP",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 3
+        }
+      ],
+      "meta": {
+        "description": "Land cover map for 2021 with statistics using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.  Click on a country to view statistics and drill down to regional and local areas with further clicks.",
+        "attribution": {
+          "text": "World Cover project",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "General Land Cover",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type Map",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "CroptypeMap",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "statistics": [],
+      "meta": {
+        "description": "World Cover from 2021",
+        "attribution": {
+          "text": ""
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Miscellaneous",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "CLC+ Backbone 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
+        }
+      ],
+      "meta": {
+        "description": "A pan-European spatially consistent and seamless, detailed land cover inventory for the 2021 reference year, for each pixel showing the dominant land cover among the 11 basic land cover classes. The dataset is available as 10 m raster.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": [
+          {
+            "color": "#ff0000",
+            "label": "Sealed",
+            "value": 1
+          },
+          {
+            "color": "#228b22",
+            "label": "Woody needle leaved trees",
+            "value": 2
+          },
+          {
+            "color": "#80ff00",
+            "label": "Woody broadleaved deciduous trees",
+            "value": 3
+          },
+          {
+            "color": "#00ff08",
+            "label": "Woody broadleaved evergreen trees",
+            "value": 4
+          },
+          {
+            "color": "#804000",
+            "label": "Low-growing woody plants",
+            "value": 5
+          },
+          {
+            "color": "#ccf24d",
+            "label": "Permanently herbaceous",
+            "value": 6
+          },
+          {
+            "color": "#ffff80",
+            "label": "Periodically herbaceous",
+            "value": 7
+          },
+          {
+            "color": "#ff80ff",
+            "label": "Lichens and mosses",
+            "value": 8
+          },
+          {
+            "color": "#bfbfbf",
+            "label": "Non and sparsely vegetated",
+            "value": 9
+          },
+          {
+            "color": "#0080ff",
+            "label": "Water",
+            "value": 10
+          },
+          {
+            "color": "#00ffff",
+            "label": "Snow and ice",
+            "value": 11
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "General Land Cover",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Land Use Raster",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "Land_Use_Raster1402",
+          "serviceId": "wms-service-1749572624524"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Land Use Raster",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban - WIP",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "City Boundary",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "City_Boundary",
+          "serviceId": "wms-service-1749572624524"
+        }
+      ],
+      "meta": {
+        "description": "Visible at intermediate zoom scales (20km to 10km)",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban - WIP",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Greater City Boundary",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "Greater_City_Boundary",
+          "serviceId": "wms-service-1749572624524"
+        }
+      ],
+      "meta": {
+        "description": "Visible 20km to 10km",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban - WIP",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Land Use Vector",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "Land_Use_vector52160",
+          "serviceId": "wms-service-1749572624524"
+        }
+      ],
+      "meta": {
+        "description": "Visible from 5km",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban - WIP",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Habitat Map GR Level 1 2020",
+      "isActive": false,
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2021 habitat type hierarchy",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#4001ed",
+            "label": "Marine benthic habitats (MA-MG)",
+            "value": 10000
+          },
+          {
+            "color": "#44caee",
+            "label": "Coastal habitats",
+            "value": 40000
+          },
+          {
+            "color": "#914321",
+            "label": "Wetlands",
+            "value": 50000
+          },
+          {
+            "color": "#dbe341",
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
+            "value": 60000
+          },
+          {
+            "color": "#9e7221",
+            "label": "Heathland, scrub and tundra",
+            "value": 70000
+          },
+          {
+            "color": "#0b651a",
+            "label": "Forest and other wooded land",
+            "value": 80000
+          },
+          {
+            "color": "#737770",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
+          },
+          {
+            "color": "#b54dbd",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
+          },
+          {
+            "color": "#ff0810",
+            "label": "Constructed, industrial or other Artificial types",
+            "value": 110000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Greece",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "statistics": []
+    },
+    {
+      "name": "Habitat Map GR Level 2 2020",
+      "isActive": false,
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2021 habitat type hierarchy.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#040087",
+            "label": "Marine benthic habitats (MA-MG)",
+            "value": 19999
+          },
+          {
+            "color": "#44caee",
+            "label": "Coastal dunes and sandy shores",
+            "value": 40100
+          },
+          {
+            "color": "#3399b3",
+            "label": "Rock cliffs, ledges and shores, including the supralittoral",
+            "value": 40300
+          },
+          {
+            "color": "#502512",
+            "label": "Valley mires, poor fens and transition mires",
+            "value": 50200
+          },
+          {
+            "color": "#76361b",
+            "label": "Helophyte beds",
+            "value": 50500
+          },
+          {
+            "color": "#ac4f27",
+            "label": "Periodically exposed shores",
+            "value": 50600
+          },
+          {
+            "color": "#d7fe06",
+            "label": "Dry grasslands",
+            "value": 60100
+          },
+          {
+            "color": "#96a246",
+            "label": "Seasonally wet and wet grasslands",
+            "value": 60300
+          },
+          {
+            "color": "#87d55c",
+            "label": "Alpine and subalpine grasslands",
+            "value": 60400
+          },
+          {
+            "color": "#75a93a",
+            "label": "Forest fringes and clearings and tall forb stands",
+            "value": 60500
+          },
+          {
+            "color": "#d7e965",
+            "label": "Inland salt steppes and salt marshes",
+            "value": 60600
+          },
+          {
+            "color": "#c8967a",
+            "label": "Arctic, alpine and subalpine scrub",
+            "value": 70200
+          },
+          {
+            "color": "#cd8b5c",
+            "label": "Temperate and mediterranean-montane scrub",
+            "value": 70300
+          },
+          {
+            "color": "#cd6d29",
+            "label": "Maquis, arborescent matorral and thermo-Mediterranean scrub",
+            "value": 70500
+          },
+          {
+            "color": "#cd5a17",
+            "label": "Garrigue",
+            "value": 70600
+          },
+          {
+            "color": "#9b470b",
+            "label": "Spiny Mediterranean heaths (phrygana, hedgehog-heaths and related coastal cliff vegetation)",
+            "value": 70700
+          },
+          {
+            "color": "#7e3c0d",
+            "label": "Riverine and fen scrubs",
+            "value": 70900
+          },
+          {
+            "color": "#0fe300",
+            "label": "Deciduous broadleaved forest",
+            "value": 80100
+          },
+          {
+            "color": "#35b779",
+            "label": "Broadleaved evergreen forest",
+            "value": 80200
+          },
+          {
+            "color": "#49f8a0",
+            "label": "Coniferous forest",
+            "value": 80300
+          },
+          {
+            "color": "#9e962a",
+            "label": "Screes",
+            "value": 90200
+          },
+          {
+            "color": "#8a6925",
+            "label": "Inland cliffs, rock pavements and outcrops",
+            "value": 90300
+          },
+          {
+            "color": "#a37841",
+            "label": "Miscellaneous inland habitats usually with very sparse or no vegetation",
+            "value": 90500
+          },
+          {
+            "color": "#866c4b",
+            "label": "Unvegetated or sparsely vegetated gravel bars",
+            "value": 90700
+          },
+          {
+            "color": "#f954e8",
+            "label": "Arable land and market gardens",
+            "value": 100100
+          },
+          {
+            "color": "#c663c9",
+            "label": "Shrub plantations",
+            "value": 100500
+          },
+          {
+            "color": "#9b159d",
+            "label": "Tree dominated man-made habitats",
+            "value": 100600
+          },
+          {
+            "color": "#ff0810",
+            "label": "Constructed, industrial or other Artificial types",
+            "value": 110000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Greece",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L2_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ]
+    },
+    {
+      "name": "Habitat Map GR Level 1 vs Level 2",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false,
+          "position": "left"
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L2_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false,
+          "position": "right"
+        }
+      ],
+      "isSwipeLayer": true,
+      "meta": {
+        "description": "Pending COG rendering fix for swipe layers, and multiple COG renders in single layer group",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Greece WIP",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Habitat Map GR Level 1 2020 vs Sentinel-2",
+      "isActive": false,
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2021 habitat type hierarchy, compared with Sentinel-2 2021",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#4001ed",
+            "label": "Marine benthic habitats (MA-MG)",
+            "value": 10000
+          },
+          {
+            "color": "#44caee",
+            "label": "Coastal habitats",
+            "value": 40000
+          },
+          {
+            "color": "#914321",
+            "label": "Wetlands",
+            "value": 50000
+          },
+          {
+            "color": "#dbe341",
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
+            "value": 60000
+          },
+          {
+            "color": "#9e7221",
+            "label": "Heathland, scrub and tundra",
+            "value": 70000
+          },
+          {
+            "color": "#0b651a",
+            "label": "Forest and other wooded land",
+            "value": 80000
+          },
+          {
+            "color": "#737770",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
+          },
+          {
+            "color": "#b54dbd",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
+          },
+          {
+            "color": "#ff0810",
+            "label": "Constructed, industrial or other Artificial types",
+            "value": 110000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Greece",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false,
+          "position": "right"
+        },
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736",
+          "position": "left"
+        }
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "name": "Coastal Condition Account GR 2022",
+      "isActive": false,
+      "meta": {
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands for Greece in 2022.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [],
+        "min": -19,
+        "max": 103,
+        "startColor": "#046601",
+        "endColor": "#fdfd1f"
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Greece",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2022/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-GR_Coastal_Condition_IMD_2022/GR_Coastal_Condition_IMD_raster_2022.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ]
+    },
+    {
+      "name": "Wood Provison Service Account GR 2021",
+      "isActive": false,
+      "meta": {
+        "description": "Quantification of the supply of wood products from forests, woodlands, or other ecosystems over time for Greece in 2021.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [],
+        "min": 0.004,
+        "max": 0.54,
+        "startColor": "#046601",
+        "endColor": "#fdfd1f"
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Greece",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_WOOD_PROVISION/2021/01/01/ESA_PEOPLE_EA_WOOD_PROVISION-GR_FAWS_2021/GR_FAWS_raster_2021.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ]
+    },
+    {
+      "name": "Copernicus Global Land Cover 2019",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2019/cog-full_l0-colored-full/{z}/{x}/{-y}.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "A global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2019 base year. The data are updated annually and are available for the 2015-2019 years.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/copernicus-global-land-service-land-cover-100m-collection-3-epoch-2019-globe"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Forests",
+            "value": 111
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Herbaceous Vegetation",
+            "value": 30
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous Wetland",
+            "value": 90
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare / sparse vegetation",
+            "value": 60
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#fa0000",
+            "label": "Built up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Snow and Ice",
+            "value": 70
+          },
+          {
+            "color": "#0032c8",
+            "label": "Permanent Water Bodies",
+            "value": 80
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "General Land Cover",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "N2k Land Cover / Land Use 2018",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "0"
+        }
+      ],
+      "meta": {
+        "description": "Detailed land cover and land use information for 55 thematic classes in selected Natura2000 sites for the 2018 reference year. The dataset has a Minimum Mapping Unit (MMU) of 0.5 ha and a Minimum Mapping Width (MMW) of 10 m and is available as vector data.",
+        "attribution": {
+          "text": "CLMS Natura 2000",
+          "url": "https://land.copernicus.eu/en/products/n2k"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Natura 2000 Areas",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "image",
+            "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Topsoil Soil Organic Carbon 2020-22",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 2500,
+        "startColor": "#ffffff",
+        "endColor": "#054521"
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Monitoring",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS statistics",
+      "isActive": false,
+      "data": [],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 3
+        }
+      ],
+      "meta": {
+        "description": "Statistics for Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [
+          {
+            "color": "#d62424",
+            "label": "Mean",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Monitoring",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Forest Carbon (no data available)",
+      "isActive": false,
+      "data": [],
+      "meta": {
+        "description": "Forest Carbon",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Monitoring (WIP)",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "World Cover 2021 with N2K statistics",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCOVER_2021_MAP",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.esa_worldcover_2021.natura_2000.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 0,
+          "minZoom": 8
+        }
+      ],
+      "meta": {
+        "description": "Land cover map for 2021 with statistics using Natura 2000 boundaries.  Zoom in until the scale bar shows 10km to show Natura boundaries then click on a Natura area to view statisics.",
+        "attribution": {
+          "text": "World Cover project",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Natura 2000 Areas",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Habitat Map SK Level 1 2020 - statistics by NUTS",
+      "isActive": false,
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2012 habitat type hierarchy, with statistics using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#ffd37f",
+            "label": "Costal Habitats",
+            "value": 20000
+          },
+          {
+            "color": "#0070ff",
+            "label": "Inland Surface Waters",
+            "value": 30000
+          },
+          {
+            "color": "#df73ff",
+            "label": "Mires, bogs and fens",
+            "value": 40000
+          },
+          {
+            "color": "#55ff00",
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
+            "value": 50000
+          },
+          {
+            "color": "#ffaa00",
+            "label": "Heathland, scrub and tundra",
+            "value": 60000
+          },
+          {
+            "color": "#267300",
+            "label": "Woodland, forest and other wooded land",
+            "value": 70000
+          },
+          {
+            "color": "#b2b2b2",
+            "label": "Inland unvegetated or sparsely vegetated habitats",
+            "value": 80000
+          },
+          {
+            "color": "#ffff73",
+            "label": "Regularly or recently cultivated agricultural, horticultural and domestic habitats",
+            "value": 90000
+          },
+          {
+            "color": "#ff0000",
+            "label": "Constructed, industrial and other artificial habitats",
+            "value": 100000
+          },
+          {
+            "color": "#00ffa6",
+            "label": "Complex Habitats",
+            "value": 110000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Slovakia",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false
+          }
+        }
+      },
+      "data": [],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 3
+        }
+      ]
+    },
+    {
+      "name": "Habitat Map SK Level 1 2020",
+      "isActive": false,
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2012 habitat type hierarchy.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#ffd37f",
+            "label": "Costal Habitats",
+            "value": 20000
+          },
+          {
+            "color": "#0070ff",
+            "label": "Inland Surface Waters",
+            "value": 30000
+          },
+          {
+            "color": "#df73ff",
+            "label": "Mires, bogs and fens",
+            "value": 40000
+          },
+          {
+            "color": "#55ff00",
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
+            "value": 50000
+          },
+          {
+            "color": "#ffaa00",
+            "label": "Heathland, scrub and tundra",
+            "value": 60000
+          },
+          {
+            "color": "#267300",
+            "label": "Woodland, forest and other wooded land",
+            "value": 70000
+          },
+          {
+            "color": "#b2b2b2",
+            "label": "Inland unvegetated or sparsely vegetated habitats",
+            "value": 80000
+          },
+          {
+            "color": "#ffff73",
+            "label": "Regularly or recently cultivated agricultural, horticultural and domestic habitats",
+            "value": 90000
+          },
+          {
+            "color": "#ff0000",
+            "label": "Constructed, industrial and other artificial habitats",
+            "value": 100000
+          },
+          {
+            "color": "#00ffa6",
+            "label": "Complex Habitats",
+            "value": 110000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Slovakia",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012-SK_2020/SK_L1_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "statistics": []
+    },
+    {
+      "name": "Habitat Map SK Level 2 2020",
+      "isActive": false,
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2012 habitat type hierarchy.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#e6e6e6",
+            "label": "Coastal dunes and sandy shores",
+            "value": 20100
+          },
+          {
+            "color": "#c8c8c8",
+            "label": "Coastal shingle",
+            "value": 20200
+          },
+          {
+            "color": "#aaaaaa",
+            "label": "Rock cliffs: ledges and shores: including the supralittoral",
+            "value": 20300
+          },
+          {
+            "color": "#80f2e6",
+            "label": "Surface standing waters",
+            "value": 30100
+          },
+          {
+            "color": "#00ccf2",
+            "label": "Surface running waters",
+            "value": 30200
+          },
+          {
+            "color": "#00cc99",
+            "label": "Littoral zone and inland surface waterbodies",
+            "value": 30300
+          },
+          {
+            "color": "#403151",
+            "label": "Raised and blanket bogs",
+            "value": 40100
+          },
+          {
+            "color": "#60497a",
+            "label": "Valley mires: poor fens and transition mires",
+            "value": 40200
+          },
+          {
+            "color": "#b1a063",
+            "label": "Aapa: palsa and polygon mires",
+            "value": 40300
+          },
+          {
+            "color": "#ccc0da",
+            "label": "rich fens and calcareous spring mires",
+            "value": 40400
+          },
+          {
+            "color": "#daeef3",
+            "label": "standing water",
+            "value": 40500
+          },
+          {
+            "color": "#b7dee8",
+            "label": "Inland saline and brackish marshes and reedbeds",
+            "value": 40600
+          },
+          {
+            "color": "#f0f096",
+            "label": "Dry grasslands",
+            "value": 50100
+          },
+          {
+            "color": "#e6e64d",
+            "label": "Mesic grasslands",
+            "value": 50200
+          },
+          {
+            "color": "#ccf24d",
+            "label": "Seasonally wet and wet grasslands",
+            "value": 50300
+          },
+          {
+            "color": "#99ff99",
+            "label": "Alpine and subalpine grasslands",
+            "value": 50400
+          },
+          {
+            "color": "#ccffff",
+            "label": "Inland salt steppes",
+            "value": 50600
+          },
+          {
+            "color": "#f2cca6",
+            "label": "Sparsely wooded grasslands",
+            "value": 50700
+          },
+          {
+            "color": "#974706",
+            "label": "Tundra",
+            "value": 60100
+          },
+          {
+            "color": "#e26b0a",
+            "label": "Artic: alpine and subalpine scrub",
+            "value": 60200
+          },
+          {
+            "color": "#fabf8f",
+            "label": "montane scrub",
+            "value": 60300
+          },
+          {
+            "color": "#fcd5b4",
+            "label": "Temperate shrub heathland",
+            "value": 60400
+          },
+          {
+            "color": "#fde9d9",
+            "label": "Mediterranean brushes",
+            "value": 60500
+          },
+          {
+            "color": "#daeef3",
+            "label": "Garrigue",
+            "value": 60600
+          },
+          {
+            "color": "#b7dee8",
+            "label": "heats and related coastal ciff vegetation)",
+            "value": 60700
+          },
+          {
+            "color": "#92cddc",
+            "label": "Atlantic xerophytic scrub",
+            "value": 60800
+          },
+          {
+            "color": "#31c89b",
+            "label": "Riverine and fen scrub",
+            "value": 60900
+          },
+          {
+            "color": "#e68000",
+            "label": "Shrub plantations",
+            "value": 61100
+          },
+          {
+            "color": "#80ff00",
+            "label": "Broadleaved deciduous woodland",
+            "value": 70100
+          },
+          {
+            "color": "#e6a600",
+            "label": "Broadleaved evergreen woodland",
+            "value": 70200
+          },
+          {
+            "color": "#00a600",
+            "label": "Coniferous woodland",
+            "value": 70300
+          },
+          {
+            "color": "#4dff00",
+            "label": "Mixed deciduous and coniferous woodland",
+            "value": 70400
+          },
+          {
+            "color": "#4f6228",
+            "label": "stage woodland and coppice",
+            "value": 70500
+          },
+          {
+            "color": "#f2f2f2",
+            "label": "Screes",
+            "value": 80200
+          },
+          {
+            "color": "#cccccc",
+            "label": "Inland cliffs: rock pavements and outcrops",
+            "value": 80300
+          },
+          {
+            "color": "#ffffff",
+            "label": "dominated habitats",
+            "value": 80400
+          },
+          {
+            "color": "#ccffcc",
+            "label": "Miscellaneous inland habitats with very sparse or no vegetation",
+            "value": 80500
+          },
+          {
+            "color": "#ffffa8",
+            "label": "Arable land and market gardens",
+            "value": 90100
+          },
+          {
+            "color": "#ffff00",
+            "label": "Cultivated areas of gardens and parks",
+            "value": 90200
+          },
+          {
+            "color": "#ff0000",
+            "label": "Buildings of cities: towns and villages",
+            "value": 100100
+          },
+          {
+            "color": "#ff7d7d",
+            "label": "Low density buildings",
+            "value": 100200
+          },
+          {
+            "color": "#a600cc",
+            "label": "Extractive industrial sites",
+            "value": 100300
+          },
+          {
+            "color": "#ff5500",
+            "label": "surfaced areas",
+            "value": 100400
+          },
+          {
+            "color": "#e6e6ff",
+            "label": "made waters and associates structures",
+            "value": 100500
+          },
+          {
+            "color": "#a64d00",
+            "label": "Waste deposits",
+            "value": 100600
+          },
+          {
+            "color": "#a6ffe6",
+            "label": "Estuaries",
+            "value": 110100
+          },
+          {
+            "color": "#00ffa6",
+            "label": "Coastal lagoons",
+            "value": 110200
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Slovakia",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012-SK_2020/SK_L2_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ]
+    },
+    {
+      "name": "Sentinel-2",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 1,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "meta": {
+        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "attribution": {
+          "text": "Copernicus Sentinel-2",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Basemaps",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Wood Provison Service Account SK 2021",
+      "isActive": false,
+      "meta": {
+        "description": "Quantification of the supply of wood products from forests, woodlands, or other ecosystems over time for Slovakia in 2021.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "startColor": "#046601",
+        "endColor": "#fdfd1f",
+        "min": 0.004,
+        "max": 0.54
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Slovakia",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_WOOD_PROVISION/2021/01/01/ESA_PEOPLE_EA_WOOD_PROVISION-SK_FAWS_2021/SK_FAWS_raster_2021.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ]
+    },
+    {
+      "name": "Austria Rooftops (major cities)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "GTIF_AT_Rooftops_3857",
+          "serviceId": "wms-service-1750143419665"
+        }
+      ],
+      "meta": {
+        "description": "Roof tops in Vienna, Innsbruck, Graz & St Polten",
+        "attribution": {
+          "text": ""
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban - WIP",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Heat",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/HeatAdapt/update/LULUCF_2018_AT_70m_3857_rendered.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Styling",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "K",
+        "min": 273,
+        "max": 313,
+        "startColor": "#ffffff",
+        "endColor": "#ff0000"
+      },
+      "layout": {
+        "interfaceGroup": "Urban - WIP",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Green Roofs",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "GTIF_AT_Rooftops_PV_bundesland_3857_v1",
+          "serviceId": "wms-service-1750143419665"
+        }
+      ],
+      "meta": {
+        "description": "Styling",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban - WIP",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Active Cropland (no data available)",
+      "isActive": false,
+      "data": [],
+      "meta": {
+        "description": "World Cereal active cropland, globally, at 10m resolution.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "World Cereal Maps (WIP)",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Spring Cereals 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCEREAL_SPRINGCEREALS_V1",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "meta": {
+        "description": "World Cereal spring cereals, globally, at 10m resolution in specific seasons throughout the year.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "World Cereal Crop Maps",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Winter Cereals 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCEREAL_WINTERCEREALS_V1",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "meta": {
+        "description": "World Cereal winter cereals, globally, at 10m resolution in specific seasons throughout the year.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "World Cereal Crop Maps",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Maize 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCEREAL_MAIZE_V1",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "meta": {
+        "description": "Maize, globally, at 10m resolution in specific seasons throughout the year.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "World Cereal Crop Maps",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Temporary Crops 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCEREAL_TEMPORARYCROPS_V1",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "meta": {
+        "description": "World Cereal temporary crops, globally, at 10m resolution in specific seasons throughout the year.  A piece of land that is sowed/planted and harvestable at least once within the 12 months after the sowing/planting date.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "World Cereal Crop Maps",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Sentinel 2 vs World Cover",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736",
+          "position": "left"
+        },
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCOVER_2021_MAP",
+          "serviceId": "wms-service-1749555952736",
+          "position": "right"
+        }
+      ],
+      "isSwipeLayer": true,
+      "meta": {
+        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "attribution": {
+          "text": "World Cover",
+          "url": "https://esa-worldcover.org/en"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "General Land Cover",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Habitat Map SK Level 1 vs Level 2",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false,
+          "position": "left"
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L2_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false,
+          "position": "right"
+        }
+      ],
+      "isSwipeLayer": true,
+      "meta": {
+        "description": "Pending COG rendering for swipe layers, and support of multiple COG renders",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Slovakia WIP",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Habitat Map SK Level 1 vs Sentinel-2",
+      "isActive": false,
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2012 habitat type hierarchy compared with Sentinel-2 2021",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#ffd37f",
+            "label": "Costal Habitats",
+            "value": 20000
+          },
+          {
+            "color": "#0070ff",
+            "label": "Inland Surface Waters",
+            "value": 30000
+          },
+          {
+            "color": "#df73ff",
+            "label": "Mires, bogs and fens",
+            "value": 40000
+          },
+          {
+            "color": "#55ff00",
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
+            "value": 50000
+          },
+          {
+            "color": "#ffaa00",
+            "label": "Heathland, scrub and tundra",
+            "value": 60000
+          },
+          {
+            "color": "#267300",
+            "label": "Woodland, forest and other wooded land",
+            "value": 70000
+          },
+          {
+            "color": "#b2b2b2",
+            "label": "Inland unvegetated or sparsely vegetated habitats",
+            "value": 80000
+          },
+          {
+            "color": "#ffff73",
+            "label": "Regularly or recently cultivated agricultural, horticultural and domestic habitats",
+            "value": 90000
+          },
+          {
+            "color": "#ff0000",
+            "label": "Constructed, industrial and other artificial habitats",
+            "value": 100000
+          },
+          {
+            "color": "#00ffa6",
+            "label": "Complex Habitats",
+            "value": 110000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Slovakia",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012-SK_2020/SK_L2_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false,
+          "position": "right"
+        },
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736",
+          "position": "left"
+        }
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "name": "Topsoil Soil Organic Carbon 2020-22",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 2500,
+        "startColor": "#ffffff",
+        "endColor": "#054521"
+      },
+      "layout": {
+        "interfaceGroup": "World Soils SOC",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Topsoil Soil Organic Carbon 2018-2020",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2021).",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 2500,
+        "startColor": "#ffffff",
+        "endColor": "#054521"
+      },
+      "layout": {
+        "interfaceGroup": "World Soils SOC",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS statistics",
+      "isActive": false,
+      "data": [],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 3
+        }
+      ],
+      "meta": {
+        "description": "Statistics for Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [
+          {
+            "color": "#d62424",
+            "label": "Mean",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "World Soils SOC",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Topsoil SOC Comparison 2018-20 vs 2020-22",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false,
+          "position": "left"
+        },
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false,
+          "position": "right"
+        }
+      ],
+      "isSwipeLayer": true,
+      "meta": {
+        "description": "Auto-generated description for Topsoil SOC Comparison 2018-20 vs 2020-22",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 2500,
+        "startColor": "#ffffff",
+        "endColor": "#054521"
+      },
+      "layout": {
+        "interfaceGroup": "World Soils SOC",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Soil Water Index 2015-present (raster 1 km), Europe, daily – version 1",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://globalland.vito.be/wmts",
+          "format": "wmts",
+          "zIndex": 2,
+          "layers": "clms_global_swi_1km_v1_daily",
+          "serviceId": "wmts-service-1750331396152"
+        }
+      ],
+      "meta": {
+        "description": "Quantifies the moisture condition at various depths in the soil. Daily observations are available for the continental Europe in the spatial resolution of 1 km and with the temporal extent from January 2015 to present.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "CLMS Daily and 10 Daily Data",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Rotation Analysis - 2021 - 2022 - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_CLASS_L3_CLASS_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Crop comparison for 2021, 2022 and 2023 at the Level-3 (most detailed).",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "rgba(183,243,135,255)",
+            "label": "Different Crops",
+            "value": 0
+          },
+          {
+            "color": "rgba(229,127,124,255)",
+            "label": "Same Crops",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type Comparison (>85% probability) - 2021 - 2022 - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_CLASS_L3_PROBgt85_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Crop type comparison (2021/2022/2023) at the Level-3 limited to the cases where the combined crop assignment probability is higher than 85%.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "rgba(183,243,135,255)",
+            "label": "Different Crops",
+            "value": 0
+          },
+          {
+            "color": "rgba(229,127,124,255)",
+            "label": "Same Crops",
+            "value": 1
+          },
+          {
+            "color": "rgba(155,155,155,255)",
+            "label": "Decision not possible",
+            "value": 254
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type Classification Probability - 2021 - 2022 - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_PROB_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Combined probability of crop type classification (2021/2022/2023) at Level-3.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "startColor": "rgba(229,127,124,255)",
+        "endColor": "rgba(183,243,135,255)"
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Rotation Analysis - 2022 - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CLASS_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Crop comparison for 2022 and 2023 at the Level-3 (most detailed).",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "rgba(183,243,135,255)",
+            "label": "Different Crops",
+            "value": 0
+          },
+          {
+            "color": "rgba(229,127,124,255)",
+            "label": "Same Crops",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type Comparison (>85% probability) - 2022 - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_PROBgt85_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Crop type comparison (2022/2023) at the Level-3 limited to the cases where the combined crop assignment probability is higher than 85%.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "rgba(183,243,135,255)",
+            "label": "Different Crops",
+            "value": 0
+          },
+          {
+            "color": "rgba(229,127,124,255)",
+            "label": "Same Crops",
+            "value": 1
+          },
+          {
+            "color": "rgba(155,155,155,255)",
+            "label": "Decision not possible",
+            "value": 254
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type Classification Probability - 2022 - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_PROB_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Combined probability of crop type classification (2022/2023) at Level-3.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "startColor": "rgba(229,127,124,255)",
+        "endColor": "rgba(183,243,135,255)"
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type Comparison with Catch Crop Occurrence Detection - 2022 - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CATCH_CLASS_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Crop type comparison (2022/2023) at the Level-3 combined with catch crop occurrence detection.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "rgba(183,243,135,255)",
+            "label": "Different crops or same crops with catch crop presence",
+            "value": 0
+          },
+          {
+            "color": "rgba(229,127,124,255)",
+            "label": "Same crops without presence of catch crop",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type Comparison with Catch Crop Occurrence Detection (>85% probability) - 2022 - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CATCH_PROBgt85_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Crop type comparison (2022/2023) at the Level-3 combined with catch crop occurrence detection limited to the cases where the combined crop assignment probability is higher than 85%.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "rgba(183,243,135,255)",
+            "label": "Different crops or same crops with catch crop presence",
+            "value": 0
+          },
+          {
+            "color": "rgba(229,127,124,255)",
+            "label": "Same crops without presence of catch crop",
+            "value": 1
+          },
+          {
+            "color": "rgba(155,155,155,255)",
+            "label": "Decision not possible",
+            "value": 254
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Erosion Risk - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ErosionRisk_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Declaration of erosion risk level.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "rgba(183,243,135,255)",
+            "label": "No Erosion Risk (NEO)",
+            "value": 0
+          },
+          {
+            "color": "rgba(238,202,131,255)",
+            "label": "Medium Erosion Risk (MEO)",
+            "value": 1
+          },
+          {
+            "color": "rgba(229,127,124,255)",
+            "label": "High Erosion Risk (SEO)",
+            "value": 2
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Forbidden Crops MEO - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ForbiddenCrops_MEO_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Occurrence of the crops that are not allowed to grow at the parcels categorized into medium erosion risk (MEO).",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "rgba(183,243,135,255)",
+            "label": "Crop allowed on MEO parcels",
+            "value": 0
+          },
+          {
+            "color": "rgba(189,124,238,255)",
+            "label": "Crop not allowed on MEO parcels",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Forbidden Crops SEO - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ForbiddenCrops_SEO_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Occurrence of the crops that are not allowed to grow at the parcels categorized into high erosion risk (SEO).",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "rgba(183,243,135,255)",
+            "label": "Crop allowed on SEO parcels",
+            "value": 0
+          },
+          {
+            "color": "rgba(229,127,178,255)",
+            "label": "Crop not allowed on SEO parcels",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Parcel Erosion Status - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ParcelErosionStatus_1_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Occurrence of the not allowed crops at the parcels categorized into medium (MEO) or high (SEO) erosion risk level.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "rgba(183,243,135,255)",
+            "label": "Parcels compliant with anti-erosion rules",
+            "value": 0
+          },
+          {
+            "color": "rgba(229,127,124,255)",
+            "label": "Parcels not compliant with anti-erosion rules",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Parcel Erosion Status (>85% probability) - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ParcelErosionStatus_2_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Occurrence of the not allowed crops at the parcels categorized into medium (MEO) or high (SEO) erosion risk level limited to the cases where crop assignment probability is higher than 85%.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "rgba(183,243,135,255)",
+            "label": "Parcels compliant with anti-erosion rules",
+            "value": 0
+          },
+          {
+            "color": "rgba(229,127,124,255)",
+            "label": "Parcels not compliant with anti-erosion rules",
+            "value": 1
+          },
+          {
+            "color": "rgba(155,155,155,255)",
+            "label": "Decision not possible",
+            "value": 254
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type - Level 3 - 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2021_33UVR/CZ_CropType_2021_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Level 3 classification of crop types for 2021.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#0a226e",
+            "label": "Winter Wheat",
+            "value": 111
+          },
+          {
+            "color": "#1d4aa2",
+            "label": "Winter Barley",
+            "value": 112
+          },
+          {
+            "color": "#2559de",
+            "label": "Winter Rye",
+            "value": 113
+          },
+          {
+            "color": "#2e6cf6",
+            "label": "Winter Tricicale",
+            "value": 114
+          },
+          {
+            "color": "#367efb",
+            "label": "Winter Oats",
+            "value": 115
+          },
+          {
+            "color": "#3f93d3",
+            "label": "Winter Tritordeum",
+            "value": 116
+          },
+          {
+            "color": "#49a3e0",
+            "label": "Winter Rapeseed",
+            "value": 120
+          },
+          {
+            "color": "#7c8bee",
+            "label": "Other Winter Crops",
+            "value": 130
+          },
+          {
+            "color": "#31714e",
+            "label": "Spring Wheat",
+            "value": 211
+          },
+          {
+            "color": "#49a384",
+            "label": "Spring Barley",
+            "value": 212
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Oats",
+            "value": 213
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Rye",
+            "value": 214
+          },
+          {
+            "color": "#99fcde",
+            "label": "Spring Triticale",
+            "value": 215
+          },
+          {
+            "color": "#ccfde7",
+            "label": "Millet",
+            "value": 216
+          },
+          {
+            "color": "#53856f",
+            "label": "Sorghum",
+            "value": 217
+          },
+          {
+            "color": "#a8d5bf",
+            "label": "Buckwheat",
+            "value": 218
+          },
+          {
+            "color": "#7be344",
+            "label": "Poppy",
+            "value": 220
+          },
+          {
+            "color": "#54721f",
+            "label": "Beans, Peas,  Lentil, Hose Peas, Chick Peas",
+            "value": 231
+          },
+          {
+            "color": "#7aa430",
+            "label": "Soybeans, Horse Beans",
+            "value": 232
+          },
+          {
+            "color": "#b1cc72",
+            "label": "Spring Brassicaceae",
+            "value": 240
+          },
+          {
+            "color": "#b7f387",
+            "label": "Other Spring Crops",
+            "value": 250
+          },
+          {
+            "color": "#e6e64b",
+            "label": "Sugarbeet",
+            "value": 310
+          },
+          {
+            "color": "#db9a35",
+            "label": "Maize",
+            "value": 320
+          },
+          {
+            "color": "#eeca83",
+            "label": "Sunflower",
+            "value": 330
+          },
+          {
+            "color": "#f3ae3d",
+            "label": "Potatoes",
+            "value": 340
+          },
+          {
+            "color": "#c7ab6e",
+            "label": "Vegetable",
+            "value": 350
+          },
+          {
+            "color": "#e9a47f",
+            "label": "Other Summar Crops",
+            "value": 360
+          },
+          {
+            "color": "#69110a",
+            "label": "Fodder Crops",
+            "value": 410
+          },
+          {
+            "color": "#ef8481",
+            "label": "Other Multi-annual Crops ",
+            "value": 420
+          },
+          {
+            "color": "#2c0501",
+            "label": "Woody Crops",
+            "value": 430
+          },
+          {
+            "color": "rgba(0,0,0,0)",
+            "label": "Unknown",
+            "value": 500
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type Probability - Level 3 - 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2021_33UVR/CZ_CropType_2021_PROB_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Level 3 classification probability of crop types for 2021.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "startColor": "rgba(229,127,124,255)",
+        "endColor": "rgba(183,243,135,255)"
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type - Level 3 - 2022",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2022_33UVR/CZ_CropType_2022_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Level 3 classification of crop types for 2022.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#0a226e",
+            "label": "Winter Wheat",
+            "value": 111
+          },
+          {
+            "color": "#1d4aa2",
+            "label": "Winter Barley",
+            "value": 112
+          },
+          {
+            "color": "#2559de",
+            "label": "Winter Rye",
+            "value": 113
+          },
+          {
+            "color": "#2e6cf6",
+            "label": "Winter Tricicale",
+            "value": 114
+          },
+          {
+            "color": "#367efb",
+            "label": "Winter Oats",
+            "value": 115
+          },
+          {
+            "color": "#3f93d3",
+            "label": "Winter Tritordeum",
+            "value": 116
+          },
+          {
+            "color": "#49a3e0",
+            "label": "Winter Rapeseed",
+            "value": 120
+          },
+          {
+            "color": "#7c8bee",
+            "label": "Other Winter Crops",
+            "value": 130
+          },
+          {
+            "color": "#31714e",
+            "label": "Spring Wheat",
+            "value": 211
+          },
+          {
+            "color": "#49a384",
+            "label": "Spring Barley",
+            "value": 212
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Oats",
+            "value": 213
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Rye",
+            "value": 214
+          },
+          {
+            "color": "#99fcde",
+            "label": "Spring Triticale",
+            "value": 215
+          },
+          {
+            "color": "#ccfde7",
+            "label": "Millet",
+            "value": 216
+          },
+          {
+            "color": "#53856f",
+            "label": "Sorghum",
+            "value": 217
+          },
+          {
+            "color": "#a8d5bf",
+            "label": "Buckwheat",
+            "value": 218
+          },
+          {
+            "color": "#7be344",
+            "label": "Poppy",
+            "value": 220
+          },
+          {
+            "color": "#54721f",
+            "label": "Beans, Peas,  Lentil, Hose Peas, Chick Peas",
+            "value": 231
+          },
+          {
+            "color": "#7aa430",
+            "label": "Soybeans, Horse Beans",
+            "value": 232
+          },
+          {
+            "color": "#b1cc72",
+            "label": "Spring Brassicaceae",
+            "value": 240
+          },
+          {
+            "color": "#b7f387",
+            "label": "Other Spring Crops",
+            "value": 250
+          },
+          {
+            "color": "#e6e64b",
+            "label": "Sugarbeet",
+            "value": 310
+          },
+          {
+            "color": "#db9a35",
+            "label": "Maize",
+            "value": 320
+          },
+          {
+            "color": "#eeca83",
+            "label": "Sunflower",
+            "value": 330
+          },
+          {
+            "color": "#f3ae3d",
+            "label": "Potatoes",
+            "value": 340
+          },
+          {
+            "color": "#c7ab6e",
+            "label": "Vegetable",
+            "value": 350
+          },
+          {
+            "color": "#e9a47f",
+            "label": "Other Summar Crops",
+            "value": 360
+          },
+          {
+            "color": "#69110a",
+            "label": "Fodder Crops",
+            "value": 410
+          },
+          {
+            "color": "#ef8481",
+            "label": "Other Multi-annual Crops ",
+            "value": 420
+          },
+          {
+            "color": "#2c0501",
+            "label": "Woody Crops",
+            "value": 430
+          },
+          {
+            "color": "rgba(0,0,0,0)",
+            "label": "Unknown",
+            "value": 500
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type Probability - Level 3 - 2022",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2022_33UVR/CZ_CropType_2022_PROB_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Level 3 classification probability of crop types for 2022.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "startColor": "rgba(229,127,124,255)",
+        "endColor": "rgba(183,243,135,255)"
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type - Level 3 - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2023_33UVR/CZ_CropType_2023_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Level 3 classification of crop types for 2023.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#0a226e",
+            "label": "Winter Wheat",
+            "value": 111
+          },
+          {
+            "color": "#1d4aa2",
+            "label": "Winter Barley",
+            "value": 112
+          },
+          {
+            "color": "#2559de",
+            "label": "Winter Rye",
+            "value": 113
+          },
+          {
+            "color": "#2e6cf6",
+            "label": "Winter Tricicale",
+            "value": 114
+          },
+          {
+            "color": "#367efb",
+            "label": "Winter Oats",
+            "value": 115
+          },
+          {
+            "color": "#3f93d3",
+            "label": "Winter Tritordeum",
+            "value": 116
+          },
+          {
+            "color": "#49a3e0",
+            "label": "Winter Rapeseed",
+            "value": 120
+          },
+          {
+            "color": "#7c8bee",
+            "label": "Other Winter Crops",
+            "value": 130
+          },
+          {
+            "color": "#31714e",
+            "label": "Spring Wheat",
+            "value": 211
+          },
+          {
+            "color": "#49a384",
+            "label": "Spring Barley",
+            "value": 212
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Oats",
+            "value": 213
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Rye",
+            "value": 214
+          },
+          {
+            "color": "#99fcde",
+            "label": "Spring Triticale",
+            "value": 215
+          },
+          {
+            "color": "#ccfde7",
+            "label": "Millet",
+            "value": 216
+          },
+          {
+            "color": "#53856f",
+            "label": "Sorghum",
+            "value": 217
+          },
+          {
+            "color": "#a8d5bf",
+            "label": "Buckwheat",
+            "value": 218
+          },
+          {
+            "color": "#7be344",
+            "label": "Poppy",
+            "value": 220
+          },
+          {
+            "color": "#54721f",
+            "label": "Beans, Peas,  Lentil, Hose Peas, Chick Peas",
+            "value": 231
+          },
+          {
+            "color": "#7aa430",
+            "label": "Soybeans, Horse Beans",
+            "value": 232
+          },
+          {
+            "color": "#b1cc72",
+            "label": "Spring Brassicaceae",
+            "value": 240
+          },
+          {
+            "color": "#b7f387",
+            "label": "Other Spring Crops",
+            "value": 250
+          },
+          {
+            "color": "#e6e64b",
+            "label": "Sugarbeet",
+            "value": 310
+          },
+          {
+            "color": "#db9a35",
+            "label": "Maize",
+            "value": 320
+          },
+          {
+            "color": "#eeca83",
+            "label": "Sunflower",
+            "value": 330
+          },
+          {
+            "color": "#f3ae3d",
+            "label": "Potatoes",
+            "value": 340
+          },
+          {
+            "color": "#c7ab6e",
+            "label": "Vegetable",
+            "value": 350
+          },
+          {
+            "color": "#e9a47f",
+            "label": "Other Summar Crops",
+            "value": 360
+          },
+          {
+            "color": "#69110a",
+            "label": "Fodder Crops",
+            "value": 410
+          },
+          {
+            "color": "#ef8481",
+            "label": "Other Multi-annual Crops ",
+            "value": 420
+          },
+          {
+            "color": "#2c0501",
+            "label": "Woody Crops",
+            "value": 430
+          },
+          {
+            "color": "rgba(0,0,0,0)",
+            "label": "Unknown",
+            "value": 500
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Crop Type Probability - Level 3 - 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2023_33UVR/CZ_CropType_2023_PROB_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Level 3 classification probability of crop types for 2023.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "startColor": "rgba(229,127,124,255)",
+        "endColor": "rgba(183,243,135,255)"
+      },
+      "layout": {
+        "interfaceGroup": "CAP Ecoshemes",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Open Street Map",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 0
+        }
+      ],
+      "meta": {
+        "description": "Base mapping from Open Street Map",
+        "attribution": {
+          "text": "Open Street Map",
+          "url": "https://www.openstreetmap.org/about"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Basemaps",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Simple base map",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 1,
+          "layers": "litemap",
+          "serviceId": "wms-service-1750351088731"
+        },
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 1,
+          "layers": "baseoverlay",
+          "serviceId": "wms-service-1750351088731"
+        }
+      ],
+      "meta": {
+        "description": "Simple base map of labels and borders suitable as a background map.",
+        "attribution": {
+          "text": "EOC",
+          "url": "https://geoservice.dlr.de/web/services"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Basemaps",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Simple hillshade map",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 1,
+          "layers": "cleantopo2:CleanTOPO2_3D_hillshade",
+          "serviceId": "wms-service-1750351088731"
+        }
+      ],
+      "meta": {
+        "description": "Simple hillshade map",
+        "attribution": {
+          "text": "EOC",
+          "url": "https://geoservice.dlr.de/web/services"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Basemaps",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Surface Soil Moisture 2014-present (raster 1km), Europe, daily - version 1",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://globalland.vito.be/wmts",
+          "format": "wmts",
+          "zIndex": 2,
+          "layers": "clms_global_ssm_1km_v1_daily"
+        }
+      ],
+      "meta": {
+        "description": "Provides information on the relative water content of the top few centimeters soil, describing how wet or dry the soil is in its topmost layer, expressed in percent saturation. Daily observations are available for the continental Europe in the spatial resolution of 1 km and with the temporal extent from October 2014 to present.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "CLMS Daily and 10 Daily Data",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Fraction of Green Vegetation Cover 2014-present (raster 300 m), global, 10-daily – version 1",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://globalland.vito.be/wmts",
+          "format": "wmts",
+          "zIndex": 2,
+          "layers": "clms_global_fcover_300m_v1_10daily"
+        }
+      ],
+      "meta": {
+        "description": "Corresponds to the fraction of ground covered by green vegetation. It quantifies the spatial extent of the vegetation. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to June 2020 based upon PROBA-V data with version 1.0 and from July 2020 onwards based upon Sentinel-3/OLCI data with version 1.1.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "CLMS Daily and 10 Daily Data",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Fraction of Absorbed Photosynthetically Active Radiation 2016-present (raster 10 m), Europe, daily",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://phenology.vgt.vito.be/wmts",
+          "format": "wmts",
+          "zIndex": 2,
+          "layers": "CLMS_HRVPP_VI_FAPAR_10M"
+        }
+      ],
+      "meta": {
+        "description": "Provides at pan-European level and in near real time daily updates of the fraction of the solar radiation absorbed by live leaves for the photosynthesis activity. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "CLMS Daily and 10 Daily Data",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Leaf Area Index 2016-present (raster 10 m), Europe, daily",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://phenology.vgt.vito.be/wmts",
+          "format": "wmts",
+          "zIndex": 2,
+          "layers": "CLMS_HRVPP_VI_LAI_10M"
+        }
+      ],
+      "meta": {
+        "description": "Defined as half of the total area of green elements of the canopy per unit horizontal ground area daily updates of Leaf Area Index are provided at pan-European level and in near real time. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "CLMS Daily and 10 Daily Data",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Normalised Difference Vegetation Index 2016-present (raster 10 m), Europe, daily",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://phenology.vgt.vito.be/wmts",
+          "format": "wmts",
+          "zIndex": 2,
+          "layers": "CLMS_HRVPP_VI_NDVI_10M"
+        }
+      ],
+      "meta": {
+        "description": "Describes the difference between visible and near infrared reflectance of vegetation cover. Daily updates of Normalised Difference Vegetation Index are provided at pan-European level and in near real time. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "CLMS Daily and 10 Daily Data",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true
+          }
+        }
+      }
+    }
+  ]
+}
