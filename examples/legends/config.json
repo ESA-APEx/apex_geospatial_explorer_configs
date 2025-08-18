@@ -7,22 +7,18 @@
   "interfaceGroups": [
     "Legend Example"
   ],
-  "exclusivitySets": [
-    "labels"
-  ],
   "sources": [
     {
       "name": "Open Street Map",
       "isActive": true,
-      "layout": {
-        "interfaceGroup": "Basemaps"
-      },
-      "data": {
-        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-        "type": "xyz",
-        "zIndex": 0,
-        "isBaseLayer": true
-      }
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "type": "xyz",
+          "zIndex": 0
+        }
+      ]
     },
     {
       "name": "Categories Example",
@@ -31,48 +27,59 @@
         "description": "Example configuration of a layer with categorical legend",
         "categories": [
           {
-            "color": "rgb(0, 100, 0)",
-            "label": "Tree cover"
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
           },
           {
-            "color": "rgb(255, 187, 34)",
-            "label": "Shrubland"
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
           },
           {
-            "color": "rgb(255, 255, 76)",
-            "label": "Grassland"
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
           },
           {
-            "color": "rgb(240, 150, 255)",
-            "label": "Cropland"
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
           },
           {
-            "color": "rgb(255, 0, 0)",
-            "label": "Built up"
+            "color": "#ff0000",
+            "label": "Built up",
+            "value": 50
           },
           {
-            "color": "rgb(180, 180, 180)",
-            "label": "Bare"
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
           },
           {
-            "color": "rgb(240, 240, 240)",
-            "label": "Snow and ice"
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
           },
           {
-            "color": "rgb(0, 100, 200)",
-            "label": "Permanent water bodies"
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
           },
           {
-            "color": "rgb(0, 150, 160)",
-            "label": "Herbaceous wetland"
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
           },
           {
-            "color": "rgb(0, 207, 117)",
-            "label": "Mangroves"
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
           },
           {
-            "color": "rgb(250, 230, 160)",
-            "label": "Moss and lichen"
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
           }
         ]
       },
@@ -80,18 +87,19 @@
         "layerCard": {
           "toggleable": true,
           "legend": {
-            "type": "swatch",
-            "visible": true
+            "type": "swatch"
           }
         },
         "interfaceGroup": "Legend Example"
       },
-      "data": {
-        "url": "https://services.terrascope.be/wms/v2",
-        "layers": "WORLDCOVER_2020_MAP",
-        "zIndex": 2,
-        "type": "wms"
-      }
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "layers": "WORLDCOVER_2020_MAP",
+          "zIndex": 2,
+          "type": "wms"
+        }
+      ]
     },
     {
       "name": "Gradient Example",
@@ -112,12 +120,14 @@
         },
         "interfaceGroup": "Legend Example"
       },
-      "data": {
-        "url": "https://gui.world-soils.com/mapserver/Europe",
-        "layers": "soc_0-5cm_mean_europe_2020-2022",
-        "zIndex": 2,
-        "type": "wms"
-      }
+      "data": [
+        {
+          "url": "https://gui.world-soils.com/mapserver/Europe",
+          "layers": "soc_0-5cm_mean_europe_2020-2022",
+          "zIndex": 2,
+          "type": "wms"
+        }
+      ]
     },
     {
       "name": "Image Example",
@@ -130,17 +140,18 @@
           "toggleable": true,
           "legend": {
             "type": "image",
-            "visible": true,
             "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/map-legends/cropland.png/@@images/image-42-24528c9e1f2a59287dfdc41c1cce703f.png"
           }
         },
         "interfaceGroup": "Legend Example"
       },
-      "data": {
-        "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2019/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
-        "zIndex": 2,
-        "type": "xyz"
-      }
+      "data": [
+        {
+          "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2019/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
+          "zIndex": 2,
+          "type": "xyz"
+        }
+      ]
     }
   ]
 }
