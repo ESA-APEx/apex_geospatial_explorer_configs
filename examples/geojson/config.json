@@ -1,11 +1,11 @@
 {
   "layout": {
     "navigation": {
-      "title": "Example - XYZ Layer Configuration"
+      "title": "Example - GeoJSON Layer Configuration"
     }
   },
   "interfaceGroups": [
-    "XYZ Layer"
+    "GeoJSON Layers"
   ],
   "sources": [
     {
@@ -21,22 +21,22 @@
       ]
     },
     {
-      "name": "XYZ Example",
+      "name": "External GeoJSON Example",
       "isActive": false,
       "meta": {
-        "description": "Example configuration of a XYZ layer"
+        "description": "Example configuration of a GeoJSON layer from external source"
       },
       "layout": {
         "layerCard": {
           "toggleable": true
         },
-        "interfaceGroup": "XYZ Layer"
+        "interfaceGroup": "GeoJSON Layers"
       },
       "data": [
         {
-          "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2019/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
-          "zIndex": 2,
-          "format": "xyz"
+          "zIndex": 1,
+          "url": "https://r2.datahub.io/clvyjaryy0000la0cxieg4o8o/main/raw/data/countries.geojson",
+          "format": "geojson"
         }
       ]
     }

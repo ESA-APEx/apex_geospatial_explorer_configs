@@ -15,7 +15,7 @@
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-          "type": "xyz",
+          "format": "xyz",
           "zIndex": 0
         }
       ]
@@ -97,7 +97,7 @@
           "url": "https://services.terrascope.be/wms/v2",
           "layers": "WORLDCOVER_2020_MAP",
           "zIndex": 2,
-          "type": "wms"
+          "format": "wms"
         }
       ]
     },
@@ -125,7 +125,7 @@
           "url": "https://gui.world-soils.com/mapserver/Europe",
           "layers": "soc_0-5cm_mean_europe_2020-2022",
           "zIndex": 2,
-          "type": "wms"
+          "format": "wms"
         }
       ]
     },
@@ -149,7 +149,7 @@
         {
           "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2019/cog-crops-colored-fraction_crops/{z}/{x}/{-y}.png",
           "zIndex": 2,
-          "type": "xyz"
+          "format": "xyz"
         }
       ]
     }

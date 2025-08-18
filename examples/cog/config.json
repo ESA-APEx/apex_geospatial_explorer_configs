@@ -1,0 +1,50 @@
+{
+  "layout": {
+    "navigation": {
+      "title": "Example - COG Layer Configuration"
+    }
+  },
+  "interfaceGroups": [
+    "COG Layers"
+  ],
+  "sources": [
+    {
+      "name": "Open Street Map",
+      "isActive": true,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 0
+        }
+      ]
+    },
+    {
+      "name": "COG Example",
+      "isActive": false,
+      "meta": {
+        "description": "Example configuration of a COG layer with gradient styling",
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 2500,
+        "startColor": "#ffffff",
+        "endColor": "#054521"
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true
+        },
+        "interfaceGroup": "COG Layers"
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ]
+    }
+  ]
+}

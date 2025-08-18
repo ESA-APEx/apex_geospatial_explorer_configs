@@ -12,7 +12,7 @@
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-          "type": "xyz",
+          "format": "xyz",
           "zIndex": 0
         }
       ]
@@ -26,14 +26,14 @@
           "url": "https://services.terrascope.be/wms/v2",
           "layers": "WORLDCOVER_2020_MAP",
           "zIndex": 2,
-          "type": "wms",
+          "format": "wms",
           "position": "left"
         },
         {
           "zIndex": 1,
           "url": "https://services.terrascope.be/wmts/v2",
           "layers": "WORLDCOVER_2021_S2_TCC",
-          "type": "wmts",
+          "format": "wmts",
           "position": "right"
         }
       ]

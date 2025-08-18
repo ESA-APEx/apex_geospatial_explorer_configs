@@ -14,7 +14,7 @@
       "data": [
           {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-          "type": "xyz",
+          "format": "xyz",
           "zIndex": 0,
           "isBaseLayer": true
         }
@@ -37,7 +37,7 @@
           "url": "https://services.terrascope.be/wms/v2",
           "layers": "WORLDCOVER_2020_MAP",
           "zIndex": 2,
-          "type": "wms"
+          "format": "wms"
         }
       ]
     }
