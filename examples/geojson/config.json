@@ -1,0 +1,44 @@
+{
+  "layout": {
+    "navigation": {
+      "title": "Example - GeoJSON Layer Configuration"
+    }
+  },
+  "interfaceGroups": [
+    "GeoJSON Layers"
+  ],
+  "sources": [
+    {
+      "name": "Open Street Map",
+      "isActive": true,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 0
+        }
+      ]
+    },
+    {
+      "name": "External GeoJSON Example",
+      "isActive": false,
+      "meta": {
+        "description": "Example configuration of a GeoJSON layer from external source"
+      },
+      "layout": {
+        "layerCard": {
+          "toggleable": true
+        },
+        "interfaceGroup": "GeoJSON Layers"
+      },
+      "data": [
+        {
+          "zIndex": 1,
+          "url": "https://r2.datahub.io/clvyjaryy0000la0cxieg4o8o/main/raw/data/countries.geojson",
+          "format": "geojson"
+        }
+      ]
+    }
+  ]
+}

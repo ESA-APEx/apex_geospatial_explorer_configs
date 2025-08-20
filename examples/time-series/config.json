@@ -1,0 +1,86 @@
+{
+  "layout": {
+    "navigation": {
+      "title": "Example - Time Series Layer Configuration"
+    }
+  },
+  "interfaceGroups": [
+    "Time Series Layers"
+  ],
+  "sources": [
+    {
+      "name": "Open Street Map",
+      "isActive": true,
+      "isBaseLayer": true,
+      "data": [
+          {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 0
+        }
+      ]
+    },
+    {
+      "name": "WMS Time Series Support",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://globalland.vito.be/wmts",
+          "format": "wmts",
+          "zIndex": 2,
+          "layers": "clms_global_swi_1km_v1_daily"
+        }
+      ],
+      "timeframe": "Days",
+      "meta": {
+        "description": "Demonstrates date picker tools for a WMS or WMTS service with a TIME parameter and daily data."
+      },
+      "layout": {
+        "interfaceGroup": "Time Series Layers",
+        "layerCard": {
+          "toggleable": true
+        }
+      }
+    },
+    {
+      "name": "Inline Time Series Support",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2023_33UVR/CZ_CropType_2023_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2022_33UVR/CZ_CropType_2022_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2021_33UVR/CZ_CropType_2021_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Demonstrates date picker tools for multiple sources with timestamps providied restricted to a yearly time frame"
+      },
+      "layout": {
+        "interfaceGroup": "Time Series Layers",
+        "layerCard": {
+          "toggleable": true
+        }
+      }
+    }
+  ]
+}
