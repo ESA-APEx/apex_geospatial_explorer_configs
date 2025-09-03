@@ -16,6 +16,7 @@
     "CAP Ecoshemes",
     "World Soils SOC",
     "CLMS Daily and 10 Daily Data",
+    "EO4 Ports",
     "Basemaps"
   ],
   "exclusivitySets": [
@@ -57,12 +58,27 @@
       "name": "Sparkgeo ESA Apex S3 bucket",
       "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
       "format": "cog"
+    },
+    {
+      "id": "stac-service-1756896532153",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac/",
+      "format": "stac"
     }
   ],
   "sources": [
     {
       "name": "Sentinel-2",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 1,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
       "meta": {
         "description": "True colour composite of 2021 Sentinel 2 data.",
         "attribution": {
@@ -83,20 +99,19 @@
             "zoomToCenter": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 1,
-          "layers": "WORLDCOVER_2021_S2_TCC",
-          "serviceId": "wms-service-1749555952736"
-        }
-      ]
+      }
     },
     {
       "name": "Labels and border overlay",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 104,
+          "layers": "baseoverlay"
+        }
+      ],
       "meta": {
         "description": "Simple labels and borders from EOC which can be displayed over other layers.",
         "attribution": {
@@ -117,15 +132,7 @@
             "zoomToCenter": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
-          "format": "wms",
-          "zIndex": 104,
-          "layers": "baseoverlay"
-        }
-      ]
+      }
     },
     {
       "name": "Open StreetMap",
@@ -292,6 +299,33 @@
     {
       "name": "Habitat Map GR Level 1 2020 - statistics by NUTS",
       "isActive": false,
+      "data": [],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 3
+        }
+      ],
       "meta": {
         "description": "Natural ecosystem types in 2020 based on the EUNIS 2021 habitat type hierarchy, with statistics using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
         "attribution": {
@@ -358,34 +392,7 @@
             "zoomToCenter": true
           }
         }
-      },
-      "data": [],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 0
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 1
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 2
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 3
-        }
-      ]
+      }
     },
     {
       "name": "World Cover 2021",
@@ -631,6 +638,14 @@
     {
       "name": "CLC+ Backbone 2021",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
+        }
+      ],
       "meta": {
         "description": "A pan-European spatially consistent and seamless, detailed land cover inventory for the 2021 reference year, for each pixel showing the dominant land cover among the 11 basic land cover classes. The dataset is available as 10 m raster.",
         "attribution": {
@@ -707,15 +722,7 @@
             "zoomToCenter": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
-          "format": "wms",
-          "zIndex": 2,
-          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
-        }
-      ]
+      }
     },
     {
       "name": "Land Use Raster",
@@ -1394,6 +1401,14 @@
     {
       "name": "N2k Land Cover / Land Use 2018",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "0"
+        }
+      ],
       "meta": {
         "description": "Detailed land cover and land use information for 55 thematic classes in selected Natura2000 sites for the 2018 reference year. The dataset has a Minimum Mapping Unit (MMU) of 0.5 ha and a Minimum Mapping Width (MMW) of 10 m and is available as vector data.",
         "attribution": {
@@ -1415,15 +1430,7 @@
             "zoomToCenter": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 2,
-          "layers": "0"
-        }
-      ]
+      }
     },
     {
       "name": "Topsoil Soil Organic Carbon 2020-22",
@@ -1466,33 +1473,6 @@
     {
       "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS statistics",
       "isActive": false,
-      "meta": {
-        "description": "Statistics for Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [
-          {
-            "color": "#d62424",
-            "label": "Mean",
-            "value": 0
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Carbon Monitoring",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": false
-          }
-        }
-      },
       "data": [],
       "statistics": [
         {
@@ -1519,7 +1499,34 @@
           "zIndex": 50,
           "level": 3
         }
-      ]
+      ],
+      "meta": {
+        "description": "Statistics for Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [
+          {
+            "color": "#d62424",
+            "label": "Mean",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Monitoring",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false
+          }
+        }
+      }
     },
     {
       "name": "Forest Carbon (no data available)",
@@ -1750,6 +1757,15 @@
     {
       "name": "Habitat Map SK Level 1 2020",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012-SK_2020/SK_L1_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
+      "statistics": [],
       "meta": {
         "description": "Natural ecosystem types in 2020 based on the EUNIS 2012 habitat type hierarchy.",
         "attribution": {
@@ -1821,16 +1837,7 @@
             "zoomToCenter": true
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012-SK_2020/SK_L1_pp_2020.tif",
-          "format": "cog",
-          "zIndex": 2,
-          "normalize": false
-        }
-      ],
-      "statistics": []
+      }
     },
     {
       "name": "Habitat Map SK Level 2 2020",
@@ -2718,33 +2725,6 @@
     {
       "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS statistics",
       "isActive": false,
-      "meta": {
-        "description": "Statistics for Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [
-          {
-            "color": "#d62424",
-            "label": "Mean",
-            "value": 0
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "World Soils SOC",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": false
-          }
-        }
-      },
       "data": [],
       "statistics": [
         {
@@ -2771,7 +2751,34 @@
           "zIndex": 50,
           "level": 3
         }
-      ]
+      ],
+      "meta": {
+        "description": "Statistics for Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [
+          {
+            "color": "#d62424",
+            "label": "Mean",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "World Soils SOC",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false
+          }
+        }
+      }
     },
     {
       "name": "Topsoil SOC Comparison 2018-20 vs 2020-22",
@@ -4116,6 +4123,22 @@
     {
       "name": "Simple base map",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 1,
+          "layers": "litemap",
+          "serviceId": "wms-service-1750351088731"
+        },
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 1,
+          "layers": "baseoverlay",
+          "serviceId": "wms-service-1750351088731"
+        }
+      ],
       "meta": {
         "description": "Simple base map of labels and borders suitable as a background map.",
         "attribution": {
@@ -4136,33 +4159,27 @@
             "zoomToCenter": false
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Simple hillshade map",
+      "isActive": false,
       "data": [
         {
           "url": "https://geoservice.dlr.de/eoc/basemap/wms",
           "format": "wms",
           "zIndex": 1,
-          "layers": "litemap",
-          "serviceId": "wms-service-1750351088731"
-        },
-        {
-          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
-          "format": "wms",
-          "zIndex": 1,
-          "layers": "baseoverlay",
+          "layers": "cleantopo2:CleanTOPO2_3D_hillshade",
           "serviceId": "wms-service-1750351088731"
         }
-      ]
-    },
-    {
-      "name": "Simple hillshade map",
-      "isActive": false,
+      ],
       "meta": {
         "description": "Simple hillshade map",
         "attribution": {
           "text": "EOC",
           "url": "https://geoservice.dlr.de/web/services"
-        }
+        },
+        "categories": []
       },
       "layout": {
         "interfaceGroup": "Basemaps",
@@ -4176,16 +4193,7 @@
             "zoomToCenter": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
-          "format": "wms",
-          "zIndex": 1,
-          "layers": "cleantopo2:CleanTOPO2_3D_hillshade",
-          "serviceId": "wms-service-1750351088731"
-        }
-      ]
+      }
     },
     {
       "name": "Surface Soil Moisture 2014-present (raster 1km), Europe, daily - version 1",
@@ -4351,6 +4359,148 @@
           }
         }
       }
+    },
+    {
+      "name": "EO4P Land Use",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [
+          {
+            "color": "#FFFFFF",
+            "label": "No data",
+            "value": 0
+          },
+          {
+            "color": "#E31A1C",
+            "label": "Building",
+            "value": 1
+          },
+          {
+            "color": "#006400",
+            "label": "Forest and wooded areas",
+            "value": 2
+          },
+          {
+            "color": "#808000",
+            "label": "Shrub vegetation",
+            "value": 3
+          },
+          {
+            "color": "#7DB655",
+            "label": "Allotment garden",
+            "value": 4
+          },
+          {
+            "color": "#BFFF2F",
+            "label": "Orchard and plantation",
+            "value": 5
+          },
+          {
+            "color": "#FFD700",
+            "label": "Permanent crops",
+            "value": 6
+          },
+          {
+            "color": "#00FF00",
+            "label": "Grass",
+            "value": 7
+          },
+          {
+            "color": "#F5DEB3",
+            "label": "Crops on agricultural land",
+            "value": 8
+          },
+          {
+            "color": "#696969",
+            "label": "Transport",
+            "value": 9
+          },
+          {
+            "color": "#A9A9A9",
+            "label": "Rocky terrain",
+            "value": 10
+          },
+          {
+            "color": "#F9FF00",
+            "label": "Sandy or gravel terrain",
+            "value": 11
+          },
+          {
+            "color": "#8B4513",
+            "label": "Unused land",
+            "value": 12
+          },
+          {
+            "color": "#D3D3D3",
+            "label": "Square",
+            "value": 13
+          },
+          {
+            "color": "#654321",
+            "label": "Landfill",
+            "value": 14
+          },
+          {
+            "color": "#B25B32",
+            "label": "Excavations and spoil heaps",
+            "value": 15
+          },
+          {
+            "color": "#BC8F8F",
+            "label": "Other undeveloped land",
+            "value": 16
+          },
+          {
+            "color": "#800080",
+            "label": "Industrial and storage area",
+            "value": 17
+          },
+          {
+            "color": "#1E90FF",
+            "label": "Water",
+            "value": 18
+          },
+          {
+            "color": "#20B2AA",
+            "label": "Wetlands",
+            "value": 19
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "EO4 Ports",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO_LULC_EO4PORTS/2024/08/12/LULC_Antwerpen_2024/antwerpen_2024.tif",
+          "format": "cog",
+          "zIndex": 2
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO_LULC_EO4PORTS/2024/08/12/LULC_Rotterdam_2024/rotterdam_2024.tif",
+          "format": "cog",
+          "zIndex": 2
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO_LULC_EO4PORTS/2024/05/08/LULC_Hamburg_2024/hamburg_2024.tif",
+          "format": "cog",
+          "zIndex": 2
+        }
+      ]
     }
   ]
 }
