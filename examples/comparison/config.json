@@ -4,65 +4,39 @@
       "title": "Example - Comparison Configuration"
     }
   },
-  "interfaceGroups": [
-    "Comparison Layers"
-  ],
-  "exclusivitySets": [
-    "labels"
-  ],
   "sources": [
     {
       "name": "Open Street Map",
       "isActive": true,
-      "layout": {
-        "interfaceGroup": "Basemaps"
-      },
-      "data": {
-        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-        "type": "xyz",
-        "zIndex": 0,
-        "isBaseLayer": true
-      }
-    },
-    {
-      "name": "Source Layer",
-      "isActive": false,
-      "data": {
-        "url": "https://services.terrascope.be/wms/v2",
-        "layers": "WORLDCOVER_2020_MAP",
-        "zIndex": 2,
-        "type": "wms"
-      }
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 0
+        }
+      ]
     },
     {
       "name": "Comparison Layer",
       "isActive": false,
-      "data": {
-        "zIndex": 1,
-        "url": "https://services.terrascope.be/wmts/v2",
-        "layers": "WORLDCOVER_2021_S2_TCC",
-        "type": "wmts"
-      }
-    },
-    {
-      "name": "Source Layer vs Comparison Layer",
-      "isActive": false,
-      "meta": {
-        "description": "Example configuration for comparing layers"
-      },
-      "layout": {
-        "layerCard": {
-          "toggleable": true
+      "isSwipeLayer": true,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "layers": "WORLDCOVER_2020_MAP",
+          "zIndex": 2,
+          "format": "wms",
+          "position": "left"
         },
-        "interfaceGroup": "Comparison Layers"
-      },
-      "data": {
-        "type": "swipe",
-        "clippedSource": "Source Layer",
-        "baseSources": [
-          "Comparison Layer"
-        ]
-      }
+        {
+          "zIndex": 1,
+          "url": "https://services.terrascope.be/wmts/v2",
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "format": "wmts",
+          "position": "right"
+        }
+      ]
     }
   ]
 }

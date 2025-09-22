@@ -571,41 +571,6 @@
       }
     },
     {
-      "name": "Winter Cereals 2021 - Daily WMS",
-      "isActive": false,
-      "timeframe": "Days",
-      "meta": {
-        "description": "Shows WMS service with a TIME param from 11 Jan 2021 to 24 Dec 2021.  Date picker limited to these dates automatically.",
-        "attribution": {
-          "text": "ESA WorldCereal",
-          "url": "https://esa-worldcereal.org/en"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Time Series",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 2,
-          "layers": "WORLDCEREAL_WINTERCEREALS_V1",
-          "serviceId": "wms-service-vito-terrascope-v2"
-        }
-      ]
-    },
-    {
       "name": "Fraction of Green Vegetation Cover - 10 Daily WMTS",
       "isActive": false,
       "data": [
@@ -639,41 +604,6 @@
           }
         }
       }
-    },
-    {
-      "name": "Winter Cereals 2021 - Monthly WMS",
-      "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "Shows WMS service with a TIME param from 11 Jan 2021 to 24 Dec 2021.  Date picker limited to these dates automatically.",
-        "attribution": {
-          "text": "ESA WorldCereal",
-          "url": "https://esa-worldcereal.org/en"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Time Series",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 2,
-          "layers": "WORLDCEREAL_WINTERCEREALS_V1",
-          "serviceId": "wms-service-vito-terrascope-v2"
-        }
-      ]
     },
     {
       "name": "Crop Type - Level 3 - Custom Configuration",

@@ -208,7 +208,7 @@
       }
     },
     {
-      "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS stats",
+      "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS stats (Indicative)",
       "isActive": false,
       "data": [],
       "statistics": [
@@ -345,7 +345,7 @@
       }
     },
     {
-      "name": "World Cover 2021 with NUTS statistics",
+      "name": "World Cover 2021 with NUTS statistics (Indicative)",
       "isActive": false,
       "data": [
         {
@@ -497,6 +497,7 @@
     {
       "name": "CLC+ Backbone 2021",
       "isActive": false,
+      "timeframe": "Days",
       "data": [
         {
           "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
@@ -879,7 +880,7 @@
       }
     },
     {
-      "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS statistics",
+      "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS statistics (Indicative)",
       "isActive": false,
       "data": [],
       "statistics": [
@@ -1445,7 +1446,7 @@
       }
     },
     {
-      "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS statistics",
+      "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS statistics (Indicative)",
       "isActive": false,
       "data": [],
       "statistics": [
@@ -1549,6 +1550,7 @@
     },
     {
       "name": "Soil Water Index 2015-present (raster 1 km), Europe, daily – version 1",
+      "timeframe": "Days",
       "isActive": false,
       "data": [
         {
@@ -2381,6 +2383,7 @@
     {
       "name": "Surface Soil Moisture 2014-present (raster 1km), Europe, daily - version 1",
       "isActive": false,
+      "timeframe": "Days",
       "data": [
         {
           "url": "https://globalland.vito.be/wmts",
@@ -2414,6 +2417,7 @@
     {
       "name": "Fraction of Green Vegetation Cover 2014-present (raster 300 m), global, 10-daily – version 1",
       "isActive": false,
+      "timeframe": "Days",
       "data": [
         {
           "url": "https://globalland.vito.be/wmts",
@@ -2447,6 +2451,7 @@
     {
       "name": "Fraction of Absorbed Photosynthetically Active Radiation 2016-present (raster 10 m), Europe, daily",
       "isActive": false,
+      "timeframe": "Days",
       "data": [
         {
           "url": "https://phenology.vgt.vito.be/wmts",
@@ -2480,6 +2485,7 @@
     {
       "name": "Leaf Area Index 2016-present (raster 10 m), Europe, daily",
       "isActive": false,
+      "timeframe": "Days",
       "data": [
         {
           "url": "https://phenology.vgt.vito.be/wmts",
@@ -2513,6 +2519,7 @@
     {
       "name": "Normalised Difference Vegetation Index 2016-present (raster 10 m), Europe, daily",
       "isActive": false,
+      "timeframe": "Days",
       "data": [
         {
           "url": "https://phenology.vgt.vito.be/wmts",

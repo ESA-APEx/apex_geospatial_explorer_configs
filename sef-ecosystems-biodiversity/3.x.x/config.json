@@ -12,6 +12,7 @@
     "Ecosystem Accounting - Slovakia",
     "Natura 2000 Areas",
     "Carbon Monitoring",
+    "CLMS Daily and 10 Daily Data",
     "Basemaps"
   ],
   "exclusivitySets": [
@@ -215,35 +216,8 @@
       }
     },
     {
-      "name": "Habitat Map GR Level 1 2020 - statistics by NUTS",
+      "name": "Habitat Map GR Level 1 2020 - statistics by NUTS (indicative)",
       "isActive": false,
-      "data": [],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 0
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 1
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 2
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 3
-        }
-      ],
       "meta": {
         "description": "Natural ecosystem types in 2020 based on the EUNIS 2021 habitat type hierarchy, with statistics using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
         "attribution": {
@@ -306,10 +280,38 @@
             "type": "swatch"
           },
           "controls": {
-            "opacitySlider": false
+            "opacitySlider": false,
+            "zoomToCenter": false
           }
         }
-      }
+      },
+      "data": [],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 3
+        }
+      ]
     },
     {
       "name": "World Cover 2021",
@@ -402,43 +404,8 @@
       }
     },
     {
-      "name": "World Cover 2021 with NUTS statistics",
+      "name": "World Cover 2021 with NUTS statistics (indicative)",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 2,
-          "layers": "WORLDCOVER_2021_MAP",
-          "serviceId": "wms-service-1749555952736"
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 0
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 1
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 2
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 3
-        }
-      ],
       "meta": {
         "description": "Land cover map for 2021 with statistics using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.  Click on a country to view statistics and drill down to regional and local areas with further clicks.",
         "attribution": {
@@ -511,10 +478,46 @@
             "type": "swatch"
           },
           "controls": {
-            "opacitySlider": true
+            "opacitySlider": true,
+            "zoomToCenter": false
           }
         }
-      }
+      },
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCOVER_2021_MAP",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 3
+        }
+      ]
     },
     {
       "name": "Crop Type Map",
@@ -1550,8 +1553,80 @@
       }
     },
     {
-      "name": "Habitat Map SK Level 1 2020 - statistics by NUTS",
+      "name": "Habitat Map SK Level 1 2020 - statistics by NUTS (indicative)",
       "isActive": false,
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2012 habitat type hierarchy, with statistics using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "label": "Costal Habitats",
+            "color": "#ffd37f",
+            "value": 20000
+          },
+          {
+            "label": "Inland Surface Waters",
+            "color": "#0070ff",
+            "value": 30000
+          },
+          {
+            "label": "Mires, bogs and fens",
+            "color": "#df73ff",
+            "value": 40000
+          },
+          {
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
+            "color": "#55ff00",
+            "value": 50000
+          },
+          {
+            "label": "Heathland, scrub and tundra",
+            "color": "#ffaa00",
+            "value": 60000
+          },
+          {
+            "label": "Woodland, forest and other wooded land",
+            "color": "#267300",
+            "value": 70000
+          },
+          {
+            "label": "Inland unvegetated or sparsely vegetated habitats",
+            "color": "#b2b2b2",
+            "value": 80000
+          },
+          {
+            "label": "Regularly or recently cultivated agricultural, horticultural and domestic habitats",
+            "color": "#ffff73",
+            "value": 90000
+          },
+          {
+            "label": "Constructed, industrial and other artificial habitats",
+            "color": "#ff0000",
+            "value": 100000
+          },
+          {
+            "label": "Complex Habitats",
+            "color": "#00ffa6",
+            "value": 110000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting - Slovakia",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false,
+            "zoomToCenter": false
+          }
+        }
+      },
       "data": [],
       "statistics": [
         {
@@ -1578,78 +1653,7 @@
           "zIndex": 50,
           "level": 3
         }
-      ],
-      "meta": {
-        "description": "Natural ecosystem types in 2020 based on the EUNIS 2012 habitat type hierarchy, with statistics using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
-        "attribution": {
-          "text": "ESA People Ecosystem Accounting",
-          "url": "https://esa-people-ea.org/en"
-        },
-        "categories": [
-          {
-            "color": "#ffd37f",
-            "label": "Costal Habitats",
-            "value": 20000
-          },
-          {
-            "color": "#0070ff",
-            "label": "Inland Surface Waters",
-            "value": 30000
-          },
-          {
-            "color": "#df73ff",
-            "label": "Mires, bogs and fens",
-            "value": 40000
-          },
-          {
-            "color": "#55ff00",
-            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
-            "value": 50000
-          },
-          {
-            "color": "#ffaa00",
-            "label": "Heathland, scrub and tundra",
-            "value": 60000
-          },
-          {
-            "color": "#267300",
-            "label": "Woodland, forest and other wooded land",
-            "value": 70000
-          },
-          {
-            "color": "#b2b2b2",
-            "label": "Inland unvegetated or sparsely vegetated habitats",
-            "value": 80000
-          },
-          {
-            "color": "#ffff73",
-            "label": "Regularly or recently cultivated agricultural, horticultural and domestic habitats",
-            "value": 90000
-          },
-          {
-            "color": "#ff0000",
-            "label": "Constructed, industrial and other artificial habitats",
-            "value": 100000
-          },
-          {
-            "color": "#00ffa6",
-            "label": "Complex Habitats",
-            "value": 110000
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Ecosystem Accounting - Slovakia",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": false
-          }
-        }
-      }
+      ]
     },
     {
       "name": "Habitat Map SK Level 1 2020",
@@ -2426,6 +2430,142 @@
           },
           "controls": {
             "opacitySlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Leaf Area Index 2016-present (raster 10 m), Europe, daily",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://phenology.vgt.vito.be/wmts",
+          "format": "wmts",
+          "zIndex": 2,
+          "layers": "CLMS_HRVPP_VI_LAI_10M"
+        }
+      ],
+      "timeframe": "Days",
+      "meta": {
+        "description": "Defined as half of the total area of green elements of the canopy per unit horizontal ground area daily updates of Leaf Area Index are provided at pan-European level and in near real time. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "CLMS Daily and 10 Daily Data",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Fraction of Green Vegetation Cover 2014-present (raster 300 m), global, 10-daily – version 1",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://globalland.vito.be/wmts",
+          "format": "wmts",
+          "zIndex": 2,
+          "layers": "clms_global_fcover_300m_v1_10daily"
+        }
+      ],
+      "timeframe": "Days",
+      "meta": {
+        "description": "Corresponds to the fraction of ground covered by green vegetation. It quantifies the spatial extent of the vegetation. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to June 2020 based upon PROBA-V data with version 1.0 and from July 2020 onwards based upon Sentinel-3/OLCI data with version 1.1.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "CLMS Daily and 10 Daily Data",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Fraction of Absorbed Photosynthetically Active Radiation 2016-present (raster 10 m), Europe, daily",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://phenology.vgt.vito.be/wmts",
+          "format": "wmts",
+          "zIndex": 2,
+          "layers": "CLMS_HRVPP_VI_FAPAR_10M"
+        }
+      ],
+      "timeframe": "Days",
+      "meta": {
+        "description": "Provides at pan-European level and in near real time daily updates of the fraction of the solar radiation absorbed by live leaves for the photosynthesis activity. The data are available at 10 m x 10 m spatial resolution with the temporal extent from October 2016 to present.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "CLMS Daily and 10 Daily Data",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Surface Soil Moisture 2014-present (raster 1km), Europe, daily - version 1",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://globalland.vito.be/wmts",
+          "format": "wmts",
+          "zIndex": 2,
+          "layers": "clms_global_ssm_1km_v1_daily"
+        }
+      ],
+      "timeframe": "Days",
+      "meta": {
+        "description": "Provides information on the relative water content of the top few centimeters soil, describing how wet or dry the soil is in its topmost layer, expressed in percent saturation. Daily observations are available for the continental Europe in the spatial resolution of 1 km and with the temporal extent from October 2014 to present.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "CLMS Daily and 10 Daily Data",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true
           }
         }
       }
