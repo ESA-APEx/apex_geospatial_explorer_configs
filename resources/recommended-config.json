@@ -212,6 +212,27 @@
         },
         "categories": []
       }
+    },
+    {
+      "name": "DEM",
+      "isActive": false,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "COP_DEM_GLO_30M_COG"
+        }
+      ],
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Copernicus"
+        }
+      }
     }
   ]
 }
