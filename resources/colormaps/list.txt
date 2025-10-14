@@ -1,1 +1,52 @@
+row_index	ocr_raw	normalized	chosen_canonical	final_basename
+1	jet	jet	jet	jet
+2	   hsv	hsv	hsv	hsv
+3	hot	hot	hot	hot
+4	  cool	cool	cool	cool
+5	  spring	spring	spring	spring
+6	  SUMMET	summet	summer	summer
+7	  autumn	autumn	autumn	autumn
+8	  winter	winter	winter	winter
+9	bone	bone	bone	bone
+10	 copper	copper	copper	copper
+11	greys	greys	greys	greys
+12	YIGnBu	yignbu	yignbu	yignbu
+13	greens	greens	greens	greens
+14	YlOrRd	ylorrd	yiorrd	yiorrd
+15	  bluered	bluered	bluered	bluered
+16	   RdBu	rdbu	rdbu	rdbu
+17	  picnic	picnic	picnic	picnic
+18	  rainbow	rainbow	rainbow	rainbow
+19	 portiand	portland	portland	portland
+20	   blackbody	blackbody	blackbody	blackbody
+21	earth	earth	earth	earth
+22	electric	electric	electric	electric
+23	  viridis	viridis	viridis	viridis
+24	  inferno	inferno	inferno	inferno
+25	magma	magma	magma	magma
+26	   plasma	plasma	plasma	plasma
+27	  warm	warm	warm	warm
+28	  cool	cool	cool	cool-2
+29	  rainbow-soft	rainbow-soft	rainbow-soft	rainbow-soft
+30	bathymetry	bathymetry	bathymetry	bathymetry
+31	  cdom	cdom	cdom	cdom
+32	chlorophyll	chlorophyll	chlorophyll	chlorophyll
+33	density	density	density	density
+34	  freesurface-blue	freesurface-blue	freesurface-blue	freesurface-blue
+35	  freesurface_red	freesurface-red	freesurface-red	freesurface-red
+36	   oxygen	oxygen	oxygen	oxygen
+37	  par	par	par	par
+38	   phase	phase	phase	phase
+39	  salinity	salinity	salinity	salinity
+40	  temperature	temperature	temperature	temperature
+41	  turbidity	turbidity	turbidity	turbidity
+42	  velocity_blue	velocity-blue	velocity-blue	velocity-blue
+43	  velocity_-green	velocity-green	velocity-green	velocity-green
+44	cubehelix	cubehelix	cubehelix	cubehelix
+45	ency	ency		ency
+46	 hsv with transparency	hsv	hsv	hsv-2
+47	  hot with transparency	hot	hot	hot-2
+48	  cool with transparency	cool	cool	cool-3
+49	  spnng with transparen	spnng-with-transparen		spnng-with-transparen
+50	  summer with transpare	summer-with-transpare		summer-with-transpare
 
