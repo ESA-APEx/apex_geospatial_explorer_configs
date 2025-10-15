@@ -16,7 +16,7 @@
     "Peatland Monitoring - Saddleworth Moor, UK",
     "Peatland Monitoring - Quebec",
     "Land Degradation Neutrality - Portugal",
-    "Multi-time data and stats - test"
+    "Multi-time data and stats - tests"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -471,7 +471,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Multi-time data and stats - test",
+        "interfaceGroup": "Multi-time data and stats - tests",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -652,7 +652,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Multi-time data and stats - test",
+        "interfaceGroup": "Multi-time data and stats - tests",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -2537,7 +2537,7 @@
         "endColor": "#ffffff"
       },
       "layout": {
-        "interfaceGroup": "Multi-time data and stats - test",
+        "interfaceGroup": "Multi-time data and stats - tests",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -5834,7 +5834,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Multi-time data and stats - test",
+        "interfaceGroup": "Multi-time data and stats - tests",
         "contentLocation": "layerCard",
         "layerCard": {
           "toggleable": true,
