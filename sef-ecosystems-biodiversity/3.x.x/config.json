@@ -1,5 +1,5 @@
 {
-  "version": "3.2.2-5",
+  "version": "1.0.0",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
@@ -15,8 +15,7 @@
     "Ecosystem Accounting - Slovakia",
     "Peatland Monitoring - Saddleworth Moor, UK",
     "Peatland Monitoring - Quebec",
-    "Land Degradation Neutrality - Portugal",
-    "Multi-time data and stats - tests"
+    "Land Degradation Neutrality - Portugal"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -310,349 +309,6 @@
       },
       "layout": {
         "interfaceGroup": "European Land Cover",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": false,
-            "temporalControls": true,
-            "constraintSlider": false
-          }
-        }
-      }
-    },
-    {
-      "name": "World Cover 2020 and 2021 NUTS statistics only",
-      "isActive": false,
-      "data": [],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3,
-          "timestamps": [
-            1609372800
-          ]
-        }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Land cover map for 2021",
-        "attribution": {
-          "text": "World Cover Project",
-          "url": "https://esa-worldcover.org/"
-        },
-        "categories": [
-          {
-            "color": "#006400",
-            "label": "Tree cover",
-            "value": 10
-          },
-          {
-            "color": "#ffbb22",
-            "label": "Shrubland",
-            "value": 20
-          },
-          {
-            "color": "#ffff4c",
-            "label": "Grassland",
-            "value": 30
-          },
-          {
-            "color": "#f096ff",
-            "label": "Cropland",
-            "value": 40
-          },
-          {
-            "color": "#ff0000",
-            "label": "Built-up",
-            "value": 50
-          },
-          {
-            "color": "#b4b4b4",
-            "label": "Bare",
-            "value": 60
-          },
-          {
-            "color": "#f0f0f0",
-            "label": "Snow and ice",
-            "value": 70
-          },
-          {
-            "color": "#0064c8",
-            "label": "Permanent water bodies",
-            "value": 80
-          },
-          {
-            "color": "#0096a0",
-            "label": "Herbaceous wetland",
-            "value": 90
-          },
-          {
-            "color": "#00cf75",
-            "label": "Mangroves",
-            "value": 95
-          },
-          {
-            "color": "#fae6a0",
-            "label": "Moss and lichen",
-            "value": 100
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Multi-time data and stats - tests",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": false,
-            "temporalControls": true,
-            "constraintSlider": false
-          }
-        }
-      }
-    },
-    {
-      "name": "World Cover 2020 and 2021 data and NUTS statistics",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WORLDCOVER_2020_MAP",
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WORLDCOVER_2021_MAP",
-          "timestamps": [
-            1640908800
-          ]
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3,
-          "timestamps": [
-            1609372800
-          ]
-        }
-      ],
-      "timeframe": "Days",
-      "meta": {
-        "description": "Land cover map for 2021",
-        "attribution": {
-          "text": "World Cover Project",
-          "url": "https://esa-worldcover.org/"
-        },
-        "categories": [
-          {
-            "color": "#006400",
-            "label": "Tree cover",
-            "value": 10
-          },
-          {
-            "color": "#ffbb22",
-            "label": "Shrubland",
-            "value": 20
-          },
-          {
-            "color": "#ffff4c",
-            "label": "Grassland",
-            "value": 30
-          },
-          {
-            "color": "#f096ff",
-            "label": "Cropland",
-            "value": 40
-          },
-          {
-            "color": "#ff0000",
-            "label": "Built-up",
-            "value": 50
-          },
-          {
-            "color": "#b4b4b4",
-            "label": "Bare",
-            "value": 60
-          },
-          {
-            "color": "#f0f0f0",
-            "label": "Snow and ice",
-            "value": 70
-          },
-          {
-            "color": "#0064c8",
-            "label": "Permanent water bodies",
-            "value": 80
-          },
-          {
-            "color": "#0096a0",
-            "label": "Herbaceous wetland",
-            "value": 90
-          },
-          {
-            "color": "#00cf75",
-            "label": "Mangroves",
-            "value": 95
-          },
-          {
-            "color": "#fae6a0",
-            "label": "Moss and lichen",
-            "value": 100
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Multi-time data and stats - tests",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1160,6 +816,7 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "dg kg^(-1)",
         "colormaps": [
           {
             "min": 0,
@@ -1168,8 +825,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "dg kg^(-1)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Carbon Monitoring",
@@ -1235,6 +891,7 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "dg kg^(-1)",
         "colormaps": [
           {
             "min": 0,
@@ -1243,8 +900,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "dg kg^(-1)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Carbon Monitoring",
@@ -1850,6 +1506,7 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
+        "units": "t / ha",
         "colormaps": [
           {
             "min": 0,
@@ -1858,8 +1515,7 @@
             "name": "greens",
             "reverse": true
           }
-        ],
-        "units": "t / ha"
+        ]
       },
       "layout": {
         "interfaceGroup": "Forest Monitoring",
@@ -1926,6 +1582,7 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
+        "units": "t / ha",
         "colormaps": [
           {
             "min": 0,
@@ -1934,8 +1591,7 @@
             "name": "greens",
             "reverse": true
           }
-        ],
-        "units": "t / ha"
+        ]
       },
       "layout": {
         "interfaceGroup": "Forest Monitoring",
@@ -1983,6 +1639,11 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -1991,12 +1652,7 @@
             "name": "greens",
             "reverse": true
           }
-        ],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff"
+        ]
       },
       "layout": {
         "interfaceGroup": "Natura 2000 Area Monitoring",
@@ -2355,6 +2011,7 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "dg kg^(-1)",
         "colormaps": [
           {
             "min": 0,
@@ -2363,8 +2020,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "dg kg^(-1)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Carbon Monitoring",
@@ -2424,6 +2080,7 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "dg kg^(-1)",
         "colormaps": [
           {
             "min": 0,
@@ -2432,8 +2089,7 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "units": "dg kg^(-1)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Carbon Monitoring",
@@ -2445,106 +2101,6 @@
           "legend": {
             "type": "image",
             "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/yiorrd-r.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true
-          }
-        }
-      }
-    },
-    {
-      "name": "Topsoil Soil Organic Carbon multi-dates, level 1 statistics by NUTS",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1583020800
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_mean_100_201903-202110.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1551398400
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1519862400
-          ]
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1583020800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2019-2021.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1551398400
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2018-2020.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1519862400
-          ]
-        }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1800,
-            "steps": 50,
-            "name": "greens",
-            "reverse": true
-          }
-        ],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff"
-      },
-      "layout": {
-        "interfaceGroup": "Multi-time data and stats - tests",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
@@ -3612,6 +3168,7 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
+        "units": "mm / yr",
         "colormaps": [
           {
             "min": -40,
@@ -3620,8 +3177,7 @@
             "name": "rdbu",
             "reverse": false
           }
-        ],
-        "units": "mm / yr"
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Saddleworth Moor, UK",
@@ -3660,6 +3216,7 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
+        "units": "mm / yr",
         "colormaps": [
           {
             "min": -40,
@@ -3668,8 +3225,7 @@
             "name": "rdbu",
             "reverse": false
           }
-        ],
-        "units": "mm / yr"
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Saddleworth Moor, UK",
@@ -3809,6 +3365,7 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
+        "units": "mm / yr",
         "colormaps": [
           {
             "min": -50,
@@ -3817,8 +3374,7 @@
             "name": "rdbu",
             "reverse": false
           }
-        ],
-        "units": "mm / yr"
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Quebec",
@@ -3857,6 +3413,7 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
+        "units": "mm / yr",
         "colormaps": [
           {
             "min": -40,
@@ -3865,8 +3422,7 @@
             "name": "rdbu",
             "reverse": false
           }
-        ],
-        "units": "mm / yr"
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Quebec",
@@ -5204,6 +4760,10 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
+        "min": 0,
+        "max": 234,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -5212,11 +4772,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "min": 0,
-        "max": 234,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff"
+        ]
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality - Portugal",
@@ -5254,6 +4810,10 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
+        "min": -206,
+        "max": 129,
+        "startColor": "#ffffff",
+        "endColor": "#fffffff",
         "colormaps": [
           {
             "min": -206,
@@ -5262,11 +4822,7 @@
             "name": "jet",
             "reverse": true
           }
-        ],
-        "min": -206,
-        "max": 129,
-        "startColor": "#ffffff",
-        "endColor": "#fffffff"
+        ]
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality - Portugal",
@@ -5324,6 +4880,10 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
+        "min": 0,
+        "max": 254,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -5332,11 +4892,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "min": 0,
-        "max": 254,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff"
+        ]
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality - Portugal",
@@ -5733,144 +5289,6 @@
       }
     },
     {
-      "name": "Open StreetMap",
-      "isActive": true,
-      "data": [
-        {
-          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-          "format": "xyz",
-          "zIndex": 10
-        }
-      ],
-      "isBaseLayer": true,
-      "exclusivitySets": [],
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "OpenStreetMap",
-          "url": "https://www.openstreetmap.org/copyright"
-        },
-        "categories": []
-      }
-    },
-    {
-      "name": "Sentinel",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 10,
-          "layers": "WORLDCOVER_2021_S2_TCC",
-          "serviceId": "wms-service-1749555952736"
-        }
-      ],
-      "isBaseLayer": true,
-      "exclusivitySets": [],
-      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
-      "meta": {
-        "description": "True colour composite of 2021 Sentinel 2 data.",
-        "attribution": {
-          "text": "Copernicus Sentinel-2",
-          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
-        },
-        "categories": []
-      }
-    },
-    {
-      "name": "Blue Marble",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
-          "format": "wms",
-          "zIndex": 10,
-          "layers": "blue_marble:blue_marble"
-        }
-      ],
-      "isBaseLayer": true,
-      "exclusivitySets": [],
-      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png",
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "NASA via EOC Base Map Service from DLR",
-          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
-        },
-        "categories": []
-      }
-    },
-    {
-      "name": "DEM",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 10,
-          "layers": "COP_DEM_GLO_30M_COG"
-        }
-      ],
-      "isBaseLayer": true,
-      "exclusivitySets": [],
-      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png",
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "Copernicus"
-        },
-        "categories": []
-      }
-    },
-    {
-      "name": "DEM",
-      "isActive": false,
-      "data": [],
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": ""
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Multi-time data and stats - tests",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Stadia Alidade Smooth Dark",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
-          "format": "xyz",
-          "zIndex": 3
-        }
-      ],
-      "isBaseLayer": true,
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
-          "url": "https://stadiamaps.com/"
-        },
-        "categories": []
-      }
-    },
-    {
       "name": "Land Degradation Neutrality Indicator SDG15.3.1 (to do)",
       "isActive": false,
       "data": [],
@@ -5969,6 +5387,156 @@
             "constraintSlider": true
           }
         }
+      }
+    },
+    {
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Sentinel",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
+      "meta": {
+        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "attribution": {
+          "text": "Copernicus Sentinel-2",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Blue Marble",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Satellite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "DEM",
+      "isActive": false,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "COP_DEM_GLO_30M_COG"
+        }
+      ],
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Copernicus"
+        },
+        "categories": []
       }
     }
   ]
