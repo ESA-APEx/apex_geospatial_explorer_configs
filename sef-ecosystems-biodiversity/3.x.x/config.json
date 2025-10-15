@@ -1,5 +1,5 @@
 {
-  "version": "3.x.x",
+  "version": "1.0.0",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
@@ -16,12 +16,9 @@
     "Peatland Monitoring - Saddleworth Moor, UK",
     "Peatland Monitoring - Quebec",
     "Land Degradation Neutrality - Portugal",
-    "Multi-time data and stats - testing"
+    "Multi-time data and stats - test"
   ],
-  "exclusivitySets": [
-    "labels",
-    "basemaps"
-  ],
+  "exclusivitySets": [],
   "mapConstraints": {
     "zoom": 4,
     "center": [
@@ -474,7 +471,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Multi-time data and stats - testing",
+        "interfaceGroup": "Multi-time data and stats - test",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -655,7 +652,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Multi-time data and stats - testing",
+        "interfaceGroup": "Multi-time data and stats - test",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1126,7 +1123,76 @@
       }
     },
     {
-      "name": "Topsoil Soil Organic Carbon 2020-22, statistics by NUTS",
+      "name": "Topsoil Soil Organic Carbon, time series - 2018 to 2022",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1519862400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_mean_100_201903-202110.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1551398400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1583020800
+          ]
+        }
+      ],
+      "statistics": [],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "dg kg^(-1)",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/copper-r.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Topsoil Soil Organic Carbon 2020-22 with NUTS statistics",
       "isActive": false,
       "data": [
         {
@@ -1163,7 +1229,7 @@
         }
       ],
       "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) with statistics using NUTS 2024 boundaries.",
         "attribution": {
           "text": "World Soils",
           "url": "https://world-soils.com/"
@@ -1175,7 +1241,7 @@
             "min": 0,
             "max": 1800,
             "steps": 50,
-            "name": "greens",
+            "name": "copper",
             "reverse": true
           }
         ]
@@ -1189,7 +1255,7 @@
         "infoPanel": {
           "legend": {
             "type": "image",
-            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/greens-r.png"
+            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/copper-r.png"
           },
           "controls": {
             "opacitySlider": true,
@@ -1785,10 +1851,15 @@
         },
         "categories": [],
         "units": "t / ha",
-        "min": 0,
-        "max": 300,
-        "startColor": "#ffffff",
-        "endColor": "#1a5f07"
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 300,
+            "steps": 50,
+            "name": "greens",
+            "reverse": true
+          }
+        ]
       },
       "layout": {
         "interfaceGroup": "Forest Monitoring",
@@ -1798,7 +1869,8 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/greens-r.png"
           },
           "controls": {
             "opacitySlider": true,
@@ -1855,10 +1927,15 @@
         },
         "categories": [],
         "units": "t / ha",
-        "min": 0,
-        "max": 100,
-        "startColor": "#ffffff",
-        "endColor": "#ff0000"
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "greens",
+            "reverse": true
+          }
+        ]
       },
       "layout": {
         "interfaceGroup": "Forest Monitoring",
@@ -1868,7 +1945,8 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/greens-r.png"
           },
           "controls": {
             "opacitySlider": true,
@@ -1984,10 +2062,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "min": 0,
-        "max": 520,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -2006,7 +2080,8 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/jet.png"
           },
           "controls": {
             "opacitySlider": true,
@@ -2237,85 +2312,7 @@
       }
     },
     {
-      "name": "Topsoil Soil Organic Carbon 2020-22, statistics by high res NUTS",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "normalize": false
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3
-        }
-      ],
-      "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1800,
-            "steps": 50,
-            "name": "greens",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Carbon Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": true
-          }
-        }
-      }
-    },
-    {
-      "name": "Topsoil Soil Organic Carbon 2018-20, statistics by high res NUTS",
+      "name": "Topsoil Soil Organic Carbon 2018-20 with NUTS statistics",
       "isActive": false,
       "data": [
         {
@@ -2352,23 +2349,19 @@
         }
       ],
       "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2018-2020).",
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2018-2020) with statistics using NUTS 2024 boundaries.",
         "attribution": {
           "text": "World Soils",
           "url": "https://world-soils.com/"
         },
         "categories": [],
         "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
             "max": 1800,
             "steps": 50,
-            "name": "greens",
+            "name": "copper",
             "reverse": true
           }
         ]
@@ -2381,159 +2374,13 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/copper-r.png"
           },
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": true
-          }
-        }
-      }
-    },
-    {
-      "name": "Topsoil Soil Organic Carbon 2020-22, statistics by GAUL",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "normalize": false
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/GAUL/stats.soc_0-5cm_mean_europe_2020-2022.gaul_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "minZoom": 8
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/GAUL/stats.soc_0-5cm_mean_europe_2020-2022.gaul_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1,
-          "minZoom": 8
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/GAUL/stats.soc_0-5cm_mean_europe_2020-2022.gaul_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2,
-          "minZoom": 8
-        }
-      ],
-      "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1800,
-            "steps": 50,
-            "name": "greens",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Carbon Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": true
-          }
-        }
-      }
-    },
-    {
-      "name": "Topsoil Soil Organic Carbon, time series - 2018 to 2022",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1519862400
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_mean_100_201903-202110.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1551398400
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1583020800
-          ]
-        }
-      ],
-      "statistics": [],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1800,
-            "steps": 50,
-            "name": "greens",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Carbon Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
             "constraintSlider": true
           }
         }
@@ -2578,10 +2425,6 @@
         },
         "categories": [],
         "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 200,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -2600,7 +2443,8 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/yiorrd-r.png"
           },
           "controls": {
             "opacitySlider": true,
@@ -2693,7 +2537,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Carbon Monitoring",
+        "interfaceGroup": "Multi-time data and stats - test",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -3769,14 +3613,10 @@
         },
         "categories": [],
         "units": "mm / yr",
-        "min": -40,
-        "max": 40,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": -40,
-            "max": 30,
+            "max": 40,
             "steps": 50,
             "name": "rdbu",
             "reverse": false
@@ -3791,7 +3631,8 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/rdbu.png"
           },
           "controls": {
             "opacitySlider": true,
@@ -3820,10 +3661,6 @@
         },
         "categories": [],
         "units": "mm / yr",
-        "min": -40,
-        "max": 40,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": -40,
@@ -3842,7 +3679,8 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/rdbu.png"
           },
           "controls": {
             "opacitySlider": true,
@@ -3972,13 +3810,9 @@
         },
         "categories": [],
         "units": "mm / yr",
-        "min": -40,
-        "max": 40,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
-            "min": -40,
+            "min": -50,
             "max": 30,
             "steps": 50,
             "name": "rdbu",
@@ -3994,7 +3828,8 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/rdbu.png"
           },
           "controls": {
             "opacitySlider": true,
@@ -4023,10 +3858,6 @@
         },
         "categories": [],
         "units": "mm / yr",
-        "min": -40,
-        "max": 40,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": -40,
@@ -4045,7 +3876,8 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/rdbu.png"
           },
           "controls": {
             "opacitySlider": true,
@@ -4663,14 +4495,6 @@
           ]
         },
         {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.04.05.S2A_20250405_latn537lonw0022_T30UWE_ORB037_20250405163654_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1743807600
-          ]
-        },
-        {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.04.10.S2C_20250410_latn537lonw0022_T30UWE_ORB137_20250410134240_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
           "zIndex": 20,
@@ -4789,14 +4613,6 @@
           "zIndex": 20,
           "timestamps": [
             1742342400
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.04.05.S2A_20250405_latn537lonw0022_T30UWE_ORB037_20250405163654_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1743807600
           ]
         },
         {
@@ -5238,172 +5054,8 @@
       }
     },
     {
-      "name": "Sentinel 2 ARD, NDVI time series (Copy)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.08.31.S2B_20240831_latn537lonw0022_T30UWE_ORB037_20240831121358_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1725058800
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.09.17.S2B_20240917_latn537lonw0022_T30UWE_ORB137_20240917134320_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1726527600
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.10.10.S2B_20241010_latn537lonw0022_T30UWE_ORB037_20241010163934_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1728514800
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.12.19.S2B_20241219_latn537lonw0022_T30UWE_ORB037_20241219145422_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1734566400
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.01.25.S2B_20250125_latn537lonw0022_T30UWE_ORB137_20250125115614_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1737763200
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.02.27.S2B_20250227_latn537lonw0022_T30UWE_ORB037_20250227145514_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1740614400
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.03.19.S2B_20250319_latn537lonw0022_T30UWE_ORB037_20250319163355_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1742342400
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.04.05.S2A_20250405_latn537lonw0022_T30UWE_ORB037_20250405163654_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1743807600
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.04.10.S2C_20250410_latn537lonw0022_T30UWE_ORB137_20250410134240_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1744239600
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.05.13.S2C_20250513_latn537lonw0022_T30UWE_ORB037_20250513120803_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1747090800
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.06.19.S2C_20250619_latn537lonw0022_T30UWE_ORB137_20250619130908_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1750287600
-          ]
-        },
-        {
-          "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.07.12.S2C_20250712_latn537lonw0022_T30UWE_ORB037_20250712133114_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
-          "format": "xyz",
-          "zIndex": 20,
-          "timestamps": [
-            1752274800
-          ]
-        }
-      ],
-      "timeframe": "Months",
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "Sentinel 2 ARD via UK EO Data Hub",
-          "url": "https://eodatahub.org.uk/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Peatland Monitoring - Saddleworth Moor, UK",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": false,
-            "temporalControls": true,
-            "constraintSlider": false
-          }
-        }
-      }
-    },
-    {
       "name": "Trends in Land Cover - Degradation between 2018 and 2023",
       "isActive": false,
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "SEN4DN",
-          "url": "https://esa-sen4ldn.org/en"
-        },
-        "categories": [
-          {
-            "color": "#008837",
-            "label": "Restoration",
-            "value": 1
-          },
-          {
-            "color": "#7B3294",
-            "label": "Degradation",
-            "value": 2
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Land Degradation Neutrality - Portugal",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N42W009_MAP/SEN4LDN_LCD_V100_2018-2023_N42W009_MAP.tif",
@@ -5453,7 +5105,44 @@
             1514764800
           ]
         }
-      ]
+      ],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "SEN4DN",
+          "url": "https://esa-sen4ldn.org/en"
+        },
+        "categories": [
+          {
+            "color": "#008837",
+            "label": "Restoration",
+            "value": 1
+          },
+          {
+            "color": "#7B3294",
+            "label": "Degradation",
+            "value": 2
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Degradation Neutrality - Portugal",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false
+          }
+        }
+      }
     },
     {
       "name": "Trend in Land Cover - Degradation Probability Map between 2018 and 2023",
@@ -5551,6 +5240,13 @@
     {
       "name": "Trends in Carbon Stocks - Hybrid AGB  Average between 2010 & 2018",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_carbon_stocks/2010/01/01/SEN4LDN_Hybrid-Avg_V100_2010-2018_portugal_MAP/SEN4LDN_Hybrid-Avg_V100_2010-2018_portugal_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "Estimate of Above Ground Biomass Evolution between 2010 and 2018.  Values are from -20 to +20 Mg/ha",
         "attribution": {
@@ -5589,18 +5285,38 @@
             "constraintSlider": true
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_carbon_stocks/2010/01/01/SEN4LDN_Hybrid-Avg_V100_2010-2018_portugal_MAP/SEN4LDN_Hybrid-Avg_V100_2010-2018_portugal_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Trends in Productivity - Values of Trend Coefficient",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N42W009_MAP/SEN4LDN_trendval_V100_2018-2023_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N39W012_MAP/SEN4LDN_trendval_V100_2018-2023_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N39W009_MAP/SEN4LDN_trendval_V100_2018-2023_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N36W012_MAP/SEN4LDN_trendval_V100_2018-2023_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N36W009_MAP/SEN4LDN_trendval_V100_2018-2023_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "Values of trend coefficient of productivity over the period 2018-2023 (day / year) between -10 and +10.  (Scale needs to be offset by 1/10 - 10)",
         "attribution": {
@@ -5639,80 +5355,11 @@
             "constraintSlider": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N42W009_MAP/SEN4LDN_trendval_V100_2018-2023_N42W009_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N39W012_MAP/SEN4LDN_trendval_V100_2018-2023_N39W012_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N39W009_MAP/SEN4LDN_trendval_V100_2018-2023_N39W009_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N36W012_MAP/SEN4LDN_trendval_V100_2018-2023_N36W012_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N36W009_MAP/SEN4LDN_trendval_V100_2018-2023_N36W009_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Trends in Productivity - Class",
       "isActive": false,
-      "meta": {
-        "description": "Classes indicating trend / no trend",
-        "attribution": {
-          "text": "SEN4DN",
-          "url": "https://esa-sen4ldn.org/en"
-        },
-        "categories": [
-          {
-            "color": "#7A3193",
-            "label": "Degrading",
-            "value": 1
-          },
-          {
-            "color": "#D6DCE0",
-            "label": "Stable",
-            "value": 2
-          },
-          {
-            "color": "#008737",
-            "label": "Improving",
-            "value": 3
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Land Degradation Neutrality - Portugal",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendclass_V100_2018-2023_N42W009_MAP/SEN4LDN_trendclass_V100_2018-2023_N42W009_MAP.tif",
@@ -5739,30 +5386,32 @@
           "format": "cog",
           "zIndex": 50
         }
-      ]
-    },
-    {
-      "name": "Trends in Productivity - Performance Value",
-      "isActive": false,
+      ],
       "meta": {
-        "description": "Maximum performance 2021-23 over the land cover class reference [0.0 – 2.0].  Scale needs to be offset by 1/1000.",
+        "description": "Classes indicating trend / no trend",
         "attribution": {
           "text": "SEN4DN",
           "url": "https://esa-sen4ldn.org/en"
         },
-        "colormaps": [
+        "categories": [
           {
-            "min": 0,
-            "max": 255,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
+            "color": "#7A3193",
+            "label": "Degrading",
+            "value": 1
+          },
+          {
+            "color": "#008737",
+            "label": "Improving",
+            "value": 3
           }
         ]
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality - Portugal",
         "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
         "infoPanel": {
           "legend": {
             "type": "swatch"
@@ -5773,11 +5422,12 @@
             "temporalControls": false,
             "constraintSlider": false
           }
-        },
-        "layerCard": {
-          "toggleable": true
         }
-      },
+      }
+    },
+    {
+      "name": "Trends in Productivity - Performance Value",
+      "isActive": false,
       "data": [
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfval_V100_2018-2023_S06W072_MAP/SEN4LDN_perfval_V100_2018-2023_S06W072_MAP.tif",
@@ -5894,11 +5544,73 @@
           "format": "cog",
           "zIndex": 50
         }
-      ]
+      ],
+      "meta": {
+        "description": "Maximum performance 2021-23 over the land cover class reference [0.0 – 2.0].  Scale needs to be offset by 1/1000.",
+        "attribution": {
+          "text": "SEN4DN",
+          "url": "https://esa-sen4ldn.org/en"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 255,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Degradation Neutrality - Portugal",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false
+          }
+        }
+      }
     },
     {
       "name": "Trends in Productivity - Performance Classes",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfclass_V100_2018-2023_N42W009_MAP/SEN4LDN_perfclass_V100_2018-2023_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfclass_V100_2018-2023_N39W012_MAP/SEN4LDN_perfclass_V100_2018-2023_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfclass_V100_2018-2023_N39W009_MAP/SEN4LDN_perfclass_V100_2018-2023_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfclass_V100_2018-2023_N36W012_MAP/SEN4LDN_perfclass_V100_2018-2023_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfclass_V100_2018-2023_N36W009_MAP/SEN4LDN_perfclass_V100_2018-2023_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "Classes of performance indicating Degradation or No degradation",
         "attribution": {
@@ -5935,38 +5647,43 @@
             "constraintSlider": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfclass_V100_2018-2023_N42W009_MAP/SEN4LDN_perfclass_V100_2018-2023_N42W009_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfclass_V100_2018-2023_N39W012_MAP/SEN4LDN_perfclass_V100_2018-2023_N39W012_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfclass_V100_2018-2023_N39W009_MAP/SEN4LDN_perfclass_V100_2018-2023_N39W009_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfclass_V100_2018-2023_N36W012_MAP/SEN4LDN_perfclass_V100_2018-2023_N36W012_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfclass_V100_2018-2023_N36W009_MAP/SEN4LDN_perfclass_V100_2018-2023_N36W009_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Trends in Productivity - Land Productivity Degradation Classes",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N42W009_MAP/SEN4LDN_LPD_V100_2018-2023_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N39W012_MAP/SEN4LDN_LPD_V100_2018-2023_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N39W009_MAP/SEN4LDN_LPD_V100_2018-2023_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N39W006_MAP/SEN4LDN_LPD_V100_2018-2023_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N36W012_MAP/SEN4LDN_LPD_V100_2018-2023_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N36W009_MAP/SEN4LDN_LPD_V100_2018-2023_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "Land productivity degradation classes",
         "attribution": {
@@ -6013,39 +5730,28 @@
             "constraintSlider": false
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Open StreetMap",
+      "isActive": true,
+      "isBaseLayer": true,
       "data": [
         {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N42W009_MAP/SEN4LDN_LPD_V100_2018-2023_N42W009_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N39W012_MAP/SEN4LDN_LPD_V100_2018-2023_N39W012_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N39W009_MAP/SEN4LDN_LPD_V100_2018-2023_N39W009_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N39W006_MAP/SEN4LDN_LPD_V100_2018-2023_N39W006_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N36W012_MAP/SEN4LDN_LPD_V100_2018-2023_N36W012_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_LPD_V100_2018-2023_N36W009_MAP/SEN4LDN_LPD_V100_2018-2023_N36W009_MAP.tif",
-          "format": "cog",
-          "zIndex": 50
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
         }
-      ]
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
     },
     {
       "name": "Sentinel",
@@ -6095,27 +5801,6 @@
       }
     },
     {
-      "name": "Open StreetMap",
-      "isActive": true,
-      "data": [
-        {
-          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-          "format": "xyz",
-          "zIndex": 10
-        }
-      ],
-      "isBaseLayer": true,
-      "exclusivitySets": [],
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "OpenStreetMap",
-          "url": "https://www.openstreetmap.org/copyright"
-        },
-        "categories": []
-      }
-    },
-    {
       "name": "DEM",
       "isActive": false,
       "data": [
@@ -6149,7 +5834,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Multi-time data and stats - testing",
+        "interfaceGroup": "Multi-time data and stats - test",
         "contentLocation": "layerCard",
         "layerCard": {
           "toggleable": true,
@@ -6166,8 +5851,9 @@
       }
     },
     {
-      "name": "Land Degradation Neutrality Indicator SDG15.3.1",
+      "name": "Land Degradation Neutrality Indicator SDG15.3.1 (to do)",
       "isActive": false,
+      "data": [],
       "meta": {
         "description": "",
         "attribution": {
@@ -6192,8 +5878,78 @@
             "constraintSlider": false
           }
         }
+      }
+    },
+    {
+      "name": "Above Ground Biomass, 2023 with NUTS statistics",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Forest Carbon Monitoring Service",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300,
+        "startColor": "#ffffff",
+        "endColor": "#1a5f07"
       },
-      "data": []
+      "layout": {
+        "interfaceGroup": "Forest Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true
+          }
+        }
+      }
     }
   ]
 }
