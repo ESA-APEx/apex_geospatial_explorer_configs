@@ -1,5 +1,5 @@
 {
-  "version": "3.2.2-4",
+  "version": "3.2.2-5",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
@@ -5848,6 +5848,26 @@
             "constraintSlider": false
           }
         }
+      }
+    },
+    {
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
       }
     },
     {
