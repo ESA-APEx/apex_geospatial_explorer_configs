@@ -1,5 +1,5 @@
 {
-  "version": "3.3.2-3",
+  "version": "3.2.2-4",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
@@ -677,7 +677,7 @@
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 50,
           "layers": "WORLDCOVER_2020_MAP"
         }
       ],
@@ -809,7 +809,7 @@
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 50,
           "layers": "WORLDCOVER_2021_MAP"
         }
       ],
@@ -1002,7 +1002,7 @@
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/ESA_WorldCover_10m_2020_v100-natura.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1577836800
           ]
@@ -1010,7 +1010,7 @@
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/ESA_WorldCover_10m_2021_v200-natura.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1609459200
           ]
@@ -1160,7 +1160,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "dg kg^(-1)",
         "colormaps": [
           {
             "min": 0,
@@ -1169,7 +1168,8 @@
             "name": "copper",
             "reverse": true
           }
-        ]
+        ],
+        "units": "dg kg^(-1)"
       },
       "layout": {
         "interfaceGroup": "Carbon Monitoring",
@@ -1235,7 +1235,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "dg kg^(-1)",
         "colormaps": [
           {
             "min": 0,
@@ -1244,7 +1243,8 @@
             "name": "copper",
             "reverse": true
           }
-        ]
+        ],
+        "units": "dg kg^(-1)"
       },
       "layout": {
         "interfaceGroup": "Carbon Monitoring",
@@ -1751,7 +1751,7 @@
         {
           "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
           "format": "wms",
-          "zIndex": 20,
+          "zIndex": 50,
           "layers": "HRL_TCF:TCD_S2022",
           "timestamps": [
             1640995200
@@ -1760,7 +1760,7 @@
         {
           "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
           "format": "wms",
-          "zIndex": 20,
+          "zIndex": 50,
           "layers": "HRL_TCF:TCD_S2021",
           "timestamps": [
             1609459200
@@ -1769,7 +1769,7 @@
         {
           "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
           "format": "wms",
-          "zIndex": 20,
+          "zIndex": 50,
           "layers": "HRL_TCF:TCD_S2020",
           "timestamps": [
             1577836800
@@ -1850,7 +1850,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "units": "t / ha",
         "colormaps": [
           {
             "min": 0,
@@ -1859,7 +1858,8 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "units": "t / ha"
       },
       "layout": {
         "interfaceGroup": "Forest Monitoring",
@@ -1926,7 +1926,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "units": "t / ha",
         "colormaps": [
           {
             "min": 0,
@@ -1935,7 +1934,8 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "units": "t / ha"
       },
       "layout": {
         "interfaceGroup": "Forest Monitoring",
@@ -1983,11 +1983,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -1996,7 +1991,12 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff"
       },
       "layout": {
         "interfaceGroup": "Natura 2000 Area Monitoring",
@@ -2355,7 +2355,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "dg kg^(-1)",
         "colormaps": [
           {
             "min": 0,
@@ -2364,7 +2363,8 @@
             "name": "copper",
             "reverse": true
           }
-        ]
+        ],
+        "units": "dg kg^(-1)"
       },
       "layout": {
         "interfaceGroup": "Carbon Monitoring",
@@ -2424,7 +2424,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "dg kg^(-1)",
         "colormaps": [
           {
             "min": 0,
@@ -2433,7 +2432,8 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "units": "dg kg^(-1)"
       },
       "layout": {
         "interfaceGroup": "Carbon Monitoring",
@@ -2462,7 +2462,7 @@
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
           "format": "cog",
-          "zIndex": 2,
+          "zIndex": 50,
           "timestamps": [
             1583020800
           ]
@@ -2470,7 +2470,7 @@
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_mean_100_201903-202110.tif",
           "format": "cog",
-          "zIndex": 2,
+          "zIndex": 50,
           "timestamps": [
             1551398400
           ]
@@ -2478,7 +2478,7 @@
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
           "format": "cog",
-          "zIndex": 2,
+          "zIndex": 50,
           "timestamps": [
             1519862400
           ]
@@ -2488,7 +2488,7 @@
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 100,
           "level": 0,
           "timestamps": [
             1583020800
@@ -2497,7 +2497,7 @@
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_mean_100_201903-202110.tif",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 100,
           "level": 0,
           "timestamps": [
             1551398400
@@ -2506,7 +2506,7 @@
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
           "format": "flatgeobuf",
-          "zIndex": 2,
+          "zIndex": 100,
           "level": 0,
           "timestamps": [
             1519862400
@@ -2521,11 +2521,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -2534,7 +2529,12 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 4000,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff"
       },
       "layout": {
         "interfaceGroup": "Multi-time data and stats - test",
@@ -3612,7 +3612,6 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
-        "units": "mm / yr",
         "colormaps": [
           {
             "min": -40,
@@ -3621,7 +3620,8 @@
             "name": "rdbu",
             "reverse": false
           }
-        ]
+        ],
+        "units": "mm / yr"
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Saddleworth Moor, UK",
@@ -3660,7 +3660,6 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
-        "units": "mm / yr",
         "colormaps": [
           {
             "min": -40,
@@ -3669,7 +3668,8 @@
             "name": "rdbu",
             "reverse": false
           }
-        ]
+        ],
+        "units": "mm / yr"
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Saddleworth Moor, UK",
@@ -3809,7 +3809,6 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
-        "units": "mm / yr",
         "colormaps": [
           {
             "min": -50,
@@ -3818,7 +3817,8 @@
             "name": "rdbu",
             "reverse": false
           }
-        ]
+        ],
+        "units": "mm / yr"
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Quebec",
@@ -3857,7 +3857,6 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
-        "units": "mm / yr",
         "colormaps": [
           {
             "min": -40,
@@ -3866,7 +3865,8 @@
             "name": "rdbu",
             "reverse": false
           }
-        ]
+        ],
+        "units": "mm / yr"
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Quebec",
@@ -4441,7 +4441,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.08.31.S2B_20240831_latn537lonw0022_T30UWE_ORB037_20240831121358_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1725058800
           ]
@@ -4449,7 +4449,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.09.17.S2B_20240917_latn537lonw0022_T30UWE_ORB137_20240917134320_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1726527600
           ]
@@ -4457,7 +4457,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.10.10.S2B_20241010_latn537lonw0022_T30UWE_ORB037_20241010163934_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1728514800
           ]
@@ -4465,7 +4465,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.12.19.S2B_20241219_latn537lonw0022_T30UWE_ORB037_20241219145422_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1734566400
           ]
@@ -4473,7 +4473,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.01.25.S2B_20250125_latn537lonw0022_T30UWE_ORB137_20250125115614_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1737763200
           ]
@@ -4481,7 +4481,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.02.27.S2B_20250227_latn537lonw0022_T30UWE_ORB037_20250227145514_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1740614400
           ]
@@ -4489,7 +4489,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.03.19.S2B_20250319_latn537lonw0022_T30UWE_ORB037_20250319163355_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1742342400
           ]
@@ -4497,7 +4497,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.04.10.S2C_20250410_latn537lonw0022_T30UWE_ORB137_20250410134240_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1744239600
           ]
@@ -4505,7 +4505,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.05.13.S2C_20250513_latn537lonw0022_T30UWE_ORB037_20250513120803_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1747090800
           ]
@@ -4513,7 +4513,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.06.19.S2C_20250619_latn537lonw0022_T30UWE_ORB137_20250619130908_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1750287600
           ]
@@ -4521,7 +4521,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.07.12.S2C_20250712_latn537lonw0022_T30UWE_ORB037_20250712133114_utm30n_osgb&title=Natural%20Color&assets=cog&bidx=3&bidx=2&bidx=1&nodata=0&color_formula=Gamma%20RGB%206%20Saturation%200.8%20Sigmoidal%20RGB%2025%200.35",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1752274800
           ]
@@ -4562,7 +4562,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.08.31.S2B_20240831_latn537lonw0022_T30UWE_ORB037_20240831121358_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1725058800
           ]
@@ -4570,7 +4570,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.09.17.S2B_20240917_latn537lonw0022_T30UWE_ORB137_20240917134320_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1726527600
           ]
@@ -4578,7 +4578,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.10.10.S2B_20241010_latn537lonw0022_T30UWE_ORB037_20241010163934_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1728514800
           ]
@@ -4586,7 +4586,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2024.12.19.S2B_20241219_latn537lonw0022_T30UWE_ORB037_20241219145422_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1734566400
           ]
@@ -4594,7 +4594,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.01.25.S2B_20250125_latn537lonw0022_T30UWE_ORB137_20250125115614_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1737763200
           ]
@@ -4602,7 +4602,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.02.27.S2B_20250227_latn537lonw0022_T30UWE_ORB037_20250227145514_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1740614400
           ]
@@ -4610,7 +4610,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.03.19.S2B_20250319_latn537lonw0022_T30UWE_ORB037_20250319163355_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1742342400
           ]
@@ -4618,7 +4618,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.04.10.S2C_20250410_latn537lonw0022_T30UWE_ORB137_20250410134240_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1744239600
           ]
@@ -4626,7 +4626,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.05.13.S2C_20250513_latn537lonw0022_T30UWE_ORB037_20250513120803_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1747090800
           ]
@@ -4634,7 +4634,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.06.19.S2C_20250619_latn537lonw0022_T30UWE_ORB137_20250619130908_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1750287600
           ]
@@ -4642,7 +4642,7 @@
         {
           "url": "https://eodatahub.org.uk/titiler/core/stac/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Feodatahub.org.uk%2Fapi%2Fcatalogue%2Fstac%2Fcatalogs%2Fpublic%2Fcatalogs%2Fceda-stac-catalogue%2Fcollections%2Fsentinel2_ard%2Fitems%2Fneodc.sentinel_ard.data.sentinel_2.2025.07.12.S2C_20250712_latn537lonw0022_T30UWE_ORB037_20250712133114_utm30n_osgb&title=Normalized%20difference%20vegetation%20index%20%28NDVI%29&assets=cog&bidx=7&bidx=3&rescale=-1%2C1&nodata=0&colormap_name=rdylgn&expression=%28cog_b7-cog_b3%29%2F%28cog_b7%2Bcog_b3%29&id=NDVI",
           "format": "xyz",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1752274800
           ]
@@ -4683,7 +4683,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N42W009_MAP/SEN4LDN_LCM_V100_2023_N42W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1672531200
           ]
@@ -4691,7 +4691,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N39W012_MAP/SEN4LDN_LCM_V100_2023_N39W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1672531200
           ]
@@ -4699,7 +4699,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N39W009_MAP/SEN4LDN_LCM_V100_2023_N39W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1672531200
           ]
@@ -4707,7 +4707,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N39W006_MAP/SEN4LDN_LCM_V100_2023_N39W006_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1672531200
           ]
@@ -4715,7 +4715,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N36W012_MAP/SEN4LDN_LCM_V100_2023_N36W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1672531200
           ]
@@ -4723,7 +4723,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N36W009_MAP/SEN4LDN_LCM_V100_2023_N36W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1672531200
           ]
@@ -4731,7 +4731,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N42W009_MAP/SEN4LDN_LCM_V100_2022_N42W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1640995200
           ]
@@ -4739,7 +4739,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N39W012_MAP/SEN4LDN_LCM_V100_2022_N39W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1640995200
           ]
@@ -4747,7 +4747,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N39W009_MAP/SEN4LDN_LCM_V100_2022_N39W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1640995200
           ]
@@ -4755,7 +4755,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N39W006_MAP/SEN4LDN_LCM_V100_2022_N39W006_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1640995200
           ]
@@ -4763,7 +4763,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N36W012_MAP/SEN4LDN_LCM_V100_2022_N36W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1640995200
           ]
@@ -4771,7 +4771,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N36W009_MAP/SEN4LDN_LCM_V100_2022_N36W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1640995200
           ]
@@ -4779,7 +4779,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N42W009_MAP/SEN4LDN_LCM_V100_2021_N42W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1609459200
           ]
@@ -4787,7 +4787,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N39W012_MAP/SEN4LDN_LCM_V100_2021_N39W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1609459200
           ]
@@ -4795,7 +4795,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N39W009_MAP/SEN4LDN_LCM_V100_2021_N39W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1609459200
           ]
@@ -4803,7 +4803,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N39W006_MAP/SEN4LDN_LCM_V100_2021_N39W006_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1609459200
           ]
@@ -4811,7 +4811,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N36W012_MAP/SEN4LDN_LCM_V100_2021_N36W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1609459200
           ]
@@ -4819,7 +4819,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N36W009_MAP/SEN4LDN_LCM_V100_2021_N36W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1609459200
           ]
@@ -4827,7 +4827,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N42W009_MAP/SEN4LDN_LCM_V100_2020_N42W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1577836800
           ]
@@ -4835,7 +4835,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N39W012_MAP/SEN4LDN_LCM_V100_2020_N39W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1577836800
           ]
@@ -4843,7 +4843,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N39W009_MAP/SEN4LDN_LCM_V100_2020_N39W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1577836800
           ]
@@ -4851,7 +4851,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N39W006_MAP/SEN4LDN_LCM_V100_2020_N39W006_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1577836800
           ]
@@ -4859,7 +4859,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N36W012_MAP/SEN4LDN_LCM_V100_2020_N36W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1577836800
           ]
@@ -4867,7 +4867,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N36W009_MAP/SEN4LDN_LCM_V100_2020_N36W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1577836800
           ]
@@ -4875,7 +4875,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N42W009_MAP/SEN4LDN_LCM_V100_2019_N42W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1546300800
           ]
@@ -4883,7 +4883,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N39W012_MAP/SEN4LDN_LCM_V100_2019_N39W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1546300800
           ]
@@ -4891,7 +4891,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N39W009_MAP/SEN4LDN_LCM_V100_2019_N39W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1546300800
           ]
@@ -4899,7 +4899,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N39W006_MAP/SEN4LDN_LCM_V100_2019_N39W006_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1546300800
           ]
@@ -4907,7 +4907,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N36W012_MAP/SEN4LDN_LCM_V100_2019_N36W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1546300800
           ]
@@ -4915,7 +4915,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N36W009_MAP/SEN4LDN_LCM_V100_2019_N36W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1546300800
           ]
@@ -4923,7 +4923,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N42W009_MAP/SEN4LDN_LCM_V100_2018_N42W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -4931,7 +4931,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N39W012_MAP/SEN4LDN_LCM_V100_2018_N39W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -4939,7 +4939,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N39W009_MAP/SEN4LDN_LCM_V100_2018_N39W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -4947,7 +4947,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N39W006_MAP/SEN4LDN_LCM_V100_2018_N39W006_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -4955,7 +4955,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N36W012_MAP/SEN4LDN_LCM_V100_2018_N36W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -4963,7 +4963,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N36W009_MAP/SEN4LDN_LCM_V100_2018_N36W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5060,7 +5060,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N42W009_MAP/SEN4LDN_LCD_V100_2018-2023_N42W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5068,7 +5068,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N39W012_MAP/SEN4LDN_LCD_V100_2018-2023_N39W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5076,7 +5076,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N39W009_MAP/SEN4LDN_LCD_V100_2018-2023_N39W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5084,7 +5084,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N39W006_MAP/SEN4LDN_LCD_V100_2018-2023_N39W006_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5092,7 +5092,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N36W012_MAP/SEN4LDN_LCD_V100_2018-2023_N36W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5100,7 +5100,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N36W009_MAP/SEN4LDN_LCD_V100_2018-2023_N36W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5151,7 +5151,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N42W009_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N42W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5159,7 +5159,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N39W012_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N39W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5167,7 +5167,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N39W009_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N39W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5175,7 +5175,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N39W006_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N39W006_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5183,7 +5183,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N36W012_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N36W012_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5191,7 +5191,7 @@
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N36W009_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N36W009_MAP.tif",
           "format": "cog",
-          "zIndex": 20,
+          "zIndex": 50,
           "timestamps": [
             1514764800
           ]
@@ -5204,10 +5204,6 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
-        "min": 0,
-        "max": 234,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -5216,7 +5212,11 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "min": 0,
+        "max": 234,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff"
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality - Portugal",
@@ -5254,10 +5254,6 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
-        "min": -206,
-        "max": 129,
-        "startColor": "#ffffff",
-        "endColor": "#fffffff",
         "colormaps": [
           {
             "min": -206,
@@ -5266,7 +5262,11 @@
             "name": "jet",
             "reverse": true
           }
-        ]
+        ],
+        "min": -206,
+        "max": 129,
+        "startColor": "#ffffff",
+        "endColor": "#fffffff"
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality - Portugal",
@@ -5324,10 +5324,6 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
-        "min": 0,
-        "max": 254,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -5336,7 +5332,11 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "min": 0,
+        "max": 254,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff"
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality - Portugal",
@@ -5735,7 +5735,6 @@
     {
       "name": "Open StreetMap",
       "isActive": true,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -5743,6 +5742,7 @@
           "zIndex": 10
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
         "description": "",
@@ -5807,7 +5807,7 @@
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 10,
           "layers": "COP_DEM_GLO_30M_COG"
         }
       ],
