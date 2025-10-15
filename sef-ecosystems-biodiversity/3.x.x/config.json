@@ -6048,26 +6048,6 @@
       ]
     },
     {
-      "name": "Stadia Alidade Smooth Dark",
-      "isActive": true,
-      "data": [
-        {
-          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
-          "format": "xyz",
-          "zIndex": 3
-        }
-      ],
-      "isBaseLayer": true,
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
-          "url": "https://stadiamaps.com/"
-        },
-        "categories": []
-      }
-    },
-    {
       "name": "Sentinel",
       "isActive": false,
       "data": [
@@ -6116,7 +6096,7 @@
     },
     {
       "name": "Open StreetMap",
-      "isActive": false,
+      "isActive": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -6131,46 +6111,6 @@
         "attribution": {
           "text": "OpenStreetMap",
           "url": "https://www.openstreetmap.org/copyright"
-        },
-        "categories": []
-      }
-    },
-    {
-      "name": "Stadia Alidade Smooth Light",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
-          "format": "xyz",
-          "zIndex": 3
-        }
-      ],
-      "isBaseLayer": true,
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
-          "url": "https://stadiamaps.com/"
-        },
-        "categories": []
-      }
-    },
-    {
-      "name": "Stadia Alidade Satellite",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
-          "format": "xyz",
-          "zIndex": 2
-        }
-      ],
-      "isBaseLayer": true,
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
-          "url": "https://stadiamaps.com/"
         },
         "categories": []
       }
