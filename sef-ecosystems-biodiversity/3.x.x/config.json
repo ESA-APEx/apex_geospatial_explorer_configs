@@ -333,7 +333,7 @@
       "data": [],
       "statistics": [
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 0,
@@ -342,7 +342,7 @@
           ]
         },
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 1,
@@ -351,7 +351,7 @@
           ]
         },
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 2,
@@ -360,7 +360,7 @@
           ]
         },
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 3,
@@ -369,7 +369,7 @@
           ]
         },
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2020.nuts_2024.epsg4326.level00.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 0,
@@ -378,7 +378,7 @@
           ]
         },
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2020.nuts_2024.epsg4326.level01.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 1,
@@ -387,7 +387,7 @@
           ]
         },
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2020.nuts_2024.epsg4326.level02.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 2,
@@ -396,7 +396,7 @@
           ]
         },
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2020.nuts_2024.epsg4326.level03.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 3,
@@ -514,7 +514,7 @@
       ],
       "statistics": [
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 0,
@@ -523,7 +523,7 @@
           ]
         },
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 1,
@@ -532,7 +532,7 @@
           ]
         },
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 2,
@@ -541,7 +541,7 @@
           ]
         },
         {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 3,
@@ -2486,7 +2486,7 @@
       ],
       "statistics": [
         {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 0,
@@ -2495,7 +2495,7 @@
           ]
         },
         {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_mean_100_201903-202110.tif",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2019-2021.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 0,
@@ -2504,7 +2504,7 @@
           ]
         },
         {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2018-2020.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
           "level": 0,
