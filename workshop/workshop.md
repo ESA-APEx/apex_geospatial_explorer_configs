@@ -179,13 +179,77 @@ Here we added one of the **CLMS** datasets for Tree Cover Density
 
 <img width="1916" height="907" alt="image" src="https://github.com/user-attachments/assets/57a8e350-3f10-4092-b026-1cbd5078af79" />
 
-#### 2.1.5 Adding legends for WMS
+#### 2.1.5 Adding legends for a WMS
 
 Some WMS services may serve up legends using the 
 
 1. User the **(i)** button on the Dataset listing on your layer card to check whether the WMS has a layer graphic
 <img width="776" height="568" alt="image" src="https://github.com/user-attachments/assets/bbcddb29-7e26-40f4-a2a8-cc50fa729cea" />
+
 2. If it does, select the **Copy to config** option.  This should add the legend to the layer card.
+3. If it does not, then the other option is to edit the layer card and point to a publically accessible legend graphic - e.g. a **png** file.  This is also an option if you want to use a different legend to the one returned from the WMS service.
+
+The dataset we added earlier now looks like this:
+
+<img width="1913" height="915" alt="image" src="https://github.com/user-attachments/assets/6bf4b653-86b7-480a-9520-78e481b25506" />
+
+Overwriting it with a nicely crafted legend might be a good idea!
+
+> Have you exported recently?
+
+## Part 3 - Working with Categorical Data
+
+### 3.1  Setting up Categories
+
+#### 3.1.1 Introduction
+* Often we are working with categorical data, such as classifications (e.g. Land Cover)
+* The data may be provided in a number of ways
+* It may be WMS (such as the World Cover data earlier) or some tile service where the data is rendered according to the categories
+* It may equally be a COG where the data values in the COG represent categorical values
+* In both scenarios we can set up Categories for the GE
+* For WMS layers, these will display a legend
+* For COGS, these will define how the data is rendered and also display a legend
+
+#### 3.1.2 Setting up Categories for World Cover manually
+
+1. In exercise 2.1.1 you set up World Cover data.  Select **Edit Layer Card** on this.
+2. Scroll down and select **Add Categories**.  A UI for setting categories will appear.
+3. Select the toggle on the UI to **Use data values**.  An additional column will appear.
+4. Use the UI to change the *colour to* **green**, label to **tree** and value to 10
+5. Repeat with a couple of further categories for world cover.  You can use the image below on this page and the colour picker tool to help
+
+<img width="411" height="337" alt="image" src="https://github.com/user-attachments/assets/5586db3b-14a0-4174-b857-b55930acd083" />
+
+6. Continue for as much patience as you have.  If you did them all, the legend when you render it will end up looking like this:
+
+<img width="1072" height="550" alt="image" src="https://github.com/user-attachments/assets/b2782351-3ebf-4806-883e-2d937318e5be" />
+
+#### 3.1.3 Using categories with a COG
+
+We can use the same categories for a COG version
+
+1. Create a new **Layer Card** called *World Cover COG*
+2. **Add the following dataset** for a World Cover COG of Austria:
+```
+https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix-esa_worldcover_2021.tif
+```
+3.  In the **Layer Card** editor, select **Add Categories** then **Copy from** and use the layer from 3.1.2
+4.  Now view the layer and you will see it rendered according to those categories
+
+#### 3.1.4 Popuating from the COG
+
+An alternative approach is populating the categories from the COG.  You would still need to define colours and labels (unless the COG contains colour hints)
+
+1. **Duplicate** the layer you set up in 3.1.3, using the **Copy layer** icon on the layer card
+2. **Delete the existing categories**
+3. Go to thew **(i)** icon on the dataset, to get to the COG metadata
+4. Select **Populate categories**
+5. You could complete the editing here
+
+
+     
+
+
 
  
 
