@@ -1,21 +1,44 @@
 # Geospatial Explorer Config Builder Workshop
 
-## Part 1 - mastering the basics
-## key concepts
-it’s all JSON
-JSON is complicated
-Config builder allows people to author configs without knowing json or having to understand the schema
-It’s all happening in your web browser
-There is no back end or persistent storage at present
-Exporting = saving
-We have embedded a runtime GE into the builder, multiple versions in fact!
-The UI separates out some of the basic stuff from the more technical to allow collaboration on building by people with different levels of expertise
-It’s designed to support a very iterative process
-It is a WIP. We’d welcome your feedback and ideas
+## Part 1 - Mastering the basics
 
-### getting started
+###  1.1 Key concepts
+* The Geospatial Explorer Configuration Builder ("CB") is an authoring tool for the JSON that the Geospatial Explorer uses.
+* The JSON itself is complex - the tool intends to reduce the technical barrier required to build GE config environments.
+* The CB runs entirely within your web browser.  There is no persistent back end storage of configurations.
+* We "save" configurations simply by downloading them locally to our own machinesm and reloading later when we want to continue working with them.
+* Configrations can be shared - e.g. just email to a collaborator
+* A run-time version of the GE is integrated into the CB. This will include released versions and potentially interim development versions.
+* Development versions allows configurations to be built to work with features of the CB which are being delivered in a future release
+* The CB itself is a work in progress.  We would welcome your ideas to improve it based on your experences.
 
-### my first layer
+### 1.2 Getting started
+
+In this exercise we will start building a new configuration from scratch using the *Forest Carbon* data
+
+#### Name, interface group and branding
+
+We will start by changing the title, interface group and branding.
+
+1. **Open the configuration builder** by going to the following URL: https://apex-ge-config-builder.sparkgeo.uk/
+2. On the *home* tab **edit the title** of the configuration to something of your choice
+3. Move to the *layers* tab.  **Edit** *Interface group 1* replacing the name with *Forest Carbon*.  **Delete** the other interface groups.
+4. Move to the *settings* tab, and **edit** some of the colours to a colour scheme of your choice
+5. Select the *preview* tab, and see the changes
+
+#### Exporting and reloading config
+
+**Remember** there is no "saving" of config - simply exporting and importing
+
+1. On the *home* tab select **Export -> Quick Export**.  This will download to your local machine as a file called **config.json**
+2. Now select **New Config**.  You will see that your previous changes have been lost
+3. Now select **Load Config**.  You will see your previous config has been reinstated.
+
+> As you continue through this workshop **remember to export your config** frequently, in case you accidentally close your browser tab.  You can then reinstate it from your local machine
+
+As you download on multiple occasions your operating system will be treating each file as a copy and may rename them - e.g. *config (1).json*,  *config (2).json* etc
+
+### 1.2.1 my first layer
 Rename interface group Biomass and preview
 Add a layer called AGB
 Fill out description, attribution etc
