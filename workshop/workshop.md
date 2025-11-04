@@ -214,13 +214,16 @@ Overwriting it with a nicely crafted legend might be a good idea!
 
 1. In exercise 2.1.1 you set up World Cover data.  Select **Edit Layer Card** on this.
 2. Scroll down and select **Add Categories**.  A UI for setting categories will appear.
-3. Select the toggle on the UI to **Use data values**.  An additional column will appear.
-4. Use the UI to change the *colour to* **green**, label to **tree** and value to 10
-5. Repeat with a couple of further categories for world cover.  You can use the image below on this page and the colour picker tool to help
+
+<img width="653" height="712" alt="image" src="https://github.com/user-attachments/assets/1079fcfb-a7fc-477c-9aac-d6a71d3b8db8" />
+
+4. Select the toggle on the UI to **Use data values**.  An additional column will appear.
+5. Use the UI to change the *colour to* **green**, label to **tree** and value to 10
+6. Repeat with a couple of further categories for world cover.  You can use the image below on this page and the colour picker tool to help
 
 <img width="411" height="337" alt="image" src="https://github.com/user-attachments/assets/5586db3b-14a0-4174-b857-b55930acd083" />
 
-6. Continue for as much patience as you have.  If you did them all, the legend when you render it will end up looking like this:
+6. You only need to do a couple now.  If you did them all, the legend when you render it will end up looking like this:
 
 <img width="1072" height="550" alt="image" src="https://github.com/user-attachments/assets/b2782351-3ebf-4806-883e-2d937318e5be" />
 
@@ -234,7 +237,7 @@ We can use the same categories for a COG version
 https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix-esa_worldcover_2021.tif
 ```
 3.  In the **Layer Card** editor, select **Add Categories** then **Copy from** and use the layer from 3.1.2
-4.  Now view the layer and you will see it rendered according to those categories
+4.  Now view the layer and you will see it rendered according to those categories you have defined so far
 
 #### 3.1.4 Popuating from the COG
 
@@ -243,16 +246,14 @@ An alternative approach is populating the categories from the COG.  You would st
 1. **Duplicate** the layer you set up in 3.1.3, using the **Copy layer** icon on the layer card
 2. **Delete the existing categories**
 3. Go to thew **(i)** icon on the dataset, to get to the COG metadata
-4. Select **Populate categories**
-5. You could complete the editing here
+4. Select **Populate categories**.  You will now see this:
+
+<img width="653" height="712" alt="image" src="https://github.com/user-attachments/assets/5d282f2a-9c16-4901-b305-1548710d1849" />
+
+5. You now just need to edit the values
 
 
-     
-
-
-
- 
-
+# GOT TO HERE
 
 
 Rename interface group Biomass and preview
