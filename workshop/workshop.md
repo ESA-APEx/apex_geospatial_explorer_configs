@@ -16,7 +16,7 @@
 
 In this exercise we will start building a new configuration from scratch using the *Forest Carbon* data
 
-#### Name, interface group and branding
+#### 1.2.1 Name, interface group and branding
 
 We will start by changing the title, interface group and branding.
 
@@ -26,7 +26,7 @@ We will start by changing the title, interface group and branding.
 4. Move to the *settings* tab, and **edit** some of the colours to a colour scheme of your choice
 5. Select the *preview* tab, and see the changes
 
-#### Exporting and reloading config
+#### 1.2.2 Exporting and reloading config
 
 **Remember** there is no "saving" of config - simply exporting and importing
 
@@ -38,7 +38,24 @@ We will start by changing the title, interface group and branding.
 
 As you download on multiple occasions your operating system will be treating each file as a copy and may rename them - e.g. *config (1).json*,  *config (2).json* etc
 
-### 1.2.1 my first layer
+### 1.2.3 Creating your first layer card
+
+A layer card is a user interface element into which we add content such as descriptions, data, statistics, constraints. 
+
+1. On the *layers* tab select your *Forest Carbon* interface group and select **+ Add Layer**
+2. Leave the **default settings** for Layer Type and Layout style
+3. Type *Above Ground Biomass* into the **Layer Name** field
+4. Enter in a suitable **Description** that will describe the layer.
+5. Add *Forest Carbon* into the **Attribution text**.  Add an **Attribution URL** to the Forest Carbon website if you want.
+6. Select **Create Layer Card**
+
+### 1.2.4 Add some data to your layer card
+
+1. 
+
+
+
+
 Rename interface group Biomass and preview
 Add a layer called AGB
 Fill out description, attribution etc
