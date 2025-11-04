@@ -26,6 +26,10 @@ We will start by changing the title, interface group and branding.
 4. Move to the *settings* tab, and **edit** some of the colours to a colour scheme of your choice
 5. Select the *preview* tab, and see the changes
 
+Your UI might now look something like this:
+<img width="1915" height="917" alt="image" src="https://github.com/user-attachments/assets/c8b9c5c0-305b-43a7-a48c-e53e3b9e7411" />
+
+
 #### 1.2.2 Exporting and reloading config
 
 **Remember** there is no "saving" of config - simply exporting and importing
@@ -38,7 +42,14 @@ We will start by changing the title, interface group and branding.
 
 As you download on multiple occasions your operating system will be treating each file as a copy and may rename them - e.g. *config (1).json*,  *config (2).json* etc
 
-### 1.2.3 Creating your first layer card
+#### 1.2.3 Add in some new base maps
+
+1. On the *Layers Tab* scroll down to *Base maps* and select **Add Recommended Base Maps**.
+2. Take a little time to look in the Config Builder at what has been added.  Note things like attribution have automatically been added to the base map cards.  Then go to *Preview* to see the results.  It should look like this.
+
+<img width="1915" height="917" alt="image" src="https://github.com/user-attachments/assets/6bf607e2-2b4f-47c3-a2d2-d19ee9d0362d" />
+
+#### 1.2.4 Creating your first layer card
 
 A layer card is a user interface element into which we add content such as descriptions, data, statistics, constraints. 
 
@@ -49,9 +60,32 @@ A layer card is a user interface element into which we add content such as descr
 5. Add *Forest Carbon* into the **Attribution text**.  Add an **Attribution URL** to the Forest Carbon website if you want.
 6. Select **Create Layer Card**
 
-### 1.2.4 Add some data to your layer card
+You will now have a layer card tha looks something like this:
 
-1. 
+<img width="1915" height="917" alt="image" src="https://github.com/user-attachments/assets/737b1ff7-14de-4b25-a1ab-70ef20042400" />
+
+#### 1.2.5 Add some data to your layer card
+
+You will now add some data to the data sources.
+
+1. In the *Datasets* tab on your layer card, select **+ Add Dataset**
+
+<img width="1390" height="701" alt="image" src="https://github.com/user-attachments/assets/62148be7-4505-4b2f-b570-79191968e02d" />
+
+2. Stay on the *Direct Connection* and *COG* data format, and copy the following into the **Data Source URL** then select **Add Source**
+```
+https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif
+```
+3. You will now see the data source listed in the Datasets tab
+
+<img width="1077" height="130" alt="image" src="https://github.com/user-attachments/assets/50e49a31-a397-409e-bdc6-f8960b3898e3" />
+   
+4. Click on the **(i)** icon on the data source to interrogate metadata about the COG
+5. Make mental note of the **min** and **max** values, then close the dialogue.
+6. Now select **Edit** icon at the top of the layer card.  This is the pen icon to the right of the **info panel** badge
+
+<img width="1169" height="96" alt="image" src="https://github.com/user-attachments/assets/90a287c9-d928-46cc-9720-1f9a5f1fb198" />
+
 
 
 
