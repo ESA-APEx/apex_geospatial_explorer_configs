@@ -149,14 +149,14 @@ A very basic configuration would look something like this, although hopefully yo
 
 We are now going to work with other services - STAC services and querying WMS / WMTS services directly.  The recommended services are simply a collection of these that people will find useful.
 
-1. Move to the **Services** tab and select **Add Recommended Services8**
+1. Move to the **Services** tab and select **Add Recommended Services**
 2. You will now see a list of services, such as the *STAC service for the PRR* and various WMS services.  
 
 <img width="1390" height="897" alt="image" src="https://github.com/user-attachments/assets/ce024a46-1198-45ec-b1dd-d15b0e09ee5a" />
 
 We can use these services when adding data
 
-### 2.1.3 Adding data from the PRR
+#### 2.1.3 Adding data from the PRR
 
 1. In the *Layers UI* create a new **Layer Card** as before called *Below Ground Biomass*, populate with relevant details
 2. Select **Add Dataset** then select the *From Service* 
@@ -168,8 +168,26 @@ We can use these services when adding data
 5. **Search** for *BGB* to find the *Below Ground Biomass* collection.  Select the *assets* and *items* until you see the COGS listed.  **Add** the most recent COG to your source  
 6. Finish setting up the data as you see fit **colour maps** etc
 
-   
+#### 2.1.4 Adding more WMS layers
 
+1. In the *Layers UI* create a new **Layer Card** call it *"temp"* for now
+2. Select **Add Dataset** then *From Service* and have a browse through some of the WMS services - e.g. **CLMS** or another service of your choice
+3. **Pick a WMS layer** of interest to you and add it to your layer card
+4. Now go and **Edit the Layer Card** details changing the name from *"temp"* to a more suitable layer name and configure as you see fit
+
+Here we added one of the **CLMS** datasets for Tree Cover Density
+
+<img width="1916" height="907" alt="image" src="https://github.com/user-attachments/assets/57a8e350-3f10-4092-b026-1cbd5078af79" />
+
+#### 2.1.5 Adding legends for WMS
+
+Some WMS services may serve up legends using the 
+
+1. User the **(i)** button on the Dataset listing on your layer card to check whether the WMS has a layer graphic
+<img width="776" height="568" alt="image" src="https://github.com/user-attachments/assets/bbcddb29-7e26-40f4-a2a8-cc50fa729cea" />
+2. If it does, select the **Copy to config** option.  This should add the legend to the layer card.
+
+ 
 
 
 
