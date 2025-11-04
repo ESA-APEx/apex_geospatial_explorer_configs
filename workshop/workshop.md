@@ -117,6 +117,10 @@ Although the Gradient view will still be visible in the layer card, the Colour M
 
  <img width="1919" height="911" alt="image" src="https://github.com/user-attachments/assets/b9039d6b-14b9-4eb1-87ec-903f480b7c3e" />
 
+ ### Did you remember to export?
+ 
+ As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good dime
+
 ## Part 2 - Web Services
 
 ### 2.1 Adding in WMS directly
@@ -131,11 +135,11 @@ Using the steps outlined above:
 4. Select **Direct Connection -> WMS/WMTS Service**
 5. Copy the following URL into the
 ```
-TBC
+https://services.terrascope.be/wms/v2
 ```
 6. Copy the following **Layer Name** into the WMS 
 ```
-TBC
+WORLDCOVER_2020_MAP
 ```
 
 
