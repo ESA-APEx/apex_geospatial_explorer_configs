@@ -49,7 +49,9 @@ As you download on multiple occasions your operating system will be treating eac
 
 <img width="1915" height="917" alt="image" src="https://github.com/user-attachments/assets/6bf607e2-2b4f-47c3-a2d2-d19ee9d0362d" />
 
-#### 1.2.4 Creating your first layer card
+### 1.3 Adding in your first data
+
+#### 1.3.1 Creating your first layer card
 
 A layer card is a user interface element into which we add content such as descriptions, data, statistics, constraints. 
 
@@ -64,7 +66,7 @@ You will now have a layer card that looks something like this:
 
 <img width="1915" height="917" alt="image" src="https://github.com/user-attachments/assets/737b1ff7-14de-4b25-a1ab-70ef20042400" />
 
-#### 1.2.5 Add some data to your layer card
+#### 1.3.2 Add some data to your layer card
 
 You will now add some data to the data sources.
 
@@ -91,8 +93,30 @@ This returns us back to the Edit Layer Card mode
 
 <img width="1321" height="330" alt="image" src="https://github.com/user-attachments/assets/474a16af-749f-4faa-8c9d-c9fa7a11dbbe" />
 
-8. **Save Changes** then go to **Preview** and you should see somethig like this:
+8. **Save Changes** then go to **Preview** and you should see something like this:
 <img width="1919" height="905" alt="image" src="https://github.com/user-attachments/assets/3331456d-f15e-4696-9f85-4e222a691d98" />
+
+
+> **Congratulations.  You've now added your first layer!**
+
+### 1.4 Replacing the gradient with a Colour Map
+
+Gradients are OK for a quick visualisation, but a Colour Map provides more visualisation capability.
+
+1. From the layer card, select **Edit Layer** button
+2. Scroll down to **Add Colormaps**, this will pop up the following modal
+
+<img width="685" height="602" alt="image" src="https://github.com/user-attachments/assets/eb73f6b8-11de-4b16-b3d6-296d853af4cf" />
+
+3. **Edit the settings** to style it according to your preferences between the min and max values
+4. **Save the colormap** and then **Save the layer card** changes, until you end up back at the read only layer card
+
+<img width="1152" height="658" alt="image" src="https://github.com/user-attachments/assets/c4698088-6d13-498a-9885-fad93c867d19" />
+
+Although the Gradient view will still be visible in the layer card, the Colour Map takes precedence.  Preview your results and you should see something like this.
+
+ <img width="1919" height="911" alt="image" src="https://github.com/user-attachments/assets/b9039d6b-14b9-4eb1-87ec-903f480b7c3e" />
+
 
 
 
