@@ -60,7 +60,7 @@ A layer card is a user interface element into which we add content such as descr
 5. Add *Forest Carbon* into the **Attribution text**.  Add an **Attribution URL** to the Forest Carbon website if you want.
 6. Select **Create Layer Card**
 
-You will now have a layer card tha looks something like this:
+You will now have a layer card that looks something like this:
 
 <img width="1915" height="917" alt="image" src="https://github.com/user-attachments/assets/737b1ff7-14de-4b25-a1ab-70ef20042400" />
 
@@ -85,7 +85,14 @@ https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe
 6. Now select **Edit** icon at the top of the layer card.  This is the pen icon to the right of the **info panel** badge
 
 <img width="1169" height="96" alt="image" src="https://github.com/user-attachments/assets/90a287c9-d928-46cc-9720-1f9a5f1fb198" />
+This returns us back to the Edit Layer Card mode
 
+7. Now scroll down and select **Legend Type ->** Gradient.  Enter in the **min** value noted above and the **max** value with colours for each.
+
+<img width="1321" height="330" alt="image" src="https://github.com/user-attachments/assets/474a16af-749f-4faa-8c9d-c9fa7a11dbbe" />
+
+8. **Save Changes** then go to **Preview** and you should see somethig like this:
+<img width="1919" height="905" alt="image" src="https://github.com/user-attachments/assets/3331456d-f15e-4696-9f85-4e222a691d98" />
 
 
 
