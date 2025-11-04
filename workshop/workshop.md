@@ -121,7 +121,7 @@ Although the Gradient view will still be visible in the layer card, the Colour M
  
  As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good dime
 
-## Part 2 - Web Services
+## Part 2 - Web Services (WMS / WMTS / STAC) and PRR
 
 ### 2.1 Adding in WMS directly
 
@@ -141,11 +141,34 @@ https://services.terrascope.be/wms/v2
 ```
 WORLDCOVER_2020_MAP
 ```
+A very basic configuration would look something like this, although hopefully you've added attribution, descriptions etc.
 
+<img width="1916" height="909" alt="image" src="https://github.com/user-attachments/assets/9b058162-d4ee-4dda-b0f9-efa602ac8935" />
 
+#### 2.1.2 Adding Recommended Services
 
+We are now going to work with other services - STAC services and querying WMS / WMTS services directly.  The recommended services are simply a collection of these that people will find useful.
 
+1. Move to the **Services** tab and select **Add Recommended Services8**
+2. You will now see a list of services, such as the *STAC service for the PRR* and various WMS services.  
 
+<img width="1390" height="897" alt="image" src="https://github.com/user-attachments/assets/ce024a46-1198-45ec-b1dd-d15b0e09ee5a" />
+
+We can use these services when adding data
+
+### 2.1.3 Adding data from the PRR
+
+1. In the *Layers UI* create a new **Layer Card** as before called *Below Ground Biomass*, populate with relevant details
+2. Select **Add Dataset** then select the *From Service* 
+3. Select the **Project Results Repository**.  You will see a dialogue like this:
+
+<img width="1390" height="897" alt="image" src="https://github.com/user-attachments/assets/9c66e151-f0a9-4ef3-8686-394fa935eb11" />
+
+4. Spend some time *Browsing the PRR*
+5. **Search** for *BGB* to find the *Below Ground Biomass* collection.  Select the *assets* and *items* until you see the COGS listed.  **Add** the most recent COG to your source  
+6. Finish setting up the data as you see fit **colour maps** etc
+
+   
 
 
 
