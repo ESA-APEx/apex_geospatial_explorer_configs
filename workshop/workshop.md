@@ -1,6 +1,7 @@
 # Geospatial Explorer Config Builder Workshop
 
 _Useful links_
+The config builder at [https://apex-ge-config-builder.sparkgeo.uk/](https://apex-ge-config-builder.sparkgeo.uk/)
 View this guide [here](https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/workshop-notes/workshop/workshop.md)
 Edit this guide [here](https://github.com/ESA-APEx/apex_geospatial_explorer_configs/edit/workshop-notes/workshop/workshop.md)
 
@@ -24,7 +25,7 @@ In this exercise we will start building a new configuration from scratch using t
 
 We will start by changing the title, interface group and branding.
 
-1. **Open the configuration builder** by going to the following URL: https://apex-ge-config-builder.sparkgeo.uk/
+1. **Open the configuration builder** by going to the following URL: [https://apex-ge-config-builder.sparkgeo.uk/](https://apex-ge-config-builder.sparkgeo.uk/)
 2. On the *home* tab **edit the title** of the configuration to something of your choice
 3. Move to the *layers* tab.  **Edit** *Interface group 1* replacing the name with *Forest Carbon*.  **Delete** the other interface groups.
 4. Move to the *settings* tab, and **edit** some of the colours to a colour scheme of your choice
@@ -121,6 +122,13 @@ Although the Gradient view will still be visible in the layer card, the Colour M
 
  <img width="1919" height="911" alt="image" src="https://github.com/user-attachments/assets/b9039d6b-14b9-4eb1-87ec-903f480b7c3e" />
 
+### 1.5 Experimenting with controls
+
+1. Edit your *AGB* Layer Card and scroll down the **Layer Controls** section
+2. Change some of the toggle options - e.g. `Zoom to`, `Opacity slider`, `Blend Mode`, `Download`, `Constraint``.  (Don't change Temporal Settings - we will look at that later.
+
+> For Downloads you could either copy in the COG URL above, which will initiate the Download, or another external link (such as the datasets STAC record from the PRR)
+ 
  ### Did you remember to export?
  
  As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good dime
@@ -331,102 +339,13 @@ Now we have a full set up on our COG layer, if you didn't complete the World Cov
 ## Part 4 - Working with Time Series data
 
 
+## Part 5 - Working with Constraints
 
-#### 3.1.4 Popuating from the COG
+## Part 6 - Working with Statistics
 
-An alternative approach is populating the categories from the COG.  You would still need to define colours and labels (unless the COG contains colour hints)
+## Part 7 - QA and data validation
 
-1. **Duplicate** the layer you set up in 3.1.3, using the **Copy layer** icon on the layer card
-2. **Delete the existing categories**
-
-5. You now just need to edit the values
-
-
-# GOT TO HERE
-
-
-Rename interface group Biomass and preview
-Add a layer called AGB
-Fill out description, attribution etc
-Add a cog directly
-Preview (all white)
-COG metadata copy max and min
-Add colour map
-Preview
-
-### export and import
-Quick export
-New
-Load config
-
-### Tweak some controls - constraints and download
-
-On cog data select copy url
-Edit, toggle download and paste url
-Toggle constraints
-Preview
-Don’t forget to export
-
-### add some base maps
-
-Add recommended
-Add opentopomap directly
-
-### Add a web map service
-
-Add a layer for world cover
-Copy in the WMS layer url and name
-View the metadata on the data page
-Preview (no legend)
-Don’t forget to export
-
-## working with services
-
-### adding a STAC catalogue
-Add the PRR STAC catalogue
-Add a layer for world soils
-Find and add the Cog
-Copy min, max and style it
-
-### adding in recommended services
-Add all recommended services
-
-### adding in WMS from a service
-Add a layer called temp
-Add a WMS layer that you find interesting
-Now edit the layer card with some more meaningful names
-
-## legends
-See if your WMS supported get legend graphic
-If not add a legend from a url
-Create a temporary legend image on GitHub resource and add it here
-
-
-## multiple data sources in a group
-Add a Portugal LCM layer
-Find land cover map in Portugal ldn on PRR
-Add the layers in bulk
-
-## categorical data
-### setting categories
-Populate categories from COG
-Edit labels and use color picker
-Make a nice category
-
-### copying categories
-Copy the categories to world cover for use as a legend
-
-## copying layer definitions
-Copy the Portugal ldn
-Rename it Uganda
-Remove all the data and replace
-
-## basic QA
-Bulk attribution
-Legend check
-
-## go off piste
-20 mins play time
+## Part 8 - Other tips and tricks
 
 # Part 2 - time series
 
@@ -485,6 +404,32 @@ Preview
 Add distance to grid between 0 and something
 
 # now add an interactive
+
+### Tweak some controls - constraints and download
+
+On cog data select copy url
+Edit, toggle download and paste url
+Toggle constraints
+Preview
+Don’t forget to export
+
+## multiple data sources in a group
+Add a Portugal LCM layer
+Find land cover map in Portugal ldn on PRR
+Add the layers in bulk
+
+## copying layer definitions
+Copy the Portugal ldn
+Rename it Uganda
+Remove all the data and replace
+
+## basic QA
+Bulk attribution
+Legend check
+
+## go off piste
+20 mins play time
+
 
 
 Part 4 - statistics
