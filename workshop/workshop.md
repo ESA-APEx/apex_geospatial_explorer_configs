@@ -1,5 +1,9 @@
 # Geospatial Explorer Config Builder Workshop
 
+_Useful links_
+View this guide [here](https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/workshop-notes/workshop/workshop.md)
+Edit this guide [here](https://github.com/ESA-APEx/apex_geospatial_explorer_configs/edit/workshop-notes/workshop/workshop.md)
+
 ## Part 1 - Mastering the basics
 
 ###  1.1 Key concepts
@@ -219,11 +223,8 @@ Overwriting it with a nicely crafted legend might be a good idea!
 
 4. Select the toggle on the UI to **Use data values**.  An additional column will appear.
 5. Use the UI to change the *colour to* **green**, label to **tree** and value to 10
-6. Repeat with a couple of further categories for world cover.  You can use the image below on this page and the colour picker tool to help
-
-<img width="411" height="337" alt="image" src="https://github.com/user-attachments/assets/5586db3b-14a0-4174-b857-b55930acd083" />
-
-6. You only need to do a couple now.  If you did them all, the legend when you render it will end up looking like this:
+6. Repeat with another couple of categories for world cover.  You can use the image above on this page and the colour picker tool to get the corrcet colours
+6. You only need to do a couple now.  Complete the saves and preview.  If you did them all, the legend when you render would looking like this:
 
 <img width="1072" height="550" alt="image" src="https://github.com/user-attachments/assets/b2782351-3ebf-4806-883e-2d937318e5be" />
 
@@ -236,8 +237,100 @@ We can use the same categories for a COG version
 ```
 https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix-esa_worldcover_2021.tif
 ```
-3.  In the **Layer Card** editor, select **Add Categories** then **Copy from** and use the layer from 3.1.2
-4.  Now view the layer and you will see it rendered according to those categories you have defined so far
+3. Go to thew **(i)** icon on the dataset, to get to the COG metadata
+4. Select **Populate categories**.  You will now see this:
+
+<img width="653" height="712" alt="image" src="https://github.com/user-attachments/assets/5d282f2a-9c16-4901-b305-1548710d1849" />
+
+5. Edit a couple of the cateogry names according to the World Cover data, complete the saves and Preview.  You will see the COG styled with the labels you have added above.
+
+> Note: the categorues displayed are a sample, so it *is possible* that there may be some pixels in other categories that have not been sampled.  Be aware of this!
+
+#### 3.1.4 Use the JSON editor
+
+You may have noticed the JSON editor options.  There is a JSON editor for the entire config (main interface tab) but also a JSON editor specifically for the layer - a small orange JSON icon on the layer card.
+
+1. First **copy the following** JSON to your clipboard:
+
+```json
+    "categories": [
+      {
+        "color": "#006400",
+        "label": "Tree cover",
+        "value": 10
+      },
+      {
+        "color": "#ffbb22",
+        "label": "Shrubland",
+        "value": 20
+      },
+      {
+        "color": "#ffff4c",
+        "label": "Grassland",
+        "value": 30
+      },
+      {
+        "color": "#f096ff",
+        "label": "Cropland",
+        "value": 40
+      },
+      {
+        "color": "#ff0000",
+        "label": "Built-up",
+        "value": 50
+      },
+      {
+        "color": "#b4b4b4",
+        "label": "Bare",
+        "value": 60
+      },
+      {
+        "color": "#f0f0f0",
+        "label": "Snow and ice",
+        "value": 70
+      },
+      {
+        "color": "#0064c8",
+        "label": "Permanent water bodies",
+        "value": 80
+      },
+      {
+        "color": "#0096a0",
+        "label": "Herbaceous wetland",
+        "value": 90
+      },
+      {
+        "color": "#00cf75",
+        "label": "Mangroves",
+        "value": 95
+      },
+      {
+        "color": "#fae6a0",
+        "label": "Moss and lichen",
+        "value": 100
+      }
+    ]
+```
+3. In the *Layer Card* view select the **JSON Editor**
+4. Scroll down to **find the start of the catgories section**
+
+<img width="905" height="680" alt="image" src="https://github.com/user-attachments/assets/c1183cf6-6eb5-4287-b327-057408dc1502" />
+
+5. Use the arrow to collapse it until you just see `categories [ ]` collapsed
+6. Highlight and delete up to the closing square bracket, then paste in the categories above.  Apply changes the preview the layer
+   
+#### 3.1.5 Copying categories between layers
+
+Now we have a full set up on our COG layer, if you didn't complete the World Cover WMS layer, you can user the copy tool in the UI (not the JSON editor)
+
+1. Edit the *World Cover* layer card
+2. Edit *Categories*
+3. User *Copy from Layer* to copy from the COG
+4. Save and preview
+
+## Part 4 - Working with Time Series data
+
+
 
 #### 3.1.4 Popuating from the COG
 
@@ -245,10 +338,6 @@ An alternative approach is populating the categories from the COG.  You would st
 
 1. **Duplicate** the layer you set up in 3.1.3, using the **Copy layer** icon on the layer card
 2. **Delete the existing categories**
-3. Go to thew **(i)** icon on the dataset, to get to the COG metadata
-4. Select **Populate categories**.  You will now see this:
-
-<img width="653" height="712" alt="image" src="https://github.com/user-attachments/assets/5d282f2a-9c16-4901-b305-1548710d1849" />
 
 5. You now just need to edit the values
 
