@@ -131,7 +131,7 @@ Although the Gradient view will still be visible in the layer card, the Colour M
  
  ### Did you remember to export?
  
- As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good dime
+ > As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good time
 
 ## Part 2 - Web Services (WMS / WMTS / STAC) and PRR
 
@@ -207,7 +207,9 @@ The dataset we added earlier now looks like this:
 
 Overwriting it with a nicely crafted legend might be a good idea!
 
-> Have you exported recently?
+### Did you remember to export?
+ 
+> As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good time
 
 ## Part 3 - Working with Categorical Data
 
@@ -336,16 +338,100 @@ Now we have a full set up on our COG layer, if you didn't complete the World Cov
 3. User *Copy from Layer* to copy from the COG
 4. Save and preview
 
+### Did you remember to export?
+ 
+> As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good time
+
 ## Part 4 - Working with Time Series data
+
+### 4.1 Key concepts
+* The Time Series control allows users to step through temporal data
+* Temporal data may have different levels of granularity - hours, days, months, years etc
+* We specify how the GE displays the UI via configuration
+* They may be a continuous time sequence (i.e. no gaps) or be discontinuous (i.e. jump between periods)
+* Some services may have time stamp data in them - e.g. WMS / WMTS services - as an integral part of the service.  However this is not a mandatory requirement of these standards.
+* STAC catalogues _should_ have time stamps that may provide metadata for the files (e.g. COGS) that they reference as assets
+* Finally we can explicitly define time stamps in our configuration.  These use the Unix time stamp format (integer of seconds since 1/1/1970)
+
+### 4.2 The Temporal Control and a manually defined time stamps
+
+1. Edit the Layer Card for the *AGB* layer you added earlier.  Scroll down to the *Controls* section.  Toggle on **Temporal Control**, then set the dropdownn to **Years**.  Save and exit
+2. On the *Datasets* tab, **Edit** the AGB dataset.  The UI *should* now include a timestamp option.  Edit this to set the timestamp according to the time of the data.  Alghough a specific day is required - e.g. `1/1/2025` the config in the UI determines that when it is displayed it will just show `2025`.  Save and return to the Layer tab.
+3. We will now add another Year.  For the first *AGB* layer, select the **copy** icon on the dataset row (near the **(i)** icon we used before).  This copies the URL for the current AGB COG
+4. Add another dataset via the *Direct Connection* for COG, **pasting in** the first URL, and editing the URL string pattern for the previous year (assuming the data exists).  Save.
+5. *Optionally* now look at the JSON config for the layer.  You will see that the datasets JSON includes timestamp fields
+6. Preview to view your results
+
+### 4.3 Using STAC timestamps
+
+1. On our current AGB layer, select **Add Dataset -> From Service -> PRR**
+2. Find the *AGB* layer assets. Note that they have date stamps **Add all 5 assets** to the layer
+3. On the *Layer Card Preview* you should now see 7 Datasets - the two you added manually and the 5 you added from the STAC catalogue.  Delete the two you added manually as these are now duplicates.
+4. *Optionally* inspect the JSON.  Although we added these from the STAC catalogue, note that this has simply added in the timestamp records to the JSON - copying them across.  The GE **does not** go to the STAC record at runtime, so if the dates on the STAC records were wrong and were later corrected by the STAC catalogue owner, you would need to update the timestamps here (manually or by adding them in again)
+
+### 4.4 Using WMS / WMTS time stamps
+
+1. **Add a new layer** called *Soil moisture index*, and **set temporal controls** to *Day* granularity
+2. Select **Add Dataset** of type WMS and add the following layer URL and layer name
+
+```
+https://globalland.vito.be/wmts
+```
+
+```
+clms_global_swi_1km_v1_daily
+```
+3. Note the **Use TIME PARAM from service** checkbox.  This appears because we set the tempral controls on the layer.  Leave it toggled on.
+4. Save and exit.  For interest, click on the **(i)** icon on the layer.  You will see that the WMS metadata that it displays indicate that this WMS layer *DOES HAVE* time parameters
+5. Preview your layer and explore the temporal control.
+
+### 4.5 Adding manual time stamps to WMS / WMTS layers
+
+Some layers may be WMS / WMTS but do not have the time parameter set.  The *World Cover* layer added earlier is one such example.
+_NOTE: actually, technically this is not the case.  They DO have TIME PARAMS, but each layer is set up as a separate layer in the WMS, rather than (as per Soil Moisture) having a single layer with the TIME PARAM and argument on that layer.  However for now we can use this as an example_
+
+1. Edit the *World Cover* layer card, toggle **Temporal control**, select **Years**
+2. Edit the *World Cover* dataset, **uncheck the TIME PARAM** toggle and explicitly add the time in 
+3. Add the second WMS layer for the toehr year and set the time.  Note the URLS are:
+*Service*:
+```
+https://services.terrascope.be/wms/v2
+```
+*Layers*
+```
+WORLDCOVER_2020_MAP
+```
+or
+```
+WORLDCOVER_2021_MAP
+```
+### Did you remember to export?
+ 
+> As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good time
 
 
 ## Part 5 - Working with Constraints
 
+### Did you remember to export?
+ 
+> As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good time
 ## Part 6 - Working with Statistics
 
+### Did you remember to export?
+ 
+> As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good time
 ## Part 7 - QA and data validation
 
+### Did you remember to export?
+ 
+> As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good time
+
 ## Part 8 - Other tips and tricks
+
+### Did you remember to export?
+ 
+> As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good dime
+
 
 # Part 2 - time series
 
