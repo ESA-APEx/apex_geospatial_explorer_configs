@@ -5,6 +5,22 @@ _Useful links_
 * View this guide [here](https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/workshop-notes/workshop/workshop.md)
 * Edit this guide [here](https://github.com/ESA-APEx/apex_geospatial_explorer_configs/edit/workshop-notes/workshop/workshop.md)
 
+## About this workshop
+### Scope
+* This workshop is about the **Geospatial Explorer Configuration Builder** that is used to create configurations for the GE
+* **WE WILL** be covering most of its capabilities building a completely new configuration from scratch, connecting to various data sources (e.g. COGS, FlatGeoBuffs etc) and services (WMS / WMTS / STAC)
+* **WE WILL NOT** be covering how those data sources and services themselves are created, configured, or managed.
+* The APEx interopability guidelines provide details of pre-requisites or best practices for those data sources / services, and existing tools and knowledge of appropriately experience professionals should be able to meet those
+* The *only* data type that is a bit more specific to the GE are statistics.  Whilst these use a standard geospatial data format (FlatGeoBuff), the way in which that data is structured within those files _is_ important.  In this workshop we will add some statistics datasets that have been prepared already, but the preparation of those statistics will need to be covered in a separate session.
+
+### Pre-requisites
+* There are no specific technical pre-requisites, although a second monitor will be useful to follow along
+* In terms of pre-requisite knowledge it is assumed that attendees have some basic knowledge of the concepts of
+- Geospatial data, primarily raster (we use COGS, but detailed knowledge of them is) and vector
+- Geospatial web serices, such as WMS, WMTS and XYZ services
+- Spatio Temporal Asset Catalogues (STAC), and the concepts of *collections, items and assets*
+* If delegates are not familiar with the above, the workshop is still applicable, but there may be some areas which might require some more detailed explanation
+
 ## Part 1 - Mastering the basics
 
 ###  1.1 Key concepts
@@ -409,113 +425,246 @@ WORLDCOVER_2021_MAP
  
 > As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good time
 
-
 ## Part 5 - Working with Constraints
 
-### Did you remember to export?
- 
+### 5.1 Key concepts
+* Constraints can be applied to data that is in COG format
+* A constraint can be thought of as a fiter applied to the data
+* We previously used the **Constraint Toggle** on the layer to allow it to be filtered / constrained on its own data values
+* However we can use *"secondary layers"* as constraints too - these might be *land use*, *elevation* or some other metric such as *certainty*, or *distance from* a feature
+* These secondary layers **MUST** have the same **CRS**, **resolution** and **origin** as the primary layer that they are applied to
+* This may require some specific preparation of *"compatible"* constraint layers 
+
+### 5.2 Constraint types
+* We have defined three constraint types in the GE
+* *"Continuous"* constraints, where a variable (e.g. elevation) covers a full range of values between its minimum and maximum.  These appear as sliders in the GE UI.
+* *"Categorical"* constraints, where the data represents specific values (e.g. 10, 20, 30 ..) that represent some category, such as Land User (10 = "Trees", 20 = "Grassland" etc).  These appear as checkboxes in the UI.
+* *"Combined"* or maybe better thought of as *"Named range"* constraints where ranges within a continuous variable are assigned labels, and then treated as a categorical constraint. For example you may have an *uncertainty* COG with valyes from 0 to 100, and you might set up ranges such as "Low" from 0 to 30, "Medium" from 30 to 50, "High" from 50 to 75 and "Very High" above 75.   These are then displayed in the UI as check boxes.
+* Ohter examples of the combined constraint might be _altitudinal zones_ for elevation; _direction_ for aspect ("south facing"), _risk level_ for a variable representing another metric (e.g. flood return periods) 
+
+### 5.3 Creating a categorical constraint
+
+1. In the _AGB_ layer card, select the Constraints tab
+2. Add the World Cover tif that covers this area
+```
+https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/FCM_Europe_demo_2023_AGB-esa_worldcover_2021.tif
+```
+3. Select **Populate Categories from COG**
+4. Edit the catagory labels to align to the World Cover descriptipns
+
+### 5.4 Adding some continuous constraints
+
+In the interests of time we are now going to just add in a layer that already has a load of constratints set up.
+
+1. Add a new Layer Card for a primary layer, just call it "temp"
+2. Copy in the entire JSON below
+
+```json
+{
+  "name": "Austria Wind Power Density at 100m",
+  "isActive": false,
+  "data": [
+    {
+      "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix.tif",
+      "format": "cog",
+      "zIndex": 50
+    }
+  ],
+  "constraints": [
+    {
+      "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_DSM_COG_10m_3857_fix.tif",
+      "format": "cog",
+      "label": "Elevation",
+      "type": "continuous",
+      "interactive": true,
+      "min": 0,
+      "max": 4000,
+      "units": "meters",
+      "bandIndex": 2
+    },
+    {
+      "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_DSM_COG_10m_3857_fix.tif",
+      "format": "cog",
+      "label": "Altitudinal zones",
+      "type": "combined",
+      "interactive": true,
+      "units": "meters",
+      "constrainTo": [
+        {
+          "label": "0 to 1000",
+          "min": 0,
+          "max": 1000
+        },
+        {
+          "label": "1001 to 2000",
+          "min": 1001,
+          "max": 2000
+        },
+        {
+          "label": "2001 to 3000",
+          "min": 2001,
+          "max": 3000
+        },
+        {
+          "label": "> 3000",
+          "min": 3001,
+          "max": 4000
+        }
+      ],
+      "bandIndex": 3
+    },
+    {
+      "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_10m_DSM_COG_Slope_3857_fix.tif",
+      "format": "cog",
+      "label": "Slope",
+      "type": "continuous",
+      "interactive": true,
+      "min": 0,
+      "max": 65,
+      "units": "degrees",
+      "bandIndex": 4
+    },
+    {
+      "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/RuggednessIndex_Austria_3857_COG_fix.tif",
+      "format": "cog",
+      "label": "Ruggedness Index",
+      "type": "continuous",
+      "interactive": true,
+      "min": 0,
+      "max": 1,
+      "units": "index values",
+      "bandIndex": 5
+    },
+    {
+      "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/PowerLineHigh_EucDist_Austria_3857_COG_fix.tif",
+      "format": "cog",
+      "label": "Distance to High Power Line",
+      "type": "continuous",
+      "interactive": true,
+      "min": 0,
+      "max": 30000,
+      "units": "meters",
+      "bandIndex": 6
+    },
+    {
+      "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/WSF_EucDist_Austria_3857_COG_fix.tif",
+      "format": "cog",
+      "label": "Distance to settlement (WSF)",
+      "type": "continuous",
+      "interactive": true,
+      "min": 0,
+      "max": 5500,
+      "units": "meters",
+      "bandIndex": 7
+    },
+    {
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix-esa_worldcover_2021.tif",
+      "format": "cog",
+      "label": "Land Cover (from World Cover)",
+      "type": "categorical",
+      "interactive": true,
+      "constrainTo": [
+        {
+          "label": "Tree cover",
+          "value": 10
+        },
+        {
+          "label": "Shrubland",
+          "value": 20
+        },
+        {
+          "label": "Grassland",
+          "value": 30
+        },
+        {
+          "label": "Cropland",
+          "value": 40
+        },
+        {
+          "label": "Built-up",
+          "value": 50
+        },
+        {
+          "label": "Bare",
+          "value": 60
+        },
+        {
+          "label": "Snow and ice",
+          "value": 70
+        },
+        {
+          "label": "Permanent water bodies",
+          "value": 80
+        },
+        {
+          "label": "Herbaceous wetland",
+          "value": 90
+        },
+        {
+          "label": "Moss and lichen",
+          "value": 100
+        }
+      ],
+      "bandIndex": 8
+    }
+  ],
+  "meta": {
+    "description": "The wind power density (w m 2) is a measure of the available wind resource at 100 meters height. Higher wind power density indicates greater wind power potential.  Constraints allow the data to be filtered by multiple criteria.",
+    "attribution": {
+      "text": "ESA GTIF",
+      "url": "https://gtif.esa.int/"
+    },
+    "categories": [],
+    "units": "w / m 2",
+    "colormaps": [
+      {
+        "min": 0,
+        "max": 2000,
+        "steps": 50,
+        "name": "jet",
+        "reverse": false
+      }
+    ]
+  },
+  "layout": {
+    "interfaceGroup": "Energy",
+    "contentLocation": "infoPanel",
+    "layerCard": {
+      "toggleable": true
+    },
+    "infoPanel": {
+      "legend": {
+        "type": "swatch"
+      },
+      "controls": {
+        "opacitySlider": true,
+        "zoomToCenter": true,
+        "temporalControls": false,
+        "constraintSlider": true,
+        "blendControls": false
+      }
+    }
+  }
+}
+```
+3. You will now have a layer called *"Austria Wind Power Density"*
+4. Lets take a look at its constraints set up in the constraints tab, to understand how others work  
+
+### Did you remember to export? 
 > As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good time
+
 ## Part 6 - Working with Statistics
 
+> In this section we will just follow along in the workshop
+
 ### Did you remember to export?
  
 > As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good time
+
 ## Part 7 - QA and data validation
 
+> In this section we will just follow along in the workshop
+
 ### Did you remember to export?
  
 > As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good time
-
-## Part 8 - Other tips and tricks
-
-### Did you remember to export?
- 
-> As we noted earlier, its a good idea to export your config periodically in case you accidentally closed your web browser.  If you haven't now would be a good dime
-
-
-# Part 2 - time series
-
-# key concepts
-Some services have time parameters
-We can add timestamps to data in config
-These can be used for files such as cogs, or services such as WMS
-Config timestamps use unix format
-Seconds sine 1/1/1970
-The temporal control determines the granularity of the UI
-
-# adding a WMS that supports timestamps
-
-Add a new layer for soil moisture
-Make sure temporal control is on and set to days
-Add the WMS
-Check its time parameter
-If all good, preview it
-
-# adding time stamps manually
-Edit our world soils config to be temporal
-Edit the data and add the timestamp
-Add the other time period
-
-# timestamps on WMS
-Repeat what you did on cogs for world cover
-
-# bulk timestamps
-Edit the Portugal lcm to be a year timestamp
-Remove all
-Add all for one time period
-Add all for the next
-
-# go off piste
-
-Part 3 - constraint layers
-# concepts
-we saw earlier how the constraints toggle … a filter button … was used to filter the layer’s own data
-we can use multiple secondary layers to filter the primary layer too
-These layers can represent variables such as elevation or categories such as land use
-Constraint layers have to have the same CRS, resolution and origin as the primary layer. Effectively under the bonnet we treat them as different bands of a multi band raster
-A set of “compatible” constraint layers may therefore need to be built to work with the primary layer
-We have identified some use cases where constraints are fixed, without user control and others where the user is in control
-
-# adding a layer we will constrain
-add the GTIF layer for power
-Style it with a colour map between values x and y
-Add constraint toggle for its own data
-Preview
-
-# now add the elevation constraint
-Add a interactive constraint for elevation
-Preview
-
-# now add a fixed constraint
-Add distance to grid between 0 and something
-
-# now add an interactive
-
-### Tweak some controls - constraints and download
-
-On cog data select copy url
-Edit, toggle download and paste url
-Toggle constraints
-Preview
-Don’t forget to export
-
-## multiple data sources in a group
-Add a Portugal LCM layer
-Find land cover map in Portugal ldn on PRR
-Add the layers in bulk
-
-## copying layer definitions
-Copy the Portugal ldn
-Rename it Uganda
-Remove all the data and replace
-
-## basic QA
-Bulk attribution
-Legend check
-
-## go off piste
-20 mins play time
-
-
-
-Part 4 - statistics
