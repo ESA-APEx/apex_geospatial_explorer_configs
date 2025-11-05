@@ -1,9 +1,9 @@
 # Geospatial Explorer Config Builder Workshop
 
 _Useful links_
-The config builder at [https://apex-ge-config-builder.sparkgeo.uk/](https://apex-ge-config-builder.sparkgeo.uk/)
-View this guide [here](https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/workshop-notes/workshop/workshop.md)
-Edit this guide [here](https://github.com/ESA-APEx/apex_geospatial_explorer_configs/edit/workshop-notes/workshop/workshop.md)
+* The config builder at [https://apex-ge-config-builder.sparkgeo.uk/](https://apex-ge-config-builder.sparkgeo.uk/)
+* View this guide [here](https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/workshop-notes/workshop/workshop.md)
+* Edit this guide [here](https://github.com/ESA-APEx/apex_geospatial_explorer_configs/edit/workshop-notes/workshop/workshop.md)
 
 ## Part 1 - Mastering the basics
 
