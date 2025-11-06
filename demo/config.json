@@ -1,47 +1,207 @@
 {
-  "version": "3.1.0",
+  "version": "3.4.0.1",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
-      "title": "APEx - Geospatial Explorer"
+      "title": "APEx - Demo Geospatial Explorer"
+    },
+    "theme": {
+      "primary-color": "#14616e",
+      "secondary-color": "#fcfcfc"
     }
   },
   "interfaceGroups": [
     "openEO Results",
     "Comparison",
-    "Statistics",
     "Time Series",
+    "Statistics",
+    "Layer Constraints",
     "Resource Linking"
   ],
-  "exclusivitySets": [
-    "labels"
-  ],
+  "exclusivitySets": [],
+  "mapConstraints": {
+    "zoom": 3,
+    "center": [
+      10.981258528360314,
+      49.848701
+    ]
+  },
   "services": [
     {
-      "id": "wms-service-vito-terrascope-v2",
+      "id": "wms-service-1762349674426",
       "name": "VITO Terrascope",
       "url": "https://services.terrascope.be/wms/v2",
       "format": "wms"
     },
     {
-      "id": "wmts-service-globalland",
+      "id": "wms-service-1762349674884",
+      "name": "Copernicus Urban Atlas",
+      "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1762349675186",
+      "name": "Brockmann Xcube",
+      "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wmts-service-1762349675523",
       "name": "Terrascope WMTS",
       "url": "https://globalland.vito.be/wmts",
       "format": "wmts"
+    },
+    {
+      "id": "wms-service-1762349675812",
+      "name": "EOX BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "cog-service-1762349676026",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    },
+    {
+      "id": "wms-service-1762349676319",
+      "name": "Copernicus N2K 2018",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1762349676583",
+      "name": "Copernicus 2012 N2K",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1762349676672",
+      "name": "Copernicus N2K 2006",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "stac-service-1762349676749",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    },
+    {
+      "id": "stac-service-1762349677916",
+      "name": "VITO STAC catalogue",
+      "url": "https://stac.openeo.vito.be/",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1762349678607",
+      "name": "CLMS WMS Server",
+      "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+      "format": "wms"
     }
   ],
   "sources": [
     {
       "name": "Open StreetMap",
-      "isActive": true,
+      "isActive": false,
+      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
           "format": "xyz",
-          "zIndex": 1
+          "zIndex": 10
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Map data (c) OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": false,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Sentinel",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736"
         }
       ],
       "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
+      "meta": {
+        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "attribution": {
+          "text": "Copernicus Sentinel-2",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Blue Marble",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
       "meta": {
         "description": "",
         "attribution": {
@@ -52,44 +212,116 @@
       }
     },
     {
-      "name": "openEO Job - PV Farm Mapping",
-      "isActive": false,
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": true,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "exclusivitySets": [],
       "meta": {
-        "description": "Demonstrates the direct downloading of TIFF data.",
+        "description": "",
         "attribution": {
-          "text": "ESA People Ecosystem Accounting",
-          "url": "https://esa-people-ea.org/en"
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
         },
-        "categories": [
-          {
-            "color": "#0000ff",
-            "label": "PV Farm Probability",
-            "value": 1
-          }
-        ]
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Satellite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "DEM",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "COP_DEM_GLO_30M_COG"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Copernicus"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Sentinel 2 vs World Cover 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "position": "right",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WORLDCOVER_2021_MAP",
+          "position": "left",
+          "useTimeParameter": true
+        }
+      ],
+      "isSwipeLayer": true,
+      "meta": {
+        "description": "Example of the comparison of two different layers",
+        "attribution": {
+          "text": ""
+        },
+        "categories": []
       },
       "layout": {
-        "interfaceGroup": "openEO Results",
+        "interfaceGroup": "Comparison",
+        "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": true,
+          "toggleable": true
+        },
+        "infoPanel": {
           "legend": {
             "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "download": "https://github.com/ESA-APEx/apex_geospatial_explorer_configs/raw/refs/heads/main/demo/openEO_demo.tif"
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/apex-geospatial-explorer-data/apex-demo.tif",
-          "format": "cog",
-          "zIndex": 2,
-          "normalize": false
-        }
-      ]
+      }
     },
     {
       "name": "World Cover 2021 with NUTS Statistics",
@@ -98,34 +330,34 @@
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 50,
           "layers": "WORLDCOVER_2021_MAP",
-          "serviceId": "wms-service-vito-terrascope-v2"
+          "useTimeParameter": true
         }
       ],
       "statistics": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 0
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 1
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 2
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 3
         }
       ],
@@ -195,14 +427,20 @@
       },
       "layout": {
         "interfaceGroup": "Statistics",
+        "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": true,
+          "toggleable": true
+        },
+        "infoPanel": {
           "legend": {
             "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": true
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       }
@@ -214,22 +452,22 @@
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 50,
           "layers": "WORLDCOVER_2021_MAP",
-          "serviceId": "wms-service-vito-terrascope-v2"
+          "useTimeParameter": true
         }
       ],
       "statistics": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.esa_worldcover_2021.natura_2000.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 0,
           "minZoom": 8
         }
       ],
       "meta": {
-        "description": "Demonstrates different statistics boundaries, in this case Natura 2000.  The statistics data is only shown when zoomed in (scale bar to 10km or more) due to volume and complexity of the feature data.",
+        "description": "Demonstrates different statistics boundaries, in this case Natura 2000. The statistics data is only shown when zoomed in (scale bar to 10km or more) due to volume and complexity of the feature data.",
         "attribution": {
           "text": "ESA WorldCover",
           "url": "https://esa-worldcover.org/"
@@ -294,51 +532,57 @@
       },
       "layout": {
         "interfaceGroup": "Statistics",
+        "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": true,
+          "toggleable": true
+        },
+        "infoPanel": {
           "legend": {
             "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": true
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       }
     },
     {
-      "name": "Habitat Map GR Level 1 2020 - NUTS Statistics",
+      "name": "Habitat Map GR Level 1 2020 with NUTS Statistics",
       "isActive": false,
       "data": [
         {
           "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
           "format": "cog",
-          "zIndex": 2
+          "zIndex": 50
         }
       ],
       "statistics": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 0
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 1
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 2
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 3
         }
       ],
@@ -398,50 +642,56 @@
       },
       "layout": {
         "interfaceGroup": "Statistics",
+        "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": true,
+          "toggleable": true
+        },
+        "infoPanel": {
           "legend": {
             "type": "swatch"
           },
           "controls": {
-            "opacitySlider": false,
-            "zoomToCenter": true
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       }
     },
     {
-      "name": "Habitat Map GR Level 1 2020 - NUTS Statistics without Base Layer",
+      "name": "Habitat Map GR Level 1 2020 with NUTS Statistics without Base Layer",
       "isActive": false,
       "data": [],
       "statistics": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 0
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 1
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 2
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 3
         }
       ],
       "meta": {
-        "description": "Demonstrates that statistics layers can be configured to be displayed without a base layer.",
+        "description": "Demonstrates hierarchy of admin boundaries for a different geographical area with graphs styled to match category colour scheme.",
         "attribution": {
           "text": "ESA People Ecosystem Accounting",
           "url": "https://esa-people-ea.org/en"
@@ -496,85 +746,97 @@
       },
       "layout": {
         "interfaceGroup": "Statistics",
+        "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": true,
+          "toggleable": true
+        },
+        "infoPanel": {
           "legend": {
             "type": "swatch"
           },
           "controls": {
-            "opacitySlider": false,
-            "zoomToCenter": true
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       }
     },
     {
-      "name": "Topsoil Soil Organic Carbon 2020-22 - NUTS Statistics",
+      "name": "Topsoil Soil Organic Carbon 2020-22 with NUTS Statistics",
       "isActive": false,
-      "data": [],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 0
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 1
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 2
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 3
-        }
-      ],
       "meta": {
         "description": "Demonstrates statistics that are numeric statistics of a continuous variable dataset.",
         "attribution": {
           "text": "ESA WorldSoils",
           "url": "https://world-soils.com/"
         },
-        "categories": [
+        "categories": [],
+        "units": "dg kg^(-1)",
+        "colormaps": [
           {
-            "color": "#2CBA46",
-            "label": "soil_min",
-            "value": 0
-          },
-          {
-            "color": "#F20202",
-            "label": "soil_max",
-            "value": 0
-          },
-          {
-            "color": "#E57F1F",
-            "label": "soil_mean",
-            "value": 0
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
           }
         ]
       },
       "layout": {
         "interfaceGroup": "Statistics",
+        "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": true,
+          "toggleable": true
+        },
+        "infoPanel": {
           "legend": {
-            "type": "swatch"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": false
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
-      }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ]
     },
     {
       "name": "Soil Water Index - Daily WMTS",
@@ -583,9 +845,9 @@
         {
           "url": "https://globalland.vito.be/wmts",
           "format": "wmts",
-          "zIndex": 2,
+          "zIndex": 50,
           "layers": "clms_global_swi_1km_v1_daily",
-          "serviceId": "wms-service-globalland"
+          "useTimeParameter": true
         }
       ],
       "timeframe": "Days",
@@ -599,52 +861,23 @@
       },
       "layout": {
         "interfaceGroup": "Time Series",
+        "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": true,
+          "toggleable": true
+        },
+        "infoPanel": {
           "legend": {
             "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": true
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       }
-    },
-    {
-      "name": "Winter Cereals 2021 - Daily WMS",
-      "isActive": false,
-      "timeframe": "Days",
-      "meta": {
-        "description": "Shows WMS service with a TIME param from 11 Jan 2021 to 24 Dec 2021.  Date picker limited to these dates automatically.",
-        "attribution": {
-          "text": "ESA WorldCereal",
-          "url": "https://esa-worldcereal.org/en"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Time Series",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 2,
-          "layers": "WORLDCEREAL_WINTERCEREALS_V1",
-          "serviceId": "wms-service-vito-terrascope-v2"
-        }
-      ]
     },
     {
       "name": "Fraction of Green Vegetation Cover - 10 Daily WMTS",
@@ -653,9 +886,9 @@
         {
           "url": "https://globalland.vito.be/wmts",
           "format": "wmts",
-          "zIndex": 2,
-          "layers": "clms_global_fcover_300m_v1_10daily",
-          "serviceId": "wms-service-globalland"
+          "zIndex": 50,
+          "layers": "clms_global_fapar_300m_v1_10daily",
+          "useTimeParameter": true
         }
       ],
       "timeframe": "Days",
@@ -669,56 +902,53 @@
       },
       "layout": {
         "interfaceGroup": "Time Series",
+        "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": true,
+          "toggleable": true
+        },
+        "infoPanel": {
           "legend": {
             "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": true
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       }
     },
     {
-      "name": "Winter Cereals 2021 - Monthly WMS",
+      "name": "Crop Type - Level 3 - Multiple COGs",
       "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "Shows WMS service with a TIME param from 11 Jan 2021 to 24 Dec 2021.  Date picker limited to these dates automatically.",
-        "attribution": {
-          "text": "ESA WorldCereal",
-          "url": "https://esa-worldcereal.org/en"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Time Series",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true
-          }
-        }
-      },
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 2,
-          "layers": "WORLDCEREAL_WINTERCEREALS_V1",
-          "serviceId": "wms-service-vito-terrascope-v2"
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2023_33UVR/CZ_CropType_2023_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2022_33UVR/CZ_CropType_2022_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2021_33UVR/CZ_CropType_2021_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
         }
-      ]
-    },
-    {
-      "name": "Crop Type - Level 3 - Custom Configuration",
-      "isActive": false,
+      ],
       "timeframe": "Years",
       "meta": {
         "description": "Shows three separate COGs, hosted on the ESA PRR, that have been configured with a timestamp and an annual date picker UI.",
@@ -886,47 +1116,34 @@
       },
       "layout": {
         "interfaceGroup": "Time Series",
+        "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": true,
+          "toggleable": true
+        },
+        "infoPanel": {
           "legend": {
             "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": true
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2023_33UVR/CZ_CropType_2023_CLASS_L3_33UVR.tif",
-          "format": "cog",
-          "zIndex": 2,
-          "timestamps": [
-            1672531200
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2022_33UVR/CZ_CropType_2022_CLASS_L3_33UVR.tif",
-          "format": "cog",
-          "zIndex": 2,
-          "timestamps": [
-            1640995200
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2021_33UVR/CZ_CropType_2021_CLASS_L3_33UVR.tif",
-          "format": "cog",
-          "zIndex": 2,
-          "timestamps": [
-            1609459200
-          ]
-        }
-      ]
+      }
     },
     {
       "name": "Coastal Condition Account GR 2022 - Data Download",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2022/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-GR_Coastal_Condition_IMD_2022/GR_Coastal_Condition_IMD_raster_2022.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "Demonstrates the direct downloading of TIFF data.",
         "attribution": {
@@ -934,259 +1151,80 @@
           "url": "https://esa-people-ea.org/en"
         },
         "categories": [],
-        "min": -19,
-        "max": 103,
-        "startColor": "#046601",
-        "endColor": "#fdfd1f"
+        "colormaps": [
+          {
+            "min": -19,
+            "max": 109,
+            "steps": 50,
+            "name": "summer",
+            "reverse": true
+          }
+        ]
       },
       "layout": {
         "interfaceGroup": "Resource Linking",
+        "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": true,
+          "toggleable": true
+        },
+        "infoPanel": {
           "legend": {
             "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "download": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2022/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-GR_Coastal_Condition_IMD_2022/GR_Coastal_Condition_IMD_raster_2022.tif"
+            "download": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2022/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-GR_Coastal_Condition_IMD_2022/GR_Coastal_Condition_IMD_raster_2022.tif",
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2022/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-GR_Coastal_Condition_IMD_2022/GR_Coastal_Condition_IMD_raster_2022.tif",
-          "format": "cog",
-          "zIndex": 2,
-          "normalize": false
-        }
-      ]
+      }
     },
     {
       "name": "World Cover 2021 with NUTS Statistics - Statistics Download",
       "isActive": false,
-      "meta": {
-        "description": "Demonstrates downloading the statistics layer directly.",
-        "attribution": {
-          "text": "ESA WorldCover",
-          "url": "https://esa-worldcover.org/"
-        },
-        "categories": [
-          {
-            "color": "#006400",
-            "label": "Tree cover",
-            "value": 10
-          },
-          {
-            "color": "#ffbb22",
-            "label": "Shrubland",
-            "value": 20
-          },
-          {
-            "color": "#ffff4c",
-            "label": "Grassland",
-            "value": 30
-          },
-          {
-            "color": "#f096ff",
-            "label": "Cropland",
-            "value": 40
-          },
-          {
-            "color": "#ff0000",
-            "label": "Built up",
-            "value": 50
-          },
-          {
-            "color": "#b4b4b4",
-            "label": "Bare",
-            "value": 60
-          },
-          {
-            "color": "#f0f0f0",
-            "label": "Snow and ice",
-            "value": 70
-          },
-          {
-            "color": "#0064c8",
-            "label": "Permanent water bodies",
-            "value": 80
-          },
-          {
-            "color": "#0096a0",
-            "label": "Herbaceous wetland",
-            "value": 90
-          },
-          {
-            "color": "#00cf75",
-            "label": "Mangroves",
-            "value": 95
-          },
-          {
-            "color": "#fae6a0",
-            "label": "Moss and lichen",
-            "value": 100
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Resource Linking",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "download": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb"
-          }
-        }
-      },
       "data": [
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 50,
           "layers": "WORLDCOVER_2021_MAP",
-          "serviceId": "wms-service-terrascope"
+          "useTimeParameter": true
         }
       ],
       "statistics": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 0
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 1
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 2
         },
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
-          "zIndex": 50,
+          "zIndex": 100,
           "level": 3
         }
-      ]
-    },
-    {
-      "name": "Habitat Map GR Level 1 2020 - Link to STAC Item",
-      "isActive": false,
-      "meta": {
-        "description": "Demonstrates linking to a STAC item.",
-        "attribution": {
-          "text": "ESA People Ecosystem Accounting",
-          "url": "https://esa-people-ea.org/en"
-        },
-        "categories": [
-          {
-            "color": "#4001ed",
-            "label": "Marine benthic habitats (MA-MG)",
-            "value": 10000
-          },
-          {
-            "color": "#44caee",
-            "label": "Coastal habitats",
-            "value": 40000
-          },
-          {
-            "color": "#914321",
-            "label": "Wetlands",
-            "value": 50000
-          },
-          {
-            "color": "#dbe341",
-            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
-            "value": 60000
-          },
-          {
-            "color": "#9e7221",
-            "label": "Heathland, scrub and tundra",
-            "value": 70000
-          },
-          {
-            "color": "#0b651a",
-            "label": "Forest and other wooded land",
-            "value": 80000
-          },
-          {
-            "color": "#737770",
-            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
-            "value": 90000
-          },
-          {
-            "color": "#b54dbd",
-            "label": "Vegetated man-made habitats",
-            "value": 100000
-          },
-          {
-            "color": "#ff0810",
-            "label": "Constructed, industrial or other Artificial types",
-            "value": 110000
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Resource Linking",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": false,
-            "zoomToCenter": true,
-            "download": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/items/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020"
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
-          "format": "cog",
-          "zIndex": 2,
-          "normalize": false
-        }
       ],
-      "statistics": []
-    },
-    {
-      "name": "Sentinel 2 vs World Cover - Comparison of WMS layers",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 2,
-          "layers": "WORLDCOVER_2021_S2_TCC",
-          "serviceId": "wms-service-vito-terrascope-v2",
-          "position": "left"
-        },
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 2,
-          "layers": "WORLDCOVER_2021_MAP",
-          "serviceId": "wms-service-vito-terrascope-v2",
-          "position": "right"
-        }
-      ],
-      "isSwipeLayer": true,
       "meta": {
-        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "description": "Demonstrates downloading the statistics layer directly.",
         "attribution": {
-          "text": "World Cover",
-          "url": "https://esa-worldcover.org/en"
+          "text": "ESA WorldCover",
+          "url": "https://esa-worldcover.org/"
         },
         "categories": [
           {
@@ -1247,18 +1285,359 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Comparison",
+        "interfaceGroup": "Resource Linking",
+        "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": true,
+          "toggleable": true
+        },
+        "infoPanel": {
           "legend": {
             "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": true
+            "zoomToCenter": true,
+            "download": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       }
+    },
+    {
+      "name": "Topsoil Soil Organic Carbon - 2018 to 2022",
+      "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels with constraint layer from World Cover.  Time series dates indicate the end of the two year period over which the data is measured i.e. 2020 (2018 to 2020), 2021 (2019 to 2021), 2022 (2020 to 2022)",
+        "attribution": {
+          "text": "ESA WorldSoils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Layer Constraints",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": true
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1583020800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_mean_100_201903-202110.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1614556800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1646092800
+          ]
+        }
+      ],
+      "statistics": [],
+      "constraints": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/europe_aggr-orgc_00-020_mean_100_202003-202210-esa_worldcover_2021.tif",
+          "format": "cog",
+          "label": "Land Cover Types (from World Cover 2022)",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Tree cover",
+              "value": 10
+            },
+            {
+              "label": "Shrubland",
+              "value": 20
+            },
+            {
+              "label": "Grassland",
+              "value": 30
+            },
+            {
+              "label": "Cropland",
+              "value": 40
+            },
+            {
+              "label": "Built-up",
+              "value": 50
+            },
+            {
+              "label": "Bare",
+              "value": 60
+            },
+            {
+              "label": "Snow and ice",
+              "value": 70
+            },
+            {
+              "label": "Permanent water bodies",
+              "value": 80
+            },
+            {
+              "label": "Herbaceous wetland",
+              "value": 90
+            },
+            {
+              "label": "Moss and lichen",
+              "value": 100
+            }
+          ],
+          "bandIndex": 2
+        },
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_uncertainty_100_202003-202210.tif",
+          "format": "cog",
+          "label": "Uncertainty",
+          "type": "continuous",
+          "interactive": true,
+          "min": 1,
+          "max": 100,
+          "units": "index",
+          "bandIndex": 3
+        }
+      ]
+    },
+    {
+      "name": "Austria Annual Solar Power Potential",
+      "isActive": false,
+      "meta": {
+        "description": "Global horizontal irradiation (kWh/m²/day), annual average. The greater amount of solar irradiation, the more electricity can be generated by a solar cell module. Selecting area with high solar potential contributes significantly to the desired efficiency and economic feasibility of a solar power project.",
+        "attribution": {
+          "text": "ESA GTIF",
+          "url": "https://gtif.esa.int/"
+        },
+        "categories": [],
+        "units": "kw / m 2 / hr",
+        "colormaps": [
+          {
+            "min": 0.1,
+            "max": 5,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Layer Constraints",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/v2/SolarPowerPotential_Annual_COG_clipped_3857_fixed.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_DSM_COG_10m_3857_fix.tif",
+          "format": "cog",
+          "label": "Elevation",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 4000,
+          "units": "meters",
+          "bandIndex": 2
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_10m_DSM_COG_Slope_3857_fix.tif",
+          "format": "cog",
+          "label": "Slope",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 65,
+          "units": "degrees",
+          "bandIndex": 3
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/RuggednessIndex_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "Ruggedness Index",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 1,
+          "units": "index values",
+          "bandIndex": 4
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/PowerLineHigh_EucDist_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "Distance to High Power Line",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 30000,
+          "units": "meters",
+          "bandIndex": 5
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/WSF_EucDist_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "Distance to settlement (WSF)",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 5500,
+          "units": "meters",
+          "bandIndex": 6
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix-esa_worldcover_2021.tif",
+          "format": "cog",
+          "label": "Land Cover (from World Cover)",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Tree cover",
+              "value": 10
+            },
+            {
+              "label": "Shrubland",
+              "value": 20
+            },
+            {
+              "label": "Grassland",
+              "value": 30
+            },
+            {
+              "label": "Cropland",
+              "value": 40
+            },
+            {
+              "label": "Built-up",
+              "value": 50
+            },
+            {
+              "label": "Bare",
+              "value": 60
+            },
+            {
+              "label": "Snow and ice",
+              "value": 70
+            },
+            {
+              "label": "Permanent water bodies",
+              "value": 80
+            },
+            {
+              "label": "Herbaceous wetland",
+              "value": 90
+            },
+            {
+              "label": "Moss and lichen",
+              "value": 100
+            }
+          ],
+          "bandIndex": 7
+        }
+      ]
+    },
+    {
+      "name": "openEO Job - PV Farm Mapping",
+      "isActive": false,
+      "meta": {
+        "description": "Demonstrates the direct downloading of TIFF data.",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [
+          {
+            "label": "PV Farm Probability",
+            "color": "#14616E",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "openEO Results",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/apex-geospatial-explorer-data/apex-demo.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
     }
   ]
 }
