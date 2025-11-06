@@ -1,5 +1,5 @@
 {
-  "version": "3.4.0",
+  "version": "3.4.0.1",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
@@ -98,7 +98,8 @@
   "sources": [
     {
       "name": "Open StreetMap",
-      "isActive": true,
+      "isActive": false,
+      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -106,7 +107,6 @@
           "zIndex": 10
         }
       ],
-      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
         "description": "",
@@ -120,6 +120,7 @@
     {
       "name": "Stadia Alidade Smooth Dark",
       "isActive": true,
+      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
@@ -127,7 +128,7 @@
           "zIndex": 3
         }
       ],
-      "isBaseLayer": true,
+      "exclusivitySets": [],
       "meta": {
         "description": "",
         "attribution": {
@@ -207,7 +208,8 @@
     },
     {
       "name": "Stadia Alidade Smooth Light",
-      "isActive": true,
+      "isActive": false,
+      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
@@ -215,7 +217,6 @@
           "zIndex": 3
         }
       ],
-      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
         "description": "",
@@ -1464,7 +1465,7 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "swatch"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
