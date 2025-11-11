@@ -1,5 +1,5 @@
 {
-  "version": "3.2.2-5",
+  "version": "3.2.2-6",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
@@ -15,8 +15,7 @@
     "Ecosystem Accounting - Slovakia",
     "Peatland Monitoring - Saddleworth Moor, UK",
     "Peatland Monitoring - Quebec",
-    "Land Degradation Neutrality - Portugal",
-    "Multi-time data and stats - tests"
+    "Land Degradation Neutrality - Portugal"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -24,7 +23,8 @@
     "center": [
       12,
       54
-    ]
+    ],
+    "projection": "EPSG:3857"
   },
   "services": [
     {
@@ -310,349 +310,6 @@
       },
       "layout": {
         "interfaceGroup": "European Land Cover",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": false,
-            "temporalControls": true,
-            "constraintSlider": false
-          }
-        }
-      }
-    },
-    {
-      "name": "World Cover 2020 and 2021 NUTS statistics only",
-      "isActive": false,
-      "data": [],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2020.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2020.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2020.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2020.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3,
-          "timestamps": [
-            1609372800
-          ]
-        }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Land cover map for 2021",
-        "attribution": {
-          "text": "World Cover Project",
-          "url": "https://esa-worldcover.org/"
-        },
-        "categories": [
-          {
-            "color": "#006400",
-            "label": "Tree cover",
-            "value": 10
-          },
-          {
-            "color": "#ffbb22",
-            "label": "Shrubland",
-            "value": 20
-          },
-          {
-            "color": "#ffff4c",
-            "label": "Grassland",
-            "value": 30
-          },
-          {
-            "color": "#f096ff",
-            "label": "Cropland",
-            "value": 40
-          },
-          {
-            "color": "#ff0000",
-            "label": "Built-up",
-            "value": 50
-          },
-          {
-            "color": "#b4b4b4",
-            "label": "Bare",
-            "value": 60
-          },
-          {
-            "color": "#f0f0f0",
-            "label": "Snow and ice",
-            "value": 70
-          },
-          {
-            "color": "#0064c8",
-            "label": "Permanent water bodies",
-            "value": 80
-          },
-          {
-            "color": "#0096a0",
-            "label": "Herbaceous wetland",
-            "value": 90
-          },
-          {
-            "color": "#00cf75",
-            "label": "Mangroves",
-            "value": 95
-          },
-          {
-            "color": "#fae6a0",
-            "label": "Moss and lichen",
-            "value": 100
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Multi-time data and stats - tests",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": false,
-            "temporalControls": true,
-            "constraintSlider": false
-          }
-        }
-      }
-    },
-    {
-      "name": "World Cover 2020 and 2021 data and NUTS statistics",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WORLDCOVER_2020_MAP",
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WORLDCOVER_2021_MAP",
-          "timestamps": [
-            1640908800
-          ]
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-datastats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3,
-          "timestamps": [
-            1640908800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2,
-          "timestamps": [
-            1609372800
-          ]
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3,
-          "timestamps": [
-            1609372800
-          ]
-        }
-      ],
-      "timeframe": "Days",
-      "meta": {
-        "description": "Land cover map for 2021",
-        "attribution": {
-          "text": "World Cover Project",
-          "url": "https://esa-worldcover.org/"
-        },
-        "categories": [
-          {
-            "color": "#006400",
-            "label": "Tree cover",
-            "value": 10
-          },
-          {
-            "color": "#ffbb22",
-            "label": "Shrubland",
-            "value": 20
-          },
-          {
-            "color": "#ffff4c",
-            "label": "Grassland",
-            "value": 30
-          },
-          {
-            "color": "#f096ff",
-            "label": "Cropland",
-            "value": 40
-          },
-          {
-            "color": "#ff0000",
-            "label": "Built-up",
-            "value": 50
-          },
-          {
-            "color": "#b4b4b4",
-            "label": "Bare",
-            "value": 60
-          },
-          {
-            "color": "#f0f0f0",
-            "label": "Snow and ice",
-            "value": 70
-          },
-          {
-            "color": "#0064c8",
-            "label": "Permanent water bodies",
-            "value": 80
-          },
-          {
-            "color": "#0096a0",
-            "label": "Herbaceous wetland",
-            "value": 90
-          },
-          {
-            "color": "#00cf75",
-            "label": "Mangroves",
-            "value": 95
-          },
-          {
-            "color": "#fae6a0",
-            "label": "Moss and lichen",
-            "value": 100
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Multi-time data and stats - tests",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1125,6 +782,48 @@
     {
       "name": "Topsoil Soil Organic Carbon, time series - 2018 to 2022",
       "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
@@ -1151,15 +850,23 @@
           ]
         }
       ],
-      "statistics": [],
-      "timeframe": "Years",
+      "statistics": []
+    },
+    {
+      "name": "Topsoil Soil Organic Carbon 2020-22 with NUTS statistics",
+      "isActive": false,
       "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) with statistics using NUTS 2024 boundaries.",
         "attribution": {
           "text": "World Soils",
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -1168,8 +875,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "dg kg^(-1)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Carbon Monitoring",
@@ -1179,21 +885,17 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/copper-r.png"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
           }
         }
-      }
-    },
-    {
-      "name": "Topsoil Soil Organic Carbon 2020-22 with NUTS statistics",
-      "isActive": false,
+      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
@@ -1227,44 +929,7 @@
           "zIndex": 100,
           "level": 3
         }
-      ],
-      "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) with statistics using NUTS 2024 boundaries.",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1800,
-            "steps": 50,
-            "name": "copper",
-            "reverse": true
-          }
-        ],
-        "units": "dg kg^(-1)"
-      },
-      "layout": {
-        "interfaceGroup": "Carbon Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/copper-r.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": true
-          }
-        }
-      }
+      ]
     },
     {
       "name": "Habitat Map SK Level 1 2020, with NUTS stats, vs S2",
@@ -1808,6 +1473,48 @@
     {
       "name": "Above Ground Biomass, time series - 2017 - 2023",
       "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Forest Carbon Monitoring Service",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 300,
+            "steps": 50,
+            "name": "greens",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Forest Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
@@ -1841,7 +1548,11 @@
             1483228800
           ]
         }
-      ],
+      ]
+    },
+    {
+      "name": "Below Ground Biomass, time series - 2017 to 2023",
+      "isActive": false,
       "timeframe": "Years",
       "meta": {
         "description": "",
@@ -1850,16 +1561,20 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 100,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
-            "max": 300,
+            "max": 100,
             "steps": 50,
             "name": "greens",
             "reverse": true
           }
-        ],
-        "units": "t / ha"
+        ]
       },
       "layout": {
         "interfaceGroup": "Forest Monitoring",
@@ -1869,21 +1584,17 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/greens-r.png"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": true,
-            "constraintSlider": true
+            "constraintSlider": true,
+            "blendControls": false
           }
         }
-      }
-    },
-    {
-      "name": "Below Ground Biomass, time series - 2017 to 2023",
-      "isActive": false,
+      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2023/01/01/FCM-BGB-100m-2023/FCM_Europe_demo_2023_BGB.tif",
@@ -1917,65 +1628,11 @@
             1483228800
           ]
         }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "Forest Carbon Monitoring Service",
-          "url": "https://www.forestcarbonplatform.org/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 100,
-            "steps": 50,
-            "name": "greens",
-            "reverse": true
-          }
-        ],
-        "units": "t / ha"
-      },
-      "layout": {
-        "interfaceGroup": "Forest Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/greens-r.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true
-          }
-        }
-      }
+      ]
     },
     {
       "name": "Topsoil Soil Organic Carbon 2020-22 - N2k with statistics",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/europe_aggr-orgc_00-020_mean_100_202003-202210-natura.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.soc_0-5cm_mean_europe_2020-2022.natura_2000.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "minZoom": 8
-        }
-      ],
       "meta": {
         "description": "Statistics for Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) using Natura 2000 boundaries.",
         "attribution": {
@@ -1983,20 +1640,20 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
             "max": 1800,
             "steps": 50,
-            "name": "greens",
+            "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff"
+        ]
       },
       "layout": {
         "interfaceGroup": "Natura 2000 Area Monitoring",
@@ -2012,14 +1669,72 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
-      }
+      },
+      "data": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/europe_aggr-orgc_00-020_mean_100_202003-202210-natura.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.soc_0-5cm_mean_europe_2020-2022.natura_2000.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "minZoom": 8
+        }
+      ]
     },
     {
       "name": "Growing Stock Volume, time series - 2017 to 2023",
       "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Forest Carbon Monitoring",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 520,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 520,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Forest Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2023/01/01/FCM-GSV-100m-2023/FCM_Europe_demo_2023_GSV.tif",
@@ -2053,106 +1768,7 @@
             1483228800
           ]
         }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "Forest Carbon Monitoring",
-          "url": "https://www.forestcarbonplatform.org/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 520,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Forest Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/jet.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true
-          }
-        }
-      }
-    },
-    {
-      "name": "Forest Carbon - above ground biomass N2k stats (data pending)",
-      "isActive": false,
-      "data": [],
-      "meta": {
-        "description": "Pending data and statistics",
-        "attribution": {
-          "text": "Forest Carbon Monitoring Service",
-          "url": "https://www.forestcarbonplatform.org/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Natura 2000 Area Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": false,
-            "zoomToCenter": false,
-            "temporalControls": false,
-            "constraintSlider": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Forest Carbon - below ground biomass N2k stats (data pending)",
-      "isActive": false,
-      "data": [],
-      "meta": {
-        "description": "Pending data and statistics",
-        "attribution": {
-          "text": "Forest Carbon Monitoring Service",
-          "url": "https://www.forestcarbonplatform.org/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Natura 2000 Area Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": false,
-            "zoomToCenter": false,
-            "temporalControls": false,
-            "constraintSlider": false
-          }
-        }
-      }
+      ]
     },
     {
       "name": "CLMS NDVI 300m 10 daily time series - 2020 to present",
@@ -2314,6 +1930,47 @@
     {
       "name": "Topsoil Soil Organic Carbon 2018-20 with NUTS statistics",
       "isActive": false,
+      "meta": {
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2018-2020) with statistics using NUTS 2024 boundaries.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
@@ -2347,24 +2004,33 @@
           "zIndex": 100,
           "level": 3
         }
-      ],
+      ]
+    },
+    {
+      "name": "Topsoil Soil Organic Carbon, uncertainty time series - 2018 to 2022",
+      "isActive": false,
+      "timeframe": "Years",
       "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2018-2020) with statistics using NUTS 2024 boundaries.",
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
         "attribution": {
           "text": "World Soils",
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
-            "max": 1800,
+            "max": 100,
             "steps": 50,
-            "name": "copper",
+            "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "units": "dg kg^(-1)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Carbon Monitoring",
@@ -2374,21 +2040,17 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/copper-r.png"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": true
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
           }
         }
-      }
-    },
-    {
-      "name": "Topsoil Soil Organic Carbon, uncertainty time series - 2018 to 2022",
-      "isActive": false,
+      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_uncertainty_100_201803-202010.tif",
@@ -2415,145 +2077,7 @@
           ]
         }
       ],
-      "statistics": [],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 100,
-            "steps": 50,
-            "name": "yiorrd",
-            "reverse": true
-          }
-        ],
-        "units": "dg kg^(-1)"
-      },
-      "layout": {
-        "interfaceGroup": "Carbon Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/yiorrd-r.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true
-          }
-        }
-      }
-    },
-    {
-      "name": "Topsoil Soil Organic Carbon multi-dates, level 1 statistics by NUTS",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1583020800
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_mean_100_201903-202110.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1551398400
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1519862400
-          ]
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1583020800
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2019/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201903-202110/europe_aggr-orgc_00-020_mean_100_201903-202110.tif",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1551398400
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1519862400
-          ]
-        }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1800,
-            "steps": 50,
-            "name": "greens",
-            "reverse": true
-          }
-        ],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff"
-      },
-      "layout": {
-        "interfaceGroup": "Multi-time data and stats - tests",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true
-          }
-        }
-      }
+      "statistics": []
     },
     {
       "name": "Habitat Map GR Level 2 2020, with NUTS stats vs S2",
@@ -3598,13 +3122,6 @@
     {
       "name": "Trends in water level",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
       "meta": {
         "description": "This dataset provides water level trend products (in mm/yr), including long-term trends derived from the S1S2SMAPL4 and SMAPL4 products, as well as human-induced water level trends estimated from their difference. Negative values indicate declining water levels, while positive values indicate rising levels. Long-term trends were calculated averaging yearly values from May through September in the Northern Hemisphere and over the full year in the tropical zone. or more reliable information, see \"Trends in water level – high quality only\" which only shows high quality grid cells.",
         "attribution": {
@@ -3612,6 +3129,11 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
+        "units": "mm / yr",
+        "min": -40,
+        "max": 40,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": -40,
@@ -3620,8 +3142,7 @@
             "name": "rdbu",
             "reverse": false
           }
-        ],
-        "units": "mm / yr"
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Saddleworth Moor, UK",
@@ -3631,28 +3152,28 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/rdbu.png"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
-      }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
     },
     {
       "name": "Trends in water level - high quality only",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/HYDRO/water-level-trend-best-quality/trend_wl_S1S2SMAPL4.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
       "meta": {
         "description": "This dataset provides water level trend products (in mm/yr), including long-term trends derived from the S1S2SMAPL4 and SMAPL4 products, as well as human-induced water level trends estimated from their difference. Negative values indicate declining water levels, while positive values indicate rising levels. Long-term trends were calculated averaging yearly values from May through September in the Northern Hemisphere and over the full year in the tropical zone. Only high quality grid cells are shown.",
         "attribution": {
@@ -3660,6 +3181,11 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
+        "units": "mm / yr",
+        "min": -40,
+        "max": 40,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": -40,
@@ -3668,8 +3194,7 @@
             "name": "rdbu",
             "reverse": false
           }
-        ],
-        "units": "mm / yr"
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Saddleworth Moor, UK",
@@ -3679,17 +3204,24 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/rdbu.png"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
-      }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/HYDRO/water-level-trend-best-quality/trend_wl_S1S2SMAPL4.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
     },
     {
       "name": "Peatland Classification",
@@ -3795,13 +3327,6 @@
     {
       "name": "Trends in water level",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Quebec/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
       "meta": {
         "description": "This dataset provides water level trend products (in mm/yr), including long-term trends derived from the S1S2SMAPL4 and SMAPL4 products, as well as human-induced water level trends estimated from their difference. Negative values indicate declining water levels, while positive values indicate rising levels. Long-term trends were calculated averaging yearly values from May through September in the Northern Hemisphere and over the full year in the tropical zone. or more reliable information, see \"Trends in water level – high quality only\" which only shows high quality grid cells.",
         "attribution": {
@@ -3809,6 +3334,11 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
+        "units": "mm / yr",
+        "min": -40,
+        "max": 40,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": -50,
@@ -3817,8 +3347,7 @@
             "name": "rdbu",
             "reverse": false
           }
-        ],
-        "units": "mm / yr"
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Quebec",
@@ -3828,17 +3357,24 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/colormaps/rdbu.png"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
-      }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Quebec/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
     },
     {
       "name": "Trends in water level - high quality only",
@@ -3857,6 +3393,7 @@
           "url": "https://www.worldpeatland.org/"
         },
         "categories": [],
+        "units": "mm / yr",
         "colormaps": [
           {
             "min": -40,
@@ -3865,8 +3402,7 @@
             "name": "rdbu",
             "reverse": false
           }
-        ],
-        "units": "mm / yr"
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring - Quebec",
@@ -5204,6 +4740,10 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
+        "min": 0,
+        "max": 234,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -5212,11 +4752,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "min": 0,
-        "max": 234,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff"
+        ]
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality - Portugal",
@@ -5254,6 +4790,10 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
+        "min": -206,
+        "max": 129,
+        "startColor": "#ffffff",
+        "endColor": "#fffffff",
         "colormaps": [
           {
             "min": -206,
@@ -5262,11 +4802,7 @@
             "name": "jet",
             "reverse": true
           }
-        ],
-        "min": -206,
-        "max": 129,
-        "startColor": "#ffffff",
-        "endColor": "#fffffff"
+        ]
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality - Portugal",
@@ -5324,6 +4860,10 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
+        "min": 0,
+        "max": 254,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -5332,11 +4872,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "min": 0,
-        "max": 254,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff"
+        ]
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality - Portugal",
@@ -5428,6 +4964,45 @@
     {
       "name": "Trends in Productivity - Performance Value",
       "isActive": false,
+      "meta": {
+        "description": "Maximum performance 2021-23 over the land cover class reference [0.0 – 2.0].  Scale needs to be offset by 1/1000.",
+        "attribution": {
+          "text": "SEN4DN",
+          "url": "https://esa-sen4ldn.org/en"
+        },
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 255,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ],
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
+        "min": 0,
+        "max": 255
+      },
+      "layout": {
+        "interfaceGroup": "Land Degradation Neutrality - Portugal",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_perfval_V100_2018-2023_S06W072_MAP/SEN4LDN_perfval_V100_2018-2023_S06W072_MAP.tif",
@@ -5544,42 +5119,7 @@
           "format": "cog",
           "zIndex": 50
         }
-      ],
-      "meta": {
-        "description": "Maximum performance 2021-23 over the land cover class reference [0.0 – 2.0].  Scale needs to be offset by 1/1000.",
-        "attribution": {
-          "text": "SEN4DN",
-          "url": "https://esa-sen4ldn.org/en"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 255,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Land Degradation Neutrality - Portugal",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false
-          }
-        }
-      }
+      ]
     },
     {
       "name": "Trends in Productivity - Performance Classes",
@@ -5733,22 +5273,132 @@
       }
     },
     {
-      "name": "Open StreetMap",
+      "name": "Land Degradation Neutrality Indicator SDG15.3.1 (to do)",
+      "isActive": false,
+      "data": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Land Degradation Neutrality - Portugal",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Above Ground Biomass, 2023 with NUTS statistics",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Forest Carbon Monitoring Service",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 300,
+            "steps": 50,
+            "name": "greens",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Forest Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ]
+    },
+    {
+      "name": "Stadia Alidade Smooth Dark",
       "isActive": true,
       "data": [
         {
-          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
           "format": "xyz",
           "zIndex": 10
         }
       ],
       "isBaseLayer": true,
-      "exclusivitySets": [],
       "meta": {
         "description": "",
         "attribution": {
-          "text": "OpenStreetMap",
-          "url": "https://www.openstreetmap.org/copyright"
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
         },
         "categories": []
       }
@@ -5801,6 +5451,67 @@
       }
     },
     {
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Satellite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
       "name": "DEM",
       "isActive": false,
       "data": [
@@ -5820,155 +5531,6 @@
           "text": "Copernicus"
         },
         "categories": []
-      }
-    },
-    {
-      "name": "DEM",
-      "isActive": false,
-      "data": [],
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": ""
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Multi-time data and stats - tests",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Stadia Alidade Smooth Dark",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
-          "format": "xyz",
-          "zIndex": 3
-        }
-      ],
-      "isBaseLayer": true,
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
-          "url": "https://stadiamaps.com/"
-        },
-        "categories": []
-      }
-    },
-    {
-      "name": "Land Degradation Neutrality Indicator SDG15.3.1 (to do)",
-      "isActive": false,
-      "data": [],
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": ""
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Land Degradation Neutrality - Portugal",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Above Ground Biomass, 2023 with NUTS statistics",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1672531200
-          ]
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3
-        }
-      ],
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": "Forest Carbon Monitoring Service",
-          "url": "https://www.forestcarbonplatform.org/"
-        },
-        "categories": [],
-        "units": "t / ha",
-        "min": 0,
-        "max": 300,
-        "startColor": "#ffffff",
-        "endColor": "#1a5f07"
-      },
-      "layout": {
-        "interfaceGroup": "Forest Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": true
-          }
-        }
       }
     }
   ]
