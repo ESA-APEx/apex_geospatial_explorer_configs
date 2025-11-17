@@ -11,7 +11,7 @@
     }
   },
   "interfaceGroups": [
-    "Inference Example - Norway"
+    "openEO Results"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -22,12 +22,24 @@
     ],
     "projection": "EPSG:3857"
   },
-  "services": [],
+  "services": [
+    {
+      "id": "s3-service-1763387634030",
+      "name": "WEED - Inference Alpha 3 Bucket",
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/",
+      "format": "cog"
+    },
+    {
+      "id": "stac-service-1763387656165",
+      "name": "WEED Product Catalogue",
+      "url": "https://catalogue.weed.apex.esa.int/",
+      "format": "stac"
+    }
+  ],
   "sources": [
     {
       "name": "Open StreetMap",
       "isActive": false,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -35,6 +47,7 @@
           "zIndex": 10
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
         "description": "",
@@ -176,7 +189,6 @@
     {
       "name": "DEM",
       "isActive": false,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://services.terrascope.be/wms/v2",
@@ -185,6 +197,7 @@
           "layers": "COP_DEM_GLO_30M_COG"
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png",
       "meta": {
@@ -196,10 +209,10 @@
       }
     },
     {
-      "name": "Norway",
+      "name": "Norway - Ecosystem Extent - Alpha3",
       "isActive": false,
       "meta": {
-        "description": "",
+        "description": "WEED ML habitat mapping workflow in version alpha3 applied on the CU sites in Norway. Habitat map in EUNIS2021 format for the year 2024.",
         "attribution": {
           "text": ""
         },
@@ -732,7 +745,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Inference Example - Norway",
+        "interfaceGroup": "openEO Results",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -752,7 +765,1188 @@
       },
       "data": [
         {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τPL03_v100_2024-01-01Z.tif",
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM22_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM32_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM23_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM33_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "Greece - Ecosystem Extent - Alpha3",
+      "isActive": false,
+      "meta": {
+        "description": "WEED ML habitat mapping workflow in version alpha3 applied on the CU sites in Greece. Habitat map in EUNIS2021 format for the year 2024.",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [
+          {
+            "color": "#4C83D5",
+            "label": "MA22",
+            "value": 10202
+          },
+          {
+            "color": "#9ACC2E",
+            "label": "MA23",
+            "value": 10203
+          },
+          {
+            "color": "#CE6444",
+            "label": "MA25",
+            "value": 10205
+          },
+          {
+            "color": "#8E0DCA",
+            "label": "N11",
+            "value": 40101
+          },
+          {
+            "color": "#46DB7A",
+            "label": "N12",
+            "value": 40102
+          },
+          {
+            "color": "#76D845",
+            "label": "N15",
+            "value": 40105
+          },
+          {
+            "color": "#CD1B97",
+            "label": "N16",
+            "value": 40106
+          },
+          {
+            "color": "#D43EC0",
+            "label": "N18",
+            "value": 40108
+          },
+          {
+            "color": "#C3CB68",
+            "label": "N19",
+            "value": 40109
+          },
+          {
+            "color": "#E548E2",
+            "label": "N1A",
+            "value": 40110
+          },
+          {
+            "color": "#B7CA6D",
+            "label": "N1D",
+            "value": 40113
+          },
+          {
+            "color": "#EA733F",
+            "label": "N1H",
+            "value": 40117
+          },
+          {
+            "color": "#4D55C8",
+            "label": "N1J",
+            "value": 40118
+          },
+          {
+            "color": "#A7E773",
+            "label": "N21",
+            "value": 40201
+          },
+          {
+            "color": "#78E792",
+            "label": "N31",
+            "value": 40301
+          },
+          {
+            "color": "#0ECD5B",
+            "label": "N32",
+            "value": 40302
+          },
+          {
+            "color": "#EDAE25",
+            "label": "Q11",
+            "value": 50101
+          },
+          {
+            "color": "#CF923C",
+            "label": "Q21",
+            "value": 50201
+          },
+          {
+            "color": "#7D51D5",
+            "label": "Q22",
+            "value": 50202
+          },
+          {
+            "color": "#87C973",
+            "label": "Q24",
+            "value": 50204
+          },
+          {
+            "color": "#28CCDB",
+            "label": "Q25",
+            "value": 50205
+          },
+          {
+            "color": "#6BD142",
+            "label": "Q41",
+            "value": 50401
+          },
+          {
+            "color": "#E91826",
+            "label": "Q42",
+            "value": 50402
+          },
+          {
+            "color": "#EF604D",
+            "label": "Q43",
+            "value": 50403
+          },
+          {
+            "color": "#D66DC1",
+            "label": "Q44",
+            "value": 50404
+          },
+          {
+            "color": "#65E8A0",
+            "label": "Q51",
+            "value": 50501
+          },
+          {
+            "color": "#D0EF1E",
+            "label": "Q52",
+            "value": 50502
+          },
+          {
+            "color": "#5BD9DD",
+            "label": "Q53",
+            "value": 50503
+          },
+          {
+            "color": "#EBD682",
+            "label": "Q54",
+            "value": 50504
+          },
+          {
+            "color": "#4B22E2",
+            "label": "R12",
+            "value": 60102
+          },
+          {
+            "color": "#D470BB",
+            "label": "R13",
+            "value": 60103
+          },
+          {
+            "color": "#C9853D",
+            "label": "R18",
+            "value": 60108
+          },
+          {
+            "color": "#4DAAD5",
+            "label": "R1A",
+            "value": 60110
+          },
+          {
+            "color": "#EF9564",
+            "label": "R1B",
+            "value": 60111
+          },
+          {
+            "color": "#60DC47",
+            "label": "R1F",
+            "value": 60115
+          },
+          {
+            "color": "#41D939",
+            "label": "R1H",
+            "value": 60117
+          },
+          {
+            "color": "#C26ACC",
+            "label": "R1M",
+            "value": 60121
+          },
+          {
+            "color": "#30CEB6",
+            "label": "R1P",
+            "value": 60123
+          },
+          {
+            "color": "#CA7A45",
+            "label": "R1Q",
+            "value": 60124
+          },
+          {
+            "color": "#DA2852",
+            "label": "R1R",
+            "value": 60125
+          },
+          {
+            "color": "#DE2113",
+            "label": "R21",
+            "value": 60201
+          },
+          {
+            "color": "#8FCC2C",
+            "label": "R22",
+            "value": 60202
+          },
+          {
+            "color": "#E68733",
+            "label": "R35",
+            "value": 60305
+          },
+          {
+            "color": "#6278E5",
+            "label": "R36",
+            "value": 60306
+          },
+          {
+            "color": "#59CAA0",
+            "label": "R37",
+            "value": 60307
+          },
+          {
+            "color": "#C9C762",
+            "label": "R42",
+            "value": 60402
+          },
+          {
+            "color": "#66A8DA",
+            "label": "R44",
+            "value": 60404
+          },
+          {
+            "color": "#61E7DC",
+            "label": "R52",
+            "value": 60502
+          },
+          {
+            "color": "#3B8FEF",
+            "label": "R54",
+            "value": 60504
+          },
+          {
+            "color": "#E0D021",
+            "label": "R55",
+            "value": 60505
+          },
+          {
+            "color": "#E1836E",
+            "label": "R56",
+            "value": 60506
+          },
+          {
+            "color": "#81E2B8",
+            "label": "R57",
+            "value": 60507
+          },
+          {
+            "color": "#EEBE30",
+            "label": "R63",
+            "value": 60603
+          },
+          {
+            "color": "#6ED4EE",
+            "label": "S11",
+            "value": 70101
+          },
+          {
+            "color": "#721FEF",
+            "label": "S21",
+            "value": 70201
+          },
+          {
+            "color": "#5317EC",
+            "label": "S22",
+            "value": 70202
+          },
+          {
+            "color": "#B9E282",
+            "label": "S31",
+            "value": 70301
+          },
+          {
+            "color": "#BA80E7",
+            "label": "S32",
+            "value": 70302
+          },
+          {
+            "color": "#9F37DF",
+            "label": "S33",
+            "value": 70303
+          },
+          {
+            "color": "#A777E1",
+            "label": "S35",
+            "value": 70305
+          },
+          {
+            "color": "#D54C93",
+            "label": "S37",
+            "value": 70307
+          },
+          {
+            "color": "#D3C776",
+            "label": "S38",
+            "value": 70308
+          },
+          {
+            "color": "#4675CB",
+            "label": "S41",
+            "value": 70401
+          },
+          {
+            "color": "#EA8CA8",
+            "label": "S42",
+            "value": 70402
+          },
+          {
+            "color": "#67ECD1",
+            "label": "S51",
+            "value": 70501
+          },
+          {
+            "color": "#6EA8C9",
+            "label": "S61",
+            "value": 70601
+          },
+          {
+            "color": "#8672E7",
+            "label": "S91",
+            "value": 70901
+          },
+          {
+            "color": "#3CD38A",
+            "label": "S92",
+            "value": 70902
+          },
+          {
+            "color": "#6C89D0",
+            "label": "T11",
+            "value": 80101
+          },
+          {
+            "color": "#8B2DE2",
+            "label": "T12",
+            "value": 80102
+          },
+          {
+            "color": "#56AECC",
+            "label": "T13",
+            "value": 80103
+          },
+          {
+            "color": "#CA2135",
+            "label": "T15",
+            "value": 80105
+          },
+          {
+            "color": "#D91463",
+            "label": "T16",
+            "value": 80106
+          },
+          {
+            "color": "#2DD838",
+            "label": "T17",
+            "value": 80107
+          },
+          {
+            "color": "#21DF21",
+            "label": "T18",
+            "value": 80108
+          },
+          {
+            "color": "#27D2A7",
+            "label": "T19",
+            "value": 80109
+          },
+          {
+            "color": "#8197E2",
+            "label": "T1B",
+            "value": 80111
+          },
+          {
+            "color": "#4138DD",
+            "label": "T1C",
+            "value": 80112
+          },
+          {
+            "color": "#7D7DED",
+            "label": "T1E",
+            "value": 80114
+          },
+          {
+            "color": "#C552C9",
+            "label": "T1F",
+            "value": 80115
+          },
+          {
+            "color": "#F03CE1",
+            "label": "T1H",
+            "value": 80117
+          },
+          {
+            "color": "#ED7289",
+            "label": "T21",
+            "value": 80201
+          },
+          {
+            "color": "#D7DC47",
+            "label": "T27",
+            "value": 80207
+          },
+          {
+            "color": "#45EF62",
+            "label": "T35",
+            "value": 80305
+          },
+          {
+            "color": "#A92DC8",
+            "label": "T3C",
+            "value": 80312
+          },
+          {
+            "color": "#BBD478",
+            "label": "T3J",
+            "value": 80318
+          },
+          {
+            "color": "#A1DA7A",
+            "label": "T3M",
+            "value": 80321
+          },
+          {
+            "color": "#1AC82E",
+            "label": "U23",
+            "value": 90203
+          },
+          {
+            "color": "#1ECAE4",
+            "label": "U27",
+            "value": 90207
+          },
+          {
+            "color": "#27CD99",
+            "label": "U33",
+            "value": 90303
+          },
+          {
+            "color": "#BC39EB",
+            "label": "U36",
+            "value": 90306
+          },
+          {
+            "color": "#DC1010",
+            "label": "U37",
+            "value": 90307
+          },
+          {
+            "color": "#45D96F",
+            "label": "U38",
+            "value": 90308
+          },
+          {
+            "color": "#6CA1D2",
+            "label": "V11",
+            "value": 100101
+          },
+          {
+            "color": "#717CD0",
+            "label": "V13",
+            "value": 100103
+          },
+          {
+            "color": "#C833E2",
+            "label": "V15",
+            "value": 100105
+          },
+          {
+            "color": "#C96795",
+            "label": "V1x",
+            "value": 100106
+          },
+          {
+            "color": "#CDAC73",
+            "label": "V32",
+            "value": 100302
+          },
+          {
+            "color": "#6AEB58",
+            "label": "V34",
+            "value": 100304
+          },
+          {
+            "color": "#58EDE8",
+            "label": "V35",
+            "value": 100305
+          },
+          {
+            "color": "#CF368F",
+            "label": "V37",
+            "value": 100307
+          },
+          {
+            "color": "#EE68BD",
+            "label": "V38",
+            "value": 100308
+          },
+          {
+            "color": "#A6E563",
+            "label": "V39",
+            "value": 100309
+          },
+          {
+            "color": "#C84573",
+            "label": "C",
+            "value": 110000
+          },
+          {
+            "color": "#7E71E0",
+            "label": "J",
+            "value": 120000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "openEO Results",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG20_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG22_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG31_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG21_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG30_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG32_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "Czech Republic - Ecosystem Extent - Alpha3",
+      "isActive": false,
+      "meta": {
+        "description": "WEED ML habitat mapping workflow in version alpha3 applied on the CU sites in Czech Republic. Habitat map in EUNIS2021 format for the year 2024.",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [
+          {
+            "color": "#4C83D5",
+            "label": "MA22",
+            "value": 10202
+          },
+          {
+            "color": "#9ACC2E",
+            "label": "MA23",
+            "value": 10203
+          },
+          {
+            "color": "#CE6444",
+            "label": "MA25",
+            "value": 10205
+          },
+          {
+            "color": "#8E0DCA",
+            "label": "N11",
+            "value": 40101
+          },
+          {
+            "color": "#46DB7A",
+            "label": "N12",
+            "value": 40102
+          },
+          {
+            "color": "#76D845",
+            "label": "N15",
+            "value": 40105
+          },
+          {
+            "color": "#CD1B97",
+            "label": "N16",
+            "value": 40106
+          },
+          {
+            "color": "#D43EC0",
+            "label": "N18",
+            "value": 40108
+          },
+          {
+            "color": "#C3CB68",
+            "label": "N19",
+            "value": 40109
+          },
+          {
+            "color": "#E548E2",
+            "label": "N1A",
+            "value": 40110
+          },
+          {
+            "color": "#B7CA6D",
+            "label": "N1D",
+            "value": 40113
+          },
+          {
+            "color": "#EA733F",
+            "label": "N1H",
+            "value": 40117
+          },
+          {
+            "color": "#4D55C8",
+            "label": "N1J",
+            "value": 40118
+          },
+          {
+            "color": "#A7E773",
+            "label": "N21",
+            "value": 40201
+          },
+          {
+            "color": "#78E792",
+            "label": "N31",
+            "value": 40301
+          },
+          {
+            "color": "#0ECD5B",
+            "label": "N32",
+            "value": 40302
+          },
+          {
+            "color": "#EDAE25",
+            "label": "Q11",
+            "value": 50101
+          },
+          {
+            "color": "#CF923C",
+            "label": "Q21",
+            "value": 50201
+          },
+          {
+            "color": "#7D51D5",
+            "label": "Q22",
+            "value": 50202
+          },
+          {
+            "color": "#87C973",
+            "label": "Q24",
+            "value": 50204
+          },
+          {
+            "color": "#28CCDB",
+            "label": "Q25",
+            "value": 50205
+          },
+          {
+            "color": "#6BD142",
+            "label": "Q41",
+            "value": 50401
+          },
+          {
+            "color": "#E91826",
+            "label": "Q42",
+            "value": 50402
+          },
+          {
+            "color": "#EF604D",
+            "label": "Q43",
+            "value": 50403
+          },
+          {
+            "color": "#D66DC1",
+            "label": "Q44",
+            "value": 50404
+          },
+          {
+            "color": "#65E8A0",
+            "label": "Q51",
+            "value": 50501
+          },
+          {
+            "color": "#D0EF1E",
+            "label": "Q52",
+            "value": 50502
+          },
+          {
+            "color": "#5BD9DD",
+            "label": "Q53",
+            "value": 50503
+          },
+          {
+            "color": "#EBD682",
+            "label": "Q54",
+            "value": 50504
+          },
+          {
+            "color": "#4B22E2",
+            "label": "R12",
+            "value": 60102
+          },
+          {
+            "color": "#D470BB",
+            "label": "R13",
+            "value": 60103
+          },
+          {
+            "color": "#C9853D",
+            "label": "R18",
+            "value": 60108
+          },
+          {
+            "color": "#4DAAD5",
+            "label": "R1A",
+            "value": 60110
+          },
+          {
+            "color": "#EF9564",
+            "label": "R1B",
+            "value": 60111
+          },
+          {
+            "color": "#60DC47",
+            "label": "R1F",
+            "value": 60115
+          },
+          {
+            "color": "#41D939",
+            "label": "R1H",
+            "value": 60117
+          },
+          {
+            "color": "#C26ACC",
+            "label": "R1M",
+            "value": 60121
+          },
+          {
+            "color": "#30CEB6",
+            "label": "R1P",
+            "value": 60123
+          },
+          {
+            "color": "#CA7A45",
+            "label": "R1Q",
+            "value": 60124
+          },
+          {
+            "color": "#DA2852",
+            "label": "R1R",
+            "value": 60125
+          },
+          {
+            "color": "#DE2113",
+            "label": "R21",
+            "value": 60201
+          },
+          {
+            "color": "#8FCC2C",
+            "label": "R22",
+            "value": 60202
+          },
+          {
+            "color": "#E68733",
+            "label": "R35",
+            "value": 60305
+          },
+          {
+            "color": "#6278E5",
+            "label": "R36",
+            "value": 60306
+          },
+          {
+            "color": "#59CAA0",
+            "label": "R37",
+            "value": 60307
+          },
+          {
+            "color": "#C9C762",
+            "label": "R42",
+            "value": 60402
+          },
+          {
+            "color": "#66A8DA",
+            "label": "R44",
+            "value": 60404
+          },
+          {
+            "color": "#61E7DC",
+            "label": "R52",
+            "value": 60502
+          },
+          {
+            "color": "#3B8FEF",
+            "label": "R54",
+            "value": 60504
+          },
+          {
+            "color": "#E0D021",
+            "label": "R55",
+            "value": 60505
+          },
+          {
+            "color": "#E1836E",
+            "label": "R56",
+            "value": 60506
+          },
+          {
+            "color": "#81E2B8",
+            "label": "R57",
+            "value": 60507
+          },
+          {
+            "color": "#EEBE30",
+            "label": "R63",
+            "value": 60603
+          },
+          {
+            "color": "#6ED4EE",
+            "label": "S11",
+            "value": 70101
+          },
+          {
+            "color": "#721FEF",
+            "label": "S21",
+            "value": 70201
+          },
+          {
+            "color": "#5317EC",
+            "label": "S22",
+            "value": 70202
+          },
+          {
+            "color": "#B9E282",
+            "label": "S31",
+            "value": 70301
+          },
+          {
+            "color": "#BA80E7",
+            "label": "S32",
+            "value": 70302
+          },
+          {
+            "color": "#9F37DF",
+            "label": "S33",
+            "value": 70303
+          },
+          {
+            "color": "#A777E1",
+            "label": "S35",
+            "value": 70305
+          },
+          {
+            "color": "#D54C93",
+            "label": "S37",
+            "value": 70307
+          },
+          {
+            "color": "#D3C776",
+            "label": "S38",
+            "value": 70308
+          },
+          {
+            "color": "#4675CB",
+            "label": "S41",
+            "value": 70401
+          },
+          {
+            "color": "#EA8CA8",
+            "label": "S42",
+            "value": 70402
+          },
+          {
+            "color": "#67ECD1",
+            "label": "S51",
+            "value": 70501
+          },
+          {
+            "color": "#6EA8C9",
+            "label": "S61",
+            "value": 70601
+          },
+          {
+            "color": "#8672E7",
+            "label": "S91",
+            "value": 70901
+          },
+          {
+            "color": "#3CD38A",
+            "label": "S92",
+            "value": 70902
+          },
+          {
+            "color": "#6C89D0",
+            "label": "T11",
+            "value": 80101
+          },
+          {
+            "color": "#8B2DE2",
+            "label": "T12",
+            "value": 80102
+          },
+          {
+            "color": "#56AECC",
+            "label": "T13",
+            "value": 80103
+          },
+          {
+            "color": "#CA2135",
+            "label": "T15",
+            "value": 80105
+          },
+          {
+            "color": "#D91463",
+            "label": "T16",
+            "value": 80106
+          },
+          {
+            "color": "#2DD838",
+            "label": "T17",
+            "value": 80107
+          },
+          {
+            "color": "#21DF21",
+            "label": "T18",
+            "value": 80108
+          },
+          {
+            "color": "#27D2A7",
+            "label": "T19",
+            "value": 80109
+          },
+          {
+            "color": "#8197E2",
+            "label": "T1B",
+            "value": 80111
+          },
+          {
+            "color": "#4138DD",
+            "label": "T1C",
+            "value": 80112
+          },
+          {
+            "color": "#7D7DED",
+            "label": "T1E",
+            "value": 80114
+          },
+          {
+            "color": "#C552C9",
+            "label": "T1F",
+            "value": 80115
+          },
+          {
+            "color": "#F03CE1",
+            "label": "T1H",
+            "value": 80117
+          },
+          {
+            "color": "#ED7289",
+            "label": "T21",
+            "value": 80201
+          },
+          {
+            "color": "#D7DC47",
+            "label": "T27",
+            "value": 80207
+          },
+          {
+            "color": "#45EF62",
+            "label": "T35",
+            "value": 80305
+          },
+          {
+            "color": "#A92DC8",
+            "label": "T3C",
+            "value": 80312
+          },
+          {
+            "color": "#BBD478",
+            "label": "T3J",
+            "value": 80318
+          },
+          {
+            "color": "#A1DA7A",
+            "label": "T3M",
+            "value": 80321
+          },
+          {
+            "color": "#1AC82E",
+            "label": "U23",
+            "value": 90203
+          },
+          {
+            "color": "#1ECAE4",
+            "label": "U27",
+            "value": 90207
+          },
+          {
+            "color": "#27CD99",
+            "label": "U33",
+            "value": 90303
+          },
+          {
+            "color": "#BC39EB",
+            "label": "U36",
+            "value": 90306
+          },
+          {
+            "color": "#DC1010",
+            "label": "U37",
+            "value": 90307
+          },
+          {
+            "color": "#45D96F",
+            "label": "U38",
+            "value": 90308
+          },
+          {
+            "color": "#6CA1D2",
+            "label": "V11",
+            "value": 100101
+          },
+          {
+            "color": "#717CD0",
+            "label": "V13",
+            "value": 100103
+          },
+          {
+            "color": "#C833E2",
+            "label": "V15",
+            "value": 100105
+          },
+          {
+            "color": "#C96795",
+            "label": "V1x",
+            "value": 100106
+          },
+          {
+            "color": "#CDAC73",
+            "label": "V32",
+            "value": 100302
+          },
+          {
+            "color": "#6AEB58",
+            "label": "V34",
+            "value": 100304
+          },
+          {
+            "color": "#58EDE8",
+            "label": "V35",
+            "value": 100305
+          },
+          {
+            "color": "#CF368F",
+            "label": "V37",
+            "value": 100307
+          },
+          {
+            "color": "#EE68BD",
+            "label": "V38",
+            "value": 100308
+          },
+          {
+            "color": "#A6E563",
+            "label": "V39",
+            "value": 100309
+          },
+          {
+            "color": "#C84573",
+            "label": "C",
+            "value": 110000
+          },
+          {
+            "color": "#7E71E0",
+            "label": "J",
+            "value": 120000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "openEO Results",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR21_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR31_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR22_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR32_v100_2024-01-01Z.tif",
           "format": "cog",
           "zIndex": 50
         }
