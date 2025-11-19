@@ -11,7 +11,9 @@
     }
   },
   "interfaceGroups": [
-    "openEO Results"
+    "openEO Results",
+    "ECDC - National Data of the Netherlands",
+    "RDM"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -34,6 +36,12 @@
       "name": "WEED Product Catalogue",
       "url": "https://catalogue.weed.apex.esa.int/",
       "format": "stac"
+    },
+    {
+      "id": "wms-service-1763457996641",
+      "name": "IIASA WMS",
+      "url": "https://geoserver.iiasa.ac.at/geoserver/weed/wms",
+      "format": "wms"
     }
   ],
   "sources": [
@@ -211,6 +219,28 @@
     {
       "name": "Norway - Ecosystem Extent - Alpha3",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM22_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM32_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM23_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM33_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "WEED ML habitat mapping workflow in version alpha3 applied on the CU sites in Norway. Habitat map in EUNIS2021 format for the year 2024.",
         "attribution": {
@@ -762,33 +792,43 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM22_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM32_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM23_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_32τNM33_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Greece - Ecosystem Extent - Alpha3",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG20_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG22_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG31_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG21_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG30_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG32_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "WEED ML habitat mapping workflow in version alpha3 applied on the CU sites in Greece. Habitat map in EUNIS2021 format for the year 2024.",
         "attribution": {
@@ -1340,43 +1380,33 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG20_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG22_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG31_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG21_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG30_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_34σEG32_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Czech Republic - Ecosystem Extent - Alpha3",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR21_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR31_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR22_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR32_v100_2024-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "WEED ML habitat mapping workflow in version alpha3 applied on the CU sites in Czech Republic. Habitat map in EUNIS2021 format for the year 2024.",
         "attribution": {
@@ -1928,29 +1958,189 @@
             "blendControls": false
           }
         }
+      }
+    },
+    {
+      "name": "National Canopy Layer",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/obsgession-waw4-1-b2rm8flkntfkatia3zzm7av6pzt3dsmrd2uc87dbvhnml/nationaldata/Dutch/AHN_CHM_10m_clip_NL_EPSG3857.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1365,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1365,
+            "steps": 50,
+            "name": "summer",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "ECDC - National Data of the Netherlands",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "National Soil Map",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": -10,
+        "max": 112,
+        "colormaps": [
+          {
+            "min": -10,
+            "max": 112,
+            "steps": 50,
+            "name": "earth",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "ECDC - National Data of the Netherlands",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
       },
       "data": [
         {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR21_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR31_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR22_v100_2024-01-01Z.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/extent-waw4-1-vjcspo90mb376jvuglgp954vj4jr4p8dog5sczslvs5i7ru1o/inference-alpha3-prepared-v100-extent/Alpha3_EUNIS-extent-map_year2024_33σVR32_v100_2024-01-01Z.tif",
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/obsgession-waw4-1-b2rm8flkntfkatia3zzm7av6pzt3dsmrd2uc87dbvhnml/nationaldata/Dutch/Bodem250_NL2_8bu_Reclass_10m_V2_EPSG3857.tif",
           "format": "cog",
           "zIndex": 50
         }
       ]
+    },
+    {
+      "name": "National Land Use Map",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 343,
+            "steps": 50,
+            "name": "hsv",
+            "reverse": false
+          }
+        ],
+        "min": 0,
+        "max": 343
+      },
+      "layout": {
+        "interfaceGroup": "ECDC - National Data of the Netherlands",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/obsgession-waw4-1-b2rm8flkntfkatia3zzm7av6pzt3dsmrd2uc87dbvhnml/nationaldata/Dutch/LGN2024_v7_5m_clip_RD_EPSG3857.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "Global Data Points",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.iiasa.ac.at/geoserver/weed/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Weed_ItemEntities",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "RDM",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
     }
   ]
 }
