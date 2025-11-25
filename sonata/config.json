@@ -1,0 +1,202 @@
+{
+  "version": "1.0.0",
+  "layout": {
+    "navigation": {
+      "logo": "https://sonata-nbs.com/wp-content/uploads/2024/11/sonata-logo-001.png",
+      "title": "Geospatial Explorer - SONATA"
+    },
+    "theme": {
+      "primary-color": "#0a4737",
+      "secondary-color": "#d3d9d3"
+    }
+  },
+  "interfaceGroups": [
+    "Interface group 1",
+    "Interface group 2",
+    "Interface group 3"
+  ],
+  "exclusivitySets": [],
+  "mapConstraints": {
+    "zoom": 0,
+    "center": [
+      0,
+      0
+    ],
+    "projection": "EPSG:3857"
+  },
+  "services": [],
+  "sources": [
+    {
+      "name": "Open StreetMap",
+      "isActive": false,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Map data (c) OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": false,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Sentinel",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
+      "meta": {
+        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "attribution": {
+          "text": "Copernicus Sentinel-2",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Blue Marble",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": true,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        }
+      }
+    },
+    {
+      "name": "Stadia Alidade Satellite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "DEM",
+      "isActive": false,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "COP_DEM_GLO_30M_COG"
+        }
+      ],
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Copernicus"
+        },
+        "categories": []
+      }
+    }
+  ]
+}
