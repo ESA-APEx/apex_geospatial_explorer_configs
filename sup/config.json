@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "Geospatial Explorer - Sentinel User Preparation"
+    }
+  },
+  "interfaceGroups": [
+    "Interface group 1",
+    "Interface group 2",
+    "Interface group 3"
+  ],
+  "exclusivitySets": [],
+  "mapConstraints": {
+    "zoom": 0,
+    "center": [
+      0,
+      0
+    ],
+    "projection": "EPSG:3857"
+  },
+  "services": [
+    {
+      "id": "stac-service-1764148601393",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Open StreetMap",
+      "isActive": true,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Map data (c) OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    }
+  ]
+}
