@@ -7,9 +7,9 @@
     }
   },
   "interfaceGroups": [
-    "Interface group 1",
-    "Interface group 2",
-    "Interface group 3"
+    "CHILL-Y",
+    "SUP prj2",
+    "SUP prj3"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -31,8 +31,7 @@
   "sources": [
     {
       "name": "Open StreetMap",
-      "isActive": true,
-      "isBaseLayer": true,
+      "isActive": false,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -40,12 +39,331 @@
           "zIndex": 10
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
         "description": "",
         "attribution": {
           "text": "Map data (c) OpenStreetMap",
           "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "CHIME representative dataset (CHILL-Y)",
+      "isActive": false,
+      "timeframe": "Days",
+      "meta": {
+        "description": "Collection of simulated CHIME reflectance data generated in the CHILL-Y project. Data are simulated by radiative transfer modelling with Sentinel-2 data as input, resampled to 30m, cloud and cloud shadows are masked. Outputs are provided as Cloud-Optimized GeoTIFFs. https://www.chill-y.space/ Data created by Vista GmbH - Remote Sensing in Geosciences https://www.vista-geo.de/ Version 1.0",
+        "attribution": {
+          "text": "CHILL-Y"
+        },
+        "colormaps": [
+          {
+            "min": 0.5,
+            "max": 25,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ],
+        "min": 0.5,
+        "max": 25
+      },
+      "layout": {
+        "interfaceGroup": "CHILL-Y",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/11/26/CHILL-Y_CHIME_RDS_VISTA_32UPC_241126/CHILL-Y_CHIME_RDS_VISTA_32UPC_241126.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/10/25/CHILL-Y_CHIME_RDS_VISTA_32UPC_241025/CHILL-Y_CHIME_RDS_VISTA_32UPC_241025.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/10/12/CHILL-Y_CHIME_RDS_VISTA_32UPC_241012/CHILL-Y_CHIME_RDS_VISTA_32UPC_241012.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/09/30/CHILL-Y_CHIME_RDS_VISTA_32UPC_240930/CHILL-Y_CHIME_RDS_VISTA_32UPC_240930.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/09/22/CHILL-Y_CHIME_RDS_VISTA_32UPC_240922/CHILL-Y_CHIME_RDS_VISTA_32UPC_240922.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/09/12/CHILL-Y_CHIME_RDS_VISTA_32UPC_240912/CHILL-Y_CHIME_RDS_VISTA_32UPC_240912.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/09/02/CHILL-Y_CHIME_RDS_VISTA_32UPC_240902/CHILL-Y_CHIME_RDS_VISTA_32UPC_240902.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/08/21/CHILL-Y_CHIME_RDS_VISTA_32UPC_240821/CHILL-Y_CHIME_RDS_VISTA_32UPC_240821.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/08/11/CHILL-Y_CHIME_RDS_VISTA_32UPC_240811/CHILL-Y_CHIME_RDS_VISTA_32UPC_240811.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/07/29/CHILL-Y_CHIME_RDS_VISTA_32UPC_240729/CHILL-Y_CHIME_RDS_VISTA_32UPC_240729.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/07/19/CHILL-Y_CHIME_RDS_VISTA_32UPC_240719/CHILL-Y_CHIME_RDS_VISTA_32UPC_240719.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/07/07/CHILL-Y_CHIME_RDS_VISTA_32UPC_240707/CHILL-Y_CHIME_RDS_VISTA_32UPC_240707.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/06/27/CHILL-Y_CHIME_RDS_VISTA_32UPC_240627/CHILL-Y_CHIME_RDS_VISTA_32UPC_240627.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/06/12/CHILL-Y_CHIME_RDS_VISTA_32UPC_240612/CHILL-Y_CHIME_RDS_VISTA_32UPC_240612.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/05/23/CHILL-Y_CHIME_RDS_VISTA_32UPC_240523/CHILL-Y_CHIME_RDS_VISTA_32UPC_240523.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/05/13/CHILL-Y_CHIME_RDS_VISTA_32UPC_240513/CHILL-Y_CHIME_RDS_VISTA_32UPC_240513.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/04/30/CHILL-Y_CHIME_RDS_VISTA_32UPC_240430/CHILL-Y_CHIME_RDS_VISTA_32UPC_240430.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/04/08/CHILL-Y_CHIME_RDS_VISTA_32UPC_240408/CHILL-Y_CHIME_RDS_VISTA_32UPC_240408.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/03/31/CHILL-Y_CHIME_RDS_VISTA_32UPC_240331/CHILL-Y_CHIME_RDS_VISTA_32UPC_240331.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://sg-chill-y-generic/CHILL-Y_CHIME_RDS_VISTA_32UPC_240319_TEST_COG.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/03/19/CHILL-Y_CHIME_RDS_VISTA_32UPC_240319_TEST5_COG/CHILL-Y_CHIME_RDS_VISTA_32UPC_240319_TEST5_COG.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/03/19/CHILL-Y_CHIME_RDS_VISTA_32UPC_240319_TEST4_COG.TIF/CHILL-Y_CHIME_RDS_VISTA_32UPC_240319_TEST4_COG.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/sg-chill-y-generic/CHILL-Y_CHIME_RDS_VISTA_32UPC_240319_TEST3_COG.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://sg-chill-y-generic/CHILL-Y_CHIME_RDS_VISTA_32UPC_240319_TEST2_COG.TIF",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2024/03/19/CHILL-Y_CHIME_RDS_VISTA_32UPC_240319/CHILL-Y_CHIME_RDS_VISTA_32UPC_240319.TIF",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Sentinel",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
+      "meta": {
+        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "attribution": {
+          "text": "Copernicus Sentinel-2",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Blue Marble",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Satellite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "DEM",
+      "isActive": false,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "COP_DEM_GLO_30M_COG"
+        }
+      ],
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Copernicus"
         },
         "categories": []
       }
