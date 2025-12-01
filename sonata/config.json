@@ -56,9 +56,99 @@
         },
         "categories": [
           {
-            "color": "#000000",
-            "label": "Test",
-            "value": 1
+            "value": 50500,
+            "label": "Helophyte beds",
+            "color": "#2e7d32"
+          },
+          {
+            "value": 60100,
+            "label": "Dry grasslands",
+            "color": "#f9a825"
+          },
+          {
+            "value": 60200,
+            "label": "Mesic grasslands",
+            "color": "#aed581"
+          },
+          {
+            "value": 60300,
+            "label": "Seasonally wet and wet grasslands",
+            "color": "#4db6ac"
+          },
+          {
+            "value": 60500,
+            "label": "Forest fringes and clearings and tall forb stands",
+            "color": "#c5e1a5"
+          },
+          {
+            "value": 60600,
+            "label": "Inland salt steppes and salt marshes",
+            "color": "#c0ca33"
+          },
+          {
+            "value": 70300,
+            "label": "Temperate and mediterranean-montane scrub",
+            "color": "#8d6e63"
+          },
+          {
+            "value": 70900,
+            "label": "Riverine and fen scrubs",
+            "color": "#558b2f"
+          },
+          {
+            "value": 80100,
+            "label": "Deciduous broadleaved forest",
+            "color": "#4e342e"
+          },
+          {
+            "value": 80300,
+            "label": "Coniferous forest",
+            "color": "#2e7d32"
+          },
+          {
+            "value": 80400,
+            "label": "Lines of trees or small anthropogenic forests or recently felled forest or early-stage forest and coppice",
+            "color": "#c8e6c9"
+          },
+          {
+            "value": 90500,
+            "label": "Miscellaneous inland habitats usually with very sparse or no vegetation",
+            "color": "#9e9e9e"
+          },
+          {
+            "value": 100300,
+            "label": "Artificial grasslands and herb dominated habitats",
+            "color": "#ffeb3b"
+          },
+          {
+            "value": 100600,
+            "label": "Tree dominated man-made habitats",
+            "color": "#8bc34a"
+          },
+          {
+            "value": 110100,
+            "label": "Surface standing waters",
+            "color": "#0288d1"
+          },
+          {
+            "value": 110200,
+            "label": "Surface running waters",
+            "color": "#039be5"
+          },
+          {
+            "value": 110300,
+            "label": "Littoral zone of inland surface waterbodies",
+            "color": "#0277bd"
+          },
+          {
+            "value": 120100,
+            "label": "Buildings of cities towns and villages",
+            "color": "#757575"
+          },
+          {
+            "value": 120400,
+            "label": "Transport networks and other constructed hard-surfaced areas",
+            "color": "#d32f2f"
           }
         ]
       },
@@ -97,16 +187,181 @@
         "attribution": {
           "text": ""
         },
-        "categories": [],
-        "min": 0,
-        "max": 120400,
-        "colormaps": [
+        "categories": [
           {
-            "min": 0,
-            "max": 120400,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
+            "color": "#2e7d32",
+            "label": "Tall-helophyte bed",
+            "value": 50501
+          },
+          {
+            "color": "#4db6ac",
+            "label": "Inland saline or brackish helophyte bed",
+            "value": 50504
+          },
+          {
+            "color": "#f9a825",
+            "label": "Pannonian and Pontic sandy steppe",
+            "value": 60101
+          },
+          {
+            "color": "#fdd835",
+            "label": "Semi-dry perennial calcareous grassland (meadow steppe)",
+            "value": 60110
+          },
+          {
+            "color": "#ffb74d",
+            "label": "Continental dry grassland (true steppe)",
+            "value": 60111
+          },
+          {
+            "color": "#81c784",
+            "label": "Mesic permanent pasture of lowlands and mountains",
+            "value": 60201
+          },
+          {
+            "color": "#aed581",
+            "label": "Low and medium altitude hay meadow",
+            "value": 60202
+          },
+          {
+            "color": "#4db6ac",
+            "label": "Moist or wet mesotrophic to eutrophic hay meadow",
+            "value": 60305
+          },
+          {
+            "color": "#26a69a",
+            "label": "Moist or wet mesotrophic to eutrophic pasture",
+            "value": 60306
+          },
+          {
+            "color": "#c5e1a5",
+            "label": "Forest fringes and clearings and tall forb stands",
+            "value": 60500
+          },
+          {
+            "color": "#c0ca33",
+            "label": "Continental inland salt steppe",
+            "value": 60602
+          },
+          {
+            "color": "#9ccc65",
+            "label": "Continental subsaline alluvial pasture and meadow",
+            "value": 60605
+          },
+          {
+            "color": "#8d6e63",
+            "label": "Temperate and submediterranean thorn scrub",
+            "value": 70305
+          },
+          {
+            "color": "#a1887f",
+            "label": "Low steppic scrub",
+            "value": 70306
+          },
+          {
+            "color": "#558b2f",
+            "label": "Salix fen scrub",
+            "value": 70902
+          },
+          {
+            "color": "#388e3c",
+            "label": "Mediterranean riparian scrub",
+            "value": 70903
+          },
+          {
+            "color": "#2e7d32",
+            "label": "Temperate Salix and Populus riparian forest",
+            "value": 80101
+          },
+          {
+            "color": "#1b5e20",
+            "label": "Temperate hardwood riparian forest",
+            "value": 80103
+          },
+          {
+            "color": "#4e342e",
+            "label": "Fagus forest on non-acid soils",
+            "value": 80107
+          },
+          {
+            "color": "#6d4c41",
+            "label": "Temperate and submediterranean thermophilous deciduous forest",
+            "value": 80109
+          },
+          {
+            "color": "#5d4037",
+            "label": "Carpinus and Quercus mesic deciduous forest",
+            "value": 80114
+          },
+          {
+            "color": "#8d6e63",
+            "label": "Broadleaved deciduous plantation of non site-native trees",
+            "value": 80117
+          },
+          {
+            "color": "#a5d6a7",
+            "label": "Broadleaved deciduous plantation of site-native trees",
+            "value": 80119
+          },
+          {
+            "color": "#2e7d32",
+            "label": "Coniferous plantation of non site-native trees",
+            "value": 80321
+          },
+          {
+            "color": "#c8e6c9",
+            "label": "Coppice and early stage plantations",
+            "value": 80402
+          },
+          {
+            "color": "#a1887f",
+            "label": "Recently felled areas",
+            "value": 80403
+          },
+          {
+            "color": "#9e9e9e",
+            "label": "Miscellaneous inland habitats usually with very sparse or no vegetation",
+            "value": 90500
+          },
+          {
+            "color": "#fbc02d",
+            "label": "Dry perennial anthropogenic herbaceous vegetation",
+            "value": 100308
+          },
+          {
+            "color": "#ffeb3b",
+            "label": "Mesic perennial anthropogenic herbaceous vegetation",
+            "value": 100309
+          },
+          {
+            "color": "#8bc34a",
+            "label": "Broadleaved fruit and nut tree orchards",
+            "value": 100601
+          },
+          {
+            "color": "#0288d1",
+            "label": "Surface standing waters",
+            "value": 110100
+          },
+          {
+            "color": "#039be5",
+            "label": "Surface running waters",
+            "value": 110200
+          },
+          {
+            "color": "#0277bd",
+            "label": "Water-fringing reedbeds and tall helophytes other than canes",
+            "value": 110302
+          },
+          {
+            "color": "#757575",
+            "label": "Buildings of cities towns and villages",
+            "value": 120100
+          },
+          {
+            "color": "#d32f2f",
+            "label": "Transport networks and other constructed hard-surfaced areas",
+            "value": 120400
           }
         ]
       },
@@ -118,7 +373,7 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
