@@ -12,7 +12,7 @@
   },
   "interfaceGroups": [
     "National Data",
-    "openEO Results"
+    "openEO Results - Habitat Maps 2021, version 1"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -27,7 +27,7 @@
   "sources": [
     {
       "name": "Open StreetMap",
-      "isActive": true,
+      "isActive": false,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -47,35 +47,30 @@
       }
     },
     {
-      "name": "L2",
+      "name": "Vojvodina national EUNIS habitat map level 2, year 2021 (version 1, BIOS generated)",
       "isActive": false,
       "meta": {
-        "description": "",
+        "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA)",
         "attribution": {
           "text": ""
         },
-        "categories": [],
-        "min": 0,
-        "max": 120400,
-        "colormaps": [
+        "categories": [
           {
-            "min": 0,
-            "max": 120400,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
+            "color": "#000000",
+            "label": "Test",
+            "value": 1
           }
         ]
       },
       "layout": {
-        "interfaceGroup": "openEO Results",
+        "interfaceGroup": "openEO Results - Habitat Maps 2021, version 1",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -95,10 +90,10 @@
       ]
     },
     {
-      "name": "L3",
+      "name": "Vojvodina national EUNIS habitat map level 3, year 2021 (version 1, BIOS generated)",
       "isActive": false,
       "meta": {
-        "description": "",
+        "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA)",
         "attribution": {
           "text": ""
         },
@@ -116,7 +111,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "openEO Results",
+        "interfaceGroup": "openEO Results - Habitat Maps 2021, version 1",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -573,6 +568,30 @@
           "zIndex": 50
         }
       ]
+    },
+    {
+      "name": "Sentinel",
+      "isActive": true,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Copernicus Sentinel-2",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+        },
+        "categories": []
+      }
     }
   ]
 }
