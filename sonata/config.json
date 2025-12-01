@@ -11,9 +11,8 @@
     }
   },
   "interfaceGroups": [
-    "Interface group 1",
-    "Interface group 2",
-    "Interface group 3"
+    "National Data",
+    "openEO Results"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -29,7 +28,6 @@
     {
       "name": "Open StreetMap",
       "isActive": true,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -37,6 +35,7 @@
           "zIndex": 10
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
         "description": "",
@@ -45,8 +44,535 @@
           "url": "https://www.openstreetmap.org/copyright"
         },
         "categories": []
+      }
+    },
+    {
+      "name": "L2",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 120400,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 120400,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
       },
-      "layout": {}
+      "layout": {
+        "interfaceGroup": "openEO Results",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-probabilities-datacubes/v2/2021/Vojvodina-2021-v1_v100_L2.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "L3",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 120400,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 120400,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "openEO Results",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-probabilities-datacubes/v2/2021/Vojvodina-2021-v1_v100_L3.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "SOC",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 3.77,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 3.77,
+            "steps": 50,
+            "name": "summer",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "National Data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/SOCAtlasSonata.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "BDOD",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 2.6500000953674316,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 2.6500000953674316,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "National Data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/bdodAtlasSonata.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "Clay",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 65,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 65,
+            "steps": 50,
+            "name": "bone",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "National Data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/clayAtlas.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "pH",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 9,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 9,
+            "steps": 50,
+            "name": "salinity",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "National Data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/pHAtlasSonata.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "Sand",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 96.19999694824219,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 96.19999694824219,
+            "steps": 50,
+            "name": "copper",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "National Data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/sandAtlas.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "Silt",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 65,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 65,
+            "steps": 50,
+            "name": "oxygen",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "National Data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/siltAtlas.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "DEM",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": -3,
+        "max": 2603.109375,
+        "colormaps": [
+          {
+            "min": -3,
+            "max": 2603.109375,
+            "steps": 50,
+            "name": "earth",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "National Data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Digital_elevation_model/DEM_Srbija_10m.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "Sinks",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 43,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 43.00605773925781,
+            "steps": 50,
+            "name": "yignbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "National Data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Sinks/sinks.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "Water & Wetness",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 4,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 4,
+            "steps": 50,
+            "name": "freesurface-blue",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "National Data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Water_and_wetland/Water_and_Wetness.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
     }
   ]
 }
