@@ -19,7 +19,8 @@
     "center": [
       10.981258528360314,
       49.848701
-    ]
+    ],
+    "projection": "EPSG:3857"
   },
   "services": [
     {
@@ -99,7 +100,6 @@
     {
       "name": "Open StreetMap",
       "isActive": false,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -107,6 +107,7 @@
           "zIndex": 10
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
         "description": "",
@@ -120,7 +121,6 @@
     {
       "name": "Stadia Alidade Smooth Dark",
       "isActive": true,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
@@ -128,6 +128,7 @@
           "zIndex": 3
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
         "description": "",
@@ -209,7 +210,6 @@
     {
       "name": "Stadia Alidade Smooth Light",
       "isActive": false,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
@@ -217,6 +217,7 @@
           "zIndex": 3
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
         "description": "",
@@ -272,6 +273,88 @@
     {
       "name": "Sentinel 2 vs World Cover 2021",
       "isActive": false,
+      "meta": {
+        "description": "Example of the comparison of two different layers",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [
+          {
+            "label": "Tree cover",
+            "color": "#006400",
+            "value": 10
+          },
+          {
+            "label": "Shrubland",
+            "color": "#FFBB22",
+            "value": 20
+          },
+          {
+            "label": "Grassland",
+            "color": "#FFFF4C",
+            "value": 30
+          },
+          {
+            "label": "Cropland",
+            "color": "#F096FF",
+            "value": 40
+          },
+          {
+            "label": "Built-up",
+            "color": "#FF0000",
+            "value": 50
+          },
+          {
+            "label": "Bare",
+            "color": "#B4B4B4",
+            "value": 60
+          },
+          {
+            "label": "Snow and ice",
+            "color": "#F0F0F0",
+            "value": 70
+          },
+          {
+            "label": "Permanent water bodies",
+            "color": "#0064C8",
+            "value": 80
+          },
+          {
+            "label": "Herbaceous wetland",
+            "color": "#0096A0",
+            "value": 90
+          },
+          {
+            "label": "Mangroves",
+            "color": "#00CF75",
+            "value": 95
+          },
+          {
+            "label": "Moss and lichen",
+            "color": "#FAE6A0",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Comparison",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
       "data": [
         {
           "url": "https://services.terrascope.be/wms/v2",
@@ -290,33 +373,7 @@
           "useTimeParameter": true
         }
       ],
-      "isSwipeLayer": true,
-      "meta": {
-        "description": "Example of the comparison of two different layers",
-        "attribution": {
-          "text": ""
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Comparison",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
+      "isSwipeLayer": true
     },
     {
       "name": "World Cover 2021 with NUTS Statistics",
@@ -762,6 +819,39 @@
     {
       "name": "Topsoil Soil Organic Carbon 2020-22 with NUTS Statistics",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
       "meta": {
         "description": "Demonstrates statistics that are numeric statistics of a continuous variable dataset.",
         "attribution": {
@@ -798,40 +888,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3
-        }
-      ]
+      }
     },
     {
       "name": "Soil Water Index - Daily WMTS",
@@ -1303,48 +1360,6 @@
     {
       "name": "Topsoil Soil Organic Carbon - 2018 to 2022",
       "isActive": false,
-      "timeframe": "Years",
-      "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels with constraint layer from World Cover.  Time series dates indicate the end of the two year period over which the data is measured i.e. 2020 (2018 to 2020), 2021 (2019 to 2021), 2022 (2020 to 2022)",
-        "attribution": {
-          "text": "ESA WorldSoils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 1800,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1800,
-            "steps": 50,
-            "name": "copper",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Layer Constraints",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": true
-          }
-        }
-      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
@@ -1434,26 +1449,27 @@
           "units": "index",
           "bandIndex": 3
         }
-      ]
-    },
-    {
-      "name": "Austria Annual Solar Power Potential",
-      "isActive": false,
+      ],
+      "timeframe": "Years",
       "meta": {
-        "description": "Global horizontal irradiation (kWh/m²/day), annual average. The greater amount of solar irradiation, the more electricity can be generated by a solar cell module. Selecting area with high solar potential contributes significantly to the desired efficiency and economic feasibility of a solar power project.",
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels with constraint layer from World Cover.  Time series dates indicate the end of the two year period over which the data is measured i.e. 2020 (2018 to 2020), 2021 (2019 to 2021), 2022 (2020 to 2022)",
         "attribution": {
-          "text": "ESA GTIF",
-          "url": "https://gtif.esa.int/"
+          "text": "ESA WorldSoils",
+          "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "kw / m 2 / hr",
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
-            "min": 0.1,
-            "max": 5,
+            "min": 0,
+            "max": 1800,
             "steps": 50,
-            "name": "jet",
-            "reverse": false
+            "name": "copper",
+            "reverse": true
           }
         ]
       },
@@ -1470,12 +1486,16 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
+            "temporalControls": true,
             "constraintSlider": true,
-            "blendControls": false
+            "blendControls": true
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Austria Annual Solar Power Potential",
+      "isActive": false,
       "data": [
         {
           "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/v2/SolarPowerPotential_Annual_COG_clipped_3857_fixed.tif",
@@ -1589,7 +1609,44 @@
           ],
           "bandIndex": 7
         }
-      ]
+      ],
+      "meta": {
+        "description": "Global horizontal irradiation (kWh/m²/day), annual average. The greater amount of solar irradiation, the more electricity can be generated by a solar cell module. Selecting area with high solar potential contributes significantly to the desired efficiency and economic feasibility of a solar power project.",
+        "attribution": {
+          "text": "ESA GTIF",
+          "url": "https://gtif.esa.int/"
+        },
+        "categories": [],
+        "units": "kw / m 2 / hr",
+        "colormaps": [
+          {
+            "min": 0.1,
+            "max": 5,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Layer Constraints",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
     }
   ]
 }
