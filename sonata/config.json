@@ -49,6 +49,13 @@
     {
       "name": "Vojvodina national EUNIS habitat map level 2, year 2021 (version 1, BIOS generated)",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-probabilities-datacubes/v2/2021/Vojvodina-2021-v1_v100_L2.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA)",
         "attribution": {
@@ -56,99 +63,99 @@
         },
         "categories": [
           {
-            "value": 50500,
+            "color": "#2e7d32",
             "label": "Helophyte beds",
-            "color": "#2e7d32"
+            "value": 50500
           },
           {
-            "value": 60100,
+            "color": "#f9a825",
             "label": "Dry grasslands",
-            "color": "#f9a825"
+            "value": 60100
           },
           {
-            "value": 60200,
+            "color": "#aed581",
             "label": "Mesic grasslands",
-            "color": "#aed581"
+            "value": 60200
           },
           {
-            "value": 60300,
+            "color": "#4db6ac",
             "label": "Seasonally wet and wet grasslands",
-            "color": "#4db6ac"
+            "value": 60300
           },
           {
-            "value": 60500,
+            "color": "#c5e1a5",
             "label": "Forest fringes and clearings and tall forb stands",
-            "color": "#c5e1a5"
+            "value": 60500
           },
           {
-            "value": 60600,
+            "color": "#c0ca33",
             "label": "Inland salt steppes and salt marshes",
-            "color": "#c0ca33"
+            "value": 60600
           },
           {
-            "value": 70300,
+            "color": "#8d6e63",
             "label": "Temperate and mediterranean-montane scrub",
-            "color": "#8d6e63"
+            "value": 70300
           },
           {
-            "value": 70900,
+            "color": "#558b2f",
             "label": "Riverine and fen scrubs",
-            "color": "#558b2f"
+            "value": 70900
           },
           {
-            "value": 80100,
+            "color": "#4e342e",
             "label": "Deciduous broadleaved forest",
-            "color": "#4e342e"
+            "value": 80100
           },
           {
-            "value": 80300,
+            "color": "#2e7d32",
             "label": "Coniferous forest",
-            "color": "#2e7d32"
+            "value": 80300
           },
           {
-            "value": 80400,
+            "color": "#c8e6c9",
             "label": "Lines of trees or small anthropogenic forests or recently felled forest or early-stage forest and coppice",
-            "color": "#c8e6c9"
+            "value": 80400
           },
           {
-            "value": 90500,
+            "color": "#9e9e9e",
             "label": "Miscellaneous inland habitats usually with very sparse or no vegetation",
-            "color": "#9e9e9e"
+            "value": 90500
           },
           {
-            "value": 100300,
+            "color": "#ffeb3b",
             "label": "Artificial grasslands and herb dominated habitats",
-            "color": "#ffeb3b"
+            "value": 100300
           },
           {
-            "value": 100600,
+            "color": "#8bc34a",
             "label": "Tree dominated man-made habitats",
-            "color": "#8bc34a"
+            "value": 100600
           },
           {
-            "value": 110100,
+            "color": "#0288d1",
             "label": "Surface standing waters",
-            "color": "#0288d1"
+            "value": 110100
           },
           {
-            "value": 110200,
+            "color": "#039be5",
             "label": "Surface running waters",
-            "color": "#039be5"
+            "value": 110200
           },
           {
-            "value": 110300,
+            "color": "#0277bd",
             "label": "Littoral zone of inland surface waterbodies",
-            "color": "#0277bd"
+            "value": 110300
           },
           {
-            "value": 120100,
+            "color": "#757575",
             "label": "Buildings of cities towns and villages",
-            "color": "#757575"
+            "value": 120100
           },
           {
-            "value": 120400,
+            "color": "#d32f2f",
             "label": "Transport networks and other constructed hard-surfaced areas",
-            "color": "#d32f2f"
+            "value": 120400
           }
         ]
       },
@@ -171,17 +178,18 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-probabilities-datacubes/v2/2021/Vojvodina-2021-v1_v100_L2.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      "constraints": []
     },
     {
       "name": "Vojvodina national EUNIS habitat map level 3, year 2021 (version 1, BIOS generated)",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-probabilities-datacubes/v2/2021/Vojvodina-2021-v1_v100_L3.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA)",
         "attribution": {
@@ -383,24 +391,18 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-probabilities-datacubes/v2/2021/Vojvodina-2021-v1_v100_L3.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
-      "name": "SOC",
+      "name": "Soil organic carbon (SOC) [%]",
       "isActive": false,
       "meta": {
-        "description": "",
+        "description": "This layer represents developed raster map of SOC  in Vojvodina by combining Atlas* [1] shp data and literature - average values defined in Soils of Vojvodina [2] *Atlas data represents a set of distribution data from [1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)”. [2] Nejgebauer, V., Živković, B., Tanasijević, Đ., i Miljković, N. (1971). “Pedološka karta Vojvodine razmera 1:50000”. Institut za poljoprivredna istraživanja, Novi Sad.",
         "attribution": {
           "text": ""
         },
         "categories": [],
+        "units": "%",
         "min": 0,
         "max": 3.77,
         "colormaps": [
@@ -427,7 +429,7 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
@@ -438,23 +440,25 @@
           "format": "cog",
           "zIndex": 50
         }
-      ]
+      ],
+      "constraints": []
     },
     {
-      "name": "BDOD",
+      "name": "Bulck density [g cm^-3]",
       "isActive": false,
       "meta": {
-        "description": "",
+        "description": "This layer represents raster data on BD distribution developed by combining Atlas* [1] shp data and literature. \n\n[1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)”.",
         "attribution": {
           "text": ""
         },
         "categories": [],
+        "units": "g cm^-3",
         "min": 0,
-        "max": 2.6500000953674316,
+        "max": 2.7,
         "colormaps": [
           {
             "min": 0,
-            "max": 2.6500000953674316,
+            "max": 2.7,
             "steps": 50,
             "name": "jet",
             "reverse": false
@@ -475,7 +479,7 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
@@ -489,58 +493,10 @@
       ]
     },
     {
-      "name": "Clay",
+      "name": "Soil pH",
       "isActive": false,
       "meta": {
-        "description": "",
-        "attribution": {
-          "text": ""
-        },
-        "categories": [],
-        "min": 0,
-        "max": 65,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 65,
-            "steps": 50,
-            "name": "bone",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "National Data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/clayAtlas.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
-    },
-    {
-      "name": "pH",
-      "isActive": false,
-      "meta": {
-        "description": "",
+        "description": "This layer represents developed raster map of pH distribution in Vojvodina by combinimng Atlas* [1] shp data and literature - and average values defined in Soil of Vojvodina [2].                                                    *Atlas data represents a set of distribution data from [1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)” [2] Nejgebauer, V., Živković, B., Tanasijević, Đ., i Miljković, N. (1971). “Pedološka karta Vojvodine razmera 1:50000”. Institut za poljoprivredna istraživanja, Novi Sad.",
         "attribution": {
           "text": ""
         },
@@ -571,7 +527,7 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
@@ -585,20 +541,70 @@
       ]
     },
     {
-      "name": "Sand",
+      "name": "Clay [%]",
       "isActive": false,
       "meta": {
-        "description": "",
+        "description": "This layer represents derived raster map of clay distribution in Vojvodina from Atlas * [1] shp data.  *Atlas data represents a set of distribution data from  [1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)”.",
         "attribution": {
           "text": ""
         },
         "categories": [],
+        "units": "%",
         "min": 0,
-        "max": 96.19999694824219,
+        "max": 65,
         "colormaps": [
           {
             "min": 0,
-            "max": 96.19999694824219,
+            "max": 65,
+            "steps": 50,
+            "name": "bone",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "National Data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/clayAtlas.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "Sand [%]",
+      "isActive": false,
+      "meta": {
+        "description": "This layer represents derived raster map of sand distribution in Vojvodina from Atlas * [1] shp data. *Atlas data represents a set of distribution data from [1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)”.",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "units": "%",
+        "min": 0,
+        "max": 100,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
             "steps": 50,
             "name": "copper",
             "reverse": false
@@ -619,7 +625,7 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
@@ -633,14 +639,15 @@
       ]
     },
     {
-      "name": "Silt",
+      "name": "Silt [%]",
       "isActive": false,
       "meta": {
-        "description": "",
+        "description": "This layer represents derived raster map of silt distribution in Vojvodina from Atlas * [1] shp data. *Atlas data represents a set of distribution data from  [1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)”.",
         "attribution": {
           "text": ""
         },
         "categories": [],
+        "units": "%",
         "min": 0,
         "max": 65,
         "colormaps": [
@@ -667,7 +674,7 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
@@ -681,20 +688,20 @@
       ]
     },
     {
-      "name": "DEM",
+      "name": "DEM (Copernicus)",
       "isActive": false,
       "meta": {
-        "description": "",
+        "description": "The COPERNICUS Digital Elevation Model (DEM) provides high-resolution elevation data for terrain analysis.  This dataset offers a 10-meter spatial resolution and represents altitude values in meters. It is designed for applications such as hydrological modeling, landscape analysis, and infrastructure planning.",
         "attribution": {
           "text": ""
         },
         "categories": [],
         "min": -3,
-        "max": 2603.109375,
+        "max": 2604,
         "colormaps": [
           {
             "min": -3,
-            "max": 2603.109375,
+            "max": 2604,
             "steps": 50,
             "name": "earth",
             "reverse": false
@@ -715,7 +722,7 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
@@ -729,20 +736,20 @@
       ]
     },
     {
-      "name": "Sinks",
+      "name": "Terrain sinks",
       "isActive": false,
       "meta": {
-        "description": "",
+        "description": "Sinks layer is generated using DEM and Filled DEM and present small depressions and sinks around Vojvodina region.  This dataset offers a 10-meter spatial resolution and represents altitude values in meters. It is designed for applications such as hydrological modeling and landscape analysis.",
         "attribution": {
           "text": ""
         },
         "categories": [],
         "min": 0,
-        "max": 43,
+        "max": 44,
         "colormaps": [
           {
             "min": 0,
-            "max": 43.00605773925781,
+            "max": 44,
             "steps": 50,
             "name": "yignbu",
             "reverse": false
@@ -763,7 +770,7 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
@@ -777,23 +784,38 @@
       ]
     },
     {
-      "name": "Water & Wetness",
+      "name": "Water and Wetness (Copernicus)",
       "isActive": false,
       "meta": {
-        "description": "",
+        "description": "Layer Water and Wetness provides detailed information about the presence and condition of water and wet surfaces across Europe. This product leverages both Sentinel-1 and Sentinel-2 images to enable effective mapping of land cover characteristics such as permanent water bodies, transitional water bodies, and soil wetness. This dataset offers a 10-meter spatial resolution. The product has a wide range of applications, including supporting policy decisions, aiding in climate change research, hydrological modeling, habitat mapping, and urban planning.",
         "attribution": {
           "text": ""
         },
-        "categories": [],
-        "min": 0,
-        "max": 4,
-        "colormaps": [
+        "categories": [
           {
-            "min": 0,
-            "max": 4,
-            "steps": 50,
-            "name": "freesurface-blue",
-            "reverse": false
+            "color": "#A67C52",
+            "label": "Dry",
+            "value": 0
+          },
+          {
+            "color": "#0050A0",
+            "label": "Permanent Water",
+            "value": 1
+          },
+          {
+            "color": "#4DA6FF",
+            "label": "Temporary Water",
+            "value": 2
+          },
+          {
+            "color": "#007F73",
+            "label": "Permanent Wet",
+            "value": 3
+          },
+          {
+            "color": "#5CC9B8",
+            "label": "Temporary Wet",
+            "value": 4
           }
         ]
       },
@@ -805,13 +827,13 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
@@ -822,12 +844,12 @@
           "format": "cog",
           "zIndex": 50
         }
-      ]
+      ],
+      "constraints": []
     },
     {
       "name": "Sentinel",
       "isActive": true,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://services.terrascope.be/wms/v2",
@@ -837,6 +859,7 @@
           "serviceId": "wms-service-1749555952736"
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
       "meta": {
