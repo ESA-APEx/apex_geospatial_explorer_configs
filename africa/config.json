@@ -3,27 +3,34 @@
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
-      "title": "ESA Africa APEx"
+      "title": "ESA - Africa "
     }
   },
   "interfaceGroups": [
-    "Interface group 1"
+    "LUISA",
+    "RAMONA"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
-    "zoom": 0,
+    "zoom": 4,
     "center": [
-      0,
-      0
+      21.942834,
+      10.84831264911648
     ],
     "projection": "EPSG:3857"
   },
-  "services": [],
+  "services": [
+    {
+      "id": "stac-service-1771318978481",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    }
+  ],
   "sources": [
     {
       "name": "Open StreetMap",
-      "isActive": false,
-      "isBaseLayer": true,
+      "isActive": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -31,6 +38,7 @@
           "zIndex": 10
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
         "description": "",
@@ -40,6 +48,247 @@
         },
         "categories": []
       }
+    },
+    {
+      "name": "Human Appropriation of Net Primary Productivity - Land Use Change",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2019/01/01/openEO_2019-01-01Z/openEO_2019-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2018/01/01/openEO_2018-01-01Z/openEO_2018-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2017/01/01/openEO_2017-01-01Z/openEO_2017-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1483228800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2016/01/01/openEO_2016-01-01Z/openEO_2016-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1451606400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2015/01/01/openEO_2015-01-01Z/openEO_2015-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1420070400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2014/01/01/openEO_2014-01-01Z/openEO_2014-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1388534400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2013/01/01/openEO_2013-01-01Z/openEO_2013-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1356998400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2012/01/01/openEO_2012-01-01Z/openEO_2012-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1325376000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2011/01/01/openEO_2011-01-01Z/openEO_2011-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1293840000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2010/01/01/openEO_2010-01-01Z/openEO_2010-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1262304000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2009/01/01/openEO_2009-01-01Z/openEO_2009-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1230768000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2008/01/01/openEO_2008-01-01Z/openEO_2008-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1199145600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2007/01/01/openEO_2007-01-01Z/openEO_2007-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1167609600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2006/01/01/openEO_2006-01-01Z/openEO_2006-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1136073600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2005/01/01/openEO_2005-01-01Z/openEO_2005-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1104537600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2004/01/01/openEO_2004-01-01Z/openEO_2004-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1072915200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2003/01/01/openEO_2003-01-01Z/openEO_2003-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1041379200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2002/01/01/openEO_2002-01-01Z/openEO_2002-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1009843200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2001/01/01/openEO_2001-01-01Z/openEO_2001-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            978307200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_LUISA_HANPP_LUC/2000/01/01/openEO_2000-01-01Z/openEO_2000-01-01Z.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            946684800
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Contains HANPP_LUC products at 1km resolution for the African continent from 2000-2020.",
+        "attribution": {
+          "text": "ESA LUISA",
+          "url": "https://eo4africa-luisa.org/"
+        },
+        "categories": [],
+        "units": "gC/sqm/year",
+        "colormaps": [
+          {
+            "min": -500,
+            "max": 1000,
+            "steps": 50,
+            "name": "phase",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "LUISA",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Rangeland Maximum Extent",
+      "isActive": false,
+      "meta": {
+        "description": "This layer defines the observed long-term maximum extent of rangelands in Africa. It is calculated at 1km resolution using the maximum NDVI reached between 1999 and 2019 (based on SPOT/VEGETATION and PROBA-V NDVI from Copernicus). This long observation period is needed as dry areas may not receive rainfall every year and therefore may not feature detectable vegetation activity over the RAMONA 18-month target period. Considering the distribution and pattern of maximum NDVI values across Africa we defined rangeland extent as areas where the maximum long-term NDVI was between 0.15 and 0.9. These cut-offs were chosen to remove non-vegetated land (very low NDVI) and areas with highly productive (mostly closed canopy) forests (very high NDVI). N.B. For the final map we applied a 3x3 cell moving window (9 km2) to remove isolated cells by taking the mode of the window.",
+        "attribution": {
+          "text": "RAMONA",
+          "url": "https://www.ramona.earth/"
+        }
+      },
+      "layout": {
+        "interfaceGroup": "RAMONA",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoapi-raster.kindstone-c09394a7.westeurope.azurecontainerapps.io/mosaic/5954a9e120f7c5d376e1eeda6068dc15/tiles/WebMercatorQuad/{z}/{x}/{y}.png?assets=rangeland-max-extent&nodata=255&exitwhenfull=true&asset_as_band=true&datetime_range=2022-04-09T00:00:00Z,2022-12-31T00:00:00Z&colormap=%7B%221%22%3A%22%234A8B55%22%7D",
+          "format": "xyz",
+          "zIndex": 50
+        }
+      ]
     }
   ]
 }
