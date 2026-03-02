@@ -1697,5 +1697,10 @@
       ]
     }
   ],
-  "workflows": []
+  "workflows": [
+    {
+      "serviceId": "eurac_pv_farm_detection",
+      "serviceProvider": "eurac"
+    }
+  ]
 }
