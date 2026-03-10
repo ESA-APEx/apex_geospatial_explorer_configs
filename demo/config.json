@@ -1700,7 +1700,21 @@
   "workflows": [
     {
       "serviceId": "eurac_pv_farm_detection",
-      "serviceProvider": "eurac"
+      "serviceProvider": "eurac",
+      "meta": {
+        "description": "PV farm detection workflow",
+        "attribution": {
+          "text": "Eurac Research",
+          "url": "https://www.eurac.edu/en/research/technology-transfer-and-innovation/eurac-innovations"
+        },
+        "categories": [
+          {
+            "label": "PV Detection",
+            "color": "#ff7f00",
+            "value": 1
+          }
+        ]
+      }
     }
   ]
 }
