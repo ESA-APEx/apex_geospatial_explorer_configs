@@ -1715,6 +1715,17 @@
           }
         ]
       }
+    },
+    {
+      "serviceId": "gep_ost",
+      "serviceProvider": "terradue",
+      "meta": {
+        "description": "OpenSAR Toolkit",
+        "attribution": {
+          "text": "Terradue GEP",
+          "url": "https://geohazards-tep.eu/#!"
+        }
+      }
     }
   ]
 }
