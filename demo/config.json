@@ -1717,6 +1717,44 @@
       }
     },
     {
+      "serviceId": "bais2",
+      "serviceProvider": "developmentseed"
+    },
+    {
+      "serviceId": "efast",
+      "serviceProvider": "dhi"
+    },
+    {
+      "serviceId": "parcel_delineation",
+      "serviceProvider": "vito"
+    },
+    {
+      "serviceId": "sentinel1_soil_moisture",
+      "serviceProvider": "vito",
+      "meta": {
+        "description": "Soil Moisture from Sentinel-1 GRD data.",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 2,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 2,
+            "steps": 50,
+            "name": "bathymetry",
+            "reverse": false
+          }
+        ]
+      }
+    },
+    {
+      "serviceId": "wind_turbine_detection",
+      "serviceProvider": "dhi"
+    },
+    {
       "serviceId": "gep_ost",
       "serviceProvider": "terradue",
       "meta": {
