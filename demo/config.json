@@ -1710,7 +1710,7 @@
         "categories": [
           {
             "label": "PV Detection",
-            "color": "#ff7f00",
+            "color": "#FFDF22",
             "value": 1
           }
         ]
@@ -1718,7 +1718,25 @@
     },
     {
       "serviceId": "bais2",
-      "serviceProvider": "developmentseed"
+      "serviceProvider": "developmentseed",
+      "meta": {
+        "description": "Burnt Area Index from Sentinel-2 imagery.",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 2,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 255,
+            "steps": 50,
+            "name": "inferno",
+            "reverse": false
+          }
+        ]
+      }
     },
     {
       "serviceId": "efast",
@@ -1726,7 +1744,25 @@
     },
     {
       "serviceId": "parcel_delineation",
-      "serviceProvider": "vito"
+      "serviceProvider": "vito",
+      "meta": {
+        "description": "Parcel delineation workflow",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 5000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 5000,
+            "steps": 50,
+            "name": "viridis",
+            "reverse": false
+          }
+        ]
+      }
     },
     {
       "serviceId": "sentinel1_soil_moisture",
@@ -1751,18 +1787,25 @@
       }
     },
     {
-      "serviceId": "wind_turbine_detection",
-      "serviceProvider": "dhi"
-    },
-    {
-      "serviceId": "gep_ost",
-      "serviceProvider": "terradue",
+      "serviceId": "biopar",
+      "serviceProvider": "vito",
       "meta": {
-        "description": "OpenSAR Toolkit",
+        "description": "Biophysical parameters from Sentinel-2 data.",
         "attribution": {
-          "text": "Terradue GEP",
-          "url": "https://geohazards-tep.eu/#!"
-        }
+          "text": ""
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 50,
+            "name": "summer",
+            "reverse": false
+          }
+        ]
       }
     }
   ]
