@@ -6,8 +6,8 @@
       "title": "APEx - Demo Geospatial Explorer"
     },
     "theme": {
-      "primary-color": "#14616e",
-      "secondary-color": "#00323a"
+      "primary-color": "#00323a",
+      "secondary-color": "#14616e"
     }
   },
   "interfaceGroups": [
