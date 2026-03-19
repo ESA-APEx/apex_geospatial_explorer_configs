@@ -1807,6 +1807,33 @@
           }
         ]
       }
+    },
+    {
+      "serviceId": "wind_turbine_detection",
+      "serviceProvider": "dhi",
+      "format": "geojson",
+      "meta": {
+        "description": "Windmill Detection workflow",
+        "attribution": {
+          "text": "",
+        },
+        "categories": [
+          {
+            "label": "Windmill Detection",
+            "color": "#6daaee",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "serviceId": "gep_api_ost",
+      "serviceProvider": "terradue",
+      "serviceDetails": {
+        "endpoint": "https://processing.geohazards-tep.eu",
+        "namespace": "44454d3235313539",
+        "application": "opensartoolkit-v2-1-7"
+      }, 
     }
   ]
 }
