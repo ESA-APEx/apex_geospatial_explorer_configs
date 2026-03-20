@@ -1834,6 +1834,28 @@
         "namespace": "44454d3235313539",
         "application": "opensartoolkit-v2-1-7"
       } 
+    },
+    {
+      "serviceId": "UHI_per_pixel",
+      "serviceProvider": "compass_informatics",
+      "meta": {
+        "description": "Urban Heat Island",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "min": -20,
+        "max": 25,
+        "colormaps": [
+          {
+            "min": -20,
+            "max": 25,
+            "steps": 50,
+            "name": "hot",
+            "reverse": true
+          }
+        ]
+      }
     }
   ]
 }
