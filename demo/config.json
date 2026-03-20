@@ -1740,7 +1740,118 @@
     },
     {
       "serviceId": "efast",
-      "serviceProvider": "dhi"
+      "serviceProvider": "dhi",
+      "meta": {
+        "description": "EFAST",
+        "attribution": {
+          "text": ""
+        },
+      },
+      "data": {
+        "format": "cog",
+        "zIndex": 100,
+        "style": {
+          "variables": {
+            "rBand": 1,
+            "gBand": 2,
+            "bBand": 3,
+            "rMin": 0.050531,
+            "rMax": 0.25338,
+            "gMin": 0.0647754,
+            "gMax": 0.284733,
+            "bMin": 0.0553662,
+            "bMax": 0.292961
+          },
+          "color": [
+            "array",
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "band",
+                [
+                  "var",
+                  "rBand"
+                ]
+              ],
+              [
+                "var",
+                "rMin"
+              ],
+              0,
+              [
+                "var",
+                "rMax"
+              ],
+              1
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "band",
+                [
+                  "var",
+                  "gBand"
+                ]
+              ],
+              [
+                "var",
+                "gMin"
+              ],
+              0,
+              [
+                "var",
+                "gMax"
+              ],
+              1
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "band",
+                [
+                  "var",
+                  "bBand"
+                ]
+              ],
+              [
+                "var",
+                "bMin"
+              ],
+              0,
+              [
+                "var",
+                "bMax"
+              ],
+              1
+            ],
+            [
+              "case",
+              [
+                "==",
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                0
+              ],
+              0,
+              1
+            ]
+          ]
+        }
+      }
     },
     {
       "serviceId": "parcel_delineation",
@@ -1824,6 +1935,15 @@
             "value": 1
           }
         ]
+      },
+      "data": {
+        "format": "geojson",
+        "zIndex": 50,
+        "style": {
+          "stroke-color": "yellow",
+          "stroke-width": 1.5,
+          "fill-color": "orange"
+        }
       }
     },
     {
