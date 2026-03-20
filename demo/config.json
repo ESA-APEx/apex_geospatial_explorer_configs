@@ -1745,7 +1745,7 @@
         "description": "EFAST",
         "attribution": {
           "text": ""
-        },
+        }
       },
       "data": {
         "format": "cog",
