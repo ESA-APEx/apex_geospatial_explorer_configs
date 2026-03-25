@@ -10,81 +10,81 @@
   "exclusivitySets": [
     "labels"
   ],
-  "services": [
-    {
-      "id": "wms-service-1749555952736",
-      "name": "VITO Terrascope",
-      "url": "https://services.terrascope.be/wms/v2",
-      "format": "wms"
-    },
-    {
-      "id": "wms-service-1749572624524",
-      "name": "Copernicus Urban Atlas",
-      "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-      "format": "wms"
-    },
-    {
-      "id": "wms-service-1750143419665",
-      "name": "Brockmann Xcube",
-      "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
-      "format": "wms"
-    },
-    {
-      "id": "wmts-service-1750331396152",
-      "name": "Terrascope WMTS",
-      "url": "https://globalland.vito.be/wmts",
-      "format": "wmts"
-    },
-    {
-      "id": "wms-service-1750351088731",
-      "name": "EOX BaseMap Service",
-      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
-      "format": "wms"
-    },
-    {
-      "id": "s3-service-1750499655684",
-      "name": "Sparkgeo ESA Apex S3 bucket",
-      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
-      "format": "cog"
-    },
-    {
-      "id": "wms-service-1758122835061",
-      "name": "Copernicus N2K 2018",
-      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
-      "format": "wms"
-    },
-    {
-      "id": "wms-service-1758122891131",
-      "name": "Copernicus 2012 N2K",
-      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
-      "format": "wms"
-    },
-    {
-      "id": "wms-service-1758122986156",
-      "name": "Copernicus N2K 2006",
-      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
-      "format": "wms"
-    },
-    {
-      "id": "stac-service-1758796621711",
-      "name": "Project Results Repository",
-      "url": "https://eoresults.esa.int/stac",
-      "format": "stac"
-    },
-    {
-      "id": "stac-service-1758815789729",
-      "name": "VITO STAC catalogue",
-      "url": "https://stac.openeo.vito.be/",
-      "format": "stac"
-    },
-    {
-      "id": "wms-service-1758879238525",
-      "name": "CLMS WMS Server",
-      "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-      "format": "wms"
-    }
-  ],
-  "sources": [
+"services": [
+  {
+    "id": "stac-service-1758796621711",
+    "name": "ESA Project Results Repository",
+    "url": "https://eoresults.esa.int/stac",
+    "format": "stac"
+  },
+  {
+    "id": "wms-service-1750143419665",
+    "name": "Brockmann Xcube",
+    "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+    "format": "wms"
+  },
+  {
+    "id": "wms-service-1758879238525",
+    "name": "CLMS WMS Server",
+    "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+    "format": "wms"
+  },
+  {
+    "id": "wms-service-1758122891131",
+    "name": "Copernicus NDK 2012",
+    "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+    "format": "wms"
+  },
+  {
+    "id": "wms-service-1758122986156",
+    "name": "Copernicus N2K 2006",
+    "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+    "format": "wms"
+  },
+  {
+    "id": "wms-service-1758122835061",
+    "name": "Copernicus N2K 2018",
+    "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+    "format": "wms"
+  },
+  {
+    "id": "wms-service-1749572624524",
+    "name": "Copernicus Urban Atlas",
+    "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+    "format": "wms"
+  },
+  {
+    "id": "wms-service-1750351088731",
+    "name": "DLR EOC BaseMap Service",
+    "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+    "format": "wms"
+  },
+  {
+    "id": "s3-service-1750499655684",
+    "name": "Sparkgeo ESA Apex S3 bucket",
+    "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+    "format": "S3 bucket"
+  },
+  {
+    "id": "wmts-service-1750331396152",
+    "name": "Terrascope WMTS",
+    "url": "https://globalland.vito.be/wmts",
+    "format": "wmts"
+  },
+  {
+    "id": "stac-service-1758815789729",
+    "name": "VITO STAC catalogue",
+    "url": "https://stac.openeo.vito.be/",
+    "format": "stac"
+  },
+  {
+    "id": "wms-service-1749555952736",
+    "name": "VITO Terrascope",
+    "url": "https://services.terrascope.be/wms/v2",
+    "format": "wms"
+  }
+],
+"sources": [
     {
       "name": "Stadia Alidade Smooth Dark",
       "isActive": true,
