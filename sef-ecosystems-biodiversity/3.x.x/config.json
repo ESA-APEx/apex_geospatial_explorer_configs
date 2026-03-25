@@ -1,0 +1,3910 @@
+{
+  "version": "3.2.2-6",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "SEF Demo - Ecosystems and Biodiversity"
+    },
+    "theme": {
+      "primary-color": "#005c25",
+      "secondary-color": "#00752f",
+      "background-color": "#caecd8"
+    }
+  },
+  "interfaceGroups": [
+    "European Ecosystem Monitoring",
+    "Global Ecosystem Monitoring",
+    "Ecosystem Accounting",
+    "Peatland Monitoring",
+    "Land Degradation Neutrality",
+    "Urban Ecosystems",
+    "Coastal Ecosystems",
+    "Physical parameters"
+  ],
+  "exclusivitySets": [],
+  "mapConstraints": {
+    "zoom": 4,
+    "center": [
+      12,
+      54
+    ],
+    "projection": "EPSG:3857"
+  },
+  "services": [
+    {
+      "id": "wms-service-1749555952736",
+      "name": "VITO Terrascope",
+      "url": "https://services.terrascope.be/wms/v2",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1749572624524",
+      "name": "Copernicus Urban Atlas",
+      "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1750143419665",
+      "name": "Brockmann Xcube",
+      "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wmts-service-1750331396152",
+      "name": "Terrascope WMTS",
+      "url": "https://globalland.vito.be/wmts",
+      "format": "wmts"
+    },
+    {
+      "id": "wms-service-1750351088731",
+      "name": "EOX BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "s3-service-1750499655684",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    },
+    {
+      "id": "wms-service-1758122835061",
+      "name": "Copernicus N2K 2018",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122891131",
+      "name": "Copernicus 2012 N2K",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122986156",
+      "name": "Copernicus N2K 2006",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "stac-service-1758796621711",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    },
+    {
+      "id": "stac-service-1758815789729",
+      "name": "VITO STAC catalogue",
+      "url": "https://stac.openeo.vito.be/",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1758879238525",
+      "name": "CLMS WMS Server",
+      "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+      "format": "wms"
+    },
+    {
+      "id": "s3-service-1760375011947",
+      "name": "AWS",
+      "url": "https://copernicus-dem-90m-stac.s3.amazonaws.com/",
+      "format": "cog"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Land Cover (2021)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WORLDCOVER_2021_MAP"
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "timestamps": [
+            1640908800
+          ]
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1,
+          "timestamps": [
+            1640908800
+          ]
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2,
+          "timestamps": [
+            1640908800
+          ]
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3,
+          "timestamps": [
+            1640908800
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/europe_aggr-orgc_00-020_mean_100_202003-202210-esa_worldcover_2021.tif",
+          "format": "cog",
+          "label": "Land Cover Type",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Tree Cover",
+              "value": 10
+            },
+            {
+              "label": "Shrubland",
+              "value": 20
+            },
+            {
+              "label": "Grassland",
+              "value": 30
+            },
+            {
+              "label": "Cropland",
+              "value": 40
+            },
+            {
+              "label": "Built-up",
+              "value": 50
+            },
+            {
+              "label": "Bare",
+              "value": 60
+            },
+            {
+              "label": "Snow and Ice",
+              "value": 70
+            },
+            {
+              "label": "Permanent Water Bodies",
+              "value": 80
+            },
+            {
+              "label": "Herbaceous Wetland",
+              "value": 90
+            },
+            {
+              "label": "Moss and Lichen",
+              "value": 100
+            }
+          ],
+          "bandIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Land cover map for 2021 with statistics by NUTS.  Click on the \"Statistics\" tab and then select a geographic area of interest.",
+        "attribution": {
+          "text": "World Cover Project",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Pan-European Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "CLMS N2K Monitoring, time series",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "0",
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "0",
+          "timestamps": [
+            1325376000
+          ]
+        },
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "0",
+          "timestamps": [
+            1136073600
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Detailed land cover and land use information for 55 thematic classes in selected Natura2000 sites for the 2018 reference year. The dataset has a Minimum Mapping Unit (MMU) of 0.5 ha and a Minimum Mapping Width (MMW) of 10 m and is available as vector data.",
+        "attribution": {
+          "text": "CLMS Natura 2000",
+          "url": "https://land.copernicus.eu/en/products/n2k"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Natura 2000 Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer?request=GetLegendGraphic&version=1.0.0&format=image%2Fpng&layer=1"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
+            "temporalControls": true,
+            "constraintSlider": false
+          }
+        }
+      }
+    },
+    {
+      "name": "N2K Land Cover (2021)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/ESA_WorldCover_10m_2020_v100-natura.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/ESA_WorldCover_10m_2021_v200-natura.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.esa_worldcover_2021.natura_2000.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "minZoom": 8,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.esa_worldcover_2020.natura_2000.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1,
+          "minZoom": 8,
+          "timestamps": [
+            1577836800
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Land cover map for 2021 with statistics using Natura 2000 boundaries.  Zoom in until the scale bar shows 10km to show Natura boundaries then click on a Natura area to view statisics.",
+        "attribution": {
+          "text": "World Cover project",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Natura 2000 Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Above Ground Biomass",
+      "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "Above ground biomass (AGB) in t/ha in 20 m spatial resolution created with the BIOMASAR method using Sentinel-1 and ALOS 2 PALSAR 2 data.",
+        "attribution": {
+          "text": "Forest Carbon Monitoring Service",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 300,
+            "steps": 50,
+            "name": "greens",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Pan-European Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2021/01/01/FCM-AGB-100m-2021/FCM_Europe_demo_2021_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2020/01/01/FCM-AGB-100m-2020/FCM_Europe_demo_2020_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2017/01/01/FCM-AGB-100m-2017/FCM_Europe_demo_2017_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1483228800
+          ]
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
+      "constraints": []
+    },
+    {
+      "name": "Topsoil Organic Carbon (2020-22)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/europe_aggr-orgc_00-020_mean_100_202003-202210-esa_worldcover_2021.tif",
+          "format": "cog",
+          "label": "Land Cover Types (from World Cover 2022)",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Tree Cover",
+              "value": 10
+            },
+            {
+              "label": "Shrubland",
+              "value": 20
+            },
+            {
+              "label": "Grassland",
+              "value": 30
+            },
+            {
+              "label": "Cropland",
+              "value": 40
+            },
+            {
+              "label": "Built-up",
+              "value": 50
+            },
+            {
+              "label": "Bare",
+              "value": 60
+            },
+            {
+              "label": "Snow and Ice",
+              "value": 70
+            },
+            {
+              "label": "Permanent water bodies",
+              "value": 80
+            },
+            {
+              "label": "Herbaceous wetland",
+              "value": 90
+            },
+            {
+              "label": "Moss and lichen",
+              "value": 100
+            }
+          ],
+          "bandIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) with statistics using NUTS 2024 boundaries.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Pan-European Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Below Ground Biomass",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2023/01/01/FCM-BGB-100m-2023/FCM_Europe_demo_2023_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2021/01/01/FCM-BGB-100m-2021/FCM_Europe_demo_2021_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2020/01/01/FCM-BGB-100m-2020/FCM_Europe_demo_2020_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2017/01/01/FCM-BGB-100m-2017/FCM_Europe_demo_2017_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1483228800
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Below ground biomass (BGB) in t/ha in 20 m spatial resolution created with the BIOMASAR method using Sentinel-1 and ALOS 2 PALSAR 2 data.",
+        "attribution": {
+          "text": "Forest Carbon Monitoring Service",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 100,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "greens",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Pan-European Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Habitat Map GR Level 1 2020 with NUTS stats",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2021 habitat type hierarchy, with statistics using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#4001ed",
+            "label": "Marine benthic habitats (MA-MG)",
+            "value": 10000
+          },
+          {
+            "color": "#44caee",
+            "label": "Coastal habitats",
+            "value": 40000
+          },
+          {
+            "color": "#914321",
+            "label": "Wetlands",
+            "value": 50000
+          },
+          {
+            "color": "#dbe341",
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
+            "value": 60000
+          },
+          {
+            "color": "#9e7221",
+            "label": "Heathland, scrub and tundra",
+            "value": 70000
+          },
+          {
+            "color": "#0b651a",
+            "label": "Forest and other wooded land",
+            "value": 80000
+          },
+          {
+            "color": "#737770",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
+          },
+          {
+            "color": "#b54dbd",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
+          },
+          {
+            "color": "#ff0810",
+            "label": "Constructed, industrial or other Artificial types",
+            "value": 110000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting",
+        "subinterfaceGroup": "Greece",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Habitat Map GR Level 1 2020 with NUTS stats",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2021-GR_2020/GR_L1_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_gr_2021_L1.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2021 habitat type hierarchy, with statistics using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#4001ed",
+            "label": "Marine benthic habitats (MA-MG)",
+            "value": 10000
+          },
+          {
+            "color": "#44caee",
+            "label": "Coastal habitats",
+            "value": 40000
+          },
+          {
+            "color": "#914321",
+            "label": "Wetlands",
+            "value": 50000
+          },
+          {
+            "color": "#dbe341",
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
+            "value": 60000
+          },
+          {
+            "color": "#9e7221",
+            "label": "Heathland, scrub and tundra",
+            "value": 70000
+          },
+          {
+            "color": "#0b651a",
+            "label": "Forest and other wooded land",
+            "value": 80000
+          },
+          {
+            "color": "#737770",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
+          },
+          {
+            "color": "#b54dbd",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
+          },
+          {
+            "color": "#ff0810",
+            "label": "Constructed, industrial or other Artificial types",
+            "value": 110000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting",
+        "subinterfaceGroup": "Greece",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Coastal Condition Account GR 2022",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2022/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-GR_Coastal_Condition_IMD_2022/GR_Coastal_Condition_IMD_raster_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands for Greece in 2022.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [],
+        "min": -19,
+        "max": 103,
+        "startColor": "#046601",
+        "endColor": "#fdfd1f"
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting",
+        "subinterfaceGroup": "Greece",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Tree Cover Density 2018-2022",
+      "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "Pan-European measurements of tree cover density (0% to 100%)",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover?tab=tree_cover_density"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 101,
+            "name": "greens",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Forest Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:TCD_S2022",
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:TCD_S2021",
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:TCD_S2020",
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:TCD_S2019",
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:TCD_S2018",
+          "timestamps": [
+            1514761200
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Forest Type 2018-2021",
+      "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "Classification of the types of forests",
+        "attribution": {
+          "text": "CLMS HRL Forest",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover"
+        },
+        "categories": [
+          {
+            "color": "#449847",
+            "label": "Broadleaved Forest",
+            "value": 0
+          },
+          {
+            "color": "#1B5B24",
+            "label": "Coniferous",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Forest Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:FTY_S2021",
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:FTY_S2018",
+          "timestamps": [
+            1514761200
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Topsoil Organic Carbon (2020-22)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/europe_aggr-orgc_00-020_mean_100_202003-202210-natura.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.soc_0-5cm_mean_europe_2020-2022.natura_2000.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "minZoom": 8
+        }
+      ],
+      "meta": {
+        "description": "Statistics for Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) using Natura 2000 boundaries.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Natura 2000 Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Habitat Map SK Level 1 2020, with NUTS stats",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012-SK_2020/SK_L1_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_sk_2012_L1.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2012 habitat type hierarchy, with statistics using Nomenclature of Territorial Units for Statistics (NUTS) boundaries.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#ffd37f",
+            "label": "Costal Habitats",
+            "value": 20000
+          },
+          {
+            "color": "#0070ff",
+            "label": "Inland Surface Waters",
+            "value": 30000
+          },
+          {
+            "color": "#df73ff",
+            "label": "Mires, bogs and fens",
+            "value": 40000
+          },
+          {
+            "color": "#55ff00",
+            "label": "Grasslands and lands dominated by forbs, mosses or lichens",
+            "value": 50000
+          },
+          {
+            "color": "#ffaa00",
+            "label": "Heathland, scrub and tundra",
+            "value": 60000
+          },
+          {
+            "color": "#267300",
+            "label": "Woodland, forest and other wooded land",
+            "value": 70000
+          },
+          {
+            "color": "#b2b2b2",
+            "label": "Inland unvegetated or sparsely vegetated habitats",
+            "value": 80000
+          },
+          {
+            "color": "#ffff73",
+            "label": "Regularly or recently cultivated agricultural, horticultural and domestic habitats",
+            "value": 90000
+          },
+          {
+            "color": "#ff0000",
+            "label": "Constructed, industrial and other artificial habitats",
+            "value": 100000
+          },
+          {
+            "color": "#00ffa6",
+            "label": "Complex Habitats",
+            "value": 110000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting",
+        "subinterfaceGroup": "Slovakia",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Habitat Map SK Level 2 2020, with NUTS stats",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012/2020/01/01/ESA_PEOPLE_EA_HABITAT_MAPS_EUNIS_2012-SK_2020/SK_L2_pp_2020.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_sk_2012_L2.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "position": "left"
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_sk_2012_L2.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1,
+          "position": "left"
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_sk_2012_L2.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2,
+          "position": "left"
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_eunis_habitat_sk_2012_L2.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3,
+          "position": "left"
+        }
+      ],
+      "meta": {
+        "description": "Natural ecosystem types in 2020 based on the EUNIS 2012 habitat type hierarchy.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [
+          {
+            "color": "#e6e6e6",
+            "label": "Coastal dunes and sandy shores",
+            "value": 20100
+          },
+          {
+            "color": "#c8c8c8",
+            "label": "Coastal shingle",
+            "value": 20200
+          },
+          {
+            "color": "#aaaaaa",
+            "label": "Rock cliffs: ledges and shores: including the supralittoral",
+            "value": 20300
+          },
+          {
+            "color": "#80f2e6",
+            "label": "Surface standing waters",
+            "value": 30100
+          },
+          {
+            "color": "#00ccf2",
+            "label": "Surface running waters",
+            "value": 30200
+          },
+          {
+            "color": "#00cc99",
+            "label": "Littoral zone and inland surface waterbodies",
+            "value": 30300
+          },
+          {
+            "color": "#403151",
+            "label": "Raised and blanket bogs",
+            "value": 40100
+          },
+          {
+            "color": "#60497a",
+            "label": "Valley mires: poor fens and transition mires",
+            "value": 40200
+          },
+          {
+            "color": "#b1a063",
+            "label": "Aapa: palsa and polygon mires",
+            "value": 40300
+          },
+          {
+            "color": "#ccc0da",
+            "label": "rich fens and calcareous spring mires",
+            "value": 40400
+          },
+          {
+            "color": "#daeef3",
+            "label": "standing water",
+            "value": 40500
+          },
+          {
+            "color": "#b7dee8",
+            "label": "Inland saline and brackish marshes and reedbeds",
+            "value": 40600
+          },
+          {
+            "color": "#f0f096",
+            "label": "Dry grasslands",
+            "value": 50100
+          },
+          {
+            "color": "#e6e64d",
+            "label": "Mesic grasslands",
+            "value": 50200
+          },
+          {
+            "color": "#ccf24d",
+            "label": "Seasonally wet and wet grasslands",
+            "value": 50300
+          },
+          {
+            "color": "#99ff99",
+            "label": "Alpine and subalpine grasslands",
+            "value": 50400
+          },
+          {
+            "color": "#ccffff",
+            "label": "Inland salt steppes",
+            "value": 50600
+          },
+          {
+            "color": "#f2cca6",
+            "label": "Sparsely wooded grasslands",
+            "value": 50700
+          },
+          {
+            "color": "#974706",
+            "label": "Tundra",
+            "value": 60100
+          },
+          {
+            "color": "#e26b0a",
+            "label": "Artic: alpine and subalpine scrub",
+            "value": 60200
+          },
+          {
+            "color": "#fabf8f",
+            "label": "montane scrub",
+            "value": 60300
+          },
+          {
+            "color": "#fcd5b4",
+            "label": "Temperate shrub heathland",
+            "value": 60400
+          },
+          {
+            "color": "#fde9d9",
+            "label": "Mediterranean brushes",
+            "value": 60500
+          },
+          {
+            "color": "#daeef3",
+            "label": "Garrigue",
+            "value": 60600
+          },
+          {
+            "color": "#b7dee8",
+            "label": "heats and related coastal ciff vegetation)",
+            "value": 60700
+          },
+          {
+            "color": "#92cddc",
+            "label": "Atlantic xerophytic scrub",
+            "value": 60800
+          },
+          {
+            "color": "#31c89b",
+            "label": "Riverine and fen scrub",
+            "value": 60900
+          },
+          {
+            "color": "#e68000",
+            "label": "Shrub plantations",
+            "value": 61100
+          },
+          {
+            "color": "#80ff00",
+            "label": "Broadleaved deciduous woodland",
+            "value": 70100
+          },
+          {
+            "color": "#e6a600",
+            "label": "Broadleaved evergreen woodland",
+            "value": 70200
+          },
+          {
+            "color": "#00a600",
+            "label": "Coniferous woodland",
+            "value": 70300
+          },
+          {
+            "color": "#4dff00",
+            "label": "Mixed deciduous and coniferous woodland",
+            "value": 70400
+          },
+          {
+            "color": "#4f6228",
+            "label": "stage woodland and coppice",
+            "value": 70500
+          },
+          {
+            "color": "#f2f2f2",
+            "label": "Screes",
+            "value": 80200
+          },
+          {
+            "color": "#cccccc",
+            "label": "Inland cliffs: rock pavements and outcrops",
+            "value": 80300
+          },
+          {
+            "color": "#ffffff",
+            "label": "dominated habitats",
+            "value": 80400
+          },
+          {
+            "color": "#ccffcc",
+            "label": "Miscellaneous inland habitats with very sparse or no vegetation",
+            "value": 80500
+          },
+          {
+            "color": "#ffffa8",
+            "label": "Arable land and market gardens",
+            "value": 90100
+          },
+          {
+            "color": "#ffff00",
+            "label": "Cultivated areas of gardens and parks",
+            "value": 90200
+          },
+          {
+            "color": "#ff0000",
+            "label": "Buildings of cities: towns and villages",
+            "value": 100100
+          },
+          {
+            "color": "#ff7d7d",
+            "label": "Low density buildings",
+            "value": 100200
+          },
+          {
+            "color": "#a600cc",
+            "label": "Extractive industrial sites",
+            "value": 100300
+          },
+          {
+            "color": "#ff5500",
+            "label": "surfaced areas",
+            "value": 100400
+          },
+          {
+            "color": "#e6e6ff",
+            "label": "made waters and associates structures",
+            "value": 100500
+          },
+          {
+            "color": "#a64d00",
+            "label": "Waste deposits",
+            "value": 100600
+          },
+          {
+            "color": "#a6ffe6",
+            "label": "Estuaries",
+            "value": 110100
+          },
+          {
+            "color": "#00ffa6",
+            "label": "Coastal lagoons",
+            "value": 110200
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting",
+        "subinterfaceGroup": "Slovakia",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Wood Provison Service Account SK 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_WOOD_PROVISION/2021/01/01/ESA_PEOPLE_EA_WOOD_PROVISION-SK_FAWS_2021/SK_FAWS_raster_2021.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Quantification of the supply of wood products from forests, woodlands, or other ecosystems over time for Slovakia in 2021.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [],
+        "min": 0.004,
+        "max": 0.54,
+        "startColor": "#046601",
+        "endColor": "#fdfd1f"
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting",
+        "subinterfaceGroup": "Slovakia",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
+            "temporalControls": false,
+            "constraintSlider": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Water Level Trends",
+      "isActive": false,
+      "meta": {
+        "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
+        "attribution": {
+          "text": "WorldPeatland",
+          "url": "https://stac-browser.worldpeatland.org/#/moor-house/catalog.json"
+        },
+        "categories": [],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80,
+        "colormaps": [
+          {
+            "min": -80,
+            "max": 80,
+            "steps": 81,
+            "name": "jet",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Peatland Monitoring",
+        "subinterfaceGroup": "Moor House",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/MoorHouse/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/MoorHouse/WhatSARPeat/peat-classification/peat_classification.tif",
+          "format": "cog",
+          "label": "Peatland Classification",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Not Peatland",
+              "value": 0
+            },
+            {
+              "label": "Peatland",
+              "value": 1
+            }
+          ],
+          "bandIndex": 2
+        }
+      ]
+    },
+    {
+      "name": "Water Level Trends",
+      "isActive": false,
+      "meta": {
+        "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
+        "attribution": {
+          "text": "WorldPeatland",
+          "url": "https://stac-browser.worldpeatland.org/#/saddleworth/catalog.json"
+        },
+        "categories": [],
+        "units": "mm/yr",
+        "colormaps": [
+          {
+            "min": -40,
+            "max": 40,
+            "steps": 81,
+            "name": "jet",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Peatland Monitoring",
+        "subinterfaceGroup": "Saddleworth Moor",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/WhatSARPeat/peat-classification/peat_classification.tif",
+          "format": "cog",
+          "label": "Peatland Classification",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Not Peatland",
+              "value": 0
+            },
+            {
+              "label": "Peatland",
+              "value": 1
+            }
+          ],
+          "bandIndex": 2
+        }
+      ]
+    },
+    {
+      "name": "Water Level Trends",
+      "isActive": false,
+      "meta": {
+        "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
+        "attribution": {
+          "text": "WorldPeatland",
+          "url": "https://stac-browser.worldpeatland.org/#/hatfield-thorne/catalog.json"
+        },
+        "categories": [],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80,
+        "colormaps": [
+          {
+            "min": -80,
+            "max": 80,
+            "steps": 81,
+            "name": "jet",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Peatland Monitoring",
+        "subinterfaceGroup": "Hatfield Thorne",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/HatfieldThorne/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/HatfieldThorne/WhatSARPeat/peat-classification/peat_classification.tif",
+          "format": "cog",
+          "label": "Peatland Classification",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Not Peatland",
+              "value": 0
+            },
+            {
+              "label": "Peatland",
+              "value": 1
+            }
+          ],
+          "bandIndex": 2
+        }
+      ]
+    },
+    {
+      "name": "Land cover over time",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N42W009_MAP/SEN4LDN_LCM_V100_2023_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N39W012_MAP/SEN4LDN_LCM_V100_2023_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N39W009_MAP/SEN4LDN_LCM_V100_2023_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N39W006_MAP/SEN4LDN_LCM_V100_2023_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N36W012_MAP/SEN4LDN_LCM_V100_2023_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N36W009_MAP/SEN4LDN_LCM_V100_2023_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N42W009_MAP/SEN4LDN_LCM_V100_2022_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N39W012_MAP/SEN4LDN_LCM_V100_2022_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N39W009_MAP/SEN4LDN_LCM_V100_2022_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N39W006_MAP/SEN4LDN_LCM_V100_2022_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N36W012_MAP/SEN4LDN_LCM_V100_2022_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N36W009_MAP/SEN4LDN_LCM_V100_2022_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N42W009_MAP/SEN4LDN_LCM_V100_2021_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N39W012_MAP/SEN4LDN_LCM_V100_2021_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N39W009_MAP/SEN4LDN_LCM_V100_2021_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N39W006_MAP/SEN4LDN_LCM_V100_2021_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N36W012_MAP/SEN4LDN_LCM_V100_2021_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N36W009_MAP/SEN4LDN_LCM_V100_2021_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N42W009_MAP/SEN4LDN_LCM_V100_2020_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N39W012_MAP/SEN4LDN_LCM_V100_2020_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N39W009_MAP/SEN4LDN_LCM_V100_2020_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N39W006_MAP/SEN4LDN_LCM_V100_2020_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N36W012_MAP/SEN4LDN_LCM_V100_2020_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N36W009_MAP/SEN4LDN_LCM_V100_2020_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N42W009_MAP/SEN4LDN_LCM_V100_2019_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N39W012_MAP/SEN4LDN_LCM_V100_2019_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N39W009_MAP/SEN4LDN_LCM_V100_2019_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N39W006_MAP/SEN4LDN_LCM_V100_2019_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N36W012_MAP/SEN4LDN_LCM_V100_2019_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N36W009_MAP/SEN4LDN_LCM_V100_2019_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N42W009_MAP/SEN4LDN_LCM_V100_2018_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N39W012_MAP/SEN4LDN_LCM_V100_2018_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N39W009_MAP/SEN4LDN_LCM_V100_2018_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N39W006_MAP/SEN4LDN_LCM_V100_2018_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N36W012_MAP/SEN4LDN_LCM_V100_2018_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N36W009_MAP/SEN4LDN_LCM_V100_2018_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Trends in land cover between 2018 and 2023 are evaluated based on an automated algorithm to map land cover dynamics at 10 m resolution that combines deep learning and a pixel classifier on pre-processed Sentinel-2 imagery and ancillary input layers.",
+        "attribution": {
+          "text": "ESA Project Results repository",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/esa_sen4ldn_land_cover?.language=en"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Degradation Neutrality",
+        "subinterfaceGroup": "Portugal",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Trends in Productivity - Values of Trend Coefficient",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N42W009_MAP/SEN4LDN_trendval_V100_2018-2023_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N39W012_MAP/SEN4LDN_trendval_V100_2018-2023_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N39W009_MAP/SEN4LDN_trendval_V100_2018-2023_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N36W012_MAP/SEN4LDN_trendval_V100_2018-2023_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N36W009_MAP/SEN4LDN_trendval_V100_2018-2023_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Values of trend coefficient of productivity over the period 2018-2023 (day / year) between -10 and +10.  (Scale needs to be offset by 1/10 - 10)",
+        "attribution": {
+          "text": "SEN4DN",
+          "url": "https://esa-sen4ldn.org/en"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 254,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 254,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Degradation Neutrality",
+        "subinterfaceGroup": "Portugal",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Carbon stocks trends",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_carbon_stocks/2010/01/01/SEN4LDN_Hybrid-Avg_V100_2010-2018_portugal_MAP/SEN4LDN_Hybrid-Avg_V100_2010-2018_portugal_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Using above-ground biomass (AGB) changes as a proxy for carbon stock changes to provide an estimate independent of trends (between 2010 and 2018) in land cover and trends in land productivity.",
+        "attribution": {
+          "text": "ESA Project Results repository",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/esa_sen4ldn_carbon_stocks?.language=en"
+        },
+        "categories": [],
+        "min": -206,
+        "max": 129,
+        "colormaps": [
+          {
+            "min": -206,
+            "max": 129,
+            "steps": 50,
+            "name": "jet",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Degradation Neutrality",
+        "subinterfaceGroup": "Portugal",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Trend in Land Cover - Degradation Probability Map between 2018 and 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N42W009_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N39W012_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N39W009_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N39W006_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N36W012_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N36W009_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Trend in Land Cover - Degradation Probability Map between 2018 and 2023",
+        "attribution": {
+          "text": "SEN4DN",
+          "url": "https://esa-sen4ldn.org/en"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 234,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 234,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Degradation Neutrality",
+        "subinterfaceGroup": "Portugal",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Land cover degradation trends",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N42W009_MAP/SEN4LDN_LCD_V100_2018-2023_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N39W012_MAP/SEN4LDN_LCD_V100_2018-2023_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N39W009_MAP/SEN4LDN_LCD_V100_2018-2023_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N39W006_MAP/SEN4LDN_LCD_V100_2018-2023_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N36W012_MAP/SEN4LDN_LCD_V100_2018-2023_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N36W009_MAP/SEN4LDN_LCD_V100_2018-2023_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Trends in land cover between 2018 and 2023 are evaluated based on an automated algorithm to map land cover dynamics at 10 m resolution that combines deep learning and a pixel classifier on pre-processed Sentinel-2 imagery and ancillary input layers.",
+        "attribution": {
+          "text": "ESA Project Results repository",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/esa_sen4ldn_land_cover?.language=en"
+        },
+        "categories": [
+          {
+            "color": "#008837",
+            "label": "Restoration",
+            "value": 1
+          },
+          {
+            "color": "#7B3294",
+            "label": "Degradation",
+            "value": 2
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Degradation Neutrality",
+        "subinterfaceGroup": "Portugal",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Land cover over time",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_S03W075_MAP/SEN4LDN_LCM_V100_2023_S03W075_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_S03W078_MAP/SEN4LDN_LCM_V100_2023_S03W078_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_S06W072_MAP/SEN4LDN_LCM_V100_2023_S06W072_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_S03W072_MAP/SEN4LDN_LCM_V100_2022_S03W072_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_S03W075_MAP/SEN4LDN_LCM_V100_2022_S03W075_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_S03W078_MAP/SEN4LDN_LCM_V100_2022_S03W078_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_S06W072_MAP/SEN4LDN_LCM_V100_2022_S06W072_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_S03W072_MAP/SEN4LDN_LCM_V100_2023_S03W072_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_S03W072_MAP/SEN4LDN_LCM_V100_2021_S03W072_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_S03W078_MAP/SEN4LDN_LCM_V100_2021_S03W078_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_S03W075_MAP/SEN4LDN_LCM_V100_2021_S03W075_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_S06W072_MAP/SEN4LDN_LCM_V100_2021_S06W072_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609455600
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Trends in land cover between 2018 and 2023 are evaluated based on an automated algorithm to map land cover dynamics at 10 m resolution that combines deep learning and a pixel classifier on pre-processed Sentinel-2 imagery and ancillary input layers.",
+        "attribution": {
+          "text": "ESA Project Results repository",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/esa_sen4ldn_land_cover?.language=en"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Degradation Neutrality",
+        "subinterfaceGroup": "Colombia",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Land cover over time",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_S03E027_MAP/SEN4LDN_LCM_V100_2023_S03E027_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_S03E030_MAP/SEN4LDN_LCM_V100_2023_S03E030_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_S03E027_MAP/SEN4LDN_LCM_V100_2022_S03E027_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_S03E030_MAP/SEN4LDN_LCM_V100_2022_S03E030_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640991600
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Trends in land cover between 2018 and 2023 are evaluated based on an automated algorithm to map land cover dynamics at 10 m resolution that combines deep learning and a pixel classifier on pre-processed Sentinel-2 imagery and ancillary input layers.",
+        "attribution": {
+          "text": "ESA Project Results repository",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/esa_sen4ldn_land_cover?.language=en"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Degradation Neutrality",
+        "subinterfaceGroup": "Uganda",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Blue Marble",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png",
+      "meta": {
+        "description": "Base layer: Blue Marble",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Sentinel",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
+      "meta": {
+        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "attribution": {
+          "text": "Copernicus Sentinel-2",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "WorldCover",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_MAP",
+          "useTimeParameter": true
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/worldcover.png",
+      "meta": {
+        "description": "Base layer: WorldCover",
+        "attribution": {
+          "text": "ESA WorldCover",
+          "url": "https://esa-worldcover.org/en"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "DEM",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "COP_DEM_GLO_30M_COG"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png",
+      "meta": {
+        "description": "Base layer: DEM",
+        "attribution": {
+          "text": "Copernicus"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Base layer: Open StreetMap",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Coastal Condition Account IT",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2022/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-IT_Coastal_Condition_IMD_2022/IT_Coastal_Condition_IMD_raster_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2018/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-IT_Coastal_Condition_IMD_2018/IT_Coastal_Condition_IMD_raster_2018.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514761200
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [],
+        "min": -19,
+        "max": 103,
+        "startColor": "#046601",
+        "endColor": "#fdfd1f"
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting",
+        "subinterfaceGroup": "Italy",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Wood Provison Service Account",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_WOOD_PROVISION/2021/01/01/ESA_PEOPLE_EA_WOOD_PROVISION-IT_FAWS_2021/IT_FAWS_raster_2021.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Quantification of the supply of wood products from forests, woodlands, or other ecosystems over time for Italy in 2021.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [],
+        "min": 0.004,
+        "max": 0.54,
+        "startColor": "#046601",
+        "endColor": "#fdfd1f"
+      },
+      "layout": {
+        "interfaceGroup": "Ecosystem Accounting",
+        "subinterfaceGroup": "Italy",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Italy",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2022/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-IT_Coastal_Condition_IMD_2022/IT_Coastal_Condition_IMD_raster_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2018/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-IT_Coastal_Condition_IMD_2018/IT_Coastal_Condition_IMD_raster_2018.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514761200
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [],
+        "min": -19,
+        "max": 103,
+        "startColor": "#046601",
+        "endColor": "#fdfd1f"
+      },
+      "layout": {
+        "interfaceGroup": "Coastal Ecosystems",
+        "subinterfaceGroup": "Coastal condition",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Tide lines",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EOTideLines_EO4PORTS/2021/01/01/EOTideLines_NorthSea_2021/2021_Wadden_Sea_lowtideline_v5.geojson",
+          "format": "geojson",
+          "zIndex": 100,
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EOTideLines_EO4PORTS/2020/01/01/EOTideLines_NorthSea_2020/2020_Wadden_Sea_lowtideline_v5.geojson",
+          "format": "geojson",
+          "zIndex": 100,
+          "timestamps": [
+            1577833200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EOTideLines_EO4PORTS/2022/01/01/EOTideLines_NorthSea_2022/2022_Wadden_Sea_lowtideline_v5.geojson",
+          "format": "geojson",
+          "zIndex": 100,
+          "timestamps": [
+            1640991600
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "To be written",
+        "attribution": {
+          "text": "EO4Ports project",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/EOTideLines_EO4PORTS"
+        },
+        "categories": [],
+        "units": "N/A",
+        "min": 0,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Coastal Ecosystems",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Street Trees",
+      "isActive": false,
+      "meta": {
+        "description": "Copernicus Urban Atlas 2012 street trees layer (vector), covering European Functional Urban Areas; CLMS product with 6-year update cycle. Derived from high-resolution imagery; MMU 0.25 ha, minimum mapping width 10 m",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas 2012",
+          "url": "https://land.copernicus.eu/local/urban-atlas"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban Ecosystems",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=STL_Raster27733"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Raster27733",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Vector61679",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "Tree Cover Density",
+      "isActive": false,
+      "meta": {
+        "description": "Percentage of tree canopy cover per pixel at 10 m resolution, ranging from 0–100%, representing the vertical projection of tree crowns onto the ground.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service (CLMS) – High Resolution Layer Tree Cover Density",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover/tree-cover-density-2023-raster-10-m-100-m-europe-yearly"
+        },
+        "units": "(% cover)",
+        "startColor": "#fdff73",
+        "endColor": "#1c5c24",
+        "min": 0,
+        "max": 100
+      },
+      "layout": {
+        "interfaceGroup": "Urban Ecosystems",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:TCD_S2023",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "Tree Cover Change 2018-2021",
+      "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "Shows the change in tree cover between 2018 and 2021.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover"
+        },
+        "categories": [
+          {
+            "color": "#13FF15",
+            "label": "New tree cover",
+            "value": 1
+          },
+          {
+            "color": "#FF0000",
+            "label": "Loss of Tree Cover",
+            "value": 2
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Forest Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:TCPC_C2018-2021",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "Land Surface Temperature 1 km",
+      "isActive": false,
+      "timeframe": "Days",
+      "meta": {
+        "description": "The dataset offers 1 km daily LST composites derived from Sentinel-3 SLSTR",
+        "attribution": {
+          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
+          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
+        },
+        "categories": [],
+        "units": "Kelvin (K)",
+        "colormaps": [
+          {
+            "min": 250,
+            "max": 320,
+            "steps": 100,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Physical parameters",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "TERRASCOPE_S3_LST_3_S10_V1",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "Sentinel-2 NDVI",
+      "isActive": false,
+      "timeframe": "Days",
+      "meta": {
+        "description": "Satellite-derived vegetation index (NDVI) from Sentinel-2. Indicates vegetation density and photosynthetic activity. Time series available.",
+        "attribution": {
+          "text": "Copernicus Global Land Service"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Physical parameters",
+        "subinterfaceGroup": "Vegetation Indices",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "PROBAV_L3_S10_TOC_333M_NDVI",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "Sentinel-2 FAPAR",
+      "isActive": false,
+      "timeframe": "Days",
+      "meta": {
+        "description": "Satellite-derived Fraction of Absorbed Photosynthetically Active Radiation (FAPAR) from Sentinel-2.\nIndicates vegetation photosynthetic activity and plant productivity.\nTime series available.",
+        "attribution": {
+          "text": "Copernicus Global Land Service",
+          "url": "https://land.copernicus.eu/global/products/fapar"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Physical parameters",
+        "subinterfaceGroup": "Vegetation Indices",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "CGS_S2_FAPAR",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "Sentinel-2 LAI",
+      "isActive": false,
+      "timeframe": "Days",
+      "meta": {
+        "description": "Satellite-derived Leaf Area Index (LAI) from Sentinel-2. Indicates density of vegetation canopy. Time series available.",
+        "attribution": {
+          "text": "Copernicus Global Land Service"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Physical parameters",
+        "subinterfaceGroup": "Vegetation Indices",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "CGS_S2_LAI",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "Sentinel-2 FCOVER",
+      "isActive": false,
+      "timeframe": "Days",
+      "meta": {
+        "description": "Satellite-derived Fraction of Green Vegetaion Cover (FCOVER) from Sentinel-2. Indicates fraction of ground covered by green vegetation.",
+        "attribution": {
+          "text": "Copernicus Global Land Service"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Physical parameters",
+        "subinterfaceGroup": "Vegetation Indices",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "CGS_S2_FCOVER",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "Land Cover (2021) (Copy)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WORLDCOVER_2021_MAP"
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "timestamps": [
+            1640908800
+          ]
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1,
+          "timestamps": [
+            1640908800
+          ]
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2,
+          "timestamps": [
+            1640908800
+          ]
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3,
+          "timestamps": [
+            1640908800
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/europe_aggr-orgc_00-020_mean_100_202003-202210-esa_worldcover_2021.tif",
+          "format": "cog",
+          "label": "Land Cover Type",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Tree Cover",
+              "value": 10
+            },
+            {
+              "label": "Shrubland",
+              "value": 20
+            },
+            {
+              "label": "Grassland",
+              "value": 30
+            },
+            {
+              "label": "Cropland",
+              "value": 40
+            },
+            {
+              "label": "Built-up",
+              "value": 50
+            },
+            {
+              "label": "Bare",
+              "value": 60
+            },
+            {
+              "label": "Snow and Ice",
+              "value": 70
+            },
+            {
+              "label": "Permanent Water Bodies",
+              "value": 80
+            },
+            {
+              "label": "Herbaceous Wetland",
+              "value": 90
+            },
+            {
+              "label": "Moss and Lichen",
+              "value": 100
+            }
+          ],
+          "bandIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Land cover map for 2021 with statistics by NUTS.  Click on the \"Statistics\" tab and then select a geographic area of interest.",
+        "attribution": {
+          "text": "World Cover Project",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Global Ecosystem Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Netherlands",
+      "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [],
+        "min": -19,
+        "max": 103,
+        "startColor": "#046601",
+        "endColor": "#fdfd1f"
+      },
+      "layout": {
+        "interfaceGroup": "Coastal Ecosystems",
+        "subinterfaceGroup": "Coastal condition",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2018/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-IT_Coastal_Condition_IMD_2018/IT_Coastal_Condition_IMD_raster_2018.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2018/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-IT_Coastal_Condition_IMD_2018/IT_Coastal_Condition_IMD_account_2018.csv",
+          "format": "csv",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2022/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-NL_Coastal_Condition_IMD_2022/NL_Coastal_Condition_IMD_raster_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2022/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-NL_Coastal_Condition_IMD_2022/NL_Coastal_Condition_IMD_account_2022.csv",
+          "format": "csv",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        }
+      ]
+    }
+  ]
+}
