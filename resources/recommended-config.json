@@ -63,7 +63,7 @@
     "id": "s3-service-1750499655684",
     "name": "Sparkgeo ESA Apex S3 bucket",
     "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
-    "format": "S3 bucket"
+    "format": "cog"
   },
   {
     "id": "wmts-service-1750331396152",
