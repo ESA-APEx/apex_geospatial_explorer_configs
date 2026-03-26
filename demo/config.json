@@ -1920,33 +1920,6 @@
       }
     },
     {
-      "serviceId": "wind_turbine_detection",
-      "serviceProvider": "dhi",
-      "format": "geojson",
-      "meta": {
-        "description": "Windmill Detection workflow",
-        "attribution": {
-          "text": ""
-        },
-        "categories": [
-          {
-            "label": "Windmill Detection",
-            "color": "#6daaee",
-            "value": 1
-          }
-        ]
-      },
-      "data": {
-        "format": "geojson",
-        "zIndex": 50,
-        "style": {
-          "stroke-color": "yellow",
-          "stroke-width": 1.5,
-          "fill-color": "orange"
-        }
-      }
-    },
-    {
       "serviceId": "gep_api_ost",
       "serviceProvider": "terradue",
       "serviceDetails": {
