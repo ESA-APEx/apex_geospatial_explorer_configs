@@ -1920,15 +1920,6 @@
       }
     },
     {
-      "serviceId": "gep_api_ost",
-      "serviceProvider": "terradue",
-      "serviceDetails": {
-        "endpoint": "https://processing.geohazards-tep.eu",
-        "namespace": "44454d3235313539",
-        "application": "opensartoolkit-v2-1-7"
-      } 
-    },
-    {
       "serviceId": "UHI_per_pixel",
       "serviceProvider": "compass_informatics",
       "meta": {
