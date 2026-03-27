@@ -1716,27 +1716,25 @@
         ]
       }
     },
-    {
-      "serviceId": "bais2",
-      "serviceProvider": "developmentseed",
-      "meta": {
-        "description": "Burnt Area Index from Sentinel-2 imagery.",
-        "attribution": {
-          "text": ""
+     {
+        "serviceId": "bais2",
+        "serviceProvider": "developmentseed",
+        "meta": {
+            "description": "Computes the BAIS2 burned area index from Sentinel-2 L2A red-edge bands and renders a color-mapped visualization. The index is sensitive to chlorophyll content in the red-edge region and is suitable for burned-area detection. Red for burn scars, magenta for active fires.",
+            "attribution": {
+                "text": ""
+            }
         },
-        "categories": [],
-        "min": 0,
-        "max": 2,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 255,
-            "steps": 50,
-            "name": "inferno",
-            "reverse": false
-          }
-        ]
-      }
+        "data": {
+            "format": "cog",
+            "zIndex": 100,
+            "convertToRGB": true,
+            "bands": [
+                1,
+                2,
+                3
+            ]
+        }
     },
     {
       "serviceId": "efast",
