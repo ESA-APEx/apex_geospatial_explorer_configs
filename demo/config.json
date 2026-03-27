@@ -1938,6 +1938,66 @@
           }
         ]
       }
-    }
+    },
+    {
+            "serviceId": "bap_composite",
+            "serviceProvider": "vito",
+            "meta": {
+                "description": "",
+                "attribution": {
+                    "text": ""
+                }
+            },
+            "data": {
+                "format": "cog",
+                "zIndex": 100,
+                "convertToRGB": true,
+                "bands": [
+                    1,
+                    2,
+                    3
+                ]
+            }
+        },
+        {
+            "serviceId": "max_ndvi_composite",
+            "serviceProvider": "vito",
+            "meta": {
+                "description": "",
+                "attribution": {
+                    "text": ""
+                }
+            },
+            "data": {
+                "format": "cog",
+                "zIndex": 100,
+                "convertToRGB": true,
+                "bands": [
+                    1,
+                    2,
+                    3
+                ]
+            }
+        },
+        {
+            "serviceId": "ppi",
+            "serviceProvider": "vito",
+            "meta": {
+                "description": "",
+                "attribution": {
+                    "text": ""
+                },
+                "categories": [],
+                "colormaps": [
+                    {
+                        "min": 0,
+                        "max": 3,
+                        "steps": 50,
+                        "name": "viridis",
+                        "reverse": false
+                    }
+                ]
+            }
+        }
   ]
 }
