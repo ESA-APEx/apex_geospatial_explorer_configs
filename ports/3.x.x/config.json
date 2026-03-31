@@ -3,7 +3,7 @@
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
-      "title": "Geospatial Explorer - Custom Config"
+      "title": "EO4 Ports Demonstration"
     },
     "theme": {
       "primary-color": "#003e61",
