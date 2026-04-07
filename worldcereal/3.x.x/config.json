@@ -1,0 +1,81 @@
+{
+  "version": "1.0.0",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "ESA WorldCereal - Geospatial Explorer"
+    },
+    "theme": {
+      "primary-color": "#000000",
+      "secondary-color": "#f3f7f8",
+      "tertiary-color": "#F9CB1F",
+      "accent-color": "#008e7a"
+    }
+  },
+  "interfaceGroups": [
+    "UK"
+  ],
+  "exclusivitySets": [],
+  "mapConstraints": {
+    "zoom": 0,
+    "center": [
+      0,
+      0
+    ],
+    "projection": "EPSG:3857"
+  },
+  "services": [],
+  "sources": [
+    {
+      "name": "Open StreetMap",
+      "isActive": true,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Map data (c) OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "UK",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        }
+      },
+      "layout": {
+        "interfaceGroup": "UK",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": []
+    }
+  ]
+}
