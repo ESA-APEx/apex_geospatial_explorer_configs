@@ -83,7 +83,7 @@
       },
       "data": [
         {
-          "url": "https://openeo.vito.be/openeo/1.2/jobs/j-260408115528463a8f9296cea4fa067a/results/assets/ZGZhNjc4Y2I5YWIxN2Y2NWQ0ZjAyNWUzMGZhYzVlMGQ5MDExNjE3NmU0NGZkMTdkNzAzNDE5MzIyNzQ3Y2JiZEBlZ2kuZXU=/cbe62875981c2ffc30efee3952a0d2a2/openEO_2025-01-01Z.tif?expires=1776259550",
+          "url": "https://s3.waw4-1.cloudferro.com/worldcereal-uk-waw4-1-o2q1qptnzbki8vavzriorqk0498vwc6tqvxlzvnw5/worldcereal_uk_production_embeddings_displays/embeddings_oif_b8-b14-b104_laea.tif",
           "format": "cog",
           "minZoom": 11,
           "zIndex": 50,
