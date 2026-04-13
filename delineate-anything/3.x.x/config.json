@@ -1,0 +1,361 @@
+{
+  "version": "1.0.0",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "Delineate Anything Demonstration"
+    },
+    "design": {
+      "variant": "fullscreen"
+    }
+  },
+  "interfaceGroups": [
+    "Example Datasets"
+  ],
+  "exclusivitySets": [],
+  "mapConstraints": {
+    "zoom": 6,
+    "center": [
+      32,
+      49
+    ],
+    "projection": "EPSG:3857"
+  },
+  "services": [
+    {
+      "id": "cog-service-1774281374194",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    },
+    {
+      "id": "wms-service-1774284895507",
+      "name": "VITO Terrascope",
+      "url": "https://services.terrascope.be/wms/v2",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1774284895703",
+      "name": "Copernicus Urban Atlas",
+      "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1774284895939",
+      "name": "Brockmann Xcube",
+      "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wmts-service-1774284896142",
+      "name": "Terrascope WMTS",
+      "url": "https://globalland.vito.be/wmts",
+      "format": "wmts"
+    },
+    {
+      "id": "wms-service-1774284896250",
+      "name": "EOX BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1774284896464",
+      "name": "Copernicus N2K 2018",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1774284896704",
+      "name": "Copernicus 2012 N2K",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1774284896789",
+      "name": "Copernicus N2K 2006",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "stac-service-1774284896868",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    },
+    {
+      "id": "stac-service-1774284897274",
+      "name": "VITO STAC catalogue",
+      "url": "https://stac.openeo.vito.be/",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1774284897512",
+      "name": "CLMS WMS Server",
+      "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+      "format": "wms"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Stadia Alidade Satellite",
+      "isActive": true,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 2
+        },
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "ne:ne_10m_admin_0_boundary_lines_land",
+          "useTimeParameter": true
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Sentinel",
+      "isActive": false,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Copernicus Sentinel-2",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Open StreetMap",
+      "isActive": false,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Map data (c) OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Ukraine",
+      "isActive": true,
+      "meta": {
+        "description": "This interactive map shows the results of the **Delineate Anything** algorithm applied to the detection of field boundaries across *Ukraine*.  Data is displayed on high resolution satellite imagery from the Stadia Maps service.\n\nTo view the field boundaries zoom in to a local area anywhere within the *Ukraine*.  The boundaries are displayed on the map when the scalebar in the bottom left displays **5 km** or less.\n\n### Further information\nDetails of methodology and code published in: \n* [Article](https://arxiv.org/abs/2504.02534)\n* [GitHub repository](https://github.com/Lavreniuk/Delineate-Anything)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
+        "attribution": {
+          "text": ""
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Example Datasets",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "minZoom": 10,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": false,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "isBaseLayer": true,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Blue Marble",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "DEM",
+      "isActive": false,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "COP_DEM_GLO_30M_COG"
+        }
+      ],
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "Copernicus"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Base map",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Example Datasets",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "ne:ne_10m_admin_0_boundary_lines_land",
+          "useTimeParameter": true
+        }
+      ]
+    }
+  ]
+}
