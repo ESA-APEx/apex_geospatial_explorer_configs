@@ -2005,7 +2005,7 @@
       "serviceDetails": {
         "endpoint": "https://processing.geohazards-tep.eu",
         "namespace": "44454d3235313539",
-        "application": "opensartoolkit-v2-1-7"
+        "application": "opensartoolkit-v2-2-1"
       }
     }
   ]
