@@ -1716,25 +1716,25 @@
         ]
       }
     },
-     {
-        "serviceId": "bais2",
-        "serviceProvider": "developmentseed",
-        "meta": {
-            "description": "Computes the BAIS2 burned area index from Sentinel-2 L2A red-edge bands and renders a color-mapped visualization. The index is sensitive to chlorophyll content in the red-edge region and is suitable for burned-area detection. Red for burn scars, magenta for active fires.",
-            "attribution": {
-                "text": ""
-            }
-        },
-        "data": {
-            "format": "cog",
-            "zIndex": 100,
-            "convertToRGB": true,
-            "bands": [
-                1,
-                2,
-                3
-            ]
+    {
+      "serviceId": "bais2",
+      "serviceProvider": "developmentseed",
+      "meta": {
+        "description": "Computes the BAIS2 burned area index from Sentinel-2 L2A red-edge bands and renders a color-mapped visualization. The index is sensitive to chlorophyll content in the red-edge region and is suitable for burned-area detection. Red for burn scars, magenta for active fires.",
+        "attribution": {
+          "text": ""
         }
+      },
+      "data": {
+        "format": "cog",
+        "zIndex": 100,
+        "convertToRGB": true,
+        "bands": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     {
       "serviceId": "efast",
@@ -1940,64 +1940,73 @@
       }
     },
     {
-            "serviceId": "bap_composite",
-            "serviceProvider": "vito",
-            "meta": {
-                "description": "",
-                "attribution": {
-                    "text": ""
-                }
-            },
-            "data": {
-                "format": "cog",
-                "zIndex": 100,
-                "convertToRGB": true,
-                "bands": [
-                    1,
-                    2,
-                    3
-                ]
-            }
-        },
-        {
-            "serviceId": "max_ndvi_composite",
-            "serviceProvider": "vito",
-            "meta": {
-                "description": "",
-                "attribution": {
-                    "text": ""
-                }
-            },
-            "data": {
-                "format": "cog",
-                "zIndex": 100,
-                "convertToRGB": true,
-                "bands": [
-                    1,
-                    2,
-                    3
-                ]
-            }
-        },
-        {
-            "serviceId": "ppi",
-            "serviceProvider": "vito",
-            "meta": {
-                "description": "",
-                "attribution": {
-                    "text": ""
-                },
-                "categories": [],
-                "colormaps": [
-                    {
-                        "min": 0,
-                        "max": 3,
-                        "steps": 50,
-                        "name": "viridis",
-                        "reverse": false
-                    }
-                ]
-            }
+      "serviceId": "bap_composite",
+      "serviceProvider": "vito",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
         }
+      },
+      "data": {
+        "format": "cog",
+        "zIndex": 100,
+        "convertToRGB": true,
+        "bands": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "serviceId": "max_ndvi_composite",
+      "serviceProvider": "vito",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        }
+      },
+      "data": {
+        "format": "cog",
+        "zIndex": 100,
+        "convertToRGB": true,
+        "bands": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "serviceId": "ppi",
+      "serviceProvider": "vito",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 3,
+            "steps": 50,
+            "name": "viridis",
+            "reverse": false
+          }
+        ]
+      }
+    },
+    {
+      "serviceId": "gep_api_ost",
+      "serviceProvider": "terradue",
+      "serviceDetails": {
+        "endpoint": "https://processing.geohazards-tep.eu",
+        "namespace": "44454d3235313539",
+        "application": "opensartoolkit-v2-1-7"
+      }
+    }
   ]
 }
