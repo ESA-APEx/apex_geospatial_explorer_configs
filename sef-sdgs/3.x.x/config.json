@@ -1,0 +1,2738 @@
+{
+  "version": "1.0.0",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "Sustainable Development Goals "
+    }
+  },
+  "interfaceGroups": [
+    "1. NO POVERTY (Poverty)",
+    "2. ZERO HUNGER (Agriculture & Nutrition)",
+    "3. GOOD HEALTH AND WELL BEING (Health)",
+    "6. CLEAN WATER AND SANITATION (Water)",
+    "11. SUSTAINABLE CITIES & COMMUNITIES (Cities)",
+    "13. CLIMATE ACTION (Climate)",
+    "15. LIFE ON LAND (Land Ecosystems)"
+  ],
+  "exclusivitySets": [],
+  "mapConstraints": {
+    "zoom": 0,
+    "center": [
+      0,
+      0
+    ],
+    "projection": "EPSG:3857"
+  },
+  "services": [
+    {
+      "id": "wms-service-1773221733420",
+      "name": "VITO Terrascope",
+      "url": "https://services.terrascope.be/wms/v2",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1773221734846",
+      "name": "Copernicus Urban Atlas",
+      "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1773221735206",
+      "name": "Brockmann Xcube",
+      "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wmts-service-1773221735495",
+      "name": "Terrascope WMTS",
+      "url": "https://globalland.vito.be/wmts",
+      "format": "wmts"
+    },
+    {
+      "id": "wms-service-1773221735640",
+      "name": "EOX BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "cog-service-1773221735916",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    },
+    {
+      "id": "wms-service-1773221736312",
+      "name": "Copernicus N2K 2018",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1773221736582",
+      "name": "Copernicus 2012 N2K",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1773221736659",
+      "name": "Copernicus N2K 2006",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "stac-service-1773221736738",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    },
+    {
+      "id": "stac-service-1773221737383",
+      "name": "VITO STAC catalogue",
+      "url": "https://stac.openeo.vito.be/",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1773221742316",
+      "name": "CLMS WMS Server",
+      "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+      "format": "wms"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Open StreetMap",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Base layer: Open StreetMap",
+        "attribution": {
+          "text": "Map data (c) OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Land Surface Temperature",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2022/06/01/ECOSTRESS_MEAN_LST_2022/2022_LST_AT_merged_composite_mean_70m.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1655244000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2023/06/01/ECOSTRESS_MEAN_LST_2023/2023_LST_AT_merged_composite_mean_70m.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1686780000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2024/06/01/ECOSTRESS_MEAN_LST_2024/2024_LST_AT_merged_composite_mean_70m.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1718402400
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "ECOSTRESS instrument mounted on the International Space Station. Data shows land surface temperatures measured during early afternoon hours in °C. The map is composed of single observations acquired between June 1st to June 24th, in order to result in an almost cloud-free image.",
+        "attribution": {
+          "text": "GTIF",
+          "url": "https://gtif-demo.eox.at/explore?indicator=HAUC1&x=1682304.11139&y=6105680.32568&z=7.21675"
+        },
+        "categories": [],
+        "units": "°C",
+        "min": 0,
+        "max": 40,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 40,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "11. SUSTAINABLE CITIES & COMMUNITIES (Cities)",
+        "subinterfaceGroup": "11.b DRR / resilience strategies (multi-hazard baselines)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Drought hazard context",
+      "isActive": false,
+      "data": [],
+      "meta": {
+        "description": "Auto-generated description for Drought hazard context",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "1. NO POVERTY (Poverty)",
+        "subinterfaceGroup": "1.5 Disaster resilience (vulnerable people)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Air quality exposure proxies",
+      "isActive": false,
+      "data": [],
+      "meta": {
+        "description": "Satellite-derived pollutant fields (e.g., NO₂/SO₂/CO columns depending on product) to build population exposure proxies and support health-impact screening and reporting context for air-pollution reduction.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "3. GOOD HEALTH AND WELL BEING (Health)",
+        "subinterfaceGroup": "3.9  Air pollution exposure (PM/NO₂ proxies)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "World Cover 2020 with NUTS statistics",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WORLDCOVER_2020_MAP"
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "timestamps": [
+            1609372800
+          ]
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1,
+          "timestamps": [
+            1609372800
+          ]
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2,
+          "timestamps": [
+            1609372800
+          ]
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2020.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3,
+          "timestamps": [
+            1609372800
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Land cover map for 2021 with statistics by NUTS.  Click on the \"Statistics\" tab and then select a geographic area of interest.",
+        "attribution": {
+          "text": "World Cover Project",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "15. LIFE ON LAND (Land Ecosystems)",
+        "subinterfaceGroup": "15.1 Terrestrial & inland freshwater ecosystems (extent/condition)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "World Cover 2021 with NUTS statistics",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WORLDCOVER_2021_MAP"
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
+      "exclusivitySets": [
+        "worldcover"
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "A 10 meter resolution global land cover product for the year 2021, developed and validated in near-real time based on Sentinel-1 and Sentinel-2 data.  Data is provided with statistics for NUTS (Nomenclature of territorial units for statistics) boundaries.  Select the \"statistics\" tab and click on a feature to view.",
+        "attribution": {
+          "text": "World Cover Project",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "15. LIFE ON LAND (Land Ecosystems)",
+        "subinterfaceGroup": "15.1 Terrestrial & inland freshwater ecosystems (extent/condition)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": true
+          }
+        }
+      }
+    },
+    {
+      "name": "World Cover 2020 and 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WORLDCOVER_2020_MAP"
+        },
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WORLDCOVER_2021_MAP"
+        }
+      ],
+      "statistics": [],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Land cover map for 2021",
+        "attribution": {
+          "text": "World Cover Project",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "15. LIFE ON LAND (Land Ecosystems)",
+        "subinterfaceGroup": "15.1 Terrestrial & inland freshwater ecosystems (extent/condition)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "European Above Ground Biomass",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2021/01/01/FCM-AGB-100m-2021/FCM_Europe_demo_2021_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2020/01/01/FCM-AGB-100m-2020/FCM_Europe_demo_2020_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2017/01/01/FCM-AGB-100m-2017/FCM_Europe_demo_2017_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1483228800
+          ]
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Above ground biomass (AGB) in t/ha in 20 m spatial resolution created with the BIOMASAR method using Sentinel-1 and ALOS 2 PALSAR 2 data.",
+        "attribution": {
+          "text": "Forest Carbon Monitoring Service",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 300,
+            "steps": 50,
+            "name": "greens",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "15. LIFE ON LAND (Land Ecosystems)",
+        "subinterfaceGroup": "15.2 Forests & sustainable forest management (cover/biomass/change)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Global Spring Cereals 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCEREAL_SPRINGCEREALS_V1",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "meta": {
+        "description": "World Cereal spring cereals, globally, at 10m resolution in specific seasons throughout the year.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
+        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Global Winter Cereals 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCEREAL_WINTERCEREALS_V1",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "meta": {
+        "description": "World Cereal winter cereals, globally, at 10m resolution in specific seasons throughout the year.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
+        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Global Temporary Crops 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCEREAL_TEMPORARYCROPS_V1",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "meta": {
+        "description": "World Cereal temporary crops, globally, at 10m resolution in specific seasons throughout the year.  A piece of land that is sowed/planted and harvestable at least once within the 12 months after the sowing/planting date.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
+        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Global Maize 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "WORLDCEREAL_MAIZE_V1",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "meta": {
+        "description": "Global maps of maize for 2021, at 10m resolution.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
+        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "European crop rotation over 3 years",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPCST_P2020-2022",
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPCST_P2021-2023",
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPCST_S2017-2019",
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPCST_S2018-2020",
+          "timestamps": [
+            1577833200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPCST_S2019-2021",
+          "timestamps": [
+            1609455600
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Multi-year crop-rotation layer indicating temporal crop sequencing, useful for rotation and diversification assessments.",
+        "attribution": {
+          "text": "CLMS HRL Cropland",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-croplands"
+        },
+        "categories": [
+          {
+            "color": "#E79D1E",
+            "label": "One crop type",
+            "value": 0
+          },
+          {
+            "color": "#8AE936",
+            "label": "Two crop types",
+            "value": 1
+          },
+          {
+            "color": "#F339FC",
+            "label": "Three crop types",
+            "value": 2
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
+        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "European Soil Organic Carbon (2020-2022)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/europe_aggr-orgc_00-020_mean_100_202003-202210-esa_worldcover_2021.tif",
+          "format": "cog",
+          "label": "Land Cover Types (from World Cover 2022)",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Tree Cover",
+              "value": 10
+            },
+            {
+              "label": "Shrubland",
+              "value": 20
+            },
+            {
+              "label": "Grassland",
+              "value": 30
+            },
+            {
+              "label": "Cropland",
+              "value": 40
+            },
+            {
+              "label": "Built-up",
+              "value": 50
+            },
+            {
+              "label": "Bare",
+              "value": 60
+            },
+            {
+              "label": "Snow and Ice",
+              "value": 70
+            },
+            {
+              "label": "Permanent water bodies",
+              "value": 80
+            },
+            {
+              "label": "Herbaceous wetland",
+              "value": 90
+            },
+            {
+              "label": "Moss and lichen",
+              "value": 100
+            }
+          ],
+          "bandIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "European soil-organic-carbon layer supporting soil health, carbon-stock context, and land-condition assessment.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
+        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "European Tree Cover Change 2018-2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:TCPC_C2018-2021",
+          "useTimeParameter": true
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Shows the change in tree cover between 2018 and 2021.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover"
+        },
+        "categories": [
+          {
+            "color": "#13FF15",
+            "label": "New tree cover",
+            "value": 1
+          },
+          {
+            "color": "#FF0000",
+            "label": "Loss of Tree Cover",
+            "value": 2
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "15. LIFE ON LAND (Land Ecosystems)",
+        "subinterfaceGroup": "15.2 Forests & sustainable forest management (cover/biomass/change)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Sentinel-2 NDVI",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "PROBAV_L3_S10_TOC_333M_NDVI",
+          "useTimeParameter": true
+        }
+      ],
+      "timeframe": "Days",
+      "meta": {
+        "description": "Vegetation index representing plant vigor and productivity derived from Sentinel-2.",
+        "attribution": {
+          "text": "Copernicus Global Land Service"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
+        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "European Main Crop Types",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CTY_S2023",
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CTY_S2022",
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CTY_S2021",
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CTY_S2020",
+          "timestamps": [
+            1577833200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CTY_S2019",
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CTY_S2018",
+          "timestamps": [
+            1514761200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CTY_S2017",
+          "timestamps": [
+            1483225200
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Annual (2017-2023) pan-European mapping of primary crops at a spatial resolution of 10 m and a MMU of 0.25 ha.",
+        "attribution": {
+          "text": "CLMS HRL Cropland",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-croplands"
+        },
+        "categories": [
+          {
+            "color": "#EE6E31",
+            "label": "Wheat",
+            "value": 0
+          },
+          {
+            "color": "#FBA249",
+            "label": "Barley",
+            "value": 1
+          },
+          {
+            "color": "#F0D313",
+            "label": "Maize",
+            "value": 2
+          },
+          {
+            "color": "#E94300",
+            "label": "Rice",
+            "value": 3
+          },
+          {
+            "color": "#E8A995",
+            "label": "Other Cereals",
+            "value": 4
+          },
+          {
+            "color": "#ADC5E6",
+            "label": "Fresh Vegetables",
+            "value": 5
+          },
+          {
+            "color": "#4997BF",
+            "label": "Dry Pulses",
+            "value": 6
+          },
+          {
+            "color": "#C98C43",
+            "label": "Potatoes",
+            "value": 7
+          },
+          {
+            "color": "#9C5B0D",
+            "label": "Sugar Beet",
+            "value": 8
+          },
+          {
+            "color": "#FE7979",
+            "label": "Sunflower",
+            "value": 9
+          },
+          {
+            "color": "#A4568C",
+            "label": "Soybeans",
+            "value": 10
+          },
+          {
+            "color": "#BC63A1",
+            "label": "Rapeseed",
+            "value": 11
+          },
+          {
+            "color": "#F6B6D2",
+            "label": "Flax, cotton and hemp",
+            "value": 12
+          },
+          {
+            "color": "#DBDB8D",
+            "label": "Grapes",
+            "value": 13
+          },
+          {
+            "color": "#C1CE11",
+            "label": "Olives",
+            "value": 14
+          },
+          {
+            "color": "#79A03B",
+            "label": "Fruits",
+            "value": 15
+          },
+          {
+            "color": "#5A7C30",
+            "label": "Nuts",
+            "value": 16
+          },
+          {
+            "color": "#D7D7D7",
+            "label": "Undecided (arable)",
+            "value": 17
+          },
+          {
+            "color": "#ABABAB",
+            "label": "Undecided (permanent)",
+            "value": 18
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
+        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "European Secondary Crop Types",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPSCT_S2017",
+          "timestamps": [
+            1483225200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPSCT_S2018",
+          "timestamps": [
+            1514761200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPSCT_S2019",
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPSCT_S2020",
+          "timestamps": [
+            1577833200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPSCT_S2021",
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPSCE_S2022",
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPSCT_S2023",
+          "timestamps": [
+            1672527600
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Annual (2017-2023) pan-European mapping of secondary crops at a spatial resolution of 10 m and a MMU of 0.25 ha.",
+        "attribution": {
+          "text": "CLMS HRL Cropland",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-croplands"
+        },
+        "categories": [
+          {
+            "color": "#FECB5B",
+            "label": "Short Summer Cover Crop",
+            "value": 0
+          },
+          {
+            "color": "#FF9E00",
+            "label": "Long Summer Cover Crop",
+            "value": 1
+          },
+          {
+            "color": "#63E53C",
+            "label": "Short Winter Cover Crop",
+            "value": 2
+          },
+          {
+            "color": "#106400",
+            "label": "Long Winter Cover Crop",
+            "value": 3
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
+        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "European Fallow Land",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2017",
+          "timestamps": [
+            1483225200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2018",
+          "timestamps": [
+            1514761200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2019",
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2020",
+          "timestamps": [
+            1577833200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2021",
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2022",
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2023",
+          "timestamps": [
+            1672527600
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Annual (2017-2023) pan-European level amapping of the presence of fallow land over cropland, at a spatial resolution of 10 m and a MMU of 0.25 ha",
+        "attribution": {
+          "text": "CLMS HRL Cropland",
+          "url": "clms hrl cropland"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
+        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Sen4LDN Land cover over time - Portugal",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N42W009_MAP/SEN4LDN_LCM_V100_2023_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N39W012_MAP/SEN4LDN_LCM_V100_2023_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N39W009_MAP/SEN4LDN_LCM_V100_2023_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N39W006_MAP/SEN4LDN_LCM_V100_2023_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N36W012_MAP/SEN4LDN_LCM_V100_2023_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2023/01/01/SEN4LDN_LCM_V100_2023_N36W009_MAP/SEN4LDN_LCM_V100_2023_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N42W009_MAP/SEN4LDN_LCM_V100_2022_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N39W012_MAP/SEN4LDN_LCM_V100_2022_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N39W009_MAP/SEN4LDN_LCM_V100_2022_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N39W006_MAP/SEN4LDN_LCM_V100_2022_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N36W012_MAP/SEN4LDN_LCM_V100_2022_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2022/01/01/SEN4LDN_LCM_V100_2022_N36W009_MAP/SEN4LDN_LCM_V100_2022_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N42W009_MAP/SEN4LDN_LCM_V100_2021_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N39W012_MAP/SEN4LDN_LCM_V100_2021_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N39W009_MAP/SEN4LDN_LCM_V100_2021_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N39W006_MAP/SEN4LDN_LCM_V100_2021_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N36W012_MAP/SEN4LDN_LCM_V100_2021_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2021/01/01/SEN4LDN_LCM_V100_2021_N36W009_MAP/SEN4LDN_LCM_V100_2021_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N42W009_MAP/SEN4LDN_LCM_V100_2020_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N39W012_MAP/SEN4LDN_LCM_V100_2020_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N39W009_MAP/SEN4LDN_LCM_V100_2020_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N39W006_MAP/SEN4LDN_LCM_V100_2020_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N36W012_MAP/SEN4LDN_LCM_V100_2020_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2020/01/01/SEN4LDN_LCM_V100_2020_N36W009_MAP/SEN4LDN_LCM_V100_2020_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N42W009_MAP/SEN4LDN_LCM_V100_2019_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N39W012_MAP/SEN4LDN_LCM_V100_2019_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N39W009_MAP/SEN4LDN_LCM_V100_2019_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N39W006_MAP/SEN4LDN_LCM_V100_2019_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N36W012_MAP/SEN4LDN_LCM_V100_2019_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2019/01/01/SEN4LDN_LCM_V100_2019_N36W009_MAP/SEN4LDN_LCM_V100_2019_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546300800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N42W009_MAP/SEN4LDN_LCM_V100_2018_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N39W012_MAP/SEN4LDN_LCM_V100_2018_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N39W009_MAP/SEN4LDN_LCM_V100_2018_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N39W006_MAP/SEN4LDN_LCM_V100_2018_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N36W012_MAP/SEN4LDN_LCM_V100_2018_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCM_V100_2018_N36W009_MAP/SEN4LDN_LCM_V100_2018_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Trends in land cover between 2018 and 2023 are evaluated based on an automated algorithm to map land cover dynamics at 10 m resolution that combines deep learning and a pixel classifier on pre-processed Sentinel-2 imagery and ancillary input layers.",
+        "attribution": {
+          "text": "ESA Project Results repository",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/esa_sen4ldn_land_cover?.language=en"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "15. LIFE ON LAND (Land Ecosystems)",
+        "subinterfaceGroup": "15.3 Land Degradation Neutrality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Sen4LDN Trends in land productivity Values of Trend Coefficient - Portugal",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N42W009_MAP/SEN4LDN_trendval_V100_2018-2023_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N39W012_MAP/SEN4LDN_trendval_V100_2018-2023_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N39W009_MAP/SEN4LDN_trendval_V100_2018-2023_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N36W012_MAP/SEN4LDN_trendval_V100_2018-2023_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_productivity/2018/01/01/SEN4LDN_trendval_V100_2018-2023_N36W009_MAP/SEN4LDN_trendval_V100_2018-2023_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Values of trend coefficient of productivity over the period 2018-2023 (day / year) between -10 and +10.  (Scale needs to be offset by 1/10 - 10)",
+        "attribution": {
+          "text": "SEN4DN",
+          "url": "https://esa-sen4ldn.org/en"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 254,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 254,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "15. LIFE ON LAND (Land Ecosystems)",
+        "subinterfaceGroup": "15.3 Land Degradation Neutrality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Sen4LDN Carbon stocks trends - Portugal",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_carbon_stocks/2010/01/01/SEN4LDN_Hybrid-Avg_V100_2010-2018_portugal_MAP/SEN4LDN_Hybrid-Avg_V100_2010-2018_portugal_MAP.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Using above-ground biomass (AGB) changes as a proxy for carbon stock changes to provide an estimate independent of trends (between 2010 and 2018) in land cover and trends in land productivity.",
+        "attribution": {
+          "text": "ESA Project Results repository",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/esa_sen4ldn_carbon_stocks?.language=en"
+        },
+        "categories": [],
+        "min": -206,
+        "max": 129,
+        "colormaps": [
+          {
+            "min": -206,
+            "max": 129,
+            "steps": 50,
+            "name": "jet",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "15. LIFE ON LAND (Land Ecosystems)",
+        "subinterfaceGroup": "15.3 Land Degradation Neutrality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Sen4LDN Trend in Land Cover - Degradation Probability Map between 2018 and 2023 - Portugal",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N42W009_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N39W012_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N39W009_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N39W006_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N36W012_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD-PROB_V100_2018-2023_N36W009_MAP/SEN4LDN_LCD-PROB_V100_2018-2023_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        }
+      ],
+      "meta": {
+        "description": " Carbon stock estimates (including soil/biomass proxies) providing the carbon-stocks component for SDG 15.3.1 (LDN triad).",
+        "attribution": {
+          "text": "SEN4DN",
+          "url": "https://esa-sen4ldn.org/en"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 234,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 234,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "15. LIFE ON LAND (Land Ecosystems)",
+        "subinterfaceGroup": "15.3 Land Degradation Neutrality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Sen4LDN Land cover degradation trends - Portugal",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N42W009_MAP/SEN4LDN_LCD_V100_2018-2023_N42W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N39W012_MAP/SEN4LDN_LCD_V100_2018-2023_N39W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N39W009_MAP/SEN4LDN_LCD_V100_2018-2023_N39W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N39W006_MAP/SEN4LDN_LCD_V100_2018-2023_N39W006_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N36W012_MAP/SEN4LDN_LCD_V100_2018-2023_N36W012_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/esa_sen4ldn_land_cover/2018/01/01/SEN4LDN_LCD_V100_2018-2023_N36W009_MAP/SEN4LDN_LCD_V100_2018-2023_N36W009_MAP.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514764800
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Trends in land cover between 2018 and 2023 are evaluated based on an automated algorithm to map land cover dynamics at 10 m resolution that combines deep learning and a pixel classifier on pre-processed Sentinel-2 imagery and ancillary input layers.",
+        "attribution": {
+          "text": "ESA Project Results repository",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/esa_sen4ldn_land_cover?.language=en"
+        },
+        "categories": [
+          {
+            "color": "#008837",
+            "label": "Restoration",
+            "value": 1
+          },
+          {
+            "color": "#7B3294",
+            "label": "Degradation",
+            "value": 2
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "15. LIFE ON LAND (Land Ecosystems)",
+        "subinterfaceGroup": "15.3 Land Degradation Neutrality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Built-Up Areas 2021",
+      "isActive": false,
+      "meta": {
+        "description": "Provides pan-European binary information on built-up areas at 10 m spatial resolution for the 2021 reference year. Built-up areas correspond to artificial above-ground constructions (e.g. buildings) within the sealing outline derived from the Imperviousness Density 2021 layer.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service (CLMS) – HRL Non-Vegetated Land Cover Characteristics (Built-Up 2021), data service by GeoVille",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-imperviousness/impervious-built-up-2021"
+        },
+        "categories": [
+          {
+            "color": "#ffb200",
+            "label": "Built-Up",
+            "value": 0
+          }
+        ],
+        "units": "Binary (built-up / non built-up)"
+      },
+      "layout": {
+        "interfaceGroup": "11. SUSTAINABLE CITIES & COMMUNITIES (Cities)",
+        "subinterfaceGroup": "11.1 / 11.3  Urban extent, housing and land consumption",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://geoserver.geoville.com/geoserver/nvlcc/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_NVLCC_IBU_10m",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "World Settlement Footprint",
+      "isActive": false,
+      "meta": {
+        "description": "Global settlement-extent layer capturing the spatial footprint of human settlements and urban expansion, useful for settlement mapping, urban growth analysis, and SDG 11 reporting context.",
+        "attribution": {
+          "text": "© DLR (German Aerospace Center) – World Settlement Footprint Program",
+          "url": "https://geoservice.dlr.de/web/datasets/wsf_evo"
+        },
+        "categories": [
+          {
+            "color": "#d50000",
+            "label": "1985",
+            "value": 0
+          },
+          {
+            "color": "#dd2200",
+            "label": "1986",
+            "value": 0
+          },
+          {
+            "color": "#e54500",
+            "label": "1987",
+            "value": 0
+          },
+          {
+            "color": "#ee6700",
+            "label": "1988",
+            "value": 0
+          },
+          {
+            "color": "#f68a00",
+            "label": "1989",
+            "value": 0
+          },
+          {
+            "color": "#ffad00",
+            "label": "1990",
+            "value": 0
+          },
+          {
+            "color": "#ecbd00",
+            "label": "1991",
+            "value": 0
+          },
+          {
+            "color": "#d9cd00",
+            "label": "1992",
+            "value": 0
+          },
+          {
+            "color": "#c6de00",
+            "label": "1993",
+            "value": 0
+          },
+          {
+            "color": "#b3ee00",
+            "label": "1994",
+            "value": 0
+          },
+          {
+            "color": "#a1ff00",
+            "label": "1995",
+            "value": 0
+          },
+          {
+            "color": "#80f200",
+            "label": "1996",
+            "value": 0
+          },
+          {
+            "color": "#60e500",
+            "label": "1997",
+            "value": 0
+          },
+          {
+            "color": "#40d800",
+            "label": "1998",
+            "value": 0
+          },
+          {
+            "color": "#20cb00",
+            "label": "1999",
+            "value": 0
+          },
+          {
+            "color": "#00be00",
+            "label": "2000",
+            "value": 0
+          },
+          {
+            "color": "#00b923",
+            "label": "2001",
+            "value": 0
+          },
+          {
+            "color": "#00b546",
+            "label": "2002",
+            "value": 0
+          },
+          {
+            "color": "#00b069",
+            "label": "2003",
+            "value": 0
+          },
+          {
+            "color": "#00ac8c",
+            "label": "2004",
+            "value": 0
+          },
+          {
+            "color": "#00a8af",
+            "label": "2005",
+            "value": 0
+          },
+          {
+            "color": "#008ab8",
+            "label": "2006",
+            "value": 0
+          },
+          {
+            "color": "#006cc1",
+            "label": "2007",
+            "value": 0
+          },
+          {
+            "color": "#004eca",
+            "label": "2008",
+            "value": 0
+          },
+          {
+            "color": "#0030d3",
+            "label": "2009",
+            "value": 0
+          },
+          {
+            "color": "#0012dd",
+            "label": "2010",
+            "value": 0
+          },
+          {
+            "color": "#190ecd",
+            "label": "2011",
+            "value": 0
+          },
+          {
+            "color": "#3232bd",
+            "label": "2012",
+            "value": 0
+          },
+          {
+            "color": "#4b07ad",
+            "label": "2013",
+            "value": 0
+          },
+          {
+            "color": "#64039d",
+            "label": "2014",
+            "value": 0
+          },
+          {
+            "color": "#7e008e",
+            "label": "2015",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "11. SUSTAINABLE CITIES & COMMUNITIES (Cities)",
+        "subinterfaceGroup": "11.1 / 11.3  Urban extent, housing and land consumption",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_Evolution",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "Land Surface Temperature 10 m",
+      "isActive": false,
+      "meta": {
+        "description": "High-resolution Land Surface Temperature (LST) derived via the CHILL-y downscaling framework, applied to Sentinel-3 SLSTR thermal data. This raster represents surface radiant temperature at ~10–30 m resolution for the overpass on 13 August 2024.",
+        "attribution": {
+          "text": "© ESA – CHILL-y LST Downscaling Consortium (Sentinel-3 SLSTR LST)",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/chilly-lstm-like-lst/items/35VMF_S3-LSTHR_20240813T190421_COG.tif?.language=en&.asset=asset-product"
+        },
+        "categories": [],
+        "units": "K",
+        "min": 284,
+        "max": 299,
+        "colormaps": [
+          {
+            "min": 284,
+            "max": 300,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "13. CLIMATE ACTION (Climate)",
+        "subinterfaceGroup": "13.1  Climate resilience & adaptation (hazards, exposure, loss mapping)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/chilly-lstm-like-lst/2024/08/13/35VMF_S3-LSTHR_20240813T190421_COG.tif/35VMF_S3-LSTHR_20240813T190421_COG.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
+    },
+    {
+      "name": "Peatland rewetting - Saddleworth Moor",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/WhatSARPeat/peat-classification/peat_classification.tif",
+          "format": "cog",
+          "label": "Peatland Classification",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Not Peatland",
+              "value": 0
+            },
+            {
+              "label": "Peatland",
+              "value": 1
+            }
+          ],
+          "bandIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
+        "attribution": {
+          "text": "WorldPeatland",
+          "url": "https://stac-browser.worldpeatland.org/#/saddleworth/catalog.json"
+        },
+        "categories": [],
+        "units": "mm/yr",
+        "colormaps": [
+          {
+            "min": -40,
+            "max": 40,
+            "steps": 81,
+            "name": "jet",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "13. CLIMATE ACTION (Climate)",
+        "subinterfaceGroup": "13.2 Integrate climate change measures into national policies, strategies and planning",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Peatland rewetting - Hatfield Thorne",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/HatfieldThorne/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/HatfieldThorne/WhatSARPeat/peat-classification/peat_classification.tif",
+          "format": "cog",
+          "label": "Peatland Classification",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Not Peatland",
+              "value": 0
+            },
+            {
+              "label": "Peatland",
+              "value": 1
+            }
+          ],
+          "bandIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
+        "attribution": {
+          "text": "WorldPeatland",
+          "url": "https://stac-browser.worldpeatland.org/#/hatfield-thorne/catalog.json"
+        },
+        "categories": [],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80,
+        "colormaps": [
+          {
+            "min": -80,
+            "max": 80,
+            "steps": 81,
+            "name": "jet",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "13. CLIMATE ACTION (Climate)",
+        "subinterfaceGroup": "13.2 Integrate climate change measures into national policies, strategies and planning",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    }
+  ]
+}
