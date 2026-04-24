@@ -7,11 +7,11 @@
     }
   },
   "interfaceGroups": [
-    "Built Environment & Urban Morphology",
+    "Urban Mapping",
     "Urban Risk & Climate Resilience",
     "Urban Nature & Greening",
-    "Soil & Environmental Condition",
-    "Baseline LULC"
+    "Austria Example",
+    "Additional examples"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -90,614 +90,57 @@
       "format": "stac"
     },
     {
-      "id": "wms-service-1763653158549",
-      "name": "CLMS WMS Server",
-      "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-      "format": "wms"
-    },
-    {
       "id": "wms-service-1764331162803",
       "name": "Geoville",
       "url": "https://geoserver.geoville.com/geoserver/nvlcc/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+      "format": "wms"
+    },
+    {
+      "id": "stac-service-1774547216130",
+      "name": "Copernicus Data Space Ecosystem (CDSE) asset-level STAC catalogue",
+      "url": "https://stac.dataspace.copernicus.eu/v1/",
+      "format": "stac"
+    },
+    {
+      "id": "stac-service-1774948972823",
+      "name": "EOC EO Products Service",
+      "url": "https://geoservice.dlr.de/eoc/ogc/stac/v1/",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1774952076543",
+      "name": "DLR WMS",
+      "url": "https://geoservice.dlr.de/eoc/land/wms",
+      "format": "wms"
+    },
+    {
+      "id": "stac-service-1774975910194",
+      "name": "WorldPop STAC API",
+      "url": "https://api.stac.worldpop.org/",
+      "format": "stac"
+    },
+    {
+      "id": "stac-service-1774976085443",
+      "name": "FedEO Clearinghouse",
+      "url": "https://fedeo.ceos.org/",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1775742921017",
+      "name": "GFM WFS",
+      "url": "https://geoserver.gfm.eodc.eu/geoserver/gfm/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1775744638267",
+      "name": "ECMWF WMS",
+      "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
       "format": "wms"
     }
   ],
   "sources": [
     {
-      "name": "European Land Use",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Land_Use_Raster1402"
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Land_Use_vector52160",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "High-resolution land use and land cover map for European functional urban areas, providing detailed classification of urban and peri-urban zones for the 2018 reference year.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas, European Environment Agency (EEA)",
-          "url": "https://land.copernicus.eu/en/products/urban-atlas/urban-atlas-2018"
-        },
-        "categories": [
-          {
-            "color": "#800000",
-            "label": "Continuous Urban fabric (S.L. > 80%)",
-            "value": 11100
-          },
-          {
-            "color": "#bf0000",
-            "label": "Discontinuous Dense Urban Fabric (S.L.: 50% - 80%)",
-            "value": 11210
-          },
-          {
-            "color": "#ff4040",
-            "label": "Discontinuous Medium Density Urban Fabric (S.L.: 30% - 50%)",
-            "value": 11220
-          },
-          {
-            "color": "#ff8080",
-            "label": "Discontinuous Low Density Urban Fabric (S.L.: 10% - 30%)",
-            "value": 11230
-          },
-          {
-            "color": "#ffbfbf",
-            "label": "Discontinuous very low density urban fabric (S.L. < 10%)",
-            "value": 11240
-          },
-          {
-            "color": "#cc6666",
-            "label": "Isolated Structures",
-            "value": 11300
-          },
-          {
-            "color": "#cc4df2",
-            "label": "Industrial, commercial, public, military and private units",
-            "value": 12100
-          },
-          {
-            "color": "#959595",
-            "label": "Fast transit roads and associated land",
-            "value": 12210
-          },
-          {
-            "color": "#b3b3b3",
-            "label": "Other roads and associated land",
-            "value": 12220
-          },
-          {
-            "color": "#595959",
-            "label": "Railways and associated land",
-            "value": 12230
-          },
-          {
-            "color": "#e6cccc",
-            "label": "Port areas",
-            "value": 12300
-          },
-          {
-            "color": "#e6cce6",
-            "label": "Airports",
-            "value": 12400
-          },
-          {
-            "color": "#734d50",
-            "label": "Mineral extraction and dump sites",
-            "value": 13100
-          },
-          {
-            "color": "#b9a56e",
-            "label": "Construction sites",
-            "value": 13300
-          },
-          {
-            "color": "#874545",
-            "label": "Land without current use",
-            "value": 13400
-          },
-          {
-            "color": "#8cdc00",
-            "label": "Green urban areas",
-            "value": 14100
-          },
-          {
-            "color": "#afd2a5",
-            "label": "Sports and leisure facilities",
-            "value": 14200
-          },
-          {
-            "color": "#ffffa8",
-            "label": "Arable land (annual crops)",
-            "value": 21000
-          },
-          {
-            "color": "#f2a64d",
-            "label": "Arable land (annual crops)",
-            "value": 21000
-          },
-          {
-            "color": "#e6e64d",
-            "label": "Pastures",
-            "value": 23000
-          },
-          {
-            "color": "#ffe64d",
-            "label": "Complex and mixed cultivation patterns",
-            "value": 24000
-          },
-          {
-            "color": "#f2cc80",
-            "label": "Orchards",
-            "value": 25000
-          },
-          {
-            "color": "#008c00",
-            "label": "Forests",
-            "value": 31000
-          },
-          {
-            "color": "#ccf24d",
-            "label": "Herbaceous vegetation associations",
-            "value": 32000
-          },
-          {
-            "color": "#ccffcc",
-            "label": "Herbaceous vegetation associations",
-            "value": 32000
-          },
-          {
-            "color": "#a6a6ff",
-            "label": "Wetlands",
-            "value": 40000
-          },
-          {
-            "color": "#80f2e6",
-            "label": "Water",
-            "value": 50000
-          }
-        ],
-        "units": "Categorical classe"
-      },
-      "layout": {
-        "interfaceGroup": "Baseline LULC",
-        "subinterfaceGroup": "Land Use",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "City Boundary",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "City__Boundary56962",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Greater_City_Boundary6752",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for City Boundary",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Baseline LULC",
-        "subinterfaceGroup": "Land Use",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=City__Boundary56962"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "EO4PORTS LULC",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/EO_LULC_EO4PORTS/2024/08/12/LULC_Rotterdam_2024/rotterdam_2024.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Multisensor EO-derived 2024 LULC map for the Port of Rotterdam, supporting classification of port, industrial, urban, and coastal land-cover classes.",
-        "attribution": {
-          "text": "© European Space Agency (ESA) – EO4PORTS Project",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/EO_LULC_EO4PORTS/items/LULC_Rotterdam_2024?.asset=asset-product"
-        },
-        "categories": [
-          {
-            "color": "#BD2828",
-            "label": "Urban fabric",
-            "value": 1
-          },
-          {
-            "color": "#E27036",
-            "label": "Industrial, commercial, and transport units",
-            "value": 2
-          },
-          {
-            "color": "#D49311",
-            "label": "Port areas",
-            "value": 3
-          },
-          {
-            "color": "#D7D742",
-            "label": "Airports",
-            "value": 4
-          },
-          {
-            "color": "#8FC91D",
-            "label": "Road and rail networks",
-            "value": 5
-          },
-          {
-            "color": "#6CEE2B",
-            "label": "Construction sites",
-            "value": 6
-          },
-          {
-            "color": "#28BD28",
-            "label": "Green urban areas / Parks",
-            "value": 7
-          },
-          {
-            "color": "#36E270",
-            "label": "Sports and leisure facilities",
-            "value": 8
-          },
-          {
-            "color": "#11D493",
-            "label": "Agricultural areas",
-            "value": 9
-          },
-          {
-            "color": "#42D7D7",
-            "label": "Forests",
-            "value": 10
-          },
-          {
-            "color": "#1D8FC9",
-            "label": "Shrubland / Transitional woodland",
-            "value": 11
-          },
-          {
-            "color": "#2B6CEE",
-            "label": "Water bodies",
-            "value": 13
-          },
-          {
-            "color": "#2828BD",
-            "label": "Sea and coastal waters",
-            "value": 14
-          },
-          {
-            "color": "#7036E2",
-            "label": "Wetlands / Marshes",
-            "value": 15
-          },
-          {
-            "color": "#9311D4",
-            "label": "Bare land / Sand / Dunes",
-            "value": 16
-          },
-          {
-            "color": "#D742D7",
-            "label": "Port logistics areas (yards, storage)",
-            "value": 17
-          },
-          {
-            "color": "#C91D8F",
-            "label": "Container terminals",
-            "value": 18
-          },
-          {
-            "color": "#EE2B6C",
-            "label": "Shipyards / Maritime industrial zones",
-            "value": 19
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Baseline LULC",
-        "subinterfaceGroup": "Land Use",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "European Land Cover",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
-        }
-      ],
-      "meta": {
-        "description": "A pan-European spatially consistent and seamless, detailed land cover inventory for the 2021 reference year, for each pixel showing the dominant land cover among the 11 basic land cover classes.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service",
-          "url": "https://land.copernicus.eu/en/products/clc-backbone/clc-backbone-2021"
-        },
-        "categories": [
-          {
-            "color": "#ff0000",
-            "label": "Sealed",
-            "value": 1
-          },
-          {
-            "color": "#228b22",
-            "label": "Woody needle leaved trees",
-            "value": 2
-          },
-          {
-            "color": "#80ff00",
-            "label": "Woody Broadleaved deciduous trees",
-            "value": 3
-          },
-          {
-            "color": "#00ff08",
-            "label": "Woody Broadleaved evergreen trees",
-            "value": 4
-          },
-          {
-            "color": "#804000",
-            "label": "Low-growing woody plants",
-            "value": 5
-          },
-          {
-            "color": "#ccf24d",
-            "label": "Permanent herbaceous",
-            "value": 6
-          },
-          {
-            "color": "#ffff80",
-            "label": "Periodically herbaceous",
-            "value": 7
-          },
-          {
-            "color": "#ff80ff",
-            "label": "Lichens and mosses",
-            "value": 8
-          },
-          {
-            "color": "#bfbfbf",
-            "label": "Non and sparsely vegetated",
-            "value": 9
-          },
-          {
-            "color": "#0080ff",
-            "label": "Water",
-            "value": 10
-          },
-          {
-            "color": "#00ffff",
-            "label": "Snow and ice",
-            "value": 11
-          },
-          {
-            "color": "#e6e6e6",
-            "label": "Outside area",
-            "value": 12
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Baseline LULC",
-        "subinterfaceGroup": "Land Cover",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": false,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Copernicus Global Land Cover",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://s3-eu-west-1.amazonaws.com/vito-lcv/global/2019/cog-full_l0-colored-full/{z}/{x}/{-y}.png",
-          "format": "xyz",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "A global level spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands for the 2019 base year.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service",
-          "url": "https://land.copernicus.eu/en/products/global-dynamic-land-cover/copernicus-global-land-service-land-cover-100m-collection-3-epoch-2015-2019-globe"
-        },
-        "categories": [
-          {
-            "color": "#006400",
-            "label": "Forests",
-            "value": 111
-          },
-          {
-            "color": "#ffbb22",
-            "label": "Shrubland",
-            "value": 20
-          },
-          {
-            "color": "#ffff4c",
-            "label": "Herbaceous Vegetation",
-            "value": 30
-          },
-          {
-            "color": "#0096a0",
-            "label": "Herbaceous Wetland",
-            "value": 90
-          },
-          {
-            "color": "#fae6a0",
-            "label": "Moss and lichen",
-            "value": 100
-          },
-          {
-            "color": "#b4b4b4",
-            "label": "Bare / sparse vegetation",
-            "value": 60
-          },
-          {
-            "color": "#f096ff",
-            "label": "Cropland",
-            "value": 40
-          },
-          {
-            "color": "#fa0000",
-            "label": "Built up",
-            "value": 50
-          },
-          {
-            "color": "#b4b4b4",
-            "label": "Snow and Ice",
-            "value": 70
-          },
-          {
-            "color": "#0032c8",
-            "label": "Permanent Water Bodies",
-            "value": 80
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Baseline LULC",
-        "subinterfaceGroup": "Land Cover",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Copernicus Digital Surface Model (DSM)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/DEM/Copernicus_DSM_COG_30_N51_00_W001_00_DEM.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Digital Surface Model (DSM) at 10 m spatial resolution derived from Copernicus elevation data, representing the elevation of natural and built features such as buildings, trees and terrain. This tile covers the Granollers area and is suitable for analysing urban morphology, landform influence on heat distribution, and terrain–temperature interactions in UHI studies.",
-        "attribution": {
-          "text": "European Space Agency (ESA) / Copernicus Programme – Copernicus DEM (DSM 10 m)",
-          "url": "https://spacedata.copernicus.eu/collections/copernicus-dem"
-        },
-        "categories": [],
-        "units": "%"
-      },
-      "layout": {
-        "interfaceGroup": "Baseline LULC",
-        "subinterfaceGroup": "Land Cover",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "World Land Cover",
+      "name": "Global Land Cover",
       "isActive": false,
       "data": [
         {
@@ -773,8 +216,8 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Baseline LULC",
-        "subinterfaceGroup": "Land Cover",
+        "interfaceGroup": "Urban Mapping",
+        "subinterfaceGroup": "Global Urban Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -794,55 +237,40 @@
       }
     },
     {
-      "name": "Imperviousness Change",
+      "name": "Extent of Settlement",
       "isActive": false,
       "data": [
         {
-          "url": "https://geoserver.geoville.com/geoserver/nvlcc/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
           "format": "wms",
           "zIndex": 50,
-          "layers": "HRL_NVLCC_IMCC_20m",
-          "useTimeParameter": true
+          "layers": "WSF_2015",
+          "timestamps": [
+            1420066800
+          ]
+        },
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_2019",
+          "timestamps": [
+            1546297200
+          ]
         }
       ],
+      "timeframe": "Years",
       "meta": {
-        "description": "20 m classification of sealing increase, decrease or stability between 2018 and 2021",
+        "description": "Shows the extent of human settlements worldwide for the years 2015 and 2019",
         "attribution": {
-          "text": "Copernicus Land Monitoring Service (CLMS) – High Resolution Layer Imperviousness Change 2018–2021",
-          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-imperviousness/imperviousness-density-change-2018-2021"
+          "text": "DLR World Settlement Footprint",
+          "url": "https://www.dlr.de/en/eoc/research-transfer/projects-missions/world-settlement-footprint-wsf-r"
         },
-        "categories": [
-          {
-            "color": "#ff0000",
-            "label": "New cover",
-            "value": 0
-          },
-          {
-            "color": "#006400",
-            "label": "Loss of cover",
-            "value": 0
-          },
-          {
-            "color": "#9c9c9c",
-            "label": "Unchanged impervious areas",
-            "value": 0
-          },
-          {
-            "color": "#ffbf00",
-            "label": "Increased imperviousness density",
-            "value": 0
-          },
-          {
-            "color": "#40b200",
-            "label": "Decreased imperviousness density",
-            "value": 0
-          }
-        ],
-        "units": "Categorical classes"
+        "categories": []
       },
       "layout": {
-        "interfaceGroup": "Built Environment & Urban Morphology",
-        "subinterfaceGroup": "Built-up Structure",
+        "interfaceGroup": "Urban Mapping",
+        "subinterfaceGroup": "Global Urban Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -854,7 +282,7 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
@@ -862,7 +290,7 @@
       }
     },
     {
-      "name": "World Settlement Footprint",
+      "name": "Evolution 1985-2015",
       "isActive": false,
       "data": [
         {
@@ -1038,8 +466,8 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Built Environment & Urban Morphology",
-        "subinterfaceGroup": "Built-up Structure",
+        "interfaceGroup": "Urban Mapping",
+        "subinterfaceGroup": "Global Urban Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1051,6 +479,193 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Building Height",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF3D_V02_BUILDINGHEIGHT",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Global 90 m average building height derived from TanDEM-X and optical data, supporting analysis of vertical urban structure.",
+        "attribution": {
+          "text": "© DLR – World Settlement Footprint 3D (WSF3D)",
+          "url": "https://geoservice.dlr.de/web/datasets/wsf_3d"
+        },
+        "categories": [],
+        "units": "m"
+      },
+      "layout": {
+        "interfaceGroup": "Urban Mapping",
+        "subinterfaceGroup": "Global Urban Mapping",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://geoservice.dlr.de/eoc/land/wms?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WSF3D_V02_BUILDINGHEIGHT"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Building Volume",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF3D_V02_BUILDINGVOLUME",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Global 90 m building volume layer derived from TanDEM-X and optical data, providing m³ estimates of urban structure and density.",
+        "attribution": {
+          "text": "© DLR – World Settlement Footprint 3D (WSF3D)",
+          "url": "https://geoservice.dlr.de/web/datasets/wsf_3d"
+        },
+        "categories": [],
+        "units": "m³"
+      },
+      "layout": {
+        "interfaceGroup": "Urban Mapping",
+        "subinterfaceGroup": "Global Urban Mapping",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://geoservice.dlr.de/eoc/land/wms?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WSF3D_V02_BUILDINGVOLUME"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "European Land Cover",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
+        }
+      ],
+      "meta": {
+        "description": "A pan-European spatially consistent and seamless, detailed land cover inventory for the 2021 reference year, for each pixel showing the dominant land cover among the 11 basic land cover classes.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en/products/clc-backbone/clc-backbone-2021"
+        },
+        "categories": [
+          {
+            "color": "#ff0000",
+            "label": "Sealed",
+            "value": 1
+          },
+          {
+            "color": "#228b22",
+            "label": "Woody needle leaved trees",
+            "value": 2
+          },
+          {
+            "color": "#80ff00",
+            "label": "Woody Broadleaved deciduous trees",
+            "value": 3
+          },
+          {
+            "color": "#00ff08",
+            "label": "Woody Broadleaved evergreen trees",
+            "value": 4
+          },
+          {
+            "color": "#804000",
+            "label": "Low-growing woody plants",
+            "value": 5
+          },
+          {
+            "color": "#ccf24d",
+            "label": "Permanent herbaceous",
+            "value": 6
+          },
+          {
+            "color": "#ffff80",
+            "label": "Periodically herbaceous",
+            "value": 7
+          },
+          {
+            "color": "#ff80ff",
+            "label": "Lichens and mosses",
+            "value": 8
+          },
+          {
+            "color": "#bfbfbf",
+            "label": "Non and sparsely vegetated",
+            "value": 9
+          },
+          {
+            "color": "#0080ff",
+            "label": "Water",
+            "value": 10
+          },
+          {
+            "color": "#00ffff",
+            "label": "Snow and ice",
+            "value": 11
+          },
+          {
+            "color": "#e6e6e6",
+            "label": "Outside area",
+            "value": 12
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Urban Mapping",
+        "subinterfaceGroup": "European Urban Mapping",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
             "temporalControls": false,
             "constraintSlider": false,
             "blendControls": false
@@ -1086,8 +701,8 @@
         "units": "Binary (built-up / non built-up)"
       },
       "layout": {
-        "interfaceGroup": "Built Environment & Urban Morphology",
-        "subinterfaceGroup": "Built-up Structure",
+        "interfaceGroup": "Urban Mapping",
+        "subinterfaceGroup": "European Urban Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1101,6 +716,372 @@
             "zoomToCenter": true,
             "temporalControls": false,
             "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Land Use / Land Cover",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Land_Use_Raster1402",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Land_Use_vector52160",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "High-resolution land use and land cover map for European functional urban areas, providing detailed classification of urban and peri-urban zones for the 2018 reference year.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas, European Environment Agency (EEA)",
+          "url": "https://land.copernicus.eu/en/products/urban-atlas/urban-atlas-2018"
+        },
+        "categories": [
+          {
+            "color": "#800000",
+            "label": "Continuous Urban fabric (S.L. > 80%)",
+            "value": 11100
+          },
+          {
+            "color": "#bf0000",
+            "label": "Discontinuous Dense Urban Fabric (S.L.: 50% - 80%)",
+            "value": 11210
+          },
+          {
+            "color": "#ff4040",
+            "label": "Discontinuous Medium Density Urban Fabric (S.L.: 30% - 50%)",
+            "value": 11220
+          },
+          {
+            "color": "#ff8080",
+            "label": "Discontinuous Low Density Urban Fabric (S.L.: 10% - 30%)",
+            "value": 11230
+          },
+          {
+            "color": "#ffbfbf",
+            "label": "Discontinuous very low density urban fabric (S.L. < 10%)",
+            "value": 11240
+          },
+          {
+            "color": "#cc6666",
+            "label": "Isolated Structures",
+            "value": 11300
+          },
+          {
+            "color": "#cc4df2",
+            "label": "Industrial, commercial, public, military and private units",
+            "value": 12100
+          },
+          {
+            "color": "#959595",
+            "label": "Fast transit roads and associated land",
+            "value": 12210
+          },
+          {
+            "color": "#b3b3b3",
+            "label": "Other roads and associated land",
+            "value": 12220
+          },
+          {
+            "color": "#595959",
+            "label": "Railways and associated land",
+            "value": 12230
+          },
+          {
+            "color": "#e6cccc",
+            "label": "Port areas",
+            "value": 12300
+          },
+          {
+            "color": "#e6cce6",
+            "label": "Airports",
+            "value": 12400
+          },
+          {
+            "color": "#734d50",
+            "label": "Mineral extraction and dump sites",
+            "value": 13100
+          },
+          {
+            "color": "#b9a56e",
+            "label": "Construction sites",
+            "value": 13300
+          },
+          {
+            "color": "#874545",
+            "label": "Land without current use",
+            "value": 13400
+          },
+          {
+            "color": "#8cdc00",
+            "label": "Green urban areas",
+            "value": 14100
+          },
+          {
+            "color": "#afd2a5",
+            "label": "Sports and leisure facilities",
+            "value": 14200
+          },
+          {
+            "color": "#ffffa8",
+            "label": "Arable land (annual crops)",
+            "value": 21000
+          },
+          {
+            "color": "#f2a64d",
+            "label": "Arable land (annual crops)",
+            "value": 21000
+          },
+          {
+            "color": "#e6e64d",
+            "label": "Pastures",
+            "value": 23000
+          },
+          {
+            "color": "#ffe64d",
+            "label": "Complex and mixed cultivation patterns",
+            "value": 24000
+          },
+          {
+            "color": "#f2cc80",
+            "label": "Orchards",
+            "value": 25000
+          },
+          {
+            "color": "#008c00",
+            "label": "Forests",
+            "value": 31000
+          },
+          {
+            "color": "#ccf24d",
+            "label": "Herbaceous vegetation associations",
+            "value": 32000
+          },
+          {
+            "color": "#ccffcc",
+            "label": "Herbaceous vegetation associations",
+            "value": 32000
+          },
+          {
+            "color": "#a6a6ff",
+            "label": "Wetlands",
+            "value": 40000
+          },
+          {
+            "color": "#80f2e6",
+            "label": "Water",
+            "value": 50000
+          }
+        ],
+        "units": "Categorical classe"
+      },
+      "layout": {
+        "interfaceGroup": "Urban Mapping",
+        "subinterfaceGroup": "European Urban Mapping",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "EO4PORTS LULC",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO_LULC_EO4PORTS/2024/08/12/LULC_Rotterdam_2024/rotterdam_2024.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Multisensor EO-derived 2024 LULC map for the Port of Rotterdam, supporting classification of port, industrial, urban, and coastal land-cover classes.",
+        "attribution": {
+          "text": "© European Space Agency (ESA) – EO4PORTS Project",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/EO_LULC_EO4PORTS/items/LULC_Rotterdam_2024?.asset=asset-product"
+        },
+        "categories": [
+          {
+            "color": "#BD2828",
+            "label": "Urban fabric",
+            "value": 1
+          },
+          {
+            "color": "#E27036",
+            "label": "Industrial, commercial, and transport units",
+            "value": 2
+          },
+          {
+            "color": "#D49311",
+            "label": "Port areas",
+            "value": 3
+          },
+          {
+            "color": "#D7D742",
+            "label": "Airports",
+            "value": 4
+          },
+          {
+            "color": "#8FC91D",
+            "label": "Road and rail networks",
+            "value": 5
+          },
+          {
+            "color": "#6CEE2B",
+            "label": "Construction sites",
+            "value": 6
+          },
+          {
+            "color": "#28BD28",
+            "label": "Green urban areas / Parks",
+            "value": 7
+          },
+          {
+            "color": "#36E270",
+            "label": "Sports and leisure facilities",
+            "value": 8
+          },
+          {
+            "color": "#11D493",
+            "label": "Agricultural areas",
+            "value": 9
+          },
+          {
+            "color": "#42D7D7",
+            "label": "Forests",
+            "value": 10
+          },
+          {
+            "color": "#1D8FC9",
+            "label": "Shrubland / Transitional woodland",
+            "value": 11
+          },
+          {
+            "color": "#2B6CEE",
+            "label": "Water bodies",
+            "value": 13
+          },
+          {
+            "color": "#2828BD",
+            "label": "Sea and coastal waters",
+            "value": 14
+          },
+          {
+            "color": "#7036E2",
+            "label": "Wetlands / Marshes",
+            "value": 15
+          },
+          {
+            "color": "#9311D4",
+            "label": "Bare land / Sand / Dunes",
+            "value": 16
+          },
+          {
+            "color": "#D742D7",
+            "label": "Port logistics areas (yards, storage)",
+            "value": 17
+          },
+          {
+            "color": "#C91D8F",
+            "label": "Container terminals",
+            "value": 18
+          },
+          {
+            "color": "#EE2B6C",
+            "label": "Shipyards / Maritime industrial zones",
+            "value": 19
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Additional examples",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Land Surface Temperature 1 km",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "TERRASCOPE_S3_LST_3_S10_V1",
+          "useTimeParameter": true
+        }
+      ],
+      "timeframe": "Days",
+      "meta": {
+        "description": "The dataset offers 1 km daily LST composites derived from Sentinel-3 SLSTR",
+        "attribution": {
+          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
+          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
+        },
+        "categories": [],
+        "units": "Kelvin (K)",
+        "colormaps": [
+          {
+            "min": 250,
+            "max": 320,
+            "steps": 100,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Urban Risk & Climate Resilience",
+        "subinterfaceGroup": "Urban Heat",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
@@ -1157,8 +1138,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Urban Risk & Climate Resilience",
-        "subinterfaceGroup": "Urban Heat",
+        "interfaceGroup": "Austria Example",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1172,175 +1152,6 @@
             "zoomToCenter": true,
             "temporalControls": true,
             "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Soil Organic Carbon (2020-2022)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "normalize": false
-        }
-      ],
-      "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022).",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "units": "g kg^(-1)",
-        "min": 64,
-        "max": 3280,
-        "colormaps": [
-          {
-            "min": 64,
-            "max": 3280,
-            "steps": 50,
-            "name": "velocity-green",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Soil & Environmental Condition",
-        "subinterfaceGroup": "Soil Carbon",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Soil Organic Carbon (2018-2020)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "normalize": false
-        },
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2018-2020)",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "units": "g kg^(-1)",
-        "min": 66,
-        "max": 3906,
-        "colormaps": [
-          {
-            "min": 66,
-            "max": 3906,
-            "steps": 50,
-            "name": "velocity-green",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Soil & Environmental Condition",
-        "subinterfaceGroup": "Soil Carbon",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Soil Organic Carbon | Swipe: 2018 vs 2020",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2018/03/01/worldsoils-soc-europe_aggr-orgc_00-020_201803-202010/europe_aggr-orgc_00-020_mean_100_201803-202010.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "left"
-        },
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "right"
-        }
-      ],
-      "isSwipeLayer": true,
-      "meta": {
-        "description": "This swipe layer enables a side-by-side comparison of Soil Organic Carbon (SOC) content in the 0–20 cm topsoil layer across Europe, with 2018 displayed on the left and 2020 on the right. The product is derived from WorldSoils SOC estimates based on ESA Sentinel-2 composites and ancillary data, supporting visual assessment of spatial differences in topsoil carbon content between the two reference years.",
-        "attribution": {
-          "text": "European Space Agency (ESA) – WorldSoils SOC product",
-          "url": "https://eo4society.esa.int/projects/worldsoils/"
-        },
-        "categories": [],
-        "units": "g C kg⁻¹",
-        "min": 64,
-        "max": 3280,
-        "colormaps": [
-          {
-            "min": 64,
-            "max": 3280,
-            "steps": 50,
-            "name": "velocity-green",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Soil & Environmental Condition",
-        "subinterfaceGroup": "Soil Carbon",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
             "blendControls": false
           }
         }
@@ -1718,58 +1529,6 @@
       }
     },
     {
-      "name": "Land Surface Temperature 1 km",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "TERRASCOPE_S3_LST_3_S10_V1",
-          "useTimeParameter": true
-        }
-      ],
-      "timeframe": "Days",
-      "meta": {
-        "description": "The dataset offers 1 km daily LST composites derived from Sentinel-3 SLSTR",
-        "attribution": {
-          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
-          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
-        },
-        "categories": [],
-        "units": "Kelvin (K)",
-        "colormaps": [
-          {
-            "min": 250,
-            "max": 320,
-            "steps": 100,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Urban Risk & Climate Resilience",
-        "subinterfaceGroup": "Urban Heat",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
       "name": "Growing Stock Volume (GSV)",
       "isActive": false,
       "data": [
@@ -1841,195 +1600,6 @@
       }
     },
     {
-      "name": "Land Surface Temperature 10 m",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/chilly-lstm-like-lst/2024/08/13/35VMF_S3-LSTHR_20240813T190421_COG.tif/35VMF_S3-LSTHR_20240813T190421_COG.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "High-resolution Land Surface Temperature (LST) derived via the CHILL-y downscaling framework, applied to Sentinel-3 SLSTR thermal data. This raster represents surface radiant temperature at ~10–30 m resolution for the overpass on 13 August 2024.",
-        "attribution": {
-          "text": "© ESA – CHILL-y LST Downscaling Consortium (Sentinel-3 SLSTR LST)",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/chilly-lstm-like-lst/items/35VMF_S3-LSTHR_20240813T190421_COG.tif?.language=en&.asset=asset-product"
-        },
-        "categories": [],
-        "units": "K",
-        "min": 284,
-        "max": 299,
-        "colormaps": [
-          {
-            "min": 284,
-            "max": 300,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Urban Risk & Climate Resilience",
-        "subinterfaceGroup": "Urban Heat",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Building Height",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF3D_V02_BUILDINGHEIGHT",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Global 90 m average building height derived from TanDEM-X and optical data, supporting analysis of vertical urban structure.",
-        "attribution": {
-          "text": "© DLR – World Settlement Footprint 3D (WSF3D)",
-          "url": "https://geoservice.dlr.de/web/datasets/wsf_3d"
-        },
-        "categories": [],
-        "units": "m"
-      },
-      "layout": {
-        "interfaceGroup": "Built Environment & Urban Morphology",
-        "subinterfaceGroup": "Vertical Dimension",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://geoservice.dlr.de/eoc/land/wms?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WSF3D_V02_BUILDINGHEIGHT"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Building Volume",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF3D_V02_BUILDINGVOLUME",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Global 90 m building volume layer derived from TanDEM-X and optical data, providing m³ estimates of urban structure and density.",
-        "attribution": {
-          "text": "© DLR – World Settlement Footprint 3D (WSF3D)",
-          "url": "https://geoservice.dlr.de/web/datasets/wsf_3d"
-        },
-        "categories": [],
-        "units": "m³"
-      },
-      "layout": {
-        "interfaceGroup": "Built Environment & Urban Morphology",
-        "subinterfaceGroup": "Vertical Dimension",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://geoservice.dlr.de/eoc/land/wms?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WSF3D_V02_BUILDINGVOLUME"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "WSF Global Built-up 2015 l 2019",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_2015",
-          "position": "left",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_2019",
-          "position": "right",
-          "useTimeParameter": true
-        }
-      ],
-      "isSwipeLayer": true,
-      "meta": {
-        "description": "Global 10 m built-up layers derived from multisensor satellite data for the reference years 2015 and 2019.\nThese datasets map human-made structures at high resolution and support urban expansion analysis, infrastructure monitoring, and settlement mapping.",
-        "attribution": {
-          "text": "© DLR – World Settlement Footprint (WSF 2015 & WSF 2019)",
-          "url": "https://www.dlr.de/wsf"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Built Environment & Urban Morphology",
-        "subinterfaceGroup": "Vertical Dimension",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://geoservice.dlr.de/eoc/land/wms?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WSF_2015"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
       "name": "Austria Rooftops (major cities)",
       "isActive": false,
       "data": [
@@ -2056,8 +1626,7 @@
         "units": "Building footprints (vector geometry)"
       },
       "layout": {
-        "interfaceGroup": "Built Environment & Urban Morphology",
-        "subinterfaceGroup": "Rooftop Potential",
+        "interfaceGroup": "Austria Example",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -2097,8 +1666,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Built Environment & Urban Morphology",
-        "subinterfaceGroup": "Rooftop Potential",
+        "interfaceGroup": "Austria Example",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -2229,7 +1797,7 @@
       }
     },
     {
-      "name": "Trees Street",
+      "name": "Street Trees",
       "isActive": false,
       "data": [
         {
@@ -2256,8 +1824,8 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Urban Nature & Greening",
-        "subinterfaceGroup": "Tree Cover",
+        "interfaceGroup": "Urban Mapping",
+        "subinterfaceGroup": "European Urban Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -2278,42 +1846,62 @@
       }
     },
     {
-      "name": "Urban Atlas 2021",
+      "name": "Imperviousness Change",
       "isActive": false,
       "data": [
         {
-          "url": "https://mapserver.dataspace.copernicus.eu/ogc",
+          "url": "https://geoserver.geoville.com/geoserver/nvlcc/ows?service=WMS&version=1.3.0&request=GetCapabilities",
           "format": "wms",
           "zIndex": 50,
-          "layers": "UA_LCU_2021_VECTOR",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://mapserver.dataspace.copernicus.eu/ogc",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "UA_LCU_2021_RASTER",
+          "layers": "HRL_NVLCC_IMCC_20m",
           "useTimeParameter": true
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Urban Atlas 2021",
+        "description": "20 m classification of sealing increase, decrease or stability between 2018 and 2021",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Copernicus Land Monitoring Service (CLMS) – High Resolution Layer Imperviousness Change 2018–2021",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-imperviousness/imperviousness-density-change-2018-2021"
         },
-        "categories": []
+        "categories": [
+          {
+            "color": "#ff0000",
+            "label": "New cover",
+            "value": 0
+          },
+          {
+            "color": "#006400",
+            "label": "Loss of cover",
+            "value": 0
+          },
+          {
+            "color": "#9c9c9c",
+            "label": "Unchanged impervious areas",
+            "value": 0
+          },
+          {
+            "color": "#ffbf00",
+            "label": "Increased imperviousness density",
+            "value": 0
+          },
+          {
+            "color": "#40b200",
+            "label": "Decreased imperviousness density",
+            "value": 0
+          }
+        ],
+        "units": "Categorical classes"
       },
       "layout": {
-        "interfaceGroup": "Baseline LULC",
-        "subinterfaceGroup": "Land Use",
+        "interfaceGroup": "Urban Mapping",
+        "subinterfaceGroup": "European Urban Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
         },
         "infoPanel": {
           "legend": {
-            "type": "image",
-            "url": "https://mapserver.dataspace.copernicus.eu/ogc?language=eng&version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=UA_LCU_2021_VECTOR&format=image/png&STYLE=clms_ua_lcu_2021"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -2324,6 +1912,96 @@
           }
         }
       }
+    },
+    {
+      "name": "Street Trees",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Raster27733",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Vector61679",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Copernicus Urban Atlas 2012 street trees layer (vector), covering European Functional Urban Areas; CLMS product with 6-year update cycle. Derived from high-resolution imagery; MMU 0.25 ha, minimum mapping width 10 m",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas 2012",
+          "url": "https://land.copernicus.eu/local/urban-atlas"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Austria Example",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=STL_Raster27733"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Drought Warning",
+      "isActive": false,
+      "meta": {
+        "description": "Drought forecast from the European Drought Observatory",
+        "attribution": {
+          "text": "Copernicus Emergency Service",
+          "url": "https://drought.emergency.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban Risk & Climate Resilience",
+        "subinterfaceGroup": "Drought",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=cdinx&FORMAT=image/png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "cdiad",
+          "useTimeParameter": true
+        }
+      ]
     }
   ]
 }
