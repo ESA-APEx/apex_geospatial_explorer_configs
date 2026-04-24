@@ -1,5 +1,6 @@
 {
   "version": "3.2.2-6",
+  "exportPrefix": "config-sef-biodiversity",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
@@ -491,47 +492,6 @@
     {
       "name": "Above Ground Biomass",
       "isActive": false,
-      "timeframe": "Years",
-      "meta": {
-        "description": "Above ground biomass (AGB) in t/ha in 20 m spatial resolution created with the BIOMASAR method using Sentinel-1 and ALOS 2 PALSAR 2 data.",
-        "attribution": {
-          "text": "Forest Carbon Monitoring Service",
-          "url": "https://www.forestcarbonplatform.org/"
-        },
-        "categories": [],
-        "units": "t / ha",
-        "min": 0,
-        "max": 300,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 300,
-            "steps": 50,
-            "name": "greens",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "European Ecosystem Monitoring",
-        "subinterfaceGroup": "Pan-European Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
@@ -592,7 +552,48 @@
           "level": 3
         }
       ],
-      "constraints": []
+      "constraints": [],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Above ground biomass (AGB) in t/ha in 20 m spatial resolution created with the BIOMASAR method using Sentinel-1 and ALOS 2 PALSAR 2 data.",
+        "attribution": {
+          "text": "Forest Carbon Monitoring Service",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 300,
+            "steps": 50,
+            "name": "greens",
+            "reverse": true
+          }
+        ],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Pan-European Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
       "name": "Topsoil Organic Carbon (2020-22)",
@@ -690,9 +691,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 1800,
         "colormaps": [
           {
             "min": 0,
@@ -701,7 +699,10 @@
             "name": "copper",
             "reverse": true
           }
-        ]
+        ],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800
       },
       "layout": {
         "interfaceGroup": "European Ecosystem Monitoring",
@@ -769,9 +770,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "units": "t / ha",
-        "min": 0,
-        "max": 100,
         "colormaps": [
           {
             "min": 0,
@@ -780,7 +778,10 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "units": "t / ha",
+        "min": 0,
+        "max": 100
       },
       "layout": {
         "interfaceGroup": "European Ecosystem Monitoring",
@@ -1069,46 +1070,6 @@
     {
       "name": "Tree Cover Density 2018-2022",
       "isActive": false,
-      "timeframe": "Years",
-      "meta": {
-        "description": "Pan-European measurements of tree cover density (0% to 100%)",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service",
-          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover?tab=tree_cover_density"
-        },
-        "categories": [],
-        "min": 0,
-        "max": 1,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1,
-            "steps": 101,
-            "name": "greens",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "European Ecosystem Monitoring",
-        "subinterfaceGroup": "Forest Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
@@ -1155,11 +1116,71 @@
             1514761200
           ]
         }
-      ]
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Pan-European measurements of tree cover density (0% to 100%)",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover?tab=tree_cover_density"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 101,
+            "name": "greens",
+            "reverse": true
+          }
+        ],
+        "min": 0,
+        "max": 1
+      },
+      "layout": {
+        "interfaceGroup": "European Ecosystem Monitoring",
+        "subinterfaceGroup": "Forest Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
       "name": "Forest Type 2018-2021",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:FTY_S2021",
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:FTY_S2018",
+          "timestamps": [
+            1514761200
+          ]
+        }
+      ],
       "timeframe": "Years",
       "meta": {
         "description": "Classification of the types of forests",
@@ -1199,27 +1220,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_TCF:FTY_S2021",
-          "timestamps": [
-            1609455600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_TCF:FTY_S2018",
-          "timestamps": [
-            1514761200
-          ]
-        }
-      ]
+      }
     },
     {
       "name": "Topsoil Organic Carbon (2020-22)",
@@ -1247,9 +1248,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000,
         "colormaps": [
           {
             "min": 0,
@@ -1258,7 +1256,10 @@
             "name": "copper",
             "reverse": true
           }
-        ]
+        ],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000
       },
       "layout": {
         "interfaceGroup": "European Ecosystem Monitoring",
@@ -1747,46 +1748,6 @@
     {
       "name": "Water Level Trends",
       "isActive": false,
-      "meta": {
-        "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
-        "attribution": {
-          "text": "WorldPeatland",
-          "url": "https://stac-browser.worldpeatland.org/#/moor-house/catalog.json"
-        },
-        "categories": [],
-        "units": "mm/yr",
-        "min": -80,
-        "max": 80,
-        "colormaps": [
-          {
-            "min": -80,
-            "max": 80,
-            "steps": 81,
-            "name": "jet",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Peatland Monitoring",
-        "subinterfaceGroup": "Moor House",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/MoorHouse/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
@@ -1813,39 +1774,37 @@
           ],
           "bandIndex": 2
         }
-      ]
-    },
-    {
-      "name": "Water Level Trends",
-      "isActive": false,
+      ],
       "meta": {
         "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
         "attribution": {
           "text": "WorldPeatland",
-          "url": "https://stac-browser.worldpeatland.org/#/saddleworth/catalog.json"
+          "url": "https://stac-browser.worldpeatland.org/#/moor-house/catalog.json"
         },
         "categories": [],
-        "units": "mm/yr",
         "colormaps": [
           {
-            "min": -40,
-            "max": 40,
+            "min": -80,
+            "max": 80,
             "steps": 81,
             "name": "jet",
             "reverse": true
           }
-        ]
+        ],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring",
-        "subinterfaceGroup": "Saddleworth Moor",
+        "subinterfaceGroup": "Moor House",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
         },
         "infoPanel": {
           "legend": {
-            "type": "swatch"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
@@ -1855,7 +1814,11 @@
             "blendControls": false
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Water Level Trends",
+      "isActive": false,
       "data": [
         {
           "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
@@ -1882,41 +1845,35 @@
           ],
           "bandIndex": 2
         }
-      ]
-    },
-    {
-      "name": "Water Level Trends",
-      "isActive": false,
+      ],
       "meta": {
         "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
         "attribution": {
           "text": "WorldPeatland",
-          "url": "https://stac-browser.worldpeatland.org/#/hatfield-thorne/catalog.json"
+          "url": "https://stac-browser.worldpeatland.org/#/saddleworth/catalog.json"
         },
         "categories": [],
-        "units": "mm/yr",
-        "min": -80,
-        "max": 80,
         "colormaps": [
           {
-            "min": -80,
-            "max": 80,
+            "min": -40,
+            "max": 40,
             "steps": 81,
             "name": "jet",
             "reverse": true
           }
-        ]
+        ],
+        "units": "mm/yr"
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring",
-        "subinterfaceGroup": "Hatfield Thorne",
+        "subinterfaceGroup": "Saddleworth Moor",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -1926,7 +1883,11 @@
             "blendControls": false
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Water Level Trends",
+      "isActive": false,
       "data": [
         {
           "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/HatfieldThorne/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
@@ -1953,7 +1914,47 @@
           ],
           "bandIndex": 2
         }
-      ]
+      ],
+      "meta": {
+        "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
+        "attribution": {
+          "text": "WorldPeatland",
+          "url": "https://stac-browser.worldpeatland.org/#/hatfield-thorne/catalog.json"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -80,
+            "max": 80,
+            "steps": 81,
+            "name": "jet",
+            "reverse": true
+          }
+        ],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80
+      },
+      "layout": {
+        "interfaceGroup": "Peatland Monitoring",
+        "subinterfaceGroup": "Hatfield Thorne",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
       "name": "Land cover over time",
@@ -2371,10 +2372,6 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
-        "min": 0,
-        "max": 254,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -2383,7 +2380,11 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "min": 0,
+        "max": 254,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff"
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality",
@@ -2422,8 +2423,6 @@
           "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/esa_sen4ldn_carbon_stocks?.language=en"
         },
         "categories": [],
-        "min": -206,
-        "max": 129,
         "colormaps": [
           {
             "min": -206,
@@ -2432,7 +2431,9 @@
             "name": "jet",
             "reverse": true
           }
-        ]
+        ],
+        "min": -206,
+        "max": 129
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality",
@@ -2515,10 +2516,6 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
-        "min": 0,
-        "max": 234,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -2527,7 +2524,11 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "min": 0,
+        "max": 234,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff"
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality",
@@ -3193,10 +3194,16 @@
           "url": "https://esa-people-ea.org/en"
         },
         "categories": [],
-        "min": -19,
-        "max": 103,
-        "startColor": "#046601",
-        "endColor": "#fdfd1f"
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "summer",
+            "reverse": false
+          }
+        ],
+        "units": "%"
       },
       "layout": {
         "interfaceGroup": "Coastal Ecosystems",
@@ -3207,7 +3214,7 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -3220,54 +3227,104 @@
       }
     },
     {
-      "name": "Tide lines",
+      "name": "Tide Lines (Time Series)",
       "isActive": false,
       "data": [
         {
-          "url": "https://eoresults.esa.int/d/EOTideLines_EO4PORTS/2021/01/01/EOTideLines_NorthSea_2021/2021_Wadden_Sea_lowtideline_v5.geojson",
-          "format": "geojson",
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2025_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
           "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
           "timestamps": [
-            1609455600
+            1735689600
           ]
         },
         {
-          "url": "https://eoresults.esa.int/d/EOTideLines_EO4PORTS/2020/01/01/EOTideLines_NorthSea_2020/2020_Wadden_Sea_lowtideline_v5.geojson",
-          "format": "geojson",
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2024_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
           "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
           "timestamps": [
-            1577833200
+            1704067200
           ]
         },
         {
-          "url": "https://eoresults.esa.int/d/EOTideLines_EO4PORTS/2022/01/01/EOTideLines_NorthSea_2022/2022_Wadden_Sea_lowtideline_v5.geojson",
-          "format": "geojson",
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2023_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
           "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
           "timestamps": [
-            1640991600
+            1672531200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2022_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2021_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1609459200
           ]
         }
       ],
       "timeframe": "Years",
       "meta": {
-        "description": "To be written",
+        "description": "This layer shows a time series of the Low Tide line from 2022 to 2025.  The contour was derived from all the low-tide cloud-free Landsat and Sentinel-2 images available.\n\nFor each section of contour, the data available in the layer comprises:\n* *id*: unique identifier of the line\n* *date*: date of the low tide event\n* *springs_tide_range*: the mean springs tidal range at this location according to the FES2022 tidal model\n* *obs_tide_level*: observed tide level across the satellite images used (average)\n* *images_in_composite*: number of satellite images used to create the composite for this line\n\nSelect the data values tab and click on a feature to view details",
         "attribution": {
-          "text": "EO4Ports project",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/EOTideLines_EO4PORTS"
+          "text": "Data attribution not specified"
         },
         "categories": [],
-        "units": "N/A",
-        "min": 0,
-        "max": 1,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
+        "fields": {
+          "id": {
+            "label": "ID"
+          },
+          "tile": {
+            "label": "Tile"
+          },
+          "date": {
+            "label": "Date"
+          },
+          "n_images_in_composite": {
+            "label": "Images in composite"
+          },
+          "obs_tide_level": {
+            "label": "Observed tide level (average)",
+            "suffix": "m"
+          },
+          "springs_tide_range": {
+            "label": "Spring tidal range",
+            "suffix": "m"
           }
-        ]
+        }
       },
       "layout": {
         "interfaceGroup": "Coastal Ecosystems",
@@ -3277,7 +3334,7 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -3292,6 +3349,22 @@
     {
       "name": "Street Trees",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Raster27733",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Vector61679",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Copernicus Urban Atlas 2012 street trees layer (vector), covering European Functional Urban Areas; CLMS product with 6-year update cycle. Derived from high-resolution imagery; MMU 0.25 ha, minimum mapping width 10 m",
         "attribution": {
@@ -3319,42 +3392,39 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Raster27733",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Vector61679",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "Tree Cover Density",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:TCD_S2023",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Percentage of tree canopy cover per pixel at 10 m resolution, ranging from 0–100%, representing the vertical projection of tree crowns onto the ground.",
         "attribution": {
           "text": "Copernicus Land Monitoring Service (CLMS) – High Resolution Layer Tree Cover Density",
           "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover/tree-cover-density-2023-raster-10-m-100-m-europe-yearly"
         },
+        "categories": [],
         "units": "(% cover)",
-        "startColor": "#fdff73",
-        "endColor": "#1c5c24",
         "min": 0,
-        "max": 100
+        "max": 100,
+        "startColor": "#fdff73",
+        "endColor": "#1c5c24"
       },
       "layout": {
         "interfaceGroup": "Urban Ecosystems",
         "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
         "infoPanel": {
           "legend": {
             "type": "gradient"
@@ -3366,24 +3436,21 @@
             "constraintSlider": true,
             "blendControls": false
           }
-        },
-        "layerCard": {
-          "toggleable": true
         }
-      },
+      }
+    },
+    {
+      "name": "Tree Cover Change 2018-2021",
+      "isActive": false,
       "data": [
         {
           "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
           "format": "wms",
           "zIndex": 50,
-          "layers": "HRL_TCF:TCD_S2023",
+          "layers": "HRL_TCF:TCPC_C2018-2021",
           "useTimeParameter": true
         }
-      ]
-    },
-    {
-      "name": "Tree Cover Change 2018-2021",
-      "isActive": false,
+      ],
       "timeframe": "Years",
       "meta": {
         "description": "Shows the change in tree cover between 2018 and 2021.",
@@ -3423,20 +3490,20 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_TCF:TCPC_C2018-2021",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "Land Surface Temperature 1 km",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "TERRASCOPE_S3_LST_3_S10_V1",
+          "useTimeParameter": true
+        }
+      ],
       "timeframe": "Days",
       "meta": {
         "description": "The dataset offers 1 km daily LST composites derived from Sentinel-3 SLSTR",
@@ -3445,7 +3512,6 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
-        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -3454,7 +3520,8 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "Kelvin (K)"
       },
       "layout": {
         "interfaceGroup": "Physical parameters",
@@ -3474,20 +3541,20 @@
             "blendControls": false
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Sentinel-2 NDVI",
+      "isActive": false,
       "data": [
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
           "zIndex": 50,
-          "layers": "TERRASCOPE_S3_LST_3_S10_V1",
+          "layers": "PROBAV_L3_S10_TOC_333M_NDVI",
           "useTimeParameter": true
         }
-      ]
-    },
-    {
-      "name": "Sentinel-2 NDVI",
-      "isActive": false,
+      ],
       "timeframe": "Days",
       "meta": {
         "description": "Satellite-derived vegetation index (NDVI) from Sentinel-2. Indicates vegetation density and photosynthetic activity. Time series available.",
@@ -3515,20 +3582,20 @@
             "blendControls": false
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Sentinel-2 FAPAR",
+      "isActive": false,
       "data": [
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
           "zIndex": 50,
-          "layers": "PROBAV_L3_S10_TOC_333M_NDVI",
+          "layers": "CGS_S2_FAPAR",
           "useTimeParameter": true
         }
-      ]
-    },
-    {
-      "name": "Sentinel-2 FAPAR",
-      "isActive": false,
+      ],
       "timeframe": "Days",
       "meta": {
         "description": "Satellite-derived Fraction of Absorbed Photosynthetically Active Radiation (FAPAR) from Sentinel-2.\nIndicates vegetation photosynthetic activity and plant productivity.\nTime series available.",
@@ -3557,20 +3624,20 @@
             "blendControls": false
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Sentinel-2 LAI",
+      "isActive": false,
       "data": [
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
           "zIndex": 50,
-          "layers": "CGS_S2_FAPAR",
+          "layers": "CGS_S2_LAI",
           "useTimeParameter": true
         }
-      ]
-    },
-    {
-      "name": "Sentinel-2 LAI",
-      "isActive": false,
+      ],
       "timeframe": "Days",
       "meta": {
         "description": "Satellite-derived Leaf Area Index (LAI) from Sentinel-2. Indicates density of vegetation canopy. Time series available.",
@@ -3598,20 +3665,20 @@
             "blendControls": false
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Sentinel-2 FCOVER",
+      "isActive": false,
       "data": [
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
           "zIndex": 50,
-          "layers": "CGS_S2_LAI",
+          "layers": "CGS_S2_FCOVER",
           "useTimeParameter": true
         }
-      ]
-    },
-    {
-      "name": "Sentinel-2 FCOVER",
-      "isActive": false,
+      ],
       "timeframe": "Days",
       "meta": {
         "description": "Satellite-derived Fraction of Green Vegetaion Cover (FCOVER) from Sentinel-2. Indicates fraction of ground covered by green vegetation.",
@@ -3639,16 +3706,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "CGS_S2_FCOVER",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "Land Cover (2021) (Copy)",
@@ -3838,39 +3896,6 @@
     {
       "name": "Netherlands",
       "isActive": false,
-      "timeframe": "Years",
-      "meta": {
-        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands.",
-        "attribution": {
-          "text": "ESA People Ecosystem Accounting",
-          "url": "https://esa-people-ea.org/en"
-        },
-        "categories": [],
-        "min": -19,
-        "max": 103,
-        "startColor": "#046601",
-        "endColor": "#fdfd1f"
-      },
-      "layout": {
-        "interfaceGroup": "Coastal Ecosystems",
-        "subinterfaceGroup": "Coastal condition",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/ESA_PEOPLE_EA_COASTAL_CONDITIONS/2018/01/01/ESA_PEOPLE_EA_COASTAL_CONDITIONS-IT_Coastal_Condition_IMD_2018/IT_Coastal_Condition_IMD_raster_2018.tif",
@@ -3904,7 +3929,226 @@
             1640995200
           ]
         }
-      ]
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Share of artificial impervious area cover (permanent and temporal), present in coastal area that includes ecosystem type coastal beaches, dunes and wetlands.",
+        "attribution": {
+          "text": "ESA People Ecosystem Accounting",
+          "url": "https://esa-people-ea.org/en"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "summer",
+            "reverse": false
+          }
+        ],
+        "units": "%"
+      },
+      "layout": {
+        "interfaceGroup": "Coastal Ecosystems",
+        "subinterfaceGroup": "Coastal condition",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Normalised Difference Water Index (Time Series)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2025.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1735689600
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2024.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1704067200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2023.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2021.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Normalised Difference Water Index.   The satellite images captured at low tide (bottom 30% of the springs tidal range) are used to compute a composite NDWI (Normalized Difference Water Index) image. The 70th percentile is taken when calculating the composite to give more weight to dry pixels.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 10000,
+            "max": 30000,
+            "steps": 50,
+            "name": "freesurface-blue",
+            "reverse": false
+          },
+          {
+            "min": 30000,
+            "max": 65000,
+            "steps": 50,
+            "name": "freesurface-red",
+            "reverse": true
+          }
+        ],
+        "min": 0,
+        "max": 70000
+      },
+      "layout": {
+        "interfaceGroup": "Coastal Ecosystems",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Nautical Mode (Time Series)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2025.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1735689600
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2024.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1704067200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2023.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2021.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Low water line data derived from Landsat and Sentinel-2 optical images coupled with tidal model data.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#32A8EB",
+            "label": "Water",
+            "value": 1
+          },
+          {
+            "color": "#72C472",
+            "label": "Wet Sand",
+            "value": 2
+          },
+          {
+            "color": "#FCEB76",
+            "label": "Land",
+            "value": 3
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Coastal Ecosystems",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
     }
   ]
 }
