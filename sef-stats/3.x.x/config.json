@@ -1,5 +1,6 @@
 {
   "version": "1.0.0",
+  "exportPrefix": "config",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
@@ -8,11 +9,11 @@
   },
   "interfaceGroups": [
     "Land Cover and Land Use",
-    "Agriculture Statistics",
+    "Agricultural Production",
+    "Environmental Monitoring",
     "Ecosystem Accounting",
-    "Forest Monitoring",
-    "Carbon Budgets",
-    "Urban and Infrastructure"
+    "Urban and Infrastructure",
+    "Experimental"
   ],
   "exclusivitySets": [
     "labels"
@@ -43,12 +44,6 @@
       "name": "Brockmann Xcube",
       "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
       "format": "wms"
-    },
-    {
-      "id": "wmts-service-1750331396152",
-      "name": "Terrascope WMTS",
-      "url": "https://globalland.vito.be/wmts",
-      "format": "wmts"
     },
     {
       "id": "wms-service-1750351088731",
@@ -99,9 +94,9 @@
       "format": "wms"
     },
     {
-      "id": "wms-service-1773586482888",
-      "name": "CEDA UK",
-      "url": "https://stac.ceda.ac.uk/",
+      "id": "wms-service-1777435766329",
+      "name": "CLMS CLCplus",
+      "url": "https://geoserver.geoville.com/geoserver/clcp/ows?service=WMS&version=1.3.0&request=GetCapabilities",
       "format": "wms"
     }
   ],
@@ -148,7 +143,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Agriculture Statistics",
+        "interfaceGroup": "Agricultural Production",
         "subinterfaceGroup": "Global Cereal Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -189,7 +184,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Agriculture Statistics",
+        "interfaceGroup": "Agricultural Production",
         "subinterfaceGroup": "Global Cereal Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -230,7 +225,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Agriculture Statistics",
+        "interfaceGroup": "Agricultural Production",
         "subinterfaceGroup": "Global Cereal Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -271,7 +266,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Agriculture Statistics",
+        "interfaceGroup": "Agricultural Production",
         "subinterfaceGroup": "Global Cereal Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -477,136 +472,6 @@
       }
     },
     {
-      "name": "European SOC (2020-22)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "normalize": false
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2
-        },
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3
-        }
-      ],
-      "constraints": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/europe_aggr-orgc_00-020_mean_100_202003-202210-esa_worldcover_2021.tif",
-          "format": "cog",
-          "label": "Land Cover Types (from World Cover 2022)",
-          "type": "categorical",
-          "interactive": true,
-          "constrainTo": [
-            {
-              "label": "Tree Cover",
-              "value": 10
-            },
-            {
-              "label": "Shrubland",
-              "value": 20
-            },
-            {
-              "label": "Grassland",
-              "value": 30
-            },
-            {
-              "label": "Cropland",
-              "value": 40
-            },
-            {
-              "label": "Built-up",
-              "value": 50
-            },
-            {
-              "label": "Bare",
-              "value": 60
-            },
-            {
-              "label": "Snow and Ice",
-              "value": 70
-            },
-            {
-              "label": "Permanent water bodies",
-              "value": 80
-            },
-            {
-              "label": "Herbaceous wetland",
-              "value": 90
-            },
-            {
-              "label": "Moss and lichen",
-              "value": 100
-            }
-          ],
-          "bandIndex": 2
-        }
-      ],
-      "meta": {
-        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) with statistics using NUTS 2024 boundaries.",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 1800,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1800,
-            "steps": 50,
-            "name": "copper",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Carbon Budgets",
-        "subinterfaceGroup": "Soil Organic Carbon",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
       "name": "Sentinel",
       "isActive": false,
       "data": [
@@ -793,7 +658,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Agriculture Statistics",
+        "interfaceGroup": "Agricultural Production",
         "subinterfaceGroup": "European Crop Maps",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -857,7 +722,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Forest Monitoring",
+        "interfaceGroup": "Environmental Monitoring",
         "subinterfaceGroup": "European Forest Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -948,7 +813,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Forest Monitoring",
+        "interfaceGroup": "Environmental Monitoring",
         "subinterfaceGroup": "European Forest Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -1001,7 +866,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Forest Monitoring",
+        "interfaceGroup": "Environmental Monitoring",
         "subinterfaceGroup": "European Forest Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -1055,6 +920,44 @@
           "zIndex": 50,
           "timestamps": [
             1483228800
+          ]
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/GSV/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_GSV.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/GSV/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_GSV.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/GSV/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_GSV.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/GSV/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_GSV.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3,
+          "timestamps": [
+            1672527600
           ]
         }
       ],
@@ -1132,8 +1035,8 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Forest Monitoring",
-        "subinterfaceGroup": "Forest Biomass 2017-2023",
+        "interfaceGroup": "Environmental Monitoring",
+        "subinterfaceGroup": "European Biomass 2017-2023",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1150,45 +1053,7 @@
             "blendControls": false
           }
         }
-      },
-      "statistics": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/GSV/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_GSV.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1672527600
-          ]
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/GSV/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_GSV.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1,
-          "timestamps": [
-            1672527600
-          ]
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/GSV/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_GSV.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2,
-          "timestamps": [
-            1672527600
-          ]
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/GSV/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_GSV.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3,
-          "timestamps": [
-            1672527600
-          ]
-        }
-      ]
+      }
     },
     {
       "name": "Above Ground Biomass",
@@ -1327,8 +1192,8 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Forest Monitoring",
-        "subinterfaceGroup": "Forest Biomass 2017-2023",
+        "interfaceGroup": "Environmental Monitoring",
+        "subinterfaceGroup": "European Biomass 2017-2023",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1381,6 +1246,44 @@
           "zIndex": 50,
           "timestamps": [
             1483228800
+          ]
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/BGB/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_BGB.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/BGB/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_BGB.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/BGB/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_BGB.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/BGB/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_BGB.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3,
+          "timestamps": [
+            1672527600
           ]
         }
       ],
@@ -1458,8 +1361,8 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Forest Monitoring",
-        "subinterfaceGroup": "Forest Biomass 2017-2023",
+        "interfaceGroup": "Environmental Monitoring",
+        "subinterfaceGroup": "European Biomass 2017-2023",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1476,45 +1379,137 @@
             "blendControls": false
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Soil Organic Carbon (2020-22)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false
+        }
+      ],
       "statistics": [
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/BGB/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_BGB.nuts_2024.epsg4326.level00.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1672527600
-          ]
+          "level": 0
         },
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/BGB/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_BGB.nuts_2024.epsg4326.level01.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
-          "level": 1,
-          "timestamps": [
-            1672527600
-          ]
+          "level": 1
         },
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/BGB/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_BGB.nuts_2024.epsg4326.level02.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
-          "level": 2,
-          "timestamps": [
-            1672527600
-          ]
+          "level": 2
         },
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/FCM/BGB/2023/Europe/NUTS_bound/Area_hist/stats.FCM_Europe_demo_2023_BGB.nuts_2024.epsg4326.level03.fgb",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
           "format": "flatgeobuf",
           "zIndex": 100,
-          "level": 3,
-          "timestamps": [
-            1672527600
-          ]
+          "level": 3
         }
-      ]
+      ],
+      "constraints": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/europe_aggr-orgc_00-020_mean_100_202003-202210-esa_worldcover_2021.tif",
+          "format": "cog",
+          "label": "Land Cover Types (from World Cover 2022)",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Tree Cover",
+              "value": 10
+            },
+            {
+              "label": "Shrubland",
+              "value": 20
+            },
+            {
+              "label": "Grassland",
+              "value": 30
+            },
+            {
+              "label": "Cropland",
+              "value": 40
+            },
+            {
+              "label": "Built-up",
+              "value": 50
+            },
+            {
+              "label": "Bare",
+              "value": 60
+            },
+            {
+              "label": "Snow and Ice",
+              "value": 70
+            },
+            {
+              "label": "Permanent water bodies",
+              "value": 80
+            },
+            {
+              "label": "Herbaceous wetland",
+              "value": 90
+            },
+            {
+              "label": "Moss and lichen",
+              "value": 100
+            }
+          ],
+          "bandIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) with statistics using NUTS 2024 boundaries.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Environmental Monitoring",
+        "subinterfaceGroup": "European Soil Monitoring",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
       "name": "Main Crop Types",
@@ -1690,7 +1685,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Agriculture Statistics",
+        "interfaceGroup": "Agricultural Production",
         "subinterfaceGroup": "European Crop Maps",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -1809,7 +1804,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Agriculture Statistics",
+        "interfaceGroup": "Agricultural Production",
         "subinterfaceGroup": "European Crop Maps",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -1905,7 +1900,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Agriculture Statistics",
+        "interfaceGroup": "Agricultural Production",
         "subinterfaceGroup": "European Crop Maps",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -1974,7 +1969,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Forest Monitoring",
+        "interfaceGroup": "Environmental Monitoring",
         "subinterfaceGroup": "European Forest Mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -1995,7 +1990,7 @@
       }
     },
     {
-      "name": "Habitat Map GR Level 1 2020 with NUTS stats",
+      "name": "Habitat Map L1 (2020)",
       "isActive": false,
       "data": [
         {
@@ -2105,7 +2100,7 @@
       }
     },
     {
-      "name": "Habitat Map GR Level 1 2020 with NUTS stats",
+      "name": "Habitat Map Level 2 (2020)",
       "isActive": false,
       "data": [
         {
@@ -2215,7 +2210,7 @@
       }
     },
     {
-      "name": "Coastal Condition Account GR 2022",
+      "name": "Coastal Condition Account (2022)",
       "isActive": false,
       "data": [
         {
@@ -2258,7 +2253,7 @@
       }
     },
     {
-      "name": "Habitat Map SK Level 1 2020, with NUTS stats",
+      "name": "Habitat Map Level 1 (2020)",
       "isActive": false,
       "data": [
         {
@@ -2373,7 +2368,7 @@
       }
     },
     {
-      "name": "Habitat Map SK Level 2 2020, with NUTS stats",
+      "name": "Habitat Map Level 2 (2020)",
       "isActive": false,
       "data": [
         {
@@ -2678,7 +2673,7 @@
       }
     },
     {
-      "name": "Wood Provison Service Account SK 2021",
+      "name": "Wood Provison Service Account (2021)",
       "isActive": false,
       "data": [
         {
@@ -2721,7 +2716,7 @@
       }
     },
     {
-      "name": "Coastal Condition Account IT",
+      "name": "Coastal Condition Account (2018/2021)",
       "isActive": false,
       "data": [
         {
@@ -2776,7 +2771,7 @@
       }
     },
     {
-      "name": "Wood Provison Service Account",
+      "name": "Wood Provison Service Account (2021)",
       "isActive": false,
       "data": [
         {
@@ -3701,6 +3696,1874 @@
           }
         }
       }
+    },
+    {
+      "name": "Austria Rooftops (major cities)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "GTIF_AT_Rooftops_3857"
+        }
+      ],
+      "meta": {
+        "description": "Rooftop footprints for major Austrian cities, supporting urban morphology and building-scale spatial analysis.",
+        "attribution": {
+          "text": "Brockmann Consult – xcube GeoDB (Austria Rooftops Dataset)",
+          "url": "https://xcube-geodb.brockmann-consult.de/"
+        },
+        "categories": [
+          {
+            "color": "#AAAAAA",
+            "label": "Roof",
+            "value": 0
+          }
+        ],
+        "units": "Building footprints (vector geometry)"
+      },
+      "layout": {
+        "interfaceGroup": "Urban and Infrastructure",
+        "subinterfaceGroup": "Austrian Rooftops Example",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Experimental SWF",
+      "isActive": false,
+      "data": [
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E72N27_03035_V1_0/Data/SWF/SWF_2018_005m_E72N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E72N25_03035_V1_0/Data/SWF/SWF_2018_005m_E72N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E72N23_03035_V1_0/Data/SWF/SWF_2018_005m_E72N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E70N27_03035_V1_0/Data/SWF/SWF_2018_005m_E70N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E70N25_03035_V1_0/Data/SWF/SWF_2018_005m_E70N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E70N23_03035_V1_0/Data/SWF/SWF_2018_005m_E70N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E68N27_03035_V1_0/Data/SWF/SWF_2018_005m_E68N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E68N25_03035_V1_0/Data/SWF/SWF_2018_005m_E68N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E68N23_03035_V1_0/Data/SWF/SWF_2018_005m_E68N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E68N21_03035_V1_0/Data/SWF/SWF_2018_005m_E68N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E66N25_03035_V1_0/Data/SWF/SWF_2018_005m_E66N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E66N23_03035_V1_0/Data/SWF/SWF_2018_005m_E66N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E66N21_03035_V1_0/Data/SWF/SWF_2018_005m_E66N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E66N19_03035_V1_0/Data/SWF/SWF_2018_005m_E66N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E64N25_03035_V1_0/Data/SWF/SWF_2018_005m_E64N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E64N23_03035_V1_0/Data/SWF/SWF_2018_005m_E64N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E64N21_03035_V1_0/Data/SWF/SWF_2018_005m_E64N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E64N19_03035_V1_0/Data/SWF/SWF_2018_005m_E64N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E64N17_03035_V1_0/Data/SWF/SWF_2018_005m_E64N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E62N25_03035_V1_0/Data/SWF/SWF_2018_005m_E62N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E62N23_03035_V1_0/Data/SWF/SWF_2018_005m_E62N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E62N21_03035_V1_0/Data/SWF/SWF_2018_005m_E62N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E62N19_03035_V1_0/Data/SWF/SWF_2018_005m_E62N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E62N17_03035_V1_0/Data/SWF/SWF_2018_005m_E62N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E60N25_03035_V1_0/Data/SWF/SWF_2018_005m_E60N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E60N23_03035_V1_0/Data/SWF/SWF_2018_005m_E60N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E60N21_03035_V1_0/Data/SWF/SWF_2018_005m_E60N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E60N19_03035_V1_0/Data/SWF/SWF_2018_005m_E60N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E60N17_03035_V1_0/Data/SWF/SWF_2018_005m_E60N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N27_03035_V1_0/Data/SWF/SWF_2018_005m_E58N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N25_03035_V1_0/Data/SWF/SWF_2018_005m_E58N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N23_03035_V1_0/Data/SWF/SWF_2018_005m_E58N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N21_03035_V1_0/Data/SWF/SWF_2018_005m_E58N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N19_03035_V1_0/Data/SWF/SWF_2018_005m_E58N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N17_03035_V1_0/Data/SWF/SWF_2018_005m_E58N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N15_03035_V1_0/Data/SWF/SWF_2018_005m_E58N15_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N29_03035_V1_0/Data/SWF/SWF_2018_005m_E56N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N27_03035_V1_0/Data/SWF/SWF_2018_005m_E56N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N25_03035_V1_0/Data/SWF/SWF_2018_005m_E56N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N23_03035_V1_0/Data/SWF/SWF_2018_005m_E56N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N21_03035_V1_0/Data/SWF/SWF_2018_005m_E56N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N19_03035_V1_0/Data/SWF/SWF_2018_005m_E56N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N17_03035_V1_0/Data/SWF/SWF_2018_005m_E56N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N15_03035_V1_0/Data/SWF/SWF_2018_005m_E56N15_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N47_03035_V1_0/Data/SWF/SWF_2018_005m_E54N47_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N39_03035_V1_0/Data/SWF/SWF_2018_005m_E54N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N31_03035_V1_0/Data/SWF/SWF_2018_005m_E54N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N29_03035_V1_0/Data/SWF/SWF_2018_005m_E54N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N27_03035_V1_0/Data/SWF/SWF_2018_005m_E54N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N25_03035_V1_0/Data/SWF/SWF_2018_005m_E54N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N23_03035_V1_0/Data/SWF/SWF_2018_005m_E54N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N21_03035_V1_0/Data/SWF/SWF_2018_005m_E54N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N19_03035_V1_0/Data/SWF/SWF_2018_005m_E54N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N17_03035_V1_0/Data/SWF/SWF_2018_005m_E54N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N15_03035_V1_0/Data/SWF/SWF_2018_005m_E54N15_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N51_03035_V1_0/Data/SWF/SWF_2018_005m_E52N51_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N49_03035_V1_0/Data/SWF/SWF_2018_005m_E52N49_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N47_03035_V1_0/Data/SWF/SWF_2018_005m_E52N47_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N45_03035_V1_0/Data/SWF/SWF_2018_005m_E52N45_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N43_03035_V1_0/Data/SWF/SWF_2018_005m_E52N43_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N41_03035_V1_0/Data/SWF/SWF_2018_005m_E52N41_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N39_03035_V1_0/Data/SWF/SWF_2018_005m_E52N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N37_03035_V1_0/Data/SWF/SWF_2018_005m_E52N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N35_03035_V1_0/Data/SWF/SWF_2018_005m_E52N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N33_03035_V1_0/Data/SWF/SWF_2018_005m_E52N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N31_03035_V1_0/Data/SWF/SWF_2018_005m_E52N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N29_03035_V1_0/Data/SWF/SWF_2018_005m_E52N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N27_03035_V1_0/Data/SWF/SWF_2018_005m_E52N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N25_03035_V1_0/Data/SWF/SWF_2018_005m_E52N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N23_03035_V1_0/Data/SWF/SWF_2018_005m_E52N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N21_03035_V1_0/Data/SWF/SWF_2018_005m_E52N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N19_03035_V1_0/Data/SWF/SWF_2018_005m_E52N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N17_03035_V1_0/Data/SWF/SWF_2018_005m_E52N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N55_03035_V1_0/Data/SWF/SWF_2018_005m_E50N55_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N53_03035_V1_0/Data/SWF/SWF_2018_005m_E50N53_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N51_03035_V1_0/Data/SWF/SWF_2018_005m_E50N51_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N49_03035_V1_0/Data/SWF/SWF_2018_005m_E50N49_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N47_03035_V1_0/Data/SWF/SWF_2018_005m_E50N47_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N45_03035_V1_0/Data/SWF/SWF_2018_005m_E50N45_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N43_03035_V1_0/Data/SWF/SWF_2018_005m_E50N43_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N41_03035_V1_0/Data/SWF/SWF_2018_005m_E50N41_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N39_03035_V1_0/Data/SWF/SWF_2018_005m_E50N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N37_03035_V1_0/Data/SWF/SWF_2018_005m_E50N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N35_03035_V1_0/Data/SWF/SWF_2018_005m_E50N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N33_03035_V1_0/Data/SWF/SWF_2018_005m_E50N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N31_03035_V1_0/Data/SWF/SWF_2018_005m_E50N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N29_03035_V1_0/Data/SWF/SWF_2018_005m_E50N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N27_03035_V1_0/Data/SWF/SWF_2018_005m_E50N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N25_03035_V1_0/Data/SWF/SWF_2018_005m_E50N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N23_03035_V1_0/Data/SWF/SWF_2018_005m_E50N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N21_03035_V1_0/Data/SWF/SWF_2018_005m_E50N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N19_03035_V1_0/Data/SWF/SWF_2018_005m_E50N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N55_03035_V1_0/Data/SWF/SWF_2018_005m_E48N55_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N53_03035_V1_0/Data/SWF/SWF_2018_005m_E48N53_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N51_03035_V1_0/Data/SWF/SWF_2018_005m_E48N51_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N49_03035_V1_0/Data/SWF/SWF_2018_005m_E48N49_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N47_03035_V1_0/Data/SWF/SWF_2018_005m_E48N47_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N45_03035_V1_0/Data/SWF/SWF_2018_005m_E48N45_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N43_03035_V1_0/Data/SWF/SWF_2018_005m_E48N43_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N41_03035_V1_0/Data/SWF/SWF_2018_005m_E48N41_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N39_03035_V1_0/Data/SWF/SWF_2018_005m_E48N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N37_03035_V1_0/Data/SWF/SWF_2018_005m_E48N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N35_03035_V1_0/Data/SWF/SWF_2018_005m_E48N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N33_03035_V1_0/Data/SWF/SWF_2018_005m_E48N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N31_03035_V1_0/Data/SWF/SWF_2018_005m_E48N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N29_03035_V1_0/Data/SWF/SWF_2018_005m_E48N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N27_03035_V1_0/Data/SWF/SWF_2018_005m_E48N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N25_03035_V1_0/Data/SWF/SWF_2018_005m_E48N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N23_03035_V1_0/Data/SWF/SWF_2018_005m_E48N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N21_03035_V1_0/Data/SWF/SWF_2018_005m_E48N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N19_03035_V1_0/Data/SWF/SWF_2018_005m_E48N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N17_03035_V1_0/Data/SWF/SWF_2018_005m_E48N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N55_03035_V1_0/Data/SWF/SWF_2018_005m_E46N55_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N53_03035_V1_0/Data/SWF/SWF_2018_005m_E46N53_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N51_03035_V1_0/Data/SWF/SWF_2018_005m_E46N51_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N49_03035_V1_0/Data/SWF/SWF_2018_005m_E46N49_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N47_03035_V1_0/Data/SWF/SWF_2018_005m_E46N47_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N45_03035_V1_0/Data/SWF/SWF_2018_005m_E46N45_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N43_03035_V1_0/Data/SWF/SWF_2018_005m_E46N43_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N41_03035_V1_0/Data/SWF/SWF_2018_005m_E46N41_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N39_03035_V1_0/Data/SWF/SWF_2018_005m_E46N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N37_03035_V1_0/Data/SWF/SWF_2018_005m_E46N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N35_03035_V1_0/Data/SWF/SWF_2018_005m_E46N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N33_03035_V1_0/Data/SWF/SWF_2018_005m_E46N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N31_03035_V1_0/Data/SWF/SWF_2018_005m_E46N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N29_03035_V1_0/Data/SWF/SWF_2018_005m_E46N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N27_03035_V1_0/Data/SWF/SWF_2018_005m_E46N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N25_03035_V1_0/Data/SWF/SWF_2018_005m_E46N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N23_03035_V1_0/Data/SWF/SWF_2018_005m_E46N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N21_03035_V1_0/Data/SWF/SWF_2018_005m_E46N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N19_03035_V1_0/Data/SWF/SWF_2018_005m_E46N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N17_03035_V1_0/Data/SWF/SWF_2018_005m_E46N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N15_03035_V1_0/Data/SWF/SWF_2018_005m_E46N15_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N53_03035_V1_0/Data/SWF/SWF_2018_005m_E44N53_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N51_03035_V1_0/Data/SWF/SWF_2018_005m_E44N51_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N49_03035_V1_0/Data/SWF/SWF_2018_005m_E44N49_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N47_03035_V1_0/Data/SWF/SWF_2018_005m_E44N47_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N45_03035_V1_0/Data/SWF/SWF_2018_005m_E44N45_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N43_03035_V1_0/Data/SWF/SWF_2018_005m_E44N43_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N41_03035_V1_0/Data/SWF/SWF_2018_005m_E44N41_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N39_03035_V1_0/Data/SWF/SWF_2018_005m_E44N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N37_03035_V1_0/Data/SWF/SWF_2018_005m_E44N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N35_03035_V1_0/Data/SWF/SWF_2018_005m_E44N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N33_03035_V1_0/Data/SWF/SWF_2018_005m_E44N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N31_03035_V1_0/Data/SWF/SWF_2018_005m_E44N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N29_03035_V1_0/Data/SWF/SWF_2018_005m_E44N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N27_03035_V1_0/Data/SWF/SWF_2018_005m_E44N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N25_03035_V1_0/Data/SWF/SWF_2018_005m_E44N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N23_03035_V1_0/Data/SWF/SWF_2018_005m_E44N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N21_03035_V1_0/Data/SWF/SWF_2018_005m_E44N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N19_03035_V1_0/Data/SWF/SWF_2018_005m_E44N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N17_03035_V1_0/Data/SWF/SWF_2018_005m_E44N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N15_03035_V1_0/Data/SWF/SWF_2018_005m_E44N15_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N49_03035_V1_0/Data/SWF/SWF_2018_005m_E42N49_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N47_03035_V1_0/Data/SWF/SWF_2018_005m_E42N47_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N45_03035_V1_0/Data/SWF/SWF_2018_005m_E42N45_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N43_03035_V1_0/Data/SWF/SWF_2018_005m_E42N43_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N41_03035_V1_0/Data/SWF/SWF_2018_005m_E42N41_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N39_03035_V1_0/Data/SWF/SWF_2018_005m_E42N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N37_03035_V1_0/Data/SWF/SWF_2018_005m_E42N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N35_03035_V1_0/Data/SWF/SWF_2018_005m_E42N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N33_03035_V1_0/Data/SWF/SWF_2018_005m_E42N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N31_03035_V1_0/Data/SWF/SWF_2018_005m_E42N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N29_03035_V1_0/Data/SWF/SWF_2018_005m_E42N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N27_03035_V1_0/Data/SWF/SWF_2018_005m_E42N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N25_03035_V1_0/Data/SWF/SWF_2018_005m_E42N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N23_03035_V1_0/Data/SWF/SWF_2018_005m_E42N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N21_03035_V1_0/Data/SWF/SWF_2018_005m_E42N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N19_03035_V1_0/Data/SWF/SWF_2018_005m_E42N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N45_03035_V1_0/Data/SWF/SWF_2018_005m_E40N45_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N43_03035_V1_0/Data/SWF/SWF_2018_005m_E40N43_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N41_03035_V1_0/Data/SWF/SWF_2018_005m_E40N41_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N39_03035_V1_0/Data/SWF/SWF_2018_005m_E40N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N37_03035_V1_0/Data/SWF/SWF_2018_005m_E40N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N35_03035_V1_0/Data/SWF/SWF_2018_005m_E40N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N33_03035_V1_0/Data/SWF/SWF_2018_005m_E40N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N31_03035_V1_0/Data/SWF/SWF_2018_005m_E40N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N29_03035_V1_0/Data/SWF/SWF_2018_005m_E40N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N27_03035_V1_0/Data/SWF/SWF_2018_005m_E40N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N25_03035_V1_0/Data/SWF/SWF_2018_005m_E40N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N23_03035_V1_0/Data/SWF/SWF_2018_005m_E40N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N21_03035_V1_0/Data/SWF/SWF_2018_005m_E40N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N19_03035_V1_0/Data/SWF/SWF_2018_005m_E40N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N35_03035_V1_0/Data/SWF/SWF_2018_005m_E38N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N33_03035_V1_0/Data/SWF/SWF_2018_005m_E38N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N31_03035_V1_0/Data/SWF/SWF_2018_005m_E38N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N29_03035_V1_0/Data/SWF/SWF_2018_005m_E38N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N27_03035_V1_0/Data/SWF/SWF_2018_005m_E38N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N25_03035_V1_0/Data/SWF/SWF_2018_005m_E38N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N23_03035_V1_0/Data/SWF/SWF_2018_005m_E38N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N21_03035_V1_0/Data/SWF/SWF_2018_005m_E38N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N19_03035_V1_0/Data/SWF/SWF_2018_005m_E38N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N43_03035_V1_0/Data/SWF/SWF_2018_005m_E36N43_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N41_03035_V1_0/Data/SWF/SWF_2018_005m_E36N41_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N39_03035_V1_0/Data/SWF/SWF_2018_005m_E36N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N37_03035_V1_0/Data/SWF/SWF_2018_005m_E36N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N35_03035_V1_0/Data/SWF/SWF_2018_005m_E36N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N33_03035_V1_0/Data/SWF/SWF_2018_005m_E36N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N31_03035_V1_0/Data/SWF/SWF_2018_005m_E36N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N29_03035_V1_0/Data/SWF/SWF_2018_005m_E36N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N27_03035_V1_0/Data/SWF/SWF_2018_005m_E36N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N25_03035_V1_0/Data/SWF/SWF_2018_005m_E36N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N23_03035_V1_0/Data/SWF/SWF_2018_005m_E36N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N21_03035_V1_0/Data/SWF/SWF_2018_005m_E36N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N19_03035_V1_0/Data/SWF/SWF_2018_005m_E36N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N43_03035_V1_0/Data/SWF/SWF_2018_005m_E34N43_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N41_03035_V1_0/Data/SWF/SWF_2018_005m_E34N41_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N39_03035_V1_0/Data/SWF/SWF_2018_005m_E34N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N37_03035_V1_0/Data/SWF/SWF_2018_005m_E34N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N35_03035_V1_0/Data/SWF/SWF_2018_005m_E34N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N33_03035_V1_0/Data/SWF/SWF_2018_005m_E34N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N31_03035_V1_0/Data/SWF/SWF_2018_005m_E34N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N29_03035_V1_0/Data/SWF/SWF_2018_005m_E34N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N27_03035_V1_0/Data/SWF/SWF_2018_005m_E34N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N25_03035_V1_0/Data/SWF/SWF_2018_005m_E34N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N23_03035_V1_0/Data/SWF/SWF_2018_005m_E34N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N21_03035_V1_0/Data/SWF/SWF_2018_005m_E34N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N19_03035_V1_0/Data/SWF/SWF_2018_005m_E34N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N51_03035_V1_0/Data/SWF/SWF_2018_005m_E32N51_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N49_03035_V1_0/Data/SWF/SWF_2018_005m_E32N49_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N41_03035_V1_0/Data/SWF/SWF_2018_005m_E32N41_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N39_03035_V1_0/Data/SWF/SWF_2018_005m_E32N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N37_03035_V1_0/Data/SWF/SWF_2018_005m_E32N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N35_03035_V1_0/Data/SWF/SWF_2018_005m_E32N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N33_03035_V1_0/Data/SWF/SWF_2018_005m_E32N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N31_03035_V1_0/Data/SWF/SWF_2018_005m_E32N31_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N29_03035_V1_0/Data/SWF/SWF_2018_005m_E32N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N27_03035_V1_0/Data/SWF/SWF_2018_005m_E32N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N25_03035_V1_0/Data/SWF/SWF_2018_005m_E32N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N23_03035_V1_0/Data/SWF/SWF_2018_005m_E32N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N21_03035_V1_0/Data/SWF/SWF_2018_005m_E32N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N19_03035_V1_0/Data/SWF/SWF_2018_005m_E32N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N17_03035_V1_0/Data/SWF/SWF_2018_005m_E32N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N51_03035_V1_0/Data/SWF/SWF_2018_005m_E30N51_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N49_03035_V1_0/Data/SWF/SWF_2018_005m_E30N49_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N39_03035_V1_0/Data/SWF/SWF_2018_005m_E30N39_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N37_03035_V1_0/Data/SWF/SWF_2018_005m_E30N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N35_03035_V1_0/Data/SWF/SWF_2018_005m_E30N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N33_03035_V1_0/Data/SWF/SWF_2018_005m_E30N33_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N25_03035_V1_0/Data/SWF/SWF_2018_005m_E30N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N23_03035_V1_0/Data/SWF/SWF_2018_005m_E30N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N21_03035_V1_0/Data/SWF/SWF_2018_005m_E30N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N19_03035_V1_0/Data/SWF/SWF_2018_005m_E30N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N17_03035_V1_0/Data/SWF/SWF_2018_005m_E30N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N15_03035_V1_0/Data/SWF/SWF_2018_005m_E30N15_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N53_03035_V1_0/Data/SWF/SWF_2018_005m_E28N53_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N51_03035_V1_0/Data/SWF/SWF_2018_005m_E28N51_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N49_03035_V1_0/Data/SWF/SWF_2018_005m_E28N49_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N37_03035_V1_0/Data/SWF/SWF_2018_005m_E28N37_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N35_03035_V1_0/Data/SWF/SWF_2018_005m_E28N35_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N25_03035_V1_0/Data/SWF/SWF_2018_005m_E28N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N23_03035_V1_0/Data/SWF/SWF_2018_005m_E28N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N21_03035_V1_0/Data/SWF/SWF_2018_005m_E28N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N19_03035_V1_0/Data/SWF/SWF_2018_005m_E28N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N17_03035_V1_0/Data/SWF/SWF_2018_005m_E28N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N53_03035_V1_0/Data/SWF/SWF_2018_005m_E26N53_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N51_03035_V1_0/Data/SWF/SWF_2018_005m_E26N51_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N49_03035_V1_0/Data/SWF/SWF_2018_005m_E26N49_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N25_03035_V1_0/Data/SWF/SWF_2018_005m_E26N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N23_03035_V1_0/Data/SWF/SWF_2018_005m_E26N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N21_03035_V1_0/Data/SWF/SWF_2018_005m_E26N21_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N19_03035_V1_0/Data/SWF/SWF_2018_005m_E26N19_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E20N11_03035_V1_0/Data/SWF/SWF_2018_005m_E20N11_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E18N17_03035_V1_0/Data/SWF/SWF_2018_005m_E18N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E18N15_03035_V1_0/Data/SWF/SWF_2018_005m_E18N15_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E18N13_03035_V1_0/Data/SWF/SWF_2018_005m_E18N13_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E18N11_03035_V1_0/Data/SWF/SWF_2018_005m_E18N11_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E16N17_03035_V1_0/Data/SWF/SWF_2018_005m_E16N17_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E16N13_03035_V1_0/Data/SWF/SWF_2018_005m_E16N13_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E16N11_03035_V1_0/Data/SWF/SWF_2018_005m_E16N11_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E14N13_03035_V1_0/Data/SWF/SWF_2018_005m_E14N13_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E14N11_03035_V1_0/Data/SWF/SWF_2018_005m_E14N11_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E12N27_03035_V1_0/Data/SWF/SWF_2018_005m_E12N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E12N25_03035_V1_0/Data/SWF/SWF_2018_005m_E12N25_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E12N23_03035_V1_0/Data/SWF/SWF_2018_005m_E12N23_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E10N27_03035_V1_0/Data/SWF/SWF_2018_005m_E10N27_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E08N29_03035_V1_0/Data/SWF/SWF_2018_005m_E08N29_03035_V1_0.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Experimental SWF",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Experimental",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Normalised Difference Water Index (Time Series)",
+      "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "Normalised Difference Water Index.   The satellite images captured at low tide (bottom 30% of the springs tidal range) are used to compute a composite NDWI (Normalized Difference Water Index) image. The 70th percentile is taken when calculating the composite to give more weight to dry pixels.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 70000,
+        "colormaps": [
+          {
+            "min": 10000,
+            "max": 30000,
+            "steps": 50,
+            "name": "freesurface-blue",
+            "reverse": false
+          },
+          {
+            "min": 30000,
+            "max": 65000,
+            "steps": 50,
+            "name": "freesurface-red",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Environmental Monitoring",
+        "subinterfaceGroup": "Coast line monitoring (Wadden Sea example)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2025.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1735689600
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2024.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1704067200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2023.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2021.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tide Lines (Time Series)",
+      "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "This layer shows a time series of the Low Tide line from 2022 to 2025.  The contour was derived from all the low-tide cloud-free Landsat and Sentinel-2 images available.\n\nFor each section of contour, the data available in the layer comprises:\n* *id*: unique identifier of the line\n* *date*: date of the low tide event\n* *springs_tide_range*: the mean springs tidal range at this location according to the FES2022 tidal model\n* *obs_tide_level*: observed tide level across the satellite images used (average)\n* *images_in_composite*: number of satellite images used to create the composite for this line\n\nSelect the data values tab and click on a feature to view details",
+        "attribution": {
+          "text": "ESA EO4Ports",
+          "url": "https://earsc-portal.eu/display/EO4PO/Earth+Observation+for+Ports"
+        },
+        "categories": [],
+        "fields": {
+          "id": {
+            "label": "ID"
+          },
+          "tile": {
+            "label": "Tile"
+          },
+          "date": {
+            "label": "Date"
+          },
+          "n_images_in_composite": {
+            "label": "Images in composite"
+          },
+          "obs_tide_level": {
+            "label": "Observed tide level (average)",
+            "suffix": "m"
+          },
+          "springs_tide_range": {
+            "label": "Spring tidal range",
+            "suffix": "m"
+          }
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Environmental Monitoring",
+        "subinterfaceGroup": "Coast line monitoring (Wadden Sea example)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2025_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1735689600
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2024_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1704067200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2023_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2022_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2021_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Low water line",
+      "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "Low water line data derived from Landsat and Sentinel-2 optical images coupled with tidal model data.",
+        "attribution": {
+          "text": "ESA EO4Ports",
+          "url": "https://earsc-portal.eu/display/EO4PO/Earth+Observation+for+Ports"
+        },
+        "categories": [
+          {
+            "color": "#32A8EB",
+            "label": "Water",
+            "value": 1
+          },
+          {
+            "color": "#72C472",
+            "label": "Wet Sand",
+            "value": 2
+          },
+          {
+            "color": "#FCEB76",
+            "label": "Land",
+            "value": 3
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Environmental Monitoring",
+        "subinterfaceGroup": "Coast line monitoring (Wadden Sea example)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2025.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1735689600
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2024.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1704067200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2023.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2021.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CLC+ Backbone",
+      "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "The baseline CLMS land cover product across Europe",
+        "attribution": {
+          "text": "CLMS",
+          "url": "https://land.copernicus.eu/en/products/clc-backbone"
+        },
+        "categories": [
+          {
+            "label": "Sealed",
+            "color": "#F90000",
+            "value": 0
+          },
+          {
+            "label": "Woody needle-leaved trees",
+            "color": "#228522",
+            "value": 1
+          },
+          {
+            "label": "Woody broadleaved deciduous",
+            "color": "#7DF801",
+            "value": 2
+          },
+          {
+            "label": "Woody broadleaved evergreen",
+            "color": "#03F900",
+            "value": 3
+          },
+          {
+            "label": "Low growing woody plants",
+            "color": "#7E3F01",
+            "value": 4
+          },
+          {
+            "label": "Permanent herbaceous",
+            "color": "#C8ED4C",
+            "value": 5
+          },
+          {
+            "label": "Periodic herbaceous",
+            "color": "#FBFB7E",
+            "value": 6
+          },
+          {
+            "label": "Lichens and mosses",
+            "color": "#F496F3",
+            "value": 7
+          },
+          {
+            "label": "No/sparse vegetation",
+            "color": "#BBBBBB",
+            "value": 8
+          },
+          {
+            "label": "Water",
+            "color": "#007EFC",
+            "value": 9
+          },
+          {
+            "label": "Snow and ice",
+            "color": "#03F9F9",
+            "value": 10
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover and Land Use",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://geoserver.geoville.com/geoserver/clcp/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "CLMS_CLCplus_RASTER_2023_010m_eu",
+          "timestamps": [
+            1672527600
+          ]
+        }
+      ]
     }
   ]
 }
