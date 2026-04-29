@@ -1,12 +1,13 @@
 {
   "version": "1.0.0",
+  "exportPrefix": "config_delineate_anything",
   "layout": {
+    "design": {
+      "variant": "fullscreen"
+    },
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
       "title": "Delineate Anything Demonstration"
-    },
-    "design": {
-      "variant": "fullscreen"
     }
   },
   "interfaceGroups": [
@@ -99,7 +100,6 @@
     {
       "name": "Stadia Alidade Satellite",
       "isActive": true,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
@@ -114,9 +114,10 @@
           "useTimeParameter": true
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
-        "description": "",
+        "description": "Base layer: Stadia Alidade Satellite",
         "attribution": {
           "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
           "url": "https://stadiamaps.com/"
@@ -127,7 +128,6 @@
     {
       "name": "Sentinel",
       "isActive": false,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://services.terrascope.be/wms/v2",
@@ -137,10 +137,11 @@
           "serviceId": "wms-service-1749555952736"
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
       "meta": {
-        "description": "",
+        "description": "Base layer: Sentinel",
         "attribution": {
           "text": "Copernicus Sentinel-2",
           "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
@@ -151,7 +152,6 @@
     {
       "name": "Open StreetMap",
       "isActive": false,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -159,9 +159,10 @@
           "zIndex": 10
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
-        "description": "",
+        "description": "Base layer: Open StreetMap",
         "attribution": {
           "text": "Map data (c) OpenStreetMap",
           "url": "https://www.openstreetmap.org/copyright"
@@ -172,10 +173,22 @@
     {
       "name": "Ukraine",
       "isActive": true,
+      "data": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        }
+      ],
       "meta": {
-        "description": "This interactive map shows the results of the **Delineate Anything** algorithm applied to the detection of field boundaries across *Ukraine*.  Data is displayed on high resolution satellite imagery from the Stadia Maps service.\n\nTo view the field boundaries zoom in to a local area anywhere within the *Ukraine*.  The boundaries are displayed on the map when the scalebar in the bottom left displays **5 km** or less.\n\n### Further information\nDetails of methodology and code published in: \n* [Article](https://arxiv.org/abs/2504.02534)\n* [GitHub repository](https://github.com/Lavreniuk/Delineate-Anything)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
+        "description": "This interactive map shows the results of the **Delineate Anything** algorithm applied to the detection of field boundaries across *Ukraine*.  Data is displayed on high resolution satellite imagery from the Stadia Maps service.\n\nTo view the field boundaries zoom in to a local area anywhere within the *Ukraine*.  The boundaries are displayed on the map when the scalebar in the bottom left displays **5 km** or less.\n\n**Please note** that the field boundaries are overlaid on very high-resolution imagery. As a result, some misalignment may be visible, since the boundaries were derived from Sentinel-2 data.\n\n### Further information\nDetails of methodology and code published in: \n* [Article](https://arxiv.org/abs/2504.02534)\n* [GitHub repository](https://github.com/Lavreniuk/Delineate-Anything)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
         "attribution": {
-          "text": ""
+          "text": "Delineate Anything"
         },
         "categories": []
       },
@@ -197,24 +210,11 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "minZoom": 10,
-          "style": {
-            "stroke-width": 1,
-            "stroke-color": "rgba(255,0,0,1)"
-          }
-        }
-      ]
+      }
     },
     {
       "name": "Stadia Alidade Smooth Dark",
       "isActive": false,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
@@ -222,9 +222,10 @@
           "zIndex": 3
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
-        "description": "",
+        "description": "Base layer: Stadia Alidade Smooth Dark",
         "attribution": {
           "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
           "url": "https://stadiamaps.com/"
@@ -244,7 +245,7 @@
       ],
       "isBaseLayer": true,
       "meta": {
-        "description": "",
+        "description": "Base layer: Stadia Alidade Smooth Light",
         "attribution": {
           "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
           "url": "https://stadiamaps.com/"
@@ -265,7 +266,7 @@
       "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
-        "description": "",
+        "description": "Base layer: Open StreetMap",
         "attribution": {
           "text": "OpenStreetMap",
           "url": "https://www.openstreetmap.org/copyright"
@@ -288,7 +289,7 @@
       "exclusivitySets": [],
       "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png",
       "meta": {
-        "description": "",
+        "description": "Base layer: Blue Marble",
         "attribution": {
           "text": "NASA via EOC Base Map Service from DLR",
           "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
@@ -299,7 +300,6 @@
     {
       "name": "DEM",
       "isActive": false,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://services.terrascope.be/wms/v2",
@@ -308,54 +308,16 @@
           "layers": "COP_DEM_GLO_30M_COG"
         }
       ],
+      "isBaseLayer": true,
       "exclusivitySets": [],
       "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png",
       "meta": {
-        "description": "",
+        "description": "Base layer: DEM",
         "attribution": {
           "text": "Copernicus"
         },
         "categories": []
       }
-    },
-    {
-      "name": "Base map",
-      "isActive": false,
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": ""
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Example Datasets",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "ne:ne_10m_admin_0_boundary_lines_land",
-          "useTimeParameter": true
-        }
-      ]
     }
   ]
 }
