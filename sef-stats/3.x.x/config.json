@@ -12,8 +12,7 @@
     "Agricultural Production",
     "Environmental Monitoring",
     "Ecosystem Accounting",
-    "Urban and Infrastructure",
-    "Experimental"
+    "Urban and Infrastructure"
   ],
   "exclusivitySets": [
     "labels"
@@ -98,6 +97,24 @@
       "name": "CLMS CLCplus",
       "url": "https://geoserver.geoville.com/geoserver/clcp/ows?service=WMS&version=1.3.0&request=GetCapabilities",
       "format": "wms"
+    },
+    {
+      "id": "stac-service-1777463876306",
+      "name": "Microsoft Planetary Computer STAC API",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1/",
+      "format": "stac"
+    },
+    {
+      "id": "stac-service-1777560716564",
+      "name": "CEDA STAC API",
+      "url": "https://api.stac.ceda.ac.uk/",
+      "format": "stac"
+    },
+    {
+      "id": "s3-service-1777893007630",
+      "name": "SEF data bucket",
+      "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/",
+      "format": "cog"
     }
   ],
   "sources": [
@@ -258,7 +275,7 @@
         }
       ],
       "meta": {
-        "description": "Global maps of temporary crops for 2021, at 10m resolution. This identifies pieces of land that are sowed/planted and harvestable at least once within the 12 months after the sowing/planting date.",
+        "description": "Global maps of temporary crops for 2021, at 10m resolution.",
         "attribution": {
           "text": "World Cereal",
           "url": "https://esa-worldcereal.org/en"
@@ -287,7 +304,384 @@
       }
     },
     {
-      "name": "Global Land Cover (2021)",
+      "name": "Global Land Cover 1992-2020 (100m)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20200101_20201231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577833200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20190101_20191231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20180101_20181231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514761200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20170101_20171231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1483225200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20160101_20161231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1451602800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20150101_20151231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1420066800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20140101_20141231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1388530800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20130101_20131231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1356994800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20120101_20121231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1325372400
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20110101_20111231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1293836400
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20100101_20101231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1262300400
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20090101_20091231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1230764400
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20080101_20081231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1199142000
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20070101_20071231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1167606000
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20060101_20061231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1136070000
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20050101_20051231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1104534000
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20040101_20041231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1072911600
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20030101_20031231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1041375600
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20020101_20021231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1009839600
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20010101_20011231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            978303600
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20000101_20001231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            946681200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19990101_19991231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            915145200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19980101_19981231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            883609200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19970101_19971231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            852073200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19960101_19961231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            820450800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19950101_19951231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            788914800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19940101_19941231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            757378800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19930101_19931231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            725842800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19920101_19921231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            694220400
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Long term time series of land cover at 100m resolution, from the ESA Climate Change Initiative",
+        "attribution": {
+          "text": "ESA CCI Land Cover",
+          "url": "https://climate.esa.int/en/projects/land-cover/"
+        },
+        "categories": [
+          {
+            "color": "#FFFF64",
+            "label": "Cropland, rainfed",
+            "value": 10
+          },
+          {
+            "color": "#AAF0F0",
+            "label": "Cropland, irrigates",
+            "value": 20
+          },
+          {
+            "color": "#DCF064",
+            "label": "Mosaic Cropland",
+            "value": 30
+          },
+          {
+            "color": "#C8C864",
+            "label": "Mosaic Natural Vegetation",
+            "value": 40
+          },
+          {
+            "color": "#016400",
+            "label": "Tree cover, broadleaved, evergreen, >15%",
+            "value": 50
+          },
+          {
+            "color": "#00A000",
+            "label": "Tree cover, broadleaved, deciduous, >15%",
+            "value": 60
+          },
+          {
+            "color": "#003C00",
+            "label": "Tree cover, needleleaved, evergreen, >15%",
+            "value": 70
+          },
+          {
+            "color": "#285000",
+            "label": "Tree cover, needleleaved, deciduous, >15%",
+            "value": 80
+          },
+          {
+            "color": "#788200",
+            "label": "Tree cover, mixed leaves",
+            "value": 90
+          },
+          {
+            "color": "#8CA000",
+            "label": "Mosaic tree and shrub (>50%)/herbaceous cover (<50%)",
+            "value": 100
+          },
+          {
+            "color": "#BE9600",
+            "label": "Mosaic herbaceous cover (>50%)/tree and shrub (<50%)",
+            "value": 110
+          },
+          {
+            "color": "#966400",
+            "label": "Shrubland",
+            "value": 120
+          },
+          {
+            "color": "#FFB431",
+            "label": "Grassland",
+            "value": 130
+          },
+          {
+            "color": "#FFDCD3",
+            "label": "Lichens and Mosses",
+            "value": 140
+          },
+          {
+            "color": "#FFEBAF",
+            "label": "Sparse Vegetation",
+            "value": 150
+          },
+          {
+            "color": "#00785A",
+            "label": "Tree cover, flooded, fresh or brakish water",
+            "value": 160
+          },
+          {
+            "color": "#009678",
+            "label": "Tree cover, flooded, saline water",
+            "value": 170
+          },
+          {
+            "color": "#00DC82",
+            "label": "Shrub or herbaceous cover, flooded",
+            "value": 180
+          },
+          {
+            "color": "#C31500",
+            "label": "Urban Areas",
+            "value": 190
+          },
+          {
+            "color": "#FFF5D7",
+            "label": "Bare areas",
+            "value": 200
+          },
+          {
+            "color": "#0046C7",
+            "label": "Water bodies",
+            "value": 210
+          },
+          {
+            "color": "#FFFFFF",
+            "label": "Permanent snow and ice",
+            "value": 220
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover and Land Use",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Global Land Cover 2021 (10m)",
       "isActive": false,
       "data": [
         {
@@ -388,7 +782,7 @@
         }
       ],
       "meta": {
-        "description": "Global land cover map for 2021 with statistics by NUTS within Europe.",
+        "description": "Global 10m land cover map for 2021 with statistics by NUTS within Europe.",
         "attribution": {
           "text": "World Cover Project",
           "url": "https://esa-worldcover.org/"
@@ -578,104 +972,6 @@
           "text": "Copernicus"
         },
         "categories": []
-      }
-    },
-    {
-      "name": "Fallow Land",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2017",
-          "timestamps": [
-            1483225200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2018",
-          "timestamps": [
-            1514761200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2019",
-          "timestamps": [
-            1546297200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2020",
-          "timestamps": [
-            1577833200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2021",
-          "timestamps": [
-            1609455600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2022",
-          "timestamps": [
-            1640991600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2023",
-          "timestamps": [
-            1672527600
-          ]
-        }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Annual (2017-2023) pan-European level amapping of the presence of fallow land over cropland, at a spatial resolution of 10 m and a MMU of 0.25 ha",
-        "attribution": {
-          "text": "CLMS HRL Cropland",
-          "url": "clms hrl cropland"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Agricultural Production",
-        "subinterfaceGroup": "European Crop Maps",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
       }
     },
     {
@@ -1579,6 +1875,44 @@
           ]
         }
       ],
+      "statistics": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/CropMaps/CTY/2023/Europe/NUTS_bound/stats.hrl_cpl_cty_s2023.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/CropMaps/CTY/2023/Europe/NUTS_bound/stats.hrl_cpl_cty_s2023.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/CropMaps/CTY/2023/Europe/NUTS_bound/stats.hrl_cpl_cty_s2023.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/CropMaps/CTY/2023/Europe/NUTS_bound/stats.hrl_cpl_cty_s2023.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3,
+          "timestamps": [
+            1672527600
+          ]
+        }
+      ],
       "timeframe": "Years",
       "meta": {
         "description": "Annual (2017-2023) pan-European mapping of primary crops at a spatial resolution of 10 m and a MMU of 0.25 ha.",
@@ -1802,6 +2136,104 @@
             "value": 3
           }
         ]
+      },
+      "layout": {
+        "interfaceGroup": "Agricultural Production",
+        "subinterfaceGroup": "European Crop Maps",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Fallow Land",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2017",
+          "timestamps": [
+            1483225200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2018",
+          "timestamps": [
+            1514761200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2019",
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2020",
+          "timestamps": [
+            1577833200
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2021",
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2022",
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_CPL:CPFLP_S2023",
+          "timestamps": [
+            1672527600
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Annual (2017-2023) pan-European level amapping of the presence of fallow land over cropland, at a spatial resolution of 10 m and a MMU of 0.25 ha",
+        "attribution": {
+          "text": "CLMS HRL Cropland",
+          "url": "clms hrl cropland"
+        },
+        "categories": []
       },
       "layout": {
         "interfaceGroup": "Agricultural Production",
@@ -2826,9 +3258,9 @@
       ],
       "statistics": [],
       "meta": {
-        "description": "Sentinel-1 and Sentinel-2 satellite data for worldwide land cover mapping, containing 11 land cover classes and independently validated with a global overall accuracy of 76.7%.",
+        "description": "Worldwide land cover mapping for 2021.",
         "attribution": {
-          "text": "World Cover products",
+          "text": "ESA World Cover",
           "url": "https://esa-worldcover.org/en/data-access"
         },
         "categories": [
@@ -3725,1424 +4157,7 @@
       },
       "layout": {
         "interfaceGroup": "Urban and Infrastructure",
-        "subinterfaceGroup": "Austrian Rooftops Example",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Experimental SWF",
-      "isActive": false,
-      "data": [
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E72N27_03035_V1_0/Data/SWF/SWF_2018_005m_E72N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E72N25_03035_V1_0/Data/SWF/SWF_2018_005m_E72N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E72N23_03035_V1_0/Data/SWF/SWF_2018_005m_E72N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E70N27_03035_V1_0/Data/SWF/SWF_2018_005m_E70N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E70N25_03035_V1_0/Data/SWF/SWF_2018_005m_E70N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E70N23_03035_V1_0/Data/SWF/SWF_2018_005m_E70N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E68N27_03035_V1_0/Data/SWF/SWF_2018_005m_E68N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E68N25_03035_V1_0/Data/SWF/SWF_2018_005m_E68N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E68N23_03035_V1_0/Data/SWF/SWF_2018_005m_E68N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E68N21_03035_V1_0/Data/SWF/SWF_2018_005m_E68N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E66N25_03035_V1_0/Data/SWF/SWF_2018_005m_E66N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E66N23_03035_V1_0/Data/SWF/SWF_2018_005m_E66N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E66N21_03035_V1_0/Data/SWF/SWF_2018_005m_E66N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E66N19_03035_V1_0/Data/SWF/SWF_2018_005m_E66N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E64N25_03035_V1_0/Data/SWF/SWF_2018_005m_E64N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E64N23_03035_V1_0/Data/SWF/SWF_2018_005m_E64N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E64N21_03035_V1_0/Data/SWF/SWF_2018_005m_E64N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E64N19_03035_V1_0/Data/SWF/SWF_2018_005m_E64N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E64N17_03035_V1_0/Data/SWF/SWF_2018_005m_E64N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E62N25_03035_V1_0/Data/SWF/SWF_2018_005m_E62N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E62N23_03035_V1_0/Data/SWF/SWF_2018_005m_E62N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E62N21_03035_V1_0/Data/SWF/SWF_2018_005m_E62N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E62N19_03035_V1_0/Data/SWF/SWF_2018_005m_E62N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E62N17_03035_V1_0/Data/SWF/SWF_2018_005m_E62N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E60N25_03035_V1_0/Data/SWF/SWF_2018_005m_E60N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E60N23_03035_V1_0/Data/SWF/SWF_2018_005m_E60N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E60N21_03035_V1_0/Data/SWF/SWF_2018_005m_E60N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E60N19_03035_V1_0/Data/SWF/SWF_2018_005m_E60N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E60N17_03035_V1_0/Data/SWF/SWF_2018_005m_E60N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N27_03035_V1_0/Data/SWF/SWF_2018_005m_E58N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N25_03035_V1_0/Data/SWF/SWF_2018_005m_E58N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N23_03035_V1_0/Data/SWF/SWF_2018_005m_E58N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N21_03035_V1_0/Data/SWF/SWF_2018_005m_E58N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N19_03035_V1_0/Data/SWF/SWF_2018_005m_E58N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N17_03035_V1_0/Data/SWF/SWF_2018_005m_E58N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E58N15_03035_V1_0/Data/SWF/SWF_2018_005m_E58N15_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N29_03035_V1_0/Data/SWF/SWF_2018_005m_E56N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N27_03035_V1_0/Data/SWF/SWF_2018_005m_E56N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N25_03035_V1_0/Data/SWF/SWF_2018_005m_E56N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N23_03035_V1_0/Data/SWF/SWF_2018_005m_E56N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N21_03035_V1_0/Data/SWF/SWF_2018_005m_E56N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N19_03035_V1_0/Data/SWF/SWF_2018_005m_E56N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N17_03035_V1_0/Data/SWF/SWF_2018_005m_E56N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E56N15_03035_V1_0/Data/SWF/SWF_2018_005m_E56N15_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N47_03035_V1_0/Data/SWF/SWF_2018_005m_E54N47_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N39_03035_V1_0/Data/SWF/SWF_2018_005m_E54N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N31_03035_V1_0/Data/SWF/SWF_2018_005m_E54N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N29_03035_V1_0/Data/SWF/SWF_2018_005m_E54N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N27_03035_V1_0/Data/SWF/SWF_2018_005m_E54N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N25_03035_V1_0/Data/SWF/SWF_2018_005m_E54N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N23_03035_V1_0/Data/SWF/SWF_2018_005m_E54N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N21_03035_V1_0/Data/SWF/SWF_2018_005m_E54N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N19_03035_V1_0/Data/SWF/SWF_2018_005m_E54N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N17_03035_V1_0/Data/SWF/SWF_2018_005m_E54N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E54N15_03035_V1_0/Data/SWF/SWF_2018_005m_E54N15_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N51_03035_V1_0/Data/SWF/SWF_2018_005m_E52N51_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N49_03035_V1_0/Data/SWF/SWF_2018_005m_E52N49_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N47_03035_V1_0/Data/SWF/SWF_2018_005m_E52N47_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N45_03035_V1_0/Data/SWF/SWF_2018_005m_E52N45_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N43_03035_V1_0/Data/SWF/SWF_2018_005m_E52N43_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N41_03035_V1_0/Data/SWF/SWF_2018_005m_E52N41_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N39_03035_V1_0/Data/SWF/SWF_2018_005m_E52N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N37_03035_V1_0/Data/SWF/SWF_2018_005m_E52N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N35_03035_V1_0/Data/SWF/SWF_2018_005m_E52N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N33_03035_V1_0/Data/SWF/SWF_2018_005m_E52N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N31_03035_V1_0/Data/SWF/SWF_2018_005m_E52N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N29_03035_V1_0/Data/SWF/SWF_2018_005m_E52N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N27_03035_V1_0/Data/SWF/SWF_2018_005m_E52N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N25_03035_V1_0/Data/SWF/SWF_2018_005m_E52N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N23_03035_V1_0/Data/SWF/SWF_2018_005m_E52N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N21_03035_V1_0/Data/SWF/SWF_2018_005m_E52N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N19_03035_V1_0/Data/SWF/SWF_2018_005m_E52N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E52N17_03035_V1_0/Data/SWF/SWF_2018_005m_E52N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N55_03035_V1_0/Data/SWF/SWF_2018_005m_E50N55_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N53_03035_V1_0/Data/SWF/SWF_2018_005m_E50N53_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N51_03035_V1_0/Data/SWF/SWF_2018_005m_E50N51_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N49_03035_V1_0/Data/SWF/SWF_2018_005m_E50N49_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N47_03035_V1_0/Data/SWF/SWF_2018_005m_E50N47_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N45_03035_V1_0/Data/SWF/SWF_2018_005m_E50N45_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N43_03035_V1_0/Data/SWF/SWF_2018_005m_E50N43_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N41_03035_V1_0/Data/SWF/SWF_2018_005m_E50N41_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N39_03035_V1_0/Data/SWF/SWF_2018_005m_E50N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N37_03035_V1_0/Data/SWF/SWF_2018_005m_E50N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N35_03035_V1_0/Data/SWF/SWF_2018_005m_E50N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N33_03035_V1_0/Data/SWF/SWF_2018_005m_E50N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N31_03035_V1_0/Data/SWF/SWF_2018_005m_E50N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N29_03035_V1_0/Data/SWF/SWF_2018_005m_E50N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N27_03035_V1_0/Data/SWF/SWF_2018_005m_E50N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N25_03035_V1_0/Data/SWF/SWF_2018_005m_E50N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N23_03035_V1_0/Data/SWF/SWF_2018_005m_E50N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N21_03035_V1_0/Data/SWF/SWF_2018_005m_E50N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E50N19_03035_V1_0/Data/SWF/SWF_2018_005m_E50N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N55_03035_V1_0/Data/SWF/SWF_2018_005m_E48N55_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N53_03035_V1_0/Data/SWF/SWF_2018_005m_E48N53_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N51_03035_V1_0/Data/SWF/SWF_2018_005m_E48N51_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N49_03035_V1_0/Data/SWF/SWF_2018_005m_E48N49_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N47_03035_V1_0/Data/SWF/SWF_2018_005m_E48N47_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N45_03035_V1_0/Data/SWF/SWF_2018_005m_E48N45_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N43_03035_V1_0/Data/SWF/SWF_2018_005m_E48N43_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N41_03035_V1_0/Data/SWF/SWF_2018_005m_E48N41_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N39_03035_V1_0/Data/SWF/SWF_2018_005m_E48N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N37_03035_V1_0/Data/SWF/SWF_2018_005m_E48N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N35_03035_V1_0/Data/SWF/SWF_2018_005m_E48N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N33_03035_V1_0/Data/SWF/SWF_2018_005m_E48N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N31_03035_V1_0/Data/SWF/SWF_2018_005m_E48N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N29_03035_V1_0/Data/SWF/SWF_2018_005m_E48N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N27_03035_V1_0/Data/SWF/SWF_2018_005m_E48N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N25_03035_V1_0/Data/SWF/SWF_2018_005m_E48N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N23_03035_V1_0/Data/SWF/SWF_2018_005m_E48N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N21_03035_V1_0/Data/SWF/SWF_2018_005m_E48N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N19_03035_V1_0/Data/SWF/SWF_2018_005m_E48N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E48N17_03035_V1_0/Data/SWF/SWF_2018_005m_E48N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N55_03035_V1_0/Data/SWF/SWF_2018_005m_E46N55_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N53_03035_V1_0/Data/SWF/SWF_2018_005m_E46N53_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N51_03035_V1_0/Data/SWF/SWF_2018_005m_E46N51_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N49_03035_V1_0/Data/SWF/SWF_2018_005m_E46N49_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N47_03035_V1_0/Data/SWF/SWF_2018_005m_E46N47_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N45_03035_V1_0/Data/SWF/SWF_2018_005m_E46N45_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N43_03035_V1_0/Data/SWF/SWF_2018_005m_E46N43_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N41_03035_V1_0/Data/SWF/SWF_2018_005m_E46N41_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N39_03035_V1_0/Data/SWF/SWF_2018_005m_E46N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N37_03035_V1_0/Data/SWF/SWF_2018_005m_E46N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N35_03035_V1_0/Data/SWF/SWF_2018_005m_E46N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N33_03035_V1_0/Data/SWF/SWF_2018_005m_E46N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N31_03035_V1_0/Data/SWF/SWF_2018_005m_E46N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N29_03035_V1_0/Data/SWF/SWF_2018_005m_E46N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N27_03035_V1_0/Data/SWF/SWF_2018_005m_E46N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N25_03035_V1_0/Data/SWF/SWF_2018_005m_E46N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N23_03035_V1_0/Data/SWF/SWF_2018_005m_E46N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N21_03035_V1_0/Data/SWF/SWF_2018_005m_E46N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N19_03035_V1_0/Data/SWF/SWF_2018_005m_E46N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N17_03035_V1_0/Data/SWF/SWF_2018_005m_E46N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E46N15_03035_V1_0/Data/SWF/SWF_2018_005m_E46N15_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N53_03035_V1_0/Data/SWF/SWF_2018_005m_E44N53_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N51_03035_V1_0/Data/SWF/SWF_2018_005m_E44N51_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N49_03035_V1_0/Data/SWF/SWF_2018_005m_E44N49_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N47_03035_V1_0/Data/SWF/SWF_2018_005m_E44N47_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N45_03035_V1_0/Data/SWF/SWF_2018_005m_E44N45_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N43_03035_V1_0/Data/SWF/SWF_2018_005m_E44N43_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N41_03035_V1_0/Data/SWF/SWF_2018_005m_E44N41_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N39_03035_V1_0/Data/SWF/SWF_2018_005m_E44N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N37_03035_V1_0/Data/SWF/SWF_2018_005m_E44N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N35_03035_V1_0/Data/SWF/SWF_2018_005m_E44N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N33_03035_V1_0/Data/SWF/SWF_2018_005m_E44N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N31_03035_V1_0/Data/SWF/SWF_2018_005m_E44N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N29_03035_V1_0/Data/SWF/SWF_2018_005m_E44N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N27_03035_V1_0/Data/SWF/SWF_2018_005m_E44N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N25_03035_V1_0/Data/SWF/SWF_2018_005m_E44N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N23_03035_V1_0/Data/SWF/SWF_2018_005m_E44N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N21_03035_V1_0/Data/SWF/SWF_2018_005m_E44N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N19_03035_V1_0/Data/SWF/SWF_2018_005m_E44N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N17_03035_V1_0/Data/SWF/SWF_2018_005m_E44N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E44N15_03035_V1_0/Data/SWF/SWF_2018_005m_E44N15_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N49_03035_V1_0/Data/SWF/SWF_2018_005m_E42N49_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N47_03035_V1_0/Data/SWF/SWF_2018_005m_E42N47_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N45_03035_V1_0/Data/SWF/SWF_2018_005m_E42N45_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N43_03035_V1_0/Data/SWF/SWF_2018_005m_E42N43_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N41_03035_V1_0/Data/SWF/SWF_2018_005m_E42N41_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N39_03035_V1_0/Data/SWF/SWF_2018_005m_E42N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N37_03035_V1_0/Data/SWF/SWF_2018_005m_E42N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N35_03035_V1_0/Data/SWF/SWF_2018_005m_E42N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N33_03035_V1_0/Data/SWF/SWF_2018_005m_E42N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N31_03035_V1_0/Data/SWF/SWF_2018_005m_E42N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N29_03035_V1_0/Data/SWF/SWF_2018_005m_E42N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N27_03035_V1_0/Data/SWF/SWF_2018_005m_E42N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N25_03035_V1_0/Data/SWF/SWF_2018_005m_E42N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N23_03035_V1_0/Data/SWF/SWF_2018_005m_E42N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N21_03035_V1_0/Data/SWF/SWF_2018_005m_E42N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E42N19_03035_V1_0/Data/SWF/SWF_2018_005m_E42N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N45_03035_V1_0/Data/SWF/SWF_2018_005m_E40N45_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N43_03035_V1_0/Data/SWF/SWF_2018_005m_E40N43_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N41_03035_V1_0/Data/SWF/SWF_2018_005m_E40N41_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N39_03035_V1_0/Data/SWF/SWF_2018_005m_E40N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N37_03035_V1_0/Data/SWF/SWF_2018_005m_E40N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N35_03035_V1_0/Data/SWF/SWF_2018_005m_E40N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N33_03035_V1_0/Data/SWF/SWF_2018_005m_E40N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N31_03035_V1_0/Data/SWF/SWF_2018_005m_E40N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N29_03035_V1_0/Data/SWF/SWF_2018_005m_E40N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N27_03035_V1_0/Data/SWF/SWF_2018_005m_E40N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N25_03035_V1_0/Data/SWF/SWF_2018_005m_E40N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N23_03035_V1_0/Data/SWF/SWF_2018_005m_E40N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N21_03035_V1_0/Data/SWF/SWF_2018_005m_E40N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E40N19_03035_V1_0/Data/SWF/SWF_2018_005m_E40N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N35_03035_V1_0/Data/SWF/SWF_2018_005m_E38N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N33_03035_V1_0/Data/SWF/SWF_2018_005m_E38N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N31_03035_V1_0/Data/SWF/SWF_2018_005m_E38N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N29_03035_V1_0/Data/SWF/SWF_2018_005m_E38N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N27_03035_V1_0/Data/SWF/SWF_2018_005m_E38N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N25_03035_V1_0/Data/SWF/SWF_2018_005m_E38N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N23_03035_V1_0/Data/SWF/SWF_2018_005m_E38N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N21_03035_V1_0/Data/SWF/SWF_2018_005m_E38N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E38N19_03035_V1_0/Data/SWF/SWF_2018_005m_E38N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N43_03035_V1_0/Data/SWF/SWF_2018_005m_E36N43_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N41_03035_V1_0/Data/SWF/SWF_2018_005m_E36N41_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N39_03035_V1_0/Data/SWF/SWF_2018_005m_E36N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N37_03035_V1_0/Data/SWF/SWF_2018_005m_E36N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N35_03035_V1_0/Data/SWF/SWF_2018_005m_E36N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N33_03035_V1_0/Data/SWF/SWF_2018_005m_E36N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N31_03035_V1_0/Data/SWF/SWF_2018_005m_E36N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N29_03035_V1_0/Data/SWF/SWF_2018_005m_E36N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N27_03035_V1_0/Data/SWF/SWF_2018_005m_E36N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N25_03035_V1_0/Data/SWF/SWF_2018_005m_E36N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N23_03035_V1_0/Data/SWF/SWF_2018_005m_E36N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N21_03035_V1_0/Data/SWF/SWF_2018_005m_E36N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E36N19_03035_V1_0/Data/SWF/SWF_2018_005m_E36N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N43_03035_V1_0/Data/SWF/SWF_2018_005m_E34N43_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N41_03035_V1_0/Data/SWF/SWF_2018_005m_E34N41_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N39_03035_V1_0/Data/SWF/SWF_2018_005m_E34N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N37_03035_V1_0/Data/SWF/SWF_2018_005m_E34N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N35_03035_V1_0/Data/SWF/SWF_2018_005m_E34N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N33_03035_V1_0/Data/SWF/SWF_2018_005m_E34N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N31_03035_V1_0/Data/SWF/SWF_2018_005m_E34N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N29_03035_V1_0/Data/SWF/SWF_2018_005m_E34N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N27_03035_V1_0/Data/SWF/SWF_2018_005m_E34N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N25_03035_V1_0/Data/SWF/SWF_2018_005m_E34N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N23_03035_V1_0/Data/SWF/SWF_2018_005m_E34N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N21_03035_V1_0/Data/SWF/SWF_2018_005m_E34N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E34N19_03035_V1_0/Data/SWF/SWF_2018_005m_E34N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N51_03035_V1_0/Data/SWF/SWF_2018_005m_E32N51_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N49_03035_V1_0/Data/SWF/SWF_2018_005m_E32N49_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N41_03035_V1_0/Data/SWF/SWF_2018_005m_E32N41_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N39_03035_V1_0/Data/SWF/SWF_2018_005m_E32N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N37_03035_V1_0/Data/SWF/SWF_2018_005m_E32N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N35_03035_V1_0/Data/SWF/SWF_2018_005m_E32N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N33_03035_V1_0/Data/SWF/SWF_2018_005m_E32N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N31_03035_V1_0/Data/SWF/SWF_2018_005m_E32N31_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N29_03035_V1_0/Data/SWF/SWF_2018_005m_E32N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N27_03035_V1_0/Data/SWF/SWF_2018_005m_E32N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N25_03035_V1_0/Data/SWF/SWF_2018_005m_E32N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N23_03035_V1_0/Data/SWF/SWF_2018_005m_E32N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N21_03035_V1_0/Data/SWF/SWF_2018_005m_E32N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N19_03035_V1_0/Data/SWF/SWF_2018_005m_E32N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E32N17_03035_V1_0/Data/SWF/SWF_2018_005m_E32N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N51_03035_V1_0/Data/SWF/SWF_2018_005m_E30N51_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N49_03035_V1_0/Data/SWF/SWF_2018_005m_E30N49_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N39_03035_V1_0/Data/SWF/SWF_2018_005m_E30N39_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N37_03035_V1_0/Data/SWF/SWF_2018_005m_E30N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N35_03035_V1_0/Data/SWF/SWF_2018_005m_E30N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N33_03035_V1_0/Data/SWF/SWF_2018_005m_E30N33_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N25_03035_V1_0/Data/SWF/SWF_2018_005m_E30N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N23_03035_V1_0/Data/SWF/SWF_2018_005m_E30N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N21_03035_V1_0/Data/SWF/SWF_2018_005m_E30N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N19_03035_V1_0/Data/SWF/SWF_2018_005m_E30N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N17_03035_V1_0/Data/SWF/SWF_2018_005m_E30N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E30N15_03035_V1_0/Data/SWF/SWF_2018_005m_E30N15_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N53_03035_V1_0/Data/SWF/SWF_2018_005m_E28N53_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N51_03035_V1_0/Data/SWF/SWF_2018_005m_E28N51_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N49_03035_V1_0/Data/SWF/SWF_2018_005m_E28N49_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N37_03035_V1_0/Data/SWF/SWF_2018_005m_E28N37_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N35_03035_V1_0/Data/SWF/SWF_2018_005m_E28N35_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N25_03035_V1_0/Data/SWF/SWF_2018_005m_E28N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N23_03035_V1_0/Data/SWF/SWF_2018_005m_E28N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N21_03035_V1_0/Data/SWF/SWF_2018_005m_E28N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N19_03035_V1_0/Data/SWF/SWF_2018_005m_E28N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E28N17_03035_V1_0/Data/SWF/SWF_2018_005m_E28N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N53_03035_V1_0/Data/SWF/SWF_2018_005m_E26N53_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N51_03035_V1_0/Data/SWF/SWF_2018_005m_E26N51_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N49_03035_V1_0/Data/SWF/SWF_2018_005m_E26N49_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N25_03035_V1_0/Data/SWF/SWF_2018_005m_E26N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N23_03035_V1_0/Data/SWF/SWF_2018_005m_E26N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N21_03035_V1_0/Data/SWF/SWF_2018_005m_E26N21_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E26N19_03035_V1_0/Data/SWF/SWF_2018_005m_E26N19_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E20N11_03035_V1_0/Data/SWF/SWF_2018_005m_E20N11_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E18N17_03035_V1_0/Data/SWF/SWF_2018_005m_E18N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E18N15_03035_V1_0/Data/SWF/SWF_2018_005m_E18N15_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E18N13_03035_V1_0/Data/SWF/SWF_2018_005m_E18N13_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E18N11_03035_V1_0/Data/SWF/SWF_2018_005m_E18N11_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E16N17_03035_V1_0/Data/SWF/SWF_2018_005m_E16N17_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E16N13_03035_V1_0/Data/SWF/SWF_2018_005m_E16N13_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E16N11_03035_V1_0/Data/SWF/SWF_2018_005m_E16N11_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E14N13_03035_V1_0/Data/SWF/SWF_2018_005m_E14N13_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E14N11_03035_V1_0/Data/SWF/SWF_2018_005m_E14N11_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E12N27_03035_V1_0/Data/SWF/SWF_2018_005m_E12N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E12N25_03035_V1_0/Data/SWF/SWF_2018_005m_E12N25_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E12N23_03035_V1_0/Data/SWF/SWF_2018_005m_E12N23_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E10N27_03035_V1_0/Data/SWF/SWF_2018_005m_E10N27_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "s3://SmallWoodyFeatures/SWF_2018_005m_eu_3035_V1_0/SWF_2018_005m_E08N29_03035_V1_0/Data/SWF/SWF_2018_005m_E08N29_03035_V1_0.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Experimental SWF",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Experimental",
+        "subinterfaceGroup": "Austrian Example",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -5164,6 +4179,48 @@
     {
       "name": "Normalised Difference Water Index (Time Series)",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2025.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1735689600
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2024.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1704067200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2023.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2021.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ],
       "timeframe": "Years",
       "meta": {
         "description": "Normalised Difference Water Index.   The satellite images captured at low tide (bottom 30% of the springs tidal range) are used to compute a composite NDWI (Normalized Difference Water Index) image. The 70th percentile is taken when calculating the composite to give more weight to dry pixels.",
@@ -5209,104 +4266,11 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2025.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1735689600
-          ]
-        },
-        {
-          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2024.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1704067200
-          ]
-        },
-        {
-          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2023.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1672531200
-          ]
-        },
-        {
-          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2022.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1640995200
-          ]
-        },
-        {
-          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2021.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1609459200
-          ]
-        }
-      ]
+      }
     },
     {
       "name": "Tide Lines (Time Series)",
       "isActive": false,
-      "timeframe": "Years",
-      "meta": {
-        "description": "This layer shows a time series of the Low Tide line from 2022 to 2025.  The contour was derived from all the low-tide cloud-free Landsat and Sentinel-2 images available.\n\nFor each section of contour, the data available in the layer comprises:\n* *id*: unique identifier of the line\n* *date*: date of the low tide event\n* *springs_tide_range*: the mean springs tidal range at this location according to the FES2022 tidal model\n* *obs_tide_level*: observed tide level across the satellite images used (average)\n* *images_in_composite*: number of satellite images used to create the composite for this line\n\nSelect the data values tab and click on a feature to view details",
-        "attribution": {
-          "text": "ESA EO4Ports",
-          "url": "https://earsc-portal.eu/display/EO4PO/Earth+Observation+for+Ports"
-        },
-        "categories": [],
-        "fields": {
-          "id": {
-            "label": "ID"
-          },
-          "tile": {
-            "label": "Tile"
-          },
-          "date": {
-            "label": "Date"
-          },
-          "n_images_in_composite": {
-            "label": "Images in composite"
-          },
-          "obs_tide_level": {
-            "label": "Observed tide level (average)",
-            "suffix": "m"
-          },
-          "springs_tide_range": {
-            "label": "Spring tidal range",
-            "suffix": "m"
-          }
-        }
-      },
-      "layout": {
-        "interfaceGroup": "Environmental Monitoring",
-        "subinterfaceGroup": "Coast line monitoring (Wadden Sea example)",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2025_Wadden_Sea_lowtideline_v5.fgb",
@@ -5373,11 +4337,104 @@
             1609459200
           ]
         }
-      ]
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "This layer shows a time series of the Low Tide line from 2022 to 2025.  The contour was derived from all the low-tide cloud-free Landsat and Sentinel-2 images available.\n\nFor each section of contour, the data available in the layer comprises:\n* *id*: unique identifier of the line\n* *date*: date of the low tide event\n* *springs_tide_range*: the mean springs tidal range at this location according to the FES2022 tidal model\n* *obs_tide_level*: observed tide level across the satellite images used (average)\n* *images_in_composite*: number of satellite images used to create the composite for this line\n\nSelect the data values tab and click on a feature to view details",
+        "attribution": {
+          "text": "ESA EO4Ports",
+          "url": "https://earsc-portal.eu/display/EO4PO/Earth+Observation+for+Ports"
+        },
+        "categories": [],
+        "fields": {
+          "id": {
+            "label": "ID"
+          },
+          "tile": {
+            "label": "Tile"
+          },
+          "date": {
+            "label": "Date"
+          },
+          "n_images_in_composite": {
+            "label": "Images in composite"
+          },
+          "obs_tide_level": {
+            "label": "Observed tide level (average)",
+            "suffix": "m"
+          },
+          "springs_tide_range": {
+            "label": "Spring tidal range",
+            "suffix": "m"
+          }
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Environmental Monitoring",
+        "subinterfaceGroup": "Coast line monitoring (Wadden Sea example)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
       "name": "Low water line",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2025.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1735689600
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2024.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1704067200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2023.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2021.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ],
       "timeframe": "Years",
       "meta": {
         "description": "Low water line data derived from Landsat and Sentinel-2 optical images coupled with tidal model data.",
@@ -5422,53 +4479,22 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2025.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1735689600
-          ]
-        },
-        {
-          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2024.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1704067200
-          ]
-        },
-        {
-          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2023.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1672531200
-          ]
-        },
-        {
-          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2022.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1640995200
-          ]
-        },
-        {
-          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2021.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1609459200
-          ]
-        }
-      ]
+      }
     },
     {
-      "name": "CLC+ Backbone",
+      "name": "Europe Land Cover CLC+ 2023 (10m)",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.geoville.com/geoserver/clcp/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "CLMS_CLCplus_RASTER_2023_010m_eu",
+          "timestamps": [
+            1672527600
+          ]
+        }
+      ],
       "timeframe": "Years",
       "meta": {
         "description": "The baseline CLMS land cover product across Europe",
@@ -5478,58 +4504,58 @@
         },
         "categories": [
           {
-            "label": "Sealed",
             "color": "#F90000",
+            "label": "Sealed",
             "value": 0
           },
           {
-            "label": "Woody needle-leaved trees",
             "color": "#228522",
+            "label": "Woody needle-leaved trees",
             "value": 1
           },
           {
-            "label": "Woody broadleaved deciduous",
             "color": "#7DF801",
+            "label": "Woody broadleaved deciduous",
             "value": 2
           },
           {
-            "label": "Woody broadleaved evergreen",
             "color": "#03F900",
+            "label": "Woody broadleaved evergreen",
             "value": 3
           },
           {
-            "label": "Low growing woody plants",
             "color": "#7E3F01",
+            "label": "Low growing woody plants",
             "value": 4
           },
           {
-            "label": "Permanent herbaceous",
             "color": "#C8ED4C",
+            "label": "Permanent herbaceous",
             "value": 5
           },
           {
-            "label": "Periodic herbaceous",
             "color": "#FBFB7E",
+            "label": "Periodic herbaceous",
             "value": 6
           },
           {
-            "label": "Lichens and mosses",
             "color": "#F496F3",
+            "label": "Lichens and mosses",
             "value": 7
           },
           {
-            "label": "No/sparse vegetation",
             "color": "#BBBBBB",
+            "label": "No/sparse vegetation",
             "value": 8
           },
           {
-            "label": "Water",
             "color": "#007EFC",
+            "label": "Water",
             "value": 9
           },
           {
-            "label": "Snow and ice",
             "color": "#03F9F9",
+            "label": "Snow and ice",
             "value": 10
           }
         ]
@@ -5537,6 +4563,9 @@
       "layout": {
         "interfaceGroup": "Land Cover and Land Use",
         "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
         "infoPanel": {
           "legend": {
             "type": "swatch"
@@ -5548,22 +4577,130 @@
             "constraintSlider": false,
             "blendControls": false
           }
-        },
-        "layerCard": {
-          "toggleable": true
         }
-      },
+      }
+    },
+    {
+      "name": "Land Surface Temperature 70 m",
+      "isActive": false,
       "data": [
         {
-          "url": "https://geoserver.geoville.com/geoserver/clcp/ows?service=WMS&version=1.3.0&request=GetCapabilities",
-          "format": "wms",
+          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2022/06/01/ECOSTRESS_MEAN_LST_2022/2022_LST_AT_merged_composite_mean_70m.tif",
+          "format": "cog",
           "zIndex": 50,
-          "layers": "CLMS_CLCplus_RASTER_2023_010m_eu",
           "timestamps": [
-            1672527600
+            1655244000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2023/06/01/ECOSTRESS_MEAN_LST_2023/2023_LST_AT_merged_composite_mean_70m.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1686780000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2024/06/01/ECOSTRESS_MEAN_LST_2024/2024_LST_AT_merged_composite_mean_70m.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1718402400
           ]
         }
-      ]
+      ],
+      "isBaseLayer": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "ECOSTRESS instrument mounted on the International Space Station. Data shows land surface temperatures measured during early afternoon hours in °C. The map is composed of single observations acquired between June 1st to June 24th, in order to result in an almost cloud-free image.",
+        "attribution": {
+          "text": "GTIF",
+          "url": "https://gtif-demo.eox.at/explore?indicator=HAUC1&x=1682304.11139&y=6105680.32568&z=7.21675"
+        },
+        "categories": [],
+        "units": "°C",
+        "min": 0,
+        "max": 40,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 40,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Urban and Infrastructure",
+        "subinterfaceGroup": "Austrian Example",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Street Trees",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Raster27733",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Vector61679",
+          "useTimeParameter": true
+        }
+      ],
+      "isBaseLayer": false,
+      "meta": {
+        "description": "Copernicus Urban Atlas 2012 street trees layer (vector), covering European Functional Urban Areas; CLMS product with 6-year update cycle. Derived from high-resolution imagery; MMU 0.25 ha, minimum mapping width 10 m",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas 2012",
+          "url": "https://land.copernicus.eu/local/urban-atlas"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban and Infrastructure",
+        "subinterfaceGroup": "Austrian Example",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=STL_Raster27733"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
     }
   ]
 }
