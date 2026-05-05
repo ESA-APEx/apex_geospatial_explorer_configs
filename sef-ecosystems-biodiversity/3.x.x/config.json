@@ -138,91 +138,8 @@
   ],
   "sources": [
     {
-      "name": "Global Land Cover (2021)",
+      "name": "Global Land Cover at 10m (2021)",
       "isActive": false,
-      "meta": {
-        "description": "Land cover map for 2021 with statistics by NUTS.  Click on the \"Statistics\" tab and then select a geographic area of interest.",
-        "attribution": {
-          "text": "World Cover Project",
-          "url": "https://esa-worldcover.org/"
-        },
-        "categories": [
-          {
-            "color": "#006400",
-            "label": "Tree cover",
-            "value": 10
-          },
-          {
-            "color": "#ffbb22",
-            "label": "Shrubland",
-            "value": 20
-          },
-          {
-            "color": "#ffff4c",
-            "label": "Grassland",
-            "value": 30
-          },
-          {
-            "color": "#f096ff",
-            "label": "Cropland",
-            "value": 40
-          },
-          {
-            "color": "#ff0000",
-            "label": "Built-up",
-            "value": 50
-          },
-          {
-            "color": "#b4b4b4",
-            "label": "Bare",
-            "value": 60
-          },
-          {
-            "color": "#f0f0f0",
-            "label": "Snow and ice",
-            "value": 70
-          },
-          {
-            "color": "#0064c8",
-            "label": "Permanent water bodies",
-            "value": 80
-          },
-          {
-            "color": "#0096a0",
-            "label": "Herbaceous wetland",
-            "value": 90
-          },
-          {
-            "color": "#00cf75",
-            "label": "Mangroves",
-            "value": 95
-          },
-          {
-            "color": "#fae6a0",
-            "label": "Moss and lichen",
-            "value": 100
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Landcover",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": false,
-            "temporalControls": false,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://services.terrascope.be/wms/v2",
@@ -320,7 +237,90 @@
           ],
           "bandIndex": 2
         }
-      ]
+      ],
+      "meta": {
+        "description": "Land cover map for 2021 with statistics by NUTS.  Click on the \"Statistics\" tab and then select a geographic area of interest.",
+        "attribution": {
+          "text": "World Cover Project",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Landcover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
       "name": "Habitat Map GR Level 1 2020 with NUTS stats (Copy)",
@@ -3175,76 +3175,6 @@
       }
     },
     {
-      "name": "Tide lines",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/EOTideLines_EO4PORTS/2021/01/01/EOTideLines_NorthSea_2021/2021_Wadden_Sea_lowtideline_v5.geojson",
-          "format": "geojson",
-          "zIndex": 100,
-          "timestamps": [
-            1609455600
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EOTideLines_EO4PORTS/2020/01/01/EOTideLines_NorthSea_2020/2020_Wadden_Sea_lowtideline_v5.geojson",
-          "format": "geojson",
-          "zIndex": 100,
-          "timestamps": [
-            1577833200
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EOTideLines_EO4PORTS/2022/01/01/EOTideLines_NorthSea_2022/2022_Wadden_Sea_lowtideline_v5.geojson",
-          "format": "geojson",
-          "zIndex": 100,
-          "timestamps": [
-            1640991600
-          ]
-        }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "To be written",
-        "attribution": {
-          "text": "EO4Ports project",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/EOTideLines_EO4PORTS"
-        },
-        "categories": [],
-        "units": "N/A",
-        "min": 0,
-        "max": 1,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Coastal Monitoring",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
       "name": "Street Trees",
       "isActive": false,
       "data": [
@@ -4351,6 +4281,15 @@
     {
       "name": "Sea Temperature",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.marine.copernicus.eu/teroWmts/GLOBAL_ANALYSISFORECAST_PHY_001_024/cmems_mod_glo_phy-thetao_anfc_0.083deg_P1M-m_202406?request=GetCapabilities&service=WMS",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "GLOBAL_ANALYSISFORECAST_PHY_001_024/cmems_mod_glo_phy-thetao_anfc_0.083deg_P1M-m_202406/thetao",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Sea water potential temperature at sea floor",
         "attribution": {
@@ -4388,20 +4327,20 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://wmts.marine.copernicus.eu/teroWmts/GLOBAL_ANALYSISFORECAST_PHY_001_024/cmems_mod_glo_phy-thetao_anfc_0.083deg_P1M-m_202406?request=GetCapabilities&service=WMS",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "GLOBAL_ANALYSISFORECAST_PHY_001_024/cmems_mod_glo_phy-thetao_anfc_0.083deg_P1M-m_202406/thetao",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "Sea Salinity",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.marine.copernicus.eu/teroWmts/GLOBAL_ANALYSISFORECAST_PHY_001_024/cmems_mod_glo_phy-so_anfc_0.083deg_P1M-m_202406?request=GetCapabilities&service=WMS",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "GLOBAL_ANALYSISFORECAST_PHY_001_024/cmems_mod_glo_phy-so_anfc_0.083deg_P1M-m_202406/so",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Sea water salinity",
         "attribution": {
@@ -4441,20 +4380,20 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://wmts.marine.copernicus.eu/teroWmts/GLOBAL_ANALYSISFORECAST_PHY_001_024/cmems_mod_glo_phy-so_anfc_0.083deg_P1M-m_202406?request=GetCapabilities&service=WMS",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "GLOBAL_ANALYSISFORECAST_PHY_001_024/cmems_mod_glo_phy-so_anfc_0.083deg_P1M-m_202406/so",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "Chlorophyll - A",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.marine.copernicus.eu/teroWmts/GLOBAL_ANALYSISFORECAST_BGC_001_028/cmems_mod_glo_bgc-pft_anfc_0.25deg_P1M-m_202311?request=GetCapabilities&service=WMS",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "GLOBAL_ANALYSISFORECAST_BGC_001_028/cmems_mod_glo_bgc-pft_anfc_0.25deg_P1M-m_202311/chl",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Mass concentration of chlorophyll-a in sea water",
         "attribution": {
@@ -4494,20 +4433,20 @@
             "blendControls": false
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Phytoplankton",
+      "isActive": false,
       "data": [
         {
           "url": "https://wmts.marine.copernicus.eu/teroWmts/GLOBAL_ANALYSISFORECAST_BGC_001_028/cmems_mod_glo_bgc-pft_anfc_0.25deg_P1M-m_202311?request=GetCapabilities&service=WMS",
           "format": "wmts",
           "zIndex": 50,
-          "layers": "GLOBAL_ANALYSISFORECAST_BGC_001_028/cmems_mod_glo_bgc-pft_anfc_0.25deg_P1M-m_202311/chl",
+          "layers": "GLOBAL_ANALYSISFORECAST_BGC_001_028/cmems_mod_glo_bgc-pft_anfc_0.25deg_P1M-m_202311/phyc",
           "useTimeParameter": true
         }
-      ]
-    },
-    {
-      "name": "Phytoplankton",
-      "isActive": false,
+      ],
       "meta": {
         "description": "Mole concentration of phytoplankton expressed as carbon in sea water",
         "attribution": {
@@ -4547,20 +4486,20 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://wmts.marine.copernicus.eu/teroWmts/GLOBAL_ANALYSISFORECAST_BGC_001_028/cmems_mod_glo_bgc-pft_anfc_0.25deg_P1M-m_202311?request=GetCapabilities&service=WMS",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "GLOBAL_ANALYSISFORECAST_BGC_001_028/cmems_mod_glo_bgc-pft_anfc_0.25deg_P1M-m_202311/phyc",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "Zooplankton",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.marine.copernicus.eu/teroWmts/GLOBAL_ANALYSISFORECAST_BGC_001_028/cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1M-m_202411?request=GetCapabilities&service=WMS",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "GLOBAL_ANALYSISFORECAST_BGC_001_028/cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1M-m_202411/zooc",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Mole concentration of zooplankton expressed as carbon in sea water",
         "attribution": {
@@ -4600,16 +4539,793 @@
             "blendControls": false
           }
         }
-      },
+      }
+    },
+    {
+      "name": "Normalised Difference Water Index",
+      "isActive": false,
       "data": [
         {
-          "url": "https://wmts.marine.copernicus.eu/teroWmts/GLOBAL_ANALYSISFORECAST_BGC_001_028/cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1M-m_202411?request=GetCapabilities&service=WMS",
-          "format": "wmts",
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2025.tif",
+          "format": "cog",
           "zIndex": 50,
-          "layers": "GLOBAL_ANALYSISFORECAST_BGC_001_028/cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1M-m_202411/zooc",
-          "useTimeParameter": true
+          "timestamps": [
+            1735689600
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2024.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1704067200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2023.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_ndwi_2021.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
         }
-      ]
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Normalised Difference Water Index.   The satellite images captured at low tide (bottom 30% of the springs tidal range) are used to compute a composite NDWI (Normalized Difference Water Index) image. The 70th percentile is taken when calculating the composite to give more weight to dry pixels.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 70000,
+        "colormaps": [
+          {
+            "min": 10000,
+            "max": 30000,
+            "steps": 50,
+            "name": "freesurface-blue",
+            "reverse": false
+          },
+          {
+            "min": 30000,
+            "max": 65000,
+            "steps": 50,
+            "name": "freesurface-red",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Coastal Monitoring",
+        "subinterfaceGroup": "Tide monitoring (Wadden See)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "name": "Tide Lines (Time Series)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2025_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1735689600
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2024_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1704067200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2023_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2022_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/flatgeobuf/2021_Wadden_Sea_lowtideline_v5.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "stroke-color": "rgba(255,0,0,0.8)"
+            }
+          ],
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "This layer shows a time series of the Low Tide line from 2022 to 2025.  The contour was derived from all the low-tide cloud-free Landsat and Sentinel-2 images available.\n\nFor each section of contour, the data available in the layer comprises:\n* *id*: unique identifier of the line\n* *date*: date of the low tide event\n* *springs_tide_range*: the mean springs tidal range at this location according to the FES2022 tidal model\n* *obs_tide_level*: observed tide level across the satellite images used (average)\n* *images_in_composite*: number of satellite images used to create the composite for this line\n\nSelect the data values tab and click on a feature to view details",
+        "attribution": {
+          "text": "ESA EO4Ports",
+          "url": "https://earsc-portal.eu/display/EO4PO/Earth+Observation+for+Ports"
+        },
+        "categories": [],
+        "fields": {
+          "id": {
+            "label": "ID"
+          },
+          "tile": {
+            "label": "Tile"
+          },
+          "date": {
+            "label": "Date"
+          },
+          "n_images_in_composite": {
+            "label": "Images in composite"
+          },
+          "obs_tide_level": {
+            "label": "Observed tide level (average)",
+            "suffix": "m"
+          },
+          "springs_tide_range": {
+            "label": "Spring tidal range",
+            "suffix": "m"
+          }
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Coastal Monitoring",
+        "subinterfaceGroup": "Tide monitoring (Wadden See)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "name": "Low water line",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2025.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1735689600
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2024.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1704067200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2023.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2022.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://lowtideline.blob.core.windows.net/data/eo4ports/single_cog/EOTideLines_single_cog_nautical_2021.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Low water line data derived from Landsat and Sentinel-2 optical images coupled with tidal model data.",
+        "attribution": {
+          "text": "ESA EO4Ports",
+          "url": "https://earsc-portal.eu/display/EO4PO/Earth+Observation+for+Ports"
+        },
+        "categories": [
+          {
+            "color": "#32A8EB",
+            "label": "Water",
+            "value": 1
+          },
+          {
+            "color": "#72C472",
+            "label": "Wet Sand",
+            "value": 2
+          },
+          {
+            "color": "#FCEB76",
+            "label": "Land",
+            "value": 3
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Coastal Monitoring",
+        "subinterfaceGroup": "Tide monitoring (Wadden See)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "name": "Global Land Cover at 100m (1992-2020)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20200101_20201231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577833200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20190101_20191231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20180101_20181231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1514761200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20170101_20171231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1483225200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20160101_20161231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1451602800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20150101_20151231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1420066800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20140101_20141231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1388530800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20130101_20131231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1356994800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20120101_20121231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1325372400
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20110101_20111231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1293836400
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20100101_20101231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1262300400
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20090101_20091231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1230764400
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20080101_20081231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1199142000
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20070101_20071231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1167606000
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20060101_20061231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1136070000
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20050101_20051231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1104534000
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20040101_20041231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1072911600
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20030101_20031231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1041375600
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20020101_20021231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1009839600
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20010101_20011231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            978303600
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_20000101_20001231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            946681200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19990101_19991231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            915145200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19980101_19981231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            883609200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19970101_19971231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            852073200
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19960101_19961231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            820450800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19950101_19951231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            788914800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19940101_19941231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            757378800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19930101_19931231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            725842800
+          ]
+        },
+        {
+          "url": "https://s3.openlandmap.org/arco/land.cover_esacci.lc.l4_c_250m_s_19920101_19921231_go_espg.4326_v20230608.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            694220400
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "Long term time series of land cover at 100m resolution, from the ESA Climate Change Initiative",
+        "attribution": {
+          "text": "ESA CCI Land Cover",
+          "url": "https://climate.esa.int/en/projects/land-cover/"
+        },
+        "categories": [
+          {
+            "color": "#FFFF64",
+            "label": "Cropland, rainfed",
+            "value": 10
+          },
+          {
+            "color": "#AAF0F0",
+            "label": "Cropland, irrigates",
+            "value": 20
+          },
+          {
+            "color": "#DCF064",
+            "label": "Mosaic Cropland",
+            "value": 30
+          },
+          {
+            "color": "#C8C864",
+            "label": "Mosaic Natural Vegetation",
+            "value": 40
+          },
+          {
+            "color": "#016400",
+            "label": "Tree cover, broadleaved, evergreen, >15%",
+            "value": 50
+          },
+          {
+            "color": "#00A000",
+            "label": "Tree cover, broadleaved, deciduous, >15%",
+            "value": 60
+          },
+          {
+            "color": "#003C00",
+            "label": "Tree cover, needleleaved, evergreen, >15%",
+            "value": 70
+          },
+          {
+            "color": "#285000",
+            "label": "Tree cover, needleleaved, deciduous, >15%",
+            "value": 80
+          },
+          {
+            "color": "#788200",
+            "label": "Tree cover, mixed leaves",
+            "value": 90
+          },
+          {
+            "color": "#8CA000",
+            "label": "Mosaic tree and shrub (>50%)/herbaceous cover (<50%)",
+            "value": 100
+          },
+          {
+            "color": "#BE9600",
+            "label": "Mosaic herbaceous cover (>50%)/tree and shrub (<50%)",
+            "value": 110
+          },
+          {
+            "color": "#966400",
+            "label": "Shrubland",
+            "value": 120
+          },
+          {
+            "color": "#FFB431",
+            "label": "Grassland",
+            "value": 130
+          },
+          {
+            "color": "#FFDCD3",
+            "label": "Lichens and Mosses",
+            "value": 140
+          },
+          {
+            "color": "#FFEBAF",
+            "label": "Sparse Vegetation",
+            "value": 150
+          },
+          {
+            "color": "#00785A",
+            "label": "Tree cover, flooded, fresh or brakish water",
+            "value": 160
+          },
+          {
+            "color": "#009678",
+            "label": "Tree cover, flooded, saline water",
+            "value": 170
+          },
+          {
+            "color": "#00DC82",
+            "label": "Shrub or herbaceous cover, flooded",
+            "value": 180
+          },
+          {
+            "color": "#C31500",
+            "label": "Urban Areas",
+            "value": 190
+          },
+          {
+            "color": "#FFF5D7",
+            "label": "Bare areas",
+            "value": 200
+          },
+          {
+            "color": "#0046C7",
+            "label": "Water bodies",
+            "value": 210
+          },
+          {
+            "color": "#FFFFFF",
+            "label": "Permanent snow and ice",
+            "value": 220
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Landcover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "name": "European Land Cover (CLC+)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.geoville.com/geoserver/clcp/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "CLMS_CLCplus_RASTER_2023_010m_eu",
+          "timestamps": [
+            1672527600
+          ]
+        }
+      ],
+      "timeframe": "Years",
+      "meta": {
+        "description": "The baseline CLMS land cover product across Europe",
+        "attribution": {
+          "text": "CLMS",
+          "url": "https://land.copernicus.eu/en/products/clc-backbone"
+        },
+        "categories": [
+          {
+            "color": "#F90000",
+            "label": "Sealed",
+            "value": 0
+          },
+          {
+            "color": "#228522",
+            "label": "Woody needle-leaved trees",
+            "value": 1
+          },
+          {
+            "color": "#7DF801",
+            "label": "Woody broadleaved deciduous",
+            "value": 2
+          },
+          {
+            "color": "#03F900",
+            "label": "Woody broadleaved evergreen",
+            "value": 3
+          },
+          {
+            "color": "#7E3F01",
+            "label": "Low growing woody plants",
+            "value": 4
+          },
+          {
+            "color": "#C8ED4C",
+            "label": "Permanent herbaceous",
+            "value": 5
+          },
+          {
+            "color": "#FBFB7E",
+            "label": "Periodic herbaceous",
+            "value": 6
+          },
+          {
+            "color": "#F496F3",
+            "label": "Lichens and mosses",
+            "value": 7
+          },
+          {
+            "color": "#BBBBBB",
+            "label": "No/sparse vegetation",
+            "value": 8
+          },
+          {
+            "color": "#007EFC",
+            "label": "Water",
+            "value": 9
+          },
+          {
+            "color": "#03F9F9",
+            "label": "Snow and ice",
+            "value": 10
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Landcover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
     }
   ]
 }
