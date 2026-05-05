@@ -524,7 +524,7 @@
         }
       ],
       "meta": {
-        "description": "Demonstrates different statistics boundaries, in this case Natura 2000. The statistics data is only shown when zoomed in (scale bar to 10km or more) due to volume and complexity of the feature data.",
+        "description": "Demonstrates different statistics boundaries, in this case **Natura 2000**. The statistics data is only shown when zoomed in (scale bar to 10km or more) due to volume and complexity of the feature data.",
         "attribution": {
           "text": "ESA WorldCover",
           "url": "https://esa-worldcover.org/"
