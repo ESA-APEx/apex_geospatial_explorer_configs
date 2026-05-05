@@ -4701,6 +4701,123 @@
           }
         }
       }
+    },
+    {
+      "name": "UK Crop Mapping (2022)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/GTIF_GMIF_CROPS/2021/10/01/GTIF-GMIF-CROPS-UK-2022/worldcereal_uk_croptype_2022.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Uk crop map 2022, generated using the ESA World Cereal on-demand system.",
+        "attribution": {
+          "text": "GTIF Green Meridian",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/GTIF_GMIF_CROPS"
+        },
+        "categories": [
+          {
+            "color": "#E0FD08",
+            "label": "Wheat",
+            "value": 0
+          },
+          {
+            "color": "#98A470",
+            "label": "Barley",
+            "value": 1
+          },
+          {
+            "color": "#28778A",
+            "label": "Oats",
+            "value": 2
+          },
+          {
+            "color": "#6C7240",
+            "label": "Maize",
+            "value": 3
+          },
+          {
+            "color": "#42C291",
+            "label": "Vegetables",
+            "value": 4
+          },
+          {
+            "color": "#D46C40",
+            "label": "Beet",
+            "value": 5
+          },
+          {
+            "color": "#386B45",
+            "label": "Dry Pulses",
+            "value": 6
+          },
+          {
+            "color": "#F5E96B",
+            "label": "Sunflower",
+            "value": 7
+          },
+          {
+            "color": "#000000",
+            "label": "Soybeans",
+            "value": 8
+          },
+          {
+            "color": "#BFBC73",
+            "label": "Rapeseed",
+            "value": 9
+          },
+          {
+            "color": "#89B734",
+            "label": "Fibre Crops",
+            "value": 10
+          },
+          {
+            "color": "#815551",
+            "label": "Potatoes",
+            "value": 11
+          },
+          {
+            "color": "#28EA1A",
+            "label": "Grass / Fodder Crops",
+            "value": 12
+          },
+          {
+            "color": "#0C45ED",
+            "label": "Other crops",
+            "value": 13
+          },
+          {
+            "color": "#FFFFFF",
+            "label": "No crop",
+            "value": 254
+          }
+        ],
+        "colormaps": []
+      },
+      "layout": {
+        "interfaceGroup": "Agricultural Production",
+        "subinterfaceGroup": "On-demand crop maps",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
     }
   ]
 }
