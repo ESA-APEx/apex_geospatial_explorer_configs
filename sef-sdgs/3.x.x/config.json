@@ -1,5 +1,6 @@
 {
   "version": "1.0.0",
+  "exportPrefix": "config_sdgs",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
@@ -731,7 +732,7 @@
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 50,
           "layers": "WORLDCEREAL_SPRINGCEREALS_V1",
           "serviceId": "wms-service-1749555952736"
         }
@@ -770,7 +771,7 @@
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 50,
           "layers": "WORLDCEREAL_WINTERCEREALS_V1",
           "serviceId": "wms-service-1749555952736"
         }
@@ -809,7 +810,7 @@
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 50,
           "layers": "WORLDCEREAL_TEMPORARYCROPS_V1",
           "serviceId": "wms-service-1749555952736"
         }
@@ -848,7 +849,7 @@
         {
           "url": "https://services.terrascope.be/wms/v2",
           "format": "wms",
-          "zIndex": 2,
+          "zIndex": 50,
           "layers": "WORLDCEREAL_MAIZE_V1",
           "serviceId": "wms-service-1749555952736"
         }
@@ -2301,6 +2302,15 @@
     {
       "name": "Built-Up Areas 2021",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.geoville.com/geoserver/nvlcc/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_NVLCC_IBU_10m",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Provides pan-European binary information on built-up areas at 10 m spatial resolution for the 2021 reference year. Built-up areas correspond to artificial above-ground constructions (e.g. buildings) within the sealing outline derived from the Imperviousness Density 2021 layer.",
         "attribution": {
@@ -2335,20 +2345,20 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://geoserver.geoville.com/geoserver/nvlcc/ows?service=WMS&version=1.3.0&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_NVLCC_IBU_10m",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "World Settlement Footprint",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_Evolution",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Global settlement-extent layer capturing the spatial footprint of human settlements and urban expansion, useful for settlement mapping, urban growth analysis, and SDG 11 reporting context.",
         "attribution": {
@@ -2532,20 +2542,18 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_Evolution",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "Land Surface Temperature 10 m",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/chilly-lstm-like-lst/2024/08/13/35VMF_S3-LSTHR_20240813T190421_COG.tif/35VMF_S3-LSTHR_20240813T190421_COG.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "High-resolution Land Surface Temperature (LST) derived via the CHILL-y downscaling framework, applied to Sentinel-3 SLSTR thermal data. This raster represents surface radiant temperature at ~10–30 m resolution for the overpass on 13 August 2024.",
         "attribution": {
@@ -2585,14 +2593,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/chilly-lstm-like-lst/2024/08/13/35VMF_S3-LSTHR_20240813T190421_COG.tif/35VMF_S3-LSTHR_20240813T190421_COG.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Peatland rewetting - Saddleworth Moor",
