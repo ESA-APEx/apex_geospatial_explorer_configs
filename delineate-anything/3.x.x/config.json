@@ -173,6 +173,32 @@
     {
       "name": "Ukraine",
       "isActive": true,
+      "meta": {
+        "description": "This interactive map shows the results of the **Delineate Anything** algorithm applied to the detection of field boundaries across *Ukraine*.  Data is displayed on high resolution satellite imagery from the Stadia Maps service.\n\nTo view the field boundaries zoom in to a local area anywhere within the *Ukraine*.  The boundaries are displayed on the map when the scalebar in the bottom left displays **5 km** or less.\n\n**Please note** that the field boundaries are overlaid on very high-resolution imagery. As a result, some misalignment may be visible, since the boundaries were derived from Sentinel-2 data.\n\n### Further information\nDetails of methodology and code published in: \n* [Article](https://arxiv.org/abs/2504.02534)\n* [GitHub repository](https://github.com/Lavreniuk/Delineate-Anything)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
+        "attribution": {
+          "text": "Delineate Anything"
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Example Datasets",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false,
+            "download": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb"
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
       "data": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
@@ -184,33 +210,7 @@
           },
           "minZoom": 10
         }
-      ],
-      "meta": {
-        "description": "This interactive map shows the results of the **Delineate Anything** algorithm applied to the detection of field boundaries across *Ukraine*.  Data is displayed on high resolution satellite imagery from the Stadia Maps service.\n\nTo view the field boundaries zoom in to a local area anywhere within the *Ukraine*.  The boundaries are displayed on the map when the scalebar in the bottom left displays **5 km** or less.\n\n**Please note** that the field boundaries are overlaid on very high-resolution imagery. As a result, some misalignment may be visible, since the boundaries were derived from Sentinel-2 data.\n\n### Further information\nDetails of methodology and code published in: \n* [Article](https://arxiv.org/abs/2504.02534)\n* [GitHub repository](https://github.com/Lavreniuk/Delineate-Anything)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
-        "attribution": {
-          "text": "Delineate Anything"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Example Datasets",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
+      ]
     },
     {
       "name": "Stadia Alidade Smooth Dark",
