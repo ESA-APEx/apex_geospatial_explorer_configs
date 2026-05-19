@@ -1,5 +1,6 @@
 {
   "version": "1.0.0",
+  "exportPrefix": "config",
   "layout": {
     "navigation": {
       "logo": "https://sonata-nbs.com/wp-content/uploads/2024/11/sonata-logo-001.png",
@@ -12,7 +13,8 @@
   },
   "interfaceGroups": [
     "National Data",
-    "openEO Results - Habitat Maps 2021, version 1"
+    "openEO Results - Habitat Maps 2021, version 1",
+    "openEO Results-  Habitat Maps 2021, version 3"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -38,7 +40,7 @@
       "isBaseLayer": true,
       "exclusivitySets": [],
       "meta": {
-        "description": "",
+        "description": "Base layer: Open StreetMap",
         "attribution": {
           "text": "Map data (c) OpenStreetMap",
           "url": "https://www.openstreetmap.org/copyright"
@@ -56,10 +58,11 @@
           "zIndex": 50
         }
       ],
+      "constraints": [],
       "meta": {
         "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA)",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [
           {
@@ -177,8 +180,7 @@
             "blendControls": false
           }
         }
-      },
-      "constraints": []
+      }
     },
     {
       "name": "Vojvodina national EUNIS habitat map level 3, year 2021 (version 1, BIOS generated)",
@@ -193,7 +195,7 @@
       "meta": {
         "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA)",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [
           {
@@ -396,10 +398,18 @@
     {
       "name": "Soil organic carbon (SOC) [%]",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/SOCAtlasSonata.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [],
       "meta": {
         "description": "This layer represents developed raster map of SOC  in Vojvodina by combining Atlas* [1] shp data and literature - average values defined in Soils of Vojvodina [2] *Atlas data represents a set of distribution data from [1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)”. [2] Nejgebauer, V., Živković, B., Tanasijević, Đ., i Miljković, N. (1971). “Pedološka karta Vojvodine razmera 1:50000”. Institut za poljoprivredna istraživanja, Novi Sad.",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [],
         "units": "%",
@@ -433,23 +443,22 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/SOCAtlasSonata.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "constraints": []
+      }
     },
     {
       "name": "Bulck density [g cm^-3]",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/bdodAtlasSonata.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "This layer represents raster data on BD distribution developed by combining Atlas* [1] shp data and literature. \n\n[1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)”.",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [],
         "units": "g cm^-3",
@@ -483,22 +492,22 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/bdodAtlasSonata.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Soil pH",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/pHAtlasSonata.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "This layer represents developed raster map of pH distribution in Vojvodina by combinimng Atlas* [1] shp data and literature - and average values defined in Soil of Vojvodina [2].                                                    *Atlas data represents a set of distribution data from [1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)” [2] Nejgebauer, V., Živković, B., Tanasijević, Đ., i Miljković, N. (1971). “Pedološka karta Vojvodine razmera 1:50000”. Institut za poljoprivredna istraživanja, Novi Sad.",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [],
         "min": 0,
@@ -531,22 +540,22 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/pHAtlasSonata.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Clay [%]",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/clayAtlas.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "This layer represents derived raster map of clay distribution in Vojvodina from Atlas * [1] shp data.  *Atlas data represents a set of distribution data from  [1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)”.",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [],
         "units": "%",
@@ -580,22 +589,22 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/clayAtlas.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Sand [%]",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/sandAtlas.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "This layer represents derived raster map of sand distribution in Vojvodina from Atlas * [1] shp data. *Atlas data represents a set of distribution data from [1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)”.",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [],
         "units": "%",
@@ -629,22 +638,22 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/sandAtlas.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Silt [%]",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/siltAtlas.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "This layer represents derived raster map of silt distribution in Vojvodina from Atlas * [1] shp data. *Atlas data represents a set of distribution data from  [1] Živković et al. (1972). “Zemljišta Vojvodine (Soils of Vojvodina)”.",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [],
         "units": "%",
@@ -678,22 +687,22 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Atlas_SONATA_ly/siltAtlas.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "DEM (Copernicus)",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Digital_elevation_model/DEM_Srbija_10m.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "The COPERNICUS Digital Elevation Model (DEM) provides high-resolution elevation data for terrain analysis.  This dataset offers a 10-meter spatial resolution and represents altitude values in meters. It is designed for applications such as hydrological modeling, landscape analysis, and infrastructure planning.",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [],
         "min": -3,
@@ -726,22 +735,22 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Digital_elevation_model/DEM_Srbija_10m.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Terrain sinks",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Sinks/sinks.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "Sinks layer is generated using DEM and Filled DEM and present small depressions and sinks around Vojvodina region.  This dataset offers a 10-meter spatial resolution and represents altitude values in meters. It is designed for applications such as hydrological modeling and landscape analysis.",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [],
         "min": 0,
@@ -774,22 +783,23 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Sinks/sinks.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "name": "Water and Wetness (Copernicus)",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Water_and_wetland/Water_and_Wetness.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [],
       "meta": {
         "description": "Layer Water and Wetness provides detailed information about the presence and condition of water and wet surfaces across Europe. This product leverages both Sentinel-1 and Sentinel-2 images to enable effective mapping of land cover characteristics such as permanent water bodies, transitional water bodies, and soil wetness. This dataset offers a 10-meter spatial resolution. The product has a wide range of applications, including supporting policy decisions, aiding in climate change research, hydrological modeling, habitat mapping, and urban planning.",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [
           {
@@ -837,15 +847,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-1.cloudferro.com/swift/v1/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/national_data/Water_and_wetland/Water_and_Wetness.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "constraints": []
+      }
     },
     {
       "name": "Sentinel",
@@ -863,12 +865,644 @@
       "exclusivitySets": [],
       "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
       "meta": {
-        "description": "",
+        "description": "Base layer: Sentinel",
         "attribution": {
           "text": "Copernicus Sentinel-2",
           "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
         },
         "categories": []
+      }
+    },
+    {
+      "name": "Vojvodina national EUNIS habitat map level 1, year 2021 (version 3, VITO generated)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-maps/v300/Vojvodina-2021-L1_v3_April2026_buffer_EPSG3035_10m_COG.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [],
+      "meta": {
+        "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA).",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#001080",
+            "label": "Marine benthic habitats",
+            "value": 10000
+          },
+          {
+            "color": "#7a0000",
+            "label": "Pelagic water column",
+            "value": 20000
+          },
+          {
+            "color": "#cc456f",
+            "label": "Ice-associated marine habitats",
+            "value": 30000
+          },
+          {
+            "color": "#392e20",
+            "label": "Coastal habitats ",
+            "value": 40000
+          },
+          {
+            "color": "#545454",
+            "label": "Wetlands",
+            "value": 50000
+          },
+          {
+            "color": "#4c850c",
+            "label": "Grasslands and lands dominated by forbs or mosses or lichens",
+            "value": 60000
+          },
+          {
+            "color": "#94732f",
+            "label": "Heathland & scrub and tundra",
+            "value": 70000
+          },
+          {
+            "color": "#135212",
+            "label": "Forest and other wooded land",
+            "value": 80000
+          },
+          {
+            "color": "#c7ad00",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
+          },
+          {
+            "color": "#cc5200",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
+          },
+          {
+            "color": "#5930a0",
+            "label": "Inland surface waters",
+            "value": 110000
+          },
+          {
+            "color": "#a01eb6",
+            "label": "Constructed industrial and other artificial habitats",
+            "value": 120000
+          },
+          {
+            "color": "#5930a0",
+            "label": "Inland waters",
+            "value": 130000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "openEO Results-  Habitat Maps 2021, version 3",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Vojvodina national EUNIS habitat map level 2 year 2021 (version 3, VITO generated)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-maps/v300/Vojvodina-2021-L2_v3_April2026_buffer_EPSG3035_10m_COG.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [],
+      "meta": {
+        "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA).",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#001080",
+            "label": "Marine benthic habitats",
+            "value": 10000
+          },
+          {
+            "color": "#7a0000",
+            "label": "Pelagic water column",
+            "value": 20000
+          },
+          {
+            "color": "#cc456f",
+            "label": "Ice-associated marine habitats",
+            "value": 30000
+          },
+          {
+            "color": "#392e20",
+            "label": "Coastal habitats ",
+            "value": 40000
+          },
+          {
+            "color": "#545454",
+            "label": "Wetlands",
+            "value": 50000
+          },
+          {
+            "color": "#cacaca",
+            "label": "Helophyte beds",
+            "value": 50500
+          },
+          {
+            "color": "#4c850c",
+            "label": "Grasslands and lands dominated by forbs or mosses or lichens",
+            "value": 60000
+          },
+          {
+            "color": "#5fa70f",
+            "label": "Dry grasslands",
+            "value": 60100
+          },
+          {
+            "color": "#78c02f",
+            "label": "Mesic grasslands ",
+            "value": 60200
+          },
+          {
+            "color": "#91d24f",
+            "label": "Seasonally wet and wet grasslands ",
+            "value": 60300
+          },
+          {
+            "color": "#dbeeb0",
+            "label": "Inland salt steppes and salt marshes",
+            "value": 60600
+          },
+          {
+            "color": "#94732f",
+            "label": "Heathland & scrub and tundra",
+            "value": 70000
+          },
+          {
+            "color": "#cba65f",
+            "label": "Temperate and mediterranean-montane scrub",
+            "value": 70300
+          },
+          {
+            "color": "#f8e2bd",
+            "label": "Riverine and fen scrubs",
+            "value": 70900
+          },
+          {
+            "color": "#135212",
+            "label": "Forest and other wooded land",
+            "value": 80000
+          },
+          {
+            "color": "#1a661a",
+            "label": "Deciduous broadleaved forest",
+            "value": 80100
+          },
+          {
+            "color": "#4dab4d",
+            "label": "Coniferous forest",
+            "value": 80300
+          },
+          {
+            "color": "#66c266",
+            "label": "Lines of trees or small anthropogenic forests or recently felled forest or early-stage forest and coppice",
+            "value": 80400
+          },
+          {
+            "color": "#c7ad00",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
+          },
+          {
+            "color": "#fffb66",
+            "label": "Miscellaneous inland habitats usually with very sparse or no vegetation ",
+            "value": 90500
+          },
+          {
+            "color": "#cc5200",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
+          },
+          {
+            "color": "#ff6600",
+            "label": "Arable land and market gardens",
+            "value": 100100
+          },
+          {
+            "color": "#ff8533",
+            "label": "Artificial grasslands and herb dominated habitats",
+            "value": 100300
+          },
+          {
+            "color": "#5930a0",
+            "label": "Inland surface waters",
+            "value": 110000
+          },
+          {
+            "color": "#a01eb6",
+            "label": "Constructed industrial and other artificial habitats",
+            "value": 120000
+          },
+          {
+            "color": "#d12eea",
+            "label": "Buildings of cities- towns and villages",
+            "value": 120100
+          },
+          {
+            "color": "#f07df2",
+            "label": "Transport networks and other constructed hard-surfaced areas",
+            "value": 120400
+          },
+          {
+            "color": "#5930a0",
+            "label": "Inland waters",
+            "value": 130000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "openEO Results-  Habitat Maps 2021, version 3",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Vojvodina national EUNIS habitat map level 3, year 2021 (version 3, VITO generated)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-maps/v300/Vojvodina-2021-L3_v3_April2026_buffer_EPSG3035_10m_COG.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [],
+      "meta": {
+        "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA).",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#001080",
+            "label": "Marine benthic habitats",
+            "value": 10000
+          },
+          {
+            "color": "#7a0000",
+            "label": "Pelagic water column",
+            "value": 20000
+          },
+          {
+            "color": "#cc456f",
+            "label": "Ice-associated marine habitats",
+            "value": 30000
+          },
+          {
+            "color": "#392e20",
+            "label": "Coastal habitats ",
+            "value": 40000
+          },
+          {
+            "color": "#545454",
+            "label": "Wetlands",
+            "value": 50000
+          },
+          {
+            "color": "#cacaca",
+            "label": "Helophyte beds",
+            "value": 50500
+          },
+          {
+            "color": "#cacaca",
+            "label": "Tall-helophyte bed",
+            "value": 50501
+          },
+          {
+            "color": "#cacaca",
+            "label": "Tall-sedge bed",
+            "value": 50503
+          },
+          {
+            "color": "#cacaca",
+            "label": "Inland saline or brackish helophyte bed ",
+            "value": 50504
+          },
+          {
+            "color": "#4c850c",
+            "label": "Grasslands and lands dominated by forbs or mosses or lichens",
+            "value": 60000
+          },
+          {
+            "color": "#5fa70f",
+            "label": "Dry grasslands",
+            "value": 60100
+          },
+          {
+            "color": "#5fa70f",
+            "label": "Pannonian and Pontic sandy steppe",
+            "value": 60101
+          },
+          {
+            "color": "#5fa70f",
+            "label": "Semi-dry perennial calcareous grassland (meadow steppe)",
+            "value": 60110
+          },
+          {
+            "color": "#5fa70f",
+            "label": "Continental dry grassland (true steppe)",
+            "value": 60111
+          },
+          {
+            "color": "#78c02f",
+            "label": "Mesic grasslands ",
+            "value": 60200
+          },
+          {
+            "color": "#78c02f",
+            "label": "Mesic permanent pasture of lowlands and mountains",
+            "value": 60201
+          },
+          {
+            "color": "#78c02f",
+            "label": "Low and medium altitude hay meadow",
+            "value": 60202
+          },
+          {
+            "color": "#91d24f",
+            "label": "Seasonally wet and wet grasslands ",
+            "value": 60300
+          },
+          {
+            "color": "#91d24f",
+            "label": "Submediterranean moist meadow",
+            "value": 60304
+          },
+          {
+            "color": "#91d24f",
+            "label": "Moist or wet mesotrophic to eutrophic hay meadow",
+            "value": 60305
+          },
+          {
+            "color": "#91d24f",
+            "label": "Moist or wet mesotrophic to eutrophic pasture",
+            "value": 60306
+          },
+          {
+            "color": "#91d24f",
+            "label": "Temperate and boreal moist or wet oligotrophic grassland",
+            "value": 60307
+          },
+          {
+            "color": "#dbeeb0",
+            "label": "Inland salt steppes and salt marshes",
+            "value": 60600
+          },
+          {
+            "color": "#dbeeb0",
+            "label": "Continental inland salt steppe",
+            "value": 60602
+          },
+          {
+            "color": "#dbeeb0",
+            "label": "Temperate inland salt marsh",
+            "value": 60603
+          },
+          {
+            "color": "#dbeeb0",
+            "label": "Continental subsaline alluvial pasture and meadow",
+            "value": 60605
+          },
+          {
+            "color": "#94732f",
+            "label": "Heathland & scrub and tundra",
+            "value": 70000
+          },
+          {
+            "color": "#cba65f",
+            "label": "Temperate and mediterranean-montane scrub",
+            "value": 70300
+          },
+          {
+            "color": "#cba65f",
+            "label": "Temperate and submediterranean thorn scrub  ",
+            "value": 70305
+          },
+          {
+            "color": "#cba65f",
+            "label": "Low steppic scrub  ",
+            "value": 70306
+          },
+          {
+            "color": "#f8e2bd",
+            "label": "Riverine and fen scrubs",
+            "value": 70900
+          },
+          {
+            "color": "#f8e2bd",
+            "label": "Salix fen scrub ",
+            "value": 70902
+          },
+          {
+            "color": "#f8e2bd",
+            "label": "Mediterranean riparian scrub ",
+            "value": 70903
+          },
+          {
+            "color": "#135212",
+            "label": "Forest and other wooded land",
+            "value": 80000
+          },
+          {
+            "color": "#1a661a",
+            "label": "Deciduous broadleaved forest",
+            "value": 80100
+          },
+          {
+            "color": "#1a661a",
+            "label": "Temperate Salix and Populus riparian forest",
+            "value": 80101
+          },
+          {
+            "color": "#1a661a",
+            "label": "Temperate hardwood riparian forest",
+            "value": 80103
+          },
+          {
+            "color": "#1a661a",
+            "label": "Fagus forest on non-acid soils",
+            "value": 80107
+          },
+          {
+            "color": "#1a661a",
+            "label": "Temperate and submediterranean thermophilous deciduous forest",
+            "value": 80109
+          },
+          {
+            "color": "#1a661a",
+            "label": "Carpinus and Quercus mesic deciduous forest",
+            "value": 80114
+          },
+          {
+            "color": "#1a661a",
+            "label": "Broadleaved deciduous plantation of non site-native trees",
+            "value": 80117
+          },
+          {
+            "color": "#1a661a",
+            "label": "Deciduous self sown forest of non site-native trees",
+            "value": 80118
+          },
+          {
+            "color": "#1a661a",
+            "label": "Broadleaved deciduous plantation of site-native trees",
+            "value": 80119
+          },
+          {
+            "color": "#4dab4d",
+            "label": "Coniferous forest",
+            "value": 80300
+          },
+          {
+            "color": "#4dab4d",
+            "label": "Coniferous plantation of non site-native trees",
+            "value": 80321
+          },
+          {
+            "color": "#66c266",
+            "label": "Lines of trees or small anthropogenic forests or recently felled forest or early-stage forest and coppice",
+            "value": 80400
+          },
+          {
+            "color": "#66c266",
+            "label": "Coppice and early stage plantations",
+            "value": 80402
+          },
+          {
+            "color": "#66c266",
+            "label": "Recently felled areas",
+            "value": 80403
+          },
+          {
+            "color": "#c7ad00",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
+          },
+          {
+            "color": "#fffb66",
+            "label": "Miscellaneous inland habitats usually with very sparse or no vegetation ",
+            "value": 90500
+          },
+          {
+            "color": "#cc5200",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
+          },
+          {
+            "color": "#ff6600",
+            "label": "Arable land and market gardens",
+            "value": 100100
+          },
+          {
+            "color": "#ff6600",
+            "label": "Intensive unmixed crops",
+            "value": 100101
+          },
+          {
+            "color": "#ff6600",
+            "label": "Bare tilled or fallow or recently abandoned arable land",
+            "value": 100105
+          },
+          {
+            "color": "#ff8533",
+            "label": "Artificial grasslands and herb dominated habitats",
+            "value": 100300
+          },
+          {
+            "color": "#ff8533",
+            "label": "Dry perennial anthropogenic herbaceous vegetation",
+            "value": 100308
+          },
+          {
+            "color": "#ff8533",
+            "label": "Mesic perennial anthropogenic herbaceous vegetation",
+            "value": 100309
+          },
+          {
+            "color": "#5930a0",
+            "label": "Inland surface waters",
+            "value": 110000
+          },
+          {
+            "color": "#a01eb6",
+            "label": "Constructed industrial and other artificial habitats",
+            "value": 120000
+          },
+          {
+            "color": "#d12eea",
+            "label": "Buildings of cities- towns and villages",
+            "value": 120100
+          },
+          {
+            "color": "#f07df2",
+            "label": "Transport networks and other constructed hard-surfaced areas",
+            "value": 120400
+          },
+          {
+            "color": "#5930a0",
+            "label": "Inland waters",
+            "value": 130000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "openEO Results-  Habitat Maps 2021, version 3",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
       }
     }
   ]
