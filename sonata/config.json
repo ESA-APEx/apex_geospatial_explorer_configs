@@ -15,7 +15,7 @@
     "National Data",
     "openEO Results - Habitat Maps 2021, version 1",
     "openEO Results - Habitat Maps 2021, version 2",
-    "openEO Results-  Habitat Maps 2021, version 3"
+    "openEO Results - Habitat Maps 2021, version 3"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -959,7 +959,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "openEO Results-  Habitat Maps 2021, version 3",
+        "interfaceGroup": "openEO Results - Habitat Maps 2021, version 3",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1138,7 +1138,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "openEO Results-  Habitat Maps 2021, version 3",
+        "interfaceGroup": "openEO Results - Habitat Maps 2021, version 3",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1487,7 +1487,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "openEO Results-  Habitat Maps 2021, version 3",
+        "interfaceGroup": "openEO Results - Habitat Maps 2021, version 3",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
