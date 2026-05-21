@@ -1,0 +1,1417 @@
+{
+  "version": "1.52.0",
+  "exportPrefix": "sef-energy-explorer",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "SEF Energy Geospatial Explorer"
+    },
+    "theme": {
+      "primary-color": "#3C9F5B",
+      "secondary-color": "#5CB57E",
+      "accent-color": "#66BB6A",
+      "background-color": "#f3f7f8",
+      "text-color-primary": "#ffffff",
+      "text-color-secondary": "#333333"
+    }
+  },
+  "interfaceGroups": [
+    "Solar",
+    "Wind Energy",
+    "Offshore Renewables",
+    "Hydropower",
+    "Infrastructure",
+    "Various"
+  ],
+  "exclusivitySets": [],
+  "mapConstraints": {
+    "zoom": 4,
+    "center": [
+      15,
+      50
+    ],
+    "projection": "EPSG:3857"
+  },
+  "services": [
+    {
+      "id": "stac-prr",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Open StreetMap",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Base layer: Open StreetMap",
+        "attribution": {
+          "text": "Map data (c) OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Dark",
+        "attribution": {
+          "text": "(c) Stadia Maps (c) OpenMapTiles (c) OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "NASA Blue Marble",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Base layer: NASA Blue Marble",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Sentinel-2 True Colour 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 4,
+          "layers": "WORLDCOVER_2021_S2_TCC"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Base layer: Sentinel-2 True Colour 2021",
+        "attribution": {
+          "text": "Copernicus Sentinel-2 / Terrascope",
+          "url": "https://services.terrascope.be"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Copernicus DEM (base layer)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "COP_DEM_GLO_30M_COG"
+        }
+      ],
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Base layer: Copernicus DEM (base layer)",
+        "attribution": {
+          "text": "Copernicus DEM 30m",
+          "url": "https://spacedata.copernicus.eu"
+        },
+        "categories": []
+      }
+    },
+    {
+      "name": "Annual Solar Power Potential (Austria)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/v2/SolarPowerPotential_Annual_COG_clipped_3857_fixed.tif",
+          "format": "cog",
+          "zIndex": 34,
+          "opacity": 0.8
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_DSM_COG_10m_3857_fix.tif",
+          "format": "cog",
+          "label": "Elevation",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 4000,
+          "units": "meters",
+          "bandIndex": 2
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_DSM_COG_10m_3857_fix.tif",
+          "format": "cog",
+          "label": "Altitudinal zones",
+          "type": "combined",
+          "interactive": true,
+          "units": "meters",
+          "constrainTo": [
+            {
+              "label": "0 to 1000",
+              "min": 0,
+              "max": 1000
+            },
+            {
+              "label": "1001 to 2000",
+              "min": 1001,
+              "max": 2000
+            },
+            {
+              "label": "2001 to 3000",
+              "min": 2001,
+              "max": 3000
+            },
+            {
+              "label": "> 3000",
+              "min": 3001,
+              "max": 4000
+            }
+          ],
+          "bandIndex": 3
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_10m_DSM_COG_Slope_3857_fix.tif",
+          "format": "cog",
+          "label": "Slope",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 65,
+          "units": "degrees",
+          "bandIndex": 4
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/RuggednessIndex_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "Ruggedness Index",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 1,
+          "units": "index values",
+          "bandIndex": 5
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/PowerLineHigh_EucDist_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "Distance to High Power Line",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 30000,
+          "units": "meters",
+          "bandIndex": 6
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/WSF_EucDist_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "Distance to settlement (WSF)",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 5500,
+          "units": "meters",
+          "bandIndex": 7
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix-esa_worldcover_2021.tif",
+          "format": "cog",
+          "label": "Land Cover (from World Cover)",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Tree cover",
+              "value": 10
+            },
+            {
+              "label": "Shrubland",
+              "value": 20
+            },
+            {
+              "label": "Grassland",
+              "value": 30
+            },
+            {
+              "label": "Cropland",
+              "value": 40
+            },
+            {
+              "label": "Built-up",
+              "value": 50
+            },
+            {
+              "label": "Bare",
+              "value": 60
+            },
+            {
+              "label": "Snow and ice",
+              "value": 70
+            },
+            {
+              "label": "Permanent water bodies",
+              "value": 80
+            },
+            {
+              "label": "Herbaceous wetland",
+              "value": 90
+            },
+            {
+              "label": "Moss and lichen",
+              "value": 100
+            }
+          ],
+          "bandIndex": 8
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Annual solar power potential, an estimate of the electricity a standard photovoltaic installation could generate over a year given local irradiance, temperature and terrain. Modelled product from the ESA GTIF Austria demonstrator.",
+        "attribution": {
+          "text": "ESA GTIF (DHI)",
+          "url": "https://gtif.esa.int/"
+        },
+        "categories": [],
+        "units": "kWh/m²/day",
+        "colormaps": [
+          {
+            "min": 0.1,
+            "max": 5,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Cloud Cover",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MERRA2_ISCCP_Cloud_Albedo_Monthly/default/2026-01-01/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 35,
+          "opacity": 0.6
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Cloud cover is the dominant driver of variability in solar generation. Cloud albedo from the MERRA-2 reanalysis (ISCCP), monthly mean for January 2026, with gap-free global coverage, where higher values indicate brighter, more reflective cloud cover.",
+        "attribution": {
+          "text": "NASA GIBS / MERRA-2 reanalysis",
+          "url": "https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MERRA2_ISCCP_Cloud_Albedo_Monthly_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Atmospheric Aerosols",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Combined_Value_Added_AOD/default/2024-08-15/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 34,
+          "opacity": 0.7
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Airborne aerosols reduce the solar radiation reaching photovoltaic panels. Total aerosol optical depth derived from MODIS Aqua and Terra (NASA GIBS Combined Value Added AOD), measuring the attenuation of light by airborne particles.",
+        "attribution": {
+          "text": "NASA GIBS / MODIS Aqua and Terra",
+          "url": "https://modis.gsfc.nasa.gov/data/dataprod/mod04.php"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_Combined_Value_Added_AOD_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Surface Solar Radiation",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/CERES_Combined_Surface_Shortwave_Flux_Down_All_Sky_Monthly/default/2021-06-01/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 33,
+          "opacity": 0.6
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Surface solar radiation is the fundamental resource setting photovoltaic and solar-thermal yield. Downward shortwave radiation flux at the surface (all sky), monthly mean from NASA CERES EBAF, combining Terra and Aqua observations with reanalysis.",
+        "attribution": {
+          "text": "NASA GIBS / CERES EBAF",
+          "url": "https://ceres.larc.nasa.gov/products.php?product=EBAF"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/CERES_Combined_Surface_Shortwave_Flux_Diffuse_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Wind Power Density (100m, Austria)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix.tif",
+          "format": "cog",
+          "zIndex": 27,
+          "opacity": 0.8
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_DSM_COG_10m_3857_fix.tif",
+          "format": "cog",
+          "label": "Elevation",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 4000,
+          "units": "meters",
+          "bandIndex": 2
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_DSM_COG_10m_3857_fix.tif",
+          "format": "cog",
+          "label": "Altitudinal zones",
+          "type": "combined",
+          "interactive": true,
+          "units": "meters",
+          "constrainTo": [
+            {
+              "label": "0 to 1000",
+              "min": 0,
+              "max": 1000
+            },
+            {
+              "label": "1001 to 2000",
+              "min": 1001,
+              "max": 2000
+            },
+            {
+              "label": "2001 to 3000",
+              "min": 2001,
+              "max": 3000
+            },
+            {
+              "label": "> 3000",
+              "min": 3001,
+              "max": 4000
+            }
+          ],
+          "bandIndex": 3
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_10m_DSM_COG_Slope_3857_fix.tif",
+          "format": "cog",
+          "label": "Slope",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 65,
+          "units": "degrees",
+          "bandIndex": 4
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/RuggednessIndex_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "Ruggedness Index",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 1,
+          "units": "index values",
+          "bandIndex": 5
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/PowerLineHigh_EucDist_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "Distance to High Power Line",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 30000,
+          "units": "meters",
+          "bandIndex": 6
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/WSF_EucDist_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "Distance to settlement (WSF)",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 5500,
+          "units": "meters",
+          "bandIndex": 7
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix-esa_worldcover_2021.tif",
+          "format": "cog",
+          "label": "Land Cover (from World Cover)",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Tree cover",
+              "value": 10
+            },
+            {
+              "label": "Shrubland",
+              "value": 20
+            },
+            {
+              "label": "Grassland",
+              "value": 30
+            },
+            {
+              "label": "Cropland",
+              "value": 40
+            },
+            {
+              "label": "Built-up",
+              "value": 50
+            },
+            {
+              "label": "Bare",
+              "value": 60
+            },
+            {
+              "label": "Snow and ice",
+              "value": 70
+            },
+            {
+              "label": "Permanent water bodies",
+              "value": 80
+            },
+            {
+              "label": "Herbaceous wetland",
+              "value": 90
+            },
+            {
+              "label": "Moss and lichen",
+              "value": 100
+            }
+          ],
+          "bandIndex": 8
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Mean wind power density at 100 metres hub height, the core resource metric for siting onshore turbines: it combines wind speed and air density to estimate the energy available per square metre of rotor swept area.",
+        "attribution": {
+          "text": "ESA GTIF (DHI)",
+          "url": "https://gtif.esa.int/"
+        },
+        "categories": [],
+        "units": "W/m²",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 2000,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Wind Energy",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Surface Wind Speed",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MERRA2_Surface_Wind_Speed_Monthly/default/2026-01-01/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 20,
+          "opacity": 0.7
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Wind speed is the primary determinant of wind energy yield, with power scaling roughly with the cube of wind speed. Surface wind speed from the MERRA-2 reanalysis, monthly mean for January 2026, with gap-free global coverage over land and ocean.",
+        "attribution": {
+          "text": "NASA GIBS / MERRA-2 reanalysis",
+          "url": "https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Wind Energy",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MERRA2_Surface_Wind_Speed_Monthly_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Offshore Wind Speed",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.marine.copernicus.eu/teroWmts",
+          "format": "wmts",
+          "zIndex": 29,
+          "layers": "WIND_GLO_PHY_CLIMATE_L4_MY_012_003/cmems_obs-wind_glo_phy_my_l4_P1M_202411/wind_speed",
+          "opacity": 0.7
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Wind speed over the sea surface is the primary driver of offshore wind-power potential. Monthly-mean stress-equivalent wind speed at 10 metres above the ocean from the Copernicus Marine multi-year L4 product, on a 0.25-degree gap-free global grid.",
+        "attribution": {
+          "text": "E.U. Copernicus Marine Service (CMEMS), Global Ocean Wind L4",
+          "url": "https://data.marine.copernicus.eu/product/WIND_GLO_PHY_CLIMATE_L4_MY_012_003/description"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Offshore Renewables",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://wmts.marine.copernicus.eu/teroWmts?SERVICE=WMTS&REQUEST=GetLegend&LAYER=WIND_GLO_PHY_CLIMATE_L4_MY_012_003/cmems_obs-wind_glo_phy_my_l4_P1M_202411/wind_speed&STYLE=cmap:speed&FORMAT=image/svg%2Bxml"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Turbine Wind Wakes (North Sea)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://planetarycomputer.microsoft.com/api/data/v1/mosaic/43fb30b9878168c12ba287565747f9ff/tiles/WebMercatorQuad/{z}/{x}/{y}.png?collection=sentinel-1-grd&assets=vv&colormap_name=hot&rescale=25,170",
+          "format": "xyz",
+          "zIndex": 30,
+          "opacity": 1
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Each turbine slows the wind behind it, leaving a wake that can cut the output of turbines downwind and of neighbouring farms. Mapping wakes from Sentinel-1 radar helps plan the siting and spacing of new farms. Sentinel-1 SAR (VV) across the North Sea, early November 2025.",
+        "attribution": {
+          "text": "Contains modified Copernicus Sentinel-1 data 2025, mosaicked via Microsoft Planetary Computer",
+          "url": "https://planetarycomputer.microsoft.com/dataset/sentinel-1-grd"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Offshore Renewables",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Significant Wave Height",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.marine.copernicus.eu/teroWmts",
+          "format": "wmts",
+          "zIndex": 32,
+          "layers": "GLOBAL_ANALYSISFORECAST_WAV_001_027/cmems_mod_glo_wav_anfc_0.083deg_PT3H-i_202411/VHM0"
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Wave height sets the offshore wave-energy resource and the structural loads acting on offshore wind foundations. Significant wave height (Hm0) from the Copernicus Marine global ocean waves analysis and forecast, at 0.083 degree resolution.",
+        "attribution": {
+          "text": "Copernicus Marine Service / Mercator Ocean International",
+          "url": "https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_WAV_001_027/description"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Offshore Renewables",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://wmts.marine.copernicus.eu/teroWmts?SERVICE=WMTS&REQUEST=GetLegend&LAYER=GLOBAL_ANALYSISFORECAST_WAV_001_027/cmems_mod_glo_wav_anfc_0.083deg_PT3H-i_202411/VHM0&STYLE=cmap:amp&FORMAT=image/svg%2Bxml"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Wave Energy Period",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.marine.copernicus.eu/teroWmts",
+          "format": "wmts",
+          "zIndex": 33,
+          "layers": "GLOBAL_ANALYSISFORECAST_WAV_001_027/cmems_mod_glo_wav_anfc_0.083deg_PT3H-i_202411/VTM10",
+          "opacity": 0.8
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Longer-period waves carry more energy, so wave period is a key factor in wave energy potential. Wave energy period (Tm-10) from the Copernicus Marine global ocean waves analysis and forecast.",
+        "attribution": {
+          "text": "Copernicus Marine Service / Mercator Ocean International",
+          "url": "https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_WAV_001_027/description"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Offshore Renewables",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://wmts.marine.copernicus.eu/teroWmts?SERVICE=WMTS&REQUEST=GetLegend&LAYER=GLOBAL_ANALYSISFORECAST_WAV_001_027/cmems_mod_glo_wav_anfc_0.083deg_PT3H-i_202411/VTM10&STYLE=cmap:tempo&FORMAT=image/svg%2Bxml"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Sea-Floor Depth",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://ows.emodnet-bathymetry.eu/wms",
+          "format": "wms",
+          "zIndex": 30,
+          "layers": "emodnet:mean_2022"
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Water depth determines whether offshore wind uses fixed-bottom or floating foundations and bounds the feasible installation zone. Mean sea-floor depth for European seas, 2022 release from the EMODnet Bathymetry Consortium.",
+        "attribution": {
+          "text": "EMODnet Bathymetry Consortium",
+          "url": "https://emodnet.ec.europa.eu/en/bathymetry"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Offshore Renewables",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://ows.emodnet-bathymetry.eu/wms?REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=emodnet:mean_2022"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Coastline",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://ows.emodnet-bathymetry.eu/wms",
+          "format": "wms",
+          "zIndex": 31,
+          "layers": "coastlines"
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "The coastline defines the shoreward boundary for nearshore offshore wind and marine energy siting. Reference coastline product from EMODnet Bathymetry.",
+        "attribution": {
+          "text": "EMODnet Bathymetry Consortium",
+          "url": "https://emodnet.ec.europa.eu/en/bathymetry"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Offshore Renewables",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://ows.emodnet-bathymetry.eu/wms?REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=coastlines"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Snow Water Equivalent (February 2025)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/AMSRU2_Snow_Water_Equivalent_5Day/default/2025-02-15/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 47,
+          "opacity": 0.7
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Snowpack is the water that fills hydropower reservoirs through spring melt, making it a key driver of seasonal generation. Snow water equivalent from AMSR2 on JAXA GCOM-W1, 5-day composite for 15 February 2025 at 25 km resolution, where values represent the depth of water held in the snowpack.",
+        "attribution": {
+          "text": "NASA GIBS / AMSR2 on JAXA GCOM-W1",
+          "url": "https://nsidc.org/data/au_5dsno"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/AMSR_Snow_Water_Equivalent_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Surface Water and Wetness",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_WaterWetness_2015/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 48,
+          "layers": "1",
+          "opacity": 0.85,
+          "parameters": {
+            "STYLES": ""
+          }
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Surface water and seasonal wetness mark reservoir extent, river systems and saturated ground relevant to hydropower resource. Copernicus Land High Resolution Layer Water and Wetness 2015, at 10-metre resolution across Europe, mapping permanent and temporary water and wet surfaces.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service (CLMS), Water & Wetness HRL 2015 / EEA",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-water-and-wetness"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Wildfire Frequency",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://maps.effis.emergency.copernicus.eu/gwis",
+          "format": "wms",
+          "zIndex": 43,
+          "layers": "mcd64a1.fire_frequency",
+          "opacity": 0.8,
+          "parameters": {
+            "STYLES": ""
+          }
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Areas that burn frequently pose a recurring threat to transmission lines, substations, and other energy infrastructure. Number of times each location was mapped as burned area by MODIS over the period from 2000 to the present, from the Global Wildfire Information System (GWIS).",
+        "attribution": {
+          "text": "Copernicus EMS / GWIS (MODIS MCD64A1)",
+          "url": "https://gwis.jrc.ec.europa.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Infrastructure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://maps.effis.emergency.copernicus.eu/gwis?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&LAYER=mcd64a1.fire_frequency"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Flood Hazard Frequency",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/NDH_Flood_Hazard_Frequency_Distribution_1985-2003/default/GoogleMapsCompatible_Level7/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 44,
+          "opacity": 0.8
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Areas that flood repeatedly pose a recurring threat to transmission lines, substations and other energy infrastructure. Modelled flood hazard frequency from the NASA SEDAC Global Flood Hazard distribution, mapping the relative frequency of flood events across flood-prone regions.",
+        "attribution": {
+          "text": "NASA SEDAC, Global Flood Hazard Frequency and Distribution",
+          "url": "https://sedac.ciesin.columbia.edu/data/set/ndh-flood-hazard-frequency-distribution"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Infrastructure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/NDH_Flood_Hazard_Frequency_Distribution_1985-2003_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Built-up Surface Density",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ImperviousnessDensity_2015/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 42,
+          "layers": "0"
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Built-up surfaces mark where energy demand concentrates and constrain where new infrastructure can be sited. Copernicus High Resolution Layer Imperviousness Density 2015, mapping the degree of soil sealing from built-up and artificial surfaces across Europe.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-imperviousness"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Infrastructure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ImperviousnessDensity_2015/MapServer/WMSServer?REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=0"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Atmospheric Methane",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/AIRS_L3_Methane_400hPa_Volume_Mixing_Ratio_Monthly_Day/default/2025-03-01/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 36,
+          "opacity": 0.7
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Methane is the main component of natural gas, so monitoring it supports tracking emissions from energy production and gas infrastructure. Mid-tropospheric methane concentration (volume mixing ratio at 400 hPa) from the AIRS instrument on NASA Aqua, monthly mean for March 2025.",
+        "attribution": {
+          "text": "NASA GIBS / AIRS on Aqua",
+          "url": "https://airs.jpl.nasa.gov/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Various",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/AIRS_Methane_Volume_Mixing_Ratio_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Land Cover (2021)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 40,
+          "layers": "WORLDCOVER_2021_MAP"
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Land cover identifies which areas are suitable or constrained for renewable energy development. ESA WorldCover 2021 global land cover classification at 10 m resolution.",
+        "attribution": {
+          "text": "ESA WorldCover project / Copernicus Sentinel data",
+          "url": "https://esa-worldcover.org"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare / sparse vegetation",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Various",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Terrain Elevation",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 21,
+          "layers": "COP_DEM_GLO_30M_COG",
+          "opacity": 1,
+          "parameters": {
+            "STYLES": ""
+          }
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "Terrain elevation shapes wind exposure on ridgelines and constrains where energy infrastructure and hydropower can be built. Copernicus DEM GLO-30, a 30-metre global digital elevation model derived from the TanDEM-X mission.",
+        "attribution": {
+          "text": "Copernicus DEM GLO-30 (ESA / Airbus), via Terrascope",
+          "url": "https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Various",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "True-Colour Satellite Imagery",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 23,
+          "layers": "WORLDCOVER_2021_S2_TCC"
+        }
+      ],
+      "exclusivitySets": [],
+      "meta": {
+        "description": "A true-colour view of the land surface supports visual reconnaissance of candidate wind sites. Sentinel-2 true colour composite from the ESA WorldCover 2021 baseline.",
+        "attribution": {
+          "text": "Copernicus Sentinel-2 / Terrascope",
+          "url": "https://services.terrascope.be"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Various",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "PV Mapping (Puglia example)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.openeo.v1.dataspace.copernicus.eu/openeo-data-prod-waw4-1/batch_jobs/j-2605141447084e67a243bfafeeda3ba9/openEO.tif?X-Proxy-Head-As-Get=true&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=188f6634383d45979c06b875e73ecb8f%2F20260520%2Fwaw4-1%2Fs3%2Faws4_request&X-Amz-Date=20260520T103209Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Security-Token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlX2FybiI6ImFybjpvcGVuZW93czppYW06Ojpyb2xlL29wZW5lby1kYXRhLXByb2Qtd2F3NC0xLXdvcmtzcGFjZSIsImluaXRpYWxfaXNzdWVyIjoib3BlbmVvLnByb2Qud2F3My0xLm9wZW5lby1pbnQudjEuZGF0YXNwYWNlLmNvcGVybmljdXMuZXUiLCJodHRwczovL2F3cy5hbWF6b24uY29tL3RhZ3MiOnsicHJpbmNpcGFsX3RhZ3MiOnsiam9iX2lkIjpbImotMjYwNTE0MTQ0NzA4NGU2N2EyNDNiZmFmZWVkYTNiYTkiXSwidXNlcl9pZCI6WyJiNjg1YjFjMS02MTM1LTQyMDctYTZlNC0yMzFhZWQ3ZmVkNGQiXX0sInRyYW5zaXRpdmVfdGFnX2tleXMiOlsidXNlcl9pZCIsImpvYl9pZCJdfSwiaXNzIjoic3RzLndhdzMtMS5vcGVuZW8udjEuZGF0YXNwYWNlLmNvcGVybmljdXMuZXUiLCJzdWIiOiJvcGVuZW8tZHJpdmVyIiwiZXhwIjoxNzc5MzE2MzI5LCJuYmYiOjE3NzkyNzMxMjksImlhdCI6MTc3OTI3MzEyOSwianRpIjoiYzNlMmI3MGMtZWI1NS00MTA3LTgyYjYtMWMyMDczZWY1MmFlIiwiYWNjZXNzX2tleV9pZCI6IjE4OGY2NjM0MzgzZDQ1OTc5YzA2Yjg3NWU3M2VjYjhmIn0.KOj0XXxtgyC0oBVkp-HP41tMH6pwclp-qloR_M86TvDRyrjhJoD30j1092ufEceKUcQg2S7Cohd1_dNLcWeyvXcpVpV8mH0sLoqLbr5Ar6YEhgVW6UJGxOPRRaETLWaWIWD0IVM6cHUk5S8D6LKoz8v-72c77cH8oIuzRRZVaguJSxDDfJ-pm_rCTfWcwdUbrAPPskcKL6d-gCVGOWUQ-jYhJWZ4xrw6H1BtaFcmBgbln2NdPHuGZDio9NElAENm37LXHGLAcljvPFg-jdpB5igG8i3JSAhFmDXynf68JhQcI0WbYxyf0JUrWF_wRU01gcRfOUaAH0LCvMgJA8a26Q&X-Amz-Signature=5c54e6c4ee4630cebf60be868866c2c4a24d77c03535c894f719609e76626f4c",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Detection workflow for mapping solar farms using Sentinel-2 imagery in an openEO process",
+        "attribution": {
+          "text": "EURAC via APEx",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/eurac_pv_farm_detection"
+        },
+        "categories": [
+          {
+            "color": "#F40B0B",
+            "label": "PV detected",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    }
+  ]
+}
