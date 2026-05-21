@@ -14,6 +14,7 @@
   "interfaceGroups": [
     "National Data",
     "openEO Results - Habitat Maps 2021, version 1",
+    "openEO Results - Habitat Maps 2021, version 2",
     "openEO Results-  Habitat Maps 2021, version 3"
   ],
   "exclusivitySets": [],
@@ -1487,6 +1488,1113 @@
       },
       "layout": {
         "interfaceGroup": "openEO Results-  Habitat Maps 2021, version 3",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Vojvodina national EUNIS habitat map level 1, year 2021 (version 2, VITO generated)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-maps/v210/Vojvodina-2021-L1_v210_Jan2026_COG.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [],
+      "meta": {
+        "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA).",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#545454",
+            "label": "Wetlands",
+            "value": 50000
+          },
+          {
+            "color": "#4c850c",
+            "label": "Grasslands and lands dominated by forbs or mosses or lichens",
+            "value": 60000
+          },
+          {
+            "color": "#94732f",
+            "label": "Heathland & scrub and tundra",
+            "value": 70000
+          },
+          {
+            "color": "#135212",
+            "label": "Forest and other wooded land",
+            "value": 80000
+          },
+          {
+            "color": "#c7ad00",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
+          },
+          {
+            "color": "#cc5200",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
+          },
+          {
+            "color": "#5930a0",
+            "label": "Inland surface waters",
+            "value": 110000
+          },
+          {
+            "color": "#a01eb6",
+            "label": "Constructed industrial and other artificial habitats",
+            "value": 120000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "openEO Results - Habitat Maps 2021, version 2",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Vojvodina national EUNIS habitat map level 2 year 2021 (version 2, VITO generated)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-maps/v210/Vojvodina-2021-L2_v210_Jan2026_COG.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [],
+      "meta": {
+        "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA).",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#001080",
+            "label": "Marine benthic habitats",
+            "value": 10000
+          },
+          {
+            "color": "#7a0000",
+            "label": "Pelagic water column",
+            "value": 20000
+          },
+          {
+            "color": "#cc456f",
+            "label": "Ice-associated marine habitats",
+            "value": 30000
+          },
+          {
+            "color": "#392e20",
+            "label": "Coastal habitats ",
+            "value": 40000
+          },
+          {
+            "color": "#545454",
+            "label": "Wetlands",
+            "value": 50000
+          },
+          {
+            "color": "#cacaca",
+            "label": "Helophyte beds",
+            "value": 50500
+          },
+          {
+            "color": "#4c850c",
+            "label": "Grasslands and lands dominated by forbs or mosses or lichens",
+            "value": 60000
+          },
+          {
+            "color": "#5fa70f",
+            "label": "Dry grasslands",
+            "value": 60100
+          },
+          {
+            "color": "#78c02f",
+            "label": "Mesic grasslands ",
+            "value": 60200
+          },
+          {
+            "color": "#91d24f",
+            "label": "Seasonally wet and wet grasslands ",
+            "value": 60300
+          },
+          {
+            "color": "#c3eb8f",
+            "label": "Forest fringes and clearings and tall forb stands ",
+            "value": 60500
+          },
+          {
+            "color": "#dbeeb0",
+            "label": "Inland salt steppes and salt marshes",
+            "value": 60600
+          },
+          {
+            "color": "#94732f",
+            "label": "Heathland & scrub and tundra",
+            "value": 70000
+          },
+          {
+            "color": "#cba65f",
+            "label": "Temperate and mediterranean-montane scrub",
+            "value": 70300
+          },
+          {
+            "color": "#f8e2bd",
+            "label": "Riverine and fen scrubs",
+            "value": 70900
+          },
+          {
+            "color": "#135212",
+            "label": "Forest and other wooded land",
+            "value": 80000
+          },
+          {
+            "color": "#1a661a",
+            "label": "Deciduous broadleaved forest",
+            "value": 80100
+          },
+          {
+            "color": "#4dab4d",
+            "label": "Coniferous forest",
+            "value": 80300
+          },
+          {
+            "color": "#66c266",
+            "label": "Lines of trees or small anthropogenic forests or recently felled forest or early-stage forest and coppice",
+            "value": 80400
+          },
+          {
+            "color": "#c7ad00",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
+          },
+          {
+            "color": "#fffb66",
+            "label": "Miscellaneous inland habitats usually with very sparse or no vegetation ",
+            "value": 90500
+          },
+          {
+            "color": "#cc5200",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
+          },
+          {
+            "color": "#ff6600",
+            "label": "Arable land and market gardens",
+            "value": 100100
+          },
+          {
+            "color": "#ff8533",
+            "label": "Artificial grasslands and herb dominated habitats",
+            "value": 100300
+          },
+          {
+            "color": "#ffbb80",
+            "label": "Tree dominated man-made habitats",
+            "value": 100600
+          },
+          {
+            "color": "#5930a0",
+            "label": "Inland surface waters",
+            "value": 110000
+          },
+          {
+            "color": "#6f40d1",
+            "label": "Surface standing waters",
+            "value": 110100
+          },
+          {
+            "color": "#8f6fe0",
+            "label": "Surface running waters",
+            "value": 110200
+          },
+          {
+            "color": "#a38cde",
+            "label": "Littoral zone of inland surface waterbodies",
+            "value": 110300
+          },
+          {
+            "color": "#a01eb6",
+            "label": "Constructed industrial and other artificial habitats",
+            "value": 120000
+          },
+          {
+            "color": "#d12eea",
+            "label": "Buildings of cities- towns and villages",
+            "value": 120100
+          },
+          {
+            "color": "#f07df2",
+            "label": "Transport networks and other constructed hard-surfaced areas",
+            "value": 120400
+          },
+          {
+            "color": "#5930a0",
+            "label": "Inland waters",
+            "value": 130000
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "openEO Results - Habitat Maps 2021, version 2",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Vojvodina national EUNIS habitat map level 3, year 2021 (version 2, VITO generated)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/sonata-waw3-1-5q898zye7hp0yud0n8ot6nuzp7d8t3khy7faxzzvyj64avl81/habitat-maps/v210/Vojvodina-2021-L3_v210_Jan2026_COG.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [],
+      "meta": {
+        "description": "National EUNIS habitat maps produced with VITO's HASH workflow. Data processing via the CDSE openEO platform with support of the eo_processing package (https://github.com/ESA-WEED-project/eo_processing) and the habitat_mapping package (SONATA variant: https://github.com/brkljac/SONATA).",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#001080",
+            "label": "Marine benthic habitats",
+            "value": 10000
+          },
+          {
+            "color": "#0019b3",
+            "label": "Littoral rock",
+            "value": 10100
+          },
+          {
+            "color": "#001fcc",
+            "label": "Littoral biogenic habitat",
+            "value": 10200
+          },
+          {
+            "color": "#0024e6",
+            "label": "Littoral coarse sediment",
+            "value": 10300
+          },
+          {
+            "color": "#0029ff",
+            "label": "Littoral mixed sediment",
+            "value": 10400
+          },
+          {
+            "color": "#0030ff",
+            "label": "Littoral sand",
+            "value": 10500
+          },
+          {
+            "color": "#0036ff",
+            "label": "Littoral mud",
+            "value": 10600
+          },
+          {
+            "color": "#003cff",
+            "label": "Infralittoral rock",
+            "value": 10700
+          },
+          {
+            "color": "#0042ff",
+            "label": "Infralittoral biogenic habitat",
+            "value": 10800
+          },
+          {
+            "color": "#0048ff",
+            "label": "Infralittoral coarse sediment",
+            "value": 10900
+          },
+          {
+            "color": "#004eff",
+            "label": "infralittoral mixed sediment",
+            "value": 11000
+          },
+          {
+            "color": "#0054ff",
+            "label": "Infralittoral sand",
+            "value": 11100
+          },
+          {
+            "color": "#005aff",
+            "label": "Infralittoral mud",
+            "value": 11200
+          },
+          {
+            "color": "#0060ff",
+            "label": "Circalittoral rock",
+            "value": 11300
+          },
+          {
+            "color": "#0066ff",
+            "label": "Circalittoral biogenic habitat",
+            "value": 11400
+          },
+          {
+            "color": "#006cff",
+            "label": "Circalittoral coarse sediment",
+            "value": 11500
+          },
+          {
+            "color": "#0072ff",
+            "label": "Circalittoral mixed sediment",
+            "value": 11600
+          },
+          {
+            "color": "#0078ff",
+            "label": "Circalittoral sand",
+            "value": 11700
+          },
+          {
+            "color": "#007eff",
+            "label": "Circalittoral mud",
+            "value": 11800
+          },
+          {
+            "color": "#0084ff",
+            "label": "Offshore circalittoral rock",
+            "value": 11900
+          },
+          {
+            "color": "#008aff",
+            "label": "Offshore circalittoral biogenic habitat",
+            "value": 12000
+          },
+          {
+            "color": "#0090ff",
+            "label": "Offshore circalittoral coarse sediment",
+            "value": 12100
+          },
+          {
+            "color": "#0096ff",
+            "label": "Offshore circalittoral mixed sediment",
+            "value": 12200
+          },
+          {
+            "color": "#009cff",
+            "label": "Offshore circalittoral sand",
+            "value": 12300
+          },
+          {
+            "color": "#00a2ff",
+            "label": "Offshore circalittoral mud",
+            "value": 12400
+          },
+          {
+            "color": "#00a8ff",
+            "label": "Upper bathyal rock",
+            "value": 12500
+          },
+          {
+            "color": "#00aeff",
+            "label": "Upper bathyal biogenic habitat",
+            "value": 12600
+          },
+          {
+            "color": "#00b4ff",
+            "label": "Upper bathyal coarse sediment",
+            "value": 12700
+          },
+          {
+            "color": "#00baff",
+            "label": "Upper bathyal mixed sediment",
+            "value": 12800
+          },
+          {
+            "color": "#00c0ff",
+            "label": "Upper Bathyal sand",
+            "value": 12900
+          },
+          {
+            "color": "#00c6ff",
+            "label": "Upper Bathyal mud",
+            "value": 13000
+          },
+          {
+            "color": "#00ccff",
+            "label": "Lower bathyal rock",
+            "value": 13100
+          },
+          {
+            "color": "#00d2ff",
+            "label": "Lower bathyal biogenic habitat",
+            "value": 13200
+          },
+          {
+            "color": "#00d8ff",
+            "label": "Lower bathyal coarse sediment",
+            "value": 13300
+          },
+          {
+            "color": "#00deff",
+            "label": "Lower bathyal mixed sediment",
+            "value": 13400
+          },
+          {
+            "color": "#00e4ff",
+            "label": "Lower bathyal sand",
+            "value": 13500
+          },
+          {
+            "color": "#00eaff",
+            "label": "Lower bathyal mud",
+            "value": 13600
+          },
+          {
+            "color": "#00f0ff",
+            "label": "Abyssal rock",
+            "value": 13700
+          },
+          {
+            "color": "#00f6ff",
+            "label": "Abyssal biogenic habitat",
+            "value": 13800
+          },
+          {
+            "color": "#00fcff",
+            "label": "Abyssal coarse sediment",
+            "value": 13900
+          },
+          {
+            "color": "#01ffff",
+            "label": "Abyssal mixed sediment",
+            "value": 14000
+          },
+          {
+            "color": "#02ffff",
+            "label": "Abyssal sand",
+            "value": 14100
+          },
+          {
+            "color": "#03ffff",
+            "label": "Abyssal mud",
+            "value": 14200
+          },
+          {
+            "color": "#7a0000",
+            "label": "Pelagic water column",
+            "value": 20000
+          },
+          {
+            "color": "#990000",
+            "label": "Neuston",
+            "value": 20100
+          },
+          {
+            "color": "#aa0000",
+            "label": "Completely mixed water column with reduced salinity",
+            "value": 20200
+          },
+          {
+            "color": "#bb0000",
+            "label": "Completely mixed water column with full salinity",
+            "value": 20300
+          },
+          {
+            "color": "#cc0000",
+            "label": "Partially mixed water column with reduced salinity and medium or long residence time",
+            "value": 20400
+          },
+          {
+            "color": "#dd0000",
+            "label": "Unstratified water column with reduced salinity",
+            "value": 20500
+          },
+          {
+            "color": "#ee0000",
+            "label": "Vertically stratified water column with reduced salinity",
+            "value": 20600
+          },
+          {
+            "color": "#f20000",
+            "label": "Fronts in reduced salinity water column",
+            "value": 20700
+          },
+          {
+            "color": "#ff0000",
+            "label": "Unstratified water column with full salinity",
+            "value": 20800
+          },
+          {
+            "color": "#ff1a1a",
+            "label": "Vertically stratified water column with full salinity",
+            "value": 20900
+          },
+          {
+            "color": "#ff3333",
+            "label": "Fronts in full salinity water column",
+            "value": 21000
+          },
+          {
+            "color": "#cc456f",
+            "label": "Ice-associated marine habitats",
+            "value": 30000
+          },
+          {
+            "color": "#ff5c8a",
+            "label": "Sea ice",
+            "value": 30100
+          },
+          {
+            "color": "#ff7fa3",
+            "label": "Freshwater ice",
+            "value": 30200
+          },
+          {
+            "color": "#ff9eb5",
+            "label": "Brine channels",
+            "value": 30300
+          },
+          {
+            "color": "#ffb6c1",
+            "label": "Under-ice habitat",
+            "value": 30400
+          },
+          {
+            "color": "#392e20",
+            "label": "Coastal habitats ",
+            "value": 40000
+          },
+          {
+            "color": "#4a3726",
+            "label": "Coastal dunes and sandy shores ",
+            "value": 40100
+          },
+          {
+            "color": "#5a4030",
+            "label": "Coastal shingle",
+            "value": 40200
+          },
+          {
+            "color": "#6b4a38",
+            "label": "Rock cliffs & ledges and shores including the supralittoral ",
+            "value": 40300
+          },
+          {
+            "color": "#545454",
+            "label": "Wetlands",
+            "value": 50000
+          },
+          {
+            "color": "#6a6a6a",
+            "label": "Raised and blanket bogs ",
+            "value": 50100
+          },
+          {
+            "color": "#828282",
+            "label": "Valley mires & poor fens and transition mires ",
+            "value": 50200
+          },
+          {
+            "color": "#9a9a9a",
+            "label": "Palsa mires ",
+            "value": 50300
+          },
+          {
+            "color": "#b2b2b2",
+            "label": "Base-rich fens and calcareous spring mires",
+            "value": 50400
+          },
+          {
+            "color": "#cacaca",
+            "label": "Helophyte beds",
+            "value": 50500
+          },
+          {
+            "color": "#cacaca",
+            "label": "Tall-helophyte bed",
+            "value": 50501
+          },
+          {
+            "color": "#cacaca",
+            "label": "Tall-sedge bed",
+            "value": 50503
+          },
+          {
+            "color": "#cacaca",
+            "label": "Inland saline or brackish helophyte bed ",
+            "value": 50504
+          },
+          {
+            "color": "#e5e5e5",
+            "label": "Periodically exposed shores",
+            "value": 50600
+          },
+          {
+            "color": "#4c850c",
+            "label": "Grasslands and lands dominated by forbs or mosses or lichens",
+            "value": 60000
+          },
+          {
+            "color": "#5fa70f",
+            "label": "Dry grasslands",
+            "value": 60100
+          },
+          {
+            "color": "#5fa70f",
+            "label": "Pannonian and Pontic sandy steppe",
+            "value": 60101
+          },
+          {
+            "color": "#5fa70f",
+            "label": "Semi-dry perennial calcareous grassland (meadow steppe)",
+            "value": 60110
+          },
+          {
+            "color": "#5fa70f",
+            "label": "Continental dry grassland (true steppe)",
+            "value": 60111
+          },
+          {
+            "color": "#78c02f",
+            "label": "Mesic grasslands ",
+            "value": 60200
+          },
+          {
+            "color": "#78c02f",
+            "label": "Mesic permanent pasture of lowlands and mountains",
+            "value": 60201
+          },
+          {
+            "color": "#78c02f",
+            "label": "Low and medium altitude hay meadow",
+            "value": 60202
+          },
+          {
+            "color": "#91d24f",
+            "label": "Seasonally wet and wet grasslands ",
+            "value": 60300
+          },
+          {
+            "color": "#91d24f",
+            "label": "Submediterranean moist meadow",
+            "value": 60304
+          },
+          {
+            "color": "#91d24f",
+            "label": "Moist or wet mesotrophic to eutrophic hay meadow",
+            "value": 60305
+          },
+          {
+            "color": "#91d24f",
+            "label": "Moist or wet mesotrophic to eutrophic pasture",
+            "value": 60306
+          },
+          {
+            "color": "#91d24f",
+            "label": "Temperate and boreal moist or wet oligotrophic grassland",
+            "value": 60307
+          },
+          {
+            "color": "#aad76f",
+            "label": "Alpine and subalpine grasslands ",
+            "value": 60400
+          },
+          {
+            "color": "#c3eb8f",
+            "label": "Forest fringes and clearings and tall forb stands ",
+            "value": 60500
+          },
+          {
+            "color": "#dbeeb0",
+            "label": "Inland salt steppes and salt marshes",
+            "value": 60600
+          },
+          {
+            "color": "#dbeeb0",
+            "label": "Continental inland salt steppe",
+            "value": 60602
+          },
+          {
+            "color": "#dbeeb0",
+            "label": "Temperate inland salt marsh",
+            "value": 60603
+          },
+          {
+            "color": "#dbeeb0",
+            "label": "Continental subsaline alluvial pasture and meadow",
+            "value": 60605
+          },
+          {
+            "color": "#e6f4c0",
+            "label": "Sparsely wooded grasslands ",
+            "value": 60700
+          },
+          {
+            "color": "#94732f",
+            "label": "Heathland & scrub and tundra",
+            "value": 70000
+          },
+          {
+            "color": "#b89145",
+            "label": "Tundra",
+            "value": 70100
+          },
+          {
+            "color": "#c29c52",
+            "label": "Arctic & alpine and subalpine scrub",
+            "value": 70200
+          },
+          {
+            "color": "#cba65f",
+            "label": "Temperate and mediterranean-montane scrub",
+            "value": 70300
+          },
+          {
+            "color": "#cba65f",
+            "label": "Temperate and submediterranean thorn scrub  ",
+            "value": 70305
+          },
+          {
+            "color": "#cba65f",
+            "label": "Low steppic scrub  ",
+            "value": 70306
+          },
+          {
+            "color": "#d3b06c",
+            "label": "Temperate shrub heathland",
+            "value": 70400
+          },
+          {
+            "color": "#dbba79",
+            "label": "Maquis arborescent matorral and thermo-Mediterranean scrub",
+            "value": 70500
+          },
+          {
+            "color": "#e2c486",
+            "label": "Garrigue",
+            "value": 70600
+          },
+          {
+            "color": "#e9cea3",
+            "label": "Spiny Mediterranean heaths (phrygana hedgehog-heaths and related coastal cliff vegetation) ",
+            "value": 70700
+          },
+          {
+            "color": "#f1d8b0",
+            "label": "Thermo-Atlantic xerophytic scrub",
+            "value": 70800
+          },
+          {
+            "color": "#f8e2bd",
+            "label": "Riverine and fen scrubs",
+            "value": 70900
+          },
+          {
+            "color": "#f8e2bd",
+            "label": "Salix fen scrub ",
+            "value": 70902
+          },
+          {
+            "color": "#f8e2bd",
+            "label": "Mediterranean riparian scrub ",
+            "value": 70903
+          },
+          {
+            "color": "#135212",
+            "label": "Forest and other wooded land",
+            "value": 80000
+          },
+          {
+            "color": "#1a661a",
+            "label": "Deciduous broadleaved forest",
+            "value": 80100
+          },
+          {
+            "color": "#1a661a",
+            "label": "Temperate Salix and Populus riparian forest",
+            "value": 80101
+          },
+          {
+            "color": "#1a661a",
+            "label": "Temperate hardwood riparian forest",
+            "value": 80103
+          },
+          {
+            "color": "#1a661a",
+            "label": "Fagus forest on non-acid soils",
+            "value": 80107
+          },
+          {
+            "color": "#1a661a",
+            "label": "Temperate and submediterranean thermophilous deciduous forest",
+            "value": 80109
+          },
+          {
+            "color": "#1a661a",
+            "label": "Carpinus and Quercus mesic deciduous forest",
+            "value": 80114
+          },
+          {
+            "color": "#1a661a",
+            "label": "Broadleaved deciduous plantation of non site-native trees",
+            "value": 80117
+          },
+          {
+            "color": "#1a661a",
+            "label": "Deciduous self sown forest of non site-native trees",
+            "value": 80118
+          },
+          {
+            "color": "#1a661a",
+            "label": "Broadleaved deciduous plantation of site-native trees",
+            "value": 80119
+          },
+          {
+            "color": "#338c33",
+            "label": "Broadleaved evergreen forest",
+            "value": 80200
+          },
+          {
+            "color": "#4dab4d",
+            "label": "Coniferous forest",
+            "value": 80300
+          },
+          {
+            "color": "#4dab4d",
+            "label": "Coniferous plantation of non site-native trees",
+            "value": 80321
+          },
+          {
+            "color": "#66c266",
+            "label": "Lines of trees or small anthropogenic forests or recently felled forest or early-stage forest and coppice",
+            "value": 80400
+          },
+          {
+            "color": "#c7ad00",
+            "label": "Inland habitats with no or little soil and mostly with sparse vegetation",
+            "value": 90000
+          },
+          {
+            "color": "#f7d600",
+            "label": "Terrestrial underground caves or cave systems or passages and waterbodies ",
+            "value": 90100
+          },
+          {
+            "color": "#ffe500",
+            "label": "Screes",
+            "value": 90200
+          },
+          {
+            "color": "#fff000",
+            "label": "Inland cliffs or rock pavements and outcrops ",
+            "value": 90300
+          },
+          {
+            "color": "#fff733",
+            "label": "Snow or ice-dominated habitats ",
+            "value": 90400
+          },
+          {
+            "color": "#fffb66",
+            "label": "Miscellaneous inland habitats usually with very sparse or no vegetation ",
+            "value": 90500
+          },
+          {
+            "color": "#fff999",
+            "label": "Recent volcanic features ",
+            "value": 90600
+          },
+          {
+            "color": "#fffcad",
+            "label": "Unvegetated or sparsely vegetated gravel bars ",
+            "value": 90700
+          },
+          {
+            "color": "#cc5200",
+            "label": "Vegetated man-made habitats",
+            "value": 100000
+          },
+          {
+            "color": "#ff6600",
+            "label": "Arable land and market gardens",
+            "value": 100100
+          },
+          {
+            "color": "#ff6600",
+            "label": "Intensive unmixed crops",
+            "value": 100101
+          },
+          {
+            "color": "#ff6600",
+            "label": "Bare tilled or fallow or recently abandoned arable land",
+            "value": 100105
+          },
+          {
+            "color": "#ff751a",
+            "label": "Cultivated areas of gardens and parks ",
+            "value": 100200
+          },
+          {
+            "color": "#ff8533",
+            "label": "Artificial grasslands and herb dominated habitats",
+            "value": 100300
+          },
+          {
+            "color": "#ff8533",
+            "label": "Dry perennial anthropogenic herbaceous vegetation",
+            "value": 100308
+          },
+          {
+            "color": "#ff8533",
+            "label": "Mesic perennial anthropogenic herbaceous vegetation",
+            "value": 100309
+          },
+          {
+            "color": "#ff944d",
+            "label": "Hedgerows ",
+            "value": 100400
+          },
+          {
+            "color": "#ffaa66",
+            "label": "Shrub plantations ",
+            "value": 100500
+          },
+          {
+            "color": "#ffbb80",
+            "label": "Tree dominated man-made habitats",
+            "value": 100600
+          },
+          {
+            "color": "#ffbb80",
+            "label": "Broadleaved fruit and nut tree orchards",
+            "value": 100601
+          },
+          {
+            "color": "#5930a0",
+            "label": "Inland surface waters",
+            "value": 110000
+          },
+          {
+            "color": "#6f40d1",
+            "label": "Surface standing waters",
+            "value": 110100
+          },
+          {
+            "color": "#8f6fe0",
+            "label": "Surface running waters",
+            "value": 110200
+          },
+          {
+            "color": "#a38cde",
+            "label": "Littoral zone of inland surface waterbodies",
+            "value": 110300
+          },
+          {
+            "color": "#a38cde",
+            "label": "Water-fringing reedbeds and tall helophytes other than canes",
+            "value": 110302
+          },
+          {
+            "color": "#a01eb6",
+            "label": "Constructed industrial and other artificial habitats",
+            "value": 120000
+          },
+          {
+            "color": "#d12eea",
+            "label": "Buildings of cities- towns and villages",
+            "value": 120100
+          },
+          {
+            "color": "#e03cec",
+            "label": "Low density buildings",
+            "value": 120200
+          },
+          {
+            "color": "#e85ef0",
+            "label": "Extractive industrial sites",
+            "value": 120300
+          },
+          {
+            "color": "#f07df2",
+            "label": "Transport networks and other constructed hard-surfaced areas",
+            "value": 120400
+          },
+          {
+            "color": "#f69bf5",
+            "label": "Highly artificial man-made waters and associated structures",
+            "value": 120500
+          },
+          {
+            "color": "#fbbcf8",
+            "label": "Waste deposits",
+            "value": 120600
+          },
+          {
+            "color": "#5930a0",
+            "label": "Inland waters",
+            "value": 130000
+          },
+          {
+            "color": "#6f40d1",
+            "label": "Standing aquatic habitats",
+            "value": 130100
+          },
+          {
+            "color": "#8f6fe0",
+            "label": "Running aquatic habitats",
+            "value": 130200
+          },
+          {
+            "color": "#cfb4ed",
+            "label": "Aquatic plant communities",
+            "value": 130300
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "openEO Results - Habitat Maps 2021, version 2",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
