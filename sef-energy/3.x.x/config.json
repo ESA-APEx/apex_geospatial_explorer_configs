@@ -1,5 +1,5 @@
 {
-  "version": "1.58.0",
+  "version": "1.72.0",
   "exportPrefix": "sef-energy-explorer",
   "layout": {
     "navigation": {
@@ -21,6 +21,7 @@
     "Offshore Renewables",
     "Hydropower",
     "Infrastructure",
+    "Traditional Energy",
     "Various"
   ],
   "exclusivitySets": [],
@@ -183,21 +184,24 @@
       "exclusivitySets": []
     },
     {
-      "name": "Sentinel-2 True Colour 2021",
+      "name": "Sentinel-2 Cloudless (EOX)",
       "isActive": false,
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
+          "url": "https://tiles.maps.eox.at/wms",
           "format": "wms",
           "zIndex": 4,
-          "layers": "WORLDCOVER_2021_S2_TCC"
+          "layers": "s2cloudless-2024_3857",
+          "parameters": {
+            "STYLES": ""
+          }
         }
       ],
       "meta": {
         "description": "Base layer: Sentinel-2 True Colour 2021",
         "attribution": {
-          "text": "Copernicus Sentinel-2 / Terrascope",
-          "url": "https://services.terrascope.be"
+          "text": "Sentinel-2 cloudless 2024 by EOX / Copernicus Sentinel data",
+          "url": "https://s2maps.eu"
         },
         "categories": []
       },
@@ -205,21 +209,24 @@
       "exclusivitySets": []
     },
     {
-      "name": "Copernicus DEM (base layer)",
+      "name": "Terrain (EOX)",
       "isActive": false,
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
+          "url": "https://tiles.maps.eox.at/wms",
           "format": "wms",
           "zIndex": 2,
-          "layers": "COP_DEM_GLO_30M_COG"
+          "layers": "terrain-light_3857",
+          "parameters": {
+            "STYLES": ""
+          }
         }
       ],
       "meta": {
         "description": "Base layer: Copernicus DEM (base layer)",
         "attribution": {
-          "text": "Copernicus DEM 30m",
-          "url": "https://spacedata.copernicus.eu"
+          "text": "Terrain Light by EOX",
+          "url": "https://maps.eox.at"
         },
         "categories": []
       },
@@ -408,6 +415,57 @@
             "zoomToCenter": true,
             "temporalControls": false,
             "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "PV Mapping (Puglia)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/solar/pv_puglia_2025.geojson",
+          "format": "geojson",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": "#E8198B",
+              "stroke-color": "#E8198B",
+              "stroke-width": 0.5
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Mapping existing solar installations shows where photovoltaic capacity is already deployed on the ground. Detected ground-mounted photovoltaic areas over a Puglia example site in southern Italy, derived from Copernicus Sentinel-2 imagery by EURAC via the APEx platform.",
+        "attribution": {
+          "text": "EURAC via APEx / Copernicus Sentinel-2",
+          "url": "https://www.eurac.edu/"
+        },
+        "categories": [
+          {
+            "color": "#E8198B",
+            "label": "Detected PV"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
             "blendControls": false
           }
         }
@@ -1100,6 +1158,132 @@
       "exclusivitySets": []
     },
     {
+      "name": "HV Transmission Grid (Europe)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/grid/eu_hv_grid.geojson",
+          "format": "geojson",
+          "zIndex": 60,
+          "style": [
+            {
+              "stroke-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "current"
+                  ],
+                  "DC"
+                ],
+                "#0070C0",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "voltage"
+                  ],
+                  500
+                ],
+                "#7030A0",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "voltage"
+                  ],
+                  380
+                ],
+                "#C00000",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "voltage"
+                  ],
+                  275
+                ],
+                "#ED7D31",
+                "#FFC000"
+              ],
+              "stroke-width": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "current"
+                  ],
+                  "DC"
+                ],
+                1.6,
+                [
+                  ">=",
+                  [
+                    "get",
+                    "voltage"
+                  ],
+                  380
+                ],
+                1.3,
+                1.0
+              ]
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "The high-voltage transmission grid is the backbone that moves power from generation to demand and connects countries, so it shapes where new energy projects can connect. European transmission lines (220 to 750 kV AC and all HVDC), coloured by voltage.",
+        "attribution": {
+          "text": "© OpenStreetMap contributors (ODbL), processed by PyPSA-Eur / TU Berlin",
+          "url": "https://zenodo.org/records/14144752"
+        },
+        "categories": [
+          {
+            "color": "#FFC000",
+            "label": "220 kV"
+          },
+          {
+            "color": "#ED7D31",
+            "label": "300 kV"
+          },
+          {
+            "color": "#C00000",
+            "label": "400 kV"
+          },
+          {
+            "color": "#7030A0",
+            "label": "≥500 kV"
+          },
+          {
+            "color": "#0070C0",
+            "label": "HVDC"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Infrastructure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
       "name": "Wildfire Frequency",
       "isActive": false,
       "data": [
@@ -1383,34 +1567,93 @@
       "exclusivitySets": []
     },
     {
-      "name": "Atmospheric Methane",
+      "name": "Tropospheric NO2 (Sentinel-5P)",
       "isActive": false,
       "data": [
         {
-          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/AIRS_L3_Methane_400hPa_Volume_Mixing_Ratio_Monthly_Day/default/2025-03-01/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
-          "format": "xyz",
-          "zIndex": 36,
-          "opacity": 0.7
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/no2/s5p_no2_year_2025_cog.tif",
+          "format": "cog",
+          "zIndex": 38,
+          "opacity": 0.85
         }
       ],
       "meta": {
-        "description": "Methane is the main component of natural gas, so monitoring it supports tracking emissions from energy production and gas infrastructure. Mid-tropospheric methane concentration (volume mixing ratio at 400 hPa) from the AIRS instrument on NASA Aqua, monthly mean for March 2025.",
+        "description": "Nitrogen dioxide is produced by high-temperature combustion, so it traces fossil-fuel power plants, heavy industry, shipping lanes and road traffic. Tropospheric NO2 column from Copernicus Sentinel-5P TROPOMI, yearly mean processed by S5P-PAL, where higher values mark concentrated combustion activity such as coal-power clusters and industrial regions.",
+        "units": "µmol/m²",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 60,
+            "steps": 64,
+            "name": "jet",
+            "reverse": false
+          }
+        ],
         "attribution": {
-          "text": "NASA GIBS / AIRS on Aqua",
-          "url": "https://airs.jpl.nasa.gov/"
+          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
+          "url": "https://maps.s5p-pal.com/no2-tropospheric/"
         },
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Various",
+        "interfaceGroup": "Traditional Energy",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
         },
         "infoPanel": {
           "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/AIRS_Methane_Volume_Mixing_Ratio_V.svg"
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Methane Concentration (Sentinel-5P)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/methane/s5p_ch4_year_2025_cog.tif",
+          "format": "cog",
+          "zIndex": 37,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Methane is the main component of natural gas, so mapping atmospheric methane reveals enhancements over oil and gas fields and other major emitters. Column-averaged dry-air methane (XCH4) from Copernicus Sentinel-5P TROPOMI, yearly mean processed by S5P-PAL, where higher values flag regions of elevated methane such as super-emitting oil and gas basins.",
+        "units": "ppbv",
+        "colormaps": [
+          {
+            "min": 1750,
+            "max": 1950,
+            "steps": 64,
+            "name": "jet",
+            "reverse": false
+          }
+        ],
+        "attribution": {
+          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
+          "url": "https://maps.s5p-pal.com/ch4/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Traditional Energy",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
