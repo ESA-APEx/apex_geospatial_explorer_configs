@@ -1,5 +1,5 @@
 {
-  "version": "1.72.0",
+  "version": "1.78.0",
   "exportPrefix": "sef-energy-explorer",
   "layout": {
     "navigation": {
@@ -1079,6 +1079,16 @@
           "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_WaterWetness_2015/MapServer/WMSServer",
           "format": "wms",
           "zIndex": 48,
+          "layers": "0",
+          "opacity": 0.85,
+          "parameters": {
+            "STYLES": ""
+          }
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_WaterWetness_2015/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 48,
           "layers": "1",
           "opacity": 0.85,
           "parameters": {
@@ -1103,6 +1113,51 @@
         "infoPanel": {
           "legend": {
             "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Observed Precipitation",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 44,
+          "layers": "mapserver:obsPrecip",
+          "parameters": {
+            "STYLES": ""
+          }
+        }
+      ],
+      "meta": {
+        "description": "Recent precipitation is the water arriving in a catchment. Observed precipitation from Copernicus EMS / EFAS, feeding the rivers and reservoirs that drive hydropower generation.",
+        "attribution": {
+          "text": "Copernicus EMS / EFAS",
+          "url": "https://european-flood.emergency.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "subinterfaceGroup": "Water Availability",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:obsPrecip&styles=default&width=80&height=50"
           },
           "controls": {
             "opacitySlider": true,
@@ -1145,6 +1200,229 @@
           "legend": {
             "type": "image",
             "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:scWB&styles=default&width=80&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "subinterfaceGroup": "Water Availability"
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Snow Anomaly (10-day)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 46,
+          "layers": "mapserver:10dSnowAnomaly",
+          "parameters": {
+            "STYLES": ""
+          }
+        }
+      ],
+      "meta": {
+        "description": "Snowpack relative to normal signals whether spring melt will bring above- or below-average inflow. Ten-day snow anomaly from Copernicus EMS / EFAS, the departure of current snow water equivalent from the seasonal average.",
+        "attribution": {
+          "text": "Copernicus EMS / EFAS",
+          "url": "https://european-flood.emergency.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "subinterfaceGroup": "Water Availability",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:10dSnowAnomaly&styles=default&width=80&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Soil Moisture",
+      "isActive": false,
+      "meta": {
+        "description": "Soil moisture governs how much rainfall becomes river runoff, shaping the water available for hydropower generation and signalling drought stress on supply. Soil moisture from Copernicus EMS / EFAS, indicating how saturated the ground is across Europe.",
+        "attribution": {
+          "text": "Copernicus EMS / EFAS",
+          "url": "https://european-flood.emergency.copernicus.eu/react/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:soilMoisture&styles=default&width=80&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "subinterfaceGroup": "Water Availability"
+      },
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:soilMoisture",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "Soil Moisture Anomaly",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 47,
+          "layers": "mapserver:soilMoistureAnomaly",
+          "parameters": {
+            "STYLES": ""
+          }
+        }
+      ],
+      "meta": {
+        "description": "How wet the ground is relative to normal sets how much of the next rainfall becomes runoff and reservoir inflow. Soil moisture anomaly from Copernicus EMS / EFAS, the departure of current soil moisture from the seasonal average.",
+        "attribution": {
+          "text": "Copernicus EMS / EFAS",
+          "url": "https://european-flood.emergency.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "subinterfaceGroup": "Water Availability",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:soilMoistureAnomaly&styles=default&width=80&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Major Rivers",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 70,
+          "layers": "mapserver:MajorRivers1",
+          "parameters": {
+            "STYLES": ""
+          }
+        }
+      ],
+      "meta": {
+        "description": "The river network along which runoff concentrates toward hydropower reservoirs. Major rivers from the Copernicus EMS / EFAS LISFLOOD drainage network.",
+        "attribution": {
+          "text": "Copernicus EMS / EFAS",
+          "url": "https://european-flood.emergency.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "subinterfaceGroup": "Water Availability",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:MajorRivers1&styles=default&width=80&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Catchments",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 71,
+          "layers": "mapserver:Catchments",
+          "parameters": {
+            "STYLES": ""
+          }
+        }
+      ],
+      "meta": {
+        "description": "Catchments are the drainage basins that feed each river and reservoir, the unit hydropower operators plan in. Catchment boundaries from Copernicus EMS / EFAS.",
+        "attribution": {
+          "text": "Copernicus EMS / EFAS",
+          "url": "https://european-flood.emergency.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "subinterfaceGroup": "Water Availability",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:Catchments&styles=default&width=80&height=50"
           },
           "controls": {
             "opacitySlider": true,
@@ -1533,7 +1811,21 @@
           "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ImperviousnessDensity_2015/MapServer/WMSServer",
           "format": "wms",
           "zIndex": 42,
-          "layers": "0"
+          "layers": "0",
+          "opacity": 1,
+          "parameters": {
+            "STYLES": ""
+          }
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_ImperviousnessDensity_2015/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 42,
+          "layers": "1",
+          "opacity": 1,
+          "parameters": {
+            "STYLES": ""
+          }
         }
       ],
       "meta": {
@@ -1851,88 +2143,6 @@
         }
       },
       "exclusivitySets": []
-    },
-    {
-      "name": "Precipitation Rate",
-      "isActive": false,
-      "meta": {
-        "description": "Precipitation feeds the rivers and reservoirs that drive hydropower generation. Instantaneous precipitation rate from EUMETSAT, derived from Meteosat Second Generation observations over Europe and Africa.",
-        "attribution": {
-          "text": "EUMETSAT",
-          "url": "https://user.eumetsat.int/catalogue"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Hydropower",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://view.eumetsat.int/geoserver/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=640&height=80&layer=msg_fes%3Ah60b"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://view.eumetsat.int/geoserver/wms?token=public",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "msg_fes:h60b",
-          "useTimeParameter": true
-        }
-      ]
-    },
-    {
-      "name": "Soil Moisture",
-      "isActive": false,
-      "meta": {
-        "description": "Soil moisture governs how much rainfall becomes river runoff, shaping the water available for hydropower generation and signalling drought stress on supply. Soil moisture from Copernicus EMS / EFAS, indicating how saturated the ground is across Europe.",
-        "attribution": {
-          "text": "Copernicus EMS / EFAS",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Hydropower",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:soilMoisture&styles=default&width=80&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:soilMoisture",
-          "useTimeParameter": true
-        }
-      ]
     }
   ]
 }
