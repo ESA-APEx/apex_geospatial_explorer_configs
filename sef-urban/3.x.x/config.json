@@ -924,6 +924,426 @@
       }
     },
     {
+      "name": "Land Cover",
+      "isActive": false,
+      "meta": {
+        "description": "Pan-European land cover dataset produced by the Copernicus Land Monitoring Service. Each pixel represents the dominant land cover class for 2021. It supports urban analysis by enabling comparison of land structure, urbanisation intensity, and landscape composition across European regions.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en/products/clc-backbone/clc-backbone-2021"
+        },
+        "categories": [
+          {
+            "color": "#ff0000",
+            "label": "Sealed",
+            "value": 1
+          },
+          {
+            "color": "#228b22",
+            "label": "Woody needle leaved trees",
+            "value": 2
+          },
+          {
+            "color": "#80ff00",
+            "label": "Woody Broadleaved deciduous trees",
+            "value": 3
+          },
+          {
+            "color": "#00ff08",
+            "label": "Woody Broadleaved evergreen trees",
+            "value": 4
+          },
+          {
+            "color": "#804000",
+            "label": "Low-growing woody plants",
+            "value": 5
+          },
+          {
+            "color": "#ccf24d",
+            "label": "Permanent herbaceous",
+            "value": 6
+          },
+          {
+            "color": "#ffff80",
+            "label": "Periodically herbaceous",
+            "value": 7
+          },
+          {
+            "color": "#ff80ff",
+            "label": "Lichens and mosses",
+            "value": 8
+          },
+          {
+            "color": "#bfbfbf",
+            "label": "Non and sparsely vegetated",
+            "value": 9
+          },
+          {
+            "color": "#0080ff",
+            "label": "Water",
+            "value": 10
+          },
+          {
+            "color": "#00ffff",
+            "label": "Snow and ice",
+            "value": 11
+          },
+          {
+            "color": "#e6e6e6",
+            "label": "Outside area",
+            "value": 12
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                -8.335,
+                41.415,
+                -8.235,
+                41.47
+              ]
+            },
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
+        }
+      ]
+    },
+    {
+      "name": "Extent of Buildings",
+      "isActive": false,
+      "timeframe": "Years",
+      "meta": {
+        "description": "Global settlement footprints derived from satellite-based mapping of built-up areas for 2015 and 2019. Built-up detection is performed using multi-source Earth observation data to identify human settlements. It is used to quantify urban expansion, compare settlement growth over time across regions, and identify where urban growth is occurring.",
+        "attribution": {
+          "text": "DLR World Settlement Footprint",
+          "url": "https://www.dlr.de/en/eoc/research-transfer/projects-missions/world-settlement-footprint-wsf-r"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                -8.335,
+                41.415,
+                -8.235,
+                41.47
+              ]
+            },
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_2015",
+          "timestamps": [
+            1420066800
+          ]
+        },
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_2019",
+          "timestamps": [
+            1546297200
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Evolution 1985-2015",
+      "isActive": false,
+      "meta": {
+        "description": "Historical reconstruction of the first year of urbanisation derived from long-term Landsat archives. Built-up areas are detected through temporal analysis of satellite imagery to identify land conversion to urban use. It supports long-term urban planning by showing how and when cities have expanded, useful for understanding historical growth patterns and guiding future development strategies.",
+        "attribution": {
+          "text": "© DLR (German Aerospace Center) – World Settlement Footprint Program",
+          "url": "https://geoservice.dlr.de/web/datasets/wsf_evo"
+        },
+        "categories": [
+          {
+            "color": "#d50000",
+            "label": "1985",
+            "value": 0
+          },
+          {
+            "color": "#dd2200",
+            "label": "1986",
+            "value": 0
+          },
+          {
+            "color": "#e54500",
+            "label": "1987",
+            "value": 0
+          },
+          {
+            "color": "#ee6700",
+            "label": "1988",
+            "value": 0
+          },
+          {
+            "color": "#f68a00",
+            "label": "1989",
+            "value": 0
+          },
+          {
+            "color": "#ffad00",
+            "label": "1990",
+            "value": 0
+          },
+          {
+            "color": "#ecbd00",
+            "label": "1991",
+            "value": 0
+          },
+          {
+            "color": "#d9cd00",
+            "label": "1992",
+            "value": 0
+          },
+          {
+            "color": "#c6de00",
+            "label": "1993",
+            "value": 0
+          },
+          {
+            "color": "#b3ee00",
+            "label": "1994",
+            "value": 0
+          },
+          {
+            "color": "#a1ff00",
+            "label": "1995",
+            "value": 0
+          },
+          {
+            "color": "#80f200",
+            "label": "1996",
+            "value": 0
+          },
+          {
+            "color": "#60e500",
+            "label": "1997",
+            "value": 0
+          },
+          {
+            "color": "#40d800",
+            "label": "1998",
+            "value": 0
+          },
+          {
+            "color": "#20cb00",
+            "label": "1999",
+            "value": 0
+          },
+          {
+            "color": "#00be00",
+            "label": "2000",
+            "value": 0
+          },
+          {
+            "color": "#00b923",
+            "label": "2001",
+            "value": 0
+          },
+          {
+            "color": "#00b546",
+            "label": "2002",
+            "value": 0
+          },
+          {
+            "color": "#00b069",
+            "label": "2003",
+            "value": 0
+          },
+          {
+            "color": "#00ac8c",
+            "label": "2004",
+            "value": 0
+          },
+          {
+            "color": "#00a8af",
+            "label": "2005",
+            "value": 0
+          },
+          {
+            "color": "#008ab8",
+            "label": "2006",
+            "value": 0
+          },
+          {
+            "color": "#006cc1",
+            "label": "2007",
+            "value": 0
+          },
+          {
+            "color": "#004eca",
+            "label": "2008",
+            "value": 0
+          },
+          {
+            "color": "#0030d3",
+            "label": "2009",
+            "value": 0
+          },
+          {
+            "color": "#0012dd",
+            "label": "2010",
+            "value": 0
+          },
+          {
+            "color": "#190ecd",
+            "label": "2011",
+            "value": 0
+          },
+          {
+            "color": "#3232bd",
+            "label": "2012",
+            "value": 0
+          },
+          {
+            "color": "#4b07ad",
+            "label": "2013",
+            "value": 0
+          },
+          {
+            "color": "#64039d",
+            "label": "2014",
+            "value": 0
+          },
+          {
+            "color": "#7e008e",
+            "label": "2015",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                -8.335,
+                41.415,
+                -8.235,
+                41.47
+              ]
+            },
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_Evolution",
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "name": "Urban Heat Islands",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/uhi/UHI_Guimaraes_2021_2025.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Urban Heat Island (UHI) intensity with respect to the local rural mean land surface temperature, for Summers between 2021 and 2025.",
+        "attribution": {
+          "text": "GTIF Green Meridian",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/UHI_per_pixel"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -20,
+            "max": 20,
+            "steps": 50,
+            "name": "hot",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
       "name": "UHI 2020-2025",
       "isActive": false,
       "timeframe": "Years",
@@ -933,6 +1353,7 @@
           "text": "GTIF Green Meridian",
           "url": "https://algorithm-catalogue.apex.esa.int/apps/UHI_per_pixel"
         },
+        "categories": [],
         "colormaps": [
           {
             "min": -20,
@@ -947,6 +1368,9 @@
         "interfaceGroup": "Demonstrators & Use Cases",
         "subinterfaceGroup": "Porto: Urban Heat Islands",
         "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
         "infoPanel": {
           "legend": {
             "type": "swatch"
@@ -965,9 +1389,6 @@
             "constraintSlider": false,
             "blendControls": false
           }
-        },
-        "layerCard": {
-          "toggleable": true
         }
       },
       "data": [
@@ -1018,6 +1439,62 @@
           "timestamps": [
             1751320800
           ]
+        }
+      ]
+    },
+    {
+      "name": "Street Trees",
+      "isActive": false,
+      "meta": {
+        "description": "Presence of street trees, showing areas where there is most cooling.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas 2012",
+          "url": "https://land.copernicus.eu/local/urban-atlas"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Porto: Urban Heat Islands",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=STL_Raster27733"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                -8.77,
+                41.09,
+                -8.44,
+                41.26
+              ]
+            },
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Raster27733",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Vector61679",
+          "useTimeParameter": true
         }
       ]
     },
@@ -40773,8 +41250,8 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Urban Greening",
-        "subinterfaceGroup": "Ecosystem Capacity",
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -42722,6 +43199,52 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Air Quality (PM 2.5)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
+          "format": "wms",
+          "zIndex": 20,
+          "layers": "composition_pm2p5",
+          "opacity": 0.6,
+          "parameters": {
+            "token": "public"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Fine particulate matter concentration derived from Copernicus Atmosphere Monitoring Service reanalysis and atmospheric chemistry models. It supports assessment of urban air pollution exposure and associated health risks.",
+        "attribution": {
+          "text": "ECMWF/CAMS",
+          "url": "https://ads.atmosphere.copernicus.eu/datasets"
+        },
+        "categories": [],
+        "colormaps": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_pm2p5&styles=sh_all_pm2p5_defra_daqi&width=350&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
     }
   ]
 }
