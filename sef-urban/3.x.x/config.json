@@ -16,10 +16,10 @@
   "interfaceGroups": [
     "Urban Mapping",
     "Urban Greening",
-    "Critical Infrastructure",
     "Climate Resilience",
     "Population Exposure",
     "Air Quality",
+    "Critical Infrastructure",
     "Demonstrators & Use Cases"
   ],
   "exclusivitySets": [],
@@ -926,58 +926,6 @@
     {
       "name": "Land Surface Temperature",
       "isActive": false,
-      "timeframe": "Days",
-      "meta": {
-        "description": "Land surface temperature derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
-        "attribution": {
-          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
-          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
-        },
-        "categories": [],
-        "units": "Kelvin (K)",
-        "colormaps": [
-          {
-            "min": 250,
-            "max": 320,
-            "steps": 100,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Heat",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "terrascope-s3-lst-s10-v1_lst",
-          "useTimeParameter": true
-        }
-      ]
-    },
-    {
-      "name": "Land Surface Temperature 70 m",
-      "isActive": false,
       "data": [
         {
           "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2022/06/01/ECOSTRESS_MEAN_LST_2022/2022_LST_AT_merged_composite_mean_70m.tif",
@@ -1005,7 +953,7 @@
         }
       ],
       "meta": {
-        "description": "ECOSTRESS instrument mounted on the International Space Station. Data shows land surface temperatures measured during early afternoon hours in °C. The map is composed of single observations acquired between June 1st to June 24th, in order to result in an almost cloud-free image.",
+        "description": "Land surface temperatures over Austria in the period June 1st and June 24th for 3 years (2022-24), as measured by the ECOSTRESS instrument mounted on the International Space Station.",
         "attribution": {
           "text": "GTIF",
           "url": "https://gtif-demo.eox.at/explore?indicator=HAUC1&x=1682304.11139&y=6105680.32568&z=7.21675"
@@ -1026,7 +974,7 @@
       },
       "layout": {
         "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "GTIF - Austria",
+        "subinterfaceGroup": "Vienna: Heat mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1037,14 +985,77 @@
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": true,
+            "zoomToCenter": {
+              "extent": [
+                16.35,
+                48.193,
+                16.52,
+                48.275
+              ]
+            },
             "temporalControls": true,
             "constraintSlider": true,
             "blendControls": false
           }
         }
       },
-      "timeframe": "Years"
+      "timeframe": "Years",
+      "isBaseLayer": false
+    },
+    {
+      "name": "Rooftop Mapping",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "GTIF_AT_Rooftops_3857"
+        }
+      ],
+      "meta": {
+        "description": "Rooftop footprints for major Austrian cities, supporting urban morphology and building-scale spatial analysis.",
+        "attribution": {
+          "text": "Brockmann Consult – xcube GeoDB (Austria Rooftops Dataset)",
+          "url": "https://xcube-geodb.brockmann-consult.de/"
+        },
+        "categories": [
+          {
+            "color": "#AAAAAA",
+            "label": "Roof",
+            "value": 0
+          }
+        ],
+        "units": "Building footprints (vector geometry)"
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Vienna: Heat mapping",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                16.35,
+                48.193,
+                16.52,
+                48.275
+              ]
+            },
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
     },
     {
       "name": "Street Trees",
@@ -1066,7 +1077,7 @@
         }
       ],
       "meta": {
-        "description": "Vector dataset of street tree distribution in European urban areas derived from Urban Atlas mapping and high-resolution satellite interpretation. It helps managing street-level greenery improving shading along roads, and planning tree planting programmes.",
+        "description": "Presence of street trees, showing areas where there is most cooling.",
         "attribution": {
           "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas 2012",
           "url": "https://land.copernicus.eu/local/urban-atlas"
@@ -1074,8 +1085,8 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Urban Greening",
-        "subinterfaceGroup": "Urban Vegetation Structure",
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Vienna: Heat mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1093,7 +1104,8 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "isBaseLayer": false
     },
     {
       "name": "Tree Cover Density",
@@ -1392,95 +1404,6 @@
       "timeframe": "Years"
     },
     {
-      "name": "Rooftops (major cities)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "GTIF_AT_Rooftops_3857"
-        }
-      ],
-      "meta": {
-        "description": "Rooftop footprints for major Austrian cities, supporting urban morphology and building-scale spatial analysis.",
-        "attribution": {
-          "text": "Brockmann Consult – xcube GeoDB (Austria Rooftops Dataset)",
-          "url": "https://xcube-geodb.brockmann-consult.de/"
-        },
-        "categories": [
-          {
-            "color": "#AAAAAA",
-            "label": "Roof",
-            "value": 0
-          }
-        ],
-        "units": "Building footprints (vector geometry)"
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "GTIF - Austria",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Rooftop Photovoltaic Potential",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "GTIF_AT_Rooftops_PV_bundesland_3857_v1",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "This layer represents rooftop photovoltaic (PV) potential across Austria, aggregated by federal state, and produced within the GTIF framework to support energy planning and urban infrastructure analysis.",
-        "attribution": {
-          "text": "GTIF – Brockmann Consult / DLR",
-          "url": "https://gtif.esa.int/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "GTIF - Austria",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=GTIF_AT_Rooftops_PV_bundesland_3857_v1"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
       "name": "Blue Marble",
       "isActive": true,
       "data": [
@@ -1599,10 +1522,10 @@
           "format": "wms",
           "zIndex": 50,
           "layers": "HRL_NVLCC_IMCC_20m",
-          "useTimeParameter": true,
           "parameters": {
             "version": "1.3.0"
-          }
+          },
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -1663,35 +1586,32 @@
       }
     },
     {
-      "name": "Street Trees",
+      "name": "PM 2.5",
       "isActive": false,
       "data": [
         {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
           "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Raster27733",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Vector61679",
+          "zIndex": 20,
+          "layers": "composition_pm2p5",
+          "opacity": 0.6,
+          "parameters": {
+            "token": "public"
+          },
           "useTimeParameter": true
         }
       ],
       "meta": {
-        "description": "Copernicus Urban Atlas 2012 street trees layer (vector), covering European Functional Urban Areas; CLMS product with 6-year update cycle. Derived from high-resolution imagery; MMU 0.25 ha, minimum mapping width 10 m",
+        "description": "Fine particulate matter concentration derived from Copernicus Atmosphere Monitoring Service reanalysis and atmospheric chemistry models. It supports assessment of urban air pollution exposure and associated health risks.",
         "attribution": {
-          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas 2012",
-          "url": "https://land.copernicus.eu/local/urban-atlas"
+          "text": "ECMWF/CAMS",
+          "url": "https://ads.atmosphere.copernicus.eu/datasets"
         },
-        "categories": []
+        "categories": [],
+        "colormaps": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "GTIF - Austria",
+        "interfaceGroup": "Air Quality",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1699,7 +1619,183 @@
         "infoPanel": {
           "legend": {
             "type": "image",
-            "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=STL_Raster27733"
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_pm2p5&styles=sh_all_pm2p5_defra_daqi&width=350&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "name": "NO2 at Surface",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
+          "format": "wms",
+          "zIndex": 20,
+          "layers": "composition_europe_no2_analysis_surface",
+          "opacity": 0.7,
+          "parameters": {
+            "token": "public"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Surface nitrogen dioxide concentration derived from CAMS atmospheric composition modelling combining satellite observations and chemical transport models. It supports identification of traffic-related pollution hotspots in urban areas.",
+        "attribution": {
+          "text": "ECMWF / CAMS",
+          "url": "https://ads.atmosphere.copernicus.eu/datasets"
+        },
+        "categories": [],
+        "colormaps": []
+      },
+      "layout": {
+        "interfaceGroup": "Air Quality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_no2_analysis_surface&styles=sh_Reds_surface_concentration&width=350&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "name": "O3 at Surface",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
+          "format": "wms",
+          "zIndex": 20,
+          "layers": "composition_europe_o3_analysis_surface",
+          "opacity": 0.7,
+          "parameters": {
+            "token": "public"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Surface ozone concentration estimated from atmospheric chemistry modelling within the CAMS system. It supports evaluation of photochemical pollution dynamics in urban atmospheres.",
+        "attribution": {
+          "text": "ECMWF / CAMS",
+          "url": "https://ads.atmosphere.copernicus.eu/datasets"
+        },
+        "categories": [],
+        "colormaps": []
+      },
+      "layout": {
+        "interfaceGroup": "Air Quality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_o3_analysis_surface&styles=sh_Oranges_surface_concentration&width=350&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "name": "Dust AOD",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
+          "format": "wms",
+          "zIndex": 20,
+          "layers": "composition_duaod550",
+          "opacity": 0.6,
+          "parameters": {
+            "token": "public"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Aerosol optical depth at 550 nm derived from CAMS atmospheric aerosol modelling representing dust load in the atmosphere. It supports analysis of episodic dust events affecting urban air quality.",
+        "attribution": {
+          "text": "ECMWF / CAMS",
+          "url": "https://ads.atmosphere.copernicus.eu/datasets"
+        },
+        "categories": [],
+        "colormaps": []
+      },
+      "layout": {
+        "interfaceGroup": "Air Quality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_duaod550&styles=sh_all_aod&width=350&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "name": "Protection levels",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:FloodProtectionLevels",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Flood defence capacity expressed as return periods for which protection systems are designed. It supports assessment of urban flood preparedness and infrastructure resilience.",
+        "attribution": {
+          "text": "EFAS / Copernicus EMS",
+          "url": "https://european-flood.emergency.copernicus.eu/react/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Flood",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:FloodProtectionLevels&styles=default&width=57&height=80"
           },
           "controls": {
             "opacitySlider": true,
@@ -1712,117 +1808,28 @@
       }
     },
     {
-      "name": "Rotterdam LULC 2024",
+      "name": "Flood Hazard",
       "isActive": false,
       "data": [
         {
-          "url": "https://eoresults.esa.int/d/EO_LULC_EO4PORTS/2024/08/12/LULC_Rotterdam_2024/rotterdam_2024.tif",
-          "format": "cog",
-          "zIndex": 50
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:Europe_combined_flood_scenarios",
+          "useTimeParameter": true
         }
       ],
       "meta": {
-        "description": "Multisensor EO-derived 2024 LULC map for the Port of Rotterdam, supporting classification of port, industrial, urban, and coastal land-cover classes.",
+        "description": "Flood scenarios generated from hydrological and hydraulic models within EFAS and Copernicus EMS. It supports identification of areas exposed to potential inundation under different climate scenarios.",
         "attribution": {
-          "text": "© European Space Agency (ESA) – EO4PORTS Project",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/EO_LULC_EO4PORTS/items/LULC_Rotterdam_2024?.asset=asset-product"
+          "text": "EFAS / Copernicus EMS",
+          "url": "https://european-flood.emergency.copernicus.eu/react/"
         },
-        "categories": [
-          {
-            "color": "#BD2828",
-            "label": "Urban fabric",
-            "value": 1
-          },
-          {
-            "color": "#E27036",
-            "label": "Industrial, commercial, and transport units",
-            "value": 2
-          },
-          {
-            "color": "#D49311",
-            "label": "Port areas",
-            "value": 3
-          },
-          {
-            "color": "#D7D742",
-            "label": "Airports",
-            "value": 4
-          },
-          {
-            "color": "#8FC91D",
-            "label": "Road and rail networks",
-            "value": 5
-          },
-          {
-            "color": "#6CEE2B",
-            "label": "Construction sites",
-            "value": 6
-          },
-          {
-            "color": "#28BD28",
-            "label": "Green urban areas / Parks",
-            "value": 7
-          },
-          {
-            "color": "#36E270",
-            "label": "Sports and leisure facilities",
-            "value": 8
-          },
-          {
-            "color": "#11D493",
-            "label": "Agricultural areas",
-            "value": 9
-          },
-          {
-            "color": "#42D7D7",
-            "label": "Forests",
-            "value": 10
-          },
-          {
-            "color": "#1D8FC9",
-            "label": "Shrubland / Transitional woodland",
-            "value": 11
-          },
-          {
-            "color": "#2B6CEE",
-            "label": "Water bodies",
-            "value": 13
-          },
-          {
-            "color": "#2828BD",
-            "label": "Sea and coastal waters",
-            "value": 14
-          },
-          {
-            "color": "#7036E2",
-            "label": "Wetlands / Marshes",
-            "value": 15
-          },
-          {
-            "color": "#9311D4",
-            "label": "Bare land / Sand / Dunes",
-            "value": 16
-          },
-          {
-            "color": "#D742D7",
-            "label": "Port logistics areas (yards, storage)",
-            "value": 17
-          },
-          {
-            "color": "#C91D8F",
-            "label": "Container terminals",
-            "value": 18
-          },
-          {
-            "color": "#EE2B6C",
-            "label": "Shipyards / Maritime industrial zones",
-            "value": 19
-          }
-        ]
+        "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "EO4PORTS",
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Flood",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1842,7 +1849,849 @@
       }
     },
     {
-      "name": "Oslo Tropomi",
+      "name": "Flood Probability",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:persistence",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Probabilistic flood occurrence layer derived from hydrological modelling of river discharge and historical flood events. It supports risk-based urban planning and flood exposure assessment.",
+        "attribution": {
+          "text": "EFAS / Copernicus EMS",
+          "url": "https://european-flood.emergency.copernicus.eu/react/"
+        },
+        "categories": [
+          {
+            "color": "#FCFDB4",
+            "label": "2-year / Medium Probability",
+            "value": 0
+          },
+          {
+            "color": "#FFFF00",
+            "label": "2-year / High Probability",
+            "value": 0
+          },
+          {
+            "color": "#FF7373",
+            "label": "5-year / Low Probability",
+            "value": 0
+          },
+          {
+            "color": "#FF4343",
+            "label": "5-year / Medium Probability",
+            "value": 0
+          },
+          {
+            "color": "#E60000",
+            "label": "5-year / High Probability",
+            "value": 0
+          },
+          {
+            "color": "#E175FF",
+            "label": "20 year / Low Probability",
+            "value": 0
+          },
+          {
+            "color": "#D437FF",
+            "label": "20 year / Medium Probability",
+            "value": 0
+          },
+          {
+            "color": "#A800D6",
+            "label": "20-year / High Probability",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Flood",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Rapid Flood Mapping",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:RapidFloodMapping",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Near real-time flood extent mapping derived from satellite imagery during flood events using rapid classification methods. It supports operational response and emergency management in urban flood events.",
+        "attribution": {
+          "text": "EFAS / Copernicus EMS ",
+          "url": "https://european-flood.emergency.copernicus.eu/react/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Flood",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:RapidFloodMapping&styles=default&width=150&height=23"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false,
+      "exclusivitySets": []
+    },
+    {
+      "name": "Wildfire Frequency",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://maps.effis.emergency.copernicus.eu/gwis",
+          "format": "wms",
+          "zIndex": 43,
+          "layers": "mcd64a1.fire_frequency",
+          "opacity": 0.8,
+          "parameters": {
+            "STYLES": ""
+          }
+        }
+      ],
+      "meta": {
+        "description": "Fire occurrence frequency derived from MODIS burn scar detections (MCD64A1) aggregated over time. It supports risk assessment and identification of areas repeatedly affected by fires, especially near urban–wildland interfaces.",
+        "attribution": {
+          "text": "Copernicus EMS / GWIS (MODIS MCD64A1)",
+          "url": "https://gwis.jrc.ec.europa.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Fire",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://maps.effis.emergency.copernicus.eu/gwis?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&LAYER=mcd64a1.fire_frequency"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Landslide Susceptibility",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:LandSlide",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Spatial probability model of landslide occurrence derived from terrain, geology, land cover, and environmental predictors. It supports the identification of unstable slopes to avoid risky development in vulnerable areas.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Landslide",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Population Density",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/WorldPop/population_europe_cog.tif",
+          "format": "cog",
+          "zIndex": 30,
+          "opacity": 0.8
+        }
+      ],
+      "meta": {
+        "description": "High-resolution population distribution from WorldPop modelling, combining census data and satellite-derived settlement information. It supports identification of population concentration and urban pressure zones.",
+        "attribution": {
+          "text": "WorldPop",
+          "url": "https://www.worldpop.org/"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 3000,
+            "steps": 64,
+            "name": "viridis",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Population Exposure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://neo.gsfc.nasa.gov/palettes/sedac_pop.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Air Quality Exposure",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/dlr_aggregated_risk_index/2025/10/01/ARI_2025-10/ARI_2025-10.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "level": 0
+        }
+      ],
+      "statistics": [],
+      "meta": {
+        "description": "Combined index of air pollution and population exposure derived from Copernicus atmospheric models and demographic datasets. It supports assessment of health risk distribution in urban environments.",
+        "attribution": {
+          "text": "ESA Project - AlpAirEO CCN",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/dlr_aggregated_risk_index?.language=en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Population Exposure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Flood Exposure",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:gfm_affected_population",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Population exposure to flood scenarios derived by overlaying hydrological flood models with gridded population data. It supports estimation of human impact under flood scenarios.",
+        "attribution": {
+          "text": "EFAS / Copernicus EMS",
+          "url": "https://stage.efas.eu/react/map"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Population Exposure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "name": "Roads",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L1_motorway.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "stroke-color": [
+                "match",
+                [
+                  "get",
+                  "highway"
+                ],
+                "motorway",
+                "#d52020",
+                "trunk",
+                "#ea902a",
+                "primary",
+                "#e2dc12",
+                "secondary",
+                "#6e974e",
+                "#3b82f6"
+              ],
+              "stroke-width": 2,
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round",
+              "stroke-outline-color": "#ffffff",
+              "stroke-outline-width": 1
+            }
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L1_trunk.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 51,
+          "style": [
+            {
+              "stroke-color": [
+                "match",
+                [
+                  "get",
+                  "highway"
+                ],
+                "motorway",
+                "#d52020",
+                "trunk",
+                "#ea902a",
+                "primary",
+                "#e2dc12",
+                "secondary",
+                "#6e974e",
+                "#3b82f6"
+              ],
+              "stroke-width": 2,
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round",
+              "stroke-outline-color": "#ffffff",
+              "stroke-outline-width": 1
+            }
+          ],
+          "minZoom": 3
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L1_primary.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "stroke-color": [
+                "match",
+                [
+                  "get",
+                  "highway"
+                ],
+                "motorway",
+                "#d52020",
+                "trunk",
+                "#ea902a",
+                "primary",
+                "#e2dc12",
+                "secondary",
+                "#6e974e",
+                "#3b82f6"
+              ],
+              "stroke-width": 2,
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round",
+              "stroke-outline-color": "#ffffff",
+              "stroke-outline-width": 1
+            }
+          ],
+          "minZoom": 5
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L2_secondary.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "stroke-color": [
+                "match",
+                [
+                  "get",
+                  "highway"
+                ],
+                "motorway",
+                "#d52020",
+                "trunk",
+                "#ea902a",
+                "primary",
+                "#e2dc12",
+                "secondary",
+                "#6e974e",
+                "#3b82f6"
+              ],
+              "stroke-width": 2,
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round",
+              "stroke-outline-color": "#ffffff",
+              "stroke-outline-width": 1
+            }
+          ],
+          "minZoom": 6
+        }
+      ],
+      "meta": {
+        "description": "Generalised European road network derived from OpenStreetMap data. It supports urban accessibility analysis and connectivity assessment between settlements and regions.",
+        "attribution": {
+          "text": "OpenStreetMap ",
+          "url": "https://www.openstreetmap.org/#map=11/47.1412/15.9381"
+        },
+        "categories": [
+          {
+            "color": "#D52020",
+            "label": "Motorway",
+            "value": 0
+          },
+          {
+            "color": "#EA902A",
+            "label": "Trunk",
+            "value": 0
+          },
+          {
+            "color": "#E2DC12",
+            "label": "Primary",
+            "value": 0
+          },
+          {
+            "color": "#6E974E",
+            "label": "Secondary",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Critical Infrastructure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Important Buildings",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/infra_europe.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "circle-radius": 5,
+              "circle-fill-color": [
+                "match",
+                [
+                  "get",
+                  "type"
+                ],
+                "hospital",
+                "#d23232",
+                "ambulance_station",
+                "#fdbaba",
+                "school",
+                "#fc03cf",
+                "university",
+                "#f5b2ec",
+                "police",
+                "#18219a",
+                "fire_station",
+                "#e98b07",
+                "#3b82f6"
+              ],
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": 1
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Selected infrastructure features extracted from OpenStreetMap and generalised for regional-scale mapping of key urban structures. It supports identification of functional urban nodes, critical infrastructure distribution, useful for emergency planning and urban management..",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/#map=11/47.1412/15.9381"
+        },
+        "categories": [
+          {
+            "color": "#D23232",
+            "label": "Hospitals",
+            "value": 0
+          },
+          {
+            "color": "#FDBABA",
+            "label": "Ambulance Stations",
+            "value": 0
+          },
+          {
+            "color": "#FC03CF",
+            "label": "Schools",
+            "value": 0
+          },
+          {
+            "color": "#F5B2EC",
+            "label": "Universities",
+            "value": 0
+          },
+          {
+            "color": "#18219A",
+            "label": "Police Stations",
+            "value": 0
+          },
+          {
+            "color": "#E98B07",
+            "label": "Fire Stations",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Critical Infrastructure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Heat Metrics 2025",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/heat/cities_heat_2025.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 20,
+          "style": [
+            {
+              "fill-color": "#fc1c03"
+            }
+          ],
+          "opacity": 0.4
+        }
+      ],
+      "statistics": [],
+      "meta": {
+        "description": "City-level heat indicators derived by combining Sentinel-3 land surface temperature and ERA5 reanalysis air temperature. Metrics include anomalies, heatwave duration, and extreme heat events. \n",
+        "attribution": {
+          "text": "Copernicus Climate Data Store / ECMWF ERA5 + Sentinel-3"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Heat",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Topsoil Organic Carbon (2020-22)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/europe_aggr-orgc_00-020_mean_100_202003-202210-natura.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.soc_0-5cm_mean_europe_2020-2022.natura_2000.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "minZoom": 8
+        }
+      ],
+      "meta": {
+        "description": "Topsoil organic carbon content (0–20 cm) derived from spatial modelling of soil observations and environmental predictors calibrated with reference datasets. It identifyies areas with healthy or degraded soils, important for land conservation and urban expansion planning.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Urban Greening",
+        "subinterfaceGroup": "Ecosystem Capacity",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "name": "Drought Warning",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "cdiad",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Drought conditions derived from the European Drought Observatory using hydrological and meteorological indicators. It supports monitoring of water stress affecting urban and agricultural systems.",
+        "attribution": {
+          "text": "Copernicus Emergency Service",
+          "url": "https://drought.emergency.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Drought",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=cdinx&FORMAT=image/png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "name": "Soil Moisture Anomaly",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:soilMoistureAnomaly",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Deviation of soil moisture from long-term averages derived from hydrological modelling and data assimilation systems. It helps detect abnormal dry or wet conditions affecting agriculture and urban green spaces.",
+        "attribution": {
+          "text": "EFAS / Copernicus EMS",
+          "url": "https://european-flood.emergency.copernicus.eu/react/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Drought",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:soilMoistureAnomaly&styles=default&width=80&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "name": "NO2 at Surface (Copy)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
+          "format": "wms",
+          "zIndex": 20,
+          "layers": "composition_europe_no2_analysis_surface",
+          "opacity": 0.7,
+          "parameters": {
+            "token": "public"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Surface nitrogen dioxide concentration derived from CAMS atmospheric composition modelling combining satellite observations and chemical transport models. It supports identification of traffic-related pollution hotspots in urban areas.",
+        "attribution": {
+          "text": "ECMWF / CAMS",
+          "url": "https://ads.atmosphere.copernicus.eu/datasets"
+        },
+        "categories": [],
+        "colormaps": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Oslo: Air Quality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_no2_analysis_surface&styles=sh_Reds_surface_concentration&width=350&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "name": "Measured NO2",
       "isActive": false,
       "data": [
         {
@@ -21288,7 +22137,7 @@
       },
       "layout": {
         "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "CITYSATAIR",
+        "subinterfaceGroup": "Oslo: Air Quality",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -21306,10 +22155,11 @@
           }
         }
       },
-      "timeframe": "Days"
+      "timeframe": "Days",
+      "isBaseLayer": false
     },
     {
-      "name": "Oslo Downscaled",
+      "name": "Downscaled NO2",
       "isActive": false,
       "data": [
         {
@@ -40755,7 +41605,7 @@
       },
       "layout": {
         "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "CITYSATAIR",
+        "subinterfaceGroup": "Oslo: Air Quality",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -40777,369 +41627,332 @@
       "timeframe": "Days"
     },
     {
-      "name": "PM 2.5",
+      "name": "True-Colour Satellite Imagery",
       "isActive": false,
       "data": [
         {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
+          "url": "https://tiles.maps.eox.at/wms",
           "format": "wms",
-          "zIndex": 20,
-          "opacity": 0.6,
-          "layers": "composition_pm2p5",
-          "useTimeParameter": true,
+          "zIndex": 23,
+          "layers": "s2cloudless-2025_3857",
           "parameters": {
-            "token": "public"
+            "STYLES": ""
           }
         }
       ],
       "meta": {
-        "description": "Fine particulate matter concentration derived from Copernicus Atmosphere Monitoring Service reanalysis and atmospheric chemistry models. It supports assessment of urban air pollution exposure and associated health risks.",
+        "description": "A true-colour view of the land surface supports visual reconnaissance of candidate wind and solar sites. Sentinel-2 cloudless mosaic for 2025 from EOX, a near-cloud-free composite of Copernicus Sentinel-2 imagery.",
         "attribution": {
-          "text": "ECMWF/CAMS",
-          "url": "https://ads.atmosphere.copernicus.eu/datasets"
-        },
-        "categories": [],
-        "colormaps": []
-      },
-      "layout": {
-        "interfaceGroup": "Air Quality",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_pm2p5&styles=sh_all_pm2p5_defra_daqi&width=350&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "name": "NO2 at Surface",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
-          "format": "wms",
-          "zIndex": 20,
-          "opacity": 0.7,
-          "layers": "composition_europe_no2_analysis_surface",
-          "useTimeParameter": true,
-          "parameters": {
-            "token": "public"
-          }
-        }
-      ],
-      "meta": {
-        "description": "Surface nitrogen dioxide concentration derived from CAMS atmospheric composition modelling combining satellite observations and chemical transport models. It supports identification of traffic-related pollution hotspots in urban areas.",
-        "attribution": {
-          "text": "ECMWF / CAMS",
-          "url": "https://ads.atmosphere.copernicus.eu/datasets"
-        },
-        "categories": [],
-        "colormaps": []
-      },
-      "layout": {
-        "interfaceGroup": "Air Quality",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_no2_analysis_surface&styles=sh_Reds_surface_concentration&width=350&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "name": "O3 at Surface",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
-          "format": "wms",
-          "zIndex": 20,
-          "opacity": 0.7,
-          "layers": "composition_europe_o3_analysis_surface",
-          "useTimeParameter": true,
-          "parameters": {
-            "token": "public"
-          }
-        }
-      ],
-      "meta": {
-        "description": "Surface ozone concentration estimated from atmospheric chemistry modelling within the CAMS system. It supports evaluation of photochemical pollution dynamics in urban atmospheres.",
-        "attribution": {
-          "text": "ECMWF / CAMS",
-          "url": "https://ads.atmosphere.copernicus.eu/datasets"
-        },
-        "categories": [],
-        "colormaps": []
-      },
-      "layout": {
-        "interfaceGroup": "Air Quality",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_o3_analysis_surface&styles=sh_Oranges_surface_concentration&width=350&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "name": "Dust AOD",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
-          "format": "wms",
-          "zIndex": 20,
-          "opacity": 0.6,
-          "layers": "composition_duaod550",
-          "useTimeParameter": true,
-          "parameters": {
-            "token": "public"
-          }
-        }
-      ],
-      "meta": {
-        "description": "Aerosol optical depth at 550 nm derived from CAMS atmospheric aerosol modelling representing dust load in the atmosphere. It supports analysis of episodic dust events affecting urban air quality.",
-        "attribution": {
-          "text": "ECMWF / CAMS",
-          "url": "https://ads.atmosphere.copernicus.eu/datasets"
-        },
-        "categories": [],
-        "colormaps": []
-      },
-      "layout": {
-        "interfaceGroup": "Air Quality",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_duaod550&styles=sh_all_aod&width=350&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "name": "Rome UHI",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/WorldPoP/UHI_Rome_2023.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Urban heat islands for 2023 computed using the algorithm developed for GTIF UK",
-        "attribution": {
-          "text": "GTIF Green Meridian",
-          "url": "https://algorithm-catalogue.apex.esa.int/apps/UHI_per_pixel"
-        },
-        "categories": [],
-        "min": -20,
-        "max": 20,
-        "colormaps": [
-          {
-            "min": -20,
-            "max": 20,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Urban Heat Islands",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false
-    },
-    {
-      "name": "Parma UHI",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/WorldPoP/UHI_Parma_2023.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Urban heat islands for 2023 computed using the algorithm developed for GTIF UK",
-        "attribution": {
-          "text": "GTIF Green Meridian",
-          "url": "https://algorithm-catalogue.apex.esa.int/apps/UHI_per_pixel"
-        },
-        "categories": [],
-        "min": -20,
-        "max": 20,
-        "colormaps": [
-          {
-            "min": -20,
-            "max": 20,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Urban Heat Islands",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false
-    },
-    {
-      "name": "Brussels UHI",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/WorldPoP/UHI_Brussels_2024.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Urban heat islands for 2024 computed using the algorithm developed for GTIF UK",
-        "attribution": {
-          "text": "GTIF Green Meridian",
-          "url": "https://algorithm-catalogue.apex.esa.int/apps/UHI_per_pixel"
-        },
-        "categories": [],
-        "min": -20,
-        "max": 20,
-        "colormaps": [
-          {
-            "min": -20,
-            "max": 20,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Urban Heat Islands",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false
-    },
-    {
-      "name": "Protection levels",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:FloodProtectionLevels",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Flood defence capacity expressed as return periods for which protection systems are designed. It supports assessment of urban flood preparedness and infrastructure resilience.",
-        "attribution": {
-          "text": "EFAS / Copernicus EMS",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
+          "text": "Sentinel-2 cloudless 2025 by EOX / Copernicus Sentinel data",
+          "url": "https://s2maps.eu"
         },
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Flood",
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Parma: Mapping Urban Risks",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
         },
         "infoPanel": {
           "legend": {
-            "type": "image",
-            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:FloodProtectionLevels&styles=default&width=57&height=80"
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                10.26,
+                44.76,
+                10.41,
+                44.84
+              ]
+            },
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "name": "Land Cover",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
+        }
+      ],
+      "meta": {
+        "description": "A pan-European spatially consistent and seamless, detailed land cover inventory for the 2021 reference year, for each pixel showing the dominant land cover among the 11 basic land cover classes.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en/products/clc-backbone/clc-backbone-2021"
+        },
+        "categories": [
+          {
+            "color": "#ff0000",
+            "label": "Sealed",
+            "value": 1
+          },
+          {
+            "color": "#228b22",
+            "label": "Woody needle leaved trees",
+            "value": 2
+          },
+          {
+            "color": "#80ff00",
+            "label": "Woody Broadleaved deciduous trees",
+            "value": 3
+          },
+          {
+            "color": "#00ff08",
+            "label": "Woody Broadleaved evergreen trees",
+            "value": 4
+          },
+          {
+            "color": "#804000",
+            "label": "Low-growing woody plants",
+            "value": 5
+          },
+          {
+            "color": "#ccf24d",
+            "label": "Permanent herbaceous",
+            "value": 6
+          },
+          {
+            "color": "#ffff80",
+            "label": "Periodically herbaceous",
+            "value": 7
+          },
+          {
+            "color": "#ff80ff",
+            "label": "Lichens and mosses",
+            "value": 8
+          },
+          {
+            "color": "#bfbfbf",
+            "label": "Non and sparsely vegetated",
+            "value": 9
+          },
+          {
+            "color": "#0080ff",
+            "label": "Water",
+            "value": 10
+          },
+          {
+            "color": "#00ffff",
+            "label": "Snow and ice",
+            "value": 11
+          },
+          {
+            "color": "#e6e6e6",
+            "label": "Outside area",
+            "value": 12
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Parma: Mapping Urban Risks",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "name": "Land Use",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Land_Use_Raster1402",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Land_Use_vector52160",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "High-resolution land use and land cover map for European functional urban areas, providing detailed classification of urban and peri-urban zones for the 2018 reference year.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas, European Environment Agency (EEA)",
+          "url": "https://land.copernicus.eu/en/products/urban-atlas/urban-atlas-2018"
+        },
+        "categories": [
+          {
+            "color": "#800000",
+            "label": "Continuous Urban fabric (S.L. > 80%)",
+            "value": 11100
+          },
+          {
+            "color": "#bf0000",
+            "label": "Discontinuous Dense Urban Fabric (S.L.: 50% - 80%)",
+            "value": 11210
+          },
+          {
+            "color": "#ff4040",
+            "label": "Discontinuous Medium Density Urban Fabric (S.L.: 30% - 50%)",
+            "value": 11220
+          },
+          {
+            "color": "#ff8080",
+            "label": "Discontinuous Low Density Urban Fabric (S.L.: 10% - 30%)",
+            "value": 11230
+          },
+          {
+            "color": "#ffbfbf",
+            "label": "Discontinuous very low density urban fabric (S.L. < 10%)",
+            "value": 11240
+          },
+          {
+            "color": "#cc6666",
+            "label": "Isolated Structures",
+            "value": 11300
+          },
+          {
+            "color": "#cc4df2",
+            "label": "Industrial, commercial, public, military and private units",
+            "value": 12100
+          },
+          {
+            "color": "#959595",
+            "label": "Fast transit roads and associated land",
+            "value": 12210
+          },
+          {
+            "color": "#b3b3b3",
+            "label": "Other roads and associated land",
+            "value": 12220
+          },
+          {
+            "color": "#595959",
+            "label": "Railways and associated land",
+            "value": 12230
+          },
+          {
+            "color": "#e6cccc",
+            "label": "Port areas",
+            "value": 12300
+          },
+          {
+            "color": "#e6cce6",
+            "label": "Airports",
+            "value": 12400
+          },
+          {
+            "color": "#734d50",
+            "label": "Mineral extraction and dump sites",
+            "value": 13100
+          },
+          {
+            "color": "#b9a56e",
+            "label": "Construction sites",
+            "value": 13300
+          },
+          {
+            "color": "#874545",
+            "label": "Land without current use",
+            "value": 13400
+          },
+          {
+            "color": "#8cdc00",
+            "label": "Green urban areas",
+            "value": 14100
+          },
+          {
+            "color": "#afd2a5",
+            "label": "Sports and leisure facilities",
+            "value": 14200
+          },
+          {
+            "color": "#ffffa8",
+            "label": "Arable land (annual crops)",
+            "value": 21000
+          },
+          {
+            "color": "#f2a64d",
+            "label": "Arable land (annual crops)",
+            "value": 21000
+          },
+          {
+            "color": "#e6e64d",
+            "label": "Pastures",
+            "value": 23000
+          },
+          {
+            "color": "#ffe64d",
+            "label": "Complex and mixed cultivation patterns",
+            "value": 24000
+          },
+          {
+            "color": "#f2cc80",
+            "label": "Orchards",
+            "value": 25000
+          },
+          {
+            "color": "#008c00",
+            "label": "Forests",
+            "value": 31000
+          },
+          {
+            "color": "#ccf24d",
+            "label": "Herbaceous vegetation associations",
+            "value": 32000
+          },
+          {
+            "color": "#ccffcc",
+            "label": "Herbaceous vegetation associations",
+            "value": 32000
+          },
+          {
+            "color": "#a6a6ff",
+            "label": "Wetlands",
+            "value": 40000
+          },
+          {
+            "color": "#80f2e6",
+            "label": "Water",
+            "value": 50000
+          }
+        ],
+        "units": "Categorical classe"
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Parma: Mapping Urban Risks",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -41149,7 +41962,62 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "name": "Extent of Buildings",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_2015",
+          "timestamps": [
+            1420066800
+          ]
+        },
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_2019",
+          "timestamps": [
+            1546297200
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Shows the extent of human settlements worldwide for the years 2015 and 2019",
+        "attribution": {
+          "text": "DLR World Settlement Footprint",
+          "url": "https://www.dlr.de/en/eoc/research-transfer/projects-missions/world-settlement-footprint-wsf-r"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Parma: Mapping Urban Risks",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Years",
+      "isBaseLayer": false
     },
     {
       "name": "Flood Hazard",
@@ -41164,227 +42032,15 @@
         }
       ],
       "meta": {
-        "description": "Flood scenarios generated from hydrological and hydraulic models within EFAS and Copernicus EMS. It supports identification of areas exposed to potential inundation under different climate scenarios.",
-        "attribution": {
-          "text": "EFAS / Copernicus EMS",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Flood",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Flood Probability",
-      "isActive": false,
-      "meta": {
-        "description": "Probabilistic flood occurrence layer derived from hydrological modelling of river discharge and historical flood events. It supports risk-based urban planning and flood exposure assessment.",
-        "attribution": {
-          "text": "EFAS / Copernicus EMS",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
-        },
-        "categories": [
-          {
-            "color": "#FCFDB4",
-            "label": "2-year / Medium Probability",
-            "value": 0
-          },
-          {
-            "color": "#FFFF00",
-            "label": "2-year / High Probability",
-            "value": 0
-          },
-          {
-            "color": "#FF7373",
-            "label": "5-year / Low Probability",
-            "value": 0
-          },
-          {
-            "color": "#FF4343",
-            "label": "5-year / Medium Probability",
-            "value": 0
-          },
-          {
-            "color": "#E60000",
-            "label": "5-year / High Probability",
-            "value": 0
-          },
-          {
-            "color": "#E175FF",
-            "label": "20 year / Low Probability",
-            "value": 0
-          },
-          {
-            "color": "#D437FF",
-            "label": "20 year / Medium Probability",
-            "value": 0
-          },
-          {
-            "color": "#A800D6",
-            "label": "20-year / High Probability",
-            "value": 0
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Flood",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:persistence",
-          "useTimeParameter": true
-        }
-      ]
-    },
-    {
-      "name": "Rapid Flood Mapping",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:RapidFloodMapping",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Near real-time flood extent mapping derived from satellite imagery during flood events using rapid classification methods. It supports operational response and emergency management in urban flood events.",
-        "attribution": {
-          "text": "EFAS / Copernicus EMS ",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Flood",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:RapidFloodMapping&styles=default&width=150&height=23"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false,
-      "exclusivitySets": []
-    },
-    {
-      "name": "Wildfire Frequency",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://maps.effis.emergency.copernicus.eu/gwis",
-          "format": "wms",
-          "zIndex": 43,
-          "layers": "mcd64a1.fire_frequency",
-          "opacity": 0.8,
-          "parameters": {
-            "STYLES": ""
-          }
-        }
-      ],
-      "meta": {
-        "description": "Fire occurrence frequency derived from MODIS burn scar detections (MCD64A1) aggregated over time. It supports risk assessment and identification of areas repeatedly affected by fires, especially near urban–wildland interfaces.",
-        "attribution": {
-          "text": "Copernicus EMS / GWIS (MODIS MCD64A1)",
-          "url": "https://gwis.jrc.ec.europa.eu/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Fire",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://maps.effis.emergency.copernicus.eu/gwis?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&LAYER=mcd64a1.fire_frequency"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "Landslide Susceptibility",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:LandSlide",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Spatial probability model of landslide occurrence derived from terrain, geology, land cover, and environmental predictors. It supports the identification of unstable slopes to avoid risky development in vulnerable areas.",
+        "description": "Flood scenarios generated from hydrological and hydraulic models within EFAS and Copernicus EMS. It supports identification of areas exposed to potential inundation under different climate scenarios.\n\n",
         "attribution": {
           "text": "Data attribution not specified"
         },
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Landslide",
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Parma: Mapping Urban Risks",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -41401,289 +42057,88 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "isBaseLayer": false
     },
     {
-      "name": "Population Density",
+      "name": "Important Buildings",
       "isActive": false,
       "data": [
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/WorldPop/population_europe_cog.tif",
-          "format": "cog",
-          "zIndex": 30,
-          "opacity": 0.8
-        }
-      ],
-      "meta": {
-        "description": "High-resolution population distribution from WorldPop modelling, combining census data and satellite-derived settlement information. It supports identification of population concentration and urban pressure zones.",
-        "attribution": {
-          "text": "WorldPop",
-          "url": "https://www.worldpop.org/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 3000,
-            "steps": 64,
-            "name": "viridis",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Population Exposure",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://neo.gsfc.nasa.gov/palettes/sedac_pop.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true
-          }
-        }
-      }
-    },
-    {
-      "name": "Air Quality Exposure",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/dlr_aggregated_risk_index/2025/10/01/ARI_2025-10/ARI_2025-10.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 0
-        }
-      ],
-      "statistics": [],
-      "meta": {
-        "description": "Combined index of air pollution and population exposure derived from Copernicus atmospheric models and demographic datasets. It supports assessment of health risk distribution in urban environments.",
-        "attribution": {
-          "text": "ESA Project - AlpAirEO CCN",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/dlr_aggregated_risk_index?.language=en"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Population Exposure",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true
-          }
-        }
-      }
-    },
-    {
-      "name": "Flood Exposure",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:gfm_affected_population",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Population exposure to flood scenarios derived by overlaying hydrological flood models with gridded population data. It supports estimation of human impact under flood scenarios.",
-        "attribution": {
-          "text": "EFAS / Copernicus EMS",
-          "url": "https://stage.efas.eu/react/map"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Population Exposure",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "name": "Roads",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L1_motorway.fgb",
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/infra_europe.fgb",
           "format": "flatgeobuf",
           "zIndex": 50,
           "style": [
             {
-              "stroke-color": [
+              "circle-radius": 5,
+              "circle-fill-color": [
                 "match",
                 [
                   "get",
-                  "highway"
+                  "type"
                 ],
-                "motorway",
-                "#d52020",
-                "trunk",
-                "#ea902a",
-                "primary",
-                "#e2dc12",
-                "secondary",
-                "#6e974e",
+                "hospital",
+                "#d23232",
+                "ambulance_station",
+                "#fdbaba",
+                "school",
+                "#fc03cf",
+                "university",
+                "#f5b2ec",
+                "police",
+                "#18219a",
+                "fire_station",
+                "#e98b07",
                 "#3b82f6"
               ],
-              "stroke-width": 2,
-              "stroke-linecap": "round",
-              "stroke-linejoin": "round",
-              "stroke-outline-color": "#ffffff",
-              "stroke-outline-width": 1
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": 1
             }
           ]
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L1_trunk.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 51,
-          "style": [
-            {
-              "stroke-color": [
-                "match",
-                [
-                  "get",
-                  "highway"
-                ],
-                "motorway",
-                "#d52020",
-                "trunk",
-                "#ea902a",
-                "primary",
-                "#e2dc12",
-                "secondary",
-                "#6e974e",
-                "#3b82f6"
-              ],
-              "stroke-width": 2,
-              "stroke-linecap": "round",
-              "stroke-linejoin": "round",
-              "stroke-outline-color": "#ffffff",
-              "stroke-outline-width": 1
-            }
-          ],
-          "minZoom": 3
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L1_primary.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "stroke-color": [
-                "match",
-                [
-                  "get",
-                  "highway"
-                ],
-                "motorway",
-                "#d52020",
-                "trunk",
-                "#ea902a",
-                "primary",
-                "#e2dc12",
-                "secondary",
-                "#6e974e",
-                "#3b82f6"
-              ],
-              "stroke-width": 2,
-              "stroke-linecap": "round",
-              "stroke-linejoin": "round",
-              "stroke-outline-color": "#ffffff",
-              "stroke-outline-width": 1
-            }
-          ],
-          "minZoom": 5
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L2_secondary.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "stroke-color": [
-                "match",
-                [
-                  "get",
-                  "highway"
-                ],
-                "motorway",
-                "#d52020",
-                "trunk",
-                "#ea902a",
-                "primary",
-                "#e2dc12",
-                "secondary",
-                "#6e974e",
-                "#3b82f6"
-              ],
-              "stroke-width": 2,
-              "stroke-linecap": "round",
-              "stroke-linejoin": "round",
-              "stroke-outline-color": "#ffffff",
-              "stroke-outline-width": 1
-            }
-          ],
-          "minZoom": 6
         }
       ],
       "meta": {
-        "description": "Generalised European road network derived from OpenStreetMap data. It supports urban accessibility analysis and connectivity assessment between settlements and regions.",
+        "description": "Selected infrastructure features extracted from OpenStreetMap and generalised for regional-scale mapping of key urban structures. It supports identification of functional urban nodes, critical infrastructure distribution, useful for emergency planning and urban management..",
         "attribution": {
-          "text": "OpenStreetMap ",
+          "text": "OpenStreetMap",
           "url": "https://www.openstreetmap.org/#map=11/47.1412/15.9381"
         },
         "categories": [
           {
-            "color": "#D52020",
-            "label": "Motorway",
+            "color": "#D23232",
+            "label": "Hospitals",
             "value": 0
           },
           {
-            "color": "#EA902A",
-            "label": "Trunk",
+            "color": "#FDBABA",
+            "label": "Ambulance Stations",
             "value": 0
           },
           {
-            "color": "#E2DC12",
-            "label": "Primary",
+            "color": "#FC03CF",
+            "label": "Schools",
             "value": 0
           },
           {
-            "color": "#6E974E",
-            "label": "Secondary",
+            "color": "#F5B2EC",
+            "label": "Universities",
+            "value": 0
+          },
+          {
+            "color": "#18219A",
+            "label": "Police Stations",
+            "value": 0
+          },
+          {
+            "color": "#E98B07",
+            "label": "Fire Stations",
             "value": 0
           }
         ]
       },
       "layout": {
-        "interfaceGroup": "Critical Infrastructure",
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Parma: Mapping Urban Risks",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -41779,7 +42234,8 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Critical Infrastructure",
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Vienna: Heat mapping",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -41799,18 +42255,27 @@
       }
     },
     {
-      "name": "Heat Metrics 2025",
+      "name": "UHI",
       "isActive": false,
       "meta": {
-        "description": "City-level heat indicators derived by combining Sentinel-3 land surface temperature and ERA5 reanalysis air temperature. Metrics include anomalies, heatwave duration, and extreme heat events. \n",
+        "description": "",
         "attribution": {
-          "text": "Copernicus Climate Data Store / ECMWF ERA5 + Sentinel-3"
+          "text": ""
         },
-        "categories": []
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
       },
       "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Heat",
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Parma: Mapping Urban Risks",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -41830,163 +42295,11 @@
       },
       "data": [
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/heat/cities_heat_2025.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 20,
-          "opacity": 0.4,
-          "style": [
-            {
-              "fill-color": "#fc1c03"
-            }
-          ]
-        }
-      ],
-      "statistics": []
-    },
-    {
-      "name": "Topsoil Organic Carbon (2020-22)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/europe_aggr-orgc_00-020_mean_100_202003-202210-natura.tif",
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/uhi/UHI_Parma_2023.tif",
           "format": "cog",
           "zIndex": 50
         }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.soc_0-5cm_mean_europe_2020-2022.natura_2000.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "minZoom": 8
-        }
-      ],
-      "meta": {
-        "description": "Topsoil organic carbon content (0–20 cm) derived from spatial modelling of soil observations and environmental predictors calibrated with reference datasets. It identifyies areas with healthy or degraded soils, important for land conservation and urban expansion planning.",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1800,
-            "steps": 50,
-            "name": "copper",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Urban Greening",
-        "subinterfaceGroup": "Ecosystem Capacity",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false
-    },
-    {
-      "name": "Drought Warning",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "cdiad",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Drought conditions derived from the European Drought Observatory using hydrological and meteorological indicators. It supports monitoring of water stress affecting urban and agricultural systems.",
-        "attribution": {
-          "text": "Copernicus Emergency Service",
-          "url": "https://drought.emergency.copernicus.eu/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Drought",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=cdinx&FORMAT=image/png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false
-    },
-    {
-      "name": "Soil Moisture Anomaly",
-      "isActive": false,
-      "meta": {
-        "description": "Deviation of soil moisture from long-term averages derived from hydrological modelling and data assimilation systems. It helps detect abnormal dry or wet conditions affecting agriculture and urban green spaces.",
-        "attribution": {
-          "text": "EFAS / Copernicus EMS",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Drought",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:soilMoistureAnomaly&styles=default&width=80&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:soilMoistureAnomaly",
-          "useTimeParameter": true
-        }
-      ],
-      "timeframe": "Days"
+      ]
     }
   ]
 }
