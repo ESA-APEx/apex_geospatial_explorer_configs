@@ -40797,6 +40797,9 @@
           "url": "https://gtif-demo.eox.at/explore?indicator=HAUC1&x=1682304.11139&y=6105680.32568&z=7.21675"
         },
         "categories": [],
+        "units": "°C",
+        "min": 0,
+        "max": 40,
         "colormaps": [
           {
             "min": 0,
@@ -40805,10 +40808,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "°C",
-        "min": 0,
-        "max": 40
+        ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators & Use Cases",
@@ -40943,6 +40943,55 @@
         }
       },
       "isBaseLayer": false
+    },
+    {
+      "name": "Street Trees",
+      "isActive": false,
+      "meta": {
+        "description": "Presence of street trees, showing areas where there is most cooling.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas 2012",
+          "url": "https://land.copernicus.eu/local/urban-atlas"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban Greening",
+        "subinterfaceGroup": "Urban Vegetation Structure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=STL_Raster27733"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Raster27733",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Vector61679",
+          "useTimeParameter": true
+        }
+      ]
     },
     {
       "name": "Tree Cover Density",
@@ -41205,6 +41254,9 @@
           "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/FCM-GSV-100m/items/FCM-GSV-100m-2020?.asset=asset-product"
         },
         "categories": [],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 800,
         "colormaps": [
           {
             "min": 0,
@@ -41213,10 +41265,7 @@
             "name": "viridis",
             "reverse": false
           }
-        ],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 800
+        ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators & Use Cases",
@@ -42297,6 +42346,9 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000,
         "colormaps": [
           {
             "min": 0,
@@ -42305,10 +42357,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000
+        ]
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -43318,6 +43367,131 @@
           }
         }
       }
+    },
+    {
+      "name": "Land Surface Temperature",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "terrascope-s3-lst-s10-v1_lst",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Land surface temperature derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
+        "attribution": {
+          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
+          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
+        },
+        "categories": [],
+        "units": "Kelvin (K)",
+        "colormaps": [
+          {
+            "min": 250,
+            "max": 320,
+            "steps": 100,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Heat",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false,
+      "timeframe": "Days"
+    },
+    {
+      "name": "Growing Stock Volume (GSV)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2023/01/01/FCM-GSV-100m-2023/FCM_Europe_demo_2023_GSV.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2021/01/01/FCM-GSV-100m-2021/FCM_Europe_demo_2021_GSV.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2020/01/01/FCM-GSV-100m-2020/FCM_Europe_demo_2020_GSV.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577833200
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Forest biomass volume per hectare derived from a machine learning model combining Sentinel-1 radar, Sentinel-2 optical data, and auxiliary geospatial datasets. It quantifies surrounding forest resources and carbon storage.",
+        "attribution": {
+          "text": "© European Space Agency (ESA), Forest Classification Model (FCM) – Growing Stock Volume 2020",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/FCM-GSV-100m/items/FCM-GSV-100m-2020?.asset=asset-product"
+        },
+        "categories": [],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 800,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 800,
+            "steps": 50,
+            "name": "viridis",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Urban Greening",
+        "subinterfaceGroup": "Ecosystem Capacity",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Years",
+      "isBaseLayer": false
     }
   ]
 }
