@@ -10,7 +10,7 @@
       "primary-color": "#660000",
       "secondary-color": "#990033",
       "tertiary-color": "#990000",
-      "background-color": "#cc6666"
+      "background-color": "#ffffff"
     }
   },
   "interfaceGroups": [
@@ -926,6 +926,14 @@
     {
       "name": "Land Cover",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
+        }
+      ],
       "meta": {
         "description": "Pan-European land cover dataset produced by the Copernicus Land Monitoring Service. Each pixel represents the dominant land cover class for 2021. It supports urban analysis by enabling comparison of land structure, urbanisation intensity, and landscape composition across European regions.",
         "attribution": {
@@ -1021,20 +1029,31 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
-        }
-      ]
+      }
     },
     {
       "name": "Extent of Buildings",
       "isActive": false,
-      "timeframe": "Years",
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_2015",
+          "timestamps": [
+            1420066800
+          ]
+        },
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_2019",
+          "timestamps": [
+            1546297200
+          ]
+        }
+      ],
       "meta": {
         "description": "Global settlement footprints derived from satellite-based mapping of built-up areas for 2015 and 2019. Built-up detection is performed using multi-source Earth observation data to identify human settlements. It is used to quantify urban expansion, compare settlement growth over time across regions, and identify where urban growth is occurring.",
         "attribution": {
@@ -1070,30 +1089,20 @@
           }
         }
       },
+      "timeframe": "Years"
+    },
+    {
+      "name": "Evolution of Settlement 1985-2015",
+      "isActive": false,
       "data": [
         {
           "url": "https://geoservice.dlr.de/eoc/land/wms",
           "format": "wms",
           "zIndex": 50,
-          "layers": "WSF_2015",
-          "timestamps": [
-            1420066800
-          ]
-        },
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_2019",
-          "timestamps": [
-            1546297200
-          ]
+          "layers": "WSF_Evolution",
+          "useTimeParameter": true
         }
-      ]
-    },
-    {
-      "name": "Evolution 1985-2015",
-      "isActive": false,
+      ],
       "meta": {
         "description": "Historical reconstruction of the first year of urbanisation derived from long-term Landsat archives. Built-up areas are detected through temporal analysis of satellite imagery to identify land conversion to urban use. It supports long-term urban planning by showing how and when cities have expanded, useful for understanding historical growth patterns and guiding future development strategies.",
         "attribution": {
@@ -1284,16 +1293,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_Evolution",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "Urban Heat Islands",
@@ -1386,7 +1386,7 @@
               ]
             },
             "temporalControls": true,
-            "constraintSlider": false,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
@@ -1445,6 +1445,22 @@
     {
       "name": "Street Trees",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Raster27733",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Vector61679",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Presence of street trees, showing areas where there is most cooling.",
         "attribution": {
@@ -1480,23 +1496,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Raster27733",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Vector61679",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "Population Density",
@@ -1541,7 +1541,7 @@
               ]
             },
             "temporalControls": false,
-            "constraintSlider": false,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
@@ -1558,6 +1558,22 @@
     {
       "name": "Land Use",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Land_Use_Raster1402",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Land_Use_vector52160",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "High-resolution land use and land cover map for European functional urban areas, providing detailed classification of urban and peri-urban zones for the 2018 reference year.",
         "attribution": {
@@ -1729,28 +1745,24 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Land_Use_Raster1402",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Land_Use_vector52160",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "PM 2.5 from CAMS",
       "isActive": false,
-      "timeframe": "Days",
+      "data": [
+        {
+          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
+          "format": "wms",
+          "zIndex": 20,
+          "layers": "composition_pm2p5",
+          "opacity": 0.6,
+          "parameters": {
+            "token": "public"
+          },
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Fine particulate matter concentration derived from Copernicus Atmosphere Monitoring Service reanalysis and atmospheric chemistry models. It supports assessment of urban air pollution exposure and associated health risks.",
         "attribution": {
@@ -1787,24 +1799,24 @@
           }
         }
       },
+      "timeframe": "Days"
+    },
+    {
+      "name": "NO2 from CAMS",
+      "isActive": false,
       "data": [
         {
           "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
           "format": "wms",
           "zIndex": 20,
-          "layers": "composition_pm2p5",
-          "opacity": 0.6,
+          "layers": "composition_europe_no2_analysis_surface",
+          "opacity": 0.7,
           "parameters": {
             "token": "public"
           },
           "useTimeParameter": true
         }
-      ]
-    },
-    {
-      "name": "NO2 from CAMS",
-      "isActive": false,
-      "timeframe": "Days",
+      ],
       "meta": {
         "description": "Surface nitrogen dioxide concentration derived from CAMS atmospheric composition modelling combining satellite observations and chemical transport models. It supports identification of traffic-related pollution hotspots in urban areas.",
         "attribution": {
@@ -1841,19 +1853,7 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
-          "format": "wms",
-          "zIndex": 20,
-          "layers": "composition_europe_no2_analysis_surface",
-          "opacity": 0.7,
-          "parameters": {
-            "token": "public"
-          },
-          "useTimeParameter": true
-        }
-      ]
+      "timeframe": "Days"
     },
     {
       "name": "Measured NO2",
@@ -40794,32 +40794,7 @@
     {
       "name": "Land Surface Temperature",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2022/06/01/ECOSTRESS_MEAN_LST_2022/2022_LST_AT_merged_composite_mean_70m.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1655244000
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2023/06/01/ECOSTRESS_MEAN_LST_2023/2023_LST_AT_merged_composite_mean_70m.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1686780000
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2024/06/01/ECOSTRESS_MEAN_LST_2024/2024_LST_AT_merged_composite_mean_70m.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1718402400
-          ]
-        }
-      ],
+      "timeframe": "Years",
       "meta": {
         "description": "Land surface temperatures over Austria in the period June 1st and June 24th for 3 years (2022-24), as measured by the ECOSTRESS instrument mounted on the International Space Station.",
         "attribution": {
@@ -40867,8 +40842,32 @@
           }
         }
       },
-      "isBaseLayer": false,
-      "timeframe": "Years"
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2022/06/01/ECOSTRESS_MEAN_LST_2022/2022_LST_AT_merged_composite_mean_70m.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1655244000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2023/06/01/ECOSTRESS_MEAN_LST_2023/2023_LST_AT_merged_composite_mean_70m.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1686780000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ECOSTRESS_LST/2024/06/01/ECOSTRESS_MEAN_LST_2024/2024_LST_AT_merged_composite_mean_70m.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1718402400
+          ]
+        }
+      ]
     },
     {
       "name": "Rooftop Mapping",
@@ -41274,7 +41273,6 @@
     {
       "name": "Sentinel",
       "isActive": true,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tiles.maps.eox.at/wms",
@@ -41284,16 +41282,17 @@
           "useTimeParameter": true
         }
       ],
-      "exclusivitySets": [],
-      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
       "meta": {
-        "description": "",
+        "description": "Base layer: Sentinel",
         "attribution": {
           "text": "Sentinel-2 Cloudless by EOX",
           "url": "https://s2maps.eu"
         },
         "categories": []
-      }
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
     },
     {
       "name": "Open StreetMap",
@@ -42450,6 +42449,14 @@
     {
       "name": "Land Cover",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
+        }
+      ],
       "meta": {
         "description": "A pan-European spatially consistent and seamless, detailed land cover inventory for the 2021 reference year, for each pixel showing the dominant land cover among the 11 basic land cover classes.",
         "attribution": {
@@ -42545,19 +42552,27 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
-        }
-      ]
+      }
     },
     {
       "name": "Land Use",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Land_Use_Raster1402",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Land_Use_vector52160",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "High-resolution land use and land cover map for European functional urban areas, providing detailed classification of urban and peri-urban zones for the 2018 reference year.",
         "attribution": {
@@ -42729,28 +42744,31 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Land_Use_Raster1402",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Land_Use_vector52160",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "Extent of Buildings",
       "isActive": false,
-      "timeframe": "Years",
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_2015",
+          "timestamps": [
+            1420066800
+          ]
+        },
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_2019",
+          "timestamps": [
+            1546297200
+          ]
+        }
+      ],
       "meta": {
         "description": "Shows the extent of human settlements worldwide for the years 2015 and 2019",
         "attribution": {
@@ -42786,30 +42804,20 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_2015",
-          "timestamps": [
-            1420066800
-          ]
-        },
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_2019",
-          "timestamps": [
-            1546297200
-          ]
-        }
-      ]
+      "timeframe": "Years"
     },
     {
       "name": "Flood Hazard",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:Europe_combined_flood_scenarios",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Flood scenarios generated from hydrological and hydraulic models within EFAS and Copernicus EMS. It supports identification of areas exposed to potential inundation under different climate scenarios.",
         "attribution": {
@@ -42843,27 +42851,11 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:Europe_combined_flood_scenarios",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
-      "name": "UHI",
+      "name": "Urban Heat Island",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/uhi/UHI_Parma_2023.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
       "meta": {
         "description": "Urban Heat Island (UHI) intensity with respect to the local rural mean land surface temperature, for Summer 2023.",
         "attribution": {
@@ -42896,11 +42888,18 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false,
+            "constraintSlider": true,
             "blendControls": false
           }
         }
-      }
+      },
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/uhi/UHI_Parma_2023.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ]
     },
     {
       "name": "Important Buildings",
@@ -43099,6 +43098,40 @@
     {
       "name": "Important Buildings",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/infra_europe.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "circle-radius": 5,
+              "circle-fill-color": [
+                "match",
+                [
+                  "get",
+                  "type"
+                ],
+                "hospital",
+                "#d23232",
+                "ambulance_station",
+                "#fdbaba",
+                "school",
+                "#fc03cf",
+                "university",
+                "#f5b2ec",
+                "police",
+                "#18219a",
+                "fire_station",
+                "#e98b07",
+                "#3b82f6"
+              ],
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": 1
+            }
+          ]
+        }
+      ],
       "meta": {
         "description": "Selected infrastructure features extracted from OpenStreetMap and generalised for regional-scale mapping of key urban structures. It supports identification of functional urban nodes, critical infrastructure distribution, useful for emergency planning and urban management..",
         "attribution": {
@@ -43164,41 +43197,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/infra_europe.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "circle-radius": 5,
-              "circle-fill-color": [
-                "match",
-                [
-                  "get",
-                  "type"
-                ],
-                "hospital",
-                "#d23232",
-                "ambulance_station",
-                "#fdbaba",
-                "school",
-                "#fc03cf",
-                "university",
-                "#f5b2ec",
-                "police",
-                "#18219a",
-                "fire_station",
-                "#e98b07",
-                "#3b82f6"
-              ],
-              "circle-stroke-color": "#ffffff",
-              "circle-stroke-width": 1
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "name": "Air Quality (PM 2.5)",
@@ -43245,6 +43244,110 @@
         }
       },
       "timeframe": "Days"
+    },
+    {
+      "name": "Important Buildings",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/infra_europe.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "circle-radius": 5,
+              "circle-fill-color": [
+                "match",
+                [
+                  "get",
+                  "type"
+                ],
+                "hospital",
+                "#d23232",
+                "ambulance_station",
+                "#fdbaba",
+                "school",
+                "#fc03cf",
+                "university",
+                "#f5b2ec",
+                "police",
+                "#18219a",
+                "fire_station",
+                "#e98b07",
+                "#3b82f6"
+              ],
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": 1
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Selected infrastructure features extracted from OpenStreetMap and generalised for regional-scale mapping of key urban structures. It supports identification of functional urban nodes, critical infrastructure distribution, useful for emergency planning and urban management..",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/#map=11/47.1412/15.9381"
+        },
+        "categories": [
+          {
+            "color": "#D23232",
+            "label": "Hospitals",
+            "value": 0
+          },
+          {
+            "color": "#FDBABA",
+            "label": "Ambulance Stations",
+            "value": 0
+          },
+          {
+            "color": "#FC03CF",
+            "label": "Schools",
+            "value": 0
+          },
+          {
+            "color": "#F5B2EC",
+            "label": "Universities",
+            "value": 0
+          },
+          {
+            "color": "#18219A",
+            "label": "Police Stations",
+            "value": 0
+          },
+          {
+            "color": "#E98B07",
+            "label": "Fire Stations",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Oslo: Air Quality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                -8.77,
+                41.09,
+                -8.44,
+                41.26
+              ]
+            },
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
     }
   ]
 }
