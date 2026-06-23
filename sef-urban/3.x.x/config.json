@@ -43520,8 +43520,6 @@
           "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
-        "categories": [],
-        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -43530,15 +43528,13 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "Kelvin (K)"
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
         "subinterfaceGroup": "Heat",
         "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
         "infoPanel": {
           "legend": {
             "type": "swatch"
@@ -43550,16 +43546,12 @@
             "constraintSlider": true,
             "blendControls": false
           }
+        },
+        "layerCard": {
+          "toggleable": true
         }
       },
       "data": [
-        {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3a",
-          "useTimeParameter": true
-        },
         {
           "url": "https://wmts.terrascope.be/",
           "format": "wmts",
