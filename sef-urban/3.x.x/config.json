@@ -169,6 +169,24 @@
       "name": "NASA Earth Observations (NEO) WMS",
       "url": "https://neo.gsfc.nasa.gov/wms/wms?version=1.1.1",
       "format": "wms"
+    },
+    {
+      "id": "wms-service-1758879238525",
+      "name": "CLMS WMS Server",
+      "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1782213048190",
+      "name": "titiler-stacapi OGC WMS",
+      "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
+      "format": "wms"
+    },
+    {
+      "id": "wmts-service-1782213284629",
+      "name": "",
+      "url": "https://wmts.terrascope.be/?service=WMTS&request=GetCapabilities",
+      "format": "wmts"
     }
   ],
   "sources": [
@@ -40947,6 +40965,22 @@
     {
       "name": "Street Trees",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Raster27733",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "STL_Vector61679",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Presence of street trees, showing areas where there is most cooling.",
         "attribution": {
@@ -40975,23 +41009,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Raster27733",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Vector61679",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
       "name": "Tree Cover Density",
@@ -43369,19 +43387,11 @@
       }
     },
     {
-      "name": "Land Surface Temperature",
+      "name": "Land Surface Temperature (10 day composite)",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "terrascope-s3-lst-s10-v1_lst",
-          "useTimeParameter": true
-        }
-      ],
+      "timeframe": "Days",
       "meta": {
-        "description": "Land surface temperature derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
+        "description": "Land surface temperature (10 day composite) derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
         "attribution": {
           "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
@@ -43418,8 +43428,15 @@
           }
         }
       },
-      "isBaseLayer": false,
-      "timeframe": "Days"
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "terrascope-s3-lst-s10-v1_lst",
+          "useTimeParameter": true
+        }
+      ]
     },
     {
       "name": "Growing Stock Volume (GSV)",
@@ -43490,8 +43507,67 @@
           }
         }
       },
-      "timeframe": "Years",
-      "isBaseLayer": false
+      "isBaseLayer": false,
+      "timeframe": "Years"
+    },
+    {
+      "name": "Land Surface Temperature (Daily)",
+      "isActive": false,
+      "timeframe": "Days",
+      "meta": {
+        "description": "Land surface temperature derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
+        "attribution": {
+          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
+          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
+        },
+        "categories": [],
+        "units": "Kelvin (K)",
+        "colormaps": [
+          {
+            "min": 250,
+            "max": 320,
+            "steps": 100,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Heat",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3a",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://wmts.terrascope.be/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3b",
+          "useTimeParameter": true
+        }
+      ]
     }
   ]
 }
