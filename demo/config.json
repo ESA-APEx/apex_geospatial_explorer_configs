@@ -67,6 +67,327 @@
       "definition": "+proj=utm +zone=31 +datum=WGS84 +units=m +no_defs"
     }
   ],
+   "workflows": [
+    {
+      "serviceId": "eurac_pv_farm_detection",
+      "serviceProvider": "eurac",
+      "meta": {
+        "description": "PV farm detection workflow",
+        "attribution": {
+          "text": "Eurac Research",
+          "url": "https://www.eurac.edu/en/research/technology-transfer-and-innovation/eurac-innovations"
+        },
+        "categories": [
+          {
+            "color": "#FFDF22",
+            "label": "PV Detection",
+            "value": 1
+          }
+        ]
+      },
+      "serviceTitle": "Photovoltaic farms mapping"
+    },
+    {
+      "serviceId": "bais2",
+      "serviceProvider": "developmentseed",
+      "data": [
+        {
+          "format": "cog",
+          "zIndex": 100,
+          "convertToRGB": true,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Computes the BAIS2 burned area index from Sentinel-2 L2A red-edge bands and renders a color-mapped visualization. The index is sensitive to chlorophyll content in the red-edge region and is suitable for burned-area detection. Red for burn scars, magenta for active fires.",
+        "attribution": {
+          "text": ""
+        }
+      },
+      "serviceTitle": "BAIS2 - Burned Area Index for Sentinel-2"
+    },
+    {
+      "serviceId": "efast",
+      "serviceProvider": "dhi",
+      "data": [
+        {
+          "format": "cog",
+          "zIndex": 100,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0.050531,
+              "rMax": 0.25338,
+              "gMin": 0.0647754,
+              "gMax": 0.284733,
+              "bMin": 0.0553662,
+              "bMax": 0.292961
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        }
+      ],
+      "meta": {
+        "description": "EFAST",
+        "attribution": {
+          "text": ""
+        }
+      },
+      "serviceTitle": "Efficient Fusion Algorithm across SpatioTemporal scales (EFAST)"
+    },
+    {
+      "serviceId": "parcel_delineation",
+      "serviceProvider": "vito",
+      "meta": {
+        "description": "Parcel delineation workflow",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 5000,
+            "steps": 50,
+            "name": "viridis",
+            "reverse": false
+          }
+        ],
+        "min": 0,
+        "max": 5000
+      },
+      "serviceTitle": "Parcel Delineation based on ML using Sentinel-2"
+    },
+    {
+      "serviceId": "sentinel1_soil_moisture",
+      "serviceProvider": "vito",
+      "meta": {
+        "description": "Soil Moisture from Sentinel-1 GRD data.",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 2,
+            "steps": 50,
+            "name": "bathymetry",
+            "reverse": false
+          }
+        ],
+        "min": 0,
+        "max": 2
+      },
+      "serviceTitle": "Surface Soil Moisture from Sentinel‑1 using Change Detection"
+    },
+    {
+      "serviceId": "biopar",
+      "serviceProvider": "vito",
+      "meta": {
+        "description": "Biophysical parameters from Sentinel-2 data.",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 50,
+            "name": "summer",
+            "reverse": false
+          }
+        ],
+        "min": 0,
+        "max": 1
+      },
+      "serviceTitle": "Biophysical parameters calculation"
+    },
+    {
+      "serviceId": "UHI_per_pixel",
+      "serviceProvider": "compass_informatics",
+      "meta": {
+        "description": "The **urban heat island effect** is the phenomenon where cities become significantly warmer than surrounding rural areas because buildings, roads, and other urban surfaces absorb and retain heat while vegetation and natural cooling are reduced.\n\nThis **UHI Index** processes satellite-derived **Land Surface Temperature** data for the months of June and August  and **compares urban pixels with surrounding rural reference areas** using a configurable kernel size.",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -20,
+            "max": 25,
+            "steps": 50,
+            "name": "hot",
+            "reverse": true
+          }
+        ],
+        "min": -20,
+        "max": 25
+      },
+      "serviceTitle": "Urban Heat Island Intensity (JJA)"
+    },
+    {
+      "serviceId": "bap_composite",
+      "serviceProvider": "vito",
+      "data": [
+        {
+          "format": "cog",
+          "zIndex": 100,
+          "convertToRGB": true,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        }
+      },
+      "serviceTitle": "Best-Available-Pixel Composite based on Sentinel-2 data"
+    },
+    {
+      "serviceId": "max_ndvi_composite",
+      "serviceProvider": "vito",
+      "data": [
+        {
+          "format": "cog",
+          "zIndex": 100,
+          "convertToRGB": true,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        }
+      },
+      "serviceTitle": "Max NDVI Composite based on Sentinel-2 data"
+    },
+    {
+      "serviceId": "ppi",
+      "serviceProvider": "vito",
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 3,
+            "steps": 50,
+            "name": "viridis",
+            "reverse": false
+          }
+        ]
+      },
+      "serviceTitle": "Plant Phenology Index (PPI)"
+    }
+  ],
   "services": [
     {
       "id": "wms-service-1762349674426",
