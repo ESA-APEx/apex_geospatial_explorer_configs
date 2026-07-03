@@ -31,6 +31,7 @@
     ],
     "projection": "EPSG:3857"
   },
+  "workflows": [],
   "services": [
     {
       "id": "wms-service-1763653155285",
@@ -42294,51 +42295,6 @@
       }
     },
     {
-      "name": "Heat Metrics 2025",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/heat/cities_heat_2025.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 20,
-          "style": [
-            {
-              "fill-color": "#fc1c03"
-            }
-          ],
-          "opacity": 0.4
-        }
-      ],
-      "statistics": [],
-      "meta": {
-        "description": "City-level heat indicators derived by combining Sentinel-3 land surface temperature and ERA5 reanalysis air temperature. Metrics include anomalies, heatwave duration, and extreme heat events. \n",
-        "attribution": {
-          "text": "Copernicus Climate Data Store / ECMWF ERA5 + Sentinel-3"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Heat",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
       "name": "Topsoil Organic Carbon (2020-22)",
       "isActive": false,
       "data": [
@@ -43387,9 +43343,69 @@
       }
     },
     {
+      "name": "Land Surface Temperature (Daily)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3b",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Land surface temperature derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
+        "attribution": {
+          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
+          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
+        },
+        "categories": [],
+        "units": "Kelvin (K)",
+        "colormaps": [
+          {
+            "min": 250,
+            "max": 320,
+            "steps": 100,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Heat",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
       "name": "Land Surface Temperature (10 day composite)",
       "isActive": false,
-      "timeframe": "Days",
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "terrascope-s3-lst-s10-v1_lst",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Land surface temperature (10 day composite) derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
         "attribution": {
@@ -43428,15 +43444,7 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "terrascope-s3-lst-s10-v1_lst",
-          "useTimeParameter": true
-        }
-      ]
+      "timeframe": "Days"
     },
     {
       "name": "Growing Stock Volume (GSV)",
@@ -43509,57 +43517,6 @@
       },
       "isBaseLayer": false,
       "timeframe": "Years"
-    },
-    {
-      "name": "Land Surface Temperature (Daily)",
-      "isActive": false,
-      "timeframe": "Days",
-      "meta": {
-        "description": "Land surface temperature derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
-        "attribution": {
-          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
-          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
-        },
-        "colormaps": [
-          {
-            "min": 250,
-            "max": 320,
-            "steps": 100,
-            "name": "jet",
-            "reverse": false
-          }
-        ],
-        "units": "Kelvin (K)"
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Heat",
-        "contentLocation": "infoPanel",
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        },
-        "layerCard": {
-          "toggleable": true
-        }
-      },
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3b",
-          "useTimeParameter": true
-        }
-      ]
     }
   ]
 }
