@@ -386,6 +386,32 @@
         ]
       },
       "serviceTitle": "Plant Phenology Index (PPI)"
+    },
+    {
+        "serviceId": "solar_pv_detection",
+        "serviceProvider": "ucl",
+        "meta": {
+            "description": "Solar PV workflow",
+            "attribution": {
+                "text": "University College London",
+                "url": "https://www.ucl.ac.uk/"
+            },
+            "categories": [
+                {
+                    "label": "Solar PV Detection",
+                    "color": "#FFDF22",
+                    "value": 1
+                }
+            ]
+        },
+        "data": {
+            "format": "cog",
+            "zIndex": 50,
+            "convertToRGB": false,
+            "bands": [
+                1
+            ]
+        }
     }
   ],
   "services": [
