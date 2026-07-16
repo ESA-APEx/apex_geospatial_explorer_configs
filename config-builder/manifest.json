@@ -13,5 +13,9 @@
       "description": "EO4 Ports example as a full screen story map.",
       "file": "story-config-1.json"
     }
-  ]
+  ],
+  "recommended": {
+    "basemaps": { "file": "../resources/recommended-config.json" },
+    "services": { "file": "../resources/recommended-config.json" }
+  }
 }
