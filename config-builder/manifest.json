@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "examples": [
+    {
+      "id": "comprehensive-demo",
+      "name": "Comprehensive demo",
+      "description": "A production-ready configuration showcasing many layer types and features.",
+      "file": "demo-config-1.json"
+    },
+    {
+      "id": "storymap-demo",
+      "name": "Full screen storymap demo",
+      "description": "EO4 Ports example as a full screen story map.",
+      "file": "story-config-1.json"
+    }
+  ]
+}
