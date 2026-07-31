@@ -1,5 +1,5 @@
 {
-  "version": "1.78.0",
+  "version": "4.0.0",
   "exportPrefix": "sef-energy-explorer",
   "layout": {
     "navigation": {
@@ -33,11 +33,14 @@
     ],
     "projection": "EPSG:3857"
   },
+  "workflows": [],
+  "stories": [],
   "services": [
     {
       "id": "stac-prr",
-      "name": "Project Results Repository",
-      "url": "https://eoresults.esa.int/stac"
+      "name": "ESA Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
     },
     {
       "id": "wms-service-1750143419665",
@@ -112,7 +115,7 @@
       "format": "wms"
     },
     {
-      "id": "wms-service-1780391601812",
+      "id": "wms-service-1783435830827",
       "name": "EUMETSAT",
       "url": "https://view.eumetsat.int/geoserver/wms?token=public",
       "format": "wms"
@@ -120,6 +123,7 @@
   ],
   "sources": [
     {
+      "id": "open-streetmap",
       "name": "Open StreetMap",
       "isActive": true,
       "data": [
@@ -141,6 +145,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "stadia-alidade-smooth-dark",
       "name": "Stadia Alidade Smooth Dark",
       "isActive": false,
       "data": [
@@ -162,6 +167,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "nasa-blue-marble",
       "name": "NASA Blue Marble",
       "isActive": false,
       "data": [
@@ -184,6 +190,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "sentinel-2-cloudless-eox",
       "name": "Sentinel-2 Cloudless (EOX)",
       "isActive": false,
       "data": [
@@ -209,6 +216,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "terrain-eox",
       "name": "Terrain (EOX)",
       "isActive": false,
       "data": [
@@ -234,6 +242,439 @@
       "exclusivitySets": []
     },
     {
+      "id": "ireland",
+      "name": "Ireland",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_01/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_02/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 47,
+          "timestamps": [
+            1548975600
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_03/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1551394800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_04/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1554069600
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_05/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1556661600
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_06/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1559340000
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_07/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1561932000
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_08/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1564610400
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_09/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1567288800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_10/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1569880800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_11/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1572562800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_12/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1575154800
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Monthly Solar Power Output time series (Jan–Dec): W/m² hypothetically produced by photovoltaic panels for the current month displayed in the map.",
+        "attribution": {
+          "text": "GTIF-UKIF",
+          "url": "https://gtif-ukif.github.io/gtif-ukif-client/"
+        },
+        "categories": [],
+        "units": "W/m²",
+        "min": 2,
+        "max": 175,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 183,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "subinterfaceGroup": "Monthly Solar Power Output time series",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Months"
+    },
+    {
+      "id": "france",
+      "name": "France",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_01/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_02/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 47,
+          "timestamps": [
+            1548975600
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_03/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1551394800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_04/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1554069600
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_05/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1556661600
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_06/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1559340000
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_07/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1561932000
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_08/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1564610400
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_09/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1567288800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_10/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1569880800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_11/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1572562800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_12/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1575154800
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Monthly Solar Power Output time series (Jan–Dec): W/m² hypothetically produced by photovoltaic panels for the current month displayed in the map.",
+        "attribution": {
+          "text": "GTIF-UKIF",
+          "url": "https://gtif-ukif.github.io/gtif-ukif-client/"
+        },
+        "categories": [],
+        "units": "W/m²",
+        "min": 2,
+        "max": 183,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 183,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "subinterfaceGroup": "Monthly Solar Power Output time series",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Months"
+    },
+    {
+      "id": "unitedkingdom",
+      "name": "United Kingdom",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_01/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_02/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 47,
+          "timestamps": [
+            1548975600
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_03/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1551394800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_04/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1554069600
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_05/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1556661600
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_06/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1559340000
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_07/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1561932000
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_08/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1564610400
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_09/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1567288800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_10/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1569880800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_11/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1572562800
+          ]
+        },
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_12/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1575154800
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Monthly Solar Power Output time series (Jan–Dec): W/m² hypothetically produced by photovoltaic panels for the current month displayed in the map.",
+        "attribution": {
+          "text": "GTIF-UKIF",
+          "url": "https://gtif-ukif.github.io/gtif-ukif-client/"
+        },
+        "categories": [],
+        "units": "W/m²",
+        "min": 2,
+        "max": 175,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 183,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "subinterfaceGroup": "Monthly Solar Power Output time series",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Months"
+    },
+    {
+      "id": "annual-solar-power-potential-austria",
       "name": "Annual Solar Power Potential (Austria)",
       "isActive": false,
       "data": [
@@ -422,6 +863,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "pv-mapping-puglia",
       "name": "PV Mapping (Puglia)",
       "isActive": false,
       "data": [
@@ -447,7 +889,8 @@
         "categories": [
           {
             "color": "#E8198B",
-            "label": "Detected PV"
+            "label": "Detected PV",
+            "value": 0
           }
         ]
       },
@@ -473,6 +916,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "cloud-cover",
       "name": "Cloud Cover",
       "isActive": false,
       "data": [
@@ -514,6 +958,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "atmospheric-aerosols",
       "name": "Atmospheric Aerosols",
       "isActive": false,
       "data": [
@@ -555,6 +1000,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "surface-solar-radiation",
       "name": "Surface Solar Radiation",
       "isActive": false,
       "data": [
@@ -596,6 +1042,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "wind-power-density-100m-austria",
       "name": "Wind Power Density (100m, Austria)",
       "isActive": false,
       "data": [
@@ -784,6 +1231,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "surface-wind-speed",
       "name": "Surface Wind Speed",
       "isActive": false,
       "data": [
@@ -825,6 +1273,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "offshore-wind-speed",
       "name": "Offshore Wind Speed",
       "isActive": false,
       "data": [
@@ -867,6 +1316,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "turbine-wind-wakes-north-sea",
       "name": "Turbine Wind Wakes (North Sea)",
       "isActive": false,
       "data": [
@@ -907,6 +1357,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "significant-wave-height",
       "name": "Significant Wave Height",
       "isActive": false,
       "data": [
@@ -948,6 +1399,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "wave-energy-period",
       "name": "Wave Energy Period",
       "isActive": false,
       "data": [
@@ -990,6 +1442,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "sea-floor-depth",
       "name": "Sea-Floor Depth",
       "isActive": false,
       "data": [
@@ -1031,6 +1484,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "coastline",
       "name": "Coastline",
       "isActive": false,
       "data": [
@@ -1072,6 +1526,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "surface-water-and-wetness",
       "name": "Surface Water and Wetness",
       "isActive": false,
       "data": [
@@ -1126,6 +1581,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "observed-precipitation",
       "name": "Observed Precipitation",
       "isActive": false,
       "data": [
@@ -1171,6 +1627,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "snow-water-equivalent",
       "name": "Snow Water Equivalent",
       "isActive": false,
       "data": [
@@ -1192,6 +1649,7 @@
       },
       "layout": {
         "interfaceGroup": "Hydropower",
+        "subinterfaceGroup": "Water Availability",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1204,16 +1662,15 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
+            "temporalControls": true
           }
-        },
-        "subinterfaceGroup": "Water Availability"
+        }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "timeframe": "Days"
     },
     {
+      "id": "snow-anomaly-10-day",
       "name": "Snow Anomaly (10-day)",
       "isActive": false,
       "data": [
@@ -1259,8 +1716,18 @@
       "exclusivitySets": []
     },
     {
+      "id": "soil-moisture",
       "name": "Soil Moisture",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:soilMoisture",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Soil moisture governs how much rainfall becomes river runoff, shaping the water available for hydropower generation and signalling drought stress on supply. Soil moisture from Copernicus EMS / EFAS, indicating how saturated the ground is across Europe.",
         "attribution": {
@@ -1271,6 +1738,7 @@
       },
       "layout": {
         "interfaceGroup": "Hydropower",
+        "subinterfaceGroup": "Water Availability",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1287,20 +1755,11 @@
             "constraintSlider": false,
             "blendControls": false
           }
-        },
-        "subinterfaceGroup": "Water Availability"
-      },
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:soilMoisture",
-          "useTimeParameter": true
         }
-      ]
+      }
     },
     {
+      "id": "soil-moisture-anomaly",
       "name": "Soil Moisture Anomaly",
       "isActive": false,
       "data": [
@@ -1346,6 +1805,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "major-rivers",
       "name": "Major Rivers",
       "isActive": false,
       "data": [
@@ -1357,6 +1817,13 @@
           "parameters": {
             "STYLES": ""
           }
+        },
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&REQUEST=GetMap",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:ec_ldd",
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -1391,6 +1858,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "catchments",
       "name": "Catchments",
       "isActive": false,
       "data": [
@@ -1436,6 +1904,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "hv-transmission-grid-europe",
       "name": "HV Transmission Grid (Europe)",
       "isActive": false,
       "data": [
@@ -1505,7 +1974,7 @@
                   380
                 ],
                 1.3,
-                1.0
+                1
               ]
             }
           ]
@@ -1520,23 +1989,28 @@
         "categories": [
           {
             "color": "#FFC000",
-            "label": "220 kV"
+            "label": "220 kV",
+            "value": 0
           },
           {
             "color": "#ED7D31",
-            "label": "300 kV"
+            "label": "300 kV",
+            "value": 0
           },
           {
             "color": "#C00000",
-            "label": "400 kV"
+            "label": "400 kV",
+            "value": 0
           },
           {
             "color": "#7030A0",
-            "label": "≥500 kV"
+            "label": "≥500 kV",
+            "value": 0
           },
           {
             "color": "#0070C0",
-            "label": "HVDC"
+            "label": "HVDC",
+            "value": 0
           }
         ]
       },
@@ -1562,18 +2036,20 @@
       "exclusivitySets": []
     },
     {
+      "id": "wildfire-frequency",
       "name": "Wildfire Frequency",
       "isActive": false,
       "data": [
         {
-          "url": "https://maps.effis.emergency.copernicus.eu/gwis",
+          "url": "https://maps.effis.emergency.copernicus.eu/gwis?",
           "format": "wms",
           "zIndex": 43,
           "layers": "mcd64a1.fire_frequency",
           "opacity": 0.8,
           "parameters": {
             "STYLES": ""
-          }
+          },
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -1607,8 +2083,18 @@
       "exclusivitySets": []
     },
     {
+      "id": "active-fire-monitoring",
       "name": "Active Fire Monitoring",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://view.eumetsat.int/geoserver/wms?token=public",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "msg_fes:fire",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Active fires near overhead lines and substations can trip circuits and force pre-emptive shutdowns, making real-time fire detection valuable for grid operators. Active fire detection from EUMETSAT, derived from the Meteosat SEVIRI 3.9 µm channel, flagging pixels with potential or active fire across Europe and Africa.",
         "attribution": {
@@ -1637,20 +2123,21 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://view.eumetsat.int/geoserver/wms?token=public",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "msg_fes:fire",
-          "useTimeParameter": true
-        }
-      ],
       "exclusivitySets": []
     },
     {
+      "id": "flood-hazard-map",
       "name": "Flood Hazard Map",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:Europe_combined_flood_scenarios",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Flooding is a direct physical threat to power plants, substations and transmission infrastructure sited near rivers. Combined river-flood hazard scenarios from Copernicus EMS / EFAS, mapping the areas across Europe exposed to flooding at low, medium and high severity (return-period) levels.",
         "attribution": {
@@ -1677,20 +2164,21 @@
             "blendControls": false
           }
         }
-      },
+      }
+    },
+    {
+      "id": "flood-probability",
+      "name": "Flood Probability",
+      "isActive": false,
       "data": [
         {
           "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
           "format": "wms",
           "zIndex": 50,
-          "layers": "mapserver:Europe_combined_flood_scenarios",
+          "layers": "mapserver:persistence",
           "useTimeParameter": true
         }
-      ]
-    },
-    {
-      "name": "Flood Probability",
-      "isActive": false,
+      ],
       "meta": {
         "description": "How likely a damaging flood is at a given location shapes the risk to energy assets and the need for operational mitigation. Flood Probability shows the likelihood that river flow will exceed a given flood severity level, based on Copernicus EMS / EFAS ensemble forecasts, where flood severity reflects return periods (2-year frequent, 5-year moderate, 20-year severe).",
         "attribution": {
@@ -1700,35 +2188,43 @@
         "categories": [
           {
             "color": "#FCFDB4",
-            "label": "2-year / Medium Probability"
+            "label": "2-year / Medium Probability",
+            "value": 0
           },
           {
             "color": "#FFFF00",
-            "label": "2-year / High Probability"
+            "label": "2-year / High Probability",
+            "value": 0
           },
           {
             "color": "#FF7373",
-            "label": "5-year / Low Probability"
+            "label": "5-year / Low Probability",
+            "value": 0
           },
           {
             "color": "#FF4343",
-            "label": "5-year / Medium Probability"
+            "label": "5-year / Medium Probability",
+            "value": 0
           },
           {
             "color": "#E60000",
-            "label": "5-year / High Probability"
+            "label": "5-year / High Probability",
+            "value": 0
           },
           {
             "color": "#E175FF",
-            "label": "20 year / Low Probability"
+            "label": "20 year / Low Probability",
+            "value": 0
           },
           {
             "color": "#D437FF",
-            "label": "20 year / Medium Probability"
+            "label": "20 year / Medium Probability",
+            "value": 0
           },
           {
             "color": "#A800D6",
-            "label": "20-year / High Probability"
+            "label": "20-year / High Probability",
+            "value": 0
           }
         ]
       },
@@ -1750,18 +2246,10 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:persistence",
-          "useTimeParameter": true
-        }
-      ]
+      }
     },
     {
+      "id": "rapid-flood-mapping",
       "name": "Rapid Flood Mapping",
       "isActive": false,
       "data": [
@@ -1804,6 +2292,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "built-up-surface-density",
       "name": "Built-up Surface Density",
       "isActive": false,
       "data": [
@@ -1859,6 +2348,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "tropospheric-no2-sentinel-5p",
       "name": "Tropospheric NO2 (Sentinel-5P)",
       "isActive": false,
       "data": [
@@ -1871,6 +2361,11 @@
       ],
       "meta": {
         "description": "Nitrogen dioxide is produced by high-temperature combustion, so it traces fossil-fuel power plants, heavy industry, shipping lanes and road traffic. Tropospheric NO2 column from Copernicus Sentinel-5P TROPOMI, yearly mean processed by S5P-PAL, where higher values mark concentrated combustion activity such as coal-power clusters and industrial regions.",
+        "attribution": {
+          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
+          "url": "https://maps.s5p-pal.com/no2-tropospheric/"
+        },
+        "categories": [],
         "units": "µmol/m²",
         "colormaps": [
           {
@@ -1880,12 +2375,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "attribution": {
-          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
-          "url": "https://maps.s5p-pal.com/no2-tropospheric/"
-        },
-        "categories": []
+        ]
       },
       "layout": {
         "interfaceGroup": "Traditional Energy",
@@ -1909,6 +2399,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "methane-concentration-sentinel-5p",
       "name": "Methane Concentration (Sentinel-5P)",
       "isActive": false,
       "data": [
@@ -1916,11 +2407,59 @@
           "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/methane/s5p_ch4_year_2025_cog.tif",
           "format": "cog",
           "zIndex": 37,
+          "timestamps": [
+            1735686000
+          ],
           "opacity": 0.85
+        },
+        {
+          "url": "https://s5p-pal-nl-l3-tms.obs.eu-nl.otc.t-systems.com/l3tms/s5p/ch4/001/month/2026/s5p-l3tms-ch4-001-month-20250601-20250703/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1748728800
+          ]
+        },
+        {
+          "url": "https://s5p-pal-nl-l3-tms.obs.eu-nl.otc.t-systems.com/l3tms/s5p/ch4/001/month/2026/s5p-l3tms-ch4-001-month-20250701-20250803/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1751320800
+          ]
+        },
+        {
+          "url": "https://s5p-pal-nl-l3-tms.obs.eu-nl.otc.t-systems.com/l3tms/s5p/ch4/001/month/2026/s5p-l3tms-ch4-001-month-20250801-20250903/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1753999200
+          ]
+        },
+        {
+          "url": "https://s5p-pal-nl-l3-tms.obs.eu-nl.otc.t-systems.com/l3tms/s5p/ch4/001/month/2026/s5p-l3tms-ch4-001-month-20250901-20251003/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 50,
+          "timestamps": [
+            1756677600
+          ]
+        },
+        {
+          "url": "https://s5p-pal-nl-l3-tms.obs.eu-nl.otc.t-systems.com/l3tms/s5p/ch4/001/month/2026/s5p-l3tms-ch4-001-month-20251001-20251103/{z}/{x}/{y}.png",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1790805600
+          ]
         }
       ],
       "meta": {
         "description": "Methane is the main component of natural gas, so mapping atmospheric methane reveals enhancements over oil and gas fields and other major emitters. Column-averaged dry-air methane (XCH4) from Copernicus Sentinel-5P TROPOMI, yearly mean processed by S5P-PAL, where higher values flag regions of elevated methane such as super-emitting oil and gas basins.",
+        "attribution": {
+          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
+          "url": "https://maps.s5p-pal.com/ch4/"
+        },
+        "categories": [],
         "units": "ppbv",
         "colormaps": [
           {
@@ -1930,12 +2469,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "attribution": {
-          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
-          "url": "https://maps.s5p-pal.com/ch4/"
-        },
-        "categories": []
+        ]
       },
       "layout": {
         "interfaceGroup": "Traditional Energy",
@@ -1950,26 +2484,27 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
+            "temporalControls": true
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "timeframe": "Months"
     },
     {
+      "id": "land-cover-corine-2018",
       "name": "Land Cover (CORINE 2018)",
       "isActive": false,
       "data": [
         {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer",
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer?service=WMS&request=GetCapabilities&version=1.3.0",
           "format": "wms",
           "zIndex": 40,
-          "layers": "0,1",
+          "layers": "1",
           "parameters": {
             "STYLES": ""
-          }
+          },
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -2058,6 +2593,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "terrain-elevation",
       "name": "Terrain Elevation",
       "isActive": false,
       "data": [
@@ -2065,8 +2601,8 @@
           "url": "https://tiles.maps.eox.at/wms",
           "format": "wms",
           "zIndex": 21,
-          "opacity": 1,
           "layers": "terrain_3857",
+          "opacity": 1,
           "parameters": {
             "STYLES": ""
           }
@@ -2102,6 +2638,7 @@
       "exclusivitySets": []
     },
     {
+      "id": "true-colour-satellite-imagery",
       "name": "True-Colour Satellite Imagery",
       "isActive": false,
       "data": [
