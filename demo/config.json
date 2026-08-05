@@ -569,27 +569,6 @@
       "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png"
     },
     {
-      "name": "Open StreetMap",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-          "format": "xyz",
-          "zIndex": 10
-        }
-      ],
-      "meta": {
-        "description": "Base layer: Open StreetMap",
-        "attribution": {
-          "text": "OpenStreetMap",
-          "url": "https://www.openstreetmap.org/copyright"
-        },
-        "categories": []
-      },
-      "isBaseLayer": true,
-      "exclusivitySets": []
-    },
-    {
       "name": "Stadia Alidade Smooth Light",
       "isActive": true,
       "data": [
