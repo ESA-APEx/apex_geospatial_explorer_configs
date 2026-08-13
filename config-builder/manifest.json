@@ -20,7 +20,7 @@
      "catalogues": [
       {
         "name": "clms-wmts",
-        "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/config-builder/clms-wmts.json",
+        "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/config-builder/clms-public-layers.json",
         "label": "Copernicus Land Monitoring Service WMTS"
       }
     ]
