@@ -1,0 +1,2912 @@
+{
+  "meta": {
+    "title": "Copernicus Land Monitoring Service (CDSE)",
+    "description": "Publicly usable CLMS map/data access discovered from CDSE. WMTS and WMS are verified through GetCapabilities; COG is only considered public when an anonymous range-readable HTTP(S) URL is verified.",
+    "provider": "Copernicus Land Monitoring Service",
+    "source": "https://documentation.dataspace.copernicus.eu/Data/ComplementaryData/CLMS.html",
+    "servicesUrl": "https://land.copernicus.eu/cdse/",
+    "generated": "2026-08-13T13:17:55.333268+00:00",
+    "counts": {
+      "candidateCount": 115,
+      "publiclyAvailableCount": 42,
+      "wmtsCount": 42,
+      "wmsCount": 0,
+      "publicCogCount": 0,
+      "cataloguedCogOnlyCount": 73
+    }
+  },
+  "datasets": [
+    {
+      "datasetIdentifier": "ba_global_300m_daily_v3",
+      "title": "ba global 300m daily v3",
+      "abstract": "Burned area",
+      "theme": "Burnt area",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/ba_global_300m_daily_v3/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ba_global_300m_daily_v3/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "day_of_burn",
+          "title": "Burn Scar",
+          "abstract": "Burned area"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ba_global_300m_daily_v3/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "ba_global_300m_daily_v4",
+      "title": "ba global 300m daily v4",
+      "theme": "Burnt area",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/ba_global_300m_daily_v4/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ba_global_300m_daily_v4/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "BF",
+          "title": "BF",
+          "abstract": "Fraction of pixel surface affected by fire at the day of the burn detection"
+        },
+        {
+          "identifier": "CP",
+          "title": "CP",
+          "abstract": "Probability that the burn detection corresponds to an actual burn"
+        },
+        {
+          "identifier": "DOB",
+          "title": "DOB",
+          "abstract": "Day of burn in year (1-366), no burn (0) or flag (<0)"
+        },
+        {
+          "identifier": "LFP",
+          "title": "LFP",
+          "abstract": "Probability that the fractional burned area is above 0.1"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ba_global_300m_daily_v4/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "ba_global_300m_monthly_v3",
+      "title": "ba global 300m monthly v3",
+      "abstract": "Burned area",
+      "theme": "Burnt area",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v3/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v3/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "day_of_burn",
+          "title": "Burn Scar",
+          "abstract": "Burned area"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v3/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "ba_global_300m_monthly_v4",
+      "title": "ba global 300m monthly v4",
+      "theme": "Burnt area",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v4/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v4/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "BF",
+          "title": "BF",
+          "abstract": "Fraction of pixel surface affected by fire at the day of the burn detection"
+        },
+        {
+          "identifier": "CP",
+          "title": "CP",
+          "abstract": "Probability that the burn detection corresponds to an actual burn"
+        },
+        {
+          "identifier": "DOB",
+          "title": "DOB",
+          "abstract": "Day of burn in year (1-366), no burn (0) or flag (<0)"
+        },
+        {
+          "identifier": "LFP",
+          "title": "LFP",
+          "abstract": "Probability that the fractional burned area is above 0.1"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v4/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "eta_global_300m_10daily_v1",
+      "title": "eta global 300m 10daily v1",
+      "theme": "Evapotranspiration",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/eta_global_300m_10daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/eta_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "A_ET_ENSEMBLE",
+          "title": "ET-ENSEMBLE",
+          "abstract": "ET from Ensemble (mm/day)"
+        },
+        {
+          "identifier": "B_E_ENSEMBLE",
+          "title": "E-ENSEMBLE",
+          "abstract": "Soil evaporation from Ensemble (mm/day)"
+        },
+        {
+          "identifier": "C_T_ENSEMBLE",
+          "title": "T-ENSEMBLE",
+          "abstract": "Canopy transpiration from ETLook (mm/day)"
+        },
+        {
+          "identifier": "D_ET_STD",
+          "title": "ET-STD",
+          "abstract": "ET standard deviation (mm/day)"
+        },
+        {
+          "identifier": "E_E_STD",
+          "title": "E-STD",
+          "abstract": "E standard deviation (mm/day)"
+        },
+        {
+          "identifier": "F_T_STD",
+          "title": "T-STD",
+          "abstract": "T standard deviation (mm/day)"
+        },
+        {
+          "identifier": "G_NOBS",
+          "title": "NOBS",
+          "abstract": "Cloud-free observations count"
+        },
+        {
+          "identifier": "H_GFD",
+          "title": "GFD",
+          "abstract": "Gap-filling distance (days)"
+        },
+        {
+          "identifier": "I_FLAG",
+          "title": "FLAG",
+          "abstract": "Quality flag"
+        },
+        {
+          "identifier": "J_ET_ETLOOK",
+          "title": "ET-ETLOOK",
+          "abstract": "ET from ETLook (mm/day)"
+        },
+        {
+          "identifier": "K_E_ETLOOK",
+          "title": "E-ETLOOK",
+          "abstract": "Soil evaporation from ETLook (mm/day)"
+        },
+        {
+          "identifier": "L_T_ETLOOK",
+          "title": "T-ETLOOK",
+          "abstract": "Canopy transpiration from Ensemble (mm/day)"
+        },
+        {
+          "identifier": "M_ET_TSEBPT",
+          "title": "ET-TSEBPT",
+          "abstract": "ET from TSEB-PT (mm/day)"
+        },
+        {
+          "identifier": "N_E_TSEBPT",
+          "title": "E-TSEBPT",
+          "abstract": "Soil evaporation from TSEB-PT (mm/day)"
+        },
+        {
+          "identifier": "O_T_TSEBPT",
+          "title": "T-TSEBPT",
+          "abstract": "Canopy transpiration from TSEB-PT (mm/day)"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/eta_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "hf_global_300m_daily_v1",
+      "title": "hf global 300m daily v1",
+      "theme": "Evapotranspiration",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/hf_global_300m_daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/hf_global_300m_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "H_TSEBPT",
+          "title": "H-TSEBPT",
+          "abstract": "Sensible heat flux (W/m²)"
+        },
+        {
+          "identifier": "LE_TSEBPT",
+          "title": "LE-TSEBPT",
+          "abstract": "Latent heat flux (W/m²)"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/hf_global_300m_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lc_global_100m_yearly_v3",
+      "title": "lc global 100m yearly v3",
+      "theme": "Land cover",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lc_global_100m_yearly_v3/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lc_global_100m_yearly_v3/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "A_DISCRETE_CLASSIFICATION",
+          "title": "Discrete Classification",
+          "abstract": "Main discrete land cover classification, according to UN-FAO LCCS"
+        },
+        {
+          "identifier": "B_FOREST_TYPE",
+          "title": "Forest type",
+          "abstract": "Type of forest for all pixels where forest cover fraction exceeds 1%"
+        },
+        {
+          "identifier": "C_PERMANENTWATER_COVER_FRACTION",
+          "title": "Fractional Cover: Permanent Water",
+          "abstract": "Percentage of 100m pixel that is covered by permanent water"
+        },
+        {
+          "identifier": "D_BUILTUP_COVER_FRACTION",
+          "title": "Fractional Cover: Urban / Built-up",
+          "abstract": "Percentage of 100m pixel that is covered by urban or built-up areas"
+        },
+        {
+          "identifier": "E_TREE_COVER_FRACTION",
+          "title": "Fractional Cover: Forest / Tree",
+          "abstract": "Percentage of 100m pixel that is covered by forests or trees"
+        },
+        {
+          "identifier": "F_CROPS_COVER_FRACTION",
+          "title": "Fractional Cover: Crops",
+          "abstract": "Percentage of 100m pixel that is covered by crops"
+        },
+        {
+          "identifier": "G_BARE_COVER_FRACTION",
+          "title": "Fractional Cover: Bare",
+          "abstract": "Percentage of 100m pixel that is covered by bare ground"
+        },
+        {
+          "identifier": "H_GRASS_COVER_FRACTION",
+          "title": "Fractional Cover: Grass",
+          "abstract": "Percentage of 100m pixel that is covered by grass"
+        },
+        {
+          "identifier": "I_SEASONALWATER_COVER_FRACTION",
+          "title": "Fractional Cover: Seasonal Water",
+          "abstract": "Percentage of 100m pixel that is covered by seasonal water"
+        },
+        {
+          "identifier": "J_SNOW_COVER_FRACTION",
+          "title": "Fractional Cover: Snow",
+          "abstract": "Percentage of 100m pixel that is covered by snow"
+        },
+        {
+          "identifier": "K_SHRUB_COVER_FRACTION",
+          "title": "Fractional Cover: Shrub",
+          "abstract": "Percentage of 100m pixel that is covered by shrubs"
+        },
+        {
+          "identifier": "L_MOSSLICHEN_COVER_FRACTION",
+          "title": "Fractional Cover: Moss / Lichen",
+          "abstract": "Percentage of 100m pixel that is covered by moss or lichen"
+        },
+        {
+          "identifier": "M_DISCRETE_CLASSIFICATION_PROBABILITY",
+          "title": "Discrete classification probability",
+          "abstract": "Probability (quality indicator) of the discrete classification"
+        },
+        {
+          "identifier": "N_CHANGE_CONFIDENCE",
+          "title": "Change Confidence Indicator",
+          "abstract": "Reliability of the change in the discrete class and hence implicitly also in the fractional covers"
+        },
+        {
+          "identifier": "O_DATA_DENSITY_INDICATOR",
+          "title": "Data Density Indicator",
+          "abstract": "Availability of input PROBA-V UTM data at 100m and 300m resolutions"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lc_global_100m_yearly_v3/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lcm_global_10m_yearly_v1",
+      "title": "lcm global 10m yearly v1",
+      "abstract": "Land Cover Map at 10m - Annual V1",
+      "theme": "Land cover",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lcm_global_10m_yearly_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lcm_global_10m_yearly_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "LCM10",
+          "title": "LCM-10",
+          "abstract": "Land Cover Map at 10m - Annual V1"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lcm_global_10m_yearly_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "tcd_pantropical_10m_yearly_v1",
+      "title": "tcd pantropical 10m yearly v1",
+      "abstract": "Tree Cover Density Map at 10m - Annual V1",
+      "theme": "Land cover",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/tcd_pantropical_10m_yearly_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/tcd_pantropical_10m_yearly_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "TCD10",
+          "title": "TCD-10",
+          "abstract": "Tree Cover Density Map at 10m - Annual V1"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/tcd_pantropical_10m_yearly_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_clcplus_lulucf-instance_europe_100m_yearly_v1",
+      "title": "clms clcplus lulucf instance europe 100m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 4
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_ua_building-height_europe_10m_3yearly_v1",
+      "title": "clms ua building height europe 10m 3yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 788
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_bare-soil-after_europe_10m_yearly_v1",
+      "title": "clms vlcc bare soil after europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_bare-soil-before_europe_10m_yearly_v1",
+      "title": "clms vlcc bare soil before europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_broadleaved-cover-density_europe_100m_yearly_v1",
+      "title": "clms vlcc broadleaved cover density europe 100m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 6314
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_coniferous-cover-density_europe_100m_yearly_v1",
+      "title": "clms vlcc coniferous cover density europe 100m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 6314
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_crop-types_europe_10m_yearly_v1",
+      "title": "clms vlcc crop types europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_cropping-seasons-types_europe_10m_yearly_v1",
+      "title": "clms vlcc cropping seasons types europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 5412
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_cropping-seasons_europe_10m_yearly_v1",
+      "title": "clms vlcc cropping seasons europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7215
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_dominant-leaf-type-change_europe_20m_3yearly_v1",
+      "title": "clms vlcc dominant leaf type change europe 20m 3yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 1804
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_dominant-leaf-type_europe_10m_yearly_v1",
+      "title": "clms vlcc dominant leaf type europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 6314
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_fallow-land-duration_europe_10m_yearly_v1",
+      "title": "clms vlcc fallow land duration europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 3608
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_fallow-land-presence_europe_10m_yearly_v1",
+      "title": "clms vlcc fallow land presence europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_forest-additional-support-layer_europe_10m_3yearly_v1",
+      "title": "clms vlcc forest additional support layer europe 10m 3yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 2706
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_forest-type_europe_100m_3yearly_v1",
+      "title": "clms vlcc forest type europe 100m 3yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 2706
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_forest-type_europe_10m_3yearly_v1",
+      "title": "clms vlcc forest type europe 10m 3yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 2706
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_grassland-change_europe_20m_3yearly_v1",
+      "title": "clms vlcc grassland change europe 20m 3yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 1804
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_grassland-mowing-dates_europe_10m_yearly_v1",
+      "title": "clms vlcc grassland mowing dates europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 28864
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_grassland-mowing-events_europe_10m_yearly_v1",
+      "title": "clms vlcc grassland mowing events europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_grassland_europe_100m_yearly_v1",
+      "title": "clms vlcc grassland europe 100m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7309
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_grassland_europe_10m_yearly_v1",
+      "title": "clms vlcc grassland europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7292
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_herbaceous-cover_europe_10m_yearly_v1",
+      "title": "clms vlcc herbaceous cover europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_main-crop-duration_europe_10m_yearly_v1",
+      "title": "clms vlcc main crop duration europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_main-crop-emergence_europe_10m_yearly_v1",
+      "title": "clms vlcc main crop emergence europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_main-crop-harvest_europe_10m_yearly_v1",
+      "title": "clms vlcc main crop harvest europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_ploughing-indicator_europe_10m_yearly_v1",
+      "title": "clms vlcc ploughing indicator europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7262
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_secondary-crop-duration_europe_10m_yearly_v1",
+      "title": "clms vlcc secondary crop duration europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_secondary-crop-emergence_europe_10m_yearly_v1",
+      "title": "clms vlcc secondary crop emergence europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_secondary-crop-types_europe_10m_yearly_v1",
+      "title": "clms vlcc secondary crop types europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7216
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_tree-cover-density_europe_100m_yearly_v1",
+      "title": "clms vlcc tree cover density europe 100m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 6314
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_tree-cover-density_europe_10m_yearly_v1",
+      "title": "clms vlcc tree cover density europe 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 6314
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_vlcc_tree-cover-presence-change_europe_20m_3yearly_v1",
+      "title": "clms vlcc tree cover presence change europe 20m 3yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 1804
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_cloud-classification_europe_utm_20m_daily_v1",
+      "title": "clms wsi cloud classification europe utm 20m daily v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 594020
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_fractional-snow-cover_europe_utm_20m_daily_v2",
+      "title": "clms wsi fractional snow cover europe utm 20m daily v2",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 621363
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_gap-filled-fractional-snow-cover_europe_utm_60m_daily_v1",
+      "title": "clms wsi gap filled fractional snow cover europe utm 60m daily v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 2151580
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_ice-cover-duration_europe_utm_20m_yearly_v1",
+      "title": "clms wsi ice cover duration europe utm 20m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 4890
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_sar-wet-snow_europe_utm_60m_daily_v2",
+      "title": "clms wsi sar wet snow europe utm 60m daily v2",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 323911
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_snow-phenology-s1-s2_europe_utm_60m_yearly_v1",
+      "title": "clms wsi snow phenology s1 s2 europe utm 60m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 810
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_snow-phenology-s2_europe_utm_20m_yearly_v1",
+      "title": "clms wsi snow phenology s2 europe utm 20m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 4890
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_water-cover-duration_europe_utm_10m_yearly_v1",
+      "title": "clms wsi water cover duration europe utm 10m yearly v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 5857
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_water-ice-cover-s1-s2_europe_utm_20m_daily_v1",
+      "title": "clms wsi water ice cover s1 s2 europe utm 20m daily v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 168382
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_water-ice-cover-s1_europe_utm_60m_daily_v1",
+      "title": "clms wsi water ice cover s1 europe utm 60m daily v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 678501
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_water-ice-cover-s2_europe_utm_20m_daily_v1",
+      "title": "clms wsi water ice cover s2 europe utm 20m daily v1",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 363592
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "clms_wsi_wet-dry-snow_europe_utm_60m_daily_v2",
+      "title": "clms wsi wet dry snow europe utm 60m daily v2",
+      "theme": "Other",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 370486
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lie_baltic_250m_daily_v1",
+      "title": "lie baltic 250m daily v1",
+      "abstract": "Classification of lake ice extent",
+      "theme": "Snow and ice",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lie_baltic_250m_daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lie_baltic_250m_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "LIE",
+          "title": "LIE",
+          "abstract": "Classification of lake ice extent"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lie_baltic_250m_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lie_europe_250m_daily_v2",
+      "title": "lie europe 250m daily v2",
+      "abstract": "Classification of lake ice extent",
+      "theme": "Snow and ice",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lie_europe_250m_daily_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lie_europe_250m_daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "LIE",
+          "title": "LIE",
+          "abstract": "Classification of lake ice extent"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lie_europe_250m_daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lie_global_500m_daily_v2",
+      "title": "lie global 500m daily v2",
+      "abstract": "A classification of lake ice state, with the following classes: Snow-covered ice, Partially snow-covered or snow-free ice, Open water, Cloud.",
+      "theme": "Snow and ice",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lie_global_500m_daily_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lie_global_500m_daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "LIE",
+          "title": "LIE",
+          "abstract": "A classification of lake ice state, with the following classes: Snow-covered ice, Partially snow-covered or snow-free ice, Open water, Cloud."
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lie_global_500m_daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lie_northernhemisphere_500m_daily_v1",
+      "title": "lie northernhemisphere 500m daily v1",
+      "abstract": "Classification of lake ice extent",
+      "theme": "Snow and ice",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lie_northernhemisphere_500m_daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lie_northernhemisphere_500m_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "LIE",
+          "title": "LIE",
+          "abstract": "Classification of lake ice extent"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lie_northernhemisphere_500m_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "sce_europe_500m_daily_v1",
+      "title": "sce europe 500m daily v1",
+      "abstract": "Snow Cover Extent",
+      "theme": "Snow and ice",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/sce_europe_500m_daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/sce_europe_500m_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "SCE",
+          "title": "SCE",
+          "abstract": "Snow Cover Extent"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/sce_europe_500m_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "sce_global_1km_daily_v1",
+      "title": "sce global 1km daily v1",
+      "theme": "Snow and ice",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/sce_global_1km_daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/sce_global_1km_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "SCE",
+          "title": "Snow Cover Extent",
+          "abstract": "Daily global snow cover extent at 1km resolution from VIIRS and SLSTR sensors."
+        },
+        {
+          "identifier": "UNC",
+          "title": "Snow Cover Extent Uncertainty",
+          "abstract": "Unbiased Root Mean Square Error for Snow Cover Extent at 1km resolution."
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/sce_global_1km_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "sce_northernhemisphere_1km_daily_v1",
+      "title": "sce northernhemisphere 1km daily v1",
+      "abstract": "Snow Cover Extent",
+      "theme": "Snow and ice",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/sce_northernhemisphere_1km_daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/sce_northernhemisphere_1km_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "SCE",
+          "title": "SCE",
+          "abstract": "Snow Cover Extent"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/sce_northernhemisphere_1km_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "swe_northernhemisphere_5km_daily_v1",
+      "title": "swe northernhemisphere 5km daily v1",
+      "abstract": "Snow Water Equivalent",
+      "theme": "Snow and ice",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/swe_northernhemisphere_5km_daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/swe_northernhemisphere_5km_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "SWE",
+          "title": "SWE",
+          "abstract": "Snow Water Equivalent"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/swe_northernhemisphere_5km_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "swe_northernhemisphere_5km_daily_v2",
+      "title": "swe northernhemisphere 5km daily v2",
+      "abstract": "Snow Water Equivalent",
+      "theme": "Snow and ice",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/swe_northernhemisphere_5km_daily_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/swe_northernhemisphere_5km_daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "SWE",
+          "title": "SWE",
+          "abstract": "Snow Water Equivalent"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/swe_northernhemisphere_5km_daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "ssm_europe_1km_daily_v1",
+      "title": "ssm europe 1km daily v1",
+      "abstract": "Provides information on the relative water content of the top few centimeters soil, describing how wet or dry the soil is in its topmost layer, expressed in percent saturation.",
+      "theme": "Soil moisture",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/ssm_europe_1km_daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ssm_europe_1km_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "SSM",
+          "title": "Surface Soil Moisture",
+          "abstract": "Provides information on the relative water content of the top few centimeters soil, describing how wet or dry the soil is in its topmost layer, expressed in percent saturation."
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ssm_europe_1km_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "swi_europe_1km_daily_v1",
+      "title": "swi europe 1km daily v1",
+      "theme": "Soil moisture",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/swi_europe_1km_daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/swi_europe_1km_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "SSF",
+          "title": "SWI-SSF",
+          "abstract": "Surface State Flag"
+        },
+        {
+          "identifier": "SWI002",
+          "title": "SWI-SWI002",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI005",
+          "title": "SWI-SWI005",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI010",
+          "title": "SWI-SWI010",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI015",
+          "title": "SWI-SWI015",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI020",
+          "title": "SWI-SWI020",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI040",
+          "title": "SWI-SWI040",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI060",
+          "title": "SWI-SWI060",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI100",
+          "title": "SWI-SWI100",
+          "abstract": "Soil Water Index at different time lengths"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/swi_europe_1km_daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "swi_europe_1km_daily_v2",
+      "title": "swi europe 1km daily v2",
+      "theme": "Soil moisture",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/swi_europe_1km_daily_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/swi_europe_1km_daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "SSF",
+          "title": "SWI-SSF",
+          "abstract": "Surface State Flag"
+        },
+        {
+          "identifier": "SWI002",
+          "title": "SWI-SWI002",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI005",
+          "title": "SWI-SWI005",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI010",
+          "title": "SWI-SWI010",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI015",
+          "title": "SWI-SWI015",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI020",
+          "title": "SWI-SWI020",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI040",
+          "title": "SWI-SWI040",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI060",
+          "title": "SWI-SWI060",
+          "abstract": "Soil Water Index at different time lengths"
+        },
+        {
+          "identifier": "SWI100",
+          "title": "SWI-SWI100",
+          "abstract": "Soil Water Index at different time lengths"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/swi_europe_1km_daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "swi_global_12.5km_10daily_v3",
+      "title": "swi global 12.5km 10daily v3",
+      "theme": "Soil moisture",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 667
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "swi_global_12.5km_10daily_v4",
+      "title": "swi global 12.5km 10daily v4",
+      "theme": "Soil moisture",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 705
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "swi_global_12.5km_daily_v3",
+      "title": "swi global 12.5km daily v3",
+      "theme": "Soil moisture",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 6770
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "swi_global_12.5km_daily_v4",
+      "title": "swi global 12.5km daily v4",
+      "theme": "Soil moisture",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 7161
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lst-daily-cycle_global_3km_10daily_v3",
+      "title": "lst daily cycle global 3km 10daily v3",
+      "theme": "Temperature",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 310
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lst-daily-cycle_global_5km_10daily_v1",
+      "title": "lst daily cycle global 5km 10daily v1",
+      "theme": "Temperature",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 144
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lst-daily-cycle_global_5km_10daily_v2",
+      "title": "lst daily cycle global 5km 10daily v2",
+      "theme": "Temperature",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 193
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lst-tci_global_3km_10daily_v3",
+      "title": "lst tci global 3km 10daily v3",
+      "theme": "Temperature",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 310
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lst-tci_global_5km_10daily_v1",
+      "title": "lst tci global 5km 10daily v1",
+      "theme": "Temperature",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 145
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lst-tci_global_5km_10daily_v2",
+      "title": "lst tci global 5km 10daily v2",
+      "theme": "Temperature",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 194
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lst_global_3km_hourly_v3",
+      "title": "lst global 3km hourly v3",
+      "abstract": "Land Surface Temperature [K].",
+      "theme": "Temperature",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lst_global_3km_hourly_v3/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lst_global_3km_hourly_v3/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "LST",
+          "title": "LST",
+          "abstract": "Land Surface Temperature [K]."
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lst_global_3km_hourly_v3/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lst_global_5km_hourly_v1",
+      "title": "lst global 5km hourly v1",
+      "abstract": "Land Surface Temperature",
+      "theme": "Temperature",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lst_global_5km_hourly_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lst_global_5km_hourly_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "LST",
+          "title": "LST",
+          "abstract": "Land Surface Temperature"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lst_global_5km_hourly_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lst_global_5km_hourly_v2",
+      "title": "lst global 5km hourly v2",
+      "abstract": "Land Surface Temperature",
+      "theme": "Temperature",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lst_global_5km_hourly_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lst_global_5km_hourly_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "LST",
+          "title": "LST",
+          "abstract": "Land Surface Temperature"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lst_global_5km_hourly_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lswt-nrt_global_1km_10daily_v1",
+      "title": "lswt nrt global 1km 10daily v1",
+      "theme": "Temperature",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 366
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lswt-offline_global_1km_10daily_v1",
+      "title": "lswt offline global 1km 10daily v1",
+      "theme": "Temperature",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 357
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "dmp_global_1km_10daily_v2",
+      "title": "dmp global 1km 10daily v2",
+      "abstract": "Dry Matter Productivity",
+      "theme": "Vegetation productivity",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/dmp_global_1km_10daily_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/dmp_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "DMP",
+          "title": "DMP",
+          "abstract": "Dry Matter Productivity"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/dmp_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "dmp_global_300m_10daily_v1",
+      "title": "dmp global 300m 10daily v1",
+      "theme": "Vegetation productivity",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 1329
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "dmp_global_300m_10daily_v2",
+      "title": "dmp global 300m 10daily v2",
+      "theme": "Vegetation productivity",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 553
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "gdmp_global_1km_10daily_v2",
+      "title": "gdmp global 1km 10daily v2",
+      "abstract": "Gross Dry Matter Productivity",
+      "theme": "Vegetation productivity",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/gdmp_global_1km_10daily_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/gdmp_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "GDMP",
+          "title": "GDMP",
+          "abstract": "Gross Dry Matter Productivity"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/gdmp_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "gdmp_global_300m_10daily_v1",
+      "title": "gdmp global 300m 10daily v1",
+      "theme": "Vegetation productivity",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 1333
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "gdmp_global_300m_10daily_v2",
+      "title": "gdmp global 300m 10daily v2",
+      "theme": "Vegetation productivity",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 553
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "gpp_global_300m_10daily_v1",
+      "title": "gpp global 300m 10daily v1",
+      "theme": "Vegetation productivity",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 364
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "gpp_global_300m_10daily_v2",
+      "title": "gpp global 300m 10daily v2",
+      "theme": "Vegetation productivity",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 553
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "npp_global_300m_10daily_v1",
+      "title": "npp global 300m 10daily v1",
+      "theme": "Vegetation productivity",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 364
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "npp_global_300m_10daily_v2",
+      "title": "npp global 300m 10daily v2",
+      "theme": "Vegetation productivity",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 553
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "fapar_global_1km_10daily_v2",
+      "title": "fapar global 1km 10daily v2",
+      "abstract": "Fraction of Absorbed PAR",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/fapar_global_1km_10daily_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/fapar_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "FAPAR",
+          "title": "FAPAR",
+          "abstract": "Fraction of Absorbed PAR"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/fapar_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "fapar_global_300m_10daily_v1",
+      "title": "fapar global 300m 10daily v1",
+      "abstract": "Fraction of Absorbed Photosynthetically Active Radiation",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/fapar_global_300m_10daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/fapar_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "FAPAR",
+          "title": "FAPAR",
+          "abstract": "Fraction of Absorbed Photosynthetically Active Radiation"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/fapar_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "fapar_global_300m_10daily_v2",
+      "title": "fapar global 300m 10daily v2",
+      "theme": "Vegetation properties",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 550
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "fcover_global_1km_10daily_v2",
+      "title": "fcover global 1km 10daily v2",
+      "abstract": "Fraction of green vegetation cover",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/fcover_global_1km_10daily_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/fcover_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "FCOVER",
+          "title": "Fraction of green vegetation cover (FCOVER)",
+          "abstract": "Fraction of green vegetation cover"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/fcover_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "fcover_global_300m_10daily_v1",
+      "title": "fcover global 300m 10daily v1",
+      "abstract": "Fraction of green vegetation cover",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/fcover_global_300m_10daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/fcover_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "FCOVER",
+          "title": "Fraction of green vegetation cover (FCOVER)",
+          "abstract": "Fraction of green vegetation cover"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/fcover_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "fcover_global_300m_10daily_v2",
+      "title": "fcover global 300m 10daily v2",
+      "theme": "Vegetation properties",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 550
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lai_global_1km_10daily_v2",
+      "title": "lai global 1km 10daily v2",
+      "abstract": "Leaf Area Index",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lai_global_1km_10daily_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lai_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "LAI",
+          "title": "LAI",
+          "abstract": "Leaf Area Index"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lai_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lai_global_300m_10daily_v1",
+      "title": "lai global 300m 10daily v1",
+      "abstract": "Leaf Area Index",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lai_global_300m_10daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lai_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "LAI",
+          "title": "Leaf Area Index (LAI)",
+          "abstract": "Leaf Area Index"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lai_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lai_global_300m_10daily_v2",
+      "title": "lai global 300m 10daily v2",
+      "theme": "Vegetation properties",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 550
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lsp_global_300m_yearly_v1",
+      "title": "lsp global 300m yearly v1",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lsp_global_300m_yearly_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lsp_global_300m_yearly_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "A_TPROD_S1",
+          "title": "Total Productivity - S1",
+          "abstract": "Provides the growing season integral computed as the sum of all daily Plant Phenology Index values between the dates of the season start and end."
+        },
+        {
+          "identifier": "B_TPROD_S2",
+          "title": "Total Productivity - S2",
+          "abstract": "Provides the growing season integral computed as the sum of all daily Plant Phenology Index values between the dates of the season start and end."
+        },
+        {
+          "identifier": "C_SPROD_S1",
+          "title": "Seasonal Productivity - S1",
+          "abstract": "Provides the growing season integral computed as sum of all daily Plant Phenology Index values between the dates of the season start and end, minus their base level value."
+        },
+        {
+          "identifier": "D_SPROD_S2",
+          "title": "Seasonal Productivity - S2",
+          "abstract": "Provides the growing season integral computed as sum of all daily Plant Phenology Index values between the dates of the season start and end, minus their base level value."
+        },
+        {
+          "identifier": "E_LENGTH_S1",
+          "title": "Season Length - S1",
+          "abstract": "Provides the number of days between the start and end dates of the vegetation growing season."
+        },
+        {
+          "identifier": "F_LENGTH_S2",
+          "title": "Season Length - S2",
+          "abstract": "Provides the number of days between the start and end dates of the vegetation growing season."
+        },
+        {
+          "identifier": "G_AMPL_S1",
+          "title": "Season Amplitude - S1",
+          "abstract": "Provides the difference between the maximum and minimum Plant Phenology Index values reached during the season."
+        },
+        {
+          "identifier": "H_AMPL_S2",
+          "title": "Season Amplitude - S2",
+          "abstract": "Provides the difference between the maximum and minimum Plant Phenology Index values reached during the season."
+        },
+        {
+          "identifier": "I_LSLOPE_S1",
+          "title": "Slope of the Green-up Period - S1",
+          "abstract": "Provides the rate of change in the values of the Plant Phenology Index at the day when the vegetation growing season starts."
+        },
+        {
+          "identifier": "J_LSLOPE_S2",
+          "title": "Slope of the Green-up Period - S2",
+          "abstract": "Provides the rate of change in the values of the Plant Phenology Index at the day when the vegetation growing season starts."
+        },
+        {
+          "identifier": "K_RSLOPE_S1",
+          "title": "Slope of the Green-down Period - S1",
+          "abstract": "Provides the rate of change in the values of the Plant Phenology Index at the day when the vegetation growing season ends."
+        },
+        {
+          "identifier": "L_RSLOPE_S2",
+          "title": "Slope of the Green-down Period - S2",
+          "abstract": "Provides the rate of change in the values of the Plant Phenology Index at the day when the vegetation growing season ends."
+        },
+        {
+          "identifier": "M_SOSD_S1",
+          "title": "Start-of-season Date - S1",
+          "abstract": "Provides the date when the vegetation growing season starts in the time profile of the Plant Phenology Index."
+        },
+        {
+          "identifier": "N_SOSD_S2",
+          "title": "Start-of-season Date - S2",
+          "abstract": "Provides the date when the vegetation growing season starts in the time profile of the Plant Phenology Index."
+        },
+        {
+          "identifier": "O_MAXD_S1",
+          "title": "Season Maximum Date - S1",
+          "abstract": "Provides the date in the vegetation growing season when the maximum Plant Phenology Index value is reached."
+        },
+        {
+          "identifier": "P_MAXD_S2",
+          "title": "Season Maximum Date - S2",
+          "abstract": "Provides the date in the vegetation growing season when the maximum Plant Phenology Index value is reached."
+        },
+        {
+          "identifier": "Q_EOSD_S1",
+          "title": "End-of-season Date - S1",
+          "abstract": "Provides the date when the vegetation growing season ends in the time profile of the Plant Phenology Index."
+        },
+        {
+          "identifier": "R_EOSD_S2",
+          "title": "End-of-season Date - S2",
+          "abstract": "Provides the date when the vegetation growing season ends in the time profile of the Plant Phenology Index."
+        },
+        {
+          "identifier": "S_SOSV_S1",
+          "title": "Start-of-season Value - S1",
+          "abstract": "Provides the value of the Plant Phenology Index at the start of the vegetation growing season."
+        },
+        {
+          "identifier": "T_SOSV_S2",
+          "title": "Start-of-season Value - S2",
+          "abstract": "Provides the value of the Plant Phenology Index at the start of the vegetation growing season."
+        },
+        {
+          "identifier": "U_MAXV_S1",
+          "title": "Season Maximum Value - S1",
+          "abstract": "Provides the maximum (peak) value that the Plant Phenology Index reaches during the vegetation growing season."
+        },
+        {
+          "identifier": "V_MAXV_S2",
+          "title": "Season Maximum Value - S2",
+          "abstract": "Provides the maximum (peak) value that the Plant Phenology Index reaches during the vegetation growing season."
+        },
+        {
+          "identifier": "W_MINV_S1",
+          "title": "Season Minimum Value S1",
+          "abstract": "Provides the average Plant Phenology Index value of the minima on left and right sides of each season."
+        },
+        {
+          "identifier": "X_MINV_S2",
+          "title": "Season Minimum Value S2",
+          "abstract": "Provides the average Plant Phenology Index value of the minima on left and right sides of each season."
+        },
+        {
+          "identifier": "Y_EOSV_S1",
+          "title": "End-of-season Value - S1",
+          "abstract": "Provides the value of the Plant Phenology Index at the end of the vegetation growing season."
+        },
+        {
+          "identifier": "ZA_EOSV_S2",
+          "title": "End-of-season Value - S2",
+          "abstract": "Provides the value of the Plant Phenology Index at the end of the vegetation growing season."
+        },
+        {
+          "identifier": "ZB_QA_S1",
+          "title": "Quality Flag - S1",
+          "abstract": "Indicates the quality of the global Vegetation Phenology and Productivity Parameters, in the form of a confidence level."
+        },
+        {
+          "identifier": "ZC_QA_S2",
+          "title": "Quality Flag - S2",
+          "abstract": "Indicates the quality of the global Vegetation Phenology and Productivity Parameters, in the form of a confidence level."
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lsp_global_300m_yearly_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lsp_global_300m_yearly_v2",
+      "title": "lsp global 300m yearly v2",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/lsp_global_300m_yearly_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lsp_global_300m_yearly_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "A_TPROD_S1",
+          "title": "Total Productivity - S1",
+          "abstract": "Provides the growing season integral computed as the sum of all daily Plant Phenology Index values between the dates of the season start and end."
+        },
+        {
+          "identifier": "B_TPROD_S2",
+          "title": "Total Productivity - S2",
+          "abstract": "Provides the growing season integral computed as the sum of all daily Plant Phenology Index values between the dates of the season start and end."
+        },
+        {
+          "identifier": "C_SPROD_S1",
+          "title": "Seasonal Productivity - S1",
+          "abstract": "Provides the growing season integral computed as sum of all daily Plant Phenology Index values between the dates of the season start and end, minus their base level value."
+        },
+        {
+          "identifier": "D_SPROD_S2",
+          "title": "Seasonal Productivity - S2",
+          "abstract": "Provides the growing season integral computed as sum of all daily Plant Phenology Index values between the dates of the season start and end, minus their base level value."
+        },
+        {
+          "identifier": "E_LENGTH_S1",
+          "title": "Season Length - S1",
+          "abstract": "Provides the number of days between the start and end dates of the vegetation growing season."
+        },
+        {
+          "identifier": "F_LENGTH_S2",
+          "title": "Season Length - S2",
+          "abstract": "Provides the number of days between the start and end dates of the vegetation growing season."
+        },
+        {
+          "identifier": "G_AMPL_S1",
+          "title": "Season Amplitude - S1",
+          "abstract": "Provides the difference between the maximum and minimum Plant Phenology Index values reached during the season."
+        },
+        {
+          "identifier": "H_AMPL_S2",
+          "title": "Season Amplitude - S2",
+          "abstract": "Provides the difference between the maximum and minimum Plant Phenology Index values reached during the season."
+        },
+        {
+          "identifier": "I_LSLOPE_S1",
+          "title": "Slope of the Green-up Period - S1",
+          "abstract": "Provides the rate of change in the values of the Plant Phenology Index at the day when the vegetation growing season starts."
+        },
+        {
+          "identifier": "J_LSLOPE_S2",
+          "title": "Slope of the Green-up Period - S2",
+          "abstract": "Provides the rate of change in the values of the Plant Phenology Index at the day when the vegetation growing season starts."
+        },
+        {
+          "identifier": "K_RSLOPE_S1",
+          "title": "Slope of the Green-down Period - S1",
+          "abstract": "Provides the rate of change in the values of the Plant Phenology Index at the day when the vegetation growing season ends."
+        },
+        {
+          "identifier": "L_RSLOPE_S2",
+          "title": "Slope of the Green-down Period - S2",
+          "abstract": "Provides the rate of change in the values of the Plant Phenology Index at the day when the vegetation growing season ends."
+        },
+        {
+          "identifier": "M_SOSD_S1",
+          "title": "Start-of-season Date - S1",
+          "abstract": "Provides the date when the vegetation growing season starts in the time profile of the Plant Phenology Index."
+        },
+        {
+          "identifier": "N_SOSD_S2",
+          "title": "Start-of-season Date - S2",
+          "abstract": "Provides the date when the vegetation growing season starts in the time profile of the Plant Phenology Index."
+        },
+        {
+          "identifier": "O_MAXD_S1",
+          "title": "Season Maximum Date - S1",
+          "abstract": "Provides the date in the vegetation growing season when the maximum Plant Phenology Index value is reached."
+        },
+        {
+          "identifier": "P_MAXD_S2",
+          "title": "Season Maximum Date - S2",
+          "abstract": "Provides the date in the vegetation growing season when the maximum Plant Phenology Index value is reached."
+        },
+        {
+          "identifier": "Q_EOSD_S1",
+          "title": "End-of-season Date - S1",
+          "abstract": "Provides the date when the vegetation growing season ends in the time profile of the Plant Phenology Index."
+        },
+        {
+          "identifier": "R_EOSD_S2",
+          "title": "End-of-season Date - S2",
+          "abstract": "Provides the date when the vegetation growing season ends in the time profile of the Plant Phenology Index."
+        },
+        {
+          "identifier": "S_SOSV_S1",
+          "title": "Start-of-season Value - S1",
+          "abstract": "Provides the value of the Plant Phenology Index at the start of the vegetation growing season."
+        },
+        {
+          "identifier": "T_SOSV_S2",
+          "title": "Start-of-season Value - S2",
+          "abstract": "Provides the value of the Plant Phenology Index at the start of the vegetation growing season."
+        },
+        {
+          "identifier": "U_MAXV_S1",
+          "title": "Season Maximum Value - S1",
+          "abstract": "Provides the maximum (peak) value that the Plant Phenology Index reaches during the vegetation growing season."
+        },
+        {
+          "identifier": "V_MAXV_S2",
+          "title": "Season Maximum Value - S2",
+          "abstract": "Provides the maximum (peak) value that the Plant Phenology Index reaches during the vegetation growing season."
+        },
+        {
+          "identifier": "W_MINV_S1",
+          "title": "Season Minimum Value S1",
+          "abstract": "Provides the average Plant Phenology Index value of the minima on left and right sides of each season."
+        },
+        {
+          "identifier": "X_MINV_S2",
+          "title": "Season Minimum Value S2",
+          "abstract": "Provides the average Plant Phenology Index value of the minima on left and right sides of each season."
+        },
+        {
+          "identifier": "Y_EOSV_S1",
+          "title": "End-of-season Value - S1",
+          "abstract": "Provides the value of the Plant Phenology Index at the end of the vegetation growing season."
+        },
+        {
+          "identifier": "ZA_EOSV_S2",
+          "title": "End-of-season Value - S2",
+          "abstract": "Provides the value of the Plant Phenology Index at the end of the vegetation growing season."
+        },
+        {
+          "identifier": "ZB_QA_S1",
+          "title": "Quality Flag - S1",
+          "abstract": "Indicates the quality of the global Vegetation Phenology and Productivity Parameters, in the form of a confidence level."
+        },
+        {
+          "identifier": "ZC_QA_S2",
+          "title": "Quality Flag - S2",
+          "abstract": "Indicates the quality of the global Vegetation Phenology and Productivity Parameters, in the form of a confidence level."
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/lsp_global_300m_yearly_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "ndvi-lts_global_1km_10daily_v3",
+      "title": "ndvi lts global 1km 10daily v3",
+      "theme": "Vegetation properties",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 36
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "ndvi_global_1km_10daily_v3",
+      "title": "ndvi global 1km 10daily v3",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/ndvi_global_1km_10daily_v3/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ndvi_global_1km_10daily_v3/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "NDVI",
+          "title": "NDVI",
+          "abstract": "Normalized Difference Vegetation Index"
+        },
+        {
+          "identifier": "NOBS",
+          "title": "NOBS",
+          "abstract": "Number of observations used in the BRDF inversion"
+        },
+        {
+          "identifier": "QFLAG",
+          "title": "QFLAG",
+          "abstract": "Quality flag"
+        },
+        {
+          "identifier": "TIMEGRID",
+          "title": "TIMEGRID",
+          "abstract": "Time between the median date of observations used to compute NDVI and the reference time given in the file name."
+        },
+        {
+          "identifier": "UNC",
+          "title": "UNC",
+          "abstract": "Uncertainty associated to NDVI"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ndvi_global_1km_10daily_v3/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "ndvi_global_300m_10daily_v1",
+      "title": "ndvi global 300m 10daily v1",
+      "abstract": "NDVI is an indicator of the greenness of the biomass.",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/ndvi_global_300m_10daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ndvi_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "NDVI",
+          "title": "NDVI",
+          "abstract": "NDVI is an indicator of the greenness of the biomass."
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ndvi_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "ndvi_global_300m_10daily_v2",
+      "title": "ndvi global 300m 10daily v2",
+      "abstract": "NDVI is an indicator of the greenness of the biomass.",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/ndvi_global_300m_10daily_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ndvi_global_300m_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "NDVI",
+          "title": "NDVI",
+          "abstract": "NDVI is an indicator of the greenness of the biomass."
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ndvi_global_300m_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "ndvi_global_300m_10daily_v3",
+      "title": "ndvi global 300m 10daily v3",
+      "abstract": "NDVI is an indicator of the greenness of the biomass.",
+      "theme": "Vegetation properties",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/ndvi_global_300m_10daily_v3/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ndvi_global_300m_10daily_v3/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "NDVI",
+          "title": "NDVI",
+          "abstract": "NDVI is an indicator of the greenness of the biomass."
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/ndvi_global_300m_10daily_v3/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "wb_global_100m_monthly_v1",
+      "title": "wb global 100m monthly v1",
+      "abstract": "Water Bodies",
+      "theme": "Water bodies",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/wb_global_100m_monthly_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/wb_global_100m_monthly_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "WB",
+          "title": "WB",
+          "abstract": "Water Bodies"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/wb_global_100m_monthly_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "wb_global_1km_10daily_v2",
+      "title": "wb global 1km 10daily v2",
+      "abstract": "Water Bodies detection layer",
+      "theme": "Water bodies",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/wb_global_1km_10daily_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/wb_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "WB",
+          "title": "Water Bodies (WB)",
+          "abstract": "Water Bodies detection layer"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/wb_global_1km_10daily_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "wb_global_300m_10daily_v1",
+      "title": "wb global 300m 10daily v1",
+      "abstract": "Water Bodies detection layer",
+      "theme": "Water bodies",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/wb_global_300m_10daily_v1/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/wb_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "WB",
+          "title": "Water Bodies (WB)",
+          "abstract": "Water Bodies detection layer"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/wb_global_300m_10daily_v1/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "wb_global_300m_monthly_v2",
+      "title": "wb global 300m monthly v2",
+      "abstract": "Water Bodies",
+      "theme": "Water bodies",
+      "available": true,
+      "serviceType": "WMTS",
+      "serviceUrl": "https://land.copernicus.eu/cdse/wb_global_300m_monthly_v2/",
+      "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/wb_global_300m_monthly_v2/?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "layers": [
+        {
+          "identifier": "WB",
+          "title": "WB",
+          "abstract": "Water Bodies"
+        }
+      ],
+      "access": {
+        "wmts": {
+          "available": true,
+          "getCapabilitiesUrl": "https://land.copernicus.eu/cdse/wb_global_300m_monthly_v2/?SERVICE=WMTS&REQUEST=GetCapabilities"
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lwq-nrt_global_100m_10daily_v1",
+      "title": "lwq nrt global 100m 10daily v1",
+      "theme": "Water quality",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 169
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lwq-nrt_global_100m_10daily_v2",
+      "title": "lwq nrt global 100m 10daily v2",
+      "theme": "Water quality",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 69
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lwq-nrt_global_300m_10daily_v1",
+      "title": "lwq nrt global 300m 10daily v1",
+      "theme": "Water quality",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 307
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lwq-nrt_global_300m_10daily_v2",
+      "title": "lwq nrt global 300m 10daily v2",
+      "theme": "Water quality",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 70
+        }
+      }
+    },
+    {
+      "datasetIdentifier": "lwq-reproc_global_300m_10daily_v1",
+      "title": "lwq reproc global 300m 10daily v1",
+      "theme": "Water quality",
+      "available": false,
+      "access": {
+        "wmts": {
+          "available": false
+        },
+        "wms": {
+          "available": false
+        },
+        "cog": {
+          "catalogueAvailable": true,
+          "publicAvailable": false,
+          "productCount": 356
+        }
+      }
+    }
+  ]
+}
