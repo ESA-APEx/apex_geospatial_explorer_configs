@@ -16,6 +16,13 @@
   ],
   "recommended": {
     "basemaps": { "file": "../resources/recommended-config.json" },
-    "services": { "file": "../resources/recommended-config.json" }
+    "services": { "file": "../resources/recommended-config.json" },
+     "catalogues": [
+      {
+        "name": "clms-wmts",
+        "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/config-builder/clms-wmts.json",
+        "label": "Copernicus Land Monitoring Service WMTS"
+      }
+    ]
   }
 }
