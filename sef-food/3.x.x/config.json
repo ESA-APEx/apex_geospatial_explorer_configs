@@ -1,5 +1,6 @@
 {
   "version": "1.0.0",
+  "exportPrefix": "config-sef-food",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
@@ -24,6 +25,8 @@
     ],
     "projection": "EPSG:3857"
   },
+  "workflows": [],
+  "stories": [],
   "services": [
     {
       "id": "wms-service-1749555952736",
@@ -106,6 +109,7 @@
   ],
   "sources": [
     {
+      "id": "open-streetmap",
       "name": "Open StreetMap",
       "isActive": true,
       "data": [
@@ -115,8 +119,6 @@
           "zIndex": 1
         }
       ],
-      "isBaseLayer": true,
-      "exclusivitySets": [],
       "meta": {
         "description": "Base layer: Open StreetMap",
         "attribution": {
@@ -124,9 +126,12 @@
           "url": "https://www.openstreetmap.org/copyright"
         },
         "categories": []
-      }
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
     },
     {
+      "id": "world-cover-2021",
       "name": "World Cover 2021",
       "isActive": false,
       "data": [
@@ -225,6 +230,7 @@
       }
     },
     {
+      "id": "european-soc-2020-22",
       "name": "European SOC (2020-22)",
       "isActive": false,
       "data": [
@@ -320,9 +326,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 1800,
         "colormaps": [
           {
             "min": 0,
@@ -331,7 +334,10 @@
             "name": "copper",
             "reverse": true
           }
-        ]
+        ],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -355,6 +361,7 @@
       }
     },
     {
+      "id": "sentinel",
       "name": "Sentinel",
       "isActive": false,
       "data": [
@@ -366,9 +373,6 @@
           "serviceId": "wms-service-1749555952736"
         }
       ],
-      "isBaseLayer": true,
-      "exclusivitySets": [],
-      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png",
       "meta": {
         "description": "True colour composite of 2021 Sentinel 2 data.",
         "attribution": {
@@ -376,9 +380,13 @@
           "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
         },
         "categories": []
-      }
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
     },
     {
+      "id": "blue-marble",
       "name": "Blue Marble",
       "isActive": false,
       "data": [
@@ -389,9 +397,6 @@
           "layers": "blue_marble:blue_marble"
         }
       ],
-      "isBaseLayer": true,
-      "exclusivitySets": [],
-      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png",
       "meta": {
         "description": "Base layer: Blue Marble",
         "attribution": {
@@ -399,9 +404,13 @@
           "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
         },
         "categories": []
-      }
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png"
     },
     {
+      "id": "stadia-alidade-smooth-light",
       "name": "Stadia Alidade Smooth Light",
       "isActive": false,
       "data": [
@@ -411,7 +420,6 @@
           "zIndex": 3
         }
       ],
-      "isBaseLayer": true,
       "meta": {
         "description": "Base layer: Stadia Alidade Smooth Light",
         "attribution": {
@@ -419,9 +427,11 @@
           "url": "https://stadiamaps.com/"
         },
         "categories": []
-      }
+      },
+      "isBaseLayer": true
     },
     {
+      "id": "stadia-alidade-satellite",
       "name": "Stadia Alidade Satellite",
       "isActive": false,
       "data": [
@@ -431,7 +441,6 @@
           "zIndex": 2
         }
       ],
-      "isBaseLayer": true,
       "meta": {
         "description": "Base layer: Stadia Alidade Satellite",
         "attribution": {
@@ -439,9 +448,11 @@
           "url": "https://stadiamaps.com/"
         },
         "categories": []
-      }
+      },
+      "isBaseLayer": true
     },
     {
+      "id": "dem",
       "name": "DEM",
       "isActive": false,
       "data": [
@@ -452,18 +463,19 @@
           "layers": "COP_DEM_GLO_30M_COG"
         }
       ],
-      "isBaseLayer": true,
-      "exclusivitySets": [],
-      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png",
       "meta": {
         "description": "Base layer: DEM",
         "attribution": {
           "text": "Copernicus"
         },
         "categories": []
-      }
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png"
     },
     {
+      "id": "main-crop-types",
       "name": "Main Crop Types",
       "isActive": false,
       "data": [
@@ -531,7 +543,6 @@
           ]
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Annual (2017-2023) pan-European mapping of primary crops at a spatial resolution of 10 m and a MMU of 0.25 ha.",
         "attribution": {
@@ -655,9 +666,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "main-crop-types-2",
       "name": "Main Crop Types",
       "isActive": false,
       "data": [
@@ -686,7 +699,6 @@
           ]
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Satellite derived crop type classification for three consecutive growing seasons.",
         "attribution": {
@@ -870,9 +882,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "crop-rotation-analysis",
       "name": "Crop Rotation Analysis",
       "isActive": false,
       "data": [
@@ -924,6 +938,7 @@
       }
     },
     {
+      "id": "presence-of-catch-crops",
       "name": "Presence of Catch Crops",
       "isActive": false,
       "data": [
@@ -952,7 +967,6 @@
           ]
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Detection of the presence of catch crops between the main seasons.",
         "attribution": {
@@ -990,9 +1004,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "crop-rotation-analysis-with-catch-crops",
       "name": "Crop Rotation Analysis (with catch crops)",
       "isActive": false,
       "data": [
@@ -1044,6 +1060,7 @@
       }
     },
     {
+      "id": "erosion-risk-maps",
       "name": "Erosion Risk Maps",
       "isActive": false,
       "data": [
@@ -1100,6 +1117,7 @@
       }
     },
     {
+      "id": "compliance-with-erosion-prevention-rules",
       "name": "Compliance with Erosion Prevention Rules",
       "isActive": false,
       "data": [
@@ -1151,6 +1169,7 @@
       }
     },
     {
+      "id": "spring-cereals-2021",
       "name": "Spring Cereals 2021",
       "isActive": false,
       "data": [
@@ -1192,6 +1211,7 @@
       }
     },
     {
+      "id": "winter-cereals-2021",
       "name": "Winter Cereals 2021",
       "isActive": false,
       "data": [
@@ -1233,6 +1253,7 @@
       }
     },
     {
+      "id": "maize-2021",
       "name": "Maize 2021",
       "isActive": false,
       "data": [
@@ -1274,6 +1295,7 @@
       }
     },
     {
+      "id": "temporary-crops-2021",
       "name": "Temporary Crops 2021",
       "isActive": false,
       "data": [
@@ -1315,6 +1337,7 @@
       }
     },
     {
+      "id": "ai-detected-tillage-events",
       "name": "AI-detected Tillage Events",
       "isActive": false,
       "data": [
@@ -1345,7 +1368,6 @@
           ]
         }
       ],
-      "timeframe": "Days",
       "meta": {
         "description": "AI-detected Tillage events at selected parcels across Estonia (2018–2022), detected by AI and satellite data. This shows the dates when tillage occurred as well as whether it was done with conventional or conservation methods.",
         "attribution": {
@@ -1384,9 +1406,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Days"
     },
     {
+      "id": "sentinel-2-ndvi",
       "name": "Sentinel-2 NDVI",
       "isActive": false,
       "data": [
@@ -1398,7 +1422,6 @@
           "useTimeParameter": true
         }
       ],
-      "timeframe": "Days",
       "meta": {
         "description": "Satellite-derived vegetation index (NDVI) from Sentinel-2. Indicates vegetation density and photosynthetic activity. Time series available.",
         "attribution": {
@@ -1424,9 +1447,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Days"
     },
     {
+      "id": "secondary-crop-types",
       "name": "Secondary Crop Types",
       "isActive": false,
       "data": [
@@ -1494,7 +1519,6 @@
           ]
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Annual (2017-2023) pan-European mapping of secondary crops at a spatial resolution of 10 m and a MMU of 0.25 ha.",
         "attribution": {
@@ -1543,49 +1567,13 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "saddleworth-moor",
       "name": "Saddleworth Moor",
       "isActive": false,
-      "meta": {
-        "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
-        "attribution": {
-          "text": "WorldPeatland",
-          "url": "https://stac-browser.worldpeatland.org/#/saddleworth/catalog.json"
-        },
-        "categories": [],
-        "units": "mm/yr",
-        "colormaps": [
-          {
-            "min": -40,
-            "max": 40,
-            "steps": 81,
-            "name": "jet",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Carbon Farming",
-        "subinterfaceGroup": "Peatland Rewetting (UK examples)",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
@@ -1612,9 +1600,48 @@
           ],
           "bandIndex": 2
         }
-      ]
+      ],
+      "meta": {
+        "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
+        "attribution": {
+          "text": "WorldPeatland",
+          "url": "https://stac-browser.worldpeatland.org/#/saddleworth/catalog.json"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -40,
+            "max": 40,
+            "steps": 81,
+            "name": "jet",
+            "reverse": true
+          }
+        ],
+        "units": "mm/yr"
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Peatland Rewetting (UK examples)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
+      "id": "sentinel-2-fapar",
       "name": "Sentinel-2 FAPAR",
       "isActive": false,
       "data": [
@@ -1626,7 +1653,6 @@
           "useTimeParameter": true
         }
       ],
-      "timeframe": "Days",
       "meta": {
         "description": "Satellite-derived Fraction of Absorbed Photosynthetically Active Radiation (FAPAR) from Sentinel-2.\nIndicates vegetation photosynthetic activity and plant productivity.\nTime series available.",
         "attribution": {
@@ -1653,9 +1679,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Days"
     },
     {
+      "id": "fallow-land",
       "name": "Fallow Land",
       "isActive": false,
       "data": [
@@ -1723,7 +1751,6 @@
           ]
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Annual (2017-2023) pan-European level amapping of the presence of fallow land over cropland, at a spatial resolution of 10 m and a MMU of 0.25 ha",
         "attribution": {
@@ -1751,51 +1778,13 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "hatfield-thorne",
       "name": "Hatfield Thorne",
       "isActive": false,
-      "meta": {
-        "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
-        "attribution": {
-          "text": "WorldPeatland",
-          "url": "https://stac-browser.worldpeatland.org/#/hatfield-thorne/catalog.json"
-        },
-        "categories": [],
-        "units": "mm/yr",
-        "min": -80,
-        "max": 80,
-        "colormaps": [
-          {
-            "min": -80,
-            "max": 80,
-            "steps": 81,
-            "name": "jet",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Carbon Farming",
-        "subinterfaceGroup": "Peatland Rewetting (UK examples)",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/HatfieldThorne/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
@@ -1822,12 +1811,72 @@
           ],
           "bandIndex": 2
         }
-      ]
+      ],
+      "meta": {
+        "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
+        "attribution": {
+          "text": "WorldPeatland",
+          "url": "https://stac-browser.worldpeatland.org/#/hatfield-thorne/catalog.json"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -80,
+            "max": 80,
+            "steps": 81,
+            "name": "jet",
+            "reverse": true
+          }
+        ],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Peatland Rewetting (UK examples)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
+      "id": "forest-type-2018-2021",
       "name": "Forest Type 2018-2021",
       "isActive": false,
-      "timeframe": "Years",
+      "data": [
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:FTY_S2021",
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "HRL_TCF:FTY_S2018",
+          "timestamps": [
+            1514761200
+          ]
+        }
+      ],
       "meta": {
         "description": "Classification of the types of forests",
         "attribution": {
@@ -1867,28 +1916,10 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_TCF:FTY_S2021",
-          "timestamps": [
-            1609455600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_TCF:FTY_S2018",
-          "timestamps": [
-            1514761200
-          ]
-        }
-      ]
+      "timeframe": "Years"
     },
     {
+      "id": "tree-cover-density-2018-2022",
       "name": "Tree Cover Density 2018-2022",
       "isActive": false,
       "data": [
@@ -1938,7 +1969,6 @@
           ]
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Pan-European measurements of tree cover density (0% to 100%)",
         "attribution": {
@@ -1946,8 +1976,6 @@
           "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover?tab=tree_cover_density"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -1956,7 +1984,9 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Forest Monitoring",
@@ -1977,9 +2007,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "tree-cover-change-2018-2021",
       "name": "Tree Cover Change 2018-2021",
       "isActive": false,
       "data": [
@@ -1991,7 +2023,6 @@
           "useTimeParameter": true
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Shows the change in tree cover between 2018 and 2021.",
         "attribution": {
@@ -2030,9 +2061,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "growing-stock-volume",
       "name": "Growing Stock Volume",
       "isActive": false,
       "data": [
@@ -2076,7 +2109,6 @@
           "label": "Land Cover Types",
           "type": "categorical",
           "interactive": true,
-          "bandIndex": 2,
           "constrainTo": [
             {
               "label": "Tree Cover",
@@ -2118,10 +2150,10 @@
               "label": "Moss and Lichen",
               "value": 100
             }
-          ]
+          ],
+          "bandIndex": 2
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Growing stock volume (m³/ha)in 20 m spatial resolution estimated using Sentinel-1 and ALOS 2 PALSAR 2 data.",
         "attribution": {
@@ -2129,9 +2161,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 520,
         "colormaps": [
           {
             "min": 0,
@@ -2140,7 +2169,10 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 520
       },
       "layout": {
         "interfaceGroup": "Forest Monitoring",
@@ -2161,9 +2193,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "above-ground-biomass",
       "name": "Above Ground Biomass",
       "isActive": false,
       "data": [
@@ -2233,7 +2267,6 @@
           "label": "Land Cover Types",
           "type": "categorical",
           "interactive": true,
-          "bandIndex": 2,
           "constrainTo": [
             {
               "label": "Tree Cover",
@@ -2275,10 +2308,10 @@
               "label": "Moss and Lichens",
               "value": 100
             }
-          ]
+          ],
+          "bandIndex": 2
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Above ground biomass (AGB) (t/ha) at 20 m spatial resolution estimated using Sentinel-1 and ALOS 2 PALSAR 2 data.",
         "attribution": {
@@ -2286,9 +2319,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "units": "t / ha",
-        "min": 0,
-        "max": 300,
         "colormaps": [
           {
             "min": 0,
@@ -2297,7 +2327,10 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300
       },
       "layout": {
         "interfaceGroup": "Forest Monitoring",
@@ -2318,9 +2351,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "below-ground-biomass",
       "name": "Below Ground Biomass",
       "isActive": false,
       "data": [
@@ -2357,47 +2392,6 @@
           ]
         }
       ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Below ground biomass (BGB) (t/ha) at 20 m spatial resolution estimated using Sentinel-1 and ALOS 2 PALSAR 2 data.",
-        "attribution": {
-          "text": "Forest Carbon Monitoring Service",
-          "url": "https://www.forestcarbonplatform.org/"
-        },
-        "categories": [],
-        "units": "t / ha",
-        "min": 0,
-        "max": 100,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 100,
-            "steps": 50,
-            "name": "velocity-green",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Forest Monitoring",
-        "subinterfaceGroup": "Carbon Stocks 2017-2023",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
       "constraints": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/FCM_Europe_demo_2023_AGB-esa_worldcover_2021.tif",
@@ -2405,7 +2399,6 @@
           "label": "Land Cover Types",
           "type": "categorical",
           "interactive": true,
-          "bandIndex": 2,
           "constrainTo": [
             {
               "label": "Tree Cover",
@@ -2447,11 +2440,54 @@
               "label": "Moss and Lichen",
               "value": 100
             }
-          ]
+          ],
+          "bandIndex": 2
         }
-      ]
+      ],
+      "meta": {
+        "description": "Below ground biomass (BGB) (t/ha) at 20 m spatial resolution estimated using Sentinel-1 and ALOS 2 PALSAR 2 data.",
+        "attribution": {
+          "text": "Forest Carbon Monitoring Service",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "velocity-green",
+            "reverse": true
+          }
+        ],
+        "units": "t / ha",
+        "min": 0,
+        "max": 100
+      },
+      "layout": {
+        "interfaceGroup": "Forest Monitoring",
+        "subinterfaceGroup": "Carbon Stocks 2017-2023",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "main-crop-types-3",
       "name": "Main Crop Types",
       "isActive": false,
       "data": [
@@ -2519,7 +2555,6 @@
           ]
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Annual (2017-2023) pan-European mapping of primary crops at a spatial resolution of 10 m and a MMU of 0.25 ha.",
         "attribution": {
@@ -2643,9 +2678,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "secondary-crop-types-2",
       "name": "Secondary Crop Types",
       "isActive": false,
       "data": [
@@ -2713,7 +2750,6 @@
           ]
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Annual (2017-2023) pan-European mapping of secondary crops at a spatial resolution of 10 m and a MMU of 0.25 ha.",
         "attribution": {
@@ -2762,9 +2798,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "crop-rotation-over-3-years",
       "name": "Crop rotation over 3 years",
       "isActive": false,
       "data": [
@@ -2814,7 +2852,6 @@
           ]
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Shows the crop type diversity (number of different crops) over a 3 year period.",
         "attribution": {
@@ -2858,9 +2895,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "agricultural-and-urban-trees",
       "name": "Agricultural and Urban Trees",
       "isActive": false,
       "data": [
@@ -2883,7 +2922,6 @@
           ]
         }
       ],
-      "timeframe": "Years",
       "meta": {
         "description": "Shows areas where trees are used for agricultural practices, or in urban areas",
         "attribution": {
@@ -2927,9 +2965,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Years"
     },
     {
+      "id": "sentinel-2-lai",
       "name": "Sentinel-2 LAI",
       "isActive": false,
       "data": [
@@ -2941,7 +2981,6 @@
           "useTimeParameter": true
         }
       ],
-      "timeframe": "Days",
       "meta": {
         "description": "Satellite-derived Leaf Area Index (LAI) from Sentinel-2. Indicates density of vegetation canopy. Time series available.",
         "attribution": {
@@ -2967,9 +3006,11 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Days"
     },
     {
+      "id": "sentinel-2-fcover",
       "name": "Sentinel-2 FCOVER",
       "isActive": false,
       "data": [
@@ -2981,7 +3022,6 @@
           "useTimeParameter": true
         }
       ],
-      "timeframe": "Days",
       "meta": {
         "description": "Satellite-derived Fraction of Green Vegetaion Cover (FCOVER) from Sentinel-2. Indicates fraction of ground covered by green vegetation.",
         "attribution": {
@@ -3007,11 +3047,40 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "timeframe": "Days"
     },
     {
+      "id": "moor-house",
       "name": "Moor House",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/MoorHouse/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/MoorHouse/WhatSARPeat/peat-classification/peat_classification.tif",
+          "format": "cog",
+          "label": "Peatland Classification",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Not Peatland",
+              "value": 0
+            },
+            {
+              "label": "Peatland",
+              "value": 1
+            }
+          ],
+          "bandIndex": 2
+        }
+      ],
       "meta": {
         "description": "Water level trend over the period 2017-24 (in mm/yr) for selected peatland sites in the UK.",
         "attribution": {
@@ -3019,9 +3088,6 @@
           "url": "https://stac-browser.worldpeatland.org/#/moor-house/catalog.json"
         },
         "categories": [],
-        "units": "mm/yr",
-        "min": -80,
-        "max": 80,
         "colormaps": [
           {
             "min": -80,
@@ -3030,7 +3096,10 @@
             "name": "jet",
             "reverse": true
           }
-        ]
+        ],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -3051,34 +3120,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/MoorHouse/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "constraints": [
-        {
-          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/MoorHouse/WhatSARPeat/peat-classification/peat_classification.tif",
-          "format": "cog",
-          "label": "Peatland Classification",
-          "type": "categorical",
-          "interactive": true,
-          "bandIndex": 2,
-          "constrainTo": [
-            {
-              "label": "Not Peatland",
-              "value": 0
-            },
-            {
-              "label": "Peatland",
-              "value": 1
-            }
-          ]
-        }
-      ]
+      }
     }
   ]
 }
