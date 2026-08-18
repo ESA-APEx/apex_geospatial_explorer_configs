@@ -7,9 +7,7 @@
       "title": "SEF Demo - Ecosystems and Biodiversity"
     },
     "theme": {
-      "primary-color": "#005c25",
-      "secondary-color": "#00752f",
-      "background-color": "#caecd8"
+      "branding": "https://raw.githubusercontent.com/ESA-APEx/apex_project_branding/refs/heads/main/demo.css"
     }
   },
   "interfaceGroups": [
