@@ -7,8 +7,7 @@
       "title": "APEx - Demo Geospatial Explorer"
     },
     "theme": {
-      "primary-color": "#00323a",
-      "secondary-color": "#14616e"
+      "branding": "https://raw.githubusercontent.com/ESA-APEx/apex_project_branding/refs/heads/main/demo.css"
     }
   },
   "interfaceGroups": [
