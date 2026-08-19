@@ -32,7 +32,539 @@
     "projection": "EPSG:3857"
   },
   "workflows": [],
-  "stories": [],
+  "stories": [
+    {
+      "id": "parma",
+      "title": "Parma (IN DEVELOPMENT)",
+      "thumbnail": "https://commons.wikimedia.org/wiki/Duomo_di_Parma#/media/File:Piazza_Duomo_Parma_2009-08.jpg",
+      "description": "An illustration of how Earth Observation data can be used to provide key information for a city.",
+      "isActive": false,
+      "steps": [
+        {
+          "id": "about-parma",
+          "content": {
+            "title": "About Parma",
+            "description": "Parma is a city of around 200,000 inhabitants in the Emilia-Romagna region of Italy, situated in the Po valley. \n\nIt is well known for Parmesan cheese and Parma ham, but is also a university city and an important agricultural centre."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              10.331611633300783,
+              44.80132682904856
+            ]
+          },
+          "activeLayers": [],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "different-views",
+          "content": {
+            "title": "Different views",
+            "description": "Satellite images capture more than just simple pictures. Different ways of looking at the earth capture different information.\n\nThe left image shows the view in near-infrared wavelengths, while the right images shows a combination of different wavelengths (NDVI: Normalised Difference Vegetation Index)."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              10.331611633300783,
+              44.80132682904856
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "ndvi-versus-3"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "land-cover",
+          "content": {
+            "title": "Land Cover",
+            "description": "By putting together different data sets, and by looking at how these change over time, we can build up a picture of the Earth's surface.\n\nThis images shows the different types of land cover in 2021, computed by the Copernicus Land Monitoring Service (CLMS)."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              10.331611633300783,
+              44.80132682904856
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "european-land-cover"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "european-land-cover",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "extent-of-buildings",
+          "content": {
+            "title": "Extent of buildings",
+            "description": "We can also distinguish between buildings (in black) and other types of sealed surfaces, such as roads, railways or the airport (visible in the top left)."
+          },
+          "viewport": {
+            "zoom": 14,
+            "center": [
+              10.332641601562502,
+              44.80132682904856
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "european-land-cover",
+              "date": "latest"
+            },
+            {
+              "id": "extent-of-settlement"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "extent-of-settlement"
+          }
+        },
+        {
+          "id": "land-use",
+          "content": {
+            "title": "Land Use",
+            "description": "By combining satellite data with auxilliary data we can also estimate not land cover, but also land use (i.e. what the land is being used for).\n\nThis images shows land use in 2021, taken by the Copernicus Urban Atlas (produced by CLMS)."
+          },
+          "viewport": {
+            "zoom": 14,
+            "center": [
+              10.332641601562502,
+              44.80132682904856
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "urban-atlas"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "urban-atlas",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "heat-island-maps",
+          "content": {
+            "title": "Heat Island Maps",
+            "description": "Looking at the land surface temperature over time builds up a picture of where the heat islands occur in the city. \n\nThis image uses IR data from Sentinel 2 to shows the average temperature during Summer 2023, with redder areas indicating hotspots."
+          },
+          "viewport": {
+            "zoom": 14,
+            "center": [
+              10.332641601562502,
+              44.80132682904856
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "urban-heat-island"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "heat-and-vegetation",
+          "content": {
+            "title": "Heat and Vegetation",
+            "description": "Satellites can also be used to map where street trees are. Overlaying street trees over the heat map clearly shows the correlation between heat islands and the lack of tree canopy cover."
+          },
+          "viewport": {
+            "zoom": 14,
+            "center": [
+              10.332641601562502,
+              44.80132682904856
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "urban-heat-island"
+            },
+            {
+              "id": "street-trees-3"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "street-trees-3"
+          }
+        },
+        {
+          "id": "air-quality",
+          "content": {
+            "title": "Air Quality",
+            "description": "Parma is located in the Po volley, which has some of the poorest air quality in Europe.\n\nIn this image we show the current NO2 distribution over this region, as provided by the Copernicus Atmosphere Monitoring Service (CAMS) using data from various satellites together with models and in situ measurements."
+          },
+          "viewport": {
+            "zoom": 8,
+            "center": [
+              10.464477539062502,
+              45.04635929200553
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "no2-at-surface"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "conclusion",
+          "content": {
+            "title": "Conclusion",
+            "description": "This story has shown some of the key ways in which satellites can monitor cities, but it is not the complete picture.\n\nThere are many other areas where satellites can support, such as measuring subsidence, changes detection, etc. \n\nHave a look at some of the other stories in the gallery for examples."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              10.331611633300783,
+              44.80132682904856
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "ndvi-2"
+            }
+          ],
+          "baseLayer": "sentinel"
+        }
+      ]
+    },
+    {
+      "id": "toronto",
+      "title": "Toronto (IN DEVELOPMENT)",
+      "description": "Looking at mapping the city from space.",
+      "isActive": false,
+      "steps": [
+        {
+          "id": "introduction",
+          "content": {
+            "title": "Introduction",
+            "description": "Toronto is the capital city of the Canadian province of Ontario. It is the most populous city in Canada, with approximately 3 million people living in the city (7 million if surrounding areas are included).\n\nHere we see an image of Toronto from space, taken by Sentinel-2."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              -79.42840576171876,
+              43.69667260550321
+            ]
+          },
+          "activeLayers": [],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "mapping-the-city",
+          "content": {
+            "title": "Mapping the city",
+            "description": "Using satellite data we can map the extent of the city, by determining where buildings are present (shown in black).\n\nThis map comes from DLR's World Settlement Footprint project, and shows the city in 2019."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              -79.42840576171876,
+              43.69667260550321
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "extent-of-settlement",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "open-streetmap"
+        },
+        {
+          "id": "a-growing-city",
+          "content": {
+            "title": "A growing city",
+            "description": "Since we have a long time series of satellite data we can go back in time to see how the city has grown over the years.\n\nThis map comes from DLR's World Settlement Footprint project, and shows growth between 1985 and 2015. Redder areas are older, while blue shows newer buildings."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              -79.42840576171876,
+              43.69667260550321
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "evolution-1985-2015"
+            }
+          ],
+          "baseLayer": "open-streetmap",
+          "panelState": {
+            "focusLayer": "evolution-1985-2015",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "a-3d-city",
+          "content": {
+            "title": "A 3D city",
+            "description": "As well as building extent, we can use SAR techniques to see the height of buildings.\n\nThis map comes from DLR's World Settlement Footprint project, and shows the city in 2019. The city centre can clearly be seen in red."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              -79.42840576171876,
+              43.69667260550321
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "extent-of-settlement",
+              "date": "latest"
+            },
+            {
+              "id": "building-height",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "open-streetmap",
+          "panelState": {
+            "focusLayer": "building-height",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "population-density",
+          "content": {
+            "title": "Population Density",
+            "description": "Using this we can estimate the population density across the metropolitan region.\n\nATTRIBUTION NEEDED"
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              -79.42840576171876,
+              43.69667260550321
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "explore"
+            }
+          ],
+          "baseLayer": "open-streetmap",
+          "panelState": {
+            "focusLayer": "explore",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "mapping-the-region",
+          "content": {
+            "title": "Mapping the region",
+            "description": "As well as looking at the city itself we can also use EO to look at its surrounding area.\n\nData from ESA WorldCover"
+          },
+          "viewport": {
+            "zoom": 8,
+            "center": [
+              -79.45312500000001,
+              43.75522505306928
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "global-land-cover-imported"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "global-land-cover-imported",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "vienna",
+      "title": "Vienna (IN DEVELOPMENT)",
+      "description": "Looking at the heat island effect in Vienna",
+      "isActive": false,
+      "steps": [
+        {
+          "id": "introduction",
+          "content": {
+            "title": "Introduction",
+            "description": "Like many European cities, Vienna is increasingly subject to heatwaves during the summer months. This story looks at how EO data can support monitoring of heat islands."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              16.425247192382816,
+              48.21231998069736
+            ]
+          },
+          "activeLayers": [],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "heat-maps",
+          "content": {
+            "title": "Heat maps",
+            "description": "This map shows the average Land surface temperatures over Austria during summer (between June 1st and June 24th) for 3 years (2022-24), as measured by the ECOSTRESS instrument mounted on the International Space Station."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              16.425247192382816,
+              48.21231998069736
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "land-surface-temperature"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "land-surface-temperature",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "street-heat",
+          "content": {
+            "title": "Street heat",
+            "description": "Superimposing buildings shows the heat at street level.\n\n(Building data are  takenfrom DLR's World Settlement Footprint project, and are for 2019.)"
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              16.391601562500004,
+              48.210604096512405
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "land-surface-temperature"
+            },
+            {
+              "id": "extent-of-settlement",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "street-heat-and-tree-cover",
+          "content": {
+            "title": "Street heat and tree cover",
+            "description": "We can also add in the presence of street trees, as taken from CLMS Urban Atlas."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              16.391601562500004,
+              48.210604096512405
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "land-surface-temperature"
+            },
+            {
+              "id": "extent-of-settlement",
+              "date": "latest"
+            },
+            {
+              "id": "street-trees-3",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "street-heat-and-tree-cover-zoomed",
+          "content": {
+            "title": "Street heat and tree cover (zoomed)",
+            "description": "Looking at the suburbs clearly shows the inverse correlation between heat islands and tree cover."
+          },
+          "viewport": {
+            "zoom": 14,
+            "center": [
+              16.3337516784668,
+              48.231076563740906
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "land-surface-temperature"
+            },
+            {
+              "id": "extent-of-settlement",
+              "date": "latest"
+            },
+            {
+              "id": "street-trees-3",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "presence-of-important-buildings",
+          "content": {
+            "title": "Presence of important buildings",
+            "description": "We can also look at where key bits of infrastructure are with respect to heat islands."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              16.391601562500004,
+              48.210604096512405
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "land-surface-temperature"
+            },
+            {
+              "id": "extent-of-settlement",
+              "date": "latest"
+            },
+            {
+              "id": "street-trees-3",
+              "date": "latest"
+            },
+            {
+              "id": "important-buildings"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "important-buildings",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        }
+      ]
+    }
+  ],
   "services": [
     {
       "id": "wms-service-1763653155285",
@@ -107,12 +639,6 @@
       "format": "stac"
     },
     {
-      "id": "wms-service-1775742921017",
-      "name": "GFM WFS",
-      "url": "https://geoserver.gfm.eodc.eu/geoserver/gfm/wms",
-      "format": "wms"
-    },
-    {
       "id": "wms-service-1775744638267",
       "name": "ECMWF WMS",
       "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
@@ -161,18 +687,6 @@
       "format": "cog"
     },
     {
-      "id": "wms-service-1780920062780",
-      "name": "NASA Earth Observations (NEO) WMS",
-      "url": "https://neo.gsfc.nasa.gov/wms/wms?version=1.3.0",
-      "format": "wms"
-    },
-    {
-      "id": "wms-service-1780920825142",
-      "name": "NASA Earth Observations (NEO) WMS",
-      "url": "https://neo.gsfc.nasa.gov/wms/wms?version=1.1.1",
-      "format": "wms"
-    },
-    {
       "id": "wms-service-1758879238525",
       "name": "CLMS WMS Server",
       "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
@@ -189,23 +703,32 @@
       "name": "",
       "url": "https://wmts.terrascope.be/?service=WMTS&request=GetCapabilities",
       "format": "wmts"
+    },
+    {
+      "id": "wms-service-1785159149248",
+      "name": "NASA Global Imagery Browse Services for EOSDIS WMS (EPSG:3857 / best)",
+      "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1785491698366",
+      "name": "GWIS",
+      "url": "https://maps.effis.emergency.copernicus.eu/gwis",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1785839112500",
+      "name": "Terrascope MapProxy WMS",
+      "url": "https://mapproxy.terrascope.be/mapproxy/service",
+      "format": "wms"
     }
   ],
   "sources": [
     {
-      "id": "global-land-cover",
+      "id": "global-land-cover-imported",
       "name": "Global Land Cover",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "esa-worldcover-map-10m-2021-v2_map",
-          "useTimeParameter": true,
-          "version": "1.0.0"
-        }
-      ],
+      "timeframe": "Days",
       "meta": {
         "description": "Global land cover map at 10 m resolution derived from Sentinel-1 and Sentinel-2 observations, produced within the ESA WorldCover project. It is useful in urban contexts to understand how land is distributed between natural areas, agriculture, and built-up zones, for land-use planning and monitoring of urban expansion into surrounding landscapes.",
         "attribution": {
@@ -284,13 +807,22 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
-      "isBaseLayer": false,
-      "exclusivitySets": [],
-      "timeframe": "Days"
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "esa-worldcover-map-10m-2021-v2_map",
+          "useTimeParameter": true,
+          "version": "1.0.0"
+        }
+      ]
     },
     {
       "id": "european-land-cover",
@@ -597,11 +1129,9 @@
         {
           "url": "https://geoservice.dlr.de/eoc/land/wms",
           "format": "wms",
-          "zIndex": 50,
+          "zIndex": 49,
           "layers": "WSF_2019",
-          "timestamps": [
-            1546297200
-          ]
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -921,383 +1451,8 @@
       }
     },
     {
-      "id": "land-cover",
-      "name": "Land Cover",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
-        }
-      ],
-      "meta": {
-        "description": "Pan-European land cover dataset produced by the Copernicus Land Monitoring Service. Each pixel represents the dominant land cover class for 2021. It supports urban analysis by enabling comparison of land structure, urbanisation intensity, and landscape composition across European regions.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service",
-          "url": "https://land.copernicus.eu/en/products/clc-backbone/clc-backbone-2021"
-        },
-        "categories": [
-          {
-            "color": "#ff0000",
-            "label": "Sealed",
-            "value": 1
-          },
-          {
-            "color": "#228b22",
-            "label": "Woody needle leaved trees",
-            "value": 2
-          },
-          {
-            "color": "#80ff00",
-            "label": "Woody Broadleaved deciduous trees",
-            "value": 3
-          },
-          {
-            "color": "#00ff08",
-            "label": "Woody Broadleaved evergreen trees",
-            "value": 4
-          },
-          {
-            "color": "#804000",
-            "label": "Low-growing woody plants",
-            "value": 5
-          },
-          {
-            "color": "#ccf24d",
-            "label": "Permanent herbaceous",
-            "value": 6
-          },
-          {
-            "color": "#ffff80",
-            "label": "Periodically herbaceous",
-            "value": 7
-          },
-          {
-            "color": "#ff80ff",
-            "label": "Lichens and mosses",
-            "value": 8
-          },
-          {
-            "color": "#bfbfbf",
-            "label": "Non and sparsely vegetated",
-            "value": 9
-          },
-          {
-            "color": "#0080ff",
-            "label": "Water",
-            "value": 10
-          },
-          {
-            "color": "#00ffff",
-            "label": "Snow and ice",
-            "value": 11
-          },
-          {
-            "color": "#e6e6e6",
-            "label": "Outside area",
-            "value": 12
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                -8.335,
-                41.415,
-                -8.235,
-                41.47
-              ]
-            },
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "extent-of-buildings",
-      "name": "Extent of Buildings",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_2015",
-          "timestamps": [
-            1420066800
-          ]
-        },
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_2019",
-          "timestamps": [
-            1546297200
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Global settlement footprints derived from satellite-based mapping of built-up areas for 2015 and 2019. Built-up detection is performed using multi-source Earth observation data to identify human settlements. It is used to quantify urban expansion, compare settlement growth over time across regions, and identify where urban growth is occurring.",
-        "attribution": {
-          "text": "DLR World Settlement Footprint",
-          "url": "https://www.dlr.de/en/eoc/research-transfer/projects-missions/world-settlement-footprint-wsf-r"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                -8.335,
-                41.415,
-                -8.235,
-                41.47
-              ]
-            },
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Years"
-    },
-    {
-      "id": "evolution-of-settlement-1985-2015",
-      "name": "Evolution of Settlement 1985-2015",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_Evolution",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Historical reconstruction of the first year of urbanisation derived from long-term Landsat archives. Built-up areas are detected through temporal analysis of satellite imagery to identify land conversion to urban use. It supports long-term urban planning by showing how and when cities have expanded, useful for understanding historical growth patterns and guiding future development strategies.",
-        "attribution": {
-          "text": "© DLR (German Aerospace Center) – World Settlement Footprint Program",
-          "url": "https://geoservice.dlr.de/web/datasets/wsf_evo"
-        },
-        "categories": [
-          {
-            "color": "#d50000",
-            "label": "1985",
-            "value": 0
-          },
-          {
-            "color": "#dd2200",
-            "label": "1986",
-            "value": 0
-          },
-          {
-            "color": "#e54500",
-            "label": "1987",
-            "value": 0
-          },
-          {
-            "color": "#ee6700",
-            "label": "1988",
-            "value": 0
-          },
-          {
-            "color": "#f68a00",
-            "label": "1989",
-            "value": 0
-          },
-          {
-            "color": "#ffad00",
-            "label": "1990",
-            "value": 0
-          },
-          {
-            "color": "#ecbd00",
-            "label": "1991",
-            "value": 0
-          },
-          {
-            "color": "#d9cd00",
-            "label": "1992",
-            "value": 0
-          },
-          {
-            "color": "#c6de00",
-            "label": "1993",
-            "value": 0
-          },
-          {
-            "color": "#b3ee00",
-            "label": "1994",
-            "value": 0
-          },
-          {
-            "color": "#a1ff00",
-            "label": "1995",
-            "value": 0
-          },
-          {
-            "color": "#80f200",
-            "label": "1996",
-            "value": 0
-          },
-          {
-            "color": "#60e500",
-            "label": "1997",
-            "value": 0
-          },
-          {
-            "color": "#40d800",
-            "label": "1998",
-            "value": 0
-          },
-          {
-            "color": "#20cb00",
-            "label": "1999",
-            "value": 0
-          },
-          {
-            "color": "#00be00",
-            "label": "2000",
-            "value": 0
-          },
-          {
-            "color": "#00b923",
-            "label": "2001",
-            "value": 0
-          },
-          {
-            "color": "#00b546",
-            "label": "2002",
-            "value": 0
-          },
-          {
-            "color": "#00b069",
-            "label": "2003",
-            "value": 0
-          },
-          {
-            "color": "#00ac8c",
-            "label": "2004",
-            "value": 0
-          },
-          {
-            "color": "#00a8af",
-            "label": "2005",
-            "value": 0
-          },
-          {
-            "color": "#008ab8",
-            "label": "2006",
-            "value": 0
-          },
-          {
-            "color": "#006cc1",
-            "label": "2007",
-            "value": 0
-          },
-          {
-            "color": "#004eca",
-            "label": "2008",
-            "value": 0
-          },
-          {
-            "color": "#0030d3",
-            "label": "2009",
-            "value": 0
-          },
-          {
-            "color": "#0012dd",
-            "label": "2010",
-            "value": 0
-          },
-          {
-            "color": "#190ecd",
-            "label": "2011",
-            "value": 0
-          },
-          {
-            "color": "#3232bd",
-            "label": "2012",
-            "value": 0
-          },
-          {
-            "color": "#4b07ad",
-            "label": "2013",
-            "value": 0
-          },
-          {
-            "color": "#64039d",
-            "label": "2014",
-            "value": 0
-          },
-          {
-            "color": "#7e008e",
-            "label": "2015",
-            "value": 0
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                -8.335,
-                41.415,
-                -8.235,
-                41.47
-              ]
-            },
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
       "id": "urban-heat-islands",
-      "name": "Urban Heat Islands",
+      "name": "Guimaraes: UHI",
       "isActive": false,
       "data": [
         {
@@ -1325,7 +1480,7 @@
       },
       "layout": {
         "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
+        "subinterfaceGroup": "Urban Heat Islands",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1346,7 +1501,7 @@
     },
     {
       "id": "uhi-2020-2025",
-      "name": "UHI 2020-2025",
+      "name": "Porto: UHI 2020-2025",
       "isActive": false,
       "data": [
         {
@@ -1417,7 +1572,7 @@
       },
       "layout": {
         "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Porto: Urban Heat Islands",
+        "subinterfaceGroup": "Urban Heat Islands",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1443,424 +1598,6 @@
         }
       },
       "timeframe": "Years"
-    },
-    {
-      "id": "street-trees",
-      "name": "Street Trees",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Raster27733",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Vector61679",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Presence of street trees, showing areas where there is most cooling.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas 2012",
-          "url": "https://land.copernicus.eu/local/urban-atlas"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Porto: Urban Heat Islands",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=STL_Raster27733"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                -8.77,
-                41.09,
-                -8.44,
-                41.26
-              ]
-            },
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "population-density",
-      "name": "Population Density",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/WorldPop/population_europe_cog.tif",
-          "format": "cog",
-          "zIndex": 30,
-          "opacity": 0.8
-        }
-      ],
-      "meta": {
-        "description": "High-resolution population distribution from WorldPop modelling, combining census data and satellite-derived settlement information. It supports identification of population concentration and urban pressure zones.",
-        "attribution": {
-          "text": "WorldPop",
-          "url": "https://www.worldpop.org/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 3000,
-            "steps": 64,
-            "name": "viridis",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Porto: Urban Heat Islands",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://neo.gsfc.nasa.gov/palettes/sedac_pop.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                -8.77,
-                41.09,
-                -8.44,
-                41.26
-              ]
-            },
-            "temporalControls": false,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "land-use",
-      "name": "Land Use",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Land_Use_Raster1402",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Land_Use_vector52160",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "High-resolution land use and land cover map for European functional urban areas, providing detailed classification of urban and peri-urban zones for the 2018 reference year.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas, European Environment Agency (EEA)",
-          "url": "https://land.copernicus.eu/en/products/urban-atlas/urban-atlas-2018"
-        },
-        "categories": [
-          {
-            "color": "#800000",
-            "label": "Continuous Urban fabric (S.L. > 80%)",
-            "value": 11100
-          },
-          {
-            "color": "#bf0000",
-            "label": "Discontinuous Dense Urban Fabric (S.L.: 50% - 80%)",
-            "value": 11210
-          },
-          {
-            "color": "#ff4040",
-            "label": "Discontinuous Medium Density Urban Fabric (S.L.: 30% - 50%)",
-            "value": 11220
-          },
-          {
-            "color": "#ff8080",
-            "label": "Discontinuous Low Density Urban Fabric (S.L.: 10% - 30%)",
-            "value": 11230
-          },
-          {
-            "color": "#ffbfbf",
-            "label": "Discontinuous very low density urban fabric (S.L. < 10%)",
-            "value": 11240
-          },
-          {
-            "color": "#cc6666",
-            "label": "Isolated Structures",
-            "value": 11300
-          },
-          {
-            "color": "#cc4df2",
-            "label": "Industrial, commercial, public, military and private units",
-            "value": 12100
-          },
-          {
-            "color": "#959595",
-            "label": "Fast transit roads and associated land",
-            "value": 12210
-          },
-          {
-            "color": "#b3b3b3",
-            "label": "Other roads and associated land",
-            "value": 12220
-          },
-          {
-            "color": "#595959",
-            "label": "Railways and associated land",
-            "value": 12230
-          },
-          {
-            "color": "#e6cccc",
-            "label": "Port areas",
-            "value": 12300
-          },
-          {
-            "color": "#e6cce6",
-            "label": "Airports",
-            "value": 12400
-          },
-          {
-            "color": "#734d50",
-            "label": "Mineral extraction and dump sites",
-            "value": 13100
-          },
-          {
-            "color": "#b9a56e",
-            "label": "Construction sites",
-            "value": 13300
-          },
-          {
-            "color": "#874545",
-            "label": "Land without current use",
-            "value": 13400
-          },
-          {
-            "color": "#8cdc00",
-            "label": "Green urban areas",
-            "value": 14100
-          },
-          {
-            "color": "#afd2a5",
-            "label": "Sports and leisure facilities",
-            "value": 14200
-          },
-          {
-            "color": "#ffffa8",
-            "label": "Arable land (annual crops)",
-            "value": 21000
-          },
-          {
-            "color": "#f2a64d",
-            "label": "Arable land (annual crops)",
-            "value": 21000
-          },
-          {
-            "color": "#e6e64d",
-            "label": "Pastures",
-            "value": 23000
-          },
-          {
-            "color": "#ffe64d",
-            "label": "Complex and mixed cultivation patterns",
-            "value": 24000
-          },
-          {
-            "color": "#f2cc80",
-            "label": "Orchards",
-            "value": 25000
-          },
-          {
-            "color": "#008c00",
-            "label": "Forests",
-            "value": 31000
-          },
-          {
-            "color": "#ccf24d",
-            "label": "Herbaceous vegetation associations",
-            "value": 32000
-          },
-          {
-            "color": "#ccffcc",
-            "label": "Herbaceous vegetation associations",
-            "value": 32000
-          },
-          {
-            "color": "#a6a6ff",
-            "label": "Wetlands",
-            "value": 40000
-          },
-          {
-            "color": "#80f2e6",
-            "label": "Water",
-            "value": 50000
-          }
-        ],
-        "units": "Categorical classe"
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Porto: Urban Heat Islands",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                -8.77,
-                41.09,
-                -8.44,
-                41.26
-              ]
-            },
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "pm-2-5-from-cams",
-      "name": "PM 2.5 from CAMS",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
-          "format": "wms",
-          "zIndex": 20,
-          "layers": "composition_pm2p5",
-          "opacity": 0.6,
-          "parameters": {
-            "token": "public"
-          },
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Fine particulate matter concentration derived from Copernicus Atmosphere Monitoring Service reanalysis and atmospheric chemistry models. It supports assessment of urban air pollution exposure and associated health risks.",
-        "attribution": {
-          "text": "ECMWF/CAMS",
-          "url": "https://ads.atmosphere.copernicus.eu/datasets"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Oslo: Air Quality",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_pm2p5&styles=sh_all_pm2p5_defra_daqi&width=350&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                10.1,
-                59.5,
-                11.58,
-                60.04
-              ]
-            },
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "id": "no2-from-cams",
-      "name": "NO2 from CAMS",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
-          "format": "wms",
-          "zIndex": 20,
-          "layers": "composition_europe_no2_analysis_surface",
-          "opacity": 0.7,
-          "parameters": {
-            "token": "public"
-          },
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Surface nitrogen dioxide concentration derived from CAMS atmospheric composition modelling combining satellite observations and chemical transport models. It supports identification of traffic-related pollution hotspots in urban areas.",
-        "attribution": {
-          "text": "ECMWF / CAMS",
-          "url": "https://ads.atmosphere.copernicus.eu/datasets"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Oslo: Air Quality",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_no2_analysis_surface&styles=sh_Reds_surface_concentration&width=350&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                10.1,
-                59.5,
-                11.58,
-                60.04
-              ]
-            },
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Days"
     },
     {
       "id": "measured-no2",
@@ -40837,6 +40574,9 @@
           "url": "https://gtif-demo.eox.at/explore?indicator=HAUC1&x=1682304.11139&y=6105680.32568&z=7.21675"
         },
         "categories": [],
+        "units": "°C",
+        "min": 0,
+        "max": 40,
         "colormaps": [
           {
             "min": 0,
@@ -40845,14 +40585,11 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "°C",
-        "min": 0,
-        "max": 40
+        ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Vienna: Heat mapping",
+        "subinterfaceGroup": "Vienna",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -40908,7 +40645,7 @@
       },
       "layout": {
         "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Vienna: Heat mapping",
+        "subinterfaceGroup": "Vienna",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -40927,57 +40664,6 @@
                 48.275
               ]
             },
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false
-    },
-    {
-      "id": "street-trees-2",
-      "name": "Street Trees",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Raster27733",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "STL_Vector61679",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Presence of street trees, showing areas where there is most cooling.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas 2012",
-          "url": "https://land.copernicus.eu/local/urban-atlas"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Vienna: Heat mapping",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=STL_Raster27733"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
             "temporalControls": false,
             "constraintSlider": false,
             "blendControls": false
@@ -41224,119 +40910,6 @@
         }
       },
       "timeframe": "Days"
-    },
-    {
-      "id": "lai",
-      "name": "LAI",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "terrascope-s2-lai-v2_lai",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Leaf Area Index derived from Sentinel-2 observations using radiative transfer modelling. It estimates vegetation canopy density as leaf area per unit ground surface. It characterizes canopy structure, density, and seasonal variability.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service",
-          "url": "https://land.copernicus.eu/en"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Urban Greening",
-        "subinterfaceGroup": "Vegetation Condition",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "id": "growing-stock-volume-gsv",
-      "name": "Growing Stock Volume (GSV)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2023/01/01/FCM-GSV-100m-2023/FCM_Europe_demo_2023_GSV.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1672527600
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2021/01/01/FCM-GSV-100m-2021/FCM_Europe_demo_2021_GSV.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1609455600
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2020/01/01/FCM-GSV-100m-2020/FCM_Europe_demo_2020_GSV.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1577833200
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Forest biomass volume per hectare derived from a machine learning model combining Sentinel-1 radar, Sentinel-2 optical data, and auxiliary geospatial datasets. It quantifies surrounding forest resources and carbon storage.",
-        "attribution": {
-          "text": "© European Space Agency (ESA), Forest Classification Model (FCM) – Growing Stock Volume 2020",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/FCM-GSV-100m/items/FCM-GSV-100m-2020?.asset=asset-product"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 800,
-            "steps": 50,
-            "name": "viridis",
-            "reverse": false
-          }
-        ],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 800
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Years"
     },
     {
       "id": "sentinel",
@@ -41586,52 +41159,6 @@
           "legend": {
             "type": "image",
             "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_o3_analysis_surface&styles=sh_Oranges_surface_concentration&width=350&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "id": "dust-aod",
-      "name": "Dust AOD",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
-          "format": "wms",
-          "zIndex": 20,
-          "layers": "composition_duaod550",
-          "opacity": 0.6,
-          "parameters": {
-            "token": "public"
-          },
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Aerosol optical depth at 550 nm derived from CAMS atmospheric aerosol modelling representing dust load in the atmosphere. It supports analysis of episodic dust events affecting urban air quality.",
-        "attribution": {
-          "text": "ECMWF / CAMS",
-          "url": "https://ads.atmosphere.copernicus.eu/datasets"
-        },
-        "categories": [],
-        "colormaps": []
-      },
-      "layout": {
-        "interfaceGroup": "Air Quality",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_duaod550&styles=sh_all_aod&width=350&height=50"
           },
           "controls": {
             "opacitySlider": true,
@@ -41917,7 +41444,8 @@
       "meta": {
         "description": "Spatial probability model of landslide occurrence derived from terrain, geology, land cover, and environmental predictors. It supports the identification of unstable slopes to avoid risky development in vulnerable areas.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "EFAS / Copernicus EMS",
+          "url": "https://european-flood.emergency.copernicus.eu/react/"
         },
         "categories": []
       },
@@ -42369,6 +41897,9 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000,
         "colormaps": [
           {
             "min": 0,
@@ -42377,10 +41908,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000
+        ]
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -42491,419 +42019,8 @@
       "timeframe": "Days"
     },
     {
-      "id": "land-cover-2",
-      "name": "Land Cover",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/CLC_plus/CLMS_CLCplus_RASTER_2021_010m_eu/ImageServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "CLMS_CLCplus_RASTER_2021_010m_eu"
-        }
-      ],
-      "meta": {
-        "description": "A pan-European spatially consistent and seamless, detailed land cover inventory for the 2021 reference year, for each pixel showing the dominant land cover among the 11 basic land cover classes.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service",
-          "url": "https://land.copernicus.eu/en/products/clc-backbone/clc-backbone-2021"
-        },
-        "categories": [
-          {
-            "color": "#ff0000",
-            "label": "Sealed",
-            "value": 1
-          },
-          {
-            "color": "#228b22",
-            "label": "Woody needle leaved trees",
-            "value": 2
-          },
-          {
-            "color": "#80ff00",
-            "label": "Woody Broadleaved deciduous trees",
-            "value": 3
-          },
-          {
-            "color": "#00ff08",
-            "label": "Woody Broadleaved evergreen trees",
-            "value": 4
-          },
-          {
-            "color": "#804000",
-            "label": "Low-growing woody plants",
-            "value": 5
-          },
-          {
-            "color": "#ccf24d",
-            "label": "Permanent herbaceous",
-            "value": 6
-          },
-          {
-            "color": "#ffff80",
-            "label": "Periodically herbaceous",
-            "value": 7
-          },
-          {
-            "color": "#ff80ff",
-            "label": "Lichens and mosses",
-            "value": 8
-          },
-          {
-            "color": "#bfbfbf",
-            "label": "Non and sparsely vegetated",
-            "value": 9
-          },
-          {
-            "color": "#0080ff",
-            "label": "Water",
-            "value": 10
-          },
-          {
-            "color": "#00ffff",
-            "label": "Snow and ice",
-            "value": 11
-          },
-          {
-            "color": "#e6e6e6",
-            "label": "Outside area",
-            "value": 12
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Parma: Mapping Urban Risks",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                10.26,
-                44.76,
-                10.41,
-                44.84
-              ]
-            },
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "land-use-2",
-      "name": "Land Use",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Land_Use_Raster1402",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Land_Use_vector52160",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "High-resolution land use and land cover map for European functional urban areas, providing detailed classification of urban and peri-urban zones for the 2018 reference year.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service (CLMS) – Urban Atlas, European Environment Agency (EEA)",
-          "url": "https://land.copernicus.eu/en/products/urban-atlas/urban-atlas-2018"
-        },
-        "categories": [
-          {
-            "color": "#800000",
-            "label": "Continuous Urban fabric (S.L. > 80%)",
-            "value": 11100
-          },
-          {
-            "color": "#bf0000",
-            "label": "Discontinuous Dense Urban Fabric (S.L.: 50% - 80%)",
-            "value": 11210
-          },
-          {
-            "color": "#ff4040",
-            "label": "Discontinuous Medium Density Urban Fabric (S.L.: 30% - 50%)",
-            "value": 11220
-          },
-          {
-            "color": "#ff8080",
-            "label": "Discontinuous Low Density Urban Fabric (S.L.: 10% - 30%)",
-            "value": 11230
-          },
-          {
-            "color": "#ffbfbf",
-            "label": "Discontinuous very low density urban fabric (S.L. < 10%)",
-            "value": 11240
-          },
-          {
-            "color": "#cc6666",
-            "label": "Isolated Structures",
-            "value": 11300
-          },
-          {
-            "color": "#cc4df2",
-            "label": "Industrial, commercial, public, military and private units",
-            "value": 12100
-          },
-          {
-            "color": "#959595",
-            "label": "Fast transit roads and associated land",
-            "value": 12210
-          },
-          {
-            "color": "#b3b3b3",
-            "label": "Other roads and associated land",
-            "value": 12220
-          },
-          {
-            "color": "#595959",
-            "label": "Railways and associated land",
-            "value": 12230
-          },
-          {
-            "color": "#e6cccc",
-            "label": "Port areas",
-            "value": 12300
-          },
-          {
-            "color": "#e6cce6",
-            "label": "Airports",
-            "value": 12400
-          },
-          {
-            "color": "#734d50",
-            "label": "Mineral extraction and dump sites",
-            "value": 13100
-          },
-          {
-            "color": "#b9a56e",
-            "label": "Construction sites",
-            "value": 13300
-          },
-          {
-            "color": "#874545",
-            "label": "Land without current use",
-            "value": 13400
-          },
-          {
-            "color": "#8cdc00",
-            "label": "Green urban areas",
-            "value": 14100
-          },
-          {
-            "color": "#afd2a5",
-            "label": "Sports and leisure facilities",
-            "value": 14200
-          },
-          {
-            "color": "#ffffa8",
-            "label": "Arable land (annual crops)",
-            "value": 21000
-          },
-          {
-            "color": "#f2a64d",
-            "label": "Arable land (annual crops)",
-            "value": 21000
-          },
-          {
-            "color": "#e6e64d",
-            "label": "Pastures",
-            "value": 23000
-          },
-          {
-            "color": "#ffe64d",
-            "label": "Complex and mixed cultivation patterns",
-            "value": 24000
-          },
-          {
-            "color": "#f2cc80",
-            "label": "Orchards",
-            "value": 25000
-          },
-          {
-            "color": "#008c00",
-            "label": "Forests",
-            "value": 31000
-          },
-          {
-            "color": "#ccf24d",
-            "label": "Herbaceous vegetation associations",
-            "value": 32000
-          },
-          {
-            "color": "#ccffcc",
-            "label": "Herbaceous vegetation associations",
-            "value": 32000
-          },
-          {
-            "color": "#a6a6ff",
-            "label": "Wetlands",
-            "value": 40000
-          },
-          {
-            "color": "#80f2e6",
-            "label": "Water",
-            "value": 50000
-          }
-        ],
-        "units": "Categorical classe"
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Parma: Mapping Urban Risks",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                10.26,
-                44.76,
-                10.41,
-                44.84
-              ]
-            },
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "extent-of-buildings-2",
-      "name": "Extent of Buildings",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_2015",
-          "timestamps": [
-            1420066800
-          ]
-        },
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_2019",
-          "timestamps": [
-            1546297200
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Shows the extent of human settlements worldwide for the years 2015 and 2019",
-        "attribution": {
-          "text": "DLR World Settlement Footprint",
-          "url": "https://www.dlr.de/en/eoc/research-transfer/projects-missions/world-settlement-footprint-wsf-r"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Parma: Mapping Urban Risks",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                10.26,
-                44.76,
-                10.41,
-                44.84
-              ]
-            },
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Years"
-    },
-    {
-      "id": "flood-hazard-2",
-      "name": "Flood Hazard",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:Europe_combined_flood_scenarios",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Flood scenarios generated from hydrological and hydraulic models within EFAS and Copernicus EMS. It supports identification of areas exposed to potential inundation under different climate scenarios.",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Parma: Mapping Urban Risks",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                10.26,
-                44.76,
-                10.41,
-                44.84
-              ]
-            },
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
       "id": "urban-heat-island",
-      "name": "Urban Heat Island",
+      "name": "Parma UHI",
       "isActive": false,
       "data": [
         {
@@ -42931,7 +42048,7 @@
       },
       "layout": {
         "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Parma: Mapping Urban Risks",
+        "subinterfaceGroup": "Urban Heat Islands",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -42949,565 +42066,6 @@
           }
         }
       }
-    },
-    {
-      "id": "important-buildings-2",
-      "name": "Important Buildings",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/infra_europe.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "circle-radius": 5,
-              "circle-fill-color": [
-                "match",
-                [
-                  "get",
-                  "type"
-                ],
-                "hospital",
-                "#d23232",
-                "ambulance_station",
-                "#fdbaba",
-                "school",
-                "#fc03cf",
-                "university",
-                "#f5b2ec",
-                "police",
-                "#18219a",
-                "fire_station",
-                "#e98b07",
-                "#3b82f6"
-              ],
-              "circle-stroke-color": "#ffffff",
-              "circle-stroke-width": 1
-            }
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Selected infrastructure features extracted from OpenStreetMap and generalised for regional-scale mapping of key urban structures. It supports identification of functional urban nodes, critical infrastructure distribution, useful for emergency planning and urban management..",
-        "attribution": {
-          "text": "OpenStreetMap",
-          "url": "https://www.openstreetmap.org/#map=11/47.1412/15.9381"
-        },
-        "categories": [
-          {
-            "color": "#D23232",
-            "label": "Hospitals",
-            "value": 0
-          },
-          {
-            "color": "#FDBABA",
-            "label": "Ambulance Stations",
-            "value": 0
-          },
-          {
-            "color": "#FC03CF",
-            "label": "Schools",
-            "value": 0
-          },
-          {
-            "color": "#F5B2EC",
-            "label": "Universities",
-            "value": 0
-          },
-          {
-            "color": "#18219A",
-            "label": "Police Stations",
-            "value": 0
-          },
-          {
-            "color": "#E98B07",
-            "label": "Fire Stations",
-            "value": 0
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Parma: Mapping Urban Risks",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "important-buildings-3",
-      "name": "Important Buildings",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/infra_europe.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "circle-radius": 5,
-              "circle-fill-color": [
-                "match",
-                [
-                  "get",
-                  "type"
-                ],
-                "hospital",
-                "#d23232",
-                "ambulance_station",
-                "#fdbaba",
-                "school",
-                "#fc03cf",
-                "university",
-                "#f5b2ec",
-                "police",
-                "#18219a",
-                "fire_station",
-                "#e98b07",
-                "#3b82f6"
-              ],
-              "circle-stroke-color": "#ffffff",
-              "circle-stroke-width": 1
-            }
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Selected infrastructure features extracted from OpenStreetMap and generalised for regional-scale mapping of key urban structures. It supports identification of functional urban nodes, critical infrastructure distribution, useful for emergency planning and urban management..",
-        "attribution": {
-          "text": "OpenStreetMap",
-          "url": "https://www.openstreetmap.org/#map=11/47.1412/15.9381"
-        },
-        "categories": [
-          {
-            "color": "#D23232",
-            "label": "Hospitals",
-            "value": 0
-          },
-          {
-            "color": "#FDBABA",
-            "label": "Ambulance Stations",
-            "value": 0
-          },
-          {
-            "color": "#FC03CF",
-            "label": "Schools",
-            "value": 0
-          },
-          {
-            "color": "#F5B2EC",
-            "label": "Universities",
-            "value": 0
-          },
-          {
-            "color": "#18219A",
-            "label": "Police Stations",
-            "value": 0
-          },
-          {
-            "color": "#E98B07",
-            "label": "Fire Stations",
-            "value": 0
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Vienna: Heat mapping",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "important-buildings-4",
-      "name": "Important Buildings",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/infra_europe.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "circle-radius": 5,
-              "circle-fill-color": [
-                "match",
-                [
-                  "get",
-                  "type"
-                ],
-                "hospital",
-                "#d23232",
-                "ambulance_station",
-                "#fdbaba",
-                "school",
-                "#fc03cf",
-                "university",
-                "#f5b2ec",
-                "police",
-                "#18219a",
-                "fire_station",
-                "#e98b07",
-                "#3b82f6"
-              ],
-              "circle-stroke-color": "#ffffff",
-              "circle-stroke-width": 1
-            }
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Selected infrastructure features extracted from OpenStreetMap and generalised for regional-scale mapping of key urban structures. It supports identification of functional urban nodes, critical infrastructure distribution, useful for emergency planning and urban management..",
-        "attribution": {
-          "text": "OpenStreetMap",
-          "url": "https://www.openstreetmap.org/#map=11/47.1412/15.9381"
-        },
-        "categories": [
-          {
-            "color": "#D23232",
-            "label": "Hospitals",
-            "value": 0
-          },
-          {
-            "color": "#FDBABA",
-            "label": "Ambulance Stations",
-            "value": 0
-          },
-          {
-            "color": "#FC03CF",
-            "label": "Schools",
-            "value": 0
-          },
-          {
-            "color": "#F5B2EC",
-            "label": "Universities",
-            "value": 0
-          },
-          {
-            "color": "#18219A",
-            "label": "Police Stations",
-            "value": 0
-          },
-          {
-            "color": "#E98B07",
-            "label": "Fire Stations",
-            "value": 0
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Porto: Urban Heat Islands",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                -8.77,
-                41.09,
-                -8.44,
-                41.26
-              ]
-            },
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "air-quality-pm-2-5",
-      "name": "Air Quality (PM 2.5)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
-          "format": "wms",
-          "zIndex": 20,
-          "layers": "composition_pm2p5",
-          "opacity": 0.6,
-          "parameters": {
-            "token": "public"
-          },
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Fine particulate matter concentration derived from Copernicus Atmosphere Monitoring Service reanalysis and atmospheric chemistry models. It supports assessment of urban air pollution exposure and associated health risks.",
-        "attribution": {
-          "text": "ECMWF/CAMS",
-          "url": "https://ads.atmosphere.copernicus.eu/datasets"
-        },
-        "categories": [],
-        "colormaps": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Guimaraes: Mapping urban areas",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_pm2p5&styles=sh_all_pm2p5_defra_daqi&width=350&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "id": "important-buildings-5",
-      "name": "Important Buildings",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/infra_europe.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "circle-radius": 5,
-              "circle-fill-color": [
-                "match",
-                [
-                  "get",
-                  "type"
-                ],
-                "hospital",
-                "#d23232",
-                "ambulance_station",
-                "#fdbaba",
-                "school",
-                "#fc03cf",
-                "university",
-                "#f5b2ec",
-                "police",
-                "#18219a",
-                "fire_station",
-                "#e98b07",
-                "#3b82f6"
-              ],
-              "circle-stroke-color": "#ffffff",
-              "circle-stroke-width": 1
-            }
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Selected infrastructure features extracted from OpenStreetMap and generalised for regional-scale mapping of key urban structures. It supports identification of functional urban nodes, critical infrastructure distribution, useful for emergency planning and urban management..",
-        "attribution": {
-          "text": "OpenStreetMap",
-          "url": "https://www.openstreetmap.org/#map=11/47.1412/15.9381"
-        },
-        "categories": [
-          {
-            "color": "#D23232",
-            "label": "Hospitals",
-            "value": 0
-          },
-          {
-            "color": "#FDBABA",
-            "label": "Ambulance Stations",
-            "value": 0
-          },
-          {
-            "color": "#FC03CF",
-            "label": "Schools",
-            "value": 0
-          },
-          {
-            "color": "#F5B2EC",
-            "label": "Universities",
-            "value": 0
-          },
-          {
-            "color": "#18219A",
-            "label": "Police Stations",
-            "value": 0
-          },
-          {
-            "color": "#E98B07",
-            "label": "Fire Stations",
-            "value": 0
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Oslo: Air Quality",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": {
-              "extent": [
-                -8.77,
-                41.09,
-                -8.44,
-                41.26
-              ]
-            },
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "land-surface-temperature-daily",
-      "name": "Land Surface Temperature (Daily)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3b",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Land surface temperature derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
-        "attribution": {
-          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
-          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 250,
-            "max": 320,
-            "steps": 100,
-            "name": "jet",
-            "reverse": false
-          }
-        ],
-        "units": "Kelvin (K)"
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Heat",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "id": "land-surface-temperature-10-day-composite",
-      "name": "Land Surface Temperature (10 day composite)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "terrascope-s3-lst-s10-v1_lst",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Land surface temperature (10 day composite) derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
-        "attribution": {
-          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
-          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 250,
-            "max": 320,
-            "steps": 100,
-            "name": "jet",
-            "reverse": false
-          }
-        ],
-        "units": "Kelvin (K)"
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Heat",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Days"
     },
     {
       "id": "growing-stock-volume-gsv-2",
@@ -43546,6 +42104,9 @@
           "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/FCM-GSV-100m/items/FCM-GSV-100m-2020?.asset=asset-product"
         },
         "categories": [],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 800,
         "colormaps": [
           {
             "min": 0,
@@ -43554,10 +42115,7 @@
             "name": "viridis",
             "reverse": false
           }
-        ],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 800
+        ]
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -43581,6 +42139,1007 @@
       },
       "isBaseLayer": false,
       "timeframe": "Years"
+    },
+    {
+      "id": "active-fire-monitoring",
+      "name": "Active Fire Monitoring",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "MODIS_Combined_Thermal_Anomalies_All",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Active Fire Monitoring",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/?version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=MODIS_Combined_Thermal_Anomalies_All&format=image/png&STYLE=size5"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "lst",
+      "name": "LST",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Land Surface Temperature",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for LST",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/UHI_Avg_Summer_Day_Max_Land_Surface_Temp_2013_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "surface-soil-moisture-smap",
+      "name": "Soil Moisture",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/SMAP_L4_Analyzed_Surface_Soil_Moisture/default/2024-07-01/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 30,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Soil Moisture",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/SMAP_Analyzed_Soil_Moisture_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false,
+      "exclusivitySets": []
+    },
+    {
+      "id": "wildfire-smoke-aerosol-optical-depth",
+      "name": "Aerosol Optical Depth",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Combined_Value_Added_AOD/default/2023-06-07/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 34,
+          "opacity": 0.8
+        }
+      ],
+      "meta": {
+        "description": "Total-column aerosol optical depth from MODIS, 7 June 2023 - the smoke pall that spread from Canadian wildfires across eastern North America. Note: AOD is column aerosol, not the surface PM2.5 people breathe (see the PM2.5 layer); retrieval fails under cloud and over bright surfaces.",
+        "attribution": {
+          "text": "NASA GIBS / MODIS Combined Value Added AOD",
+          "url": "https://modis.gsfc.nasa.gov/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_Combined_Value_Added_AOD_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false,
+      "exclusivitySets": []
+    },
+    {
+      "id": "flood",
+      "name": "Flood Hazard",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Flood Hazard",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Flood Hazard",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_Flood_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "other-flood",
+      "name": "Flood Mortality Risk 2000",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "NDH_Flood_Mortality_Risks_Distribution_2000",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Flood Mortality Risk 2000",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/NDH_Flood_Mortality_Risks_Distribution_2000_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ice-snow",
+      "name": "Snow Cover",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Snow Cover",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Snow Cover",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_NDSI_Snow_Cover_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "snow-depth",
+      "name": "Snow Depth",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Snow Depth",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Snow Depth",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MERRA2_Snow_Depth_Over_Glaciated_Surface_Monthly_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ice",
+      "name": "Sea Ice",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "MODIS_Aqua_L3_Sea_Ice_Daily",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Sea Ice",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_L3_Sea_Ice_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "landslide",
+      "name": "Landslide Hazard",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Landslide Hazard",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Landslide Hazard",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/NDH_Landslide_Hazard_Distribution_2000_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "lai-2",
+      "name": "LAI",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "MODIS_Combined_L4_LAI_8Day",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for LAI",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 6.5,
+        "colormaps": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "explore",
+      "name": "Population density",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Population Density",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Population density",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/GPW_Population_Density_2000_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "vegetation-2",
+      "name": "Vegetation Disturbance Status",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Vegetation Disturbance Status",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Vegetation Disturbance Status",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/OPERA_Vegetation_Disturbance_Status_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "vegetation-light",
+      "name": "Vegetation Light Use Efficiency",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Vegetation Light Use Efficiency",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Vegetation Light Use Efficiency",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/SMAP_Emult_Average_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "vegetation",
+      "name": "NDVI",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "MODIS_Terra_NDVI_8Day",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for NDVI",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_NDVI_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "land-surface-temperature-daily-2",
+      "name": "Land Surface Temperature (Daily)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetCapabilities",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3b",
+          "version": "1.0.0",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetCapabilities",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3a",
+          "version": "1.0.0",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Land surface temperature derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
+        "attribution": {
+          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
+          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
+        },
+        "categories": [],
+        "units": "Kelvin (K)",
+        "colormaps": [
+          {
+            "min": 250,
+            "max": 320,
+            "steps": 100,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Heat",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "land-surface-temperature-10-day-composite-2",
+      "name": "Land Surface Temperature (10 day composite)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "terrascope-s3-lst-s10-v1_lst",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Land surface temperature (10 day composite) derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
+        "attribution": {
+          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
+          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
+        },
+        "categories": [],
+        "units": "Kelvin (K)",
+        "colormaps": [
+          {
+            "min": 250,
+            "max": 320,
+            "steps": 100,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Heat",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "ndvi-2",
+      "name": "NDVI",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-ndvi-10m-2021-v2_ndvi",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Composite NDVI in 2021, used as an intermediate layer in creating the WorldCover product",
+        "attribution": {
+          "text": "WorldCover via Terrascope"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 50,
+            "name": "autumn",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Data types",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "defaultTimestamp": 1609459200
+    },
+    {
+      "id": "ndvi-versus-3",
+      "name": "NIR vs NDVI",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-ndvi-10m-2021-v2_ndvi",
+          "position": "right",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-s2rgbnir-10m-2021-v2_fcc",
+          "position": "left",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Shows a comparison of Near Infrared (left) versus NDVI (right) from Sentinel 2 in 2021, illustrating how different wavelengths show different properties",
+        "attribution": {
+          "text": "WorldCover via Terrascope"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 50,
+            "name": "yiorrd",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Data types",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isSwipeLayer": true,
+      "timeframe": "Days",
+      "defaultTimestamp": 1609459200
+    },
+    {
+      "id": "ndvi-versus-3-2",
+      "name": "S2 NIR vs S1 SAR",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-s2rgbnir-10m-2021-v2_fcc",
+          "position": "left",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-s1vvvhratio-10m-2021-v2_vvvhratio",
+          "position": "right",
+          "timestamps": [
+            1609455600
+          ],
+          "parameters": {
+            "version": "1.3.0"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Shows a comparison of NIR from Sentinel 1 (left) and SAR Polarisation from Sentinel 1 (right), illustrating how different types of images show different properties. Both are composites for 2021, used as intermediate products in the WorldCover project.",
+        "attribution": {
+          "text": "WorldCover via Terrascope"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 50,
+            "name": "yiorrd",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Data types",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isSwipeLayer": true,
+      "timeframe": "Days",
+      "defaultTimestamp": 1609459200
+    },
+    {
+      "id": "ndvi-2-2",
+      "name": "Copernicus DEM",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "cop-dem-glo-90m-cog_dem",
+          "timestamps": [
+            1577833200
+          ],
+          "parameters": {
+            "version": "1.3.0"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Composite NDVI in 2021, used as an intermediate layer in creating the WorldCover product",
+        "attribution": {
+          "text": "WorldCover via Terrascope"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "colormaps": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators & Use Cases",
+        "subinterfaceGroup": "Data types",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "defaultTimestamp": 1609459200
     }
   ]
 }
