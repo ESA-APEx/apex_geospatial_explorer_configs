@@ -6,7 +6,10 @@
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
       "title": "SEF Demo - Ecosystems and Biodiversity"
     },
-    "branding": "https://raw.githubusercontent.com/ESA-APEx/apex_project_branding/refs/heads/main/demo.css"
+    "branding":  {
+      "theme":"https://raw.githubusercontent.com/ESA-APEx/apex_project_branding/refs/heads/main/demo.css" ,
+      "portal": "https://sef.apex.esa.int"
+    }
   },
   "interfaceGroups": [
     "Landcover",
