@@ -1598,7 +1598,7 @@
     },
     {
       "id": "lst-city-3",
-      "name": "LST Athens (day)",
+      "name": "LST Athens (morning)",
       "isActive": false,
       "meta": {
         "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Athens. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
@@ -1631,6 +1631,52 @@
       "data": [
         {
           "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite2.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "convertToRGB": true,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lst-city-3-2",
+      "name": "LST Athens (afternoon)",
+      "isActive": false,
+      "meta": {
+        "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Athens. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
+        "attribution": {
+          "text": "constellr",
+          "url": "https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fconstellr.github.io%2Fproduct-lst%2F&data=05%7C02%7Celisa.thouverai%40serco.com%7Caa3891024f5e405be28508defec326a9%7Cf93616dd45a640c89e29adab2fb5f25c%7C0%7C0%7C639228312988131479%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=r2YZOv7Bn8SM1vcXvGjhRCV1IPpFk5pAJA5KmCh%2B%2Fn0%3D&reserved=0"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "constellr",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite5.tiff",
           "format": "cog",
           "zIndex": 50,
           "convertToRGB": true,
@@ -42095,7 +42141,7 @@
     },
     {
       "id": "lst-2-2",
-      "name": "LST Milan (day)",
+      "name": "LST Milan (morning)",
       "isActive": false,
       "meta": {
         "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Milan. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
@@ -42128,6 +42174,52 @@
       "data": [
         {
           "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite3.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "convertToRGB": true,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lst-2-2-2",
+      "name": "LST Milan (afternoon)",
+      "isActive": false,
+      "meta": {
+        "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Milan. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
+        "attribution": {
+          "text": "constellr",
+          "url": "https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fconstellr.github.io%2Fproduct-lst%2F&data=05%7C02%7Celisa.thouverai%40serco.com%7Caa3891024f5e405be28508defec326a9%7Cf93616dd45a640c89e29adab2fb5f25c%7C0%7C0%7C639228312988131479%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=r2YZOv7Bn8SM1vcXvGjhRCV1IPpFk5pAJA5KmCh%2B%2Fn0%3D&reserved=0"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "constellr",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite6.tiff",
           "format": "cog",
           "zIndex": 50,
           "convertToRGB": true,
@@ -42187,7 +42279,7 @@
     },
     {
       "id": "lst-city-2",
-      "name": "LST Marseille (day)",
+      "name": "LST Marseille (morning)",
       "isActive": false,
       "meta": {
         "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Marseille. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
@@ -43148,6 +43240,52 @@
       },
       "timeframe": "Days",
       "defaultTimestamp": 1609459200
+    },
+    {
+      "id": "lst-city-2-2",
+      "name": "LST Marseille (afternoon)",
+      "isActive": false,
+      "meta": {
+        "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Marseille. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
+        "attribution": {
+          "text": "constellr",
+          "url": "https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fconstellr.github.io%2Fproduct-lst%2F&data=05%7C02%7Celisa.thouverai%40serco.com%7Caa3891024f5e405be28508defec326a9%7Cf93616dd45a640c89e29adab2fb5f25c%7C0%7C0%7C639228312988131479%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=r2YZOv7Bn8SM1vcXvGjhRCV1IPpFk5pAJA5KmCh%2B%2Fn0%3D&reserved=0"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "constellr",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite4.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "convertToRGB": true,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
     },
     {
       "id": "lst-marseille",
