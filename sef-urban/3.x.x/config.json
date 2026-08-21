@@ -20,7 +20,8 @@
     "Population Exposure",
     "Air Quality",
     "Critical Infrastructure",
-    "Demonstrators & Use Cases"
+    "Demonstrators",
+    "Use Cases"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -384,12 +385,13 @@
           },
           "activeLayers": [
             {
-              "id": "global-land-cover-imported"
+              "id": "global-land-cover-2-2",
+              "date": "latest"
             }
           ],
-          "baseLayer": "sentinel",
+          "baseLayer": "open-streetmap",
           "panelState": {
-            "focusLayer": "global-land-cover-imported",
+            "focusLayer": "explore",
             "tab": {
               "id": "overview"
             }
@@ -725,10 +727,18 @@
   ],
   "sources": [
     {
-      "id": "global-land-cover-imported",
+      "id": "global-land-cover-2-2",
       "name": "Global Land Cover",
       "isActive": false,
-      "timeframe": "Days",
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-map-10m-2021-v2_map",
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Global land cover map at 10 m resolution derived from Sentinel-1 and Sentinel-2 observations, produced within the ESA WorldCover project. It is useful in urban contexts to understand how land is distributed between natural areas, agriculture, and built-up zones, for land-use planning and monitoring of urban expansion into surrounding landscapes.",
         "attribution": {
@@ -806,23 +816,10 @@
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
+            "zoomToCenter": true
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "esa-worldcover-map-10m-2021-v2_map",
-          "useTimeParameter": true,
-          "version": "1.0.0"
-        }
-      ]
+      }
     },
     {
       "id": "european-land-cover",
@@ -1479,7 +1476,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Urban Heat Islands",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -1571,7 +1568,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Urban Heat Islands",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -1598,6 +1595,53 @@
         }
       },
       "timeframe": "Years"
+    },
+    {
+      "id": "lst-city",
+      "name": "LST Athens",
+      "isActive": false,
+      "meta": {
+        "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Athens. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
+        "attribution": {
+          "text": "constellr",
+          "url": "https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fconstellr.github.io%2Fproduct-lst%2F&data=05%7C02%7Celisa.thouverai%40serco.com%7Caa3891024f5e405be28508defec326a9%7Cf93616dd45a640c89e29adab2fb5f25c%7C0%7C0%7C639228312988131479%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=r2YZOv7Bn8SM1vcXvGjhRCV1IPpFk5pAJA5KmCh%2B%2Fn0%3D&reserved=0"
+        },
+        "categories": [],
+        "colormaps": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "constellr",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite copy 2.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        }
+      ]
     },
     {
       "id": "measured-no2",
@@ -21046,8 +21090,8 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Oslo: Air Quality",
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "CitySatAir Project (Oslo)",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -40515,8 +40559,8 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Oslo: Air Quality",
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "CitySatAir Project (Oslo)",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -40588,8 +40632,8 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Vienna",
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "GTIF Project (Vienna)",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -40644,8 +40688,8 @@
         "units": "Building footprints (vector geometry)"
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Vienna",
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "GTIF Project (Vienna)",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -40871,47 +40915,6 @@
       }
     },
     {
-      "id": "ndvi",
-      "name": "NDVI",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "terrascope-s2-ndvi-v2_ndvi",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Normalized Difference Vegetation Index, derived from Sentinel-2 optical reflectance using red and near-infrared bands. It is updated daily to capture vegetation greenness and photosynthetic activity. It supports urban environmental monitoring by detecting vegetation stress, seasonal dynamics, and urban–rural vegetation gradients. Useful for early detection of drought or heat stress impacts on urban vegetation.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service",
-          "url": "https://land.copernicus.eu/en"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Urban Greening",
-        "subinterfaceGroup": "Vegetation Condition",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
       "id": "sentinel",
       "name": "Sentinel",
       "isActive": true,
@@ -41030,144 +41033,6 @@
           }
         }
       }
-    },
-    {
-      "id": "pm-2-5",
-      "name": "PM 2.5",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
-          "format": "wms",
-          "zIndex": 20,
-          "layers": "composition_pm2p5",
-          "opacity": 0.6,
-          "parameters": {
-            "token": "public"
-          },
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Fine particulate matter concentration derived from Copernicus Atmosphere Monitoring Service reanalysis and atmospheric chemistry models. It supports assessment of urban air pollution exposure and associated health risks.",
-        "attribution": {
-          "text": "ECMWF/CAMS",
-          "url": "https://ads.atmosphere.copernicus.eu/datasets"
-        },
-        "categories": [],
-        "colormaps": []
-      },
-      "layout": {
-        "interfaceGroup": "Air Quality",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_pm2p5&styles=sh_all_pm2p5_defra_daqi&width=350&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "id": "no2-at-surface",
-      "name": "NO2 at Surface",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
-          "format": "wms",
-          "zIndex": 20,
-          "layers": "composition_europe_no2_analysis_surface",
-          "opacity": 0.7,
-          "parameters": {
-            "token": "public"
-          },
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Surface nitrogen dioxide concentration derived from CAMS atmospheric composition modelling combining satellite observations and chemical transport models. It supports identification of traffic-related pollution hotspots in urban areas.",
-        "attribution": {
-          "text": "ECMWF / CAMS",
-          "url": "https://ads.atmosphere.copernicus.eu/datasets"
-        },
-        "categories": [],
-        "colormaps": []
-      },
-      "layout": {
-        "interfaceGroup": "Air Quality",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_no2_analysis_surface&styles=sh_Reds_surface_concentration&width=350&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "id": "o3-at-surface",
-      "name": "O3 at Surface",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
-          "format": "wms",
-          "zIndex": 20,
-          "layers": "composition_europe_o3_analysis_surface",
-          "opacity": 0.7,
-          "parameters": {
-            "token": "public"
-          },
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Surface ozone concentration estimated from atmospheric chemistry modelling within the CAMS system. It supports evaluation of photochemical pollution dynamics in urban atmospheres.",
-        "attribution": {
-          "text": "ECMWF / CAMS",
-          "url": "https://ads.atmosphere.copernicus.eu/datasets"
-        },
-        "categories": [],
-        "colormaps": []
-      },
-      "layout": {
-        "interfaceGroup": "Air Quality",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_o3_analysis_surface&styles=sh_Oranges_surface_concentration&width=350&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
     },
     {
       "id": "protection-levels",
@@ -42047,7 +41912,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Urban Heat Islands",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42161,7 +42026,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42183,45 +42048,50 @@
       }
     },
     {
-      "id": "lst",
-      "name": "LST",
+      "id": "lst-2",
+      "name": "LST Milan",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Land Surface Temperature",
-          "useTimeParameter": true
-        }
-      ],
       "meta": {
-        "description": "Auto-generated description for LST",
+        "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Milan. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "constellr",
+          "url": "https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fconstellr.github.io%2Fproduct-lst%2F&data=05%7C02%7Celisa.thouverai%40serco.com%7Caa3891024f5e405be28508defec326a9%7Cf93616dd45a640c89e29adab2fb5f25c%7C0%7C0%7C639228312988131479%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=r2YZOv7Bn8SM1vcXvGjhRCV1IPpFk5pAJA5KmCh%2B%2Fn0%3D&reserved=0"
         },
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
-        "subinterfaceGroup": "Canada data",
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "constellr",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
         },
         "infoPanel": {
           "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/UHI_Avg_Summer_Day_Max_Land_Surface_Temp_2013_H.png"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
-      "timeframe": "Days"
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite copy.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        }
+      ]
     },
     {
       "id": "surface-soil-moisture-smap",
@@ -42243,7 +42113,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42287,7 +42157,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42331,7 +42201,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42372,7 +42242,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42414,7 +42284,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42456,7 +42326,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42498,7 +42368,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42540,7 +42410,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42585,7 +42455,7 @@
         "colormaps": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42626,7 +42496,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42668,7 +42538,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42710,7 +42580,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42752,7 +42622,7 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42926,7 +42796,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Data types",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -42995,7 +42865,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Data types",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -43067,7 +42937,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Data types",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -43119,7 +42989,7 @@
         "colormaps": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators & Use Cases",
+        "interfaceGroup": "Use Cases",
         "subinterfaceGroup": "Data types",
         "contentLocation": "infoPanel",
         "layerCard": {
@@ -43140,6 +43010,250 @@
       },
       "timeframe": "Days",
       "defaultTimestamp": 1609459200
+    },
+    {
+      "id": "lst-marseille",
+      "name": "LST Marseille",
+      "isActive": false,
+      "meta": {
+        "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Marseille. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
+        "attribution": {
+          "text": "constellr",
+          "url": "https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fconstellr.github.io%2Fproduct-lst%2F&data=05%7C02%7Celisa.thouverai%40serco.com%7Caa3891024f5e405be28508defec326a9%7Cf93616dd45a640c89e29adab2fb5f25c%7C0%7C0%7C639228312988131479%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=r2YZOv7Bn8SM1vcXvGjhRCV1IPpFk5pAJA5KmCh%2B%2Fn0%3D&reserved=0"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "constellr",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        }
+      ]
+    },
+    {
+      "id": "pm2-5-at-surface",
+      "name": "PM 2.5 at surface",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
+          "format": "wms",
+          "zIndex": 51,
+          "layers": "composition_europe_pm2p5_forecast_surface",
+          "timestamps": [],
+          "opacity": 0.9,
+          "parameters": {
+            "token": "public",
+            "STYLES": "sh_pm2p5_web_surface_concentration"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Fine particulate matter concentration derived from Copernicus Atmosphere Monitoring Service reanalysis and atmospheric chemistry models. It supports assessment of urban air pollution exposure and associated health risks.",
+        "attribution": {
+          "text": "Copernicus Atmosphere Monitoring Service (CAMS) / ECMWF",
+          "url": "https://atmosphere.copernicus.eu/"
+        },
+        "categories": [],
+        "units": "µg/m³"
+      },
+      "layout": {
+        "interfaceGroup": "Air Quality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_pm2p5_forecast_surface&styles=sh_pm2p5_web_surface_concentration&width=350&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "Regulated pollutants"
+      ],
+      "isBaseLayer": false
+    },
+    {
+      "id": "nitrogen-dioxide-at-surface",
+      "name": "Nitrogen dioxide at surface",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
+          "format": "wms",
+          "zIndex": 51,
+          "layers": "composition_europe_no2_forecast_surface",
+          "timestamps": [],
+          "opacity": 0.9,
+          "parameters": {
+            "token": "public",
+            "STYLES": "sh_no2_web_surface_concentration"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Surface nitrogen dioxide concentration derived from CAMS atmospheric composition modelling combining satellite observations and chemical transport models. It supports identification of traffic-related pollution hotspots in urban areas.",
+        "attribution": {
+          "text": "Copernicus Atmosphere Monitoring Service (CAMS) / ECMWF",
+          "url": "https://atmosphere.copernicus.eu/"
+        },
+        "categories": [],
+        "units": "µg/m³"
+      },
+      "layout": {
+        "interfaceGroup": "Air Quality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_no2_forecast_surface&styles=sh_no2_web_surface_concentration&width=350&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "Regulated pollutants"
+      ],
+      "isBaseLayer": false
+    },
+    {
+      "id": "ozone-at-surface",
+      "name": "Ozone at surface",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
+          "format": "wms",
+          "zIndex": 51,
+          "layers": "composition_europe_o3_forecast_surface",
+          "timestamps": [],
+          "opacity": 0.9,
+          "parameters": {
+            "token": "public",
+            "STYLES": "sh_o3_web_surface_concentration"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Surface ozone concentration estimated from atmospheric chemistry modelling within the CAMS system. It supports evaluation of photochemical pollution dynamics in urban atmospheres.",
+        "attribution": {
+          "text": "Copernicus Atmosphere Monitoring Service (CAMS) / ECMWF",
+          "url": "https://atmosphere.copernicus.eu/"
+        },
+        "categories": [],
+        "units": "µg/m³"
+      },
+      "layout": {
+        "interfaceGroup": "Air Quality",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_o3_forecast_surface&styles=sh_o3_web_surface_concentration&width=350&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "Regulated pollutants"
+      ],
+      "isBaseLayer": false
+    },
+    {
+      "id": "ndvi-imported",
+      "name": "NDVI",
+      "isActive": false,
+      "timeframe": "Days",
+      "meta": {
+        "description": "Normalized Difference Vegetation Index, derived from Sentinel-2 optical reflectance using red and near-infrared bands. It is updated daily to capture vegetation greenness and photosynthetic activity. It supports urban environmental monitoring by detecting vegetation stress, seasonal dynamics, and urban–rural vegetation gradients. Useful for early detection of drought or heat stress impacts on urban vegetation.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service",
+          "url": "https://land.copernicus.eu/en"
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Urban Greening",
+        "subinterfaceGroup": "Vegetation Condition",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "terrascope-s2-ndvi-v2_ndvi",
+          "useTimeParameter": true
+        }
+      ]
     }
   ]
 }
