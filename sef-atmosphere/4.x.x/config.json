@@ -1,5 +1,5 @@
 {
-  "version": "0.3.4-carbon-air-quality-draft",
+  "version": "0.5.0-carbon-air-quality-draft",
   "exportPrefix": "sef-carbon-air-quality-explorer",
   "layout": {
     "navigation": {
@@ -907,6 +907,169 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "CO2 emission plumes at steelworks",
+      "isActive": false,
+      "exclusivitySets": [],
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/ico2ns_co2_plumes/items?limit=200",
+          "format": "geojson",
+          "zIndex": 105,
+          "style": [
+            {
+              "stroke-color": "rgba(255, 0, 153, 1.0)",
+              "stroke-width": 40,
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "plume:quantification"
+                ],
+                0,
+                "rgba(255, 105, 180, 0.95)",
+                3000,
+                "rgba(120, 0, 110, 0.95)"
+              ]
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "CO2 plume detections over individual steelworks, produced from EnMAP, PRISMA, EMIT and Tanager imagery using an optimal-estimation retrieval algorithm. Each shape is one detection event: a quantified CO2 mass and its uncertainty for a specific plant on a specific overpass, not a continuous emissions inventory. This is the demonstration case for point-source verification that the CAMS and TROPOMI layers argue for at global and regional scale, brought down to the level of a single steel plant. Click a plume to read the quantification, uncertainty and satellite instrument used. Data shown: fixed, up to 200 detections published to the Project Results Repository as of the config build date, over steel plants across Asia, Turkey and Italy. Nine sit over Taranto (Italy) and Eregli (Turkey); the rest cluster around Chinese steelworks. Each footprint is only a few kilometres wide, drawn as an oversized magenta marker so it stays visible when zoomed out; zoom in on a plant to see the true shape. Note: this is a research demonstration over a sample of sites, not systematic coverage of the steel sector. The collection does not state the unit for the quantification and uncertainty values, so treat them as relative, not absolute, until the project confirms it.",
+        "attribution": {
+          "text": "ESA project ICO2NS, led by QAIrbon Scientific with APAVE, LSCE, Science Partners and Capgemini. Contains modified EnMAP data (DLR), EMIT/ISS data (NASA/JPL) and PRISMA data (ASI), processed by QAIrbon",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/ico2ns_co2_plumes?.language=en"
+        },
+        "categories": [],
+        "fields": {
+          "title": {
+            "label": "Facility and detection time",
+            "order": 1
+          },
+          "platform": {
+            "label": "Satellite instrument",
+            "order": 2
+          },
+          "plume:quantification": {
+            "label": "CO2 quantified (unit unconfirmed)",
+            "order": 3,
+            "precision": 1
+          },
+          "plume:uncertainty": {
+            "label": "Uncertainty (unit unconfirmed)",
+            "order": 4,
+            "precision": 1
+          },
+          "plume:asset_name": {
+            "label": "Facility type",
+            "order": 5
+          }
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Emission sources and precursors",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Ship traffic NOx emissions (STEAM model)",
+      "isActive": false,
+      "exclusivitySets": [],
+      "timeframe": "Years",
+      "data": [
+        {
+          "url": "https://eo4sembucket.s3.eu-north-1.amazonaws.com/STEAM_FMI_Pollutants/NOx_FMI_STEAM_20190101.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "opacity": 0.85,
+          "timestamps": [1546300800]
+        },
+        {
+          "url": "https://eo4sembucket.s3.eu-north-1.amazonaws.com/STEAM_FMI_Pollutants/NOx_FMI_STEAM_20200101.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "opacity": 0.85,
+          "timestamps": [1577836800]
+        },
+        {
+          "url": "https://eo4sembucket.s3.eu-north-1.amazonaws.com/STEAM_FMI_Pollutants/NOx_FMI_STEAM_20210101.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "opacity": 0.85,
+          "timestamps": [1609459200]
+        },
+        {
+          "url": "https://eo4sembucket.s3.eu-north-1.amazonaws.com/STEAM_FMI_Pollutants/NOx_FMI_STEAM_20220101.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "opacity": 0.85,
+          "timestamps": [1640995200]
+        },
+        {
+          "url": "https://eo4sembucket.s3.eu-north-1.amazonaws.com/STEAM_FMI_Pollutants/NOx_FMI_STEAM_20230101.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "opacity": 0.85,
+          "timestamps": [1672531200]
+        }
+      ],
+      "meta": {
+        "description": "Gridded ship NOx emissions for European waters, modelled annually by FMI's STEAM (Ship Traffic Emissions Assessment Model) from AIS vessel-tracking data, ship engine and fuel specifications, and weather and sea-state reanalysis. This is what a bottom-up shipping inventory looks like next to the top-down satellite views of NO2 and SO2 elsewhere in this group: instead of retrieving what the atmosphere shows, STEAM reconstructs what each ship's engine burned and adds it up along shipping lanes. Produced under the EO4SEM project, which is building EO-based monitoring of ship greenhouse gas and pollutant emissions ahead of CO2M and CHIME. Data shown: five annual snapshots, 2019 to 2023, step through them with the time control. Note: this is a model estimate built from AIS activity data, not a satellite measurement, so it depends on how completely AIS covers the fleet in a given area and how well STEAM's fuel-consumption assumptions match reality. Coverage is limited to the European maritime domain (15.25°W to 40°E, 25°N to 74.25°N).",
+        "units": "KG",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 40000,
+            "steps": 200,
+            "name": "jet",
+            "reverse": false
+          }
+        ],
+        "attribution": {
+          "text": "Finnish Meteorological Institute (FMI), Jukka-Pekka.Jalkanen@fmi.fi, produced under ESA project EO4SEM",
+          "url": "https://eo4sem.apex.esa.int/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Emission sources and precursors",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
@@ -40387,6 +40550,161 @@
           }
         }
       }
+    },
+    {
+      "id": "emissions-points-nox-2021",
+      "name": "Emission points NOx 2021",
+      "isActive": false,
+      "meta": {
+        "description": "Auto-generated description for Emissions points NOx 2021",
+        "attribution": {
+          "text": "Data attribution not specified"
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Emission sources and precursors",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/air_quality/catalog_world_emission_v2.0_2021.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "emission_rate"
+                ],
+                0.0086,
+                2,
+                0.1,
+                3,
+                0.2,
+                4,
+                0.34,
+                6,
+                0.58,
+                8,
+                0.82,
+                10,
+                1.52,
+                13,
+                2.5636,
+                17
+              ],
+              "circle-fill-color": "#978aff",
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": 1
+            }
+          ],
+          "opacity": 0.8
+        }
+      ]
+    },
+    {
+      "id": "power-plants",
+      "name": "Power plants",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/air_quality/global_power_plant_database_coal_gas_oil_waste.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "circle-radius": 3,
+              "circle-fill-color": [
+                "match",
+                [
+                  "get",
+                  "primary_fuel"
+                ],
+                "Coal",
+                "#000000",
+                "Oil",
+                "#869669",
+                "Waste",
+                "#8e6b43",
+                "Gas",
+                "#e5bcf0",
+                "#3b82f6"
+              ],
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": 1
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Power plants",
+        "attribution": {
+          "text": "World Resources Institute – Global Power Plant Database",
+          "url": "https://datasets.wri.org/datasets/global-power-plant-database"
+        },
+        "categories": [
+          {
+            "color": "#000000",
+            "label": "Coal",
+            "value": 0
+          },
+          {
+            "color": "#869669",
+            "label": "Oil",
+            "value": 0
+          },
+          {
+            "color": "#8E6B43",
+            "label": "Waste",
+            "value": 0
+          },
+          {
+            "color": "#E5BCF0",
+            "label": "Gas",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Emission sources and precursors",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
     }
   ]
 }
