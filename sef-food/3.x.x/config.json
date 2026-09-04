@@ -36,8 +36,8 @@
   "stories": [
     {
       "id": "overview-of-crop-mapping",
-      "title": "Overview of Crop Mapping",
-      "description": "An overview of different tools coming form ESA supporting crop monitoring in Europe.",
+      "title": "Overview of Crop Monitoring",
+      "description": "An overview of different tools coming from ESA that can support crop monitoring in Europe.",
       "isActive": false,
       "steps": [
         {
