@@ -18,7 +18,8 @@
     "Global Crop Monitoring",
     "European Crop Monitoring",
     "Carbon Farming",
-    "Demonstrators"
+    "Demonstrators",
+    "Use Cases"
   ],
   "exclusivitySets": [
     "labels"
@@ -36,7 +37,7 @@
     {
       "id": "overview-of-crop-mapping",
       "title": "Overview of Crop Mapping",
-      "description": "An overview of different tools available to support CAP Monitoring.",
+      "description": "An overview of different tools coming form ESA supporting crop monitoring in Europe.",
       "isActive": false,
       "steps": [
         {
@@ -125,7 +126,7 @@
           "id": "the-worldcereal-system",
           "content": {
             "title": "The WorldCereal System",
-            "description": "The [WorldCereal](https://www.esa-sen4cap.org) (Sentinels for the Common Agricultural Policy) project has produced a set of toolboxes that can be used to provide key information in support of CAP Monitoring.\n\nThe [WorldCereal toolbox](https://esa-worldcereal.org/en/products/worldcereal-system) has been designed to support the cost-efficient production of land cover and crop type maps at local to global scales, though for a more limited range of crop types than Sen4CAP.\n\nThis toolbox is also available through ESA's [APEx initiative](https://algorithm-catalogue.apex.esa.int/?q=WorldCereal).\n\nThis image shows a crop type map for the UK in 2022 produced using the WorldCereal toolbox."
+            "description": "The [WorldCereal](https://esa-worldcereal.org/en) project has produced a set of toolboxes that can be used to provide key information in support of CAP Monitoring.\n\nThe [WorldCereal toolbox](https://esa-worldcereal.org/en/products/worldcereal-system) has been designed to support the cost-efficient production of land cover and crop type maps at local to global scales, though for a more limited range of crop types than Sen4CAP.\n\nThis toolbox is also available through ESA's [APEx initiative](https://algorithm-catalogue.apex.esa.int/?q=WorldCereal).\n\nThis image shows a crop type map for the UK in 2022 produced using the WorldCereal toolbox."
           },
           "viewport": {
             "zoom": 10,
@@ -497,25 +498,25 @@
           "id": "farming-in-estonia",
           "content": {
             "title": "Farming In Estonia",
-            "description": "Approximately 15% (6627 square km) of Estonia is devoted to cropland. \n\nThis image shows the different types of crops grown. Data from [CLMS HRL Cropland](https://land.copernicus.eu/en/products/high-resolution-layer-croplands) for 2017."
+            "description": "Approximately 15% (6627 square km) of Estonia is devoted to cropland. \n\nThis image shows the different types of crops grown in the region where the AI for tillage study was performed. \n\nData from [CLMS HRL Cropland](https://land.copernicus.eu/en/products/high-resolution-layer-croplands) for 2017."
           },
           "viewport": {
-            "zoom": 7,
+            "zoom": 11,
             "center": [
-              27.487792968750004,
-              58.659799305753985
+              26.523742675781254,
+              58.74362562103716
             ]
           },
           "activeLayers": [
             {
-              "id": "main-crop-types"
+              "id": "estonia"
             }
           ],
           "baseLayer": "sentinel",
           "panelState": {
-            "focusLayer": "main-crop-types",
+            "focusLayer": "estonia",
             "tab": {
-              "id": "statistics"
+              "id": "overview"
             }
           }
         },
@@ -1539,12 +1540,12 @@
         },
         "categories": [
           {
-            "color": "rgba(183,243,135,255)",
+            "color": "#B7F387",
             "label": "Different Crops",
             "value": 0
           },
           {
-            "color": "rgba(229,127,124,255)",
+            "color": "#E57F7C",
             "label": "Same Crops",
             "value": 1
           }
@@ -1661,12 +1662,12 @@
         },
         "categories": [
           {
-            "color": "rgba(183,243,135,255)",
+            "color": "#B7F387",
             "label": "Different crops or same crops with catch crop presence",
             "value": 0
           },
           {
-            "color": "rgba(229,127,124,255)",
+            "color": "#E57F7C",
             "label": "Same crops without presence of catch crop",
             "value": 1
           }
@@ -1713,17 +1714,17 @@
         },
         "categories": [
           {
-            "color": "rgba(183,243,135,255)",
+            "color": "#B7F387",
             "label": "No Erosion Risk (NEO)",
             "value": 0
           },
           {
-            "color": "rgba(238,202,131,255)",
+            "color": "#EECA83",
             "label": "Medium Erosion Risk (MEO)",
             "value": 1
           },
           {
-            "color": "rgba(229,127,124,255)",
+            "color": "#E57F7C",
             "label": "High Erosion Risk (SEO)",
             "value": 2
           }
@@ -1770,12 +1771,12 @@
         },
         "categories": [
           {
-            "color": "rgba(183,243,135,255)",
+            "color": "#B7F387",
             "label": "Parcels compliant with anti-erosion rules",
             "value": 0
           },
           {
-            "color": "rgba(229,127,124,255)",
+            "color": "#E57F7C",
             "label": "Parcels not compliant with anti-erosion rules",
             "value": 1
           }
@@ -2370,6 +2371,909 @@
           }
         }
       }
+    },
+    {
+      "id": "verification-of-crop-rotation",
+      "name": "Verification of Crop Rotation",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2026/03/23/VCR/VCR.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "style": {
+                "stroke-color": "#f74e3b",
+                "stroke-width": 2
+              },
+              "filter": [
+                "!=",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[0]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#03c96d",
+                "stroke-width": 2
+              },
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[2]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#fddf1c",
+                "stroke-width": 2
+              },
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[3]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#f73bd4",
+                "stroke-width": 2
+              },
+              "else": true
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Verification of crop rotation (ex-post) (VCR). This layer shows the adherence to a crop rotation of row crops by using Sentinel-1 and Sentinel-2 time series. Fields visualized in green have a valid crop rotation, whereas fields visualized in red don´t show the crop rotation indicated by the customer. Fields with a wrong crop type in just one year are visualized in yellow. Additionally, fields where no reliable verification is possible due to e.g. a lack of sufficient data are marked in grey.",
+        "attribution": {
+          "text": "Eo4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "entity_id": {},
+          "name": {},
+          "ext_name": {},
+          "service_id": {},
+          "order_id": {},
+          "field_id": {},
+          "traffic_light": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "EO4CF",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "catch-crop-time-series",
+      "name": "Catch Crop Time Series",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-08-01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1659304800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-08-15.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1660514400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-08-29.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1661724000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-09-12.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1662933600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-09-26.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1664143200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-10-10.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1665352800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-10-24.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1666562400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-11-07.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1667775600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-11-21.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1668985200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-12-05.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1669935600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-12-19.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1671404400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2023-01-02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1672614000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2023-01-16.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1673823600
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Monitoring and reporting of catch crop development (live) (areaCCDev). This layer shows LAI and biomass estimation in a 10x10m raster twice a month, making it available as a time series throughout the season.",
+        "attribution": {
+          "text": "EO4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "id": {},
+          "areaCCDev": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "EO4CF",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "catch-crop-planting-detection",
+      "name": "Catch Crop Planting Detection",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2026/03/23/CCD/CCD.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "style": {
+                "stroke-color": "#00f510",
+                "stroke-width": 2
+              },
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[1]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#9a5155",
+                "stroke-width": 2
+              },
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[2]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#fbe137",
+                "stroke-width": 2
+              },
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[3]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#3b82f6",
+                "stroke-width": 2
+              },
+              "else": true
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Detection of catch crop planting (ex-post) (CCD). This layer shows the detection of catch crop planting by using Sentinel-1 and Sentinel-2 time series without any information from the customer other than the field boundaries. Fields visualized in green are verified as fields with catch crops, whereas fields visualized in brown are classified as fields without catch crops. Uncertain fields are coloured in ochre. Additionally, fields where no reliable catch crop detection is possible due to e.g. a lack of sufficient data are marked in grey.",
+        "attribution": {
+          "text": "EO4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "entity_id": {},
+          "name": {},
+          "ext_name": {},
+          "service_id": {},
+          "order_id": {},
+          "field_id": {},
+          "traffic_light": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "EO4CF",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "soc-raster-map-2017",
+      "name": "SOC (raster map 2017)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2017/01/01/SOC_Map/SOC_Map_2017_EPSG4326_cog.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon (SOC) raster map (2017)",
+        "attribution": {
+          "text": "Eo4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 5,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ],
+        "fields": {
+          "relSOC": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "EO4CF",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "absolute-soc-absoc",
+      "name": "Absolute SOC (AbsOC)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2021/01/09/absSOC/absSOC_2021-01-09.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "absSOC"
+                ],
+                0,
+                "#f7f7f7",
+                4,
+                "#c30404"
+              ]
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon (absSOC). This map shows the spatially continuous absolute SOC content in a 10x10m raster by using a Sentinel-2 time series. As SOC content shows fine-scaled variability, a higher resolution is required than what is available from soil probing, which is a 3-5ha raster. The map is calibrated with in-situ soil probes with an accuracy comparable to the laboratory.",
+        "attribution": {
+          "text": "Eo4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "id": {},
+          "absSOC": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "EO4CF",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "relative-soc-relsoc",
+      "name": "Relative SOC (RelSOC)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2024/01/09/relSOC/relSOC_2024-01-09.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "style": {
+                "stroke-color": "#f62109",
+                "stroke-width": 2
+              },
+              "filter": [
+                "<=",
+                [
+                  "get",
+                  "relSOC"
+                ],
+                0
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#098cf1",
+                "stroke-width": 2
+              },
+              "else": true
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon (absSOC). This map shows the spatially continuous absolute SOC content in a 10x10m raster by using a Sentinel-2 time series. As SOC content shows fine-scaled variability, a higher resolution is required than what is available from soil probing, which is a 3-5ha raster. The map is calibrated with in-situ soil probes with an accuracy comparable to the laboratory.",
+        "attribution": {
+          "text": "Eo4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "id": {},
+          "relSOC": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "EO4CF",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ai-detected-tillage-events",
+      "name": "AI-detected Tillage Events",
+      "isActive": false,
+      "timeframe": "Days",
+      "meta": {
+        "description": "AI-detected Tillage events at selected parcels across Estonia (2018–2022), detected by AI and satellite data. This shows the dates when tillage occurred as well as whether it was done with conventional or conservation methods.",
+        "attribution": {
+          "text": "KappaZeta Ltd – ESA EO4Society Project",
+          "url": "https://www.kappazeta.ee/"
+        },
+        "categories": [
+          {
+            "label": "Tillage",
+            "color": "#FCFDFE",
+            "value": 0
+          },
+          {
+            "label": "Tillage",
+            "color": "#FAFAFA",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "AI Tillage",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/tillage_type_detection/2018/04/24/Tillage_events_detection_in_Estonia-aggregate/Conventional_Conservation_tillage_model_detection_results_2018-2022.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "match",
+                [
+                  "get",
+                  "Tillage Type"
+                ],
+                "Conservation",
+                "rgba(49,139,87,1.0)",
+                "Conventional",
+                "rgba(178,34,34,1.0)",
+                "rgba(200, 200, 200, 0)"
+              ],
+              "stroke-color": "rgba(35,35,35,1.0)",
+              "stroke-width": 0.5
+            }
+          ],
+          "timestamps": [
+            1524528000
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-detected-tillage-events-2",
+      "name": "AI-detected Tillage Events (undifferentiated)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/tillage_type_detection/2018/04/24/Tillage_events_detection_in_Estonia-aggregate/Conventional_Conservation_tillage_model_detection_results_2018-2022.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "match",
+                [
+                  "get",
+                  "Tillage Type"
+                ],
+                "Conservation",
+                "rgba(49,139,87,1.0)",
+                "Conventional",
+                "rgba(178,34,34,1.0)",
+                "rgba(200, 200, 200, 0)"
+              ],
+              "stroke-color": "rgba(35,35,35,1.0)",
+              "stroke-width": 0.5
+            }
+          ],
+          "timestamps": [
+            1524528000
+          ]
+        }
+      ],
+      "meta": {
+        "description": "AI-detected Tillage events at selected parcels across Estonia (2018–2022), detected by AI and satellite data. This shows the dates when tillage occurred as well as whether it was done with conventional or conservation methods.",
+        "attribution": {
+          "text": "KappaZeta Ltd – ESA EO4Society Project",
+          "url": "https://www.kappazeta.ee/"
+        },
+        "categories": [
+          {
+            "color": "#792525",
+            "label": "Undifferentiated",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "AI Tillage",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false,
+      "timeframe": "Days"
     },
     {
       "id": "drought-hazard",
@@ -3058,599 +3962,37 @@
       "timeframe": "Years"
     },
     {
-      "id": "verification-of-crop-rotation",
-      "name": "Verification of Crop Rotation",
+      "id": "nir-vs-ndvi",
+      "name": "NIR vs NDVI",
       "isActive": false,
       "data": [
         {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2026/03/23/VCR/VCR.fgb",
-          "format": "flatgeobuf",
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
           "zIndex": 50,
-          "style": [
-            {
-              "style": {
-                "stroke-color": "#f74e3b",
-                "stroke-width": 2
-              },
-              "filter": [
-                "!=",
-                [
-                  "get",
-                  "traffic_light"
-                ],
-                "[0]"
-              ]
-            },
-            {
-              "style": {
-                "stroke-color": "#03c96d",
-                "stroke-width": 2
-              },
-              "filter": [
-                "==",
-                [
-                  "get",
-                  "traffic_light"
-                ],
-                "[2]"
-              ]
-            },
-            {
-              "style": {
-                "stroke-color": "#fddf1c",
-                "stroke-width": 2
-              },
-              "filter": [
-                "==",
-                [
-                  "get",
-                  "traffic_light"
-                ],
-                "[3]"
-              ]
-            },
-            {
-              "style": {
-                "stroke-color": "#f73bd4",
-                "stroke-width": 2
-              },
-              "else": true
-            }
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Verification of crop rotation (ex-post) (VCR). This layer shows the adherence to a crop rotation of row crops by using Sentinel-1 and Sentinel-2 time series. Fields visualized in green have a valid crop rotation, whereas fields visualized in red don´t show the crop rotation indicated by the customer. Fields with a wrong crop type in just one year are visualized in yellow. Additionally, fields where no reliable verification is possible due to e.g. a lack of sufficient data are marked in grey.",
-        "attribution": {
-          "text": "Eo4CF project",
-          "url": "https://business.esa.int/projects/eo4carbonfarming"
-        },
-        "categories": [],
-        "fields": {
-          "entity_id": {},
-          "name": {},
-          "ext_name": {},
-          "service_id": {},
-          "order_id": {},
-          "field_id": {},
-          "traffic_light": {}
-        }
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Bavaria Carbon farming",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
+          "layers": "esa-worldcover-ndvi-10m-2021-v2_ndvi",
+          "position": "right",
+          "parameters": {
+            "version": "1.3.0"
           },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "catch-crop-time-series",
-      "name": "Catch Crop Time Series",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-08-01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1659304800
-          ]
+          "useTimeParameter": true
         },
         {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-08-15.fgb",
-          "format": "flatgeobuf",
+          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
+          "format": "wms",
           "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1660514400
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-08-29.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1661724000
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-09-12.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1662933600
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-09-26.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1664143200
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-10-10.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1665352800
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-10-24.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1666562400
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-11-07.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1667775600
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-11-21.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1668985200
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-12-05.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1669935600
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-12-19.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1671404400
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2023-01-02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1672614000
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2023-01-16.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "areaCCDev"
-                ],
-                0,
-                "#ffffff",
-                1,
-                "#04a201"
-              ]
-            }
-          ],
-          "timestamps": [
-            1673823600
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Monitoring and reporting of catch crop development (live) (areaCCDev). This layer shows LAI and biomass estimation in a 10x10m raster twice a month, making it available as a time series throughout the season.",
-        "attribution": {
-          "text": "EO4CF project",
-          "url": "https://business.esa.int/projects/eo4carbonfarming"
-        },
-        "categories": [],
-        "fields": {
-          "id": {},
-          "areaCCDev": {}
-        }
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Bavaria Carbon farming",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
+          "layers": "esa-worldcover-s2rgbnir-10m-2021-v2_fcc",
+          "position": "left",
+          "parameters": {
+            "version": "1.3.0"
           },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "id": "catch-crop-planting-detection",
-      "name": "Catch Crop Planting Detection",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2026/03/23/CCD/CCD.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "style": {
-                "stroke-color": "#00f510",
-                "stroke-width": 2
-              },
-              "filter": [
-                "==",
-                [
-                  "get",
-                  "traffic_light"
-                ],
-                "[1]"
-              ]
-            },
-            {
-              "style": {
-                "stroke-color": "#9a5155",
-                "stroke-width": 2
-              },
-              "filter": [
-                "==",
-                [
-                  "get",
-                  "traffic_light"
-                ],
-                "[2]"
-              ]
-            },
-            {
-              "style": {
-                "stroke-color": "#fbe137",
-                "stroke-width": 2
-              },
-              "filter": [
-                "==",
-                [
-                  "get",
-                  "traffic_light"
-                ],
-                "[3]"
-              ]
-            },
-            {
-              "style": {
-                "stroke-color": "#3b82f6",
-                "stroke-width": 2
-              },
-              "else": true
-            }
-          ]
+          "useTimeParameter": true
         }
       ],
       "meta": {
-        "description": "Detection of catch crop planting (ex-post) (CCD). This layer shows the detection of catch crop planting by using Sentinel-1 and Sentinel-2 time series without any information from the customer other than the field boundaries. Fields visualized in green are verified as fields with catch crops, whereas fields visualized in brown are classified as fields without catch crops. Uncertain fields are coloured in ochre. Additionally, fields where no reliable catch crop detection is possible due to e.g. a lack of sufficient data are marked in grey.",
+        "description": "Shows a comparison of Near Infrared (left) versus NDVI (right) from Sentinel 2 in 2021, illustrating how different wavelengths show different properties",
         "attribution": {
-          "text": "EO4CF project",
-          "url": "https://business.esa.int/projects/eo4carbonfarming"
-        },
-        "categories": [],
-        "fields": {
-          "entity_id": {},
-          "name": {},
-          "ext_name": {},
-          "service_id": {},
-          "order_id": {},
-          "field_id": {},
-          "traffic_light": {}
-        }
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Bavaria Carbon farming",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "soc-raster-map-2017",
-      "name": "SOC (raster map 2017)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2017/01/01/SOC_Map/SOC_Map_2017_EPSG4326_cog.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Soil Organic Carbon (SOC) raster map (2017)",
-        "attribution": {
-          "text": "Eo4CF project",
-          "url": "https://business.esa.int/projects/eo4carbonfarming"
+          "text": "WorldCover via Terrascope"
         },
         "categories": [],
         "min": 0,
@@ -3658,19 +4000,16 @@
         "colormaps": [
           {
             "min": 0,
-            "max": 5,
+            "max": 1,
             "steps": 50,
-            "name": "copper",
+            "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "fields": {
-          "relSOC": {}
-        }
+        ]
       },
       "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Bavaria Carbon farming",
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Supporting Information",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -3687,15 +4026,261 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "isSwipeLayer": true,
+      "timeframe": "Days",
+      "defaultTimestamp": 1609459200
     },
     {
-      "id": "absolute-soc-absoc",
-      "name": "Absolute SOC (AbsOC)",
+      "id": "borders",
+      "name": "Borders",
       "isActive": false,
       "data": [
         {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2021/01/09/absSOC/absSOC_2021-01-09.fgb",
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "tm:tm_worldborders",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Borders",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Supporting Information",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "uk-crop-mapping-2022",
+      "name": "UK Crop Mapping (2022)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/GTIF_GMIF_CROPS/2021/10/01/GTIF-GMIF-CROPS-UK-2022/worldcereal_uk_croptype_2022.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Uk crop map 2022, generated using the ESA World Cereal on-demand system.",
+        "attribution": {
+          "text": "GTIF Green Meridian",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/GTIF_GMIF_CROPS"
+        },
+        "categories": [
+          {
+            "color": "#E0FD08",
+            "label": "Wheat",
+            "value": 0
+          },
+          {
+            "color": "#98A470",
+            "label": "Barley",
+            "value": 1
+          },
+          {
+            "color": "#28778A",
+            "label": "Oats",
+            "value": 2
+          },
+          {
+            "color": "#6C7240",
+            "label": "Maize",
+            "value": 3
+          },
+          {
+            "color": "#42C291",
+            "label": "Vegetables",
+            "value": 4
+          },
+          {
+            "color": "#D46C40",
+            "label": "Beet",
+            "value": 5
+          },
+          {
+            "color": "#386B45",
+            "label": "Dry Pulses",
+            "value": 6
+          },
+          {
+            "color": "#F5E96B",
+            "label": "Sunflower",
+            "value": 7
+          },
+          {
+            "color": "#000000",
+            "label": "Soybeans",
+            "value": 8
+          },
+          {
+            "color": "#BFBC73",
+            "label": "Rapeseed",
+            "value": 9
+          },
+          {
+            "color": "#89B734",
+            "label": "Fibre Crops",
+            "value": 10
+          },
+          {
+            "color": "#815551",
+            "label": "Potatoes",
+            "value": 11
+          },
+          {
+            "color": "#28EA1A",
+            "label": "Grass / Fodder Crops",
+            "value": 12
+          },
+          {
+            "color": "#0C45ED",
+            "label": "Other crops",
+            "value": 13
+          },
+          {
+            "color": "#FFFFFF",
+            "label": "No crop",
+            "value": 254
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "UK Crop Maps",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": false
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "worldcereal-presto-embedding",
+      "name": "WorldCereal Presto Embedding",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw4-1.cloudferro.com/worldcereal-uk-waw4-1-o2q1qptnzbki8vavzriorqk0498vwc6tqvxlzvnw5/worldcereal_uk_production_embeddings_displays/embeddings_oif_b8-b14-b104_laea.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        }
+      ],
+      "meta": {
+        "description": "False color composite showing 3 bands of Presto embeddings in the UK, for the year 2025, generated by the WorldCereal project. These embeddings have applications in agriculture and land use mapping.",
+        "attribution": {
+          "text": "ESA WorldCereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "UK Crop Maps",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "temporary-crops-2021-2",
+      "name": "Active Cropland",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-activecropland-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Global maps of active cropland for 2021, at 10m resolution. ",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Global Crop Monitoring",
+        "subinterfaceGroup": "Global Cereal Mapping",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "overall-carbon-binding",
+      "name": "Overall Carbon Binding",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2020/02/01/OCB/OCB_2020-02-01.fgb",
           "format": "flatgeobuf",
           "zIndex": 50,
           "style": [
@@ -3707,19 +4292,19 @@
                 ],
                 [
                   "get",
-                  "absSOC"
+                  "OCB"
                 ],
                 0,
-                "#f7f7f7",
-                4,
-                "#c30404"
+                "#fdfcfc",
+                1,
+                "#990000"
               ]
             }
           ]
         }
       ],
       "meta": {
-        "description": "Soil Organic Carbon (absSOC). This map shows the spatially continuous absolute SOC content in a 10x10m raster by using a Sentinel-2 time series. As SOC content shows fine-scaled variability, a higher resolution is required than what is available from soil probing, which is a 3-5ha raster. The map is calibrated with in-situ soil probes with an accuracy comparable to the laboratory.",
+        "description": "Assessment of overall carbon binding in soil and biomass (OCB). This layer shows how much carbon is bound in biomass to complement information about carbon stored in soils. The algorithm combines S2 time series with physical crop growth modelling driven by meteorological data as well as the SOC content and crop rotation on the field.",
         "attribution": {
           "text": "Eo4CF project",
           "url": "https://business.esa.int/projects/eo4carbonfarming"
@@ -3727,12 +4312,12 @@
         "categories": [],
         "fields": {
           "id": {},
-          "absSOC": {}
+          "OCB": {}
         }
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Bavaria Carbon farming",
+        "subinterfaceGroup": "EO4CF",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -3752,54 +4337,51 @@
       }
     },
     {
-      "id": "relative-soc-relsoc",
-      "name": "Relative SOC (RelSOC)",
+      "id": "stratification-for-soil-probing",
+      "name": "Stratification for soil probing",
       "isActive": false,
       "data": [
         {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2024/01/09/relSOC/relSOC_2024-01-09.fgb",
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2024/01/09/zonesSOC/zonesSOC_2024-01-09.fgb",
           "format": "flatgeobuf",
           "zIndex": 50,
           "style": [
             {
-              "style": {
-                "stroke-color": "#f62109",
-                "stroke-width": 2
-              },
-              "filter": [
-                "<=",
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
                 [
                   "get",
-                  "relSOC"
+                  "zonesSOC"
                 ],
-                0
-              ]
-            },
-            {
-              "style": {
-                "stroke-color": "#098cf1",
-                "stroke-width": 2
-              },
-              "else": true
+                0,
+                "#ffffff",
+                200,
+                "#850000"
+              ],
+              "stroke-color": "#000000",
+              "stroke-width": 2
             }
           ]
         }
       ],
       "meta": {
-        "description": "Soil Organic Carbon (absSOC). This map shows the spatially continuous absolute SOC content in a 10x10m raster by using a Sentinel-2 time series. As SOC content shows fine-scaled variability, a higher resolution is required than what is available from soil probing, which is a 3-5ha raster. The map is calibrated with in-situ soil probes with an accuracy comparable to the laboratory.",
+        "description": "Stratification for Soil Probing (zonesSOC). This map shows the spatially continuous relative SOC content in a 10x10m raster including a zone map with homogeneous soil zones by using a Sentinel-2 time series. It is used to stratify the soil sampling, which is required for several certification standards. zonesSOC data for None.\n\n",
         "attribution": {
-          "text": "Eo4CF project",
+          "text": "Eo4CM project",
           "url": "https://business.esa.int/projects/eo4carbonfarming"
         },
         "categories": [],
         "fields": {
           "id": {},
-          "relSOC": {}
+          "zonesSOC": {}
         }
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Bavaria Carbon farming",
+        "subinterfaceGroup": "EO4CF",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -3816,172 +4398,133 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "isBaseLayer": false
     },
     {
-      "id": "main-crop-types",
-      "name": "Main Crop Types",
+      "id": "crops",
+      "name": "South Germany",
       "isActive": false,
       "data": [
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/2024-01-01-00_00_2024-01-01-23_59_CTY_10m_Yearly__2017_present__Crop_Types.tiff",
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/clms/CLMS_HRLVLCC_CTY_S2017_R10m_E44N28_03035_V01_R00_BYTE_EPSG4326_COG.tif",
           "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1483225200
-          ],
-          "bands": [
-            1,
-            2,
-            3
-          ]
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/CropMaps/CTY/2023/Europe/NUTS_bound/stats.hrl_cpl_cty_s2023.nuts_2024.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "timestamps": [
-            1672527600
-          ]
+          "zIndex": 50
         },
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/CropMaps/CTY/2023/Europe/NUTS_bound/stats.hrl_cpl_cty_s2023.nuts_2024.epsg4326.level01.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 1,
-          "timestamps": [
-            1672527600
-          ]
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/CropMaps/CTY/2023/Europe/NUTS_bound/stats.hrl_cpl_cty_s2023.nuts_2024.epsg4326.level02.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 2,
-          "timestamps": [
-            1672527600
-          ]
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/CropMaps/CTY/2023/Europe/NUTS_bound/stats.hrl_cpl_cty_s2023.nuts_2024.epsg4326.level03.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 3,
-          "timestamps": [
-            1672527600
-          ]
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/clms/CLMS_HRLVLCC_CTY_S2017_R10m_E44N28_03035_V01_R00.tif",
+          "format": "cog",
+          "zIndex": 50
         }
       ],
       "meta": {
-        "description": "Annual (2017-2023) pan-European mapping of primary crops at a spatial resolution of 10 m and a MMU of 0.25 ha.",
+        "description": "Sample data for specific areas, extracted from the latest available CLMS HRL Cropland. ",
         "attribution": {
           "text": "CLMS HRL Cropland",
           "url": "https://land.copernicus.eu/en/products/high-resolution-layer-croplands"
         },
         "categories": [
           {
-            "color": "#EE6E31",
+            "color": "#EE6E32",
             "label": "Wheat",
-            "value": 0
-          },
-          {
-            "color": "#FBA249",
-            "label": "Barley",
             "value": 1
           },
           {
-            "color": "#F0D313",
-            "label": "Maize",
+            "color": "#FBA24A",
+            "label": "Barley",
             "value": 2
           },
           {
-            "color": "#E94300",
-            "label": "Rice",
+            "color": "#FADC14",
+            "label": "Maize",
             "value": 3
+          },
+          {
+            "color": "#E94301",
+            "label": "Rice",
+            "value": 4
           },
           {
             "color": "#E8A995",
             "label": "Other Cereals",
-            "value": 4
-          },
-          {
-            "color": "#ADC5E6",
-            "label": "Fresh Vegetables",
             "value": 5
           },
           {
-            "color": "#4997BF",
-            "label": "Dry Pulses",
+            "color": "#AEC7E8",
+            "label": "Fresh Vegetables",
             "value": 6
+          },
+          {
+            "color": "#4897BF",
+            "label": "Dry Pulses",
+            "value": 7
           },
           {
             "color": "#C98C43",
             "label": "Potatoes",
-            "value": 7
-          },
-          {
-            "color": "#9C5B0D",
-            "label": "Sugar Beet",
             "value": 8
           },
           {
-            "color": "#FE7979",
-            "label": "Sunflower",
+            "color": "#9C5B0C",
+            "label": "Sugar Beet",
             "value": 9
           },
           {
-            "color": "#A4568C",
-            "label": "Soybeans",
+            "color": "#FF7979",
+            "label": "Sunflower",
             "value": 10
           },
           {
-            "color": "#BC63A1",
-            "label": "Rapeseed",
+            "color": "#A86A96",
+            "label": "Soybeans",
             "value": 11
           },
           {
-            "color": "#F6B6D2",
-            "label": "Flax, cotton and hemp",
+            "color": "#E377C2",
+            "label": "Rapeseed",
             "value": 12
+          },
+          {
+            "color": "#F7B6D2",
+            "label": "Flax, cotton and hemp",
+            "value": 13
           },
           {
             "color": "#DBDB8D",
             "label": "Grapes",
-            "value": 13
-          },
-          {
-            "color": "#C1CE11",
-            "label": "Olives",
             "value": 14
           },
           {
-            "color": "#79A03B",
-            "label": "Fruits",
+            "color": "#C1CE12",
+            "label": "Olives",
             "value": 15
+          },
+          {
+            "color": "#79A03A",
+            "label": "Fruits",
+            "value": 16
           },
           {
             "color": "#5A7C30",
             "label": "Nuts",
-            "value": 16
-          },
-          {
-            "color": "#D7D7D7",
-            "label": "Undecided (arable)",
             "value": 17
           },
           {
-            "color": "#ABABAB",
-            "label": "Undecided (permanent)",
+            "color": "#D7D7D7",
+            "label": "Unclassified arable crop",
             "value": 18
+          },
+          {
+            "color": "#ABABAB",
+            "label": "Unclassified permanent crop",
+            "value": 19
           }
-        ]
+        ],
+        "colormaps": []
       },
       "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Tillage in Estonia",
+        "interfaceGroup": "European Crop Monitoring",
+        "subinterfaceGroup": "CLMS Cropland",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -3999,63 +4542,125 @@
           }
         }
       },
-      "isBaseLayer": false,
-      "timeframe": "Years"
+      "isBaseLayer": false
     },
     {
-      "id": "ai-detected-tillage-events",
-      "name": "AI-detected Tillage Events",
+      "id": "estonia",
+      "name": "Estonia",
       "isActive": false,
       "data": [
         {
-          "url": "https://eoresults.esa.int/d/tillage_type_detection/2018/04/24/Tillage_events_detection_in_Estonia-aggregate/Conventional_Conservation_tillage_model_detection_results_2018-2022.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "match",
-                [
-                  "get",
-                  "Tillage Type"
-                ],
-                "Conservation",
-                "rgba(49,139,87,1.0)",
-                "Conventional",
-                "rgba(178,34,34,1.0)",
-                "rgba(200, 200, 200, 0)"
-              ],
-              "stroke-color": "rgba(35,35,35,1.0)",
-              "stroke-width": 0.5
-            }
-          ],
-          "timestamps": [
-            1524528000
-          ]
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/clms/CLMS_HRLVLCC_CTY_S2017_R10m_E52N40_BYTE_EPSG4326_COG.tif",
+          "format": "cog",
+          "zIndex": 50
         }
       ],
       "meta": {
-        "description": "AI-detected Tillage events at selected parcels across Estonia (2018–2022), detected by AI and satellite data. This shows the dates when tillage occurred as well as whether it was done with conventional or conservation methods.",
+        "description": "Auto-generated description for Estonia",
         "attribution": {
-          "text": "KappaZeta Ltd – ESA EO4Society Project",
-          "url": "https://www.kappazeta.ee/"
+          "text": "Data attribution not specified"
         },
         "categories": [
           {
-            "color": "#2E8B57",
-            "label": "conservation",
-            "value": 0
+            "color": "#EE6E32",
+            "label": "Wheat",
+            "value": 2
           },
           {
-            "color": "#B22222",
-            "label": "conventional",
-            "value": 1
+            "color": "#FBA24A",
+            "label": "Barley",
+            "value": 3
+          },
+          {
+            "color": "#FADC14",
+            "label": "Maize",
+            "value": 4
+          },
+          {
+            "color": "#E94301",
+            "label": "Rice",
+            "value": 5
+          },
+          {
+            "color": "#E8A995",
+            "label": "Other Cereals",
+            "value": 6
+          },
+          {
+            "color": "#AEC7E8",
+            "label": "Fresh Vegetables",
+            "value": 7
+          },
+          {
+            "color": "#4897BF",
+            "label": "Dry Pulses",
+            "value": 8
+          },
+          {
+            "color": "#C98C43",
+            "label": "Potatoes",
+            "value": 9
+          },
+          {
+            "color": "#9C5B0C",
+            "label": "Sugar Beet",
+            "value": 10
+          },
+          {
+            "color": "#FF7979",
+            "label": "Sunflower",
+            "value": 11
+          },
+          {
+            "color": "#A86A96",
+            "label": "Soybeans",
+            "value": 12
+          },
+          {
+            "color": "#E377C2",
+            "label": "Rapeseed",
+            "value": 13
+          },
+          {
+            "color": "#F7B6D2",
+            "label": "Flax, cotton and hemp",
+            "value": 14
+          },
+          {
+            "color": "#DBDB8D",
+            "label": "Grapes",
+            "value": 15
+          },
+          {
+            "color": "#C1CE12",
+            "label": "Olives",
+            "value": 16
+          },
+          {
+            "color": "#79A03A",
+            "label": "Fruits",
+            "value": 17
+          },
+          {
+            "color": "#5A7C30",
+            "label": "Nuts",
+            "value": 18
+          },
+          {
+            "color": "#D7D7D7",
+            "label": "Unclassified arable crop",
+            "value": 19
+          },
+          {
+            "color": "#ABABAB",
+            "label": "Unclassified permanent crop",
+            "value": 20
           }
         ]
       },
       "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Tillage in Estonia",
+        "interfaceGroup": "European Crop Monitoring",
+        "subinterfaceGroup": "CLMS Cropland",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -4072,83 +4677,40 @@
             "blendControls": false
           }
         }
-      },
-      "isBaseLayer": false,
-      "timeframe": "Days"
-    },
-    {
-      "id": "ai-detected-tillage-events-2",
-      "name": "AI-detected Tillage Events (undifferentiated)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/tillage_type_detection/2018/04/24/Tillage_events_detection_in_Estonia-aggregate/Conventional_Conservation_tillage_model_detection_results_2018-2022.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "match",
-                [
-                  "get",
-                  "Tillage Type"
-                ],
-                "Conservation",
-                "rgba(49,139,87,1.0)",
-                "Conventional",
-                "rgba(178,34,34,1.0)",
-                "rgba(200, 200, 200, 0)"
-              ],
-              "stroke-color": "rgba(35,35,35,1.0)",
-              "stroke-width": 0.5
-            }
-          ],
-          "timestamps": [
-            1524528000
-          ]
-        }
-      ],
-      "meta": {
-        "description": "AI-detected Tillage events at selected parcels across Estonia (2018–2022), detected by AI and satellite data. This shows the dates when tillage occurred as well as whether it was done with conventional or conservation methods.",
-        "attribution": {
-          "text": "KappaZeta Ltd – ESA EO4Society Project",
-          "url": "https://www.kappazeta.ee/"
-        },
-        "categories": [
-          {
-            "color": "#792525",
-            "label": "Undifferentiated",
-            "value": 0
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Tillage in Estonia",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false,
-      "timeframe": "Days"
+      }
     },
     {
       "id": "field-boundaries",
       "name": "Field Boundaries",
-      "isActive": true,
+      "isActive": false,
+      "meta": {
+        "description": "This interactive map shows field boundaries across all major European Countries generated using the **Delineate Anything v2** algorithm applied to the 2025 summer season Sentinel-2 Global Mosaics (S2GM), with the WorldCereal 2021 map used as a delineation mask.\n\n To view the field boundaries, zoom in to a local in a country of your choice. The boundaries are displayed on the map when the scalebar in the bottom left displays 5 km or less.\n\n**Please note** that the field boundaries are overlaid on high-resolution satellite imagery from the Stadia Maps service. As a result, some misalignment may be visible, since the boundaries were derived from Sentinel-2 data.\n\n### Further information\nDetails of methodology are available on the [Delineate Anything Project Page](https://lavreniuk.github.io/Delineate-Anything/)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
+        "attribution": {
+          "text": "Delineate Anything"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "European Crop Monitoring",
+        "subinterfaceGroup": "Field Delineation",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "download": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
       "data": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/AL_fields.fgb",
@@ -4550,176 +5112,146 @@
           },
           "minZoom": 10
         }
-      ],
-      "meta": {
-        "description": "This interactive map shows field boundaries across all major European Countries generated using the **Delineate Anything v2** algorithm applied to the 2025 summer season Sentinel-2 Global Mosaics (S2GM), with the WorldCereal 2021 map used as a delineation mask.\n\n To view the field boundaries, zoom in to a local in a country of your choice. The boundaries are displayed on the map when the scalebar in the bottom left displays 5 km or less.\n\n**Please note** that the field boundaries are overlaid on high-resolution satellite imagery from the Stadia Maps service. As a result, some misalignment may be visible, since the boundaries were derived from Sentinel-2 data.\n\n### Further information\nDetails of methodology are available on the [Delineate Anything Project Page](https://lavreniuk.github.io/Delineate-Anything/)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
-        "attribution": {
-          "text": "Delineate Anything"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Field Delineation",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "download": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false
+      ]
     },
     {
-      "id": "borders",
-      "name": "Borders",
+      "id": "total-precipitation",
+      "name": "Total Precipitation",
       "isActive": false,
       "data": [
         {
-          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
-          "format": "wms",
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-17_EPSG4326.tif",
+          "format": "cog",
           "zIndex": 50,
-          "layers": "tm:tm_worldborders",
-          "useTimeParameter": true
+          "timestamps": [
+            1731798000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-16_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731711600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-15_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731625200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-06_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1730847600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-07_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1730934000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-08_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731020400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-09_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731106800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-10_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731193200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-11_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731279600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-12_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731366000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-13_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731452400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-14_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731538800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-05_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1730761200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TP_tempres-D_1981-01-01_2024-11-17_tp_2024-11-04_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1730674800
+          ]
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Borders",
+        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
         "attribution": {
           "text": "Data attribution not specified"
         },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Supporting Information",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "nir-vs-ndvi",
-      "name": "NIR vs NDVI",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://mapproxy.terrascope.be/mapproxy/service",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "esa-worldcover-ndvi-10m-2021-v2_ndvi",
-          "position": "right",
-          "parameters": {
-            "version": "1.3.0"
-          },
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "esa-worldcover-s2rgbnir-10m-2021-v2_fcc",
-          "position": "left",
-          "parameters": {
-            "version": "1.3.0"
-          },
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Shows a comparison of Near Infrared (left) versus NDVI (right) from Sentinel 2 in 2021, illustrating how different wavelengths show different properties",
-        "attribution": {
-          "text": "WorldCover via Terrascope"
-        },
         "categories": [],
-        "min": 0,
-        "max": 1,
+        "units": "mm",
         "colormaps": [
           {
             "min": 0,
-            "max": 1,
-            "steps": 50,
-            "name": "yiorrd",
+            "max": 0.5,
+            "steps": 100,
+            "name": "freesurface-blue",
             "reverse": true
           }
         ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Supporting Information",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isSwipeLayer": true,
-      "timeframe": "Days",
-      "defaultTimestamp": 1609459200
-    },
-    {
-      "id": "worldcereal-presto-embedding",
-      "name": "WorldCereal Presto Embedding",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://s3.waw4-1.cloudferro.com/worldcereal-uk-waw4-1-o2q1qptnzbki8vavzriorqk0498vwc6tqvxlzvnw5/worldcereal_uk_production_embeddings_displays/embeddings_oif_b8-b14-b104_laea.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "bands": [
-            1,
-            2,
-            3
-          ],
-          "convertToRGB": true
-        }
-      ],
-      "meta": {
-        "description": "False color composite showing 3 bands of Presto embeddings in the UK, for the year 2025, generated by the WorldCereal project. These embeddings have applications in agriculture and land use mapping.",
-        "attribution": {
-          "text": "ESA WorldCereal",
-          "url": "https://esa-worldcereal.org/en"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "UK crop maps",
+        "subinterfaceGroup": "WaSCIA",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -4729,153 +5261,152 @@
             "type": "swatch"
           },
           "controls": {
-            "opacitySlider": false,
+            "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
+            "temporalControls": true
           }
         }
-      }
+      },
+      "timeframe": "Days"
     },
     {
-      "id": "uk-crop-mapping-2022",
-      "name": "UK Crop Mapping (2022)",
+      "id": "mean-2-metres-temperature",
+      "name": "Mean 2 metres Temperature",
       "isActive": false,
       "data": [
         {
-          "url": "https://eoresults.esa.int/d/GTIF_GMIF_CROPS/2021/10/01/GTIF-GMIF-CROPS-UK-2022/worldcereal_uk_croptype_2022.tif",
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-05_EPSG4326.tif",
           "format": "cog",
-          "zIndex": 50
+          "zIndex": 50,
+          "timestamps": [
+            1730761200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-06_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1730847600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-07_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1730934000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-08_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731020400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-09_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731106800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-10_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731193200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-11_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731279600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-12_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731366000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-13_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731452400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-14_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731538800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-15_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731625200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-16_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731711600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-17_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731798000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_T2M_tempres-D_1981-01-01_2024-11-18_t2m_2024-11-18_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731884400
+          ]
         }
       ],
       "meta": {
-        "description": "Uk crop map 2022, generated using the ESA World Cereal on-demand system.",
+        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
         "attribution": {
-          "text": "GTIF Green Meridian",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/GTIF_GMIF_CROPS"
+          "text": "Data attribution not specified"
         },
-        "categories": [
+        "categories": [],
+        "units": "°C",
+        "colormaps": [
           {
-            "color": "#E0FD08",
-            "label": "Wheat",
-            "value": 0
-          },
-          {
-            "color": "#98A470",
-            "label": "Barley",
-            "value": 1
-          },
-          {
-            "color": "#28778A",
-            "label": "Oats",
-            "value": 2
-          },
-          {
-            "color": "#6C7240",
-            "label": "Maize",
-            "value": 3
-          },
-          {
-            "color": "#42C291",
-            "label": "Vegetables",
-            "value": 4
-          },
-          {
-            "color": "#D46C40",
-            "label": "Beet",
-            "value": 5
-          },
-          {
-            "color": "#386B45",
-            "label": "Dry Pulses",
-            "value": 6
-          },
-          {
-            "color": "#F5E96B",
-            "label": "Sunflower",
-            "value": 7
-          },
-          {
-            "color": "#000000",
-            "label": "Soybeans",
-            "value": 8
-          },
-          {
-            "color": "#BFBC73",
-            "label": "Rapeseed",
-            "value": 9
-          },
-          {
-            "color": "#89B734",
-            "label": "Fibre Crops",
-            "value": 10
-          },
-          {
-            "color": "#815551",
-            "label": "Potatoes",
-            "value": 11
-          },
-          {
-            "color": "#28EA1A",
-            "label": "Grass / Fodder Crops",
-            "value": 12
-          },
-          {
-            "color": "#0C45ED",
-            "label": "Other crops",
-            "value": 13
-          },
-          {
-            "color": "#FFFFFF",
-            "label": "No crop",
-            "value": 254
+            "min": 24,
+            "max": 33,
+            "steps": 100,
+            "name": "temperature",
+            "reverse": false
           }
         ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "UK crop maps",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": false
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": false,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "temporary-crops-2021-2",
-      "name": "Active Cropland",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-activecropland-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
-          "format": "xyz",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Global maps of active cropland for 2021, at 10m resolution. ",
-        "attribution": {
-          "text": "World Cereal",
-          "url": "https://esa-worldcereal.org/en"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Global Crop Monitoring",
-        "subinterfaceGroup": "Global Cereal Mapping",
+        "subinterfaceGroup": "WaSCIA",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -4887,263 +5418,150 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
+            "temporalControls": true
           }
         }
-      }
+      },
+      "timeframe": "Days"
     },
     {
-      "id": "overall-carbon-binding",
-      "name": "Overall Carbon Binding",
+      "id": "maximum-temperature",
+      "name": "Maximum Temperature",
       "isActive": false,
       "data": [
         {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2020/02/01/OCB/OCB_2020-02-01.fgb",
-          "format": "flatgeobuf",
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-05_EPSG4326.tif",
+          "format": "cog",
           "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "OCB"
-                ],
-                0,
-                "#fdfcfc",
-                1,
-                "#990000"
-              ]
-            }
+          "timestamps": [
+            1730761200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-06_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1730847600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-07_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1730934000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-08_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731020400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-09_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731106800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-10_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731193200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-11_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731279600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-12_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731366000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-13_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731452400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-14_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731538800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-15_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731625200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-16_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731711600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-17_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731798000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMAX_tempres-D_1981-01-01_2024-11-18_tasmax_2024-11-18_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731884400
           ]
         }
       ],
       "meta": {
-        "description": "Assessment of overall carbon binding in soil and biomass (OCB). This layer shows how much carbon is bound in biomass to complement information about carbon stored in soils. The algorithm combines S2 time series with physical crop growth modelling driven by meteorological data as well as the SOC content and crop rotation on the field.",
+        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
         "attribution": {
-          "text": "Eo4CF project",
-          "url": "https://business.esa.int/projects/eo4carbonfarming"
+          "text": "Data attribution not specified"
         },
         "categories": [],
-        "fields": {
-          "id": {},
-          "OCB": {}
-        }
+        "units": "°C",
+        "colormaps": [
+          {
+            "min": 27,
+            "max": 41,
+            "steps": 100,
+            "name": "temperature",
+            "reverse": false
+          }
+        ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Bavaria Carbon farming",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": false,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "stratification-for-soil-probing",
-      "name": "Stratification for soil probing",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2024/01/09/zonesSOC/zonesSOC_2024-01-09.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "interpolate",
-                [
-                  "linear"
-                ],
-                [
-                  "get",
-                  "zonesSOC"
-                ],
-                0,
-                "#ffffff",
-                200,
-                "#850000"
-              ],
-              "stroke-color": "#000000",
-              "stroke-width": 2
-            }
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Stratification for Soil Probing (zonesSOC). This map shows the spatially continuous relative SOC content in a 10x10m raster including a zone map with homogeneous soil zones by using a Sentinel-2 time series. It is used to stratify the soil sampling, which is required for several certification standards. zonesSOC data for None.\n\n",
-        "attribution": {
-          "text": "Eo4CM project",
-          "url": "https://business.esa.int/projects/eo4carbonfarming"
-        },
-        "categories": [],
-        "fields": {
-          "id": {},
-          "zonesSOC": {}
-        }
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "Bavaria Carbon farming",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": false,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false
-    },
-    {
-      "id": "crops",
-      "name": "CLMS HRL Cropland",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/clms/CLMS_HRLVLCC_CTY_S2017_R10m_E44N28_03035_V01_R00_BYTE_EPSG4326_COG.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/clms/CLMS_HRLVLCC_CTY_S2017_R10m_E44N28_03035_V01_R00.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Sample data for specific areas, extracted from the latest available CLMS HRL Cropland. ",
-        "attribution": {
-          "text": "CLMS HRL Cropland",
-          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-croplands"
-        },
-        "categories": [
-          {
-            "color": "#EE6E32",
-            "label": "Wheat",
-            "value": 1
-          },
-          {
-            "color": "#FBA24A",
-            "label": "Barley",
-            "value": 2
-          },
-          {
-            "color": "#FADC14",
-            "label": "Maize",
-            "value": 3
-          },
-          {
-            "color": "#E94301",
-            "label": "Rice",
-            "value": 4
-          },
-          {
-            "color": "#E8A995",
-            "label": "Other Cereals",
-            "value": 5
-          },
-          {
-            "color": "#AEC7E8",
-            "label": "Fresh Vegetables",
-            "value": 6
-          },
-          {
-            "color": "#4897BF",
-            "label": "Dry Pulses",
-            "value": 7
-          },
-          {
-            "color": "#C98C43",
-            "label": "Potatoes",
-            "value": 8
-          },
-          {
-            "color": "#9C5B0C",
-            "label": "Sugar Beet",
-            "value": 9
-          },
-          {
-            "color": "#FF7979",
-            "label": "Sunflower",
-            "value": 10
-          },
-          {
-            "color": "#A86A96",
-            "label": "Soybeans",
-            "value": 11
-          },
-          {
-            "color": "#E377C2",
-            "label": "Rapeseed",
-            "value": 12
-          },
-          {
-            "color": "#F7B6D2",
-            "label": "Flax, cotton and hemp",
-            "value": 13
-          },
-          {
-            "color": "#DBDB8D",
-            "label": "Grapes",
-            "value": 14
-          },
-          {
-            "color": "#C1CE12",
-            "label": "Olives",
-            "value": 15
-          },
-          {
-            "color": "#79A03A",
-            "label": "Fruits",
-            "value": 16
-          },
-          {
-            "color": "#5A7C30",
-            "label": "Nuts",
-            "value": 17
-          },
-          {
-            "color": "#D7D7D7",
-            "label": "Unclassified arable crop",
-            "value": 18
-          },
-          {
-            "color": "#ABABAB",
-            "label": "Unclassified permanent crop",
-            "value": 19
-          }
-        ],
-        "colormaps": []
-      },
-      "layout": {
-        "interfaceGroup": "European Crop Monitoring",
+        "subinterfaceGroup": "WaSCIA",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -5155,13 +5573,550 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
+            "temporalControls": true
           }
         }
       },
-      "isBaseLayer": false
+      "timeframe": "Days"
+    },
+    {
+      "id": "minimum-temperature",
+      "name": "Minimum Temperature",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-05_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1730761200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-06_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1730847600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-07_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1730934000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-08_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731020400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-09_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731106800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-10_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731193200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-11_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731279600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-12_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731366000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-13_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731452400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-14_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731538800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-15_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731625200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-16_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731711600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-17_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731798000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_TASMIN_tempres-D_1981-01-01_2024-11-18_tasmin_2024-11-18_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1731884400
+          ]
+        }
+      ],
+      "meta": {
+        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "°C",
+        "colormaps": [
+          {
+            "min": 16,
+            "max": 28,
+            "steps": 100,
+            "name": "temperature",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WaSCIA",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "maximum-number-of-consecutive-dry-days-drought-spell",
+      "name": "Maximum number of consecutive dry days (Drought spell)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2023-09-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1693519200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2023-10-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1696111200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2023-11-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1698793200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2023-12-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1701385200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2024-01-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1704063600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2024-02-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1706742000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2024-03-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1709247600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2024-04-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1711922400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2024-05-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1714514400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2024-06-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1717192800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2024-07-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1719784800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_CDD_tempRes-M_1981-01-01_2024-08-18_CDD_2024-08-01_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1722463200
+          ]
+        }
+      ],
+      "meta": {
+        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "Days",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 31,
+            "steps": 100,
+            "name": "viridis",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WaSCIA",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Months"
+    },
+    {
+      "id": "standardised-precipitation-evapotranspiration-index-spei",
+      "name": "Standardised Precipitation Evapotranspiration Index (SPEI)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-01-31_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1675119600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-02-28_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1677538800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-03-31_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1680213600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-04-30_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1682805600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-05-31_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1685484000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-06-30_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1688076000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-07-31_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1690754400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-08-31_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1693432800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-09-30_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1696024800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-10-31_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1698706800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-11-30_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1701298800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_SPEI_tempRes-M_1981-01-01_2023-12-31_SPEI_2023-12-31_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1703977200
+          ]
+        }
+      ],
+      "meta": {
+        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -8,
+            "max": 3,
+            "steps": 100,
+            "name": "yignbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WaSCIA",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Months"
+    },
+    {
+      "id": "precipitation-sum",
+      "name": "Precipitation Sum (weekly)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_RR_tempRes-W_1981-01-01_2024-08-18_RR_2024-06-30_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1719698400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_RR_tempRes-W_1981-01-01_2024-08-18_RR_2024-07-07_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1720303200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_RR_tempRes-W_1981-01-01_2024-08-18_RR_2024-07-14_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1720908000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_RR_tempRes-W_1981-01-01_2024-08-18_RR_2024-07-21_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1721512800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_RR_tempRes-W_1981-01-01_2024-08-18_RR_2024-07-28_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1722117600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_RR_tempRes-W_1981-01-01_2024-08-18_RR_2024-08-04_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1722722400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_RR_tempRes-W_1981-01-01_2024-08-18_RR_2024-08-11_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1723327200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/wascia/SEN_RR_tempRes-W_1981-01-01_2024-08-18_RR_2024-08-18_EPSG4326.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1723932000
+          ]
+        }
+      ],
+      "meta": {
+        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "mm",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 512,
+            "steps": 150,
+            "name": "freesurface-blue",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WaSCIA",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
     }
   ]
 }
