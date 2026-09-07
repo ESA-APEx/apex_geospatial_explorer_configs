@@ -36,8 +36,8 @@
   "stories": [
     {
       "id": "overview-of-crop-mapping",
-      "title": "Overview of Crop Monitoring",
-      "description": "An overview of different tools coming from ESA that can support crop monitoring in Europe.",
+      "title": "Overview of Crop Mapping",
+      "description": "An overview of different tools available to support CAP Monitoring.",
       "isActive": false,
       "steps": [
         {
@@ -126,7 +126,7 @@
           "id": "the-worldcereal-system",
           "content": {
             "title": "The WorldCereal System",
-            "description": "The [WorldCereal](https://esa-worldcereal.org/en) project has produced a set of toolboxes that can be used to provide key information in support of CAP Monitoring.\n\nThe [WorldCereal toolbox](https://esa-worldcereal.org/en/products/worldcereal-system) has been designed to support the cost-efficient production of land cover and crop type maps at local to global scales, though for a more limited range of crop types than Sen4CAP.\n\nThis toolbox is also available through ESA's [APEx initiative](https://algorithm-catalogue.apex.esa.int/?q=WorldCereal).\n\nThis image shows a crop type map for the UK in 2022 produced using the WorldCereal toolbox."
+            "description": "The [WorldCereal](https://www.esa-sen4cap.org) (Sentinels for the Common Agricultural Policy) project has produced a set of toolboxes that can be used to provide key information in support of CAP Monitoring.\n\nThe [WorldCereal toolbox](https://esa-worldcereal.org/en/products/worldcereal-system) has been designed to support the cost-efficient production of land cover and crop type maps at local to global scales, though for a more limited range of crop types than Sen4CAP.\n\nThis toolbox is also available through ESA's [APEx initiative](https://algorithm-catalogue.apex.esa.int/?q=WorldCereal).\n\nThis image shows a crop type map for the UK in 2022 produced using the WorldCereal toolbox."
           },
           "viewport": {
             "zoom": 10,
@@ -498,13 +498,13 @@
           "id": "farming-in-estonia",
           "content": {
             "title": "Farming In Estonia",
-            "description": "Approximately 15% (6627 square km) of Estonia is devoted to cropland. \n\nThis image shows the different types of crops grown in the region where the AI for tillage study was performed. \n\nData from [CLMS HRL Cropland](https://land.copernicus.eu/en/products/high-resolution-layer-croplands) for 2017."
+            "description": "Approximately 15% (6627 square km) of Estonia is devoted to cropland. \n\nThis image shows the different types of crops grown. Data from [CLMS HRL Cropland](https://land.copernicus.eu/en/products/high-resolution-layer-croplands) for 2017."
           },
           "viewport": {
-            "zoom": 11,
+            "zoom": 7,
             "center": [
-              26.523742675781254,
-              58.74362562103716
+              27.487792968750004,
+              58.659799305753985
             ]
           },
           "activeLayers": [
@@ -514,9 +514,9 @@
           ],
           "baseLayer": "sentinel",
           "panelState": {
-            "focusLayer": "estonia",
+            "focusLayer": "main-crop-types",
             "tab": {
-              "id": "overview"
+              "id": "statistics"
             }
           }
         },
@@ -555,7 +555,7 @@
           },
           "activeLayers": [
             {
-              "id": "ai-detected-tillage-events-2"
+              "id": "ai-detected-tillage-events"
             }
           ],
           "baseLayer": "sentinel"
@@ -918,28 +918,10 @@
   ],
   "services": [
     {
-      "id": "wms-service-1749555952736",
-      "name": "VITO Terrascope",
-      "url": "https://services.terrascope.be/wms/v2",
-      "format": "wms"
-    },
-    {
       "id": "wms-service-1749572624524",
       "name": "Copernicus Urban Atlas",
       "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
       "format": "wms"
-    },
-    {
-      "id": "wms-service-1750143419665",
-      "name": "Brockmann Xcube",
-      "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
-      "format": "wms"
-    },
-    {
-      "id": "wmts-service-1750331396152",
-      "name": "Terrascope WMTS",
-      "url": "https://globalland.vito.be/wmts",
-      "format": "wmts"
     },
     {
       "id": "wms-service-1750351088731",
@@ -984,22 +966,16 @@
       "format": "stac"
     },
     {
-      "id": "wms-service-1772095833683",
-      "name": "CLMS WMS Server",
-      "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-      "format": "wms"
-    },
-    {
-      "id": "wmts-service-1785318168785",
-      "name": "",
-      "url": "https://wmts.terrascope.be/",
-      "format": "wmts"
-    },
-    {
       "id": "s3-service-1785326107536",
       "name": "SEF Bucket",
       "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/",
       "format": "cog"
+    },
+    {
+      "id": "wms-service-1785839112500",
+      "name": "Terrascope MapProxy WMS",
+      "url": "https://mapproxy.terrascope.be/mapproxy/service",
+      "format": "wms"
     }
   ],
   "sources": [
@@ -1219,9 +1195,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 1800,
         "colormaps": [
           {
             "min": 0,
@@ -1230,7 +1203,10 @@
             "name": "copper",
             "reverse": true
           }
-        ]
+        ],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -2009,9 +1985,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 520,
         "colormaps": [
           {
             "min": 0,
@@ -2020,7 +1993,10 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 520
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -2115,9 +2091,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "units": "t / ha",
-        "min": 0,
-        "max": 300,
         "colormaps": [
           {
             "min": 0,
@@ -2126,7 +2099,10 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -2195,9 +2171,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "units": "t / ha",
-        "min": 0,
-        "max": 100,
         "colormaps": [
           {
             "min": 0,
@@ -2206,7 +2179,10 @@
             "name": "velocity-green",
             "reverse": true
           }
-        ]
+        ],
+        "units": "t / ha",
+        "min": 0,
+        "max": 100
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -2268,7 +2244,6 @@
           "url": "https://www.worldpeatland.org"
         },
         "categories": [],
-        "units": "mm/yr",
         "colormaps": [
           {
             "min": -40,
@@ -2277,7 +2252,8 @@
             "name": "jet",
             "reverse": true
           }
-        ]
+        ],
+        "units": "mm/yr"
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -2338,9 +2314,6 @@
           "url": "https://www.worldpeatland.org"
         },
         "categories": [],
-        "units": "mm/yr",
-        "min": -80,
-        "max": 80,
         "colormaps": [
           {
             "min": -80,
@@ -2349,7 +2322,10 @@
             "name": "jet",
             "reverse": true
           }
-        ]
+        ],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -2968,8 +2944,6 @@
           "url": "https://business.esa.int/projects/eo4carbonfarming"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -2979,6 +2953,8 @@
             "reverse": true
           }
         ],
+        "min": 0,
+        "max": 1,
         "fields": {
           "relSOC": {}
         }
@@ -3137,46 +3113,6 @@
       "id": "ai-detected-tillage-events",
       "name": "AI-detected Tillage Events",
       "isActive": false,
-      "timeframe": "Days",
-      "meta": {
-        "description": "AI-detected Tillage events at selected parcels across Estonia (2018–2022), detected by AI and satellite data. This shows the dates when tillage occurred as well as whether it was done with conventional or conservation methods.",
-        "attribution": {
-          "text": "KappaZeta Ltd – ESA EO4Society Project",
-          "url": "https://www.kappazeta.ee/"
-        },
-        "categories": [
-          {
-            "label": "Tillage",
-            "color": "#FCFDFE",
-            "value": 0
-          },
-          {
-            "label": "Tillage",
-            "color": "#FAFAFA",
-            "value": 1
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "AI Tillage",
-        "contentLocation": "infoPanel",
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        },
-        "layerCard": {
-          "toggleable": true
-        }
-      },
       "data": [
         {
           "url": "https://eoresults.esa.int/d/tillage_type_detection/2018/04/24/Tillage_events_detection_in_Estonia-aggregate/Conventional_Conservation_tillage_model_detection_results_2018-2022.fgb",
@@ -3191,45 +3127,12 @@
                   "Tillage Type"
                 ],
                 "Conservation",
-                "rgba(49,139,87,1.0)",
+                "#2e8b57",
                 "Conventional",
-                "rgba(178,34,34,1.0)",
+                "#b22222",
                 "rgba(200, 200, 200, 0)"
               ],
-              "stroke-color": "rgba(35,35,35,1.0)",
-              "stroke-width": 0.5
-            }
-          ],
-          "timestamps": [
-            1524528000
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ai-detected-tillage-events-2",
-      "name": "AI-detected Tillage Events (undifferentiated)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/tillage_type_detection/2018/04/24/Tillage_events_detection_in_Estonia-aggregate/Conventional_Conservation_tillage_model_detection_results_2018-2022.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": [
-                "match",
-                [
-                  "get",
-                  "Tillage Type"
-                ],
-                "Conservation",
-                "rgba(49,139,87,1.0)",
-                "Conventional",
-                "rgba(178,34,34,1.0)",
-                "rgba(200, 200, 200, 0)"
-              ],
-              "stroke-color": "rgba(35,35,35,1.0)",
+              "stroke-color": "#000000",
               "stroke-width": 0.5
             }
           ],
@@ -3246,15 +3149,20 @@
         },
         "categories": [
           {
-            "color": "#792525",
-            "label": "Undifferentiated",
+            "color": "#2E8B57",
+            "label": "conservation",
             "value": 0
+          },
+          {
+            "color": "#B22222",
+            "label": "conventional",
+            "value": 1
           }
         ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
-        "subinterfaceGroup": "AI Tillage",
+        "subinterfaceGroup": "EO4Society",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -3760,8 +3668,6 @@
           "text": "Data attribution not specified"
         },
         "categories": [],
-        "min": 0.2008226066827774,
-        "max": 0.8872729539871216,
         "colormaps": [
           {
             "min": 0,
@@ -3770,7 +3676,9 @@
             "name": "velocity-green",
             "reverse": false
           }
-        ]
+        ],
+        "min": 0.2008226066827774,
+        "max": 0.8872729539871216
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -3995,8 +3903,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -4005,7 +3911,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -4682,35 +4590,7 @@
     {
       "id": "field-boundaries",
       "name": "Field Boundaries",
-      "isActive": false,
-      "meta": {
-        "description": "This interactive map shows field boundaries across all major European Countries generated using the **Delineate Anything v2** algorithm applied to the 2025 summer season Sentinel-2 Global Mosaics (S2GM), with the WorldCereal 2021 map used as a delineation mask.\n\n To view the field boundaries, zoom in to a local in a country of your choice. The boundaries are displayed on the map when the scalebar in the bottom left displays 5 km or less.\n\n**Please note** that the field boundaries are overlaid on high-resolution satellite imagery from the Stadia Maps service. As a result, some misalignment may be visible, since the boundaries were derived from Sentinel-2 data.\n\n### Further information\nDetails of methodology are available on the [Delineate Anything Project Page](https://lavreniuk.github.io/Delineate-Anything/)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
-        "attribution": {
-          "text": "Delineate Anything"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "European Crop Monitoring",
-        "subinterfaceGroup": "Field Delineation",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "download": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
+      "isActive": true,
       "data": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/AL_fields.fgb",
@@ -5112,7 +4992,36 @@
           },
           "minZoom": 10
         }
-      ]
+      ],
+      "meta": {
+        "description": "This interactive map shows field boundaries across all major European Countries generated using the **Delineate Anything v2** algorithm applied to the 2025 summer season Sentinel-2 Global Mosaics (S2GM), with the WorldCereal 2021 map used as a delineation mask.\n\n To view the field boundaries, zoom in to a local in a country of your choice. The boundaries are displayed on the map when the scalebar in the bottom left displays 5 km or less.\n\n**Please note** that the field boundaries are overlaid on high-resolution satellite imagery from the Stadia Maps service. As a result, some misalignment may be visible, since the boundaries were derived from Sentinel-2 data.\n\n### Further information\nDetails of methodology are available on the [Delineate Anything Project Page](https://lavreniuk.github.io/Delineate-Anything/)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
+        "attribution": {
+          "text": "Delineate Anything"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "European Crop Monitoring",
+        "subinterfaceGroup": "Field Delineation",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "download": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
     },
     {
       "id": "total-precipitation",
@@ -5238,7 +5147,6 @@
           "text": "Data attribution not specified"
         },
         "categories": [],
-        "units": "mm",
         "colormaps": [
           {
             "min": 0,
@@ -5247,7 +5155,8 @@
             "name": "freesurface-blue",
             "reverse": true
           }
-        ]
+        ],
+        "units": "mm"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -5393,7 +5302,6 @@
           "text": "Data attribution not specified"
         },
         "categories": [],
-        "units": "°C",
         "colormaps": [
           {
             "min": 24,
@@ -5402,7 +5310,8 @@
             "name": "temperature",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -5548,7 +5457,6 @@
           "text": "Data attribution not specified"
         },
         "categories": [],
-        "units": "°C",
         "colormaps": [
           {
             "min": 27,
@@ -5557,7 +5465,8 @@
             "name": "temperature",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -5703,7 +5612,6 @@
           "text": "Data attribution not specified"
         },
         "categories": [],
-        "units": "°C",
         "colormaps": [
           {
             "min": 16,
@@ -5712,7 +5620,8 @@
             "name": "temperature",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -5842,7 +5751,6 @@
           "text": "Data attribution not specified"
         },
         "categories": [],
-        "units": "Days",
         "colormaps": [
           {
             "min": 0,
@@ -5851,7 +5759,8 @@
             "name": "viridis",
             "reverse": false
           }
-        ]
+        ],
+        "units": "Days"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -6087,7 +5996,6 @@
           "text": "Data attribution not specified"
         },
         "categories": [],
-        "units": "mm",
         "colormaps": [
           {
             "min": 0,
@@ -6096,7 +6004,8 @@
             "name": "freesurface-blue",
             "reverse": true
           }
-        ]
+        ],
+        "units": "mm"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
