@@ -35,189 +35,311 @@
   "workflows": [],
   "stories": [
     {
-      "id": "parma",
-      "title": "Parma (IN DEVELOPMENT)",
-      "thumbnail": "https://commons.wikimedia.org/wiki/Duomo_di_Parma#/media/File:Piazza_Duomo_Parma_2009-08.jpg",
-      "description": "An illustration of how Earth Observation data can be used to provide key information for a city.",
+      "id": "toronto-air-quality",
+      "title": "Toronto Air Quality",
+      "description": "To be written",
       "isActive": false,
       "steps": [
         {
-          "id": "about-parma",
+          "id": "introduction",
           "content": {
-            "title": "About Parma",
-            "description": "Parma is a city of around 200,000 inhabitants in the Emilia-Romagna region of Italy, situated in the Po valley. \n\nIt is well known for Parmesan cheese and Parma ham, but is also a university city and an important agricultural centre."
+            "title": "introduction",
+            "description": "As the climate warms, Canada is experiencing longer wildfire seasons and more frequent wildfires. As well as the immediate damage caused, wildfire smoke can travel long distances from the actual fire, causing problems to many urban regions.\n\nSatellite data have a key role to play at all stages: they give key inputs to forecasting (such as measurements of temperature and soil moisture), they are critical for the early detection of wildfires, and they can support in assessing their impacts.\n\nOperational services, such as the [Canadian Wildland Fire Information System ](https://cwfis.cfs.nrcan.gc.ca/en) use satellite data as the basis for warnings. \n\nThis image shows [current active fires](https://cwfis.cfs.nrcan.gc.ca/en/interactive-map?layerIds=public%3Acwfif_national_activefires&selectedDate=2026-07-29&center=-87.1_47.9&zoom=1.11) as monitored by CWFIS."
+          },
+          "viewport": {
+            "zoom": 4,
+            "center": [
+              -97.20703125000001,
+              63.35212928507874
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "cwfis-data"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "detecting-wildfires-from-space",
+          "content": {
+            "title": "Detecting wildfires from space",
+            "description": "Satellites have a critical role in the early detection of wildfires; their high vantage point allows them to monitor wide areas, while their ability to see infra-red wavelengths allos them to directly detect the heat signature of a fire.\n\nThis image was taken by Sentinel-2 on 16th July 2026, and shows the plumes of smoke coming from wildfires in northern Ontario. The image has been enhanced to emphasise the smoke and burned area (red pixels)."
+          },
+          "viewport": {
+            "zoom": 9,
+            "center": [
+              -88,
+              51.4
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "sentinel-2-images-wildfires"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "wildfires-on-15th-july-2026",
+          "content": {
+            "title": "Wildfires on 15th July 2026",
+            "description": "Bringing together such data from a wide range of satellites allows us to see the situation across a wide territory. \n\nThis images shows thermal anomalies (i.e. likely wildfires) detected by NASA's [MODIS](https://modis.gsfc.nasa.gov/) instruments on 15th July 2026, at the height of the wildfire season."
+          },
+          "viewport": {
+            "zoom": 4,
+            "center": [
+              -97.20703125000001,
+              63.35212928507874
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "modis-active-fires-on-260715"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "wildfire-smoke",
+          "content": {
+            "title": "Wildfire smoke",
+            "description": "As well as the wildfires themselves, satellites also monitor the progress of the smoke plume. \n\nThis images uses [Aerosol Optical Depth](https://www.earthdata.nasa.gov/topics/atmosphere/aerosol-optical-depth-thickness), as measured by the [Sentinel-5P](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P), to track the progress of the smoke plume.\n\nUse the time controls to see the evolution of the smoke plume."
+          },
+          "viewport": {
+            "zoom": 6,
+            "center": [
+              -84.06738281250001,
+              48.40003249610685
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "sentinel-5p-aerosols"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "sentinel-5p-aerosols",
+            "controls": {
+              "temporal": {
+                "expanded": true
+              }
+            }
+          }
+        },
+        {
+          "id": "air-quality-in-toronto",
+          "content": {
+            "title": "Air quality in Toronto",
+            "description": "Smoke can cause problems in cities from the source. Wildfire smoke has a range of [health impacts](https://www.canada.ca/en/services/health/healthy-living/environment/air-quality/wildfire-smoke/health-effects-exposure.html) ranging from minor headaches to severe asthma.\n\nThis image shows the same Aerosol Optical Depth](https://www.earthdata.nasa.gov/topics/atmosphere/aerosol-optical-depth-thickness) from [Sentinel-5P](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P) as before, but zoomed in (and made partially transparent) to show the effects in Toronto and neighbouring ciites.\n.\nUse the time controls to see the evolution of the smoke plume."
+          },
+          "viewport": {
+            "zoom": 9,
+            "center": [
+              -79.63165283203125,
+              43.72148995228584
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "sentinel-5p-aerosols",
+              "opacity": 0.5,
+              "blend": true
+            }
+          ],
+          "baseLayer": "open-streetmap",
+          "panelState": {
+            "focusLayer": "sentinel-5p-aerosols",
+            "controls": {
+              "temporal": {
+                "expanded": true
+              }
+            }
+          }
+        },
+        {
+          "id": "heat-stress-and-air-quality",
+          "content": {
+            "title": "Heat stress and air quality",
+            "description": "By nature, wildfires tend to happen more frequently in hot, dry periods. Since cities typically tend to be slightly hotter than surrounding areas (the [Urban Heat Island](https://climateatlas.ca/urban-heat-island-effect) effect), this means that heat stress and poor air quality often come together, which can be dangerous to people with poor health.\n\nThis image (from NASA's [ECOSTRESS](https://ecostress.jpl.nasa.gov/) instrument) shows the land surface temperature (in Kelvin) on 14th July 2026. Although LST is not the temperature that people experience directly it is a reasonable proxy."
           },
           "viewport": {
             "zoom": 12,
             "center": [
-              10.331611633300783,
-              44.80132682904856
+              -79.65,
+              43.705608034103555
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "lst-ecostress-for-toronto"
+            }
+          ],
+          "baseLayer": "open-streetmap"
+        },
+        {
+          "id": "a-hazy-day-in-the-city",
+          "content": {
+            "title": "A hazy day in the city",
+            "description": "The effects of the smoke are clearly visible in this Sentinel-2 image, taken on 16th July 2026, in which the city of Toronto is partly hidden under this cloud.\n\nThe image below (taken on 15th July) shows how this looks at the ground level, with the sky taking on an orange colour.\n\n![Orange sky in Toronto](https://upload.wikimedia.org/wikipedia/commons/b/bc/Toronto_wildfire_smoke_July_15%2C_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image Credits: ARandomName123, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons*"
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              -79.51217651367189,
+              43.705608034103555
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "sentinel-2-images"
+            }
+          ],
+          "baseLayer": "open-streetmap"
+        },
+        {
+          "id": "conclusion",
+          "content": {
+            "title": "Conclusion",
+            "description": "#Further Reading\n\n[Toronto Wildfire Smoke Strategy.](https://www.toronto.ca/community-people/health-wellness-care/health-programs-advice/air-quality/wildfire-air-quality-strategy/)\n\n# News Articles\n\n[Toronto the Orange](https://www.cbc.ca/news/canada/toronto/toronto-orange-sky-photos-9.7271521) (CBC).\n\n[The deadly health burden of wildfire smoke.](https://www.theguardian.com/news/ng-interactive/2026/aug/08/wildfire-smoke-unknown-health-impacts)(The Guardian, 8th August 2026)"
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              -79.51217651367189,
+              43.705608034103555
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "sentinel-2-images"
+            }
+          ],
+          "baseLayer": "open-streetmap"
+        }
+      ]
+    },
+    {
+      "id": "rotterdam",
+      "title": "Rotterdam Flood Protection",
+      "description": "Supporting flood prevention in the Netherlands ",
+      "isActive": false,
+      "steps": [
+        {
+          "id": "introduction",
+          "content": {
+            "title": "Introduction",
+            "description": "Rotterdam is the second-largest city in the Netherlands, wth approximately 674 thousand residents. It is a major economic hub; The port of Rotterdam is Europe's largest, with around 28,000 ships arriving each year. \n\nRotterdam faces similar climate challenges to those faced by other European cites, such as increasing heat and drought, but it also faces specific challenges as a result of its location.\n\n![Rotterdam Panorama](https://upload.wikimedia.org/wikipedia/commons/f/f8/Erasmusbrug_seen_from_Euromast.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image: Mlefter, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons*"
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              4.426116943359376,
+              51.918226384077
+            ]
+          },
+          "activeLayers": []
+        },
+        {
+          "id": "topography",
+          "content": {
+            "title": "Topography",
+            "description": "Like many parts of the Netherlands, Rotterdam sits largely below sea level. About 85% of the city is below sea level, in some cases by up to 7m.\n\nThis image shows the [Copernicus Digital Elevation Model](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM), based on data collected by the German [TANDEM-X](https://earth.esa.int/eogateway/missions/terrasar-x-and-tandem-x) spacecraft. \n\nDark blue areas show the lowest areas, light blue shows areas which are higher (but still below sea level)."
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              4.390411376953126,
+              51.907849116500586
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "ndvi-2-2"
+            }
+          ]
+        },
+        {
+          "id": "flood-risk",
+          "content": {
+            "title": "Flood risk",
+            "description": "This DEM, as well as other parameters (such as the level of protection) can be used to build models showing where the risk of flooding is highest.\n\nThis model comes from the [Copernicus Emergency Management Service](https://emergency.copernicus.eu/), with areas considered to be at higher risk of flooding shown in a darker shade of blue."
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              4.390411376953126,
+              51.907849116500586
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "flood-hazard-imported"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "impact-assessment",
+          "content": {
+            "title": "Impact Assessment",
+            "description": "Satellite data also have a role to play in assessing the impact of any floods. This image shows the [CLMS Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas) product, which uses satellite, airborne and in-situ data to determine composition of European cities.\n\nComparing such a map to the flood risk allows an indication of the potential damage from a flood event."
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              4.390411376953126,
+              51.907849116500586
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "flood-hazard-imported",
+              "opacity": 0.5
+            },
+            {
+              "id": "urban-atlas",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "flood-hazard-imported"
+          }
+        },
+        {
+          "id": "flood-protection",
+          "content": {
+            "title": "Flood protection",
+            "description": "Satellite data are also used to actively determine when protection measures are needed.\n\nThe Netherlands is protected by a series of flood prevention measures known as the [Delta Works](https://en.wikipedia.org/wiki/Delta_Works). One of the most famous components of this are the [Maeslantkering](https://en.wikipedia.org/wiki/Maeslantkering), shown below and on the right (Sentinel-2 image).\n\n![Maeslantkering](\nhttps://upload.wikimedia.org/wikipedia/commons/a/af/Maeslantkering.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n\n*Image credits: DeltaWorks Online - Eszter Simonfi, CC BY-SA 3.0, via Wikimedia Commons*"
+          },
+          "viewport": {
+            "zoom": 14,
+            "center": [
+              4.171028137207032,
+              51.95389317724264
             ]
           },
           "activeLayers": [],
           "baseLayer": "sentinel"
         },
         {
-          "id": "different-views",
+          "id": "forecasting-floods",
           "content": {
-            "title": "Different views",
-            "description": "Satellite images capture more than just simple pictures. Different ways of looking at the earth capture different information.\n\nThe left image shows the view in near-infrared wavelengths, while the right images shows a combination of different wavelengths (NDVI: Normalised Difference Vegetation Index)."
+            "title": "Forecasting floods",
+            "description": "Satellite data are used to monitor conditions in the North sea to determine when these gates need to be closed to prevent a [storm surge](https://en.wikipedia.org/wiki/Storm_surge) entering the river.\n\nSea heights are measured continuously using a combination of tide gauges and satellite data (altimeters). These are fed into a model along with other data, including the weather forecast, to predict when a high sea level is due at Rotterdam.\n\n This images shows sea level anomaly (i.e. height above that expected) as provided by the [Copernicus Marine Service](https://marine.copernicus.eu/)."
           },
           "viewport": {
-            "zoom": 12,
+            "zoom": 5,
             "center": [
-              10.331611633300783,
-              44.80132682904856
+              -0.703125,
+              54.6992335284814
             ]
           },
           "activeLayers": [
             {
-              "id": "ndvi-versus-3"
-            }
-          ],
-          "baseLayer": "sentinel"
-        },
-        {
-          "id": "land-cover",
-          "content": {
-            "title": "Land Cover",
-            "description": "By putting together different data sets, and by looking at how these change over time, we can build up a picture of the Earth's surface.\n\nThis images shows the different types of land cover in 2021, computed by the Copernicus Land Monitoring Service (CLMS)."
-          },
-          "viewport": {
-            "zoom": 12,
-            "center": [
-              10.331611633300783,
-              44.80132682904856
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "european-land-cover"
-            }
-          ],
-          "baseLayer": "sentinel",
-          "panelState": {
-            "focusLayer": "european-land-cover",
-            "tab": {
-              "id": "overview"
-            }
-          }
-        },
-        {
-          "id": "extent-of-buildings",
-          "content": {
-            "title": "Extent of buildings",
-            "description": "We can also distinguish between buildings (in black) and other types of sealed surfaces, such as roads, railways or the airport (visible in the top left)."
-          },
-          "viewport": {
-            "zoom": 14,
-            "center": [
-              10.332641601562502,
-              44.80132682904856
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "european-land-cover",
-              "date": "latest"
-            },
-            {
-              "id": "extent-of-settlement"
-            }
-          ],
-          "baseLayer": "sentinel",
-          "panelState": {
-            "focusLayer": "extent-of-settlement"
-          }
-        },
-        {
-          "id": "land-use",
-          "content": {
-            "title": "Land Use",
-            "description": "By combining satellite data with auxilliary data we can also estimate not land cover, but also land use (i.e. what the land is being used for).\n\nThis images shows land use in 2021, taken by the Copernicus Urban Atlas (produced by CLMS)."
-          },
-          "viewport": {
-            "zoom": 14,
-            "center": [
-              10.332641601562502,
-              44.80132682904856
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "urban-atlas"
-            }
-          ],
-          "baseLayer": "sentinel",
-          "panelState": {
-            "focusLayer": "urban-atlas",
-            "tab": {
-              "id": "overview"
-            }
-          }
-        },
-        {
-          "id": "heat-island-maps",
-          "content": {
-            "title": "Heat Island Maps",
-            "description": "Looking at the land surface temperature over time builds up a picture of where the heat islands occur in the city. \n\nThis image uses IR data from Sentinel 2 to shows the average temperature during Summer 2023, with redder areas indicating hotspots."
-          },
-          "viewport": {
-            "zoom": 14,
-            "center": [
-              10.332641601562502,
-              44.80132682904856
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "urban-heat-island"
-            }
-          ],
-          "baseLayer": "sentinel"
-        },
-        {
-          "id": "heat-and-vegetation",
-          "content": {
-            "title": "Heat and Vegetation",
-            "description": "Satellites can also be used to map where street trees are. Overlaying street trees over the heat map clearly shows the correlation between heat islands and the lack of tree canopy cover."
-          },
-          "viewport": {
-            "zoom": 14,
-            "center": [
-              10.332641601562502,
-              44.80132682904856
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "urban-heat-island"
-            },
-            {
-              "id": "street-trees-3"
-            }
-          ],
-          "baseLayer": "sentinel",
-          "panelState": {
-            "focusLayer": "street-trees-3"
-          }
-        },
-        {
-          "id": "air-quality",
-          "content": {
-            "title": "Air Quality",
-            "description": "Parma is located in the Po volley, which has some of the poorest air quality in Europe.\n\nIn this image we show the current NO2 distribution over this region, as provided by the Copernicus Atmosphere Monitoring Service (CAMS) using data from various satellites together with models and in situ measurements."
-          },
-          "viewport": {
-            "zoom": 8,
-            "center": [
-              10.464477539062502,
-              45.04635929200553
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "no2-at-surface"
+              "id": "sea-level-anomaly"
             }
           ],
           "baseLayer": "sentinel"
@@ -226,343 +348,188 @@
           "id": "conclusion",
           "content": {
             "title": "Conclusion",
-            "description": "This story has shown some of the key ways in which satellites can monitor cities, but it is not the complete picture.\n\nThere are many other areas where satellites can support, such as measuring subsidence, changes detection, etc. \n\nHave a look at some of the other stories in the gallery for examples."
+            "description": "Space based data had a critical role to play in both planning and responding to floods. By using such data effectively cities such as Rotterdam can improve their response to sea level rise and a changing climate.\n\n#Further Reading\n\n[Rotterdam Climate Adaptation Strategy](https://www.urbanisten.nl/work/rotterdam-adaptation-strategy)\n\n[C40 Cities: Rotterdam](https://www.c40.org/case-studies/c40-good-practice-guides-rotterdam-climate-change-adaptation-strategy/)\n\nESA [EO For Ports](https://eo4ports.earsc.org/) Project."
           },
           "viewport": {
-            "zoom": 12,
+            "zoom": 13,
             "center": [
-              10.331611633300783,
-              44.80132682904856
+              4.478473663330079,
+              51.922249577310254
             ]
           },
-          "activeLayers": [
-            {
-              "id": "ndvi-2"
-            }
-          ],
+          "activeLayers": [],
           "baseLayer": "sentinel"
         }
       ]
     },
     {
-      "id": "toronto",
-      "title": "Toronto (IN DEVELOPMENT)",
-      "description": "Looking at mapping the city from space.",
+      "id": "marseille",
+      "title": "Marseille Urban Heat",
+      "description": "Urban heat in the city of Marseille",
       "isActive": false,
       "steps": [
         {
           "id": "introduction",
           "content": {
             "title": "Introduction",
-            "description": "Toronto is the capital city of the Canadian province of Ontario. It is the most populous city in Canada, with approximately 3 million people living in the city (7 million if surrounding areas are included).\n\nHere we see an image of Toronto from space, taken by Sentinel-2."
+            "description": "The most populated city in the south of France, Marseille is increasingly affected by rising temperatures. In 2026 there were three consecutive heatwaves, with a peak temperature of 38.1 C recorded on 5 July.\n\nTo cope with a changing climate, Marseille has been looking at how it can [adapt its public spaces](https://eu-mayors.ec.europa.eu/en/%20Refreshing-Marseille-with-cooler-greener-and-accessible-public-spaces) to become greener and cooler.\n\nThis composite Sentinel-1 image shows Marseille and the surrounding areas, including the [Calenques National Park](https://www.calanques-parcnational.fr/en) South of the main city."
           },
           "viewport": {
-            "zoom": 10,
+            "zoom": 12,
             "center": [
-              -79.42840576171876,
-              43.69667260550321
+              5.4,
+              43.29295042445051
             ]
           },
-          "activeLayers": [],
-          "baseLayer": "sentinel"
+          "activeLayers": []
         },
         {
-          "id": "mapping-the-city",
+          "id": "looking-beyond-the-visible",
           "content": {
-            "title": "Mapping the city",
-            "description": "Using satellite data we can map the extent of the city, by determining where buildings are present (shown in black).\n\nThis map comes from DLR's World Settlement Footprint project, and shows the city in 2019."
+            "title": "Looking beyond the visible",
+            "description": "Satellites can detect a wider range of wavelengths than the human eye. This Sentinel-2 image shows Marseille in near-infrared (NIR). In this wavelength vegetation is easily seen (darker red), while buildings and other artificial surfaces show up in grey.\n\nNIR measurements (with a wavelength of about 840nm) do not show heat directly, For this we need to instead look at **thermal infrared**, with a wavelength of several micrometers."
           },
           "viewport": {
-            "zoom": 10,
+            "zoom": 12,
             "center": [
-              -79.42840576171876,
-              43.69667260550321
+              5.4,
+              43.29295042445051
             ]
           },
           "activeLayers": [
             {
-              "id": "extent-of-settlement",
-              "date": "latest"
+              "id": "near-infrared"
+            }
+          ]
+        },
+        {
+          "id": "land-surface-temperature",
+          "content": {
+            "title": "Land Surface Temperature",
+            "description": "This image shows the **Land Surface Temperature** over Marseille, taking a ten day average, as measured by the SLSTR instrument on board the Sentinel-3 spacecraft. \n\nLand surface temperature is not necessarily the temperature that people will experience (air temperatures) but is a reasonably close proxy.\n\nThis image shows for the last 10 days of June 2026, during the first heatwave of the year. Use the calendar tool to change date and see how the heatwave evolved.\n\nThe resolution of the SLSTR instrument is approximately 1km, which is good enough to see broad-brush features (such as the magnitude of the urban heat islands effect), but not to look at individual streets or buildings."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              5.4,
+              43.29295042445051
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "land-surface-temperature-10-day-composite-2",
+              "date": "2026-06-21"
+            }
+          ],
+          "panelState": {
+            "focusLayer": "land-surface-temperature-10-day-composite-2",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "higher-resolution-lst-measurements",
+          "content": {
+            "title": "Higher Resolution LST Measurements",
+            "description": "For more detailed (and more frequent) measurements of temperature, various commercial data are available.\n\nThis image, provide by the German satellite company [Constellr](https://www.constellr.com/), shows LST over Marseille at a 30m resolution."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              5.4,
+              43.29295042445051
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "lst-marseille-afternoon"
+            }
+          ]
+        },
+        {
+          "id": "street-level-comparison",
+          "content": {
+            "title": "Street level comparison",
+            "description": "At 30m resolution, it is possible to see heat island effects at the individual building scale.\n\nThis image compares the 30m heat map from Constellr with [OpenStreetMap](https://openstreetmap.org) information to help locate specific hotspots, such as the one shown here close to the main train station."
+          },
+          "viewport": {
+            "zoom": 15,
+            "center": [
+              5.383043289184571,
+              43.30438181351978
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "lst-marseille-afternoon-swipe"
             }
           ],
           "baseLayer": "open-streetmap"
         },
         {
-          "id": "a-growing-city",
+          "id": "heat-islands-and-urban-green",
           "content": {
-            "title": "A growing city",
-            "description": "Since we have a long time series of satellite data we can go back in time to see how the city has grown over the years.\n\nThis map comes from DLR's World Settlement Footprint project, and shows growth between 1985 and 2015. Redder areas are older, while blue shows newer buildings."
-          },
-          "viewport": {
-            "zoom": 10,
-            "center": [
-              -79.42840576171876,
-              43.69667260550321
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "evolution-1985-2015"
-            }
-          ],
-          "baseLayer": "open-streetmap",
-          "panelState": {
-            "focusLayer": "evolution-1985-2015",
-            "tab": {
-              "id": "overview"
-            }
-          }
-        },
-        {
-          "id": "a-3d-city",
-          "content": {
-            "title": "A 3D city",
-            "description": "As well as building extent, we can use SAR techniques to see the height of buildings.\n\nThis map comes from DLR's World Settlement Footprint project, and shows the city in 2019. The city centre can clearly be seen in red."
-          },
-          "viewport": {
-            "zoom": 10,
-            "center": [
-              -79.42840576171876,
-              43.69667260550321
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "extent-of-settlement",
-              "date": "latest"
-            },
-            {
-              "id": "building-height",
-              "date": "latest"
-            }
-          ],
-          "baseLayer": "open-streetmap",
-          "panelState": {
-            "focusLayer": "building-height",
-            "tab": {
-              "id": "overview"
-            }
-          }
-        },
-        {
-          "id": "population-density",
-          "content": {
-            "title": "Population Density",
-            "description": "Using this we can estimate the population density across the metropolitan region.\n\nATTRIBUTION NEEDED"
-          },
-          "viewport": {
-            "zoom": 10,
-            "center": [
-              -79.42840576171876,
-              43.69667260550321
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "explore"
-            }
-          ],
-          "baseLayer": "open-streetmap",
-          "panelState": {
-            "focusLayer": "explore",
-            "tab": {
-              "id": "overview"
-            }
-          }
-        },
-        {
-          "id": "mapping-the-region",
-          "content": {
-            "title": "Mapping the region",
-            "description": "As well as looking at the city itself we can also use EO to look at its surrounding area.\n\nData from ESA WorldCover"
-          },
-          "viewport": {
-            "zoom": 8,
-            "center": [
-              -79.45312500000001,
-              43.75522505306928
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "global-land-cover-2-2",
-              "date": "latest"
-            }
-          ],
-          "baseLayer": "open-streetmap",
-          "panelState": {
-            "focusLayer": "explore",
-            "tab": {
-              "id": "overview"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "vienna",
-      "title": "Vienna (IN DEVELOPMENT)",
-      "description": "Looking at the heat island effect in Vienna",
-      "isActive": false,
-      "steps": [
-        {
-          "id": "introduction",
-          "content": {
-            "title": "Introduction",
-            "description": "Like many European cities, Vienna is increasingly subject to heatwaves during the summer months. This story looks at how EO data can support monitoring of heat islands."
-          },
-          "viewport": {
-            "zoom": 12,
-            "center": [
-              16.425247192382816,
-              48.21231998069736
-            ]
-          },
-          "activeLayers": [],
-          "baseLayer": "sentinel"
-        },
-        {
-          "id": "heat-maps",
-          "content": {
-            "title": "Heat maps",
-            "description": "This map shows the average Land surface temperatures over Austria during summer (between June 1st and June 24th) for 3 years (2022-24), as measured by the ECOSTRESS instrument mounted on the International Space Station."
-          },
-          "viewport": {
-            "zoom": 12,
-            "center": [
-              16.425247192382816,
-              48.21231998069736
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "land-surface-temperature"
-            }
-          ],
-          "baseLayer": "sentinel",
-          "panelState": {
-            "focusLayer": "land-surface-temperature",
-            "tab": {
-              "id": "overview"
-            }
-          }
-        },
-        {
-          "id": "street-heat",
-          "content": {
-            "title": "Street heat",
-            "description": "Superimposing buildings shows the heat at street level.\n\n(Building data are  takenfrom DLR's World Settlement Footprint project, and are for 2019.)"
-          },
-          "viewport": {
-            "zoom": 13,
-            "center": [
-              16.391601562500004,
-              48.210604096512405
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "land-surface-temperature"
-            },
-            {
-              "id": "extent-of-settlement",
-              "date": "latest"
-            }
-          ],
-          "baseLayer": "sentinel"
-        },
-        {
-          "id": "street-heat-and-tree-cover",
-          "content": {
-            "title": "Street heat and tree cover",
-            "description": "We can also add in the presence of street trees, as taken from CLMS Urban Atlas."
-          },
-          "viewport": {
-            "zoom": 13,
-            "center": [
-              16.391601562500004,
-              48.210604096512405
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "land-surface-temperature"
-            },
-            {
-              "id": "extent-of-settlement",
-              "date": "latest"
-            },
-            {
-              "id": "street-trees-3",
-              "date": "latest"
-            }
-          ],
-          "baseLayer": "sentinel"
-        },
-        {
-          "id": "street-heat-and-tree-cover-zoomed",
-          "content": {
-            "title": "Street heat and tree cover (zoomed)",
-            "description": "Looking at the suburbs clearly shows the inverse correlation between heat islands and tree cover."
+            "title": "Heat islands and urban green",
+            "description": "We can also overlay data showing the presence of [street trees](https://land.copernicus.eu/en/products/urban-atlas?tab=street_tree_layer) (taken from the [Copernicus Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas)).\n\nNeighbourhoods with more trees are generally [significantly cooller](https://climate-adapt.eea.europa.eu/en/metadata/publications/urban-greening-cools-cities-and-saves-lives) than those without such vegetation, and the correlation can be seen in this area."
           },
           "viewport": {
             "zoom": 14,
             "center": [
-              16.3337516784668,
-              48.231076563740906
+              5.370769500732423,
+              43.28057961568862
             ]
           },
           "activeLayers": [
             {
-              "id": "land-surface-temperature"
+              "id": "street-trees-3"
             },
             {
-              "id": "extent-of-settlement",
-              "date": "latest"
-            },
-            {
-              "id": "street-trees-3",
-              "date": "latest"
+              "id": "lst-marseille-afternoon"
             }
           ],
-          "baseLayer": "sentinel"
+          "panelState": {
+            "focusLayer": "street-trees-3"
+          }
         },
         {
-          "id": "presence-of-important-buildings",
+          "id": "night-time-temperatures",
           "content": {
-            "title": "Presence of important buildings",
-            "description": "We can also look at where key bits of infrastructure are with respect to heat islands."
+            "title": "Night time temperatures",
+            "description": "We can also compare land surface temperatures in the afternoon (on the left) with those at night (right). Redder areas indicate hotter temperatures.\n\nZooming out we can see that the urban areas retain their heat more than the surrounding countryside, meaning that city residents experience a higher night time temperature, which can significantly affect sleep patterns."
           },
           "viewport": {
-            "zoom": 13,
+            "zoom": 12,
             "center": [
-              16.391601562500004,
-              48.210604096512405
+              5.358924865722657,
+              43.29295042445051
             ]
           },
           "activeLayers": [
             {
-              "id": "land-surface-temperature"
-            },
-            {
-              "id": "extent-of-settlement",
-              "date": "latest"
-            },
-            {
-              "id": "street-trees-3",
-              "date": "latest"
-            },
-            {
-              "id": "important-buildings"
+              "id": "lst-marseille-afternoon-versus-night"
             }
-          ],
-          "baseLayer": "sentinel",
-          "panelState": {
-            "focusLayer": "important-buildings",
-            "tab": {
-              "id": "overview"
+          ]
+        },
+        {
+          "id": "conclusion",
+          "content": {
+            "title": "Conclusion",
+            "description": "A wide variety of tools exist to help cities map urban heat islands, model their future evolution, and devise strategies for dealing with them. Please [contact the SEF team](https://sef.apex.esa.int/en/contact-us) if you would like to discuss your specific needs. \n\n\n# Image Credits\n\nSentinel images: European Union, Copernicus Sentinel-2 and Sentinel-3 imagery.\n\nUrban Atlas from [Copernicus Land Monitoring Service](https://land.copernicus.eu/en)\n\nCommercial IR images courtesy of [constellr](www.constellr.com). \n\n\n# More Information\n\n[SEF Urban Page](https://sef.apex.esa.int/en/key-themes/urban-areas)\n\n[SEF Catalog of Urban Services](https://sef.apex.esa.int/en/what-we-do/training/urban-eo-services-catalogue)\n\n[Covenant of Mayors EO page](https://eu-mayors.ec.europa.eu/en/Insights-per-topic/Earth-Observation)"
+          },
+          "viewport": {
+            "zoom": 6,
+            "center": [
+              3.3178710937500004,
+              46.31658418182218
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "land-surface-temperature-10-day-composite-2",
+              "date": "latest"
             }
-          }
+          ]
         }
       ]
     }
@@ -722,6 +689,24 @@
       "id": "wms-service-1785839112500",
       "name": "Terrascope MapProxy WMS",
       "url": "https://mapproxy.terrascope.be/mapproxy/service",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1788938430592",
+      "name": "Fire Canada",
+      "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/wms?request=getcapabilities",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1788939320301",
+      "name": "Flood Canada",
+      "url": "https://maps-cartes.services.geo.ca/egs_sgu/services/Flood_Inondation/EGS_Flood_Product_Active_en/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1788939742363",
+      "name": "jrc",
+      "url": "https://geospatial.jrc.ec.europa.eu/geoserver/wms?service=WMS&request=GetCapabilities",
       "format": "wms"
     }
   ],
@@ -1098,6 +1083,48 @@
         "infoPanel": {
           "legend": {
             "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "built-up-areas-canada",
+      "name": "Buildup Index Canada",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/wms?request=getcapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "bui",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Buildup Index Canada",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban Mapping",
+        "subinterfaceGroup": "Settlements & Urban Growth",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=bui"
           },
           "controls": {
             "opacitySlider": true,
@@ -40647,9 +40674,6 @@
           "url": "https://gtif-demo.eox.at/explore?indicator=HAUC1&x=1682304.11139&y=6105680.32568&z=7.21675"
         },
         "categories": [],
-        "units": "°C",
-        "min": 0,
-        "max": 40,
         "colormaps": [
           {
             "min": 0,
@@ -40658,7 +40682,10 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C",
+        "min": 0,
+        "max": 40
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -40747,7 +40774,7 @@
     },
     {
       "id": "street-trees-3",
-      "name": "Street Trees",
+      "name": "Street Trees Europe",
       "isActive": false,
       "data": [
         {
@@ -40775,7 +40802,7 @@
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
-        "subinterfaceGroup": "Urban Vegetation Structure",
+        "subinterfaceGroup": "Vegetation Structure",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -40784,154 +40811,6 @@
           "legend": {
             "type": "image",
             "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/STL/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=STL_Raster27733"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "tree-cover-density",
-      "name": "Tree Cover Density",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_TCF:TCD_S2023",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Percentage of tree canopy cover per pixel derived from Copernicus High Resolution Layers using Sentinel-2 imagery. It is relevant for evaluating urban greening distribution, shading potential, heat mitigation strategies and ecological structure in cities. ",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service (CLMS) – High Resolution Layer Tree Cover Density",
-          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover/tree-cover-density-2023-raster-10-m-100-m-europe-yearly"
-        },
-        "categories": [],
-        "units": "(% cover)",
-        "min": 0,
-        "max": 100,
-        "startColor": "#fdff73",
-        "endColor": "#1c5c24"
-      },
-      "layout": {
-        "interfaceGroup": "Urban Greening",
-        "subinterfaceGroup": "Urban Vegetation Structure",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "dominant-leaf-type",
-      "name": "Dominant Leaf Type",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_TCF:DLT_S2023",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Classification of tree canopy into broadleaved and coniferous types derived from Copernicus High Resolution Layers using Sentinel-2 spectral information and vegetation modelling. Useful for understanding urban forest composition and differences in vegetation structure and seasonality, supporting biodiversity planning and seasonal maintenance strategies.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service (CLMS) – High Resolution Layers",
-          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover/dominant-leaf-type-2023-raster-10-m-europe-yearly"
-        },
-        "categories": [
-          {
-            "color": "#469E4A",
-            "label": "Broadleaved trees",
-            "value": 1
-          },
-          {
-            "color": "#1C5C24",
-            "label": "Coniferous trees",
-            "value": 2
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Urban Greening",
-        "subinterfaceGroup": "Urban Vegetation Structure",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "herbaceous-cover",
-      "name": "Herbaceous Cover",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_GRA:HER_S2023",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Spatial distribution of grass-dominated surfaces derived from Sentinel-2 probability layers within Copernicus High Resolution Layers. It separates herbaceous vegetation from other land cover types.  It supports in identifying permeable green areas that contribute to drainage, recreation spaces, and ecological connectivity.",
-        "attribution": {
-          "text": "Copernicus Land Monitoring Service (CLMS) – High Resolution Layers",
-          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-grasslands/grassland-2023-raster-10-m-100-m-europe-yearly"
-        },
-        "categories": [
-          {
-            "color": "#9CCB15",
-            "label": "Grassland",
-            "value": 1
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Urban Greening",
-        "subinterfaceGroup": "Urban Vegetation Structure",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -41064,191 +40943,22 @@
       }
     },
     {
-      "id": "protection-levels",
-      "name": "Protection levels",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:FloodProtectionLevels",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Flood defence capacity expressed as return periods for which protection systems are designed. It supports assessment of urban flood preparedness and infrastructure resilience.",
-        "attribution": {
-          "text": "EFAS / Copernicus EMS",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Flood",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:FloodProtectionLevels&styles=default&width=57&height=80"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "flood-hazard",
+      "id": "flood-hazard-2",
       "name": "Flood Hazard",
       "isActive": false,
       "data": [
         {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
           "format": "wms",
           "zIndex": 50,
-          "layers": "mapserver:Europe_combined_flood_scenarios",
+          "layers": "Flood Hazard",
           "useTimeParameter": true
         }
       ],
       "meta": {
-        "description": "Flood scenarios generated from hydrological and hydraulic models within EFAS and Copernicus EMS. It supports identification of areas exposed to potential inundation under different climate scenarios.",
+        "description": "Auto-generated description for Flood Hazard",
         "attribution": {
-          "text": "EFAS / Copernicus EMS",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Flood",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "flood-probability",
-      "name": "Flood Probability",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:persistence",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Probabilistic flood occurrence layer derived from hydrological modelling of river discharge and historical flood events. It supports risk-based urban planning and flood exposure assessment.",
-        "attribution": {
-          "text": "EFAS / Copernicus EMS",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
-        },
-        "categories": [
-          {
-            "color": "#FCFDB4",
-            "label": "2-year / Medium Probability",
-            "value": 0
-          },
-          {
-            "color": "#FFFF00",
-            "label": "2-year / High Probability",
-            "value": 0
-          },
-          {
-            "color": "#FF7373",
-            "label": "5-year / Low Probability",
-            "value": 0
-          },
-          {
-            "color": "#FF4343",
-            "label": "5-year / Medium Probability",
-            "value": 0
-          },
-          {
-            "color": "#E60000",
-            "label": "5-year / High Probability",
-            "value": 0
-          },
-          {
-            "color": "#E175FF",
-            "label": "20 year / Low Probability",
-            "value": 0
-          },
-          {
-            "color": "#D437FF",
-            "label": "20 year / Medium Probability",
-            "value": 0
-          },
-          {
-            "color": "#A800D6",
-            "label": "20-year / High Probability",
-            "value": 0
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Flood",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "rapid-flood-mapping",
-      "name": "Rapid Flood Mapping",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:RapidFloodMapping",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Near real-time flood extent mapping derived from satellite imagery during flood events using rapid classification methods. It supports operational response and emergency management in urban flood events.",
-        "attribution": {
-          "text": "EFAS / Copernicus EMS ",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
+          "text": "Data attribution not specified"
         },
         "categories": []
       },
@@ -41262,7 +40972,49 @@
         "infoPanel": {
           "legend": {
             "type": "image",
-            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:RapidFloodMapping&styles=default&width=150&height=23"
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_Flood_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "flood-mortality-risk-2000-imported",
+      "name": "Flood Mortality Risk 2000",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "NDH_Flood_Mortality_Risks_Distribution_2000",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Flood Mortality Risk 2000",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Flood",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/NDH_Flood_Mortality_Risks_Distribution_2000_H.png"
           },
           "controls": {
             "opacitySlider": true,
@@ -41273,8 +41025,49 @@
           }
         }
       },
-      "isBaseLayer": false,
-      "exclusivitySets": []
+      "isBaseLayer": false
+    },
+    {
+      "id": "flood-2",
+      "name": "Active Flooded Areas Canada",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://maps-cartes.services.geo.ca/egs_sgu/services/Flood_Inondation/EGS_Flood_Product_Active_en/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "0",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Active Flooded Areas Canada",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Flood",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://maps-cartes.services.geo.ca:443/egs_sgu/services/Flood_Inondation/EGS_Flood_Product_Active_en/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=0"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
       "id": "wildfire-frequency",
@@ -41323,29 +41116,272 @@
       }
     },
     {
-      "id": "landslide-susceptibility",
-      "name": "Landslide Susceptibility",
+      "id": "land-surface-temperature-daily-2",
+      "name": "Land Surface Temperature (Daily)",
       "isActive": false,
       "data": [
         {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetCapabilities",
+          "format": "wmts",
           "zIndex": 50,
-          "layers": "mapserver:LandSlide",
+          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3b",
+          "version": "1.0.0",
+          "useTimeParameter": true
+        },
+        {
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetCapabilities",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3a",
+          "version": "1.0.0",
           "useTimeParameter": true
         }
       ],
       "meta": {
-        "description": "Spatial probability model of landslide occurrence derived from terrain, geology, land cover, and environmental predictors. It supports the identification of unstable slopes to avoid risky development in vulnerable areas.",
+        "description": "Land surface temperature derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
         "attribution": {
-          "text": "EFAS / Copernicus EMS",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
+          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
+          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 250,
+            "max": 320,
+            "steps": 100,
+            "name": "jet",
+            "reverse": false
+          }
+        ],
+        "units": "Kelvin (K)"
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Heat",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "land-surface-temperature-10-day-composite-2",
+      "name": "Land Surface Temperature (10 day composite)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "terrascope-s3-lst-s10-v1_lst",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Land surface temperature (10 day composite) derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
+        "attribution": {
+          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
+          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 250,
+            "max": 320,
+            "steps": 100,
+            "name": "jet",
+            "reverse": false
+          }
+        ],
+        "units": "Kelvin (K)"
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Heat",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "drought-canada",
+      "name": "Drought Canada",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/wms?request=getcapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "dc",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Drought Canada",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Drought",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=dc"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "snow-cover",
+      "name": "Snow Cover",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Snow Cover",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Snow Cover",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Snow & Ice",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_NDSI_Snow_Cover_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "landslide-hazard-imported",
+      "name": "Landslide Hazard",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Landslide Hazard",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Landslide Hazard",
+        "attribution": {
+          "text": "Data attribution not specified"
         },
         "categories": []
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
         "subinterfaceGroup": "Landslide",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/NDH_Landslide_Hazard_Distribution_2000_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "population-density",
+      "name": "Population Density",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Population Density",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Population Density",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Population Exposure",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -41360,91 +41396,6 @@
             "temporalControls": false,
             "constraintSlider": false,
             "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "population-density-2",
-      "name": "Population Density",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/WorldPop/population_europe_cog.tif",
-          "format": "cog",
-          "zIndex": 30,
-          "opacity": 0.8
-        }
-      ],
-      "meta": {
-        "description": "High-resolution population distribution from WorldPop modelling, combining census data and satellite-derived settlement information. It supports identification of population concentration and urban pressure zones.",
-        "attribution": {
-          "text": "WorldPop",
-          "url": "https://www.worldpop.org/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 3000,
-            "steps": 64,
-            "name": "viridis",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Population Exposure",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://neo.gsfc.nasa.gov/palettes/sedac_pop.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true
-          }
-        }
-      }
-    },
-    {
-      "id": "air-quality-exposure",
-      "name": "Air Quality Exposure",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/dlr_aggregated_risk_index/2025/10/01/ARI_2025-10/ARI_2025-10.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "level": 0
-        }
-      ],
-      "statistics": [],
-      "meta": {
-        "description": "Combined index of air pollution and population exposure derived from Copernicus atmospheric models and demographic datasets. It supports assessment of health risk distribution in urban environments.",
-        "attribution": {
-          "text": "ESA Project - AlpAirEO CCN",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/dlr_aggregated_risk_index?.language=en"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Population Exposure",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true
           }
         }
       }
@@ -41490,136 +41441,21 @@
       "timeframe": "Days"
     },
     {
-      "id": "roads",
-      "name": "Roads",
+      "id": "national-highway-system",
+      "name": "National Highway System - Canada",
       "isActive": false,
       "data": [
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L1_motorway.fgb",
-          "format": "flatgeobuf",
+          "url": "https://maps-cartes.services.geo.ca/server_serveur/services/TC/canada_national_highway_system_en/MapServer/WMSServer",
+          "format": "wms",
           "zIndex": 50,
-          "style": [
-            {
-              "stroke-color": [
-                "match",
-                [
-                  "get",
-                  "highway"
-                ],
-                "motorway",
-                "#d52020",
-                "trunk",
-                "#ea902a",
-                "primary",
-                "#e2dc12",
-                "secondary",
-                "#6e974e",
-                "#3b82f6"
-              ],
-              "stroke-width": 2,
-              "stroke-linecap": "round",
-              "stroke-linejoin": "round",
-              "stroke-outline-color": "#ffffff",
-              "stroke-outline-width": 1
-            }
-          ]
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L1_trunk.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 51,
-          "style": [
-            {
-              "stroke-color": [
-                "match",
-                [
-                  "get",
-                  "highway"
-                ],
-                "motorway",
-                "#d52020",
-                "trunk",
-                "#ea902a",
-                "primary",
-                "#e2dc12",
-                "secondary",
-                "#6e974e",
-                "#3b82f6"
-              ],
-              "stroke-width": 2,
-              "stroke-linecap": "round",
-              "stroke-linejoin": "round",
-              "stroke-outline-color": "#ffffff",
-              "stroke-outline-width": 1
-            }
-          ],
-          "minZoom": 3
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L1_primary.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "stroke-color": [
-                "match",
-                [
-                  "get",
-                  "highway"
-                ],
-                "motorway",
-                "#d52020",
-                "trunk",
-                "#ea902a",
-                "primary",
-                "#e2dc12",
-                "secondary",
-                "#6e974e",
-                "#3b82f6"
-              ],
-              "stroke-width": 2,
-              "stroke-linecap": "round",
-              "stroke-linejoin": "round",
-              "stroke-outline-color": "#ffffff",
-              "stroke-outline-width": 1
-            }
-          ],
-          "minZoom": 5
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/L2_secondary.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 50,
-          "style": [
-            {
-              "stroke-color": [
-                "match",
-                [
-                  "get",
-                  "highway"
-                ],
-                "motorway",
-                "#d52020",
-                "trunk",
-                "#ea902a",
-                "primary",
-                "#e2dc12",
-                "secondary",
-                "#6e974e",
-                "#3b82f6"
-              ],
-              "stroke-width": 2,
-              "stroke-linecap": "round",
-              "stroke-linejoin": "round",
-              "stroke-outline-color": "#ffffff",
-              "stroke-outline-width": 1
-            }
-          ],
-          "minZoom": 6
+          "layers": "0",
+          "opacity": 0.85,
+          "useTimeParameter": true
         }
       ],
       "meta": {
-        "description": "Generalised European road network derived from OpenStreetMap data. It supports urban accessibility analysis and connectivity assessment between settlements and regions.",
+        "description": "Canada's National Highway System as officially accepted by the Council of Ministers Responsible for Transportation and Highway Safety, mapped by Transport Canada. It carries the ~38,000 km designated core, feeder and northern/remote highway network, not the full local road grid (Statistics Canada's National Road Network exists but is split into ~90 province/territory x road-class WMS layers with no single national layer, so it is not wired in here). Good for a regional or national view; too sparse for street-level routing.",
         "attribution": {
           "text": "OpenStreetMap ",
           "url": "https://www.openstreetmap.org/#map=11/47.1412/15.9381"
@@ -41627,22 +41463,7 @@
         "categories": [
           {
             "color": "#D52020",
-            "label": "Motorway",
-            "value": 0
-          },
-          {
-            "color": "#EA902A",
-            "label": "Trunk",
-            "value": 0
-          },
-          {
-            "color": "#E2DC12",
-            "label": "Primary",
-            "value": 0
-          },
-          {
-            "color": "#6E974E",
-            "label": "Secondary",
+            "label": "National Highway System",
             "value": 0
           }
         ]
@@ -41665,48 +41486,25 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "isBaseLayer": false
     },
     {
-      "id": "important-buildings",
-      "name": "Important Buildings",
+      "id": "health-facilities-hospitals-clinics",
+      "name": "Health Facilities (Hospitals & Clinics) - Canada",
       "isActive": false,
       "data": [
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/Openstreetmap/infra_europe.fgb",
-          "format": "flatgeobuf",
+          "url": "https://maps-cartes.services.geo.ca/server2_serveur2/services/StatCan/OpenDatabaseHealthFacilities/MapServer/WMSServer",
+          "format": "wms",
           "zIndex": 50,
-          "style": [
-            {
-              "circle-radius": 5,
-              "circle-fill-color": [
-                "match",
-                [
-                  "get",
-                  "type"
-                ],
-                "hospital",
-                "#d23232",
-                "ambulance_station",
-                "#fdbaba",
-                "school",
-                "#fc03cf",
-                "university",
-                "#f5b2ec",
-                "police",
-                "#18219a",
-                "fire_station",
-                "#e98b07",
-                "#3b82f6"
-              ],
-              "circle-stroke-color": "#ffffff",
-              "circle-stroke-width": 1
-            }
-          ]
+          "layers": "0",
+          "opacity": 0.9,
+          "useTimeParameter": true
         }
       ],
       "meta": {
-        "description": "Selected infrastructure features extracted from OpenStreetMap and generalised for regional-scale mapping of key urban structures. It supports identification of functional urban nodes, critical infrastructure distribution, useful for emergency planning and urban management..",
+        "description": "Statistics Canada's Open Database of Healthcare Facilities: roughly 7,000 hospitals, ambulatory care centres, and nursing/residential care facilities across Canada, geocoded from provincial, territorial and municipal sources. It covers health facilities only. No verified live Canada-wide service was found for schools, police stations or fire stations. Statistics Canada's Open Database of Educational Facilities exists for schools but ships only as a CSV bulk download, not a live map service, so it is not wired in here; it would need to be hosted (e.g. as flatgeobuf) before it can appear as a layer.",
         "attribution": {
           "text": "OpenStreetMap",
           "url": "https://www.openstreetmap.org/#map=11/47.1412/15.9381"
@@ -41718,28 +41516,13 @@
             "value": 0
           },
           {
-            "color": "#FDBABA",
-            "label": "Ambulance Stations",
+            "color": "#4A90D9",
+            "label": "Ambulatory health care",
             "value": 0
           },
           {
-            "color": "#FC03CF",
-            "label": "Schools",
-            "value": 0
-          },
-          {
-            "color": "#F5B2EC",
-            "label": "Universities",
-            "value": 0
-          },
-          {
-            "color": "#18219A",
-            "label": "Police Stations",
-            "value": 0
-          },
-          {
-            "color": "#E98B07",
-            "label": "Fire Stations",
+            "color": "#7FBF7F",
+            "label": "Nursing / residential care",
             "value": 0
           }
         ]
@@ -41762,155 +41545,8 @@
             "blendControls": false
           }
         }
-      }
-    },
-    {
-      "id": "topsoil-organic-carbon-2020-22",
-      "name": "Topsoil Organic Carbon (2020-22)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/europe_aggr-orgc_00-020_mean_100_202003-202210-natura.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "statistics": [
-        {
-          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.soc_0-5cm_mean_europe_2020-2022.natura_2000.epsg4326.level00.fgb",
-          "format": "flatgeobuf",
-          "zIndex": 100,
-          "level": 0,
-          "minZoom": 8
-        }
-      ],
-      "meta": {
-        "description": "Topsoil organic carbon content (0–20 cm) derived from spatial modelling of soil observations and environmental predictors calibrated with reference datasets. It identifyies areas with healthy or degraded soils, important for land conservation and urban expansion planning.",
-        "attribution": {
-          "text": "World Soils",
-          "url": "https://world-soils.com/"
-        },
-        "categories": [],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1800,
-            "steps": 50,
-            "name": "copper",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Urban Greening",
-        "subinterfaceGroup": "Ecosystem Capacity",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
       },
       "isBaseLayer": false
-    },
-    {
-      "id": "drought-warning",
-      "name": "Drought Warning",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "cdiad",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Drought conditions derived from the European Drought Observatory using hydrological and meteorological indicators. It supports monitoring of water stress affecting urban and agricultural systems.",
-        "attribution": {
-          "text": "Copernicus Emergency Service",
-          "url": "https://drought.emergency.copernicus.eu/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Drought",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=cdinx&FORMAT=image/png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false
-    },
-    {
-      "id": "soil-moisture-anomaly",
-      "name": "Soil Moisture Anomaly",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:soilMoistureAnomaly",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Deviation of soil moisture from long-term averages derived from hydrological modelling and data assimilation systems. It helps detect abnormal dry or wet conditions affecting agriculture and urban green spaces.",
-        "attribution": {
-          "text": "EFAS / Copernicus EMS",
-          "url": "https://european-flood.emergency.copernicus.eu/react/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Drought",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:soilMoistureAnomaly&styles=default&width=80&height=50"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
     },
     {
       "id": "urban-heat-island",
@@ -41962,121 +41598,6 @@
       }
     },
     {
-      "id": "growing-stock-volume-gsv-2",
-      "name": "Growing Stock Volume (GSV)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2023/01/01/FCM-GSV-100m-2023/FCM_Europe_demo_2023_GSV.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1672527600
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2021/01/01/FCM-GSV-100m-2021/FCM_Europe_demo_2021_GSV.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1609455600
-          ]
-        },
-        {
-          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2020/01/01/FCM-GSV-100m-2020/FCM_Europe_demo_2020_GSV.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1577833200
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Forest biomass volume per hectare derived from a machine learning model combining Sentinel-1 radar, Sentinel-2 optical data, and auxiliary geospatial datasets. It quantifies surrounding forest resources and carbon storage.",
-        "attribution": {
-          "text": "© European Space Agency (ESA), Forest Classification Model (FCM) – Growing Stock Volume 2020",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/FCM-GSV-100m/items/FCM-GSV-100m-2020?.asset=asset-product"
-        },
-        "categories": [],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 800,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 800,
-            "steps": 50,
-            "name": "viridis",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Urban Greening",
-        "subinterfaceGroup": "Ecosystem Capacity",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false,
-      "timeframe": "Years"
-    },
-    {
-      "id": "active-fire-monitoring",
-      "name": "Active Fire Monitoring",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "MODIS_Combined_Thermal_Anomalies_All",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Active Fire Monitoring",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/?version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=MODIS_Combined_Thermal_Anomalies_All&format=image/png&STYLE=size5"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
       "id": "lst-2-2",
       "name": "LST Milan",
       "isActive": false,
@@ -42099,10 +41620,10 @@
           "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite6.tiff",
           "format": "cog",
           "zIndex": 50,
-          "convertToRGB": true,
           "timestamps": [
             1781262882
           ],
+          "convertToRGB": true,
           "bands": [
             1,
             2,
@@ -42189,10 +41710,10 @@
           "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite.tiff",
           "format": "cog",
           "zIndex": 50,
-          "convertToRGB": true,
           "timestamps": [
             1783195582
           ],
+          "convertToRGB": true,
           "bands": [
             1,
             2,
@@ -42229,15 +41750,16 @@
       "timeframe": "Time"
     },
     {
-      "id": "surface-soil-moisture-smap",
+      "id": "soil-moisture",
       "name": "Soil Moisture",
       "isActive": false,
       "data": [
         {
-          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/SMAP_L4_Analyzed_Surface_Soil_Moisture/default/2024-07-01/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
-          "format": "xyz",
-          "zIndex": 30,
-          "opacity": 0.85
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Soil Moisture",
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -42248,8 +41770,8 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Drought",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -42267,477 +41789,10 @@
             "blendControls": false
           }
         }
-      },
-      "isBaseLayer": false,
-      "exclusivitySets": []
-    },
-    {
-      "id": "wildfire-smoke-aerosol-optical-depth",
-      "name": "Aerosol Optical Depth",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Combined_Value_Added_AOD/default/2023-06-07/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
-          "format": "xyz",
-          "zIndex": 34,
-          "opacity": 0.8
-        }
-      ],
-      "meta": {
-        "description": "Total-column aerosol optical depth from MODIS, 7 June 2023 - the smoke pall that spread from Canadian wildfires across eastern North America. Note: AOD is column aerosol, not the surface PM2.5 people breathe (see the PM2.5 layer); retrieval fails under cloud and over bright surfaces.",
-        "attribution": {
-          "text": "NASA GIBS / MODIS Combined Value Added AOD",
-          "url": "https://modis.gsfc.nasa.gov/"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_Combined_Value_Added_AOD_V.svg"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false,
-      "exclusivitySets": []
-    },
-    {
-      "id": "flood",
-      "name": "Flood Hazard",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Flood Hazard",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Flood Hazard",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_Flood_H.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "id": "other-flood",
-      "name": "Flood Mortality Risk 2000",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "NDH_Flood_Mortality_Risks_Distribution_2000",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Flood Mortality Risk 2000",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/NDH_Flood_Mortality_Risks_Distribution_2000_H.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
       }
     },
     {
-      "id": "ice-snow",
-      "name": "Snow Cover",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Snow Cover",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Snow Cover",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_NDSI_Snow_Cover_H.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "snow-depth",
-      "name": "Snow Depth",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Snow Depth",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Snow Depth",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/MERRA2_Snow_Depth_Over_Glaciated_Surface_Monthly_H.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "ice",
-      "name": "Sea Ice",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "MODIS_Aqua_L3_Sea_Ice_Daily",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Sea Ice",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_L3_Sea_Ice_H.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "landslide",
-      "name": "Landslide Hazard",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Landslide Hazard",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Landslide Hazard",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/NDH_Landslide_Hazard_Distribution_2000_H.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "lai-2",
-      "name": "LAI",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "MODIS_Combined_L4_LAI_8Day",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for LAI",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "min": 0,
-        "max": 6.5,
-        "colormaps": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "explore",
-      "name": "Population density",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Population Density",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Population density",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/GPW_Population_Density_2000_H.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "vegetation-2",
-      "name": "Vegetation Disturbance Status",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Vegetation Disturbance Status",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Vegetation Disturbance Status",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/OPERA_Vegetation_Disturbance_Status_H.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "vegetation-light",
-      "name": "Vegetation Light Use Efficiency",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "Vegetation Light Use Efficiency",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Vegetation Light Use Efficiency",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "image",
-            "url": "https://gibs.earthdata.nasa.gov/legends/SMAP_Emult_Average_H.png"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "id": "vegetation",
+      "id": "ndvi",
       "name": "NDVI",
       "isActive": false,
       "data": [
@@ -42757,8 +41812,8 @@
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
+        "interfaceGroup": "Urban Greening",
+        "subinterfaceGroup": "Vegetation Condition",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -42770,131 +41825,10 @@
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
+            "zoomToCenter": true
           }
         }
       }
-    },
-    {
-      "id": "land-surface-temperature-daily-2",
-      "name": "Land Surface Temperature (Daily)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetCapabilities",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3b",
-          "version": "1.0.0",
-          "useTimeParameter": true
-        },
-        {
-          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetCapabilities",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "terrascope-s3-lst-s1-v1_lst-sentinel-3a",
-          "version": "1.0.0",
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Land surface temperature derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
-        "attribution": {
-          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
-          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
-        },
-        "categories": [],
-        "units": "Kelvin (K)",
-        "colormaps": [
-          {
-            "min": 250,
-            "max": 320,
-            "steps": 100,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Heat",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "id": "land-surface-temperature-10-day-composite-2",
-      "name": "Land Surface Temperature (10 day composite)",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "terrascope-s3-lst-s10-v1_lst",
-          "parameters": {
-            "version": "1.3.0"
-          },
-          "useTimeParameter": true
-        }
-      ],
-      "meta": {
-        "description": "Land surface temperature (10 day composite) derived from Sentinel-3 SLSTR thermal infrared observations with atmospheric correction to produce daily surface temperature estimates. It helps cities identify hot spots and urban heat island areas, supporting heat mitigation and urban greening policies.",
-        "attribution": {
-          "text": "Terrascope / VITO – Sentinel-3 SLSTR LST Service",
-          "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
-        },
-        "categories": [],
-        "units": "Kelvin (K)",
-        "colormaps": [
-          {
-            "min": 250,
-            "max": 320,
-            "steps": 100,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Heat",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Days"
     },
     {
       "id": "ndvi-2",
@@ -42918,8 +41852,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42928,7 +41860,9 @@
             "name": "autumn",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42987,8 +41921,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42997,7 +41929,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43059,8 +41993,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -43069,7 +42001,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43119,9 +42053,9 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "colormaps": [],
         "min": 0,
-        "max": 1,
-        "colormaps": []
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43148,20 +42082,18 @@
     },
     {
       "id": "pm2-5-at-surface",
-      "name": "PM 2.5 at surface",
+      "name": "PM 2.5",
       "isActive": false,
       "data": [
         {
           "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
           "format": "wms",
-          "zIndex": 51,
-          "layers": "composition_europe_pm2p5_forecast_surface",
-          "timestamps": [],
-          "opacity": 0.9,
+          "zIndex": 50,
+          "layers": "composition_pm2p5",
           "parameters": {
-            "token": "public",
-            "STYLES": "sh_pm2p5_web_surface_concentration"
-          }
+            "token": "public"
+          },
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -43182,7 +42114,7 @@
         "infoPanel": {
           "legend": {
             "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_pm2p5_forecast_surface&styles=sh_pm2p5_web_surface_concentration&width=350&height=50"
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_pm2p5&styles=sh_all_pm2p5_defra_daqi&width=350&height=50"
           },
           "controls": {
             "opacitySlider": true,
@@ -43200,20 +42132,18 @@
     },
     {
       "id": "nitrogen-dioxide-at-surface",
-      "name": "Nitrogen dioxide at surface",
+      "name": "NO2",
       "isActive": false,
       "data": [
         {
           "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
           "format": "wms",
-          "zIndex": 51,
-          "layers": "composition_europe_no2_forecast_surface",
-          "timestamps": [],
-          "opacity": 0.9,
+          "zIndex": 50,
+          "layers": "composition_no2_surface",
           "parameters": {
-            "token": "public",
-            "STYLES": "sh_no2_web_surface_concentration"
-          }
+            "token": "public"
+          },
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -43234,7 +42164,7 @@
         "infoPanel": {
           "legend": {
             "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_no2_forecast_surface&styles=sh_no2_web_surface_concentration&width=350&height=50"
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_no2_surface&styles=sh_all_no2_surface&width=350&height=50"
           },
           "controls": {
             "opacitySlider": true,
@@ -43252,20 +42182,18 @@
     },
     {
       "id": "ozone-at-surface",
-      "name": "Ozone at surface",
+      "name": "O3",
       "isActive": false,
       "data": [
         {
           "url": "https://eccharts.ecmwf.int/wms/?service=wms&VERSION=1.3.0&token=public",
           "format": "wms",
-          "zIndex": 51,
-          "layers": "composition_europe_o3_forecast_surface",
-          "timestamps": [],
-          "opacity": 0.9,
+          "zIndex": 50,
+          "layers": "composition_o3_surface",
           "parameters": {
-            "token": "public",
-            "STYLES": "sh_o3_web_surface_concentration"
-          }
+            "token": "public"
+          },
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -43286,7 +42214,7 @@
         "infoPanel": {
           "legend": {
             "type": "image",
-            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_europe_o3_forecast_surface&styles=sh_o3_web_surface_concentration&width=350&height=50"
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_o3_surface&styles=sh_all_o3_sfc&width=350&height=50"
           },
           "controls": {
             "opacitySlider": true,
@@ -43303,29 +42231,731 @@
       ]
     },
     {
-      "id": "ndvi-imported",
-      "name": "NDVI",
+      "id": "topsoil-organic-carbon-2020-22",
+      "name": "Topsoil Organic Carbon (2020-22) Europe",
       "isActive": false,
       "data": [
         {
-          "url": "https://wmts.terrascope.be/",
-          "format": "wmts",
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/europe_aggr-orgc_00-020_mean_100_202003-202210-natura.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NATURA/stats.soc_0-5cm_mean_europe_2020-2022.natura_2000.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0,
+          "minZoom": 8
+        }
+      ],
+      "meta": {
+        "description": "Topsoil organic carbon content (0–20 cm) derived from spatial modelling of soil observations and environmental predictors calibrated with reference datasets. It identifyies areas with healthy or degraded soils, important for land conservation and urban expansion planning.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000
+      },
+      "layout": {
+        "interfaceGroup": "Urban Greening",
+        "subinterfaceGroup": "Ecosystem Capacity",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "growing-stock-volume-gsv-2",
+      "name": "Growing Stock Volume (GSV) Europe",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2023/01/01/FCM-GSV-100m-2023/FCM_Europe_demo_2023_GSV.tif",
+          "format": "cog",
           "zIndex": 50,
-          "layers": "terrascope-s2-ndvi-v2_ndvi",
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2021/01/01/FCM-GSV-100m-2021/FCM_Europe_demo_2021_GSV.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2020/01/01/FCM-GSV-100m-2020/FCM_Europe_demo_2020_GSV.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577833200
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Forest biomass volume per hectare derived from a machine learning model combining Sentinel-1 radar, Sentinel-2 optical data, and auxiliary geospatial datasets. It quantifies surrounding forest resources and carbon storage.",
+        "attribution": {
+          "text": "© European Space Agency (ESA), Forest Classification Model (FCM) – Growing Stock Volume 2020",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/FCM-GSV-100m/items/FCM-GSV-100m-2020?.asset=asset-product"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 800,
+            "steps": 50,
+            "name": "viridis",
+            "reverse": false
+          }
+        ],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 800
+      },
+      "layout": {
+        "interfaceGroup": "Urban Greening",
+        "subinterfaceGroup": "Ecosystem Capacity",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false,
+      "timeframe": "Years"
+    },
+    {
+      "id": "lai",
+      "name": "LAI",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "MODIS_Terra_L4_LAI_8Day",
           "useTimeParameter": true
         }
       ],
       "meta": {
-        "description": "Normalized Difference Vegetation Index, derived from Sentinel-2 optical reflectance using red and near-infrared bands. It is updated daily to capture vegetation greenness and photosynthetic activity. It supports urban environmental monitoring by detecting vegetation stress, seasonal dynamics, and urban–rural vegetation gradients. Useful for early detection of drought or heat stress impacts on urban vegetation.",
+        "description": "Auto-generated description for LAI",
         "attribution": {
-          "text": "Copernicus Land Monitoring Service",
-          "url": "https://land.copernicus.eu/en"
+          "text": "Data attribution not specified"
         },
         "categories": []
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
         "subinterfaceGroup": "Vegetation Condition",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_Leaf_Area_Index_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "fcover",
+      "name": "FPAR",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "MODIS_Terra_L4_FPAR_8Day",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for FPAR",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Urban Greening",
+        "subinterfaceGroup": "Vegetation Condition",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_FPAR_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "vediamo-cosa-c",
+      "name": "Fire Danger Canada",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/wms?request=getcapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "fdr",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Fire Danger Canada",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Fire",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=fdr"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "fwi",
+      "name": "FWI Canada",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/wms?request=getcapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "fwi",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for FWI Canada",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Fire",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=fwi"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "fire-type",
+      "name": "Fire Type Canada",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/wms?request=getcapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "ft",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Fire Type Canada",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Fire",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=ft"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "spread",
+      "name": "Rate of Spread Canada",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/wms?request=getcapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "ros",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Rate of Spread Canada",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Fire",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=ros"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "snow-depth-imported",
+      "name": "Snow Depth",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Snow Depth",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Snow Depth",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Snow & Ice",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MERRA2_Snow_Depth_Over_Glaciated_Surface_Monthly_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "sea-ice-imported",
+      "name": "Sea Ice",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2023-06-07",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "MODIS_Aqua_L3_Sea_Ice_Daily",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Sea Ice",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Snow & Ice",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_L3_Sea_Ice_H.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "cwfis-data",
+      "name": "CWFIS data",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.cwfif.nrcan.gc.ca/geoserver/ows",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "public:cwfif_national_activefires",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Latest information on active wildfires from the Canadian Wildland Fire Information System",
+        "attribution": {
+          "text": "CFWIS",
+          "url": "https://cwfis.cfs.nrcan.gc.ca/en/interactive-map?layerIds=public%3Acwfif_national_activefires&selectedDate=2026-07-29&center=-87.1_47.9&zoom=1.11"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/?version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=MODIS_Combined_Thermal_Anomalies_All&format=image/png&STYLE=size5"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "sentinel-2-images-wildfires",
+      "name": "Sentinel-2 images (Wildfires)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-16-00_00_2026-07-16-23_59_Sentinel-2_L2A_Wildfires.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        }
+      ],
+      "meta": {
+        "description": "A selection of Sentinel-2 images supporting the Canada stories",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "modis-active-fires-on-260715",
+      "name": "MODIS Active Fires on 260715",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?TIME=2026-07-15",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "MODIS_Combined_Thermal_Anomalies_All",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Thermal Anomalies derived from MODIS 4- and 11-micrometer radiances. This data shows fire detection for a specific data (15 July 2026). \n\n",
+        "attribution": {
+          "text": "NASA MODIS",
+          "url": "https://modis.gsfc.nasa.gov/data/dataprod/mod14.php"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/?version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=MODIS_Combined_Thermal_Anomalies_All&format=image/png&STYLE=size5"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "sentinel-5p-aerosols",
+      "name": "Sentinel-5P Aerosols",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-12-00_00_2026-07-12-23_59_Sentinel-5P_AER_AI_AER_AI_340_and_380.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-13-00_00_2026-07-13-23_59_Sentinel-5P_AER_AI_AER_AI_340_and_380.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1783893600
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-14-00_00_2026-07-15-23_59_Sentinel-5P_AER_AI_AER_AI_340_and_380.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1783980000
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-15-00_00_2026-07-15-23_59_Sentinel-5P_AER_AI_AER_AI_340_and_380.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1784066400
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-16-00_00_2026-07-16-23_59_Sentinel-5P_AER_AI_AER_AI_340_and_380.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1784152800
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-17-00_00_2026-07-17-23_59_Sentinel-5P_AER_AI_AER_AI_340_and_380.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1784239200
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-18-00_00_2026-07-18-23_59_Sentinel-5P_AER_AI_AER_AI_340_and_380.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1784325600
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-19-00_00_2026-07-19-23_59_Sentinel-5P_AER_AI_AER_AI_340_and_380.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1784412000
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Aerosol Optical Depth measurements from Sentinel-5P images, extracted from CDSE.",
+        "attribution": {
+          "text": "ESA/CDSE",
+          "url": "https://maps.s5p-pal.com/aai/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -43343,22 +42973,93 @@
           }
         }
       },
-      "timeframe": "Days"
+      "timeframe": "Days",
+      "isBaseLayer": false
     },
     {
-      "id": "ecostress",
-      "name": "ecostress",
+      "id": "lst-ecostress-for-toronto",
+      "name": "LST (Ecostress) for Toronto",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/ECO_L2T_LSTE.002_LST_20260714T054351_aid0001_17N.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1783980000
+          ]
+        }
+      ],
       "meta": {
-        "description": "",
+        "description": "Land surface temperature measured by ECOSTRESS",
         "attribution": {
-          "text": ""
+          "text": "NASA JPL",
+          "url": "https://ecostress.jpl.nasa.gov/"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 290,
+            "max": 305,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ],
+        "units": "°C",
+        "min": 0,
+        "max": 40
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "isBaseLayer": false
+    },
+    {
+      "id": "sentinel-2-images",
+      "name": "Sentinel-2 images",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-16-00_00_2026-07-16-23_59_Sentinel-2_L2A_True_color.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        }
+      ],
+      "meta": {
+        "description": "A selection of Sentinel-2 images supporting the Canada stories",
+        "attribution": {
+          "text": "Data attribution not specified"
         },
         "categories": []
       },
       "layout": {
-        "interfaceGroup": "Climate Resilience",
-        "subinterfaceGroup": "Heat",
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Canada data",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -43376,7 +43077,308 @@
           }
         }
       },
-      "data": []
+      "isBaseLayer": false
+    },
+    {
+      "id": "flood-hazard-imported",
+      "name": "Flood Hazard (imported)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:Europe_combined_flood_scenarios",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Flood scenarios generated from hydrological and hydraulic models within EFAS and Copernicus EMS. It supports identification of areas exposed to potential inundation under different climate scenarios.",
+        "attribution": {
+          "text": "EFAS / Copernicus EMS",
+          "url": "https://european-flood.emergency.copernicus.eu/react/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Climate Resilience",
+        "subinterfaceGroup": "Flood",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "sea-level-anomaly",
+      "name": "Sea Level Anomaly",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.marine.copernicus.eu/teroWmts",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "SEALEVEL_GLO_PHY_CLIMATE_L4_MY_008_057/c3s_obs-sl_glo_phy-ssh_my_twosat-l4-duacs-0.25deg_P1D_202411/sla",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "To be written",
+        "attribution": {
+          "text": "E.U. Copernicus Marine Service (CMEMS), Global Ocean Wind L4",
+          "url": "https://data.marine.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Data types",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "isBaseLayer": false
+    },
+    {
+      "id": "near-infrared",
+      "name": "Near Infrared",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-s2rgbnir-10m-2021-v2_fcc",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "A view of the Near Infrared (NIR) band from Sentinel 2 in 2021.",
+        "attribution": {
+          "text": "WorldCover via Terrascope"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 50,
+            "name": "yiorrd",
+            "reverse": true
+          }
+        ],
+        "min": 0,
+        "max": 1
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Data types",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "defaultTimestamp": 1609459200,
+      "isBaseLayer": false
+    },
+    {
+      "id": "lst-marseille-afternoon",
+      "name": "LST Marseille (afternoon)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite4.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "convertToRGB": true,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "meta": {
+        "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Marseille. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
+        "attribution": {
+          "text": "constellr",
+          "url": "https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fconstellr.github.io%2Fproduct-lst%2F&data=05%7C02%7Celisa.thouverai%40serco.com%7Caa3891024f5e405be28508defec326a9%7Cf93616dd45a640c89e29adab2fb5f25c%7C0%7C0%7C639228312988131479%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=r2YZOv7Bn8SM1vcXvGjhRCV1IPpFk5pAJA5KmCh%2B%2Fn0%3D&reserved=0"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "constellr",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "lst-marseille-afternoon-swipe",
+      "name": "LST Marseille (afternoon) (swipe)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite4.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right",
+          "convertToRGB": true,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "meta": {
+        "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Marseille. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
+        "attribution": {
+          "text": "constellr",
+          "url": "https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fconstellr.github.io%2Fproduct-lst%2F&data=05%7C02%7Celisa.thouverai%40serco.com%7Caa3891024f5e405be28508defec326a9%7Cf93616dd45a640c89e29adab2fb5f25c%7C0%7C0%7C639228312988131479%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=r2YZOv7Bn8SM1vcXvGjhRCV1IPpFk5pAJA5KmCh%2B%2Fn0%3D&reserved=0"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "constellr",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isSwipeLayer": true,
+      "isBaseLayer": false
+    },
+    {
+      "id": "lst-marseille-afternoon-versus-night",
+      "name": "LST Marseille (afternoon versus night)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite4.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left",
+          "convertToRGB": true,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right",
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "meta": {
+        "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Marseille. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
+        "attribution": {
+          "text": "constellr",
+          "url": "https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fconstellr.github.io%2Fproduct-lst%2F&data=05%7C02%7Celisa.thouverai%40serco.com%7Caa3891024f5e405be28508defec326a9%7Cf93616dd45a640c89e29adab2fb5f25c%7C0%7C0%7C639228312988131479%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=r2YZOv7Bn8SM1vcXvGjhRCV1IPpFk5pAJA5KmCh%2B%2Fn0%3D&reserved=0"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "constellr",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isSwipeLayer": true,
+      "isBaseLayer": false
     }
   ]
 }
