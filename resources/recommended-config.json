@@ -102,7 +102,7 @@
     {
       "id": "sentinel",
       "name": "Sentinel",
-      "isActive": true,
+      "isActive": false,
       "data": [
         {
           "url": "https://tiles.maps.eox.at/wms",
