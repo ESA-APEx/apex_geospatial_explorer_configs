@@ -102,20 +102,21 @@
     {
       "id": "sentinel",
       "name": "Sentinel",
-      "isActive": false,
+      "isActive": true,
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
+          "url": "https://tiles.maps.eox.at/wms",
           "format": "wms",
-          "zIndex": 10,
-          "layers": "WORLDCOVER_2021_S2_TCC"
+          "zIndex": 23,
+          "layers": "s2cloudless-2025_3857",
+          "useTimeParameter": true
         }
       ],
       "meta": {
-        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "description": "Base layer: Sentinel",
         "attribution": {
-          "text": "Copernicus Sentinel-2",
-          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+          "text": "Sentinel-2 Cloudless by EOX",
+          "url": "https://s2maps.eu"
         },
         "categories": []
       },
