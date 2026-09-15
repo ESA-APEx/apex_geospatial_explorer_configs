@@ -35,15 +35,212 @@
   "workflows": [],
   "stories": [
     {
+      "id": "climate-adaptation-in-canada",
+      "title": "Showcase: Climate Adaptation in Canada",
+      "description": "Key ways in which earth observation can inform climate adaptation efforts across Canada.",
+      "isActive": false,
+      "steps": [
+        {
+          "id": "esa-and-canada",
+          "content": {
+            "title": "ESA and Canada",
+            "description": "The [European Space Agency](www.esa.int) (ESA) is a world-leader in Earth observation. It provides cutting-edge space data from its fleet of satellites, while supporting efforts to use this data to help understand the planet, to improve daily lives, benefit businesses and the economy, and to support effective policy-making for a more sustainable future. \n\nESA also supports the European Commission in the implementation of the [Copernicus programme](https://eu-space.europa.eu/earth-observation).\n\nCanada has a [cooperation agreement](https://www.asc-csa.gc.ca/eng/funding-programs/canada-esa/about-cooperation-agreement.asp) with ESA, allowing Canadian industry and researchers to participate in select ESA programs, and allowing Canadian stakeholders to benefit from the outputs of the user-oriented projects that ESA fund.\n\nIn this presentation we showcase some of the outputs of ESA's projects and tools most relevant to climate adaptation."
+          },
+          "viewport": {
+            "zoom": 4,
+            "center": [
+              -99,
+              63
+            ]
+          },
+          "activeLayers": [],
+          "baseLayer": "sentinel",
+          "autoAdvance": 20000
+        },
+        {
+          "id": "a-changing-climate",
+          "content": {
+            "title": "A changing climate",
+            "description": "Satellite data records stretch back to the 1970s, giving a long baseline to assess changes and estimate future trends.\n\nSuch data has been critical in the study of deforestation, ice loss, sea level trends and GHG emissions, among many others. It also provides key inputs to models of future climate behaviour.\n\n![Canada temperature over time](https://upload.wikimedia.org/wikipedia/commons/f/f5/Show_Your_Stripes_change_in_temperature_graphic_for_All_of_Canada_with_bars.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image credits: Professor Ed Hawkins, CC BY 4.0, via Wikimedia Commons*\n\nThis image shows the land cover of Canada in 2021, as mapped by the [ESA WorldCover](https://esa-worldcover.org/en) project. Looking at land cover over time is the basis for many further applications."
+          },
+          "viewport": {
+            "zoom": 4,
+            "center": [
+              -99,
+              63
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "global-land-cover-2-2",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "autoAdvance": 10000
+        },
+        {
+          "id": "expanding-cities",
+          "content": {
+            "title": "Expanding cities",
+            "description": "Long term satellite measurements can show the growth of cities over time, showing the pressure that tbey put on the neighbouring environemnt..\n\nThis image shows the expansion of the city of Edmonton from 1985 to 2019, Redder areas have been there the longest, while blue and black pixels show more recent developments.\n\n![Edmonton, Alberta](https://upload.wikimedia.org/wikipedia/commons/f/fc/Edmonton_downtown_in_winter%2C_2025%2C_Alberta%2C_Canada1.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image credits: Joli Rumi, CC BY-SA 4.0, via Wikimedia Commons*"
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              -113.34594726562501,
+              53.54193953598892
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "evolution-1985-2015",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "evolution-1985-2015"
+          },
+          "autoAdvance": 10000
+        },
+        {
+          "id": "urban-heat-islands",
+          "content": {
+            "title": "Urban Heat Islands",
+            "description": "Increasing heat is one of the deadliest effects of climate change. Within cities the [urban heat island](https://climateatlas.ca/urban-heat-island-effect) effect amplifies the effects of rising heat. Satellites can help monitor the development of heat islands over time, providing cities with actionable information on where to focus their efforts.\n\nThis image shows the Land Surface Temperature in Vancouver, BC, on 25 June 2021, in the middle of the [deadliest heat dome effect](https://www.cbc.ca/news/canada/british-columbia/2021-bc-heat-dome-look-back-five-years-later-9.7246604) in Canadian history. \n\nThis measurement was taken by the NASA ECOSTRESS instrument mounted aboard the International Space Station.\n\n![ECOSTRESS on ISS](https://upload.wikimedia.org/wikipedia/commons/9/9f/Ecostress_on_ISS_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n\n*Image: NASA/JPL-Caltech, Public domain, via Wikimedia Commons*"
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              -122.9,
+              49.244948561676736
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "lst-ecostress-for-vancouver-imported",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "autoAdvance": 10000
+        },
+        {
+          "id": "urban-greening",
+          "content": {
+            "title": "Urban Greening",
+            "description": "Trees and green spaces help to reduce extreme heat through shade and evapotranspiration. A common climate adaptation measure is to increase the greenness of a city.\n\nAs part of its [climate plan](https://montreal.ca/en/articles/greening-montreal-to-adapt-to-climate-change), the city of Montreal is aiming to plant 50,000 trees, prioritising those areas most vulnerable to heat island effects.\n\nSatellite data are widely used to monitor the extent and health of urban vegetation. This map shows the [NDVI](https://en.wikipedia.org/wiki/Normalized_difference_vegetation_index), a commonly used index for looking at vegetation, averaged over the year 2021.\n\n![A Montreal Street](https://upload.wikimedia.org/wikipedia/commons/a/a6/2016-10_Montreal_41.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image credits: 0x010C, CC BY-SA 4.0, via Wikimedia Commons*"
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              -73.57372283935548,
+              45.508632658903785
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "composite-ndvi-canada-q3-2025"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "autoAdvance": 10000
+        },
+        {
+          "id": "wildfires",
+          "content": {
+            "title": "Wildfires",
+            "description": "As the climate gets hotter and drier, wildfires become more frequent and more dangerous. Satellites have a critical role in the early detection of wildfires; their high vantage point allows them to monitor wide areas, while their ability to see infra-red wavelengths allos them to directly detect the heat signature of a fire.\n\nThis image was taken by Sentinel-2 on 14th July 2026, and shows the plumes of smoke coming from wildfires in northern Ontario. The image has been enhanced to emphasise the smoke and burned area (red pixels).\n\n![Wildfire in 2016](https://upload.wikimedia.org/wikipedia/commons/f/f3/Landscape_view_of_wildfire_near_Highway_63_in_south_Fort_McMurray.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image Credits: DarrenRD, CC by 2.5, via Wikimedia Commons*"
+          },
+          "viewport": {
+            "zoom": 9,
+            "center": [
+              -89.32708740234376,
+              50.816347765191075
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "sentinel-2-images-wildfires"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "autoAdvance": 10000
+        },
+        {
+          "id": "air-quality",
+          "content": {
+            "title": "Air quality",
+            "description": "As well as directly threatening populated areas, smoke from wildfires can travel long distances. Particles from this smoke can have a range of effects including causing severe asthma attacks. Some satellites are able to track such atmospheric emissions. \n\nThis map shows the total aerosol density over North America on 15th July 2026, at the peak of the wildfire season, as measured by the Sentinel-5P spacecraft. The image below shows how the sky looked form Toronto that day.\n\n![Orange sky in Toronto](https://upload.wikimedia.org/wikipedia/commons/b/bc/Toronto_wildfire_smoke_July_15%2C_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image Credits: ARandomName123, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons*"
+          },
+          "viewport": {
+            "zoom": 5,
+            "center": [
+              -76.99218750000001,
+              44.77793589631623
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "sentinel-5p-aerosols",
+              "date": "2026-07-15"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "autoAdvance": 10000
+        },
+        {
+          "id": "arctic-regions",
+          "content": {
+            "title": "Arctic Regions",
+            "description": "Rising temperatures cause a different set of problems in arctic regions, as melting permafrost undermines the foundations of buildings, roads and railways, while increasing the risks of landslides and floods. Wildlife patterns also change as the weather warms, leading to loss of fishing resources and a higher risk of bear encounters.\n\nSatellites can be used to monitor key infrastructure for subsidence and other damage, as well as looking for warning signs such as increased melting. This images shows a Sentinel-2 image of melting snow around Churchill, Manitoba, on 15th June 2026. \n\n![Polar bear statue](https://upload.wikimedia.org/wikipedia/commons/9/95/Churchill_polar_bear_statue.JPG?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image credits: Ian Stewart, CC BY 2.0, via Wikimedia Commons*"
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              -94.07455444335938,
+              58.72117282273587
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "sentinel-2-images-churchill",
+              "date": "2026-06-15"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "autoAdvance": 10000
+        },
+        {
+          "id": "meanwhile-across-the-atlantic",
+          "content": {
+            "title": "Meanwhile across the Atlantic...",
+            "description": "The challenges faced by Canadian cities are not unique, but are faced by many cities worldwide. ESA has been supporting European companies to build EO-based services that can support climate adaptation efforts.\n\nThe [Stakeholder Engagement Facility](www.esa-sef.eu) has been with a range of European cities to help them incorporate such services into their daily work. Further resources can be found on the [SEF's urban page](https://sef.apex.esa.int/en/key-themes/urban-areas).\n\nFor more information on available services, see the other showcases on this site, or visit the SEF's [Urban Service Catalogue](https://sef.apex.esa.int/en/what-we-do/training/urban-eo-services-catalogue).\n\nMore information on how satellites benefit Canadians can be found on the [Canadian Space Agency](https://www.asc-csa.gc.ca/eng/satellites/everyday-lives/) website."
+          },
+          "viewport": {
+            "zoom": 4,
+            "center": [
+              15.380859375000002,
+              49.26780455063753
+            ]
+          },
+          "activeLayers": [],
+          "baseLayer": "sentinel",
+          "autoAdvance": 10000
+        }
+      ]
+    },
+    {
       "id": "toronto-air-quality",
-      "title": "Toronto Air Quality",
-      "description": "To be written",
+      "title": "Toronto: Air Quality from Wildfires",
+      "description": "The impact of the 2025 wildfires on air quality in Toronto",
       "isActive": false,
       "steps": [
         {
           "id": "introduction",
           "content": {
-            "title": "introduction",
+            "title": "Introduction",
             "description": "As the climate warms, Canada is experiencing longer wildfire seasons and more frequent wildfires. As well as the immediate damage caused, wildfire smoke can travel long distances from the actual fire, causing problems to many urban regions.\n\nSatellite data have a key role to play at all stages: they give key inputs to forecasting (such as measurements of temperature and soil moisture), they are critical for the early detection of wildfires, and they can support in assessing their impacts.\n\nOperational services, such as the [Canadian Wildland Fire Information System ](https://cwfis.cfs.nrcan.gc.ca/en) use satellite data as the basis for warnings. \n\nThis image shows [current active fires](https://cwfis.cfs.nrcan.gc.ca/en/interactive-map?layerIds=public%3Acwfif_national_activefires&selectedDate=2026-07-29&center=-87.1_47.9&zoom=1.11) as monitored by CWFIS."
           },
           "viewport": {
@@ -64,13 +261,13 @@
           "id": "detecting-wildfires-from-space",
           "content": {
             "title": "Detecting wildfires from space",
-            "description": "Satellites have a critical role in the early detection of wildfires; their high vantage point allows them to monitor wide areas, while their ability to see infra-red wavelengths allos them to directly detect the heat signature of a fire.\n\nThis image was taken by Sentinel-2 on 16th July 2026, and shows the plumes of smoke coming from wildfires in northern Ontario. The image has been enhanced to emphasise the smoke and burned area (red pixels)."
+            "description": "Satellites have a critical role in the early detection of wildfires; their high vantage point allows them to monitor wide areas, while their ability to see infra-red wavelengths allos them to directly detect the heat signature of a fire.\n\nThis image was taken by Sentinel-2 on 14th July 2026, and shows the plumes of smoke coming from wildfires in northern Ontario. The image has been enhanced to emphasise the smoke and burned area (red pixels)."
           },
           "viewport": {
             "zoom": 9,
             "center": [
-              -88,
-              51.4
+              -89.33,
+              50.82
             ]
           },
           "activeLayers": [
@@ -115,7 +312,8 @@
           },
           "activeLayers": [
             {
-              "id": "sentinel-5p-aerosols"
+              "id": "sentinel-5p-aerosols",
+              "date": "2026-07-15"
             }
           ],
           "baseLayer": "sentinel",
@@ -145,7 +343,8 @@
             {
               "id": "sentinel-5p-aerosols",
               "opacity": 0.5,
-              "blend": true
+              "blend": true,
+              "date": "2026-07-16"
             }
           ],
           "baseLayer": "open-streetmap",
@@ -157,26 +356,6 @@
               }
             }
           }
-        },
-        {
-          "id": "heat-stress-and-air-quality",
-          "content": {
-            "title": "Heat stress and air quality",
-            "description": "By nature, wildfires tend to happen more frequently in hot, dry periods. Since cities typically tend to be slightly hotter than surrounding areas (the [Urban Heat Island](https://climateatlas.ca/urban-heat-island-effect) effect), this means that heat stress and poor air quality often come together, which can be dangerous to people with poor health.\n\nThis image (from NASA's [ECOSTRESS](https://ecostress.jpl.nasa.gov/) instrument) shows the land surface temperature (in Kelvin) on 14th July 2026. Although LST is not the temperature that people experience directly it is a reasonable proxy."
-          },
-          "viewport": {
-            "zoom": 12,
-            "center": [
-              -79.65,
-              43.705608034103555
-            ]
-          },
-          "activeLayers": [
-            {
-              "id": "lst-ecostress-for-toronto"
-            }
-          ],
-          "baseLayer": "open-streetmap"
         },
         {
           "id": "a-hazy-day-in-the-city",
@@ -194,6 +373,26 @@
           "activeLayers": [
             {
               "id": "sentinel-2-images"
+            }
+          ],
+          "baseLayer": "open-streetmap"
+        },
+        {
+          "id": "heat-stress-and-air-quality",
+          "content": {
+            "title": "Heat stress and air quality",
+            "description": "By nature, wildfires tend to happen more frequently in hot, dry periods. Since cities typically tend to be slightly hotter than surrounding areas (the [Urban Heat Island](https://climateatlas.ca/urban-heat-island-effect) effect), this means that heat stress and poor air quality often come together, which can be dangerous to people with poor health.\n\nThis image (from NASA's [ECOSTRESS](https://ecostress.jpl.nasa.gov/) instrument) shows the land surface temperature (in Kelvin) on 14th July 2026. Although LST is not the temperature that people experience directly it is a reasonable proxy."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              -79.65,
+              43.705608034103555
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "lst-ecostress-for-toronto"
             }
           ],
           "baseLayer": "open-streetmap"
@@ -496,7 +695,7 @@
           "id": "night-time-temperatures",
           "content": {
             "title": "Night time temperatures",
-            "description": "We can also compare land surface temperatures in the afternoon (on the left) with those at night (right). Redder areas indicate hotter temperatures.\n\nZooming out we can see that the urban areas retain their heat more than the surrounding countryside, meaning that city residents experience a higher night time temperature, which can significantly affect sleep patterns."
+            "description": "We can also compare land surface temperatures at night. Redder areas indicate hotter temperatures.\n\nZooming out we can see that the urban areas retain their heat more than the surrounding countryside, meaning that city residents experience a higher night time temperature, which can significantly affect sleep patterns."
           },
           "viewport": {
             "zoom": 12,
@@ -507,7 +706,7 @@
           },
           "activeLayers": [
             {
-              "id": "lst-marseille-afternoon-versus-night"
+              "id": "lst-marseille-afternoon-2"
             }
           ]
         },
@@ -40674,6 +40873,9 @@
           "url": "https://gtif-demo.eox.at/explore?indicator=HAUC1&x=1682304.11139&y=6105680.32568&z=7.21675"
         },
         "categories": [],
+        "units": "°C",
+        "min": 0,
+        "max": 40,
         "colormaps": [
           {
             "min": 0,
@@ -40682,10 +40884,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "°C",
-        "min": 0,
-        "max": 40
+        ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -41144,6 +41343,7 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
+        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -41152,8 +41352,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "Kelvin (K)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
@@ -41200,6 +41399,7 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
+        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -41208,8 +41408,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "Kelvin (K)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
@@ -41852,6 +42051,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -41860,9 +42061,7 @@
             "name": "autumn",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -41921,6 +42120,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -41929,9 +42130,7 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -41993,6 +42192,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42001,9 +42202,7 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42053,9 +42252,9 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "colormaps": [],
         "min": 0,
-        "max": 1
+        "max": 1,
+        "colormaps": []
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42257,6 +42456,9 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000,
         "colormaps": [
           {
             "min": 0,
@@ -42265,10 +42467,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000
+        ]
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -42329,6 +42528,9 @@
           "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/FCM-GSV-100m/items/FCM-GSV-100m-2020?.asset=asset-product"
         },
         "categories": [],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 800,
         "colormaps": [
           {
             "min": 0,
@@ -42337,10 +42539,7 @@
             "name": "viridis",
             "reverse": false
           }
-        ],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 800
+        ]
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -42748,12 +42947,77 @@
       "isBaseLayer": false
     },
     {
+      "id": "lst-ecostress-for-vancouver",
+      "name": "LST (Ecostress) for Vancouver",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/ECO_L2T_LSTE.002_LST_20210621T193310_aid0001_10N.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1624226400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/ECO_L2T_LSTE.002_LST_20210625T180038_aid0001_10N.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1624572000
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Land surface temperature measured by ECOSTRESS",
+        "attribution": {
+          "text": "NASA JPL",
+          "url": "https://ecostress.jpl.nasa.gov/"
+        },
+        "categories": [],
+        "units": "°C",
+        "min": 0,
+        "max": 40,
+        "colormaps": [
+          {
+            "min": 290,
+            "max": 320,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "isBaseLayer": false
+    },
+    {
       "id": "sentinel-2-images-wildfires",
       "name": "Sentinel-2 images (Wildfires)",
       "isActive": false,
       "data": [
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-16-00_00_2026-07-16-23_59_Sentinel-2_L2A_Wildfires.tiff",
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/2026-07-14-00_00_2026-07-14-23_59_Sentinel-2_L2A_True_color_wildfires.tiff",
           "format": "cog",
           "zIndex": 50,
           "bands": [
@@ -42839,7 +43103,7 @@
     },
     {
       "id": "sentinel-5p-aerosols",
-      "name": "Sentinel-5P Aerosols",
+      "name": "Sentinel-5P Aerosols (Canada)",
       "isActive": false,
       "data": [
         {
@@ -42851,7 +43115,9 @@
             2,
             3
           ],
-          "convertToRGB": true
+          "timestamps": [
+            1783807200
+          ]
         },
         {
           "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/2026-07-13-00_00_2026-07-13-23_59_Sentinel-5P_AER_AI_AER_AI_340_and_380.tiff",
@@ -42951,7 +43217,16 @@
           "text": "ESA/CDSE",
           "url": "https://maps.s5p-pal.com/aai/"
         },
-        "categories": []
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 200,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42973,8 +43248,8 @@
           }
         }
       },
-      "timeframe": "Days",
-      "isBaseLayer": false
+      "isBaseLayer": false,
+      "timeframe": "Days"
     },
     {
       "id": "lst-ecostress-for-toronto",
@@ -42997,6 +43272,9 @@
           "url": "https://ecostress.jpl.nasa.gov/"
         },
         "categories": [],
+        "units": "°C",
+        "min": 0,
+        "max": 40,
         "colormaps": [
           {
             "min": 290,
@@ -43005,10 +43283,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "°C",
-        "min": 0,
-        "max": 40
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43030,12 +43305,77 @@
           }
         }
       },
+      "isBaseLayer": false,
+      "timeframe": "Days"
+    },
+    {
+      "id": "lst-ecostress-for-vancouver-imported",
+      "name": "LST (Ecostress) for Vancouver",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/ECO_L2T_LSTE.002_LST_20210621T193310_aid0001_10N.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1624226400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/ECO_L2T_LSTE.002_LST_20210625T180038_aid0001_10N.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1624572000
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Land surface temperature measured by ECOSTRESS",
+        "attribution": {
+          "text": "NASA JPL",
+          "url": "https://ecostress.jpl.nasa.gov/"
+        },
+        "categories": [],
+        "units": "°C",
+        "min": 0,
+        "max": 40,
+        "colormaps": [
+          {
+            "min": 290,
+            "max": 320,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
       "timeframe": "Days",
       "isBaseLayer": false
     },
     {
       "id": "sentinel-2-images",
-      "name": "Sentinel-2 images",
+      "name": "Sentinel-2 images (Toronto)",
       "isActive": false,
       "data": [
         {
@@ -43163,8 +43503,8 @@
           }
         }
       },
-      "timeframe": "Days",
-      "isBaseLayer": false
+      "isBaseLayer": false,
+      "timeframe": "Days"
     },
     {
       "id": "near-infrared",
@@ -43188,6 +43528,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -43196,9 +43538,7 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43220,9 +43560,9 @@
           }
         }
       },
+      "isBaseLayer": false,
       "timeframe": "Days",
-      "defaultTimestamp": 1609459200,
-      "isBaseLayer": false
+      "defaultTimestamp": 1609459200
     },
     {
       "id": "lst-marseille-afternoon",
@@ -43317,8 +43657,8 @@
           }
         }
       },
-      "isSwipeLayer": true,
-      "isBaseLayer": false
+      "isBaseLayer": false,
+      "isSwipeLayer": true
     },
     {
       "id": "lst-marseille-afternoon-versus-night",
@@ -43377,7 +43717,237 @@
           }
         }
       },
-      "isSwipeLayer": true,
+      "isBaseLayer": false,
+      "isSwipeLayer": true
+    },
+    {
+      "id": "composite-ndvi-canada-q3-2025",
+      "name": "Composite NDVI (Canada Q3 2025)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/2025-07-01-00_00_2025-07-01-23_59_Sentinel-2_Quarterly_Mosaics_NDVI_Montreal.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/2025-07-01-00_00_2025-07-01-23_59_Sentinel-2_Quarterly_Mosaics_NDVI_Toronto.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/2025-07-01-00_00_2025-07-01-23_59_Sentinel-2_Quarterly_Mosaics_NDVI_Winnipeg.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "meta": {
+        "description": "NDVI for selected Canadian cities, composite over the period Q3 (July-Sept) 2025, as extracted from Copernicus Browser.",
+        "attribution": {
+          "text": "EU/Copernicus via Coperncius Browser",
+          "url": "https://browser.dataspace.copernicus.eu/"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 250,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 250,
+            "steps": 50,
+            "name": "summer",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "sentinel-2-images-churchill",
+      "name": "Sentinel-2 images (Churchill)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/2026-05-22-00_00_2026-05-22-23_59_Sentinel-2_L2A_True_color.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1779400800
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/2026-05-29-00_00_2026-05-29-23_59_Sentinel-2_L2A_True_color.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1780005600
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/2026-06-01-00_00_2026-06-01-23_59_Sentinel-2_L2A_True_color.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1780264800
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/2026-06-03-00_00_2026-06-03-23_59_Sentinel-2_L2A_True_color.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1780437600
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/2026-06-23-00_00_2026-06-23-23_59_Sentinel-2_L2A_True_color.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1782165600
+          ],
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        }
+      ],
+      "meta": {
+        "description": "A selection of Sentinel-2 images supporting the Canada stories",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "isBaseLayer": false
+    },
+    {
+      "id": "lst-marseille-afternoon-2",
+      "name": "LST Marseille (night)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/constellr_data/lst_composite.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        }
+      ],
+      "meta": {
+        "description": "constellr’s high-resolution (30m) Land Surface Temperature data provides frequent, detailed insights into how the Earth’s surface heats up and cools down. The datasets featured here showcase three-day time series of daytime and nighttime thermal imagery over Marseille. This example reveal how dense city centres, industrial zones, airports, roads, parks and water bodies respond to heat at different rates — and how urban design, building materials and vegetation influence heat retention and cooling throughout the day and night.\nBy pinpointing where heat surges occur, the data can help researchers assess urban heat risks and identify where measures such as trees, reflective roofs or cooling centres could have the greatest impact. constellr operates thermal satellites as an emerging Copernicus Contributing Mission, supported by the European Space Agency (ESA) and aligned with the upcoming Copernicus LSTM mission. Through ESA’s Third Party Missions programme, eligible researchers can access up to 10K constellr data products free of charge.",
+        "attribution": {
+          "text": "constellr",
+          "url": "https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fconstellr.github.io%2Fproduct-lst%2F&data=05%7C02%7Celisa.thouverai%40serco.com%7Caa3891024f5e405be28508defec326a9%7Cf93616dd45a640c89e29adab2fb5f25c%7C0%7C0%7C639228312988131479%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=r2YZOv7Bn8SM1vcXvGjhRCV1IPpFk5pAJA5KmCh%2B%2Fn0%3D&reserved=0"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "constellr",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
       "isBaseLayer": false
     }
   ]
