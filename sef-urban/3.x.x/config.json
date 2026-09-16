@@ -957,8 +957,8 @@
     },
     {
       "id": "vienna-information-for-the-green-transition",
-      "title": "Vienna: Information for the green transition",
-      "description": "To be written",
+      "title": "Vienna: green transition",
+      "description": "Providing actionable information supporting the green transition.",
       "isActive": false,
       "steps": [
         {
@@ -41243,9 +41243,6 @@
           "url": "https://gtif-demo.eox.at/explore?indicator=HAUC1&x=1682304.11139&y=6105680.32568&z=7.21675"
         },
         "categories": [],
-        "units": "°C",
-        "min": 0,
-        "max": 40,
         "colormaps": [
           {
             "min": 0,
@@ -41254,7 +41251,10 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C",
+        "min": 0,
+        "max": 40
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -41713,7 +41713,6 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
-        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -41722,7 +41721,8 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "Kelvin (K)"
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
@@ -41769,7 +41769,6 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
-        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -41778,7 +41777,8 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "Kelvin (K)"
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
@@ -42421,8 +42421,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42431,7 +42429,9 @@
             "name": "autumn",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42490,8 +42490,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42500,7 +42498,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42562,8 +42562,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42572,7 +42570,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42622,9 +42622,9 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "colormaps": [],
         "min": 0,
-        "max": 1,
-        "colormaps": []
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42826,9 +42826,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000,
         "colormaps": [
           {
             "min": 0,
@@ -42837,7 +42834,10 @@
             "name": "copper",
             "reverse": true
           }
-        ]
+        ],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -42898,9 +42898,6 @@
           "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/FCM-GSV-100m/items/FCM-GSV-100m-2020?.asset=asset-product"
         },
         "categories": [],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 800,
         "colormaps": [
           {
             "min": 0,
@@ -42909,7 +42906,10 @@
             "name": "viridis",
             "reverse": false
           }
-        ]
+        ],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 800
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -43345,9 +43345,6 @@
           "url": "https://ecostress.jpl.nasa.gov/"
         },
         "categories": [],
-        "units": "°C",
-        "min": 0,
-        "max": 40,
         "colormaps": [
           {
             "min": 290,
@@ -43356,7 +43353,10 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C",
+        "min": 0,
+        "max": 40
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43642,9 +43642,6 @@
           "url": "https://ecostress.jpl.nasa.gov/"
         },
         "categories": [],
-        "units": "°C",
-        "min": 0,
-        "max": 40,
         "colormaps": [
           {
             "min": 290,
@@ -43653,7 +43650,10 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C",
+        "min": 0,
+        "max": 40
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43707,9 +43707,6 @@
           "url": "https://ecostress.jpl.nasa.gov/"
         },
         "categories": [],
-        "units": "°C",
-        "min": 0,
-        "max": 40,
         "colormaps": [
           {
             "min": 290,
@@ -43718,7 +43715,10 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C",
+        "min": 0,
+        "max": 40
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43898,8 +43898,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -43908,7 +43906,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -44133,8 +44133,6 @@
           "url": "https://browser.dataspace.copernicus.eu/"
         },
         "categories": [],
-        "min": 0,
-        "max": 250,
         "colormaps": [
           {
             "min": 0,
@@ -44143,7 +44141,9 @@
             "name": "summer",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 250
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -100063,6 +100063,13 @@
       "id": "gtif-gm-mean-uhi",
       "name": "GTIF GM Mean UHI",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/COMP5/items/UHI_UKIEFR_MEAN_2022_2024_cog/tiles/WebMercatorQuad/{z}/{x}/{y}&assets=asset&colormap_name=rdbu_r&nodata=0&rescale=-1,1",
+          "format": "xyz",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "Mean UHI 2022-2024 for UK, Ireland and France",
         "attribution": {
@@ -100070,8 +100077,6 @@
           "url": "https://gtif-ukif.github.io/gtif-ukif-client/"
         },
         "categories": [],
-        "min": 220,
-        "max": 320,
         "colormaps": [
           {
             "min": 220,
@@ -100080,7 +100085,9 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "min": 220,
+        "max": 320
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -100101,19 +100108,19 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/COMP5/items/UHI_UKIEFR_MEAN_2022_2024_cog/tiles/WebMercatorQuad/{z}/{x}/{y}&assets=asset&colormap_name=rdbu_r&nodata=0&rescale=-1,1",
-          "format": "xyz",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "id": "copenhagen-pv-mapping",
       "name": "Copenhagen PV mapping",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Europe_showcase/Copenhagen_PV_2026_168_2026-09-16T08-54-17.tiff",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
       "meta": {
         "description": "To be written",
         "attribution": {
@@ -100147,14 +100154,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Europe_showcase/Copenhagen_PV_2026_168_2026-09-16T08-54-17.tiff",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ]
+      }
     },
     {
       "id": "annual-solar-power-potential-austria",
@@ -100326,6 +100326,7 @@
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "GTIF Austria",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -100341,11 +100342,10 @@
             "constraintSlider": true,
             "blendControls": false
           }
-        },
-        "subinterfaceGroup": "GTIF Austria"
+        }
       },
-      "exclusivitySets": [],
-      "isBaseLayer": false
+      "isBaseLayer": false,
+      "exclusivitySets": []
     }
   ]
 }
