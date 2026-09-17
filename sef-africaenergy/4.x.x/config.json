@@ -1,33 +1,93 @@
 {
-  "version": "1.0.0",
-  "exportPrefix": "config",
+  "version": "1.81.0-africaenergy",
+  "exportPrefix": "sef-africaenergy",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
       "title": "SEF - Africa Energy"
+    },
+    "theme": {
+      "primary-color": "#3C9F5B",
+      "secondary-color": "#5CB57E",
+      "accent-color": "#66BB6A",
+      "background-color": "#f3f7f8",
+      "text-color-primary": "#ffffff",
+      "text-color-secondary": "#333333"
     }
   },
   "interfaceGroups": [
-    "Interface group 1",
-    "Interface group 2",
-    "Interface group 3"
+    "Energy Access",
+    "Solar",
+    "Wind Energy",
+    "Hydropower",
+    "Geothermal & Rift",
+    "Grid & Resilience",
+    "Traditional Energy",
+    "Land & Environment"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
-    "zoom": 0,
+    "zoom": 3,
     "center": [
-      0,
-      0
+      22,
+      2
     ],
     "projection": "EPSG:3857"
   },
   "workflows": [],
-  "services": [],
+  "services": [
+    {
+      "id": "stac-prr",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac"
+    },
+    {
+      "id": "s3-service-1750499655684",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    },
+    {
+      "id": "wms-service-1750351088731",
+      "name": "DLR EOC BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-eox",
+      "name": "EOX Maps",
+      "url": "https://tiles.maps.eox.at/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1780391601812",
+      "name": "EUMETSAT",
+      "url": "https://view.eumetsat.int/geoserver/wms?token=public",
+      "format": "wms"
+    },
+    {
+      "id": "wmts-service-gibs",
+      "name": "NASA GIBS (Web Mercator)",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/wmts.cgi",
+      "format": "wmts"
+    },
+    {
+      "id": "wmts-service-cmems",
+      "name": "Copernicus Marine WMTS",
+      "url": "https://wmts.marine.copernicus.eu/teroWmts",
+      "format": "wmts"
+    },
+    {
+      "id": "wms-service-gwis",
+      "name": "Copernicus EMS GWIS",
+      "url": "https://maps.effis.emergency.copernicus.eu/gwis",
+      "format": "wms"
+    }
+  ],
   "sources": [
     {
       "name": "Open StreetMap",
       "isActive": true,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -35,15 +95,1712 @@
           "zIndex": 10
         }
       ],
-      "exclusivitySets": [],
       "meta": {
-        "description": "",
+        "description": "Base layer: Open StreetMap",
         "attribution": {
           "text": "Map data (c) OpenStreetMap",
           "url": "https://www.openstreetmap.org/copyright"
         },
         "categories": []
-      }
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "name": "Sentinel-2 Cloudless (EOX)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2025_3857/default/g/{z}/{y}/{x}.jpg",
+          "format": "xyz",
+          "zIndex": 4
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Sentinel-2 cloudless mosaic 2025",
+        "attribution": {
+          "text": "Sentinel-2 cloudless 2025 by EOX / Copernicus Sentinel data",
+          "url": "https://s2maps.eu"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "name": "High-Resolution Imagery (Esri)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+          "format": "xyz",
+          "zIndex": 5
+        }
+      ],
+      "meta": {
+        "description": "Base layer: high-resolution satellite and aerial imagery (sub-metre in most cities), for zooming in on individual plants, substations and rooftops. Use the Sentinel-2 base for a consistent Copernicus view.",
+        "attribution": {
+          "text": "Esri, Maxar, Earthstar Geographics, and the GIS User Community",
+          "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "name": "Terrain (EOX)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.maps.eox.at/wmts/1.0.0/terrain-light_3857/default/g/{z}/{y}/{x}.jpg",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Terrain Light (Copernicus DEM blend)",
+        "attribution": {
+          "text": "Terrain Light by EOX",
+          "url": "https://maps.eox.at"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "name": "Night-time Lights (Black Marble 2016)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_Black_Marble/default/2016-01-01/GoogleMapsCompatible_Level8/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 52,
+          "opacity": 1.0
+        }
+      ],
+      "meta": {
+        "description": "Visible light at night is the clearest single indicator of where electricity reaches. Across Sub-Saharan Africa the dark interior against lit coastlines, capitals and mining belts maps the electrification gap directly. NASA Black Marble annual composite for 2016 from the Suomi-NPP VIIRS Day/Night Band, corrected for moonlight, atmosphere and stray light (500 m).",
+        "attribution": {
+          "text": "NASA Black Marble (VNP46A4) / NASA GIBS",
+          "url": "https://blackmarble.gsfc.nasa.gov/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Energy Access",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Electricity Access by Country (2022)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/access/africa_electricity_access_2022.geojson",
+          "format": "geojson",
+          "zIndex": 48,
+          "style": [
+            {
+              "fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "access_total_pct"
+                  ],
+                  0
+                ],
+                "rgba(200,200,200,0.3)",
+                [
+                  "<",
+                  [
+                    "get",
+                    "access_total_pct"
+                  ],
+                  25
+                ],
+                "rgba(127,0,0,0.6)",
+                [
+                  "<",
+                  [
+                    "get",
+                    "access_total_pct"
+                  ],
+                  50
+                ],
+                "rgba(215,48,39,0.55)",
+                [
+                  "<",
+                  [
+                    "get",
+                    "access_total_pct"
+                  ],
+                  75
+                ],
+                "rgba(253,174,97,0.55)",
+                [
+                  "<",
+                  [
+                    "get",
+                    "access_total_pct"
+                  ],
+                  95
+                ],
+                "rgba(166,217,106,0.55)",
+                "rgba(26,152,80,0.55)"
+              ],
+              "stroke-color": "#ffffff",
+              "stroke-width": 0.8
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Share of the population with access to electricity, by country, framing the scale of the challenge: around 600 million people in Sub-Saharan Africa still live without a connection. World Bank / IEA / SDG7 tracking data for 2022, with the rural access rate as an additional attribute (grey where no figure is reported). Country boundaries from Natural Earth (1:50 m).",
+        "attribution": {
+          "text": "World Bank WDI (EG.ELC.ACCS.ZS), SDG7 Tracking; boundaries Natural Earth",
+          "url": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS"
+        },
+        "categories": [
+          {
+            "color": "#7f0000",
+            "label": "< 25 %"
+          },
+          {
+            "color": "#d73027",
+            "label": "25 to 50 %"
+          },
+          {
+            "color": "#fdae61",
+            "label": "50 to 75 %"
+          },
+          {
+            "color": "#a6d96a",
+            "label": "75 to 95 %"
+          },
+          {
+            "color": "#1a9850",
+            "label": "> 95 %"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Energy Access",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Population Density (GPW v4, 2020)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/GPW_Population_Density_2020/default/GoogleMapsCompatible_Level7/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 47,
+          "opacity": 0.75
+        }
+      ],
+      "meta": {
+        "description": "Gridded population shows where demand sits. Read against night-time lights and the predicted grid it locates the people who live without either, the core of the mini-grid and off-grid solar case. Gridded Population of the World v4.11, population density for 2020 (about 1 km), from CIESIN / SEDAC.",
+        "attribution": {
+          "text": "CIESIN GPW v4.11 / NASA SEDAC via NASA GIBS",
+          "url": "https://sedac.ciesin.columbia.edu/data/collection/gpw-v4"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Energy Access",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/GPW_Population_Density_2020_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Predicted Distribution Grid (gridfinder)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/access/gridfinder_grid_africa_1km_3857_cog.tif",
+          "format": "cog",
+          "zIndex": 51,
+          "opacity": 0.9
+        }
+      ],
+      "meta": {
+        "description": "Where the medium-voltage grid actually runs is largely undocumented in Africa; gridfinder infers it from night-time lights and OpenStreetMap. Overlaid on night lights and population it shows grid reach against where people live, the access gap that frames the mini-grid opportunity. Global predicted grid (Arderne et al., 2020), rasterised at 1 km; when zoomed out the cells show where any grid line exists, when zoomed in the individual lines.",
+        "attribution": {
+          "text": "gridfinder, Arderne et al. 2020, Nature Scientific Data (CC BY 4.0), hosted by ESA SEF",
+          "url": "https://doi.org/10.5281/zenodo.3628142"
+        },
+        "categories": [
+          {
+            "color": "#ff8c1a",
+            "label": "Predicted grid line (gridfinder)",
+            "value": 0.6
+          },
+          {
+            "color": "#d40000",
+            "label": "Grid line known from OpenStreetMap",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Energy Access",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "PV Power Potential (Global Solar Atlas)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/solar/gsa_pvout_yearly_africa_3km_3857_cog.tif",
+          "format": "cog",
+          "zIndex": 26,
+          "opacity": 0.8
+        }
+      ],
+      "meta": {
+        "description": "Long-term average photovoltaic yield is the headline solar metric: the Sahel, the Horn, Namibia and the Kalahari hold some of the highest yields on the planet, above 2 000 kWh per kWp per year. Specific PV power output (PVOUT) from the Global Solar Atlas 2.0 (Solargis model, 1994 to 2018), converted from daily to yearly totals and resampled to 3 km for the continent.",
+        "units": "kWh/kWp per year",
+        "colormaps": [
+          {
+            "min": 1200,
+            "max": 2200,
+            "steps": 64,
+            "name": "inferno",
+            "reverse": false
+          }
+        ],
+        "attribution": {
+          "text": "Global Solar Atlas 2.0 / Solargis, World Bank Group / ESMAP (CC BY 4.0), hosted by ESA SEF",
+          "url": "https://globalsolaratlas.info/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Detected Solar PV Installations (Nairobi)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/solar/nairobi_solar_pv_ucl_2026.geojson",
+          "format": "geojson",
+          "zIndex": 61,
+          "style": [
+            {
+              "fill-color": "rgba(232,25,139,0.75)",
+              "stroke-color": "#E8198B",
+              "stroke-width": 1.2
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Knowing where solar panels already stand is the starting point for tracking the continent's distributed-solar build-out, and no African register captures it. Ground-mounted and rooftop PV detected from Copernicus Sentinel-2 (10 m) by a U-Net model from University College London, run on demand through the APEx algorithm catalogue over greater Nairobi for January to March 2026; detections include the Tatu City, Embakasi and Athi River industrial clusters. Zoom to the layer to see the individual installations.",
+        "attribution": {
+          "text": "UCL solar PV detection via APEx / openEO on the Copernicus Data Space Ecosystem, Sentinel-2 (Jan-Mar 2026)",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/solar_pv_detection"
+        },
+        "categories": [
+          {
+            "color": "#E8198B",
+            "label": "Detected solar PV (Sentinel-2, 10 m)"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Saharan Dust at the Surface (MERRA-2)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MERRA2_Dust_Surface_Mass_Concentration_Monthly/default/2026-06-01/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 34,
+          "opacity": 0.7
+        }
+      ],
+      "meta": {
+        "description": "Mineral dust cuts irradiance and soils panels; the Harmattan plume off the Sahara is the world's largest dust source and a first-order factor in PV operations across the Sahel and West Africa. Surface mass concentration of dust from the MERRA-2 reanalysis, monthly mean for June 2026.",
+        "attribution": {
+          "text": "NASA GIBS / MERRA-2 reanalysis",
+          "url": "https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Solar",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MERRA2_Dust_Surface_Mass_Concentration_Monthly_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Mean Wind Speed at 100 m (Global Wind Atlas)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/wind/gwa_wind-speed_100m_africa_3km_3857_cog.tif",
+          "format": "cog",
+          "zIndex": 29,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Wind speed at hub height is the core siting metric, with power scaling roughly with its cube. The layer picks out the East African Rift corridors (Lake Turkana, Marsabit, the Ethiopian highlands), the Red Sea coast, the Somali jet and the Southern African and Atlantic coasts. Global Wind Atlas v4 (DTU / World Bank), ERA5 downscaled to 250 m, mosaicked from the per-country files and resampled to 3 km.",
+        "units": "m/s",
+        "colormaps": [
+          {
+            "min": 2,
+            "max": 11,
+            "steps": 64,
+            "name": "viridis",
+            "reverse": false
+          }
+        ],
+        "attribution": {
+          "text": "Global Wind Atlas v4, DTU Wind Energy / World Bank Group (CC BY 4.0), hosted by ESA SEF",
+          "url": "https://globalwindatlas.info/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Wind Energy",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Hydropower Plants (GPPD)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/hydro/africa_hydropower_plants_gppd.geojson",
+          "format": "geojson",
+          "zIndex": 62,
+          "style": [
+            {
+              "circle-radius": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "capacity_mw"
+                ],
+                1,
+                3,
+                200,
+                6,
+                1000,
+                10,
+                3000,
+                15
+              ],
+              "circle-fill-color": "rgba(31,119,180,0.85)",
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": 1
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Hydropower supplies the majority of electricity in Ethiopia, the DRC, Zambia, Mozambique and Uganda, and its output is exposed to rainfall variability. Location and capacity of hydropower plants from the WRI Global Power Plant Database, symbol size scaled by installed capacity (Inga, Cahora Bassa, Kariba, GERD, Aswan).",
+        "attribution": {
+          "text": "WRI Global Power Plant Database v1.3 (CC BY 4.0), hosted by ESA SEF",
+          "url": "https://datasets.wri.org/dataset/globalpowerplantdatabase"
+        },
+        "categories": [
+          {
+            "color": "#1f77b4",
+            "label": "Hydropower plant (size = capacity)"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Major Rivers (HydroRIVERS)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/hydro/africa_rivers_hydrorivers.geojson",
+          "format": "geojson",
+          "zIndex": 45,
+          "style": [
+            {
+              "stroke-color": "#1f5fa8",
+              "stroke-width": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "strahler"
+                ],
+                6,
+                0.8,
+                7,
+                1.4,
+                8,
+                2.2,
+                9,
+                3.2
+              ]
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "River networks are the backbone of the continent's hydropower systems (Congo, Nile, Zambezi, Niger, Volta) and of the small-hydro potential in the highlands. HydroRIVERS v1.0 for Africa, Strahler order 6 and above, line width scaled by stream order; mean discharge is carried as an attribute.",
+        "attribution": {
+          "text": "HydroRIVERS v1.0, HydroSHEDS (WWF / USGS), hosted by ESA SEF",
+          "url": "https://www.hydrosheds.org/products/hydrorivers"
+        },
+        "categories": [
+          {
+            "color": "#1f5fa8",
+            "label": "River (width = stream order)"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Surface Water Occurrence (JRC, 1984 to 2021)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://storage.googleapis.com/global-surface-water/tiles2021/occurrence/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 41,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Where water has stood over four decades of Landsat shows reservoirs, floodplains and the expansion or shrinkage of lakes such as Chad, Turkana and Kariba. Water occurrence from the JRC Global Surface Water dataset (30 m, 1984 to 2021): light blue for occasional, dark blue for permanent water.",
+        "attribution": {
+          "text": "EC JRC / Google, Global Surface Water (Pekel et al. 2016)",
+          "url": "https://global-surface-water.appspot.com/"
+        },
+        "categories": [
+          {
+            "color": "#ffcccc",
+            "label": "Rarely water"
+          },
+          {
+            "color": "#9999ff",
+            "label": "Sometimes water"
+          },
+          {
+            "color": "#0000ff",
+            "label": "Always water"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Surface Water Change (JRC, 1984 to 2021)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://storage.googleapis.com/global-surface-water/tiles2021/change/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 43,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Where water has appeared or disappeared over four decades of Landsat: reservoirs filling, Lake Chad's shrinkage, new dams, and drying wetlands, the long-term water trends behind hydropower planning. Change in surface water occurrence between 1984-1999 and 2000-2021 from the JRC Global Surface Water dataset (30 m); green marks water gained, red water lost.",
+        "attribution": {
+          "text": "EC JRC / Google, Global Surface Water (Pekel et al. 2016)",
+          "url": "https://global-surface-water.appspot.com/"
+        },
+        "categories": [
+          {
+            "color": "#00cc00",
+            "label": "Water gained"
+          },
+          {
+            "color": "#ff0000",
+            "label": "Water lost"
+          },
+          {
+            "color": "#888888",
+            "label": "No change"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Monthly Precipitation (MERRA-2)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MERRA2_Precipitation_Bias_Corrected_Monthly/default/2026-06-01/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 30,
+          "opacity": 0.7
+        }
+      ],
+      "meta": {
+        "description": "Rainfall drives reservoir inflow and hydropower reliability; the 2023 to 2024 drought in Zambia and Zimbabwe cut Kariba generation to a fraction of capacity. Bias-corrected total precipitation from the MERRA-2 reanalysis, monthly mean for June 2026.",
+        "attribution": {
+          "text": "NASA GIBS / MERRA-2 reanalysis",
+          "url": "https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MERRA2_Precipitation_Bias_Corrected_Monthly_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Geothermal Plants (GPPD)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/geothermal/africa_geothermal_plants_gppd.geojson",
+          "format": "geojson",
+          "zIndex": 63,
+          "style": [
+            {
+              "circle-radius": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "capacity_mw"
+                ],
+                5,
+                5,
+                200,
+                12
+              ],
+              "circle-fill-color": "rgba(214,39,40,0.9)",
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": 1
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Kenya is Africa's geothermal leader, with the Olkaria complex in the Rift Valley supplying around 40 % of national electricity, and Ethiopia, Tanzania and Djibouti following. Installed geothermal plants from the WRI Global Power Plant Database, symbol size scaled by capacity.",
+        "attribution": {
+          "text": "WRI Global Power Plant Database v1.3 (CC BY 4.0), hosted by ESA SEF",
+          "url": "https://datasets.wri.org/dataset/globalpowerplantdatabase"
+        },
+        "categories": [
+          {
+            "color": "#d62728",
+            "label": "Geothermal plant (size = capacity)"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Geothermal & Rift",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Holocene Volcanoes (Smithsonian GVP)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/geothermal/africa_holocene_volcanoes_gvp.geojson",
+          "format": "geojson",
+          "zIndex": 61,
+          "style": [
+            {
+              "shape-points": 3,
+              "shape-radius": 6,
+              "shape-fill-color": "rgba(255,127,14,0.9)",
+              "shape-stroke-color": "#4d2600",
+              "shape-stroke-width": 1
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Volcanic centres trace the heat source that geothermal development taps; the East African Rift from Afar to Tanzania is one of the densest belts on Earth. Volcanoes with Holocene activity from the Smithsonian Global Volcanism Program, with type, last eruption year and tectonic setting as attributes.",
+        "attribution": {
+          "text": "Smithsonian Institution, Global Volcanism Program (Volcanoes of the World), hosted by ESA SEF",
+          "url": "https://volcano.si.edu/"
+        },
+        "categories": [
+          {
+            "color": "#ff7f0e",
+            "label": "Holocene volcano"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Geothermal & Rift",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Earthquakes, Last 30 Days (USGS)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
+          "format": "geojson",
+          "zIndex": 64,
+          "style": [
+            {
+              "circle-radius": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "mag"
+                ],
+                4.5,
+                4,
+                6,
+                8,
+                7.5,
+                14
+              ],
+              "circle-fill-color": "rgba(148,103,189,0.7)",
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": 1
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Seismicity outlines the active rift where the crust is thin and hot, and is an input to the siting of dams, plants and transmission corridors. Earthquakes of magnitude 4.5 and above over the past 30 days from the USGS real-time feed, updated continuously; symbol size scaled by magnitude.",
+        "attribution": {
+          "text": "USGS Earthquake Hazards Program (live feed)",
+          "url": "https://earthquake.usgs.gov/earthquakes/feed/"
+        },
+        "categories": [
+          {
+            "color": "#9467bd",
+            "label": "Earthquake M4.5+ (size = magnitude)"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Geothermal & Rift",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Power Plants by Fuel (GPPD)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/grid/africa_power_plants_gppd.geojson",
+          "format": "geojson",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "capacity_mw"
+                ],
+                1,
+                2.5,
+                200,
+                5,
+                1000,
+                9,
+                4000,
+                15
+              ],
+              "circle-fill-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "primary_fuel"
+                  ],
+                  "Hydro"
+                ],
+                "#1f77b4",
+                [
+                  "==",
+                  [
+                    "get",
+                    "primary_fuel"
+                  ],
+                  "Gas"
+                ],
+                "#8c564b",
+                [
+                  "==",
+                  [
+                    "get",
+                    "primary_fuel"
+                  ],
+                  "Solar"
+                ],
+                "#ffbf00",
+                [
+                  "==",
+                  [
+                    "get",
+                    "primary_fuel"
+                  ],
+                  "Oil"
+                ],
+                "#7f7f7f",
+                [
+                  "==",
+                  [
+                    "get",
+                    "primary_fuel"
+                  ],
+                  "Wind"
+                ],
+                "#2ca02c",
+                [
+                  "==",
+                  [
+                    "get",
+                    "primary_fuel"
+                  ],
+                  "Coal"
+                ],
+                "#111111",
+                [
+                  "==",
+                  [
+                    "get",
+                    "primary_fuel"
+                  ],
+                  "Geothermal"
+                ],
+                "#d62728",
+                [
+                  "==",
+                  [
+                    "get",
+                    "primary_fuel"
+                  ],
+                  "Biomass"
+                ],
+                "#bcbd22",
+                [
+                  "==",
+                  [
+                    "get",
+                    "primary_fuel"
+                  ],
+                  "Waste"
+                ],
+                "#17becf",
+                [
+                  "==",
+                  [
+                    "get",
+                    "primary_fuel"
+                  ],
+                  "Nuclear"
+                ],
+                "#e377c2",
+                "#999999"
+              ],
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": 0.8
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "The generation fleet sets the starting point for every transition scenario: gas and hydro dominate, coal is concentrated in South Africa, and utility solar and wind are still a small share outside South Africa, Egypt, Morocco and Kenya. About 600 plants from the WRI Global Power Plant Database, coloured by primary fuel and scaled by installed capacity.",
+        "attribution": {
+          "text": "WRI Global Power Plant Database v1.3 (CC BY 4.0), hosted by ESA SEF",
+          "url": "https://datasets.wri.org/dataset/globalpowerplantdatabase"
+        },
+        "categories": [
+          {
+            "color": "#1f77b4",
+            "label": "Hydro"
+          },
+          {
+            "color": "#8c564b",
+            "label": "Gas"
+          },
+          {
+            "color": "#ffbf00",
+            "label": "Solar"
+          },
+          {
+            "color": "#7f7f7f",
+            "label": "Oil"
+          },
+          {
+            "color": "#2ca02c",
+            "label": "Wind"
+          },
+          {
+            "color": "#111111",
+            "label": "Coal"
+          },
+          {
+            "color": "#d62728",
+            "label": "Geothermal"
+          },
+          {
+            "color": "#bcbd22",
+            "label": "Biomass"
+          },
+          {
+            "color": "#17becf",
+            "label": "Waste"
+          },
+          {
+            "color": "#e377c2",
+            "label": "Nuclear"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Grid & Resilience",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Transmission and Distribution Lines (World Bank AICD)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/grid/africa_transmission_lines_wb.geojson",
+          "format": "geojson",
+          "zIndex": 59,
+          "style": [
+            {
+              "stroke-color": [
+                "case",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "voltage"
+                  ],
+                  330
+                ],
+                "#7030A0",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "voltage"
+                  ],
+                  220
+                ],
+                "#C00000",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "voltage"
+                  ],
+                  110
+                ],
+                "#ED7D31",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "voltage"
+                  ],
+                  66
+                ],
+                "#FFC000",
+                "#9e9e9e"
+              ],
+              "stroke-width": [
+                "case",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "voltage"
+                  ],
+                  220
+                ],
+                1.6,
+                [
+                  ">=",
+                  [
+                    "get",
+                    "voltage"
+                  ],
+                  110
+                ],
+                1.2,
+                0.7
+              ]
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "The transmission backbone decides where new generation can connect and how far the regional power pools (SAPP, EAPP, WAPP, CAPP) can trade. Existing and planned lines for Sub-Saharan Africa compiled by the World Bank's Africa Infrastructure Country Diagnostic, coloured by voltage; status (existing, planned, under construction) is carried as an attribute.",
+        "attribution": {
+          "text": "World Bank, Sub-Saharan Africa Electricity Transmission Network (AICD), CC BY 4.0, hosted by ESA SEF",
+          "url": "https://energydata.info/dataset/sub-saharan-africa-electricity-transmission-network"
+        },
+        "categories": [
+          {
+            "color": "#9e9e9e",
+            "label": "< 66 kV"
+          },
+          {
+            "color": "#FFC000",
+            "label": "66 to 110 kV"
+          },
+          {
+            "color": "#ED7D31",
+            "label": "110 to 220 kV"
+          },
+          {
+            "color": "#C00000",
+            "label": "220 to 330 kV"
+          },
+          {
+            "color": "#7030A0",
+            "label": "330 kV and above"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Grid & Resilience",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Lightning Flash Rate (LIS climatology)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/LIS_Very_High_Resolution_Lightning_Full_Climatology_LIS_Mean_Flash_Rate/default/1998-01-01/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 39,
+          "opacity": 0.75
+        }
+      ],
+      "meta": {
+        "description": "Lightning is a leading cause of line faults and transformer damage, and the Congo basin has the highest flash density on Earth. Mean flash rate from the full climatology of the TRMM Lightning Imaging Sensor (1998 to 2013, 0.1 degree).",
+        "attribution": {
+          "text": "NASA GIBS / TRMM LIS (Very High Resolution Climatology)",
+          "url": "https://ghrc.nsstc.nasa.gov/uso/ds_docs/lis_climatology/lohrfc_dataset.html"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Grid & Resilience",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/LIS_Very_High_Resolution_Lightning_Full_Climatology_LIS_Mean_Flash_Rate_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Flood Extent, Last 3 Days (MODIS NRT)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Combined_Flood_3-Day/default/2026-09-16/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 40,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Standing floodwater threatens substations, roads to plants and low-lying distribution. Near-real-time flood extent from the NASA MODIS Terra and Aqua combined 3-day product for 16 September 2026 (250 m), distinguishing observed flood from reference water. Update the date in the URL before the event.",
+        "attribution": {
+          "text": "NASA GIBS / LANCE MODIS NRT Global Flood Product",
+          "url": "https://www.earthdata.nasa.gov/data/instruments/modis/near-real-time-data/nrt-global-flood-product"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Grid & Resilience",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://gibs.earthdata.nasa.gov/legends/MODIS_Flood_V.svg"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Active Fire Monitoring (Meteosat)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://view.eumetsat.int/geoserver/wms?token=public",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "msg_fes:fire",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Fires under overhead lines trip circuits and force pre-emptive shutdowns, so near-real-time detection matters to grid operators. Active fire detection from the Meteosat SEVIRI 3.9 micrometre channel, updated every 15 minutes across Africa and Europe from EUMETSAT's geostationary vantage point.",
+        "attribution": {
+          "text": "EUMETSAT",
+          "url": "https://user.eumetsat.int/catalogue"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Grid & Resilience",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://view.eumetsat.int/geoserver/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=640&height=80&layer=msg_fes%3Afire"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Tropospheric NO2 (Sentinel-5P)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/no2/s5p_no2_year_2025_cog.tif",
+          "format": "cog",
+          "zIndex": 38,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Nitrogen dioxide is produced by high-temperature combustion, so it traces fossil-fuel power plants, heavy industry, shipping lanes and road traffic. Over Africa it picks out the Mpumalanga coal cluster in South Africa, the Niger Delta, Cairo and the Red Sea shipping lane. Tropospheric NO2 column from Copernicus Sentinel-5P TROPOMI, yearly mean for 2025 processed by S5P-PAL.",
+        "units": "µmol/m²",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 60,
+            "steps": 64,
+            "name": "jet",
+            "reverse": false
+          }
+        ],
+        "attribution": {
+          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
+          "url": "https://maps.s5p-pal.com/no2-tropospheric/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Traditional Energy",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Methane Concentration (Sentinel-5P)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/methane/s5p_ch4_year_2025_cog.tif",
+          "format": "cog",
+          "zIndex": 37,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Methane is the main component of natural gas, so mapping atmospheric methane reveals enhancements over oil and gas fields, flaring regions and other major emitters, including the Niger Delta and the North African gas basins. Column-averaged dry-air methane (XCH4) from Copernicus Sentinel-5P TROPOMI, yearly mean for 2025 processed by S5P-PAL.",
+        "units": "ppbv",
+        "colormaps": [
+          {
+            "min": 1750,
+            "max": 1950,
+            "steps": 64,
+            "name": "jet",
+            "reverse": false
+          }
+        ],
+        "attribution": {
+          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
+          "url": "https://maps.s5p-pal.com/ch4/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Traditional Energy",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Land Cover (ESA WorldCover 2021)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/landcover/esa_worldcover_2021_africa_1km_3857_cog.tif",
+          "format": "cog",
+          "zIndex": 24,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Land cover separates the savanna and cropland that are open to wind and solar development from forest, wetland and built-up land, and shows the biomass base on which most rural households still depend for cooking fuel. ESA WorldCover 2021 (10 m, v200) mosaicked for the continent and resampled to 1 km by majority class; the class values follow the WorldCover legend.",
+        "attribution": {
+          "text": "ESA WorldCover 2021 v200 (ESA / VITO / Brockmann / CS / GAMMA / IIASA / WUR), CC BY 4.0, hosted by ESA SEF",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#fa0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare / sparse vegetation",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land & Environment",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "True-Colour Satellite Imagery (Sentinel-2)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.maps.eox.at/wms",
+          "format": "wms",
+          "zIndex": 22,
+          "layers": "s2cloudless-2025_3857",
+          "parameters": {
+            "STYLES": ""
+          }
+        }
+      ],
+      "meta": {
+        "description": "A cloud-free true-colour view of the land surface supports visual reconnaissance of candidate sites and existing plants. Sentinel-2 cloudless mosaic for 2025 from EOX, a near-cloud-free composite of Copernicus Sentinel-2 imagery.",
+        "attribution": {
+          "text": "Sentinel-2 cloudless 2025 by EOX / Copernicus Sentinel data",
+          "url": "https://s2maps.eu"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Land & Environment",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "name": "Borders and Place Names (EOX Overlay)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.maps.eox.at/wmts/1.0.0/overlay_3857/default/g/{z}/{y}/{x}.png",
+          "format": "xyz",
+          "zIndex": 70
+        }
+      ],
+      "meta": {
+        "description": "Country borders and place names to keep orientation when a dark or imagery base is in use. Cartographic overlay served by EOX.",
+        "attribution": {
+          "text": "Overlay by EOX / OpenStreetMap contributors",
+          "url": "https://maps.eox.at"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Land & Environment",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
     }
   ]
 }
