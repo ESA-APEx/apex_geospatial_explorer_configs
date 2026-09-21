@@ -24,6 +24,9 @@
     "Use Cases"
   ],
   "exclusivitySets": [],
+  "settings": {
+    "layerFetchTimeoutMs": 6000
+  },
   "mapConstraints": {
     "zoom": 0,
     "center": [
@@ -75,7 +78,13 @@
               "date": "latest"
             }
           ],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "global-land-cover-2-2",
+            "tab": {
+              "id": "overview"
+            }
+          }
         },
         {
           "id": "expanding-cities",
@@ -116,11 +125,16 @@
           },
           "activeLayers": [
             {
-              "id": "lst-ecostress-for-vancouver-imported",
-              "date": "latest"
+              "id": "lst-ecostress-for-vancouver"
             }
           ],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "lst-ecostress-for-vancouver",
+            "tab": {
+              "id": "overview"
+            }
+          }
         },
         {
           "id": "urban-greening",
@@ -140,7 +154,13 @@
               "id": "composite-ndvi-canada-q3-2025"
             }
           ],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "composite-ndvi-canada-q3-2025",
+            "tab": {
+              "id": "overview"
+            }
+          }
         },
         {
           "id": "wildfires",
@@ -169,10 +189,10 @@
             "description": "As well as directly threatening populated areas, smoke from wildfires can travel long distances. Particles from this smoke can have a range of effects including causing severe asthma attacks. Some satellites are able to track such atmospheric emissions. \n\nThis map shows the total aerosol density over North America on 15th July 2026, at the peak of the wildfire season, as measured by the Sentinel-5P spacecraft. The image below shows how the sky looked form Toronto that day.\n\n![Orange sky in Toronto](https://upload.wikimedia.org/wikipedia/commons/b/bc/Toronto_wildfire_smoke_July_15%2C_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image Credits: ARandomName123, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons*"
           },
           "viewport": {
-            "zoom": 5,
+            "zoom": 6,
             "center": [
-              -76.99218750000001,
-              44.77793589631623
+              -69.21386718750001,
+              42
             ]
           },
           "activeLayers": [
@@ -181,7 +201,13 @@
               "date": "2026-07-15"
             }
           ],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "sentinel-5p-aerosols",
+            "tab": {
+              "id": "overview"
+            }
+          }
         },
         {
           "id": "arctic-regions",
@@ -276,9 +302,9 @@
           }
         },
         {
-          "id": "milan-tree-cover",
+          "id": "milan-heat-and-tree-cover",
           "content": {
-            "title": "Milan: Tree Cover",
+            "title": "Milan: Heat and Tree Cover",
             "description": "The CLMS also produces regular maps of [street trees](https://land.copernicus.eu/en/products/urban-atlas?tab=street_tree_layer) in cities across Europe.\n\nThis images shows the tree cover from CLMS superimposed on a map of Land Surface Temperature provided by [ConstellR](https://www.constellr.com/). Tree cover is shown in green, while red and blue indicated hotter and cooler areas. The correlation between tree cover and urban heat can be clearly seen.\n\n![Milan Park](https://upload.wikimedia.org/wikipedia/commons/6/62/Milano_-_platano_comune_-_id_03F20505F205MI03_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image: Ysogo, CC BY-SA 4.0, via Wikimedia Commons*"
           },
           "viewport": {
@@ -464,7 +490,7 @@
           "id": "introduction",
           "content": {
             "title": "Introduction",
-            "description": "As the climate warms, Canada is experiencing longer wildfire seasons and more frequent wildfires. As well as the immediate damage caused, wildfire smoke can travel long distances from the actual fire, causing problems to many urban regions.\n\nSatellite data have a key role to play at all stages: they give key inputs to forecasting (such as measurements of temperature and soil moisture), they are critical for the early detection of wildfires, and they can support in assessing their impacts.\n\nOperational services, such as the [Canadian Wildland Fire Information System ](https://cwfis.cfs.nrcan.gc.ca/en) use satellite data as the basis for warnings. \n\nThis image shows [current active fires](https://cwfis.cfs.nrcan.gc.ca/en/interactive-map?layerIds=public%3Acwfif_national_activefires&selectedDate=2026-07-29&center=-87.1_47.9&zoom=1.11) as monitored by CWFIS."
+            "description": "As the climate warms, Canada is experiencing longer wildfire seasons and more frequent wildfires. As well as the immediate damage caused, wildfire smoke can travel long distances from the actual fire, causing problems to many urban regions.\n\nSatellite data have a key role to play at all stages: they give key inputs to forecasting (such as measurements of temperature and soil moisture), they are critical for the early detection of wildfires, and they can support in assessing their impacts.\n\nOperational services, such as the [Canadian Wildland Fire Information System ](https://cwfis.cfs.nrcan.gc.ca/en) use satellite data as the basis for warnings. \n\nThis image shows [current active fires](https://cwfis.cfs.nrcan.gc.ca/en/interactive-map?layerIds=public%3Acwfif_national_activefires&selectedDate=2026-07-29&center=-87.1_47.9&zoom=1.11) as monitored by CWFIS. \n\nLarger circles indicate larger fires. Red and purple circles indicate out of control fires, blue and yellow controlled fires."
           },
           "viewport": {
             "zoom": 4,
@@ -1001,7 +1027,7 @@
           "id": "dynamic-building-footprints",
           "content": {
             "title": "Dynamic building footprints",
-            "description": "The starting point for urban planning is to have a clear picture of what is present. Satellite data can give frequent updates of buildings, allowing rapid detection of new construction.\n\nThis images shows example data from the [GTIF Building Footprints service](https://gtif-austria.info/narratives/building_footprints), showing buildings in the Modling suburb of Vienna. \n\nBuilding in white were already present in 2017, while those in pink or red were constructed between 2017 and 2025. The redder the footprint, the more recently it was constructed.\n\nThis service was developed by ubicube GmbH."
+            "description": "The starting point for urban planning is to have a clear picture of what is present. Satellite data can give frequent updates of buildings, allowing rapid detection of new construction.\n\nThis images shows example data from the [GTIF Building Footprints service](https://gtif-austria.info/narratives/building_footprints), showing buildings in the Modling suburb of Vienna. \n\nBuilding in white were already present in 2017, while those in pink or red were constructed between 2017 and 2025. The redder the footprint, the more recently it was constructed. Click on a building footprint to see the year.\n\nThis service was developed by ubicube GmbH."
           },
           "viewport": {
             "zoom": 15,
@@ -1015,13 +1041,19 @@
               "id": "gtif-building-footprints"
             }
           ],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "gtif-building-footprints",
+            "tab": {
+              "id": "query"
+            }
+          }
         },
         {
           "id": "urban-energy-performance-monitor",
           "content": {
             "title": "Urban Energy Performance Monitor",
-            "description": "Improving the energy efficiency of buildings serves to reduce energy use.\n\nThe EU [Energy Performance of Buildings Directive](https://energy.ec.europa.eu/topics/energy-efficiency/energy-performance-buildings/energy-performance-buildings-directive_en) sets targets for both residential and non-residential buildings.\n\nEnergy efficiency can be estimated from satellite data by looking at the effective temperature difference between remotely observed temperature and global temperature, assuming normal building usage and sufficient contrast between outdoor and indoor temperature (e.g. comparison in winter conditions).\n\nThis image shows an Urban Energy Performance Index (UEPI) combining localised heat loss signals from LST analysis, building age, and building size into a prioritisation for retrofitting. Buildings marked in red have been assessed as being less energy efficient, buildings in green more efficient."
+            "description": "Improving the energy efficiency of buildings serves to reduce energy use.\n\nThe EU [Energy Performance of Buildings Directive](https://energy.ec.europa.eu/topics/energy-efficiency/energy-performance-buildings/energy-performance-buildings-directive_en) sets targets for both residential and non-residential buildings.\n\nEnergy efficiency can be estimated from satellite data by looking at the effective temperature difference between remotely observed temperature and global temperature, assuming normal building usage and sufficient contrast between outdoor and indoor temperature (e.g. comparison in winter conditions).\n\nThis image shows an Urban Energy Performance Index (UEPI) combining localised heat loss signals from LST analysis, building age, and building size into a prioritisation for retrofitting. Buildings marked in red have been assessed as being less energy efficient, buildings in green more efficient. \n\nClick on a building to see further details."
           },
           "viewport": {
             "zoom": 15,
@@ -1035,13 +1067,19 @@
               "id": "urban-energy-performance-monitor"
             }
           ],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "urban-energy-performance-monitor",
+            "tab": {
+              "id": "query"
+            }
+          }
         },
         {
           "id": "brownfield-potential",
           "content": {
             "title": "Brownfield potential",
-            "description": "To promote sustainable building development, reuse of existing sites—so-called brownfields—is an essential strategy. Such sites offer several advantages, as they are often already integrated into local supply networks, benefit from established infrastructure, and are easily accessible for employees.\n\nWithin the GTIF Austria initiative a tool has been developed which uses A) and remote sensing data to identify sealed, underutilized surfaces, assigning each plot a probability score. This supports cities in prioritising areas for land recycling.\n\nThis tool was developed by the Environment Agency Austria (Umweltbundesamt) in collaboration with Fraunhofer IIS."
+            "description": "To promote sustainable building development, reuse of existing sites—so-called brownfields—is an essential strategy. Such sites offer several advantages, as they are often already integrated into local supply networks, benefit from established infrastructure, and are easily accessible for employees.\n\nWithin the GTIF Austria initiative a tool has been developed which uses A) and remote sensing data to identify sealed, underutilized surfaces, assigning each plot a probability score. This supports cities in prioritising areas for land recycling.\n\nClick on an identified site to see further details.\n\nThis tool was developed by the Environment Agency Austria (Umweltbundesamt) in collaboration with Fraunhofer IIS."
           },
           "viewport": {
             "zoom": 14,
@@ -1055,7 +1093,13 @@
               "id": "brownfield-recovery-potential"
             }
           ],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "brownfield-recovery-potential",
+            "tab": {
+              "id": "query"
+            }
+          }
         },
         {
           "id": "rooftop-characterisation",
@@ -1078,6 +1122,32 @@
               "id": "rooftop-characterisation-2"
             }
           ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "planning-road-maintenance",
+          "content": {
+            "title": "Planning road maintenance",
+            "description": "As well as buildings, efficient maintenance of roads and railways can also support the green transition. \n\nDeformations in the Earth's surface, which can impact buildings or infrastructure, can be monitored using Synthetic Aperture Radar satellites such as Sentinel-1. Combining SAR images from different times allows small changes in the earth's surface to be seen.\n\nThis example shows deformation monitoring of the E60 motorway near Bregenz, Austria. It uses [a service](https://gtif-austria.info/narratives/monitoring_transport_infrastructure) developed by the Austrian Institute of Technology. Click on a point to see details.\n\n![Bregenz Motorway](https://upload.wikimedia.org/wikipedia/commons/2/2e/Bregenz-motorway_entrance_Weidach-01ESD.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image: Rikki Mitterer, CC BY-SA 4.0, via Wikimedia Commons*"
+          },
+          "activeLayers": [
+            {
+              "id": "predictive-road-maintenance"
+            }
+          ],
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              9.762725830078127,
+              47.45362999190913
+            ]
+          },
+          "panelState": {
+            "focusLayer": "predictive-road-maintenance",
+            "tab": {
+              "id": "query"
+            }
+          },
           "baseLayer": "sentinel"
         },
         {
@@ -41243,6 +41313,9 @@
           "url": "https://gtif-demo.eox.at/explore?indicator=HAUC1&x=1682304.11139&y=6105680.32568&z=7.21675"
         },
         "categories": [],
+        "units": "°C",
+        "min": 0,
+        "max": 40,
         "colormaps": [
           {
             "min": 0,
@@ -41251,10 +41324,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "°C",
-        "min": 0,
-        "max": 40
+        ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -41713,6 +41783,7 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
+        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -41721,8 +41792,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "Kelvin (K)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
@@ -41769,6 +41839,7 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
+        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -41777,8 +41848,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "Kelvin (K)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
@@ -42421,6 +42491,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42429,9 +42501,7 @@
             "name": "autumn",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42490,6 +42560,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42498,9 +42570,7 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42562,6 +42632,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42570,9 +42642,7 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42622,9 +42692,9 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "colormaps": [],
         "min": 0,
-        "max": 1
+        "max": 1,
+        "colormaps": []
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42826,6 +42896,9 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000,
         "colormaps": [
           {
             "min": 0,
@@ -42834,10 +42907,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000
+        ]
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -42898,6 +42968,9 @@
           "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/FCM-GSV-100m/items/FCM-GSV-100m-2020?.asset=asset-product"
         },
         "categories": [],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 800,
         "colormaps": [
           {
             "min": 0,
@@ -42906,10 +42979,7 @@
             "name": "viridis",
             "reverse": false
           }
-        ],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 800
+        ]
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -43345,6 +43415,9 @@
           "url": "https://ecostress.jpl.nasa.gov/"
         },
         "categories": [],
+        "units": "Kelvin",
+        "min": 0,
+        "max": 40,
         "colormaps": [
           {
             "min": 290,
@@ -43353,10 +43426,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "°C",
-        "min": 0,
-        "max": 40
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43367,7 +43437,7 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -43625,16 +43695,7 @@
       "id": "lst-ecostress-for-toronto",
       "name": "LST (Ecostress) for Toronto",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/ECO_L2T_LSTE.002_LST_20260714T054351_aid0001_17N.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1783980000
-          ]
-        }
-      ],
+      "timeframe": "Days",
       "meta": {
         "description": "Land surface temperature measured by ECOSTRESS",
         "attribution": {
@@ -43642,6 +43703,9 @@
           "url": "https://ecostress.jpl.nasa.gov/"
         },
         "categories": [],
+        "units": "Kelvin",
+        "min": 290,
+        "max": 305,
         "colormaps": [
           {
             "min": 290,
@@ -43650,10 +43714,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "°C",
-        "min": 0,
-        "max": 40
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43664,7 +43725,7 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -43675,73 +43736,16 @@
           }
         }
       },
-      "isBaseLayer": false,
-      "timeframe": "Days"
-    },
-    {
-      "id": "lst-ecostress-for-vancouver-imported",
-      "name": "LST (Ecostress) for Vancouver",
-      "isActive": false,
       "data": [
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/ECO_L2T_LSTE.002_LST_20210621T193310_aid0001_10N.tif",
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/ECO_L2T_LSTE.002_LST_20260714T054351_aid0001_17N.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
-            1624226400
-          ]
-        },
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/ECO_L2T_LSTE.002_LST_20210625T180038_aid0001_10N.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1624572000
+            1783980000
           ]
         }
-      ],
-      "meta": {
-        "description": "Land surface temperature measured by ECOSTRESS",
-        "attribution": {
-          "text": "NASA JPL",
-          "url": "https://ecostress.jpl.nasa.gov/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 290,
-            "max": 320,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
-          }
-        ],
-        "units": "°C",
-        "min": 0,
-        "max": 40
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Canada data",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": true,
-            "blendControls": false
-          }
-        }
-      },
-      "isBaseLayer": false,
-      "timeframe": "Days"
+      ]
     },
     {
       "id": "sentinel-2-images",
@@ -43898,6 +43902,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -43906,9 +43912,7 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -44133,6 +44137,8 @@
           "url": "https://browser.dataspace.copernicus.eu/"
         },
         "categories": [],
+        "min": 0,
+        "max": 250,
         "colormaps": [
           {
             "min": 0,
@@ -44141,9 +44147,7 @@
             "name": "summer",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 250
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -44154,7 +44158,7 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "gradient"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -100077,6 +100081,8 @@
           "url": "https://gtif-ukif.github.io/gtif-ukif-client/"
         },
         "categories": [],
+        "min": 220,
+        "max": 320,
         "colormaps": [
           {
             "min": 220,
@@ -100085,9 +100091,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "min": 220,
-        "max": 320
+        ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -100313,6 +100317,7 @@
           "url": "https://gtif.esa.int/"
         },
         "categories": [],
+        "units": "kWh/m²/day",
         "colormaps": [
           {
             "min": 0.1,
@@ -100321,8 +100326,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "kWh/m²/day"
+        ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
