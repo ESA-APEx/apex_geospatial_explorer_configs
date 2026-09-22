@@ -57,7 +57,8 @@
             ]
           },
           "activeLayers": [],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "autoAdvance": 20000
         },
         {
           "id": "a-changing-climate",
@@ -84,7 +85,8 @@
             "tab": {
               "id": "overview"
             }
-          }
+          },
+          "autoAdvance": 20000
         },
         {
           "id": "expanding-cities",
@@ -108,7 +110,8 @@
           "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "evolution-1985-2015"
-          }
+          },
+          "autoAdvance": 20000
         },
         {
           "id": "urban-heat-islands",
@@ -134,7 +137,8 @@
             "tab": {
               "id": "overview"
             }
-          }
+          },
+          "autoAdvance": 20000
         },
         {
           "id": "urban-greening",
@@ -160,7 +164,8 @@
             "tab": {
               "id": "overview"
             }
-          }
+          },
+          "autoAdvance": 20000
         },
         {
           "id": "wildfires",
@@ -180,7 +185,8 @@
               "id": "sentinel-2-images-wildfires"
             }
           ],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "autoAdvance": 20000
         },
         {
           "id": "air-quality",
@@ -207,7 +213,8 @@
             "tab": {
               "id": "overview"
             }
-          }
+          },
+          "autoAdvance": 20000
         },
         {
           "id": "arctic-regions",
@@ -228,7 +235,8 @@
               "date": "2026-06-15"
             }
           ],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "autoAdvance": 20000
         },
         {
           "id": "meanwhile-across-the-atlantic",
@@ -244,7 +252,8 @@
             ]
           },
           "activeLayers": [],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "autoAdvance": 20000
         }
       ]
     },
@@ -1130,11 +1139,6 @@
             "title": "Planning road maintenance",
             "description": "As well as buildings, efficient maintenance of roads and railways can also support the green transition. \n\nDeformations in the Earth's surface, which can impact buildings or infrastructure, can be monitored using Synthetic Aperture Radar satellites such as Sentinel-1. Combining SAR images from different times allows small changes in the earth's surface to be seen.\n\nThis example shows deformation monitoring of the E60 motorway near Bregenz, Austria. It uses [a service](https://gtif-austria.info/narratives/monitoring_transport_infrastructure) developed by the Austrian Institute of Technology. Click on a point to see details.\n\n![Bregenz Motorway](https://upload.wikimedia.org/wikipedia/commons/2/2e/Bregenz-motorway_entrance_Weidach-01ESD.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image: Rikki Mitterer, CC BY-SA 4.0, via Wikimedia Commons*"
           },
-          "activeLayers": [
-            {
-              "id": "predictive-road-maintenance"
-            }
-          ],
           "viewport": {
             "zoom": 12,
             "center": [
@@ -1142,13 +1146,18 @@
               47.45362999190913
             ]
           },
+          "activeLayers": [
+            {
+              "id": "predictive-road-maintenance"
+            }
+          ],
+          "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "predictive-road-maintenance",
             "tab": {
               "id": "query"
             }
-          },
-          "baseLayer": "sentinel"
+          }
         },
         {
           "id": "conclusion",
@@ -41313,9 +41322,6 @@
           "url": "https://gtif-demo.eox.at/explore?indicator=HAUC1&x=1682304.11139&y=6105680.32568&z=7.21675"
         },
         "categories": [],
-        "units": "°C",
-        "min": 0,
-        "max": 40,
         "colormaps": [
           {
             "min": 0,
@@ -41324,7 +41330,10 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C",
+        "min": 0,
+        "max": 40
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -41783,7 +41792,6 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
-        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -41792,7 +41800,8 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "Kelvin (K)"
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
@@ -41839,7 +41848,6 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
-        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -41848,7 +41856,8 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "Kelvin (K)"
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
@@ -42491,8 +42500,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42501,7 +42508,9 @@
             "name": "autumn",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42560,8 +42569,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42570,7 +42577,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42632,8 +42641,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42642,7 +42649,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42692,9 +42701,9 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "colormaps": [],
         "min": 0,
-        "max": 1,
-        "colormaps": []
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42896,9 +42905,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000,
         "colormaps": [
           {
             "min": 0,
@@ -42907,7 +42913,10 @@
             "name": "copper",
             "reverse": true
           }
-        ]
+        ],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -42968,9 +42977,6 @@
           "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/FCM-GSV-100m/items/FCM-GSV-100m-2020?.asset=asset-product"
         },
         "categories": [],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 800,
         "colormaps": [
           {
             "min": 0,
@@ -42979,7 +42985,10 @@
             "name": "viridis",
             "reverse": false
           }
-        ]
+        ],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 800
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -43415,9 +43424,6 @@
           "url": "https://ecostress.jpl.nasa.gov/"
         },
         "categories": [],
-        "units": "Kelvin",
-        "min": 0,
-        "max": 40,
         "colormaps": [
           {
             "min": 290,
@@ -43426,7 +43432,10 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "Kelvin",
+        "min": 0,
+        "max": 40
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43695,7 +43704,16 @@
       "id": "lst-ecostress-for-toronto",
       "name": "LST (Ecostress) for Toronto",
       "isActive": false,
-      "timeframe": "Days",
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/ECO_L2T_LSTE.002_LST_20260714T054351_aid0001_17N.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1783980000
+          ]
+        }
+      ],
       "meta": {
         "description": "Land surface temperature measured by ECOSTRESS",
         "attribution": {
@@ -43703,9 +43721,6 @@
           "url": "https://ecostress.jpl.nasa.gov/"
         },
         "categories": [],
-        "units": "Kelvin",
-        "min": 290,
-        "max": 305,
         "colormaps": [
           {
             "min": 290,
@@ -43714,7 +43729,10 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "Kelvin",
+        "min": 290,
+        "max": 305
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43736,16 +43754,7 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Toronto/ECO_L2T_LSTE.002_LST_20260714T054351_aid0001_17N.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1783980000
-          ]
-        }
-      ]
+      "timeframe": "Days"
     },
     {
       "id": "sentinel-2-images",
@@ -43902,8 +43911,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -43912,7 +43919,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -44137,8 +44146,6 @@
           "url": "https://browser.dataspace.copernicus.eu/"
         },
         "categories": [],
-        "min": 0,
-        "max": 250,
         "colormaps": [
           {
             "min": 0,
@@ -44147,7 +44154,9 @@
             "name": "summer",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 250
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -100081,8 +100090,6 @@
           "url": "https://gtif-ukif.github.io/gtif-ukif-client/"
         },
         "categories": [],
-        "min": 220,
-        "max": 320,
         "colormaps": [
           {
             "min": 220,
@@ -100091,7 +100098,9 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "min": 220,
+        "max": 320
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -100317,7 +100326,6 @@
           "url": "https://gtif.esa.int/"
         },
         "categories": [],
-        "units": "kWh/m²/day",
         "colormaps": [
           {
             "min": 0.1,
@@ -100326,7 +100334,8 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "units": "kWh/m²/day"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
