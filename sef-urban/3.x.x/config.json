@@ -25,7 +25,7 @@
   ],
   "exclusivitySets": [],
   "settings": {
-    "layerFetchTimeoutMs": 6000
+    "layerFetchTimeoutMs": 7000
   },
   "mapConstraints": {
     "zoom": 0,
@@ -64,7 +64,35 @@
           "id": "a-changing-climate",
           "content": {
             "title": "A changing climate",
-            "description": "Satellite data records stretch back to the 1970s, giving a long baseline to assess changes and estimate future trends.\n\nSuch data has been critical in the study of deforestation, ice loss, sea level trends and GHG emissions, among many others. It also provides key inputs to models of future climate behaviour.\n\n![Canada temperature over time](https://upload.wikimedia.org/wikipedia/commons/f/f5/Show_Your_Stripes_change_in_temperature_graphic_for_All_of_Canada_with_bars.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image credits: Professor Ed Hawkins, CC BY 4.0, via Wikimedia Commons*\n\nThis image shows the land cover of Canada in 2021, as mapped by the [ESA WorldCover](https://esa-worldcover.org/en) project. Looking at land cover over time is the basis for many further applications."
+            "description": "Satellite data records stretch back to the 1970s, giving a long baseline to assess changes and estimate future trends.\n\nSuch data has been critical in the study of deforestation, ice loss, sea level trends and GHG emissions, among many others. It also provides key inputs to models of future climate behaviour.\n\n![Canada temperature over time](https://upload.wikimedia.org/wikipedia/commons/f/f5/Show_Your_Stripes_change_in_temperature_graphic_for_All_of_Canada_with_bars.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image credits: Professor Ed Hawkins, CC BY 4.0, via Wikimedia Commons*\n\nThis image shows the land surface temperature (LST) measured by the Sentinel-3 STSLR instrument, averaged over the ten days 21-20 June 2026."
+          },
+          "viewport": {
+            "zoom": 4,
+            "center": [
+              -99,
+              63
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "land-surface-temperature-10-day-composite-2",
+              "date": "2026-06-21"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "land-surface-temperature-10-day-composite-2",
+            "tab": {
+              "id": "overview"
+            }
+          },
+          "autoAdvance": 20000
+        },
+        {
+          "id": "changing-landscapes",
+          "content": {
+            "title": "Changing landscapes",
+            "description": "As the temperature changes so does the land. Permafrost melts, and vegetation and wildlife spread to new areas.\n\nThis map shows the land cover of Canada in 2021, as mapped by the [ESA WorldCover](https://esa-worldcover.org/en) project. Looking at land cover over time is the basis for many further applications.\n\n![Canadian tundra](https://upload.wikimedia.org/wikipedia/commons/a/ac/Nunavut_tundra_-c.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n\n*Image: ADialla, CC BY 2.0, via Wikimedia Commons*"
           },
           "viewport": {
             "zoom": 4,
@@ -220,7 +248,7 @@
           "id": "arctic-regions",
           "content": {
             "title": "Arctic Regions",
-            "description": "Rising temperatures cause a different set of problems in arctic regions, as melting permafrost undermines the foundations of buildings, roads and railways, while increasing the risks of landslides and floods. Wildlife patterns also change as the weather warms, leading to loss of fishing resources and a higher risk of bear encounters.\n\nSatellites can be used to monitor key infrastructure for subsidence and other damage, as well as looking for warning signs such as increased melting. This images shows a Sentinel-2 image of melting snow around Churchill, Manitoba, on 15th June 2026. \n\n![Polar bear statue](https://upload.wikimedia.org/wikipedia/commons/9/95/Churchill_polar_bear_statue.JPG?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image credits: Ian Stewart, CC BY 2.0, via Wikimedia Commons*"
+            "description": "Rising temperatures cause a different set of problems in arctic regions, as melting permafrost undermines the foundations of buildings, roads and railways, while increasing the risks of landslides and floods. Wildlife patterns also change as the weather warms, leading to loss of fishing resources and a higher risk of bear encounters.\n\nThis map shows a Sentinel-2 image of melting snow around Churchill, Manitoba, on 15th June 2026. \n\n![Polar bear statue](https://upload.wikimedia.org/wikipedia/commons/9/95/Churchill_polar_bear_statue.JPG?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n*Image credits: Ian Stewart, CC BY 2.0, via Wikimedia Commons*"
           },
           "viewport": {
             "zoom": 11,
@@ -233,6 +261,27 @@
             {
               "id": "sentinel-2-images-churchill",
               "date": "2026-06-15"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "autoAdvance": 20000
+        },
+        {
+          "id": "melting-permafrost",
+          "content": {
+            "title": "Melting permafrost",
+            "description": "Satellites can be used to monitor key infrastructure for subsidence and other damage, as well as looking for warning signs such as increased melting. \n\nThis images uses a Sentinel-2 image to derive a map of the soil moisture index around Churchill, Manitoba during the sporint melt on 3rd June 2026. \n\n![Red fox](https://upload.wikimedia.org/wikipedia/commons/d/d9/Tundra_Red_Fox.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)\n\n*Image credits: Emkmiller100, CC BY 4.0, via Wikimedia Commons*"
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              -94.07455444335938,
+              58.72117282273587
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "moisture-index-canada"
             }
           ],
           "baseLayer": "sentinel",
@@ -1355,6 +1404,12 @@
       "id": "wms-service-1788939742363",
       "name": "jrc",
       "url": "https://geospatial.jrc.ec.europa.eu/geoserver/wms?service=WMS&request=GetCapabilities",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1790099325937",
+      "name": "",
+      "url": "https://maps-cartes.services.geo.ca/egs_sgu/services/Flood_Inondation/EGS_Flood_Product_Current_en/MapServer/WMSServer?request=GetCapabilities&service=WMS",
       "format": "wms"
     }
   ],
@@ -41322,6 +41377,9 @@
           "url": "https://gtif-demo.eox.at/explore?indicator=HAUC1&x=1682304.11139&y=6105680.32568&z=7.21675"
         },
         "categories": [],
+        "units": "°C",
+        "min": 0,
+        "max": 40,
         "colormaps": [
           {
             "min": 0,
@@ -41330,10 +41388,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "°C",
-        "min": 0,
-        "max": 40
+        ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -41792,6 +41847,7 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
+        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -41800,8 +41856,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "Kelvin (K)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
@@ -41848,6 +41903,7 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
+        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -41856,8 +41912,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "Kelvin (K)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Climate Resilience",
@@ -42500,6 +42555,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42508,9 +42565,7 @@
             "name": "autumn",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42569,6 +42624,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42577,9 +42634,7 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42641,6 +42696,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -42649,9 +42706,7 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42701,9 +42756,9 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "colormaps": [],
         "min": 0,
-        "max": 1
+        "max": 1,
+        "colormaps": []
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -42905,6 +42960,9 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000,
         "colormaps": [
           {
             "min": 0,
@@ -42913,10 +42971,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000
+        ]
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -42977,6 +43032,9 @@
           "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/FCM-GSV-100m/items/FCM-GSV-100m-2020?.asset=asset-product"
         },
         "categories": [],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 800,
         "colormaps": [
           {
             "min": 0,
@@ -42985,10 +43043,7 @@
             "name": "viridis",
             "reverse": false
           }
-        ],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 800
+        ]
       },
       "layout": {
         "interfaceGroup": "Urban Greening",
@@ -43424,6 +43479,9 @@
           "url": "https://ecostress.jpl.nasa.gov/"
         },
         "categories": [],
+        "units": "Kelvin",
+        "min": 0,
+        "max": 40,
         "colormaps": [
           {
             "min": 290,
@@ -43432,10 +43490,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "Kelvin",
-        "min": 0,
-        "max": 40
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43721,6 +43776,9 @@
           "url": "https://ecostress.jpl.nasa.gov/"
         },
         "categories": [],
+        "units": "Kelvin",
+        "min": 290,
+        "max": 305,
         "colormaps": [
           {
             "min": 290,
@@ -43729,10 +43787,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "Kelvin",
-        "min": 290,
-        "max": 305
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -43911,6 +43966,8 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -43919,9 +43976,7 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -44142,10 +44197,12 @@
       "meta": {
         "description": "NDVI for selected Canadian cities, composite over the period Q3 (July-Sept) 2025, as extracted from Copernicus Browser.",
         "attribution": {
-          "text": "EU/Copernicus via Coperncius Browser",
+          "text": "EU/Copernicus via Copernicus Browser",
           "url": "https://browser.dataspace.copernicus.eu/"
         },
         "categories": [],
+        "min": 0,
+        "max": 250,
         "colormaps": [
           {
             "min": 0,
@@ -44154,9 +44211,7 @@
             "name": "summer",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 250
+        ]
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -100090,6 +100145,8 @@
           "url": "https://gtif-ukif.github.io/gtif-ukif-client/"
         },
         "categories": [],
+        "min": 220,
+        "max": 320,
         "colormaps": [
           {
             "min": 220,
@@ -100098,9 +100155,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "min": 220,
-        "max": 320
+        ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -100326,6 +100381,7 @@
           "url": "https://gtif.esa.int/"
         },
         "categories": [],
+        "units": "kWh/m²/day",
         "colormaps": [
           {
             "min": 0.1,
@@ -100334,8 +100390,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "kWh/m²/day"
+        ]
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -100359,6 +100414,52 @@
       },
       "isBaseLayer": false,
       "exclusivitySets": []
+    },
+    {
+      "id": "moisture-index-canada",
+      "name": "Soil Moisture Index Canada",
+      "isActive": false,
+      "meta": {
+        "description": "An example map of soil moisture index derived from from Sentinel-2 data.",
+        "attribution": {
+          "text": "EU/Copernicus",
+          "url": "https://browser.dataspace.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Canada data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/Canada/2026-06-03-00_00_2026-06-03-23_59_Sentinel-2_L2A_Moisture_index.tiff",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        }
+      ]
     }
   ]
 }
