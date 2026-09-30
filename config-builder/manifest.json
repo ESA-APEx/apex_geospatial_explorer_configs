@@ -23,6 +23,14 @@
         "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/config-builder/clms-public-layers.json",
         "label": "Copernicus Land Monitoring Service WMTS"
       }
-    ]
+    ],
+    "testConfigs": [
+        {
+          "id": "vector-datasets",
+          "name": "Vector datasets",
+          "description": "Sample vector layers for building and testing the styling recipes.",
+          "file": "test-configs/config-vector-datasets.json"
+          }
+      ]
   }
 }
