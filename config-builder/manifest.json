@@ -36,7 +36,7 @@
           "id": "multispectral-datasets",
           "name": "Multispectral datasets",
           "description": "Sample multispectral layers for building and testing the styling recipes.",
-          "file": "test-configs/config-vector-datasets.json"
+          "file": "test-configs/config-multispectral-datasets.json"
         }
 
  ]
