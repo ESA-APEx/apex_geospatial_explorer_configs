@@ -1,6 +1,6 @@
 {
   "version": "3.3.5.1",
-  "exportPrefix": "config-multispectral",
+  "exportPrefix": "config-multispectral-datasets",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
