@@ -1,0 +1,3399 @@
+{
+  "version": "3.3.5.1",
+  "exportPrefix": "config-multispectral",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "Sentinel Users Preparation (SUP) - example configuration"
+    },
+    "theme": {
+      "primary-color": "#003247",
+      "secondary-color": "#335e6f",
+      "background-color": "#f3f7f8",
+      "text-color-primary": "#ffffff",
+      "text-color-secondary": "#333333"
+    }
+  },
+  "interfaceGroups": [
+    "Multi-spectral Sentinel 2"
+  ],
+  "exclusivitySets": [
+    "labels",
+    "basemaps",
+    "worldcover"
+  ],
+  "mapConstraints": {
+    "zoom": 6,
+    "center": [
+      -2,
+      54
+    ],
+    "projection": "EPSG:3857"
+  },
+  "projections": [
+    {
+      "name": "WGS84 / Arctic Polar Sterographic",
+      "code": "EPSG:3995",
+      "definition": "+proj=stere +lat_0=90 +lat_ts=71 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs"
+    },
+    {
+      "name": "OSNI 1952 / Irish National Grid",
+      "code": "EPSG:29901",
+      "definition": "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1 +x_0=200000 +y_0=250000 +ellps=airy +towgs84=482.5,-130.6,564.6,-1.042,-0.214,-0.631,8.15 +units=m +no_defs +type=crs"
+    },
+    {
+      "name": "British National Grid",
+      "code": "EPSG:27700",
+      "definition": "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.060,0.1502,0.2470,0.8421,-20.4894 +units=m +no_defs +type=crs"
+    },
+    {
+      "name": "RGF93 v1 / Lambert-93 - France",
+      "code": "EPSG:2154",
+      "definition": "+proj=lcc +lat_0=46.5 +lon_0=3 +lat_1=49 +lat_2=44 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs"
+    }
+  ],
+  "workflows": [],
+  "stories": [],
+  "services": [
+    {
+      "id": "wms-service-1749555952736",
+      "name": "VITO Terrascope",
+      "url": "https://services.terrascope.be/wms/v2",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1749572624524",
+      "name": "Copernicus Urban Atlas",
+      "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1750143419665",
+      "name": "Brockmann Xcube",
+      "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wmts-service-1750331396152",
+      "name": "Terrascope WMTS",
+      "url": "https://globalland.vito.be/wmts",
+      "format": "wmts"
+    },
+    {
+      "id": "wms-service-1750351088731",
+      "name": "EOX BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "s3-service-1750499655684",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    },
+    {
+      "id": "wms-service-1758122835061",
+      "name": "Copernicus N2K 2018",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122891131",
+      "name": "Copernicus 2012 N2K",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122986156",
+      "name": "Copernicus N2K 2006",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "stac-service-1758796621711",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    },
+    {
+      "id": "stac-service-1758815789729",
+      "name": "VITO STAC catalogue",
+      "url": "https://stac.openeo.vito.be/",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1758879238525",
+      "name": "CLMS WMS Server",
+      "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1762193515847",
+      "name": "DLR GeoService",
+      "url": "https://a.geoservice.dlr.de/eoc/land/wms/",
+      "format": "wms"
+    }
+  ],
+  "sources": [
+    {
+      "id": "bristol-sentinel-2-true-colour-composite",
+      "name": "Bristol Sentinel 2 - true colour composite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/10/S2A_20260110_latn519lonw0022_T30UWC_ORB037_20260110135337_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false,
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ]
+        }
+      ],
+      "charts": [
+        {
+          "title": "Spectral Signature (all)",
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature 1"
+            },
+            "showgrid": true
+          }
+        },
+        {
+          "title": "Spectral signature (labelled)",
+          "x": [
+            "B2",
+            "B3",
+            "B4",
+            "B5",
+            "B6",
+            "B7",
+            "B8",
+            "B8A",
+            "B11",
+            "B12"
+          ],
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature"
+            },
+            "showgrid": true
+          }
+        },
+        {
+          "title": "Spectral signature (labelled subset)",
+          "x": [
+            "Blue",
+            "Green",
+            "Red",
+            "Red Edge 1"
+          ],
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature"
+            },
+            "showgrid": true
+          }
+        }
+      ],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub. The data is in CRS for British National Grid (EPSG 27700), which is added as a custom CRS as it is not supported by default. This has been configured as an RGB composite, mapping the bands 3, 2, and 1 respectively to RGB channels, via the bands config on the COG. Three spectral signature chart examples have been configured (for use with Preview -> dev-pixel-charts in the config budiler). The first leaves x-axis config empty, displaying all bands with a simple band number (1, 2, 3 etc). The second example labels X axis values as named S2 bands (B2, B3 etc). Third example, names just the first three bands (Blue, Green, Red), so no more are displayed.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Multi-spectral Sentinel 2",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "stadia-alidade-smooth-dark",
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Dark",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "sentinel",
+      "name": "Sentinel",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "meta": {
+        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "attribution": {
+          "text": "Copernicus Sentinel-2",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
+    },
+    {
+      "id": "blue-marble",
+      "name": "Blue Marble",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Blue Marble",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png"
+    },
+    {
+      "id": "open-streetmap",
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Open StreetMap",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "id": "stadia-alidade-smooth-light",
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Light",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "stadia-alidade-satellite",
+      "name": "Stadia Alidade Satellite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Satellite",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "dem",
+      "name": "DEM",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "COP_DEM_GLO_30M_COG"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: DEM",
+        "attribution": {
+          "text": "Copernicus"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png"
+    },
+    {
+      "id": "world-cover",
+      "name": "World Cover",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_MAP"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: World Cover",
+        "attribution": {
+          "text": "(c) ESA World Cover"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/worldcover.png"
+    },
+    {
+      "id": "bristol-sentinel-2-true-colour-composite-2",
+      "name": "East London  - time series, natural colour",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/06/24/S2C_20260624_latn518lone0007_T30UYC_ORB137_20260624132136_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1782255600
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 140,
+              "gMin": 20,
+              "gMax": 130,
+              "bMin": 6,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/05/25/S2C_20260525_latn518lone0007_T30UYC_ORB137_20260525130916_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1779663600
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 140,
+              "gMin": 20,
+              "gMax": 130,
+              "bMin": 6,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/04/27/S2B_20260427_latn518lone0007_T30UYC_ORB094_20260427131545_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1777244400
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 140,
+              "gMin": 20,
+              "gMax": 130,
+              "bMin": 6,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/03/18/S2A_20260318_latn518lone0007_T30UYC_ORB137_20260318162447_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1773792000
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 140,
+              "gMin": 20,
+              "gMax": 130,
+              "bMin": 6,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/02/14/S2C_20260214_latn518lone0007_T30UYC_ORB137_20260214131010_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1771027200
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 140,
+              "gMin": 20,
+              "gMax": 130,
+              "bMin": 6,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/04/S2A_20260104_latn518lone0007_T30UYC_ORB094_20260104143622_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1767484800
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 140,
+              "gMin": 20,
+              "gMax": 130,
+              "bMin": 6,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2025/12/31/S2B_20251231_latn518lone0007_T30UYC_ORB137_20251231132639_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1767139200
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 140,
+              "gMin": 20,
+              "gMax": 130,
+              "bMin": 6,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2025/11/26/S2C_20251126_latn518lone0007_T30UYC_ORB137_20251126131101_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1764115200
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 140,
+              "gMin": 20,
+              "gMax": 130,
+              "bMin": 6,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2025/10/06/S2A_20251006_latn518lone0007_T30UYC_ORB094_20251006143621_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1759705200
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 140,
+              "gMin": 20,
+              "gMax": 130,
+              "bMin": 6,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/08/25/S2A_20260825_latn518lone0007_T30UYC_ORB137_20260825180456_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1787612400
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 140,
+              "gMin": 20,
+              "gMax": 130,
+              "bMin": 6,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/07/29/S2B_20260729_latn518lone0007_T30UYC_ORB137_20260729132336_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1785279600
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 140,
+              "gMin": 20,
+              "gMax": 130,
+              "bMin": 6,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        }
+      ],
+      "charts": [
+        {
+          "title": "Spectral Signature (all)",
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature 1"
+            },
+            "showgrid": true
+          }
+        },
+        {
+          "title": "Spectral signature (labelled)",
+          "x": [
+            "B2",
+            "B3",
+            "B4",
+            "B5",
+            "B6",
+            "B7",
+            "B8",
+            "B8A",
+            "B11",
+            "B12"
+          ],
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature"
+            },
+            "showgrid": true
+          }
+        },
+        {
+          "title": "Spectral signature (labelled subset)",
+          "x": [
+            "Blue",
+            "Green",
+            "Red",
+            "Red Edge 1"
+          ],
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature"
+            },
+            "showgrid": true
+          }
+        }
+      ],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub.  In this visualisation, the red, green and blue bands are used to create a colour composite that presents the data in natural colour, close to how it would be visualised by eye.\n\nThe data is in CRS for British National Grid (EPSG 27700), which is added as a custom CRS.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Multi-spectral Sentinel 2",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Months"
+    },
+    {
+      "id": "bristol-sentinel-2-true-colour-composite-2-2",
+      "name": "East London  - time series, agriculture",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/06/24/S2C_20260624_latn518lone0007_T30UYC_ORB137_20260624132136_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1782255600
+          ],
+          "convertToRGB": true,
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 350,
+              "gMin": 0,
+              "gMax": 470,
+              "bMin": 1,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/05/25/S2C_20260525_latn518lone0007_T30UYC_ORB137_20260525130916_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1779663600
+          ],
+          "convertToRGB": true,
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 350,
+              "gMin": 0,
+              "gMax": 470,
+              "bMin": 1,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/04/27/S2B_20260427_latn518lone0007_T30UYC_ORB094_20260427131545_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1777244400
+          ],
+          "convertToRGB": true,
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 350,
+              "gMin": 0,
+              "gMax": 470,
+              "bMin": 1,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/03/18/S2A_20260318_latn518lone0007_T30UYC_ORB137_20260318162447_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1773792000
+          ],
+          "convertToRGB": true,
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 350,
+              "gMin": 0,
+              "gMax": 470,
+              "bMin": 1,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/02/14/S2C_20260214_latn518lone0007_T30UYC_ORB137_20260214131010_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1771027200
+          ],
+          "convertToRGB": true,
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 350,
+              "gMin": 0,
+              "gMax": 470,
+              "bMin": 1,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/04/S2A_20260104_latn518lone0007_T30UYC_ORB094_20260104143622_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1767484800
+          ],
+          "convertToRGB": true,
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 350,
+              "gMin": 0,
+              "gMax": 470,
+              "bMin": 1,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2025/12/31/S2B_20251231_latn518lone0007_T30UYC_ORB137_20251231132639_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1767139200
+          ],
+          "convertToRGB": true,
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 350,
+              "gMin": 0,
+              "gMax": 470,
+              "bMin": 1,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2025/11/26/S2C_20251126_latn518lone0007_T30UYC_ORB137_20251126131101_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1764115200
+          ],
+          "convertToRGB": true,
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 350,
+              "gMin": 0,
+              "gMax": 470,
+              "bMin": 1,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2025/10/06/S2A_20251006_latn518lone0007_T30UYC_ORB094_20251006143621_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1759705200
+          ],
+          "convertToRGB": true,
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 350,
+              "gMin": 0,
+              "gMax": 470,
+              "bMin": 1,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/08/25/S2A_20260825_latn518lone0007_T30UYC_ORB137_20260825180456_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1787612400
+          ],
+          "convertToRGB": true,
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 350,
+              "gMin": 0,
+              "gMax": 470,
+              "bMin": 1,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/07/29/S2B_20260729_latn518lone0007_T30UYC_ORB137_20260729132336_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1785279600
+          ],
+          "convertToRGB": true,
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 350,
+              "gMin": 0,
+              "gMax": 470,
+              "bMin": 1,
+              "bMax": 100
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          }
+        }
+      ],
+      "charts": [
+        {
+          "title": "Spectral Signature (all)",
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature 1"
+            },
+            "showgrid": true
+          }
+        },
+        {
+          "title": "Spectral signature (labelled)",
+          "x": [
+            "B2",
+            "B3",
+            "B4",
+            "B5",
+            "B6",
+            "B7",
+            "B8",
+            "B8A",
+            "B11",
+            "B12"
+          ],
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature"
+            },
+            "showgrid": true
+          }
+        },
+        {
+          "title": "Spectral signature (labelled subset)",
+          "x": [
+            "Blue",
+            "Green",
+            "Red",
+            "Red Edge 1"
+          ],
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature"
+            },
+            "showgrid": true
+          }
+        }
+      ],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub.  In this visualisation, the short wave infrared, near infrared and blue bands are used to create a colour composite that highlights agriculture, separating out crops from bare soil and water.\n\nThe data is in CRS for British National Grid (EPSG 27700), which is added as a custom CRS.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Multi-spectral Sentinel 2",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Months"
+    }
+  ]
+}
