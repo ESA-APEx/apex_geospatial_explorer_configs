@@ -32,12 +32,28 @@
     ],
     "projection": "EPSG:3857"
   },
-  "workflows": [],
+  "workflows": [
+    {
+      "serviceId": "world_agrocommodities",
+      "serviceProvider": "wur",
+      "serviceTitle": "WorldAgroCommodities (WAC) Processing Pipeline",
+      "meta": {
+        "attribution": {
+          "text": "wur",
+          "url": "https://www.wur.nl/"
+        },
+        "description": "This workflow is an end-to-end openEO pipeline for agricultural feature extraction and model inference using Sentinel-1 and Sentinel-2 data, a suite of preprocessing steps, vegetation indices, and a sliding-window ONNX model. The ML models were trained to classify agriculture activity for specific commodities in Africa, South-America or South-East Asia in the context of ESA's World AgroCommodities project"
+      },
+      "layout": {
+        "layerCard": {}
+      }
+    }
+  ],
   "stories": [
     {
       "id": "overview-of-crop-mapping",
       "title": "Overview of Crop Mapping",
-      "description": "An overview of different tools available to support CAP Monitoring.",
+      "description": "An overview of different tools available to support crop monitoring within Europe.",
       "isActive": false,
       "steps": [
         {
@@ -92,10 +108,10 @@
           }
         },
         {
-          "id": "sen4cap-algorithms",
+          "id": "sen4cap-crop-mapping",
           "content": {
-            "title": "Sen4CAP algorithms",
-            "description": "The ESA Funded [Sen4CAP](https://www.esa-sen4cap.org) (Sentinels for the Common Agricultural Policy) project has produced a set of toolboxes that can be used to provide key information in support of CAP Monitoring.\n\nThis includes determining key spectral indices and biophysical parameters, as well as crop type maps and informaton on agricultural practices.\n\nThe Sen4CAP algorithms are now available to run online through ESA's [APEX algorithm catalogue](https://algorithm-catalogue.apex.esa.int/?q=Sen4CAP).\n\nThis image shows a crop type map produced through Sen4CAP for three years in the area around Prague. You can zoom in or"
+            "title": "Sen4CAP Crop Mapping",
+            "description": "The ESA Funded [Sen4CAP](https://www.esa-sen4cap.org) (Sentinels for the Common Agricultural Policy) project has produced a set of toolboxes that can be used to provide key information in support of CAP Monitoring.\n\nThis includes determining key spectral indices and biophysical parameters, as well as crop type maps and informaton on agricultural practices.\n\nThe Sen4CAP algorithms are now available to run online through ESA's [APEX algorithm catalogue](https://algorithm-catalogue.apex.esa.int/?q=Sen4CAP).\n\nThis image shows a crop type map produced through Sen4CAP for three years in the area around Prague. You can zoom in or use the time controls to change date."
           },
           "viewport": {
             "zoom": 11,
@@ -117,6 +133,32 @@
                 "expanded": true
               }
             },
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "sen4cap-bare-soil-detection",
+          "content": {
+            "title": "Sen4CAP Bare Soil Detection",
+            "description": "The [Sen4CAP](https://www.esa-sen4cap.org) (Sentinels for the Common Agricultural Policy) toolboxes do more than just crop mapping. \n\nThis map shows an example of bare soil detection, using Sentinel-1 and Sentinel-2 data to check for the presence of bare soils on parcels at different dates. This can be an indicator of ploughed fields, harrowing, or post-harvest residue.\n\nAll Sen4CAP algorithms are available to run online through ESA's [APEX algorithm catalogue](https://algorithm-catalogue.apex.esa.int/?q=Sen4CAP)."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              14.152793884277346,
+              49.08915713896701
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "boh1"
+            }
+          ],
+          "baseLayer": "open-streetmap",
+          "panelState": {
+            "focusLayer": "boh1",
             "tab": {
               "id": "overview"
             }
@@ -174,7 +216,7 @@
             "description": "AI models can also be used for other purposes. The ESA [AI for Tillage](https://eo4society.esa.int/projects/ai-based-tillage-detection-for-improved-agricultural-and-climate-policies) project has used such models to detect tillage events. \n\nIt can also determine the type of tillage used: **Conventional tillage**,  known for its intensive soil disturbance, or **Conservation tillage** which maintains permanent or semi-permanent soil coverage, thereby promoting soil health and minimizing erosion. \n\nOn the right we see assessment of tillage for selected parcels in Estonia. Click on a parcel to see the estimated date of each tillage event and whether it was performed using conventional or conservation methods, as well as an assessment of the confidence."
           },
           "viewport": {
-            "zoom": 11,
+            "zoom": 12,
             "center": [
               26.52,
               58.74
@@ -185,7 +227,7 @@
               "id": "ai-detected-tillage-events"
             }
           ],
-          "baseLayer": "sentinel",
+          "baseLayer": "open-streetmap",
           "panelState": {
             "focusLayer": "ai-detected-tillage-events",
             "tab": {
@@ -217,7 +259,7 @@
           "id": "conclusion",
           "content": {
             "title": "Conclusion",
-            "description": "The ESA Stakeholder Requirements Facility helps to build connections between available products and user requirements\n\nFor more information on available tools and services, see the [SEF Food Systems page](https://sef.apex.esa.int/en/key-themes/food-systems).\n\nIf you are a potential user of such services we would like to know more about your needs and the gaps with respect to existing capabilities. Please [contact us](https://sef.apex.esa.int/en/contact-us) to discuss more.\n\nIf you are a data provider who is interested in having yuor products included in this demo, then we would be interested in discussing more."
+            "description": "The [ESA Stakeholder Engagement Facility](www.esa-sef.eu) helps to build connections between available products and user requirements\n\nFor more information on available tools and services, see the [SEF Food Systems page](https://sef.apex.esa.int/en/key-themes/food-systems).\n\nIf you are a potential user of such services we would like to know more about your needs and the gaps with respect to existing capabilities. Please [contact us](https://sef.apex.esa.int/en/contact-us) to discuss more.\n\nIf you are a data provider who is interested in having yuor products included in this demo, then we would be interested in discussing more."
           },
           "viewport": {
             "zoom": 4,
@@ -228,6 +270,172 @@
           },
           "activeLayers": [],
           "baseLayer": "sentinel"
+        }
+      ]
+    },
+    {
+      "id": "applying-sen4cap-in-czechia",
+      "title": "Applying Sen4CAP in Czechia",
+      "description": "Showcasing the applications of the Sen4CAP toolboxes.",
+      "isActive": false,
+      "steps": [
+        {
+          "id": "introduction",
+          "content": {
+            "title": "Introduction",
+            "description": "The ESA Funded [Sen4CAP](https://www.esa-sen4cap.org) (Sentinels for the Common Agricultural Policy) project, running since 2018, aimed to providing European and national stakeholders of the CAP with validated algorithms, products, workflows and best practices relevant for CAP management. \n\nSen4CAP was originally developed as a [downloadable package](https://www.esa-sen4cap.org/download-package-description/) that CAP agencies could take and use themselves.\n\nMore recently the Sen4CAP algorithms have now been successfully \"cloudified\", making them available through key online services, including ESA's [APEX algorithm catalogue](https://algorithm-catalogue.apex.esa.int/?q=Sen4CAP) and [Network of Resources](https://portfolio.nor-discover.org/?textSearch=sen4cap).\n\nThis image shows a crop type map produced through Sen4CAP for three years in the area around Prague. You can zoom in or use the time controls to change date."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              14.346771240234375,
+              50.122339102717135
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "crop-types-2021-2023",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "crop-types-2021-2023",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "crop-type-classification",
+          "content": {
+            "title": "Crop type classification",
+            "description": "The crop type processor builds and runs a crop classification model based on Sentinel-1 and Sentinel-2 data. For each parcel, the two predictions with highest confidence are reported."
+          },
+          "viewport": {
+            "zoom": 14,
+            "center": [
+              14.411830902099611,
+              50.30184071305509
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "crop-types-2021-2023"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "crop-types-2021-2023",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "algorithms-available",
+          "content": {
+            "title": "Algorithms available",
+            "description": "The following Sen4CAP processors are now available as operational services online:\n\n- Spectral Indicators\n- Biophysical Indicators\n- Crop Type Classification\n- Grassland Mowing Detection\n- Agricultural Practices Monitoring\n- Bare Soil Detection\n- Heterogeneity Analysis\n- Change Detection\n- Tillage Detection\n- Winter Cover Crops Detection\n\nThe image on the right shows an example of the bare soil detection algorithm."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              14.15,
+              49.09
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "boh1"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "boh1",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "harvest-detection",
+          "content": {
+            "title": "Harvest detection",
+            "description": "The agricultural practices monitoring focuses on Ecological Focus Area (EFA) practices and also includes the detection of harvest and tillage.\n\nThis images shows an example of the harvest detection agorithm."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              14.15,
+              49.09
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "boh2"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "boh2",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "cap-compliance",
+          "content": {
+            "title": "CAP Compliance",
+            "description": "The Sen4CAP algorithms have several applications for assessing CAP compliance.\n\nThis example (from the ESA-funded [PEOPLE-Ecoschemes](https://esa-people-ecoschemes.info/) project) shows compliance to crop rotation schemes, highlighting in red areas which have neither crop rotation during a 3 year period, nor catch crops between the main planting.\n\nAlthough not 100% reliable such tools can help focus compliance efforts where they are best needed."
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              14.173736572265627,
+              50.222609311890224
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "crop-type-comparison-with-catch-crop-occurrence-detection-2022-2023"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "crop-type-comparison-with-catch-crop-occurrence-detection-2022-2023",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "conclusion",
+          "content": {
+            "title": "Conclusion",
+            "description": "For more information, visit\n\n- The [Sen4CAP](https://www.esa-sen4cap.org) project website.\n\n- The [APEX algorithm catalogue](https://algorithm-catalogue.apex.esa.int/?q=Sen4CAP) \n\n- The [ESA Network of Resources](https://portfolio.nor-discover.org/?textSearch=sen4cap).\n\nIf you need support getting started then please contact the [Stakeholder Engagement Facility](www.esa-sef.eu) team."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              14.15245056152344,
+              50.236445892212885
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "crop-types-2021-2023",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "crop-types-2021-2023",
+            "tab": {
+              "id": "overview"
+            }
+          }
         }
       ]
     },
@@ -3184,6 +3392,234 @@
       "timeframe": "Days"
     },
     {
+      "id": "boh",
+      "name": "Crop Type",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/sen4cap/l4a_2019.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "ok"
+                  ],
+                  true
+                ],
+                "#b5f891",
+                [
+                  "==",
+                  [
+                    "get",
+                    "ok"
+                  ],
+                  false
+                ],
+                "#f5eb7f",
+                "#ffe5e5"
+              ],
+              "stroke-color": "#2e2e2e",
+              "stroke-width": 0.5
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "The Sen4CAP project aims at providing to the European and national stakeholders of the European Common Agricultural Policy (CAP) validated algorithms, products and best practices for agriculture monitoring relevant for the management of the CAP.\nThe crop type processor builds and runs a crop classification model based on Sentinel-1 and Sentinel-2 data. For each parcel, the two predictions with highest confidence are reported.\n",
+        "attribution": {
+          "text": "sen4cap",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/sen4cap_l4a_crop_type"
+        },
+        "categories": [
+          {
+            "color": "#B5F891",
+            "label": "True",
+            "value": 0
+          },
+          {
+            "color": "#F5EB7F",
+            "label": "False",
+            "value": 0
+          },
+          {
+            "color": "#FFE5E5",
+            "label": "Null",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "sen4cap",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "boh1",
+      "name": "Bare Soil",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/sen4cap/bare_soil_2019.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "s1_bare_soil"
+                  ],
+                  true
+                ],
+                "#998d6c",
+                [
+                  "==",
+                  [
+                    "get",
+                    "s2_bare_soil"
+                  ],
+                  true
+                ],
+                "#998d6c",
+                "#b5f891"
+              ],
+              "stroke-color": "#2e2e2e",
+              "stroke-width": 0.5
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "The Sen4CAP project aims at providing to the European and national stakeholders of the European Common Agricultural Policy (CAP) validated algorithms, products and best practices for agriculture monitoring relevant for the management of the CAP.\nThe bare soil processor checks for the presence of bare soils on parcels at different dates, based on Sentinel-1 and Sentinel-2 data.",
+        "attribution": {
+          "text": "sen4cap",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/sen4cap_l4d_bare_soil#preview-information"
+        },
+        "categories": [
+          {
+            "color": "#998D6C",
+            "label": "Bare Soil",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "sen4cap",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "boh2",
+      "name": "Agricultural Practices",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/sen4cap/l4c_2019.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": [
+                "match",
+                [
+                  "get",
+                  "H_W_START"
+                ],
+                "NO-HARVEST",
+                "#f5eb7f",
+                "#b5f891"
+              ],
+              "stroke-color": "#2e2e2e",
+              "stroke-width": 0.5
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "The Sen4CAP project aims at providing to the European and national stakeholders of the European Common Agricultural Policy (CAP) validated algorithms, products and best practices for agriculture monitoring relevant for the management of the CAP.\nThe agricultural practices monitoring focuses on Ecological Focus Area (EFA) practices and also includes the detection of harvest and tillage.",
+        "attribution": {
+          "text": "sen4cap",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/sen4cap_l4c_agricultural_practices"
+        },
+        "categories": [
+          {
+            "color": "#B5F891",
+            "label": "Harvest",
+            "value": 0
+          },
+          {
+            "color": "#F5EB7F",
+            "label": "No Harvest",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "sen4cap",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
       "id": "drought-hazard",
       "name": "Drought Hazard",
       "isActive": false,
@@ -4590,7 +5026,7 @@
     {
       "id": "field-boundaries",
       "name": "Field Boundaries",
-      "isActive": true,
+      "isActive": false,
       "data": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/AL_fields.fgb",
@@ -5020,8 +5456,7 @@
             "blendControls": false
           }
         }
-      },
-      "isBaseLayer": false
+      }
     },
     {
       "id": "total-precipitation",
