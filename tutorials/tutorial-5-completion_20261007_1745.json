@@ -1,0 +1,748 @@
+{
+  "version": "1.0.0",
+  "exportPrefix": "tutorial-5-completion",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "My config"
+    },
+    "theme": {
+      "primary-color": "#1a6131",
+      "secondary-color": "#ddeee2",
+      "tertiary-color": "#404f45",
+      "accent-color": "#8aab18",
+      "text-color-primary": "#ffffff"
+    }
+  },
+  "interfaceGroups": [
+    "Forest Carbon",
+    "Land Cover"
+  ],
+  "exclusivitySets": [
+    "landcover"
+  ],
+  "mapConstraints": {
+    "zoom": 2,
+    "center": [
+      0,
+      20
+    ],
+    "projection": "EPSG:3857"
+  },
+  "workflows": [],
+  "stories": [],
+  "services": [
+    {
+      "id": "wms-service-1790601619959",
+      "name": "MapProxy WMS",
+      "url": "https://mapproxy.terrascope.be/mapproxy/service",
+      "format": "wms"
+    },
+    {
+      "id": "stac-service-1758796621711",
+      "name": "ESA Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1758122891131",
+      "name": "Copernicus NDK 2012",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122986156",
+      "name": "Copernicus N2K 2006",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122835061",
+      "name": "Copernicus N2K 2018",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1749572624524",
+      "name": "Copernicus Urban Atlas",
+      "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1750351088731",
+      "name": "DLR EOC BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "s3-service-1750499655684",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    },
+    {
+      "id": "stac-service-1758815789729",
+      "name": "VITO STAC catalogue",
+      "url": "https://stac.openeo.vito.be/",
+      "format": "stac"
+    },
+    {
+      "id": "catalogue-0",
+      "name": "clms-wmts",
+      "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/config-builder/clms-public-layers.json",
+      "format": "catalogue"
+    }
+  ],
+  "sources": [
+    {
+      "id": "stadia-alidade-smooth-dark",
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Dark",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "id": "open-streetmap",
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Open StreetMap",
+        "attribution": {
+          "text": "Map data (c) OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "id": "sentinel",
+      "name": "Sentinel",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.maps.eox.at/wms",
+          "format": "wms",
+          "zIndex": 23,
+          "layers": "s2cloudless-2025_3857",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Sentinel",
+        "attribution": {
+          "text": "Sentinel-2 Cloudless by EOX",
+          "url": "https://s2maps.eu"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
+    },
+    {
+      "id": "blue-marble",
+      "name": "Blue Marble",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Blue Marble",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png"
+    },
+    {
+      "id": "stadia-alidade-smooth-light",
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Light",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "stadia-alidade-satellite",
+      "name": "Stadia Alidade Satellite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Satellite",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "dem",
+      "name": "DEM",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "cop-dem-glo-90m-cog_dem"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: DEM",
+        "attribution": {
+          "text": "Copernicus"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png"
+    },
+    {
+      "id": "above-ground-biomass",
+      "name": "Above Ground Biomass",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Above-ground biomass (AGB) is the **total dry mass of living vegetation** above the soil, including tree trunks, branches, bark, and leaves. It is commonly used to estimate how much carbon is stored in forests.",
+        "attribution": {
+          "text": "Forest Carbon Monitoring",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "units": "tonnes / ha",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 360,
+            "steps": 50,
+            "name": "viridis",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Forest Carbon",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                -8,
+                50,
+                2,
+                60
+              ]
+            },
+            "download": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
+            "constraintSlider": true,
+            "blendControls": true
+          }
+        }
+      }
+    },
+    {
+      "id": "world-cover",
+      "name": "World Cover 2021",
+      "isActive": false,
+      "exclusivitySets": [
+        "landcover"
+      ],
+      "meta": {
+        "description": "Classification of land cover from Sentinel 2 data for 2021",
+        "attribution": {
+          "text": "ESA world cover",
+          "url": "https://esa-worldcover.org/en"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#FFBB22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#FFFF4C",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#F096FF",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#FF0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#B4B4B4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#F0F0F0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064C8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096A0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00CF75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#FAE6A0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": true
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-map-10m-2021-v2_map",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "id": "world-cover-2020",
+      "name": "World Cover 2020",
+      "isActive": false,
+      "exclusivitySets": [
+        "landcover"
+      ],
+      "meta": {
+        "description": "Classification of land cover from Sentinel 2 data for 2020",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#FFBB22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#FFFF4C",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#F096FF",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#FF0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#B4B4B4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#F0F0F0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064C8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096A0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00CF75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#FAE6A0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-map-10m-2020-v1_map",
+          "parameters": {
+            "version": "1.3.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "copernicus-urban-atlas",
+      "name": "Copernicus Urban Atlas",
+      "isActive": false,
+      "exclusivitySets": [
+        "landcover"
+      ],
+      "meta": {
+        "description": "Auto-generated description for Copernicus Urban Atlas",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Land_Use_Raster1402"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Land_Use_Raster1402",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "id": "below-ground-biomass",
+      "name": "Below Ground Biomass",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2023/01/01/FCM-BGB-100m-2023/FCM_Europe_demo_2023_BGB.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Total below ground biomass\n",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 70,
+            "steps": 50,
+            "name": "viridis",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Forest Carbon",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "temp",
+      "name": "NDVI",
+      "isActive": false,
+      "exclusivitySets": [
+        "landcover"
+      ],
+      "meta": {
+        "description": "Auto-generated description for NDVI",
+        "attribution": {
+          "text": "Data attribution not specified"
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-ndvi-10m-2021-v2_ndvi",
+          "parameters": {
+            "version": "1.3.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "world-cover-austria",
+      "name": "World Cover - Austria",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix-esa_worldcover_2021.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "World Cover data for Austria in COG format",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#FFBB22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#FFFF4C",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#F096FF",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#FF0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#B4B4B4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#F0F0F0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064C8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096A0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00CF75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#FAE6A0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    }
+  ]
+}
