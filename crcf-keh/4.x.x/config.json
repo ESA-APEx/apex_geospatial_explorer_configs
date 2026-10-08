@@ -1,48 +1,3521 @@
 {
   "version": "1.0.0",
-  "exportPrefix": "config",
+  "exportPrefix": "crcf-keh-explorer",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
-      "title": "CRCF KEH - Explorer"
+      "title": "CRCF-KEH Carbon Farming Explorer"
+    },
+    "theme": {
+      "primary-color": "#2f6b43",
+      "secondary-color": "#40702c",
+      "tertiary-color": "#1f5132",
+      "accent-color": "#8fbf6a",
+      "background-color": "#f7faf1"
     }
   },
   "interfaceGroups": [
-    "Interface group 1",
-    "Interface group 2",
-    "Interface group 3"
+    "Carbon Farming",
+    "Farm Practice Monitoring",
+    "Cropland Monitoring",
+    "Reference Layers"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
-    "zoom": 0,
+    "zoom": 4,
     "center": [
-      0,
-      0
+      12,
+      50
     ],
     "projection": "EPSG:3857"
   },
   "workflows": [],
-  "services": [],
+  "services": [
+    {
+      "id": "wms-service-1750351088731",
+      "name": "EOX BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "s3-service-1750499655684",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    },
+    {
+      "id": "stac-service-1772095832200",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    },
+    {
+      "id": "stac-service-1772095833500",
+      "name": "VITO STAC catalogue",
+      "url": "https://stac.openeo.vito.be/",
+      "format": "stac"
+    },
+    {
+      "id": "s3-service-1785326107536",
+      "name": "SEF Bucket",
+      "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/",
+      "format": "cog"
+    },
+    {
+      "id": "wms-service-1785839112500",
+      "name": "Terrascope MapProxy WMS",
+      "url": "https://mapproxy.terrascope.be/mapproxy/service",
+      "format": "wms"
+    }
+  ],
   "sources": [
     {
+      "id": "open-streetmap",
       "name": "Open StreetMap",
       "isActive": true,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
           "format": "xyz",
-          "zIndex": 10
+          "zIndex": 1
         }
       ],
-      "exclusivitySets": [],
       "meta": {
-        "description": "",
+        "description": "Base layer: Open StreetMap",
         "attribution": {
-          "text": "Map data (c) OpenStreetMap",
+          "text": "OpenStreetMap",
           "url": "https://www.openstreetmap.org/copyright"
         },
         "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "id": "sentinel",
+      "name": "Sentinel-2 Cloudless 2025",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.maps.eox.at/wms",
+          "format": "wms",
+          "zIndex": 23,
+          "layers": "s2cloudless-2025_3857",
+          "parameters": {
+            "version": "1.1.1"
+          },
+          "useTimeParameter": false
+        }
+      ],
+      "meta": {
+        "description": "True colour composite of 2025 Sentinel-2 data.",
+        "attribution": {
+          "text": "Copernicus Sentinel-2",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
+    },
+    {
+      "id": "european-soc-2020-22",
+      "name": "European SOC (2020-22)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/worldsoils-soc/2020/03/01/worldsoils-soc-europe_aggr-orgc_00-020_202003-202210/europe_aggr-orgc_00-020_mean_100_202003-202210.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.soc_0-5cm_mean_europe_2020-2022.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/europe_aggr-orgc_00-020_mean_100_202003-202210-esa_worldcover_2021.tif",
+          "format": "cog",
+          "label": "Land Cover Types (from World Cover 2022)",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Tree Cover",
+              "value": 10
+            },
+            {
+              "label": "Shrubland",
+              "value": 20
+            },
+            {
+              "label": "Grassland",
+              "value": 30
+            },
+            {
+              "label": "Cropland",
+              "value": 40
+            },
+            {
+              "label": "Built-up",
+              "value": 50
+            },
+            {
+              "label": "Bare",
+              "value": 60
+            },
+            {
+              "label": "Snow and Ice",
+              "value": 70
+            },
+            {
+              "label": "Permanent water bodies",
+              "value": 80
+            },
+            {
+              "label": "Herbaceous wetland",
+              "value": 90
+            },
+            {
+              "label": "Moss and lichen",
+              "value": 100
+            }
+          ],
+          "bandIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon content in the 0-20 cm top soil expressed in g kg-1 for 100 m resolution pixels (2020-2022) with statistics using NUTS 2024 boundaries.",
+        "attribution": {
+          "text": "World Soils",
+          "url": "https://world-soils.com/"
+        },
+        "categories": [],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1800,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Soil Organic Carbon",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "soc-raster-map-2017",
+      "name": "SOC Raster Map 2017",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2017/01/01/SOC_Map/SOC_Map_2017_EPSG4326_cog.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon (SOC) raster map (2017)",
+        "attribution": {
+          "text": "Eo4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 5,
+            "steps": 50,
+            "name": "copper",
+            "reverse": true
+          }
+        ],
+        "fields": {
+          "relSOC": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Soil Organic Carbon",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "absolute-soc-absoc",
+      "name": "Absolute SOC (Bavaria)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2021/01/09/absSOC/absSOC_2021-01-09.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "absSOC"
+                ],
+                0,
+                "#f7f7f7",
+                4,
+                "#c30404"
+              ]
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Soil Organic Carbon (absSOC). This map shows the spatially continuous absolute SOC content in a 10x10m raster by using a Sentinel-2 time series. As SOC content shows fine-scaled variability, a higher resolution is required than what is available from soil probing, which is a 3-5ha raster. The map is calibrated with in-situ soil probes with an accuracy comparable to the laboratory.",
+        "attribution": {
+          "text": "Eo4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "id": {},
+          "absSOC": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Soil Organic Carbon",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "relative-soc-relsoc",
+      "name": "Relative SOC (Bavaria)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2024/01/09/relSOC/relSOC_2024-01-09.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "style": {
+                "stroke-color": "#f62109",
+                "stroke-width": 2
+              },
+              "filter": [
+                "<=",
+                [
+                  "get",
+                  "relSOC"
+                ],
+                0
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#098cf1",
+                "stroke-width": 2
+              },
+              "else": true
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Relative Soil Organic Carbon (relSOC). This map shows the spatially continuous relative SOC content in a 10x10m raster derived from a Sentinel-2 time series. It shows where SOC is higher or lower within and between fields, without calibration to absolute values.",
+        "attribution": {
+          "text": "Eo4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "id": {},
+          "relSOC": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Soil Organic Carbon",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "stratification-for-soil-probing",
+      "name": "Stratification for Soil Probing (Bavaria)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2024/01/09/zonesSOC/zonesSOC_2024-01-09.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "zonesSOC"
+                ],
+                0,
+                "#ffffff",
+                200,
+                "#850000"
+              ],
+              "stroke-color": "#000000",
+              "stroke-width": 2
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Stratification for Soil Probing (zonesSOC). This map shows the spatially continuous relative SOC content in a 10x10m raster including a zone map with homogeneous soil zones by using a Sentinel-2 time series. It is used to stratify the soil sampling, which is required for several certification standards. zonesSOC data for None.\n\n",
+        "attribution": {
+          "text": "EO4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "id": {},
+          "zonesSOC": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Soil Organic Carbon",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "overall-carbon-binding",
+      "name": "Overall Carbon Binding (Bavaria)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2020/02/01/OCB/OCB_2020-02-01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "OCB"
+                ],
+                0,
+                "#fdfcfc",
+                1,
+                "#990000"
+              ]
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Assessment of overall carbon binding in soil and biomass (OCB). This layer shows how much carbon is bound in biomass to complement information about carbon stored in soils. The algorithm combines S2 time series with physical crop growth modelling driven by meteorological data as well as the SOC content and crop rotation on the field.",
+        "attribution": {
+          "text": "Eo4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "id": {},
+          "OCB": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Soil Organic Carbon",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "above-ground-biomass",
+      "name": "Above Ground Biomass",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2021/01/01/FCM-AGB-100m-2021/FCM_Europe_demo_2021_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2020/01/01/FCM-AGB-100m-2020/FCM_Europe_demo_2020_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2017/01/01/FCM-AGB-100m-2017/FCM_Europe_demo_2017_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1483228800
+          ]
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.FCM_Europe_demo_2023_AGB.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ],
+      "meta": {
+        "description": "Above ground biomass (AGB) in t/ha in 20 m spatial resolution created with the BIOMASAR method using Sentinel-1 and ALOS 2 PALSAR 2 data.",
+        "attribution": {
+          "text": "Forest Carbon Monitoring Service",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 300,
+            "steps": 50,
+            "name": "greens",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Forest Biomass",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Years"
+    },
+    {
+      "id": "below-ground-biomass",
+      "name": "Below Ground Biomass",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2023/01/01/FCM-BGB-100m-2023/FCM_Europe_demo_2023_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2021/01/01/FCM-BGB-100m-2021/FCM_Europe_demo_2021_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2020/01/01/FCM-BGB-100m-2020/FCM_Europe_demo_2020_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2017/01/01/FCM-BGB-100m-2017/FCM_Europe_demo_2017_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1483228800
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Below ground biomass (BGB) in t/ha in 20 m spatial resolution created with the BIOMASAR method using Sentinel-1 and ALOS 2 PALSAR 2 data.",
+        "attribution": {
+          "text": "Forest Carbon Monitoring Service",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 100,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "velocity-green",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Forest Biomass",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Years"
+    },
+    {
+      "id": "growing-stock-volume",
+      "name": "Growing Stock Volume",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2023/01/01/FCM-GSV-100m-2023/FCM_Europe_demo_2023_GSV.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2021/01/01/FCM-GSV-100m-2021/FCM_Europe_demo_2021_GSV.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2020/01/01/FCM-GSV-100m-2020/FCM_Europe_demo_2020_GSV.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-GSV-100m/2017/01/01/FCM-GSV-100m-2017/FCM_Europe_demo_2017_GSV.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1483228800
+          ]
+        }
+      ],
+      "constraints": [],
+      "meta": {
+        "description": "Growing stock volume (V) in m³/ha in 20 m spatial resolution created with the BIOMASAR method using Sentinel-1 and ALOS 2 PALSAR 2 data.",
+        "attribution": {
+          "text": "Forest Carbon Monitoring",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 520,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 520,
+            "steps": 50,
+            "name": "greens",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Forest Biomass",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Years"
+    },
+    {
+      "id": "saddleworth-moor",
+      "name": "Saddleworth Moor (UK) - Water Level Trend",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/Saddleworth/WhatSARPeat/peat-classification/peat_classification.tif",
+          "format": "cog",
+          "label": "Peatland Classification",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Not Peatland",
+              "value": 0
+            },
+            {
+              "label": "Peatland",
+              "value": 1
+            }
+          ],
+          "bandIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Water level trend over the period 2017-24 (in mm/yr).",
+        "attribution": {
+          "text": "WorldPeatland",
+          "url": "https://www.worldpeatland.org"
+        },
+        "categories": [],
+        "units": "mm/yr",
+        "colormaps": [
+          {
+            "min": -40,
+            "max": 40,
+            "steps": 81,
+            "name": "jet",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Peatland Rewetting",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "hatfield",
+      "name": "Hatfield and Thorne Moors (UK) - Water Level Trend",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/HatfieldThorne/HYDRO/water-level-trend/trend_wl_S1S2SMAPL4.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/data/sites/HatfieldThorne/WhatSARPeat/peat-classification/peat_classification.tif",
+          "format": "cog",
+          "label": "Peatland Classification",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Not Peatland",
+              "value": 0
+            },
+            {
+              "label": "Peatland",
+              "value": 1
+            }
+          ],
+          "bandIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Water level trend over the period 2017-24 (in mm/yr).",
+        "attribution": {
+          "text": "WorldPeatland",
+          "url": "https://www.worldpeatland.org"
+        },
+        "categories": [],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80,
+        "colormaps": [
+          {
+            "min": -80,
+            "max": 80,
+            "steps": 81,
+            "name": "jet",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Farming",
+        "subinterfaceGroup": "Peatland Rewetting",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": true,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "catch-crop-planting-detection",
+      "name": "Catch Crop Planting Detection (Bavaria)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2026/03/23/CCD/CCD.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "style": {
+                "stroke-color": "#00f510",
+                "stroke-width": 2
+              },
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[1]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#9a5155",
+                "stroke-width": 2
+              },
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[2]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#fbe137",
+                "stroke-width": 2
+              },
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[3]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#3b82f6",
+                "stroke-width": 2
+              },
+              "else": true
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Detection of catch crop planting (ex-post) (CCD). This layer shows the detection of catch crop planting by using Sentinel-1 and Sentinel-2 time series without any information from the customer other than the field boundaries. Fields visualized in green are verified as fields with catch crops, whereas fields visualized in brown are classified as fields without catch crops. Uncertain fields are coloured in ochre. Additionally, fields where no reliable catch crop detection is possible due to e.g. a lack of sufficient data are marked in grey.",
+        "attribution": {
+          "text": "EO4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "entity_id": {},
+          "name": {},
+          "ext_name": {},
+          "service_id": {},
+          "order_id": {},
+          "field_id": {},
+          "traffic_light": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Farm Practice Monitoring",
+        "subinterfaceGroup": "Catch Crops",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "catch-crop-time-series",
+      "name": "Catch Crop Development Time Series (Bavaria)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-08-01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1659304800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-08-15.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1660514400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-08-29.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1661724000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-09-12.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1662933600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-09-26.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1664143200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-10-10.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1665352800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-10-24.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1666562400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-11-07.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1667775600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-11-21.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1668985200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-12-05.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1669935600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2022-12-19.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1671404400
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2023-01-02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1672614000
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2023/01/16/areaCCDev_timeseries/areaCCDev_2023-01-16.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "areaCCDev"
+                ],
+                0,
+                "#ffffff",
+                1,
+                "#04a201"
+              ]
+            }
+          ],
+          "timestamps": [
+            1673823600
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Monitoring and reporting of catch crop development (live) (areaCCDev). This layer shows LAI and biomass estimation in a 10x10m raster twice a month, making it available as a time series throughout the season.",
+        "attribution": {
+          "text": "EO4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "id": {},
+          "areaCCDev": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Farm Practice Monitoring",
+        "subinterfaceGroup": "Catch Crops",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "catch-crop-2021-2023",
+      "name": "Catch Crop Occurrence 2021-2023 (Czechia)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2021_33UVR/CZ_CropType_2021_CATCH_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609455600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2022_33UVR/CZ_CropType_2022_CATCH_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2023_33UVR/CZ_CropType_2023_CATCH_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672527600
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Catch crop occurrence on arable parcels in Czechia (Sentinel-2 tile 33UVR) for 2021, 2022 and 2023. Green parcels had a catch crop after the main crop, red parcels did not. Use the time control to switch year.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#EC091F",
+            "label": "No Catch Crops",
+            "value": 0
+          },
+          {
+            "color": "#01E451",
+            "label": "Catch Crops",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Farm Practice Monitoring",
+        "subinterfaceGroup": "Catch Crops",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Years"
+    },
+    {
+      "id": "crop-type-comparison-with-catch-crop-occurrence-detection-2022-2023",
+      "name": "Crop Type Change with Catch Crop Detection 2022-2023 (Czechia)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CATCH_CLASS_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Crop type comparison (2022/2023) at the Level-3 combined with catch crop occurrence detection.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#B7F387",
+            "label": "Different crops or same crops with catch crop presence",
+            "value": 0
+          },
+          {
+            "color": "#E57F7C",
+            "label": "Same crops without presence of catch crop",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Farm Practice Monitoring",
+        "subinterfaceGroup": "Catch Crops",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "verification-of-crop-rotation",
+      "name": "Verification of Crop Rotation (Bavaria)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/EO4CarbonFarming_VISTA/2026/03/23/VCR/VCR.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "style": {
+                "stroke-color": "#f74e3b",
+                "stroke-width": 2
+              },
+              "filter": [
+                "!=",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[0]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#03c96d",
+                "stroke-width": 2
+              },
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[2]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#fddf1c",
+                "stroke-width": 2
+              },
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[3]"
+              ]
+            },
+            {
+              "style": {
+                "stroke-color": "#f73bd4",
+                "stroke-width": 2
+              },
+              "else": true
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Verification of crop rotation (ex-post) (VCR). This layer shows the adherence to a crop rotation of row crops by using Sentinel-1 and Sentinel-2 time series. Fields visualized in green have a valid crop rotation, whereas fields visualized in red don´t show the crop rotation indicated by the customer. Fields with a wrong crop type in just one year are visualized in yellow. Additionally, fields where no reliable verification is possible due to e.g. a lack of sufficient data are marked in grey.",
+        "attribution": {
+          "text": "Eo4CF project",
+          "url": "https://business.esa.int/projects/eo4carbonfarming"
+        },
+        "categories": [],
+        "fields": {
+          "entity_id": {},
+          "name": {},
+          "ext_name": {},
+          "service_id": {},
+          "order_id": {},
+          "field_id": {},
+          "traffic_light": {}
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Farm Practice Monitoring",
+        "subinterfaceGroup": "Crop Rotation",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "crop-rotation-analysis-2021-2022-2023",
+      "name": "Crop Rotation Analysis 2021-2023 (Czechia)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2021_2022_2023_33UVR/CZ_CropRotation_2021_2022_2023_CLASS_L3_CLASS_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Crop comparison for 2021, 2022 and 2023 at the Level-3 (most detailed).",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#B7F387",
+            "label": "Different Crops",
+            "value": 0
+          },
+          {
+            "color": "#E57F7C",
+            "label": "Same Crops",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Farm Practice Monitoring",
+        "subinterfaceGroup": "Crop Rotation",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ai-detected-tillage-events",
+      "name": "AI-detected Tillage Events (Estonia)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/tillage_type_detection/2018/04/24/Tillage_events_detection_in_Estonia-aggregate/Conventional_Conservation_tillage_model_detection_results_2018-2022.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "match",
+                [
+                  "get",
+                  "Tillage Type"
+                ],
+                "Conservation",
+                "#2e8b57",
+                "Conventional",
+                "#b22222",
+                "rgba(200, 200, 200, 0)"
+              ],
+              "stroke-color": "#000000",
+              "stroke-width": 0.5
+            }
+          ],
+          "timestamps": [
+            1524528000
+          ]
+        }
+      ],
+      "meta": {
+        "description": "AI-detected Tillage events at selected parcels across Estonia (2018–2022), detected by AI and satellite data. This shows the dates when tillage occurred as well as whether it was done with conventional or conservation methods.",
+        "attribution": {
+          "text": "KappaZeta Ltd – ESA EO4Society Project",
+          "url": "https://www.kappazeta.ee/"
+        },
+        "categories": [
+          {
+            "color": "#2E8B57",
+            "label": "conservation",
+            "value": 0
+          },
+          {
+            "color": "#B22222",
+            "label": "conventional",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Farm Practice Monitoring",
+        "subinterfaceGroup": "Tillage and Bare Soil",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false,
+      "timeframe": "Days"
+    },
+    {
+      "id": "boh1",
+      "name": "Sen4CAP Bare Soil 2019 (Czechia)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/sen4cap/bare_soil_2019.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "s1_bare_soil"
+                  ],
+                  true
+                ],
+                "#998d6c",
+                [
+                  "==",
+                  [
+                    "get",
+                    "s2_bare_soil"
+                  ],
+                  true
+                ],
+                "#998d6c",
+                "#b5f891"
+              ],
+              "stroke-color": "#2e2e2e",
+              "stroke-width": 0.5
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "The Sen4CAP project aims at providing to the European and national stakeholders of the European Common Agricultural Policy (CAP) validated algorithms, products and best practices for agriculture monitoring relevant for the management of the CAP.\nThe bare soil processor checks for the presence of bare soils on parcels at different dates, based on Sentinel-1 and Sentinel-2 data.",
+        "attribution": {
+          "text": "sen4cap",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/sen4cap_l4d_bare_soil#preview-information"
+        },
+        "categories": [
+          {
+            "color": "#998D6C",
+            "label": "Bare Soil",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Farm Practice Monitoring",
+        "subinterfaceGroup": "Tillage and Bare Soil",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "boh2",
+      "name": "Sen4CAP Agricultural Practices 2019 (Czechia)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/sen4cap/l4c_2019.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "match",
+                [
+                  "get",
+                  "H_W_START"
+                ],
+                "NO-HARVEST",
+                "#f5eb7f",
+                "#b5f891"
+              ],
+              "stroke-color": "#2e2e2e",
+              "stroke-width": 0.5
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "The Sen4CAP project aims at providing to the European and national stakeholders of the European Common Agricultural Policy (CAP) validated algorithms, products and best practices for agriculture monitoring relevant for the management of the CAP.\nThe agricultural practices monitoring focuses on Ecological Focus Area (EFA) practices and also includes the detection of harvest and tillage.",
+        "attribution": {
+          "text": "sen4cap",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/sen4cap_l4c_agricultural_practices"
+        },
+        "categories": [
+          {
+            "color": "#B5F891",
+            "label": "Harvest",
+            "value": 0
+          },
+          {
+            "color": "#F5EB7F",
+            "label": "No Harvest",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Farm Practice Monitoring",
+        "subinterfaceGroup": "Tillage and Bare Soil",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "erosion-risk-2023",
+      "name": "Erosion Risk 2023 (Czechia)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ErosionRisk_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Declaration of erosion risk level.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#B7F387",
+            "label": "No Erosion Risk (NEO)",
+            "value": 0
+          },
+          {
+            "color": "#EECA83",
+            "label": "Medium Erosion Risk (MEO)",
+            "value": 1
+          },
+          {
+            "color": "#E57F7C",
+            "label": "High Erosion Risk (SEO)",
+            "value": 2
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Farm Practice Monitoring",
+        "subinterfaceGroup": "Soil Erosion",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "parcel-erosion-status-2023",
+      "name": "Parcel Erosion Status 2023 (Czechia)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_EROSION-CZ_Erosion_2023_33UVR/CZ_Erosion_2023_ParcelErosionStatus_1_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false
+        }
+      ],
+      "meta": {
+        "description": "Occurrence of the not allowed crops at the parcels categorized into medium (MEO) or high (SEO) erosion risk level.",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#B7F387",
+            "label": "Parcels compliant with anti-erosion rules",
+            "value": 0
+          },
+          {
+            "color": "#E57F7C",
+            "label": "Parcels not compliant with anti-erosion rules",
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Farm Practice Monitoring",
+        "subinterfaceGroup": "Soil Erosion",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "world-cover-2021",
+      "name": "ESA WorldCover 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/wmts/LCM_2020/webmercator/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 50
+        }
+      ],
+      "statistics": [],
+      "meta": {
+        "description": "Mapping global land cover at 10m resolution, for the year 2021.",
+        "attribution": {
+          "text": "World Cover Project",
+          "url": "https://esa-worldcover.org/"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#ffbb22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#ffff4c",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#f096ff",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#ff0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#b4b4b4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#f0f0f0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064c8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096a0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00cf75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#fae6a0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "temporary-crops-2021-2",
+      "name": "Active Cropland 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-activecropland-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Global maps of active cropland for 2021, at 10m resolution. ",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "Global Cropland (WorldCereal)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "temporary-crops-2021",
+      "name": "Temporary Crops 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-temporarycrops-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Global maps of temporary crops for 2021, at 10m resolution. This identifies pieces of land that are sowed/planted and harvestable at least once within the 12 months after the sowing/planting date.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "Global Cropland (WorldCereal)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "winter-cereals-2021",
+      "name": "Winter Cereals 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-wintercereals-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Global maps of winter cereals for 2021, at 10m resolution.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "Global Cropland (WorldCereal)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "spring-cereals-2021",
+      "name": "Spring Cereals 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-springcereals-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Global maps of spring cereals for 2021, at 10m resolution.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "Global Cropland (WorldCereal)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "maize-2021",
+      "name": "Maize 2021",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-maize-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Global maps of maize for 2021, at 10m resolution.",
+        "attribution": {
+          "text": "World Cereal",
+          "url": "https://esa-worldcereal.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "Global Cropland (WorldCereal)",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "boh",
+      "name": "Sen4CAP Crop Type 2019",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/sen4cap/l4a_2019.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "ok"
+                  ],
+                  true
+                ],
+                "#b5f891",
+                [
+                  "==",
+                  [
+                    "get",
+                    "ok"
+                  ],
+                  false
+                ],
+                "#f5eb7f",
+                "#ffe5e5"
+              ],
+              "stroke-color": "#2e2e2e",
+              "stroke-width": 0.5
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "The Sen4CAP project aims at providing to the European and national stakeholders of the European Common Agricultural Policy (CAP) validated algorithms, products and best practices for agriculture monitoring relevant for the management of the CAP.\nThe crop type processor builds and runs a crop classification model based on Sentinel-1 and Sentinel-2 data. For each parcel, the two predictions with highest confidence are reported.\n",
+        "attribution": {
+          "text": "sen4cap",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/sen4cap_l4a_crop_type"
+        },
+        "categories": [
+          {
+            "color": "#B5F891",
+            "label": "True",
+            "value": 0
+          },
+          {
+            "color": "#F5EB7F",
+            "label": "False",
+            "value": 0
+          },
+          {
+            "color": "#FFE5E5",
+            "label": "Null",
+            "value": 0
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "European Crop Types",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "crop-types-2021-2023",
+      "name": "Crop Types 2021-2023 (Czechia)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2023/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2023_33UVR/CZ_CropType_2023_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672527600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2022_33UVR/CZ_CropType_2022_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1640991600
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE/2021/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_TYPE-CZ_CropType_2021_33UVR/CZ_CropType_2021_CLASS_L3_33UVR.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609455600
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Level-3 crop type classification for the 2023 growing season. Satellite-derived crop categories mapped at parcel level. Each colour represents a specific crop type (e.g. wheat, barley, maize, legumes).",
+        "attribution": {
+          "text": "ESA People-Eco-schemes",
+          "url": "https://esa-people-ecoschemes.info/"
+        },
+        "categories": [
+          {
+            "color": "#0a226e",
+            "label": "Winter Wheat",
+            "value": 111
+          },
+          {
+            "color": "#1d4aa2",
+            "label": "Winter Barley",
+            "value": 112
+          },
+          {
+            "color": "#2559de",
+            "label": "Winter Rye",
+            "value": 113
+          },
+          {
+            "color": "#2e6cf6",
+            "label": "Winter Tricicale",
+            "value": 114
+          },
+          {
+            "color": "#367efb",
+            "label": "Winter Oats",
+            "value": 115
+          },
+          {
+            "color": "#3f93d3",
+            "label": "Winter Tritordeum",
+            "value": 116
+          },
+          {
+            "color": "#49a3e0",
+            "label": "Winter Rapeseed",
+            "value": 120
+          },
+          {
+            "color": "#7c8bee",
+            "label": "Other Winter Crops",
+            "value": 130
+          },
+          {
+            "color": "#31714e",
+            "label": "Spring Wheat",
+            "value": 211
+          },
+          {
+            "color": "#49a384",
+            "label": "Spring Barley",
+            "value": 212
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Oats",
+            "value": 213
+          },
+          {
+            "color": "#75fbc7",
+            "label": "Spring Rye",
+            "value": 214
+          },
+          {
+            "color": "#99fcde",
+            "label": "Spring Triticale",
+            "value": 215
+          },
+          {
+            "color": "#ccfde7",
+            "label": "Millet",
+            "value": 216
+          },
+          {
+            "color": "#53856f",
+            "label": "Sorghum",
+            "value": 217
+          },
+          {
+            "color": "#a8d5bf",
+            "label": "Buckwheat",
+            "value": 218
+          },
+          {
+            "color": "#7be344",
+            "label": "Poppy",
+            "value": 220
+          },
+          {
+            "color": "#54721f",
+            "label": "Beans, Peas,  Lentil, Hose Peas, Chick Peas",
+            "value": 231
+          },
+          {
+            "color": "#7aa430",
+            "label": "Soybeans, Horse Beans",
+            "value": 232
+          },
+          {
+            "color": "#b1cc72",
+            "label": "Spring Brassicaceae",
+            "value": 240
+          },
+          {
+            "color": "#b7f387",
+            "label": "Other Spring Crops",
+            "value": 250
+          },
+          {
+            "color": "#e6e64b",
+            "label": "Sugarbeet",
+            "value": 310
+          },
+          {
+            "color": "#db9a35",
+            "label": "Maize",
+            "value": 320
+          },
+          {
+            "color": "#eeca83",
+            "label": "Sunflower",
+            "value": 330
+          },
+          {
+            "color": "#f3ae3d",
+            "label": "Potatoes",
+            "value": 340
+          },
+          {
+            "color": "#c7ab6e",
+            "label": "Vegetable",
+            "value": 350
+          },
+          {
+            "color": "#e9a47f",
+            "label": "Other Summar Crops",
+            "value": 360
+          },
+          {
+            "color": "#69110a",
+            "label": "Fodder Crops",
+            "value": 410
+          },
+          {
+            "color": "#ef8481",
+            "label": "Other Multi-annual Crops ",
+            "value": 420
+          },
+          {
+            "color": "#2c0501",
+            "label": "Woody Crops",
+            "value": 430
+          },
+          {
+            "color": "rgba(0,0,0,0)",
+            "label": "Unknown",
+            "value": 500
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "European Crop Types",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Years"
+    },
+    {
+      "id": "crops",
+      "name": "CLMS Crop Types - South Germany",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/clms/CLMS_HRLVLCC_CTY_S2017_R10m_E44N28_03035_V01_R00_BYTE_EPSG4326_COG.tif",
+          "format": "cog",
+          "zIndex": 50
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/clms/CLMS_HRLVLCC_CTY_S2017_R10m_E44N28_03035_V01_R00.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Sample data for specific areas, extracted from the latest available CLMS HRL Cropland. ",
+        "attribution": {
+          "text": "CLMS HRL Cropland",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-croplands"
+        },
+        "categories": [
+          {
+            "color": "#EE6E32",
+            "label": "Wheat",
+            "value": 1
+          },
+          {
+            "color": "#FBA24A",
+            "label": "Barley",
+            "value": 2
+          },
+          {
+            "color": "#FADC14",
+            "label": "Maize",
+            "value": 3
+          },
+          {
+            "color": "#E94301",
+            "label": "Rice",
+            "value": 4
+          },
+          {
+            "color": "#E8A995",
+            "label": "Other Cereals",
+            "value": 5
+          },
+          {
+            "color": "#AEC7E8",
+            "label": "Fresh Vegetables",
+            "value": 6
+          },
+          {
+            "color": "#4897BF",
+            "label": "Dry Pulses",
+            "value": 7
+          },
+          {
+            "color": "#C98C43",
+            "label": "Potatoes",
+            "value": 8
+          },
+          {
+            "color": "#9C5B0C",
+            "label": "Sugar Beet",
+            "value": 9
+          },
+          {
+            "color": "#FF7979",
+            "label": "Sunflower",
+            "value": 10
+          },
+          {
+            "color": "#A86A96",
+            "label": "Soybeans",
+            "value": 11
+          },
+          {
+            "color": "#E377C2",
+            "label": "Rapeseed",
+            "value": 12
+          },
+          {
+            "color": "#F7B6D2",
+            "label": "Flax, cotton and hemp",
+            "value": 13
+          },
+          {
+            "color": "#DBDB8D",
+            "label": "Grapes",
+            "value": 14
+          },
+          {
+            "color": "#C1CE12",
+            "label": "Olives",
+            "value": 15
+          },
+          {
+            "color": "#79A03A",
+            "label": "Fruits",
+            "value": 16
+          },
+          {
+            "color": "#5A7C30",
+            "label": "Nuts",
+            "value": 17
+          },
+          {
+            "color": "#D7D7D7",
+            "label": "Unclassified arable crop",
+            "value": 18
+          },
+          {
+            "color": "#ABABAB",
+            "label": "Unclassified permanent crop",
+            "value": 19
+          }
+        ],
+        "colormaps": []
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "European Crop Types",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "estonia",
+      "name": "CLMS Crop Types - Estonia",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/clms/CLMS_HRLVLCC_CTY_S2017_R10m_E52N40_BYTE_EPSG4326_COG.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Sample data for Estonia, extracted from the latest available CLMS HRL Croplands crop type map at 10 m resolution.",
+        "attribution": {
+          "text": "CLMS HRL Cropland",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-croplands"
+        },
+        "categories": [
+          {
+            "color": "#EE6E32",
+            "label": "Wheat",
+            "value": 2
+          },
+          {
+            "color": "#FBA24A",
+            "label": "Barley",
+            "value": 3
+          },
+          {
+            "color": "#FADC14",
+            "label": "Maize",
+            "value": 4
+          },
+          {
+            "color": "#E94301",
+            "label": "Rice",
+            "value": 5
+          },
+          {
+            "color": "#E8A995",
+            "label": "Other Cereals",
+            "value": 6
+          },
+          {
+            "color": "#AEC7E8",
+            "label": "Fresh Vegetables",
+            "value": 7
+          },
+          {
+            "color": "#4897BF",
+            "label": "Dry Pulses",
+            "value": 8
+          },
+          {
+            "color": "#C98C43",
+            "label": "Potatoes",
+            "value": 9
+          },
+          {
+            "color": "#9C5B0C",
+            "label": "Sugar Beet",
+            "value": 10
+          },
+          {
+            "color": "#FF7979",
+            "label": "Sunflower",
+            "value": 11
+          },
+          {
+            "color": "#A86A96",
+            "label": "Soybeans",
+            "value": 12
+          },
+          {
+            "color": "#E377C2",
+            "label": "Rapeseed",
+            "value": 13
+          },
+          {
+            "color": "#F7B6D2",
+            "label": "Flax, cotton and hemp",
+            "value": 14
+          },
+          {
+            "color": "#DBDB8D",
+            "label": "Grapes",
+            "value": 15
+          },
+          {
+            "color": "#C1CE12",
+            "label": "Olives",
+            "value": 16
+          },
+          {
+            "color": "#79A03A",
+            "label": "Fruits",
+            "value": 17
+          },
+          {
+            "color": "#5A7C30",
+            "label": "Nuts",
+            "value": 18
+          },
+          {
+            "color": "#D7D7D7",
+            "label": "Unclassified arable crop",
+            "value": 19
+          },
+          {
+            "color": "#ABABAB",
+            "label": "Unclassified permanent crop",
+            "value": 20
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "European Crop Types",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "uk-crop-mapping-2022",
+      "name": "UK Crop Mapping (2022)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/GTIF_GMIF_CROPS/2021/10/01/GTIF-GMIF-CROPS-UK-2022/worldcereal_uk_croptype_2022.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Uk crop map 2022, generated using the ESA World Cereal on-demand system.",
+        "attribution": {
+          "text": "GTIF Green Meridian",
+          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/GTIF_GMIF_CROPS"
+        },
+        "categories": [
+          {
+            "color": "#E0FD08",
+            "label": "Wheat",
+            "value": 0
+          },
+          {
+            "color": "#98A470",
+            "label": "Barley",
+            "value": 1
+          },
+          {
+            "color": "#28778A",
+            "label": "Oats",
+            "value": 2
+          },
+          {
+            "color": "#6C7240",
+            "label": "Maize",
+            "value": 3
+          },
+          {
+            "color": "#42C291",
+            "label": "Vegetables",
+            "value": 4
+          },
+          {
+            "color": "#D46C40",
+            "label": "Beet",
+            "value": 5
+          },
+          {
+            "color": "#386B45",
+            "label": "Dry Pulses",
+            "value": 6
+          },
+          {
+            "color": "#F5E96B",
+            "label": "Sunflower",
+            "value": 7
+          },
+          {
+            "color": "#000000",
+            "label": "Soybeans",
+            "value": 8
+          },
+          {
+            "color": "#BFBC73",
+            "label": "Rapeseed",
+            "value": 9
+          },
+          {
+            "color": "#89B734",
+            "label": "Fibre Crops",
+            "value": 10
+          },
+          {
+            "color": "#815551",
+            "label": "Potatoes",
+            "value": 11
+          },
+          {
+            "color": "#28EA1A",
+            "label": "Grass / Fodder Crops",
+            "value": 12
+          },
+          {
+            "color": "#0C45ED",
+            "label": "Other crops",
+            "value": 13
+          },
+          {
+            "color": "#FFFFFF",
+            "label": "No crop",
+            "value": 254
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "European Crop Types",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": false
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": false,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "field-boundaries",
+      "name": "Field Boundaries (Europe)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/AL_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/AM_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/AT_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/AZ_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/BA_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/BE_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/BG_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/BY_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/CH_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/CZ_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/DE_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/DK_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/EE_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/ES_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/FI_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/FR_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/GB_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/GE_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/GR_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/HR_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/HU_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/IE_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/IS_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/IT_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/LT_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/LU_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/LV_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/MD_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/ME_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/MK_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/NL_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/NO_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/PL_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/PT_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/RO_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/RS_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/SE_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/SI_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/SK_fields.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "style": {
+            "stroke-width": 1,
+            "stroke-color": "rgba(255,0,0,1)"
+          },
+          "minZoom": 10
+        }
+      ],
+      "meta": {
+        "description": "This interactive map shows field boundaries across all major European Countries generated using the **Delineate Anything v2** algorithm applied to the 2025 summer season Sentinel-2 Global Mosaics (S2GM), with the WorldCereal 2021 map used as a delineation mask.\n\n To view the field boundaries, zoom in to a local in a country of your choice. The boundaries are displayed on the map when the scalebar in the bottom left displays 5 km or less.\n\n**Please note** that the field boundaries are overlaid on high-resolution satellite imagery from the Stadia Maps service. As a result, some misalignment may be visible, since the boundaries were derived from Sentinel-2 data.\n\n### Further information\nDetails of methodology are available on the [Delineate Anything Project Page](https://lavreniuk.github.io/Delineate-Anything/)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
+        "attribution": {
+          "text": "Delineate Anything"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Cropland Monitoring",
+        "subinterfaceGroup": "Field Boundaries",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "download": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "borders",
+      "name": "Country Borders",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "tm:tm_worldborders",
+          "useTimeParameter": false
+        }
+      ],
+      "meta": {
+        "description": "Country borders for orientation.",
+        "attribution": {
+          "text": "DLR EOC Basemap",
+          "url": "https://geoservice.dlr.de/eoc/basemap/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Reference Layers",
+        "subinterfaceGroup": "Boundaries",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
       }
     }
   ]
