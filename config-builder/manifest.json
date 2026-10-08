@@ -37,7 +37,12 @@
           "name": "Multispectral datasets",
           "description": "Sample multispectral layers for building and testing the styling recipes.",
           "file": "test-configs/config-multispectral-datasets.json"
+        },
+        {
+          "id": "stac-datasets",
+          "name": "STAC datasets",
+          "description": "Sample layers for STAC as data source (not service).",
+          "file": "test-configs/config-stac-datasets.json"
         }
-
  ]
 }
