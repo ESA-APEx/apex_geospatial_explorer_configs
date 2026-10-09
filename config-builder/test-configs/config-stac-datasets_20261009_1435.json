@@ -1,0 +1,1801 @@
+{
+  "version": "1.0.0",
+  "exportPrefix": "config-stac-datasets",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "Geospatial Explorer - Custom Config"
+    }
+  },
+  "interfaceGroups": [
+    "Ecostress Austria LST",
+    "Exostress all",
+    "RAMONA Herbaceous Rangeland Biomass (HRB) Productivity",
+    "CHIME CHILL-Y data from STAC",
+    "EO4Ports",
+    "Tillage",
+    "EODataHub"
+  ],
+  "exclusivitySets": [],
+  "settings": {
+    "layerFetchTimeoutMs": 60000
+  },
+  "mapConstraints": {
+    "zoom": 4,
+    "center": [
+      15,
+      54
+    ],
+    "projection": "EPSG:3857"
+  },
+  "projections": [
+    {
+      "name": "British National Grid",
+      "code": "EPSG:27700",
+      "definition": "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +units=m"
+    }
+  ],
+  "workflows": [],
+  "stories": [],
+  "services": [
+    {
+      "id": "stac-service-1758796621711",
+      "name": "ESA Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    }
+  ],
+  "sources": [
+    {
+      "id": "open-streetmap",
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Open StreetMap",
+        "attribution": {
+          "text": "Map data (c) OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "id": "stadia-alidade-smooth-dark",
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Dark",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "sentinel",
+      "name": "Sentinel",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tiles.maps.eox.at/wms",
+          "format": "wms",
+          "zIndex": 23,
+          "layers": "s2cloudless-2025_3857",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Sentinel",
+        "attribution": {
+          "text": "Sentinel-2 Cloudless by EOX",
+          "url": "https://s2maps.eu"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
+    },
+    {
+      "id": "blue-marble",
+      "name": "Blue Marble",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Blue Marble",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png"
+    },
+    {
+      "id": "stadia-alidade-smooth-light",
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Light",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "stadia-alidade-satellite",
+      "name": "Stadia Alidade Satellite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Satellite",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "dem",
+      "name": "DEM",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "cop-dem-glo-90m-cog_dem"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: DEM",
+        "attribution": {
+          "text": "Copernicus"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png"
+    },
+    {
+      "id": "test",
+      "name": "STAC Tillage simple",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/tillage_type_detection",
+          "format": "stac",
+          "zIndex": 50,
+          "style": [
+            {
+              "stroke-color": "#19f545",
+              "stroke-width": 2,
+              "_name": "Conservation"
+            }
+          ],
+          "minZoom": 9,
+          "maxZoom": 20,
+          "assets": [
+            "data"
+          ],
+          "assetFormats": {
+            "data": "flatgeobuf"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Tillage",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Tillage",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "test-4-2-2-2-2-3",
+      "name": "Morocco, Time Series",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/ramona_hrb/items?limit=10000&bbox=-15.2051%2C25.0657%2C-1.4502%2C36.0136",
+          "format": "stac",
+          "zIndex": 50,
+          "minZoom": 1,
+          "maxZoom": 20,
+          "assets": [
+            "asset"
+          ],
+          "assetFormats": {
+            "asset": "cog"
+          }
+        }
+      ],
+      "charts": [
+        {
+          "chartType": "xy",
+          "x": [
+            "1"
+          ],
+          "traces": [
+            {
+              "name": "Reflectance",
+              "type": "scatter",
+              "mode": "lines"
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true
+          },
+          "sources": [
+            {
+              "type": "pixelTimeSeries"
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for June 2022",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 3500,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "RAMONA Herbaceous Rangeland Biomass (HRB) Productivity",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Months"
+    },
+    {
+      "id": "test-4-2-2-2",
+      "name": "Africa January 2023",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/ramona_hrb/items?datetime=2023-01-01T00:00:00Z/2023-01-31T23:59:59Z&limit=10000",
+          "format": "stac",
+          "zIndex": 50,
+          "minZoom": 8,
+          "maxZoom": 20,
+          "assets": [
+            "asset"
+          ],
+          "assetFormats": {
+            "asset": "cog"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for January 2023",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 3500,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "RAMONA Herbaceous Rangeland Biomass (HRB) Productivity",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "test-4-2-2-2-2",
+      "name": "Africa June 2022",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/ramona_hrb/items?datetime=2022-06-01T00:00:00Z/2022-06-30T23:59:59Z&limit=10000",
+          "format": "stac",
+          "zIndex": 50,
+          "minZoom": 8,
+          "maxZoom": 20,
+          "assets": [
+            "asset"
+          ],
+          "assetFormats": {
+            "asset": "cog"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for June 2022",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 3500,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "RAMONA Herbaceous Rangeland Biomass (HRB) Productivity",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "test-4-2-2-2-2-2",
+      "name": "Swipe test",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/ramona_hrb/items?datetime=2022-06-01T00:00:00Z/2022-06-30T23:59:59Z&limit=10000",
+          "format": "stac",
+          "zIndex": 50,
+          "position": "left",
+          "minZoom": 8,
+          "maxZoom": 20,
+          "assets": [
+            "asset"
+          ],
+          "assetFormats": {
+            "asset": "cog"
+          }
+        },
+        {
+          "url": "https://eoresults.esa.int/stac/collections/ramona_hrb/items?datetime=2023-01-01T00:00:00Z/2023-01-31T23:59:59Z&limit=10000",
+          "format": "stac",
+          "zIndex": 50,
+          "position": "right",
+          "minZoom": 8,
+          "maxZoom": 20,
+          "assets": [
+            "asset"
+          ],
+          "assetFormats": {
+            "asset": "cog"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Swipe test",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 3500,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "RAMONA Herbaceous Rangeland Biomass (HRB) Productivity",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isSwipeLayer": true
+    },
+    {
+      "id": "austria-lst-stac-item",
+      "name": "Austria LST STAC item",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/ECOSTRESS_LST/items/ECOSTRESS_MEAN_LST_2024",
+          "format": "stac",
+          "zIndex": 50,
+          "assets": [
+            "PRODUCT"
+          ],
+          "assetFormats": {
+            "PRODUCT": "cog"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Austria LST STAC item",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 30,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecostress Austria LST",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "test-4",
+      "name": "Austria LST STAC items time series",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/ECOSTRESS_LST/items",
+          "format": "stac",
+          "zIndex": 50,
+          "assets": [
+            "PRODUCT"
+          ],
+          "assetFormats": {
+            "PRODUCT": "cog"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for test",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 30,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecostress Austria LST",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Years"
+    },
+    {
+      "id": "test-4-2",
+      "name": "Austria STAC LST time series with charts",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/ECOSTRESS_LST/items",
+          "format": "stac",
+          "zIndex": 50,
+          "assets": [
+            "PRODUCT"
+          ],
+          "assetFormats": {
+            "PRODUCT": "cog"
+          }
+        }
+      ],
+      "charts": [
+        {
+          "chartType": "xy",
+          "x": [
+            "1"
+          ],
+          "traces": [
+            {
+              "name": "LST",
+              "type": "scatter",
+              "mode": "lines+markers",
+              "showlegend": false
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "xaxis": {
+              "title": {
+                "text": "Date"
+              },
+              "type": "category"
+            },
+            "yaxis": {
+              "title": {
+                "text": "Land Surface Temperature"
+              }
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for test",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 30,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Ecostress Austria LST",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Years"
+    },
+    {
+      "id": "test-6-2",
+      "name": "COG band 2",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/CHIME_rep_dataset/2025/11/23/CHILL-Y_CHIME_RDS_VISTA_32UPC_251123/CHILL-Y_CHIME_RDS_VISTA_32UPC_251123.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            2
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for One COG, band 2",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 20,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CHIME CHILL-Y data from STAC",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "test-6-2-2",
+      "name": "STAC time series, band 2",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/CHIME_rep_dataset/items?limit=1000",
+          "format": "stac",
+          "zIndex": 50,
+          "minZoom": 4,
+          "maxZoom": 20,
+          "assets": [
+            "data"
+          ],
+          "assetFormats": {
+            "data": "cog"
+          },
+          "bands": [
+            2
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for STAC - trying with band 2",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 20,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CHIME CHILL-Y data from STAC",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "land-use-stac",
+      "name": "Land Use STAC",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/EO_LULC_EO4PORTS/items",
+          "format": "stac",
+          "zIndex": 50,
+          "minZoom": 0,
+          "maxZoom": 20,
+          "assets": [
+            "PRODUCT"
+          ],
+          "assetFormats": {
+            "PRODUCT": "cog"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Land Use STAC",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#E60000",
+            "label": "Buildings",
+            "value": 1
+          },
+          {
+            "color": "#006400",
+            "label": "Forest and wooded areas",
+            "value": 2
+          },
+          {
+            "color": "#7A8700",
+            "label": "Shrub vegetation",
+            "value": 3
+          },
+          {
+            "color": "#6FBF4A",
+            "label": "Allotment garden",
+            "value": 4
+          },
+          {
+            "color": "#B6FF05",
+            "label": "Orchard and plantation",
+            "value": 5
+          },
+          {
+            "color": "#FFD300",
+            "label": "Permanent crops",
+            "value": 6
+          },
+          {
+            "color": "#00FF00",
+            "label": "Grass",
+            "value": 7
+          },
+          {
+            "color": "#F2D6A2",
+            "label": "Crops on agricultural land",
+            "value": 8
+          },
+          {
+            "color": "#6B6B6B",
+            "label": "Transport",
+            "value": 9
+          },
+          {
+            "color": "#9B9B9B",
+            "label": "Rocky terrain",
+            "value": 10
+          },
+          {
+            "color": "#FFFF00",
+            "label": "Sandy or gravel terrain",
+            "value": 11
+          },
+          {
+            "color": "#FFFFFF",
+            "label": "Unused land",
+            "value": 12
+          },
+          {
+            "color": "#D9D9D9",
+            "label": "Square",
+            "value": 13
+          },
+          {
+            "color": "#5B3A1E",
+            "label": "Landfill",
+            "value": 14
+          },
+          {
+            "color": "#C4622D",
+            "label": "Excavations and soil heaps",
+            "value": 15
+          },
+          {
+            "color": "#C9A3A3",
+            "label": "Other undeveloped land",
+            "value": 16
+          },
+          {
+            "color": "#800080",
+            "label": "Industrial and storage area",
+            "value": 17
+          },
+          {
+            "color": "#1E90FF",
+            "label": "Water",
+            "value": 18
+          },
+          {
+            "color": "#20B2AA",
+            "label": "Wetlands",
+            "value": 19
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "EO4Ports",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true
+          }
+        }
+      }
+    },
+    {
+      "id": "sentinel-2-test-2",
+      "name": "Sentinel 2 - COG",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/08/23/S2C_20260823_latn519lonw0022_T30UWC_ORB137_20260823130926_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 430,
+              "gMin": 0,
+              "gMax": 360,
+              "bMin": 0,
+              "bMax": 340
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Sentinel 2 COG",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "EODataHub",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "sentinel-2-test-2-2",
+      "name": "Sentinel 2 STAC item",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel2_ard/items/neodc.sentinel_ard.data.sentinel_2.2026.08.23.S2C_20260823_latn519lonw0022_T30UWC_ORB137_20260823130926_utm30n_osgb",
+          "format": "stac",
+          "zIndex": 50,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 430,
+              "gMin": 0,
+              "gMax": 360,
+              "bMin": 0,
+              "bMax": 340
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "assets": [
+            "cog"
+          ],
+          "assetFormats": {
+            "cog": "cog"
+          },
+          "bandLabels": [
+            "B02",
+            "B03",
+            "B04",
+            "B05",
+            "B06",
+            "B07",
+            "B08",
+            "B08a",
+            "B11",
+            "B12"
+          ],
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Sentinel 2 COG",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "EODataHub",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "sentinel-2-test-2-2-2",
+      "name": "Sentinel 2 STAC Query - June 2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search?bbox=-3%2C51.3%2C-1.3%2C52.4&datetime=2026-06-01T00%3A00%3A00Z%2F2026-07-01T00%3A00%3A00Z&limit=100&filter=cloud_cover+%3C+10&filter-lang=cql2-text&collections=sentinel2_ard",
+          "format": "stac",
+          "zIndex": 50,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 20,
+              "rMax": 230,
+              "gMin": 40,
+              "gMax": 210,
+              "bMin": 20,
+              "bMax": 180
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "minZoom": 4,
+          "maxZoom": 20,
+          "assets": [
+            "cog"
+          ],
+          "assetFormats": {
+            "cog": "cog"
+          },
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "convertToRGB": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Sentinel 2 COG",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "EODataHub",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "test-6-2-2-2",
+      "name": "STAC time series, band 2, East Belgium",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/collections/CHIME_rep_dataset/items?limit=1000&bbox=3.5596%2C50.1804%2C6.9653%2C51.4232",
+          "format": "stac",
+          "zIndex": 50,
+          "minZoom": 4,
+          "maxZoom": 20,
+          "assets": [
+            "data"
+          ],
+          "assetFormats": {
+            "data": "cog"
+          },
+          "bands": [
+            2
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for STAC - trying with band 2",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 20,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "CHIME CHILL-Y data from STAC",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "sentinel-2-test-2-2-2-2",
+      "name": "Sentinel 2 STAC Query - June 2026 NDWI",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search?bbox=-3%2C51.3%2C-1.3%2C52.4&datetime=2026-06-01T00%3A00%3A00Z%2F2026-07-01T00%3A00%3A00Z&limit=100&filter=cloud_cover+%3C+10&filter-lang=cql2-text&collections=sentinel2_ard",
+          "format": "stac",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                -0.5,
+                [
+                  166,
+                  97,
+                  26,
+                  1
+                ],
+                -0.25,
+                [
+                  223,
+                  194,
+                  125,
+                  1
+                ],
+                0,
+                [
+                  245,
+                  245,
+                  245,
+                  1
+                ],
+                0.15,
+                [
+                  171,
+                  217,
+                  233,
+                  1
+                ],
+                0.3,
+                [
+                  67,
+                  147,
+                  195,
+                  1
+                ],
+                0.5,
+                [
+                  33,
+                  102,
+                  172,
+                  1
+                ]
+              ]
+            ]
+          },
+          "minZoom": 4,
+          "maxZoom": 20,
+          "assets": [
+            "cog"
+          ],
+          "assetFormats": {
+            "cog": "cog"
+          },
+          "spectralIndex": {
+            "recipe": "ndwi",
+            "bandA": 2,
+            "bandB": 7,
+            "colormap": "rdbu",
+            "reverse": true,
+            "min": -0.5,
+            "max": 0.5,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": -0.5,
+                "color": "#A6611A",
+                "label": "Dry land"
+              },
+              {
+                "value": -0.25,
+                "color": "#DFC27D",
+                "label": "Land"
+              },
+              {
+                "value": 0,
+                "color": "#F5F5F5",
+                "label": "Land / water transition"
+              },
+              {
+                "value": 0.15,
+                "color": "#ABD9E9",
+                "label": "Likely water"
+              },
+              {
+                "value": 0.3,
+                "color": "#4393C3",
+                "label": "Water"
+              },
+              {
+                "value": 0.5,
+                "color": "#2166AC",
+                "label": "Strong water response"
+              }
+            ]
+          },
+          "bands": [
+            2,
+            7
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Sentinel 2 COG",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "EODataHub",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "lst-stac-collection-time-series-cornwall-december-2025",
+      "name": "LST STAC collection time series, Cornwall, December 2025",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/search?limit=1000&bbox=-5.7939%2C49.9892%2C-4.9425%2C50.3043&collections=ecostress_lst&datetime=2025-12-01T10%3A53%3A00.000Z%2F2025-12-31T10%3A53%3A00.000Z",
+          "format": "stac",
+          "zIndex": 50,
+          "minZoom": 1,
+          "maxZoom": 20,
+          "assets": [
+            "data"
+          ],
+          "assetFormats": {
+            "data": "cog"
+          },
+          "bandLabels": [
+            "LST",
+            "Emis2",
+            "Emis4",
+            "Emis5",
+            "BBE",
+            "qa",
+            "land_fraction",
+            "cloud_mask"
+          ],
+          "asset": "data"
+        }
+      ],
+      "meta": {
+        "description": "Time series of Ecostress scenes for AOI in Cornwall\n",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "kelvin",
+        "colormaps": [
+          {
+            "min": 250,
+            "max": 330,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Exostress all",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days",
+      "isBaseLayer": false
+    },
+    {
+      "id": "lst-stac-collection-time-series-december-2025-everywhere",
+      "name": "LST STAC collection time series, December 2025, everywhere",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/stac/search?limit=10000&collections=ecostress_lst&datetime=2025-12-01T10%3A53%3A00.000Z%2F2025-12-31T10%3A53%3A00.000Z",
+          "format": "stac",
+          "zIndex": 50,
+          "minZoom": 0,
+          "maxZoom": 20,
+          "assets": [
+            "data"
+          ],
+          "assetFormats": {
+            "data": "cog"
+          },
+          "bandLabels": [
+            "LST",
+            "Emis2",
+            "Emis4",
+            "Emis5",
+            "BBE",
+            "qa",
+            "land_fraction",
+            "cloud_mask"
+          ],
+          "asset": "data"
+        }
+      ],
+      "meta": {
+        "description": "Time series for all Ecostress LST scenes in December 2025.  Interesting demonstration of the impact of the ISS orbit on data capture dates.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "kelvin",
+        "colormaps": [
+          {
+            "min": 250,
+            "max": 330,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Exostress all",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days",
+      "isBaseLayer": false
+    }
+  ]
+}
