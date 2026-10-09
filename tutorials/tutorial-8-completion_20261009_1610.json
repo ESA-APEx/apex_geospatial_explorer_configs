@@ -1,0 +1,1166 @@
+{
+  "version": "1.0.0",
+  "exportPrefix": "tutorial-8-completion",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "My config"
+    },
+    "theme": {
+      "primary-color": "#1a6131",
+      "secondary-color": "#ddeee2",
+      "tertiary-color": "#404f45",
+      "accent-color": "#8aab18",
+      "text-color-primary": "#ffffff"
+    }
+  },
+  "interfaceGroups": [
+    "Forest Carbon",
+    "Land Cover",
+    "Soils",
+    "Energy"
+  ],
+  "exclusivitySets": [
+    "landcover"
+  ],
+  "mapConstraints": {
+    "zoom": 2,
+    "center": [
+      0,
+      20
+    ],
+    "projection": "EPSG:3857"
+  },
+  "workflows": [],
+  "stories": [],
+  "services": [
+    {
+      "id": "wms-service-1790601619959",
+      "name": "MapProxy WMS",
+      "url": "https://mapproxy.terrascope.be/mapproxy/service",
+      "format": "wms"
+    },
+    {
+      "id": "stac-service-1758796621711",
+      "name": "ESA Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1758122891131",
+      "name": "Copernicus NDK 2012",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122986156",
+      "name": "Copernicus N2K 2006",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122835061",
+      "name": "Copernicus N2K 2018",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1749572624524",
+      "name": "Copernicus Urban Atlas",
+      "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1750351088731",
+      "name": "DLR EOC BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "s3-service-1750499655684",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    },
+    {
+      "id": "stac-service-1758815789729",
+      "name": "VITO STAC catalogue",
+      "url": "https://stac.openeo.vito.be/",
+      "format": "stac"
+    },
+    {
+      "id": "catalogue-0",
+      "name": "clms-wmts",
+      "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/config-builder/clms-public-layers.json",
+      "format": "catalogue"
+    }
+  ],
+  "sources": [
+    {
+      "id": "stadia-alidade-smooth-dark",
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Dark",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "id": "open-streetmap",
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Open StreetMap",
+        "attribution": {
+          "text": "Map data (c) OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "id": "sentinel",
+      "name": "Sentinel",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.maps.eox.at/wms",
+          "format": "wms",
+          "zIndex": 23,
+          "layers": "s2cloudless-2025_3857",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Sentinel",
+        "attribution": {
+          "text": "Sentinel-2 Cloudless by EOX",
+          "url": "https://s2maps.eu"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
+    },
+    {
+      "id": "blue-marble",
+      "name": "Blue Marble",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Blue Marble",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png"
+    },
+    {
+      "id": "stadia-alidade-smooth-light",
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Light",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "stadia-alidade-satellite",
+      "name": "Stadia Alidade Satellite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Satellite",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "dem",
+      "name": "DEM",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "cop-dem-glo-90m-cog_dem"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: DEM",
+        "attribution": {
+          "text": "Copernicus"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png"
+    },
+    {
+      "id": "above-ground-biomass",
+      "name": "Above Ground Biomass, with 2021 statistics",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-AGB-100m/2021/01/01/FCM-AGB-100m-2021/FCM_Europe_demo_2021_AGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Above-ground biomass (AGB) is the **total dry mass of living vegetation** above the soil, including tree trunks, branches, bark, and leaves. It is commonly used to estimate how much carbon is stored in forests.",
+        "attribution": {
+          "text": "Forest Carbon Monitoring",
+          "url": "https://www.forestcarbonplatform.org/"
+        },
+        "categories": [],
+        "units": "tonnes / ha",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 360,
+            "steps": 50,
+            "name": "viridis",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Forest Carbon",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                -8,
+                50,
+                2,
+                60
+              ]
+            },
+            "download": "https://eoresults.esa.int/d/FCM-AGB-100m/2023/01/01/FCM-AGB-100m-2023/FCM_Europe_demo_2023_AGB.tif",
+            "temporalControls": true,
+            "constraintSlider": true,
+            "blendControls": true
+          }
+        }
+      },
+      "timeframe": "Years",
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.FCM_Europe_demo_2021_AGB.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.FCM_Europe_demo_2021_AGB.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.FCM_Europe_demo_2021_AGB.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/NUTS/stats.FCM_Europe_demo_2021_AGB.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ]
+    },
+    {
+      "id": "world-cover",
+      "name": "World Cover 2021 with statistics",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-map-10m-2021-v2_map",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "A 10 meter resolution global land cover product for the year 2021, developed and validated in near-real time based on Sentinel-1 and Sentinel-2 data.  Data is provided with statistics for NUTS (Nomenclature of territorial units for statistics) boundaries.  Select the \"statistics\" tab and click on a feature to view.",
+        "attribution": {
+          "text": "ESA world cover",
+          "url": "https://esa-worldcover.org/en"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#FFBB22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#FFFF4C",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#F096FF",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#FF0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#B4B4B4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#F0F0F0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064C8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096A0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00CF75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#FAE6A0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": true
+          }
+        }
+      },
+      "exclusivitySets": [
+        "landcover"
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level01.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 1
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level02.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 2
+        },
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level03.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 3
+        }
+      ]
+    },
+    {
+      "id": "world-cover-2020",
+      "name": "World Cover 2020",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-map-10m-2020-v1_map",
+          "parameters": {
+            "version": "1.3.0"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Classification of land cover from Sentinel 2 data for 2020",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#FFBB22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#FFFF4C",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#F096FF",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#FF0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#B4B4B4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#F0F0F0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064C8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096A0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00CF75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#FAE6A0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "landcover"
+      ]
+    },
+    {
+      "id": "world-cover-austria",
+      "name": "World Cover - Austria",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix-esa_worldcover_2021.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "World Cover data for Austria in COG format",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#006400",
+            "label": "Tree cover",
+            "value": 10
+          },
+          {
+            "color": "#FFBB22",
+            "label": "Shrubland",
+            "value": 20
+          },
+          {
+            "color": "#FFFF4C",
+            "label": "Grassland",
+            "value": 30
+          },
+          {
+            "color": "#F096FF",
+            "label": "Cropland",
+            "value": 40
+          },
+          {
+            "color": "#FF0000",
+            "label": "Built-up",
+            "value": 50
+          },
+          {
+            "color": "#B4B4B4",
+            "label": "Bare",
+            "value": 60
+          },
+          {
+            "color": "#F0F0F0",
+            "label": "Snow and ice",
+            "value": 70
+          },
+          {
+            "color": "#0064C8",
+            "label": "Permanent water bodies",
+            "value": 80
+          },
+          {
+            "color": "#0096A0",
+            "label": "Herbaceous wetland",
+            "value": 90
+          },
+          {
+            "color": "#00CF75",
+            "label": "Mangroves",
+            "value": 95
+          },
+          {
+            "color": "#FAE6A0",
+            "label": "Moss and lichen",
+            "value": 100
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "copernicus-urban-atlas",
+      "name": "Copernicus Urban Atlas",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "Land_Use_Raster1402",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Copernicus Urban Atlas",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Land_Use_Raster1402"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "landcover"
+      ]
+    },
+    {
+      "id": "below-ground-biomass",
+      "name": "Below Ground Biomass",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2023/01/01/FCM-BGB-100m-2023/FCM_Europe_demo_2023_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1672531200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2021/01/01/FCM-BGB-100m-2021/FCM_Europe_demo_2021_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1609459200
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2020/01/01/FCM-BGB-100m-2020/FCM_Europe_demo_2020_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1577836800
+          ]
+        },
+        {
+          "url": "https://eoresults.esa.int/d/FCM-BGB-100m/2017/01/01/FCM-BGB-100m-2017/FCM_Europe_demo_2017_BGB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1483228800
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Total below ground biomass\n",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 70,
+            "steps": 50,
+            "name": "viridis",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Forest Carbon",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Years"
+    },
+    {
+      "id": "temp",
+      "name": "NDVI",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-ndvi-10m-2021-v2_ndvi",
+          "parameters": {
+            "version": "1.3.0"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Normalised Difference Vegetation Index for 2021, produced by World Cover team",
+        "attribution": {
+          "text": "ESA World Cover",
+          "url": "https://esa-worldcover.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "landcover"
+      ]
+    },
+    {
+      "id": "clms-soil-water-index",
+      "name": "Soil Water Index Daily Time Series",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://land.copernicus.eu/cdse/swi_europe_1km_daily_v2/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "SWI010",
+          "version": "1.0.0",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Soil Water Index from the Copernicus Land Monitoring Service",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Soils",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "ndvi-time-series-2",
+      "name": "NDVI Time Series",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-ndvi-10m-2020-v1_ndvi",
+          "timestamps": [
+            1577836800
+          ],
+          "parameters": {
+            "version": "1.3.0"
+          }
+        },
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-ndvi-10m-2021-v2_ndvi",
+          "timestamps": [
+            1609459200
+          ],
+          "parameters": {
+            "version": "1.3.0"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Normalised Difference Vegetation Index for 2021, produced by World Cover team",
+        "attribution": {
+          "text": "ESA World Cover",
+          "url": "https://esa-worldcover.org/en"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Years"
+    },
+    {
+      "id": "austria-wind-power-density-at-100m",
+      "name": "Austria Wind Power Density at 100m",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix.tif",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "constraints": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/constraints/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix-esa_worldcover_2021.tif",
+          "format": "cog",
+          "label": "Land Cover (from World Cover)",
+          "type": "categorical",
+          "interactive": true,
+          "constrainTo": [
+            {
+              "label": "Tree cover",
+              "value": 10
+            },
+            {
+              "label": "Grassland",
+              "value": 30
+            },
+            {
+              "label": "Cropland",
+              "value": 40
+            },
+            {
+              "label": "Build-up",
+              "value": 50
+            },
+            {
+              "label": "Bare",
+              "value": 60
+            },
+            {
+              "label": "Snow and ice",
+              "value": 70
+            },
+            {
+              "label": "Permanent water bodies",
+              "value": 80
+            },
+            {
+              "label": "Herbaceous wetland",
+              "value": 90
+            },
+            {
+              "label": "Moss and lichen",
+              "value": 100
+            }
+          ],
+          "bandIndex": 2
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_DSM_COG_10m_3857_fix.tif",
+          "format": "cog",
+          "label": "Elevation",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 4000,
+          "units": "meters",
+          "bandIndex": 3
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_10m_DSM_COG_Slope_3857_fix.tif",
+          "format": "cog",
+          "label": "Slope",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 65,
+          "units": "degrees",
+          "bandIndex": 4
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/RuggednessIndex_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "Ruggedness index",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 1,
+          "units": "index values",
+          "bandIndex": 5
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/PowerLineHigh_EucDist_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "DIstance to High Power Line",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 30000,
+          "units": "metres",
+          "bandIndex": 6
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/WSF_EucDist_Austria_3857_COG_fix.tif",
+          "format": "cog",
+          "label": "Distance to settlement (WSF)",
+          "type": "continuous",
+          "interactive": true,
+          "min": 0,
+          "max": 5500,
+          "units": "metres",
+          "bandIndex": 7
+        },
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/Copernicus_DSM_COG_10m_3857_fix.tif",
+          "format": "cog",
+          "label": "Altitudinal zones",
+          "type": "combined",
+          "interactive": true,
+          "units": "metres",
+          "constrainTo": [
+            {
+              "label": "0 to 1000",
+              "min": 0,
+              "max": 1000
+            },
+            {
+              "label": "1001 to 2000",
+              "min": 1001,
+              "max": 2000
+            },
+            {
+              "label": "2001 to 3000",
+              "min": 2001,
+              "max": 3000
+            },
+            {
+              "label": "> 3000",
+              "min": 3001,
+              "max": 4000
+            }
+          ],
+          "bandIndex": 8
+        }
+      ],
+      "meta": {
+        "description": "The wind power density (w m 2) is a measure of the available wind\nresource at 100 metres height. Higher wind power density indicates\ngreater wind power potential. Constraints allow the data to be filtered\nby multiple criteria.",
+        "attribution": {
+          "text": "ESA GTIF",
+          "url": "https://gtif.esa.int/"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 2000,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Energy",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "constraintSlider": true
+          }
+        }
+      }
+    },
+    {
+      "id": "temp-2",
+      "name": "Temp",
+      "isActive": false,
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": ""
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Land Cover",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100
+        }
+      ],
+      "statistics": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/HI-RES-NUTS/stats.esa_worldcover_2021.nuts_2024.epsg4326.level00.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 100,
+          "level": 0
+        }
+      ]
+    }
+  ]
+}
