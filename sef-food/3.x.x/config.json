@@ -35,6 +35,490 @@
   "workflows": [],
   "stories": [
     {
+      "id": "lca-food",
+      "title": "EO for Life Cycle Assessment",
+      "description": "Showcasing the different ways that satellite data can support life cycle assessment.",
+      "isActive": false,
+      "steps": [
+        {
+          "id": "introduction",
+          "content": {
+            "title": "Introduction",
+            "description": "Earth Observation (EO) is the collection of information about the planet’s surface, atmosphere and oceans from a distance, mostly by satellites. \n\nProgrammes such as the EU’s Copernicus (Sentinel satellites) provide frequent, freely available imagery across optical, thermal and radar wavelengths. This makes it possible to track land use, vegetation health, soil moisture, water bodies and weather patterns consistently over large areas and long periods.\n\nIn food life cycle assessment, EO can replace generic averages with location-specific data. It can map crops and yields, detect deforestation and land-use change, monitor regenerative farming practices and even detect emissions associated with food production. Combined with field data, this makes food footprints more accurate and easier to verify.\n\nThis images shows the NDVI index computed from Sentinel-2, for an agricultural area just south of Montreal."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              -73.1243,
+              45.239
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "nir-vs-ndvi-3"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "land-cover-classification",
+          "content": {
+            "title": "Land Cover Classification",
+            "description": "Types of land cover can be accurately classed over huge regions, and can be used as a baseline for analysing agricultural land use and land-use change.\n\nThis image shows a map of land cover across North America from the ESA [WorldCover](https://esa-worldcover.org/) project.\n\nIt sorts land into 11 classes, including cropland, grassland, tree cover and built-up areas.\n\nThe key crop-growing areas can be clearly seen in purple."
+          },
+          "viewport": {
+            "zoom": 4,
+            "center": [
+              -90.43945312500001,
+              45.583289756006316
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "world-cover-2021",
+              "opacity": 0.85
+            }
+          ],
+          "panelState": {
+            "focusLayer": "world-cover-2021"
+          },
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "crop-type-mapping",
+          "content": {
+            "title": "Crop Type Mapping",
+            "description": "By looking at satellite images, but also at how they change over time, we can make an assessment of which crops are present.\n\nThis images shows a crop map in England using tools developed by the ESA-funded [WorldCereal](https://esa-worldcereal.org/en) project.\n\nThis has released the first global, seasonally updated crop type maps at 10 m resolution, built from Sentinel-1 and Sentinel-2 data. Its freely available 2021 maps cover temporary cropland, maize, winter and spring cereals, and irrigation.\n\nAn [open-source processing system](https://algorithm-catalogue.apex.esa.int/apps/worldcereal_crop_type) lets users generate updated or custom crop maps for their own regions."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              0.780029296875,
+              52.65972593335806
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "uk-crop-mapping-2022"
+            }
+          ],
+          "panelState": {
+            "focusLayer": "witer-spring-cereals"
+          },
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "tools-supporting-the-eu-common-agricultural-policy",
+          "content": {
+            "title": "Tools Supporting the EU Common Agricultural Policy",
+            "description": "This images shows another tool for crop mapping, in this case from the ESA-funded [Sen4CAP](https://www.esa-sen4cap.org/) project.\n\nThis project is specifically aimed at using Sentinel-1 and Sentinel-2 data to support monitoring under the EU’s Common Agricultural Policy. It delivers an open-source system that national paying agencies can use for parcel-level products.\n\nAs well as crop type maps is also includes services such as grassland mowing detection, vegetation status indicators and checks on agricultural practices.\n\nThe Sen4CAP products are available to run through ESA's [APEx platform](https://algorithm-catalogue.apex.esa.int/?q=Sen4CAP)."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              14.12,
+              50.26
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "crop-types-2021-2023",
+              "date": "latest"
+            }
+          ],
+          "panelState": {
+            "focusLayer": "crop-types-2021-2023"
+          },
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "assessing-agricultural-practices",
+          "content": {
+            "title": "Assessing Agricultural Practices",
+            "description": "Regenerative agriculture covers practices such as crop rotation, cover cropping, reduced or no tillage and residue retention, which aim to improve soil health, build soil carbon and reduce reliance on synthetic inputs. In food life cycle assessment these practices can change a product’s footprint through soil carbon gains, lower fertiliser and pesticide use, and shifts in yield. Companies increasingly make regenerative claims that LCA must quantify and verify, but farm-level evidence of what was actually done is often missing.\n\nEarth observation can provide that evidence at scale. Multi-year crop type maps reveal rotation sequences on each field, vegetation signals outside the main growing season show whether cover crops were grown, and optical residue indices and Sentinel-1 radar can indicate tillage intensity and residue cover. \n\nThis map (from the ESA-Funded [EO4CarbonFarming](https://business.esa.int/projects/eo4carbonfarming) project) shows an assessment, using Sentinel data, of whether crop rotation has been performed according to local rules for individual fields."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              13.218269348144533,
+              48.54752375797609
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "verification-of-crop-rotation"
+            }
+          ],
+          "panelState": {
+            "focusLayer": "verification-of-crop-rotation"
+          },
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "tools-supporting-the-eu-deforestation-regulation",
+          "content": {
+            "title": "Tools Supporting the EU Deforestation Regulation",
+            "description": "The [EU Deforestation Regulation (EUDR)](https://environment.ec.europa.eu/topics/forests/deforestation/regulation-deforestation-free-products_en) requires companies placing commodities such as cattle, cocoa, coffee, palm oil, soy, rubber and wood on the EU market to prove they were not produced on land deforested after 31 December 2020, backed by plot-level geolocation data. \n\nThis matters for food life cycle assessment because land-use change from deforestation is often the largest single source of product emissions, and theplot-level, satellite-verified data can assess these impacts more accurately than the regional averages LCA usually relies on.\n\nThe ESA-funded [WorldAgroCommodities](https://agrocommodities.info/) project has developed a monitoring system based on Copernicus data to help EU Member State verify that imported commodities come from deforestation-free areas. This tool is [freely available online](https://algorithm-catalogue.apex.esa.int/apps/world_agrocommodities).\n\nThis image shows an example in Sumatra, showing the probabilities of undisturbed forest (in green) and coffee growing (in red); the darker the colour the more confident the assessment."
+          },
+          "viewport": {
+            "fitLayer": "wac-sumatra"
+          },
+          "activeLayers": [
+            {
+              "id": "wac-sumatra"
+            },
+            {
+              "id": "wac-sumatra-2"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "tools-supporting-the-eu-deforestation-regulation",
+          "content": {
+            "title": "Tools Supporting the EU Deforestation Regulation",
+            "description": "The WorldAgroCommodiies model has been developed to apply across a wide range of tropical areas in South America, Africa and SE Asia.\n\nThis image shows an example in Brazil, showing the probabilities of undisturbed forest (in green), pasture (in blue) and soy (in red); the darker the colour the more confident the assessment.\n\nLooking at the time series of such products can allow us to assess areas which have been subject to deforestation."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              -65.97942352294923,
+              -9.55
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "wac-png-2-2"
+            },
+            {
+              "id": "wac-png-2"
+            },
+            {
+              "id": "wac-png"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "soil-organic-carbon",
+          "content": {
+            "title": "Soil Organic Carbon",
+            "description": "Earth Observation data can give us more than just land cover and crop maps.\n\nSoil organic carbon (SOC) is the largest terrestrial carbon store, and farming practices such as tillage, cover cropping, residue management and land conversion can either build it up or release it as CO₂. Food life cycle assessments often leave out SOC changes or rely on generic default factors because measured data is scarce. \n\nSpatially explicit SOC estimates can therefore improve how LCA accounts for both the carbon losses from poor practices and the sequestration claimed by regenerative agriculture.\n\n[WorldSoils](https://world-soils.com/) is an ESA-funded project developing a global, EO-based Soil Monitoring System that estimates soil organic carbon every year at 100 m resolution globally and 50 m over Europe. It is built on Sentinel-2 time series combined with soil spectral libraries and digital soil mapping techniques."
+          },
+          "viewport": {
+            "zoom": 5,
+            "center": [
+              11.162109375,
+              50.233151832472245
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "european-soc-2020-22"
+            }
+          ],
+          "panelState": {
+            "focusLayer": "european-soc-2020-22"
+          },
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "field-level-soil-carbon",
+          "content": {
+            "title": "Field-level Soil Carbon",
+            "description": "As well as wide-area soil monitoring, several companies are developing tools for monitoring soil organic carbon at a field scale.\n\nThis images shows an example of such a product from the ESA-Funded [EO4CarbonFarming](https://business.esa.int/projects/eo4carbonfarming) project, for a small area in the south of Germany.\n\n[Carbon Farming](https://en.wikipedia.org/wiki/Carbon_farming) is a set of agricultural practices that aim to increase the retention of carbon in biomass and soil. Within Europe the new [CRCF regulation](https://climate.ec.europa.eu/areas-action/carbon-removals-and-carbon-farming/carbon-removals-and-carbon-farming-crcf-regulation_en) is expected to lead to an increased use of carbon farming practices."
+          },
+          "viewport": {
+            "zoom": 14,
+            "center": [
+              16.42,
+              48.525
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "soc-raster-map-2017"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "agricultural-emissions",
+          "content": {
+            "title": "Agricultural Emissions",
+            "description": "Agriculture is a major source of atmospheric emissions. Livestock and rice paddies release methane, and fertiliser and manure release ammonia that contributes to air pollution and nitrogen deposition. Food life cycle assessments usually estimate these emissions with generic, bottom-up emission factors that carry large uncertainties. Satellite-based, top-down estimates offer an independent way to check those factors and refine the emission figures that drive the climate, acidification and eutrophication results of food LCAs.\n\n[World Emission](https://www.world-emission.com/) is an ESA-funded project that develops satellite-based, top-down emission estimates and compares them with bottom-up inventories to help verify national emission reporting. \n\nThis map shows an assessment of NOX emissions in Italy's Po valley, a major agricultural region."
+          },
+          "viewport": {
+            "zoom": 8,
+            "center": [
+              10.612792968750002,
+              45.123928816163286
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "nox"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "drought-monitoring",
+          "content": {
+            "title": "Drought Monitoring",
+            "description": "Drought and climate variability cause large swings in crop yields, especially in rainfed smallholder systems such as those in East Africa. Because food life cycle assessment expresses impacts per kilogram of product, these yield swings directly change a crop’s footprint, and irrigation and evapotranspiration data determine its water use. \n\nYet LCA databases rarely cover smallholder farming in the Global South and seldom reflect year-to-year variation. EO-based crop condition, irrigation and evapotranspiration data can help fill that gap with spatially and temporally explicit inputs.\n\n[ADM-Kenya](https://www.admkenya.eu/) co-develops EO-based tools for national-scale drought monitoring, using Sentinel-2 and Sentinel-3 time series to produce high-resolution maps of crop condition, evapotranspiration, irrigation and cropping systems at national and county level."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              39.9,
+              0.9557662177941483
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "drought-hazard"
+            }
+          ],
+          "panelState": {
+            "focusLayer": "drought-hazard"
+          }
+        },
+        {
+          "id": "more-information",
+          "content": {
+            "title": "More Information",
+            "description": "This story has given a high level overview of the types of EO-based tools that are available to support life cycle assessment.\n\nMany other tools are available, including a range of commercial products specifically aimed at meeting companies' supply chain management issues.\n\nPlease contact the [Stakeholder Engagement Facility](www.esa-sef.eu) team to discuss your needs and requirements.\n\n\nThis map shows a false colour image of agricultural production in the north of Saudi Arabia."
+          },
+          "activeLayers": [
+            {
+              "id": "nir-vs-ndvi-3"
+            }
+          ],
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              38.26881408691407,
+              30.042349642213367
+            ]
+          },
+          "baseLayer": "sentinel"
+        }
+      ]
+    },
+    {
+      "id": "monitoring-eudr-compliance",
+      "title": "Monitoring EUDR Compliance",
+      "description": "Tracking the drivers of deforestation with the ESA WorldAgroCommodities project.",
+      "isActive": false,
+      "steps": [
+        {
+          "id": "the-eu-deforestation-regulation",
+          "content": {
+            "title": "The EU Deforestation Regulation",
+            "description": "The [EU Deforestation Regulation](https://environment.ec.europa.eu/topics/forests/deforestation/regulation-deforestation-free-products_en) (EUDR) aims to ensure that products consumed in the EU do not contribute to deforestation or forest degradation worldwide.\n\nUnder the Regulation, anyone trading goods on the EU market must be able to prove that the products do not originate from recently deforested land or have contributed to forest degradation. \n\nThis includes common products such as cattle, wood, cocoa, soy, palm oil, coffee and rubber, as well as derived products such as leather, chocolate, tyres, or furniture."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              -53.760223388671875,
+              -3.723115624822791
+            ]
+          },
+          "activeLayers": [],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "earth-observation-supporting-eudr",
+          "content": {
+            "title": "Earth Observation Supporting EUDR",
+            "description": "Satellite Earth Observation data has a key role to play in monitoring EUDR compliance.\n\nEO data can be analysed to show the type of land cover present, and to detect when a change occurs, for example to determine when a forest is cleared to make room for grass or crops."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              -53.760223388671875,
+              -3.723115624822791
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "world-cover-2021",
+              "date": "latest"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "world-cover-2021",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "the-esa-worldagrocommodities-project-1",
+          "content": {
+            "title": "The ESA WorldAgroCommodities project (1)",
+            "description": "The ESA-funded [WorldAgroCommodities](https://agrocommodities.info) project aims to provide tools which help to validate the crop type and deforestation status which will be reported as part of the due diligence from companies.\n\nThe project is mainly aimed at designated Competent National Authorities (CNAs) within the EU who are required to verify information reported by companies.\n\nThis image shows the outcome of an AI model which assess the likelihood of different crops being present:\n\n- Undisturbed forest is shown on a green scale: the deeper the green, the more confidence that forest is present."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              -65.97496032714845,
+              -9.528977353574076
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "wac-png"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "the-esa-worldagrocommodities-project-2",
+          "content": {
+            "title": "The ESA WorldAgroCommodities project (2)",
+            "description": "The ESA-funded [WorldAgroCommodities](https://agrocommodities.info) project aims to provide tools which help to validate the crop type and deforestation status which will be reported as part of the due diligence from companies.\n\nThe project is mainly aimed at designated Competent National Authorities (CNAs) within the EU who are required to verify information reported by companies.\n\nThis image shows the outcome of an AI model which assess the likelihood of different crops being present:\n\n- Undisturbed forest is shown on a green scale: the deeper the green, the more confidence that forest is present.\n- Pasture is shown on a blue scale, with darker blue meaning a higher confidence of pasture being present"
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              -65.97496032714845,
+              -9.528977353574076
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "wac-png-2"
+            },
+            {
+              "id": "wac-png"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "the-esa-worldagrocommodities-project-3",
+          "content": {
+            "title": "The ESA WorldAgroCommodities project (3)",
+            "description": "The ESA-funded [WorldAgroCommodities](https://agrocommodities.info) project aims to provide tools which help to validate the crop type and deforestation status which will be reported as part of the due diligence from companies.\n\nThe project is mainly aimed at designated Competent National Authorities (CNAs) within the EU who are required to verify information reported by companies.\n\nThis image shows the outcome of an AI model which assess the likelihood of different crops being present:\n\n- Undisturbed forest is shown on a green scale: the deeper the green, the more confidence that forest is present.\n- Pasture is shown on a blue scale, with darker blue meaning a higher confidence of pasture being present\n- Soy is shown on a red scale, with darker red meaning a higher confidence of pasture being present"
+          },
+          "viewport": {
+            "zoom": 14,
+            "center": [
+              -65.97496032714845,
+              -9.54
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "wac-png-2-2"
+            },
+            {
+              "id": "wac-png-2"
+            },
+            {
+              "id": "wac-png"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "monitoring-coffee-growing-areas-1",
+          "content": {
+            "title": "Monitoring coffee growing areas (1)",
+            "description": "The model can be adapted for different tropical regions, such as this example on the slopes of Kilimanjaro in Tanzania.\n\nAs before the AI model is used to assess the probability of different crops or forest types being present:\n\n- Undisturbed forest is shown on a green scale: the deeper the green, the more confidence that forest is present."
+          },
+          "viewport": {
+            "fitLayer": "wac-tanzania-2"
+          },
+          "activeLayers": [
+            {
+              "id": "wac-tanzania-2"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "monitoring-coffee-growing-areas-2",
+          "content": {
+            "title": "Monitoring coffee growing areas (2)",
+            "description": "The model can be adapted for different tropical regions, such as this example on the slopes of Kilimanjaro in Tanzania.\n\nAs before the AI model is used to assess the probability of different crops or forest types being present:\n\n- Undisturbed forest is shown on a green scale: the darker the green, the more confidence that forest is present.\n- Plantations are shown on a blue scale: the darker the blue, the more confidence that a plantation is present."
+          },
+          "viewport": {
+            "fitLayer": "wac-tanzania-2"
+          },
+          "activeLayers": [
+            {
+              "id": "wac-tanzania-2-2"
+            },
+            {
+              "id": "wac-tanzania-2"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "monitoring-coffee-growing-areas-3",
+          "content": {
+            "title": "Monitoring coffee growing areas (3)",
+            "description": "The model can be adapted for different tropical regions, such as this example on the slopes of Kilimanjaro in Tanzania.\n\nAs before the AI model is used to assess the probability of different crops or forest types being present:\n\n- Undisturbed forest is shown on a green scale: the darker the green, the more confidence that forest is present.\n- Plantations are shown on a blue scale: the darker the blue, the more confidence that a plantation is present.\n- Coffee growing ares are shown on a red scale: the darker the red, the more confidence that coffee is present.\n\nThere are some overlaps between these areas, where the model splits its probabilities between different classifications."
+          },
+          "viewport": {
+            "fitLayer": "wac-tanzania-2"
+          },
+          "activeLayers": [
+            {
+              "id": "wac-tanzania"
+            },
+            {
+              "id": "wac-tanzania-2-2"
+            },
+            {
+              "id": "wac-tanzania-2"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "coffee-in-south-east-asia",
+          "content": {
+            "title": "Coffee in South East Asia",
+            "description": "Similarly the model can be applied (with some tweaks) to SE Asia, as in this example from Sumatra.\n\n- Undisturbed forest is shown on a green scale: the deeper the green, the more confidence that forest is present.\n- Coffee growing areas are shown on a green scale: the deeper the red, the more confidence that coffee is present."
+          },
+          "viewport": {
+            "fitLayer": "wac-sumatra"
+          },
+          "activeLayers": [
+            {
+              "id": "wac-sumatra"
+            },
+            {
+              "id": "wac-sumatra-2"
+            }
+          ],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "other-tools",
+          "content": {
+            "title": "Other tools",
+            "description": "The WorldAgroCommodities algorithms are [available online](https://algorithm-catalogue.dev.apex.esa.int/apps/world_agrocommodities) for users to experiment with.\n\nSeveral European companies are developing commercial tools which can support EUDR compliance assessment. \n\nFor more information please contact the [Stakeholder Engagement Facility](www.esa-sef.eu) team."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              112.03479766845705,
+              0.9818550168696459
+            ]
+          },
+          "activeLayers": [],
+          "baseLayer": "sentinel"
+        }
+      ]
+    },
+    {
       "id": "overview-of-crop-mapping",
       "title": "Overview of Crop Mapping",
       "description": "An overview of different tools available to support crop monitoring within Europe.",
@@ -140,13 +624,13 @@
               "id": "boh1"
             }
           ],
+          "baseLayer": "open-streetmap",
           "panelState": {
             "focusLayer": "boh1",
             "tab": {
               "id": "overview"
             }
-          },
-          "baseLayer": "open-streetmap"
+          }
         },
         {
           "id": "the-worldcereal-system",
@@ -269,12 +753,6 @@
             "title": "Introduction",
             "description": "The ESA Funded [Sen4CAP](https://www.esa-sen4cap.org) (Sentinels for the Common Agricultural Policy) project, running since 2018, aimed to providing European and national stakeholders of the CAP with validated algorithms, products, workflows and best practices relevant for CAP management. \n\nSen4CAP was originally developed as a [downloadable package](https://www.esa-sen4cap.org/download-package-description/) that CAP agencies could take and use themselves.\n\nMore recently the Sen4CAP algorithms have now been successfully \"cloudified\", making them available through key online services, including ESA's [APEX algorithm catalogue](https://algorithm-catalogue.apex.esa.int/?q=Sen4CAP) and [Network of Resources](https://portfolio.nor-discover.org/?textSearch=sen4cap).\n\nThis image shows a crop type map produced through Sen4CAP for three years in the area around Prague. You can zoom in or use the time controls to change date."
           },
-          "activeLayers": [
-            {
-              "id": "crop-types-2021-2023",
-              "date": "latest"
-            }
-          ],
           "viewport": {
             "zoom": 10,
             "center": [
@@ -282,6 +760,12 @@
               50.122339102717135
             ]
           },
+          "activeLayers": [
+            {
+              "id": "crop-types-2021-2023",
+              "date": "latest"
+            }
+          ],
           "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "crop-types-2021-2023",
@@ -296,11 +780,6 @@
             "title": "Crop type classification",
             "description": "The crop type processor builds and runs a crop classification model based on Sentinel-1 and Sentinel-2 data. For each parcel, the two predictions with highest confidence are reported."
           },
-          "activeLayers": [
-            {
-              "id": "crop-types-2021-2023"
-            }
-          ],
           "viewport": {
             "zoom": 14,
             "center": [
@@ -308,6 +787,11 @@
               50.30184071305509
             ]
           },
+          "activeLayers": [
+            {
+              "id": "crop-types-2021-2023"
+            }
+          ],
           "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "crop-types-2021-2023",
@@ -322,11 +806,6 @@
             "title": "Algorithms available",
             "description": "The following Sen4CAP processors are now available as operational services online:\n\n- Spectral Indicators\n- Biophysical Indicators\n- Crop Type Classification\n- Grassland Mowing Detection\n- Agricultural Practices Monitoring\n- Bare Soil Detection\n- Heterogeneity Analysis\n- Change Detection\n- Tillage Detection\n- Winter Cover Crops Detection\n\nThe image on the right shows an example of the bare soil detection algorithm."
           },
-          "activeLayers": [
-            {
-              "id": "boh1"
-            }
-          ],
           "viewport": {
             "zoom": 12,
             "center": [
@@ -334,6 +813,11 @@
               49.09
             ]
           },
+          "activeLayers": [
+            {
+              "id": "boh1"
+            }
+          ],
           "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "boh1",
@@ -348,11 +832,6 @@
             "title": "Harvest detection",
             "description": "The agricultural practices monitoring focuses on Ecological Focus Area (EFA) practices and also includes the detection of harvest and tillage.\n\nThis images shows an example of the harvest detection agorithm."
           },
-          "activeLayers": [
-            {
-              "id": "boh2"
-            }
-          ],
           "viewport": {
             "zoom": 12,
             "center": [
@@ -360,6 +839,11 @@
               49.09
             ]
           },
+          "activeLayers": [
+            {
+              "id": "boh2"
+            }
+          ],
           "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "boh2",
@@ -374,11 +858,6 @@
             "title": "CAP Compliance",
             "description": "The Sen4CAP algorithms have several applications for assessing CAP compliance.\n\nThis example (from the ESA-funded [PEOPLE-Ecoschemes](https://esa-people-ecoschemes.info/) project) shows compliance to crop rotation schemes, highlighting in red areas which have neither crop rotation during a 3 year period, nor catch crops between the main planting.\n\nAlthough not 100% reliable such tools can help focus compliance efforts where they are best needed."
           },
-          "activeLayers": [
-            {
-              "id": "crop-type-comparison-with-catch-crop-occurrence-detection-2022-2023"
-            }
-          ],
           "viewport": {
             "zoom": 11,
             "center": [
@@ -386,6 +865,11 @@
               50.222609311890224
             ]
           },
+          "activeLayers": [
+            {
+              "id": "crop-type-comparison-with-catch-crop-occurrence-detection-2022-2023"
+            }
+          ],
           "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "crop-type-comparison-with-catch-crop-occurrence-detection-2022-2023",
@@ -400,12 +884,6 @@
             "title": "Conclusion",
             "description": "For more information, visit\n\n- The [Sen4CAP](https://www.esa-sen4cap.org) project website.\n\n- The [APEX algorithm catalogue](https://algorithm-catalogue.apex.esa.int/?q=Sen4CAP) \n\n- The [ESA Network of Resources](https://portfolio.nor-discover.org/?textSearch=sen4cap).\n\nIf you need support getting started then please contact the [Stakeholder Engagement Facility](www.esa-sef.eu) team."
           },
-          "activeLayers": [
-            {
-              "id": "crop-types-2021-2023",
-              "date": "latest"
-            }
-          ],
           "viewport": {
             "zoom": 13,
             "center": [
@@ -413,6 +891,12 @@
               50.236445892212885
             ]
           },
+          "activeLayers": [
+            {
+              "id": "crop-types-2021-2023",
+              "date": "latest"
+            }
+          ],
           "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "crop-types-2021-2023",
@@ -706,7 +1190,7 @@
           ],
           "baseLayer": "sentinel",
           "panelState": {
-            "focusLayer": "main-crop-types",
+            "focusLayer": "estonia",
             "tab": {
               "id": "statistics"
             }
@@ -940,12 +1424,7 @@
           ],
           "baseLayer": "sentinel",
           "panelState": {
-            "focusLayer": "catch-crop-time-series-imported",
-            "controls": {
-              "temporal": {
-                "expanded": true
-              }
-            }
+            "focusLayer": "catch-crop-planting-detection"
           }
         },
         {
@@ -1094,7 +1573,8 @@
           "activeLayers": [
             {
               "id": "european-soc-2020-22",
-              "date": "latest"
+              "date": "latest",
+              "constraints": []
             }
           ],
           "baseLayer": "sentinel",
@@ -1434,11 +1914,11 @@
           "parameters": {
             "version": "1.1.1"
           },
-          "useTimeParameter": true
+          "useTimeParameter": false
         }
       ],
       "meta": {
-        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "description": "True colour composite of 2025 Sentinel-2 data.",
         "attribution": {
           "text": "Copernicus Sentinel-2",
           "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
@@ -1448,29 +1928,6 @@
       "isBaseLayer": true,
       "exclusivitySets": [],
       "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
-    },
-    {
-      "id": "dem",
-      "name": "DEM",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 2,
-          "layers": "COP_DEM_GLO_30M_COG"
-        }
-      ],
-      "meta": {
-        "description": "Base layer: DEM",
-        "attribution": {
-          "text": "Copernicus"
-        },
-        "categories": []
-      },
-      "isBaseLayer": true,
-      "exclusivitySets": [],
-      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png"
     },
     {
       "id": "crop-types-2021-2023",
@@ -1814,6 +2271,14 @@
       "id": "crop-type-comparison-with-catch-crop-occurrence-detection-2022-2023",
       "name": "Crop Type Comparison with Catch Crop Occurrence Detection - 2022 - 2023",
       "isActive": false,
+      "data": [
+        {
+          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CATCH_CLASS_33UVR.tif",
+          "format": "cog",
+          "zIndex": 2,
+          "normalize": false
+        }
+      ],
       "meta": {
         "description": "Crop type comparison (2022/2023) at the Level-3 combined with catch crop occurrence detection.",
         "attribution": {
@@ -1822,13 +2287,13 @@
         },
         "categories": [
           {
-            "label": "Different crops or same crops with catch crop presence",
             "color": "#B7F387",
+            "label": "Different crops or same crops with catch crop presence",
             "value": 0
           },
           {
-            "label": "Same crops without presence of catch crop",
             "color": "#E57F7C",
+            "label": "Same crops without presence of catch crop",
             "value": 1
           }
         ]
@@ -1837,6 +2302,9 @@
         "interfaceGroup": "European Crop Monitoring",
         "subinterfaceGroup": "CAP Ecoschemes in Czechia",
         "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
         "infoPanel": {
           "legend": {
             "type": "swatch"
@@ -1848,19 +2316,8 @@
             "constraintSlider": false,
             "blendControls": false
           }
-        },
-        "layerCard": {
-          "toggleable": true
         }
-      },
-      "data": [
-        {
-          "url": "https://eoresults.esa.int/d/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION/2022/01/01/ESA_PEOPLE_ECOSCHEMES_CROP_ROTATION-CZ_CropRotation_2022_2023_33UVR/CZ_CropRotation_2022_2023_CLASS_L3_CATCH_CLASS_33UVR.tif",
-          "format": "cog",
-          "zIndex": 2,
-          "normalize": false
-        }
-      ]
+      }
     },
     {
       "id": "erosion-risk-2023",
@@ -3802,7 +4259,7 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Drought Hazard",
+        "description": "Time series of drought probabilities (0 to 1) computed by the ADM Kenya project.",
         "attribution": {
           "text": "Data attribution not specified"
         },
@@ -4303,7 +4760,7 @@
           "parameters": {
             "version": "1.3.0"
           },
-          "useTimeParameter": true
+          "useTimeParameter": false
         },
         {
           "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
@@ -4369,7 +4826,7 @@
           "format": "wms",
           "zIndex": 50,
           "layers": "tm:tm_worldborders",
-          "useTimeParameter": true
+          "useTimeParameter": false
         }
       ],
       "meta": {
@@ -5011,34 +5468,6 @@
       "id": "field-boundaries",
       "name": "Field Boundaries",
       "isActive": false,
-      "meta": {
-        "description": "This interactive map shows field boundaries across all major European Countries generated using the **Delineate Anything v2** algorithm applied to the 2025 summer season Sentinel-2 Global Mosaics (S2GM), with the WorldCereal 2021 map used as a delineation mask.\n\n To view the field boundaries, zoom in to a local in a country of your choice. The boundaries are displayed on the map when the scalebar in the bottom left displays 5 km or less.\n\n**Please note** that the field boundaries are overlaid on high-resolution satellite imagery from the Stadia Maps service. As a result, some misalignment may be visible, since the boundaries were derived from Sentinel-2 data.\n\n### Further information\nDetails of methodology are available on the [Delineate Anything Project Page](https://lavreniuk.github.io/Delineate-Anything/)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
-        "attribution": {
-          "text": "Delineate Anything"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "European Crop Monitoring",
-        "subinterfaceGroup": "Field Delineation",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "download": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/AL_fields.fgb",
@@ -5440,7 +5869,35 @@
           },
           "minZoom": 10
         }
-      ]
+      ],
+      "meta": {
+        "description": "This interactive map shows field boundaries across all major European Countries generated using the **Delineate Anything v2** algorithm applied to the 2025 summer season Sentinel-2 Global Mosaics (S2GM), with the WorldCereal 2021 map used as a delineation mask.\n\n To view the field boundaries, zoom in to a local in a country of your choice. The boundaries are displayed on the map when the scalebar in the bottom left displays 5 km or less.\n\n**Please note** that the field boundaries are overlaid on high-resolution satellite imagery from the Stadia Maps service. As a result, some misalignment may be visible, since the boundaries were derived from Sentinel-2 data.\n\n### Further information\nDetails of methodology are available on the [Delineate Anything Project Page](https://lavreniuk.github.io/Delineate-Anything/)\n\n### Authors\n[Mykola Lavreniuk](https://scholar.google.com/citations?hl=en&user=-oFR-RYAAAAJ) (1,2), [Nataliia Kussul](https://scholar.google.com/citations?user=e3TWBuwAAAAJ&hl=en) (3), [Andrii Shelestov](https://scholar.google.com/citations?user=tqoQKZAAAAAJ&hl=en) (2,4), [Bohdan Yailymov](https://scholar.google.com/citations?user=XaN-oukAAAAJ&hl=en) (2), [Yevhenii Salii](https://scholar.google.com/citations?user=4jgAsBIAAAAJ&hl=en) (2,4), [Volodymyr Kuzin](https://www.researchgate.net/profile/Volodymyr-Kuzin) (2,4), [Zoltan Szantoi](https://scholar.google.com/citations?user=P_pyhi8AAAAJ&hl=en) (1)\n\n[1] European Space Agency, [2] SRI NASU-SSAU, [3] University of Maryland, [4] Igor Sikorsky Kyiv Polytechnic Institute",
+        "attribution": {
+          "text": "Delineate Anything"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "European Crop Monitoring",
+        "subinterfaceGroup": "Field Delineation",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "download": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/PROJECTS/DelineateAnything/Ukraine-2024.simp.fgb",
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
       "id": "total-precipitation",
@@ -6445,6 +6902,1213 @@
         }
       },
       "timeframe": "Days"
+    },
+    {
+      "id": "land-cover-2020-vs-2020-alternative",
+      "name": "Land Cover 1996 vs 2015",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/esacci/land_cover/data/land_cover_maps/v2.0.7/ESACCI-LC-L4-LCCS-Map-300m-P1Y-2015-v2.0.7.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/esacci/land_cover/data/land_cover_maps/v2.0.7/ESACCI-LC-L4-LCCS-Map-300m-P1Y-1996-v2.0.7.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        }
+      ],
+      "meta": {
+        "description": "As part of the ESA Land Cover Climate Change Initiative (CCI) project a new set of Global Land Cover Maps have been produced. These maps are available at 300m spatial resolution for each year between 1992 and 2015. Each pixel value corresponds to the classification of a land cover class defined based on the UN Land Cover Classification System (LCCS). ",
+        "attribution": {
+          "text": "ESA CCI via CEDA",
+          "url": "https://stac.ceda.ac.uk/collections/land_cover"
+        },
+        "categories": [
+          {
+            "color": "#FFFF64",
+            "label": "Cropland, rainfed",
+            "value": 10
+          },
+          {
+            "color": "#AAF0F0",
+            "label": "Cropland, irrigates",
+            "value": 20
+          },
+          {
+            "color": "#DCF064",
+            "label": "Mosaic Cropland",
+            "value": 30
+          },
+          {
+            "color": "#C8C864",
+            "label": "Mosaic Natural Vegetation",
+            "value": 40
+          },
+          {
+            "color": "#016400",
+            "label": "Tree cover, broadleaved, evergreen, >15%",
+            "value": 50
+          },
+          {
+            "color": "#00A000",
+            "label": "Tree cover, broadleaved, deciduous, >15%",
+            "value": 60
+          },
+          {
+            "color": "#003C00",
+            "label": "Tree cover, needleleaved, evergreen, >15%",
+            "value": 70
+          },
+          {
+            "color": "#285000",
+            "label": "Tree cover, needleleaved, deciduous, >15%",
+            "value": 80
+          },
+          {
+            "color": "#788200",
+            "label": "Tree cover, mixed leaves",
+            "value": 90
+          },
+          {
+            "color": "#8CA000",
+            "label": "Mosaic tree and shrub (>50%)/herbaceous cover (<50%)",
+            "value": 100
+          },
+          {
+            "color": "#BE9600",
+            "label": "Mosaic herbaceous cover (>50%)/tree and shrub (<50%)",
+            "value": 110
+          },
+          {
+            "color": "#966400",
+            "label": "Shrubland",
+            "value": 120
+          },
+          {
+            "color": "#FFB431",
+            "label": "Grassland",
+            "value": 130
+          },
+          {
+            "color": "#FFDCD3",
+            "label": "Lichens and Mosses",
+            "value": 140
+          },
+          {
+            "color": "#FFEBAF",
+            "label": "Sparse Vegetation",
+            "value": 150
+          },
+          {
+            "color": "#00785A",
+            "label": "Tree cover, flooded, fresh or brakish water",
+            "value": 160
+          },
+          {
+            "color": "#009678",
+            "label": "Tree cover, flooded, saline water",
+            "value": 170
+          },
+          {
+            "color": "#00DC82",
+            "label": "Shrub or herbaceous cover, flooded",
+            "value": 180
+          },
+          {
+            "color": "#C31500",
+            "label": "Urban Areas",
+            "value": 190
+          },
+          {
+            "color": "#FFF5D7",
+            "label": "Bare areas",
+            "value": 200
+          },
+          {
+            "color": "#0046C7",
+            "label": "Water bodies",
+            "value": 210
+          },
+          {
+            "color": "#FFFFFF",
+            "label": "Permanent snow and ice",
+            "value": 220
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Supporting Information",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false,
+      "isSwipeLayer": true
+    },
+    {
+      "id": "santa-isabel-farm-complex-lu-s-eduardo-magalh-es",
+      "name": "Santa Isabel farm complex, Luís Eduardo Magalhães",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_LEM_2019_forest_soy_COG.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_LEM_2025_forest_soy_COG.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1735686000
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Santa Isabel farm complex, Luís Eduardo Magalhães",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#178D07",
+            "label": "Forest",
+            "value": 1
+          },
+          {
+            "color": "#FFDD61",
+            "label": "Soy",
+            "value": 2
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WAC",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Years"
+    },
+    {
+      "id": "nox",
+      "name": "NOx",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1735686000
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-02.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1738364400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-03.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1740783600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-04.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1743458400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-05.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1746050400
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-06.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1748728800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-07.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1751320800
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-08.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1753999200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-09.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1756677600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-10.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1759269600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-11.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1761951600
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-12.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1764543600
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for NOx",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 4,
+            "steps": 100,
+            "name": "bone",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Crop Monitoring",
+        "subinterfaceGroup": "Emissions",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Months"
+    },
+    {
+      "id": "witer-spring-cereals",
+      "name": "winter-spring cereals",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-wintercereals-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
+          "zIndex": 50
+        },
+        {
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-springcereals-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for winter-spring cereals",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Supporting Information",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false,
+      "isSwipeLayer": true
+    },
+    {
+      "id": "santa-isabel-farm-complex-lu-s-eduardo-magalh-es-2",
+      "name": "before-after soy",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_LEM_2019_forest_soy_COG.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left",
+          "timestamps": [
+            1546297200
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_LEM_2025_forest_soy_COG.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right",
+          "timestamps": [
+            1735686000
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for before-after soy",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [
+          {
+            "color": "#178D07",
+            "label": "Forest",
+            "value": 1
+          },
+          {
+            "color": "#FFDD61",
+            "label": "Soy",
+            "value": 2
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Supporting Information",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true
+          }
+        }
+      },
+      "isBaseLayer": false,
+      "isSwipeLayer": true
+    },
+    {
+      "id": "wac-png",
+      "name": "WAC Brazil - Forest",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_sample_Brazil.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            7
+          ]
+        },
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_LEM_2025.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            7
+          ]
+        }
+      ],
+      "meta": {
+        "description": "To be written",
+        "attribution": {
+          "text": "ESA WorldAgroCommodities",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/world_agrocommodities"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "summer",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WAC Brazil",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "wac-png-2",
+      "name": "WAC Brazil - Pasture",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_sample_Brazil.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            3
+          ]
+        }
+      ],
+      "meta": {
+        "description": "To be written",
+        "attribution": {
+          "text": "ESA WorldAgroCommodities",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/world_agrocommodities"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "winter",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WAC Brazil",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "wac-png-2-2",
+      "name": "WAC Brazil - Soy",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_sample_Brazil.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            16
+          ]
+        }
+      ],
+      "meta": {
+        "description": "To be written",
+        "attribution": {
+          "text": "ESA WorldAgroCommodities",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/world_agrocommodities"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "autumn",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WAC Brazil",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "wac-png-2-2-2",
+      "name": "WAC Brazil - Soy (Copy)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_sample_Brazil.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 1,
+              "rMax": 99,
+              "gMin": 0,
+              "gMax": 75,
+              "bMin": 0,
+              "bMax": 99
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "bands": [
+            3,
+            7,
+            16
+          ],
+          "convertToRGB": true
+        }
+      ],
+      "meta": {
+        "description": "To be written",
+        "attribution": {
+          "text": "ESA WorldAgroCommodities",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/world_agrocommodities"
+        },
+        "categories": [],
+        "colormaps": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WAC Brazil",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "wac-tanzania",
+      "name": "WAC Tanzania - Coffee",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_sample_Tanzania.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            9
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for WAC Tanzania - Coffee",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "autumn",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WAC Tanzania",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "wac-tanzania-2",
+      "name": "WAC Tanzania - Forest",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_sample_Tanzania.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            7
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for WAC Tanzania - Forest",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "summer",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WAC Tanzania",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "wac-tanzania-2-2",
+      "name": "WAC Tanzania - Plantation",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_sample_Tanzania.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            8
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for WAC Tanzania - Plantation",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "winter",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WAC Tanzania",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "wac-sumatra",
+      "name": "WAC Sumatra - Forest",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_sample_Sumatra.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            7
+          ]
+        }
+      ],
+      "meta": {
+        "description": "TBD",
+        "attribution": {
+          "text": "ESA WorldAgroCommodiies project",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/world_agrocommodities"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 100,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "summer",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WAC Sumatra",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "wac-sumatra-2",
+      "name": "WAC Sumatra - Coffee",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_sample_Sumatra.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            9
+          ]
+        }
+      ],
+      "meta": {
+        "description": "TBD",
+        "attribution": {
+          "text": "ESA WorldAgroCommodiies project",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/world_agrocommodities"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 100,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "autumn",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WAC Sumatra",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "wac-sumatra-2-2",
+      "name": "WAC Sumatra - Rice",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/wac/WAC_sample_Sumatra.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            21
+          ]
+        }
+      ],
+      "meta": {
+        "description": "TBD",
+        "attribution": {
+          "text": "ESA WorldAgroCommodiies project",
+          "url": "https://algorithm-catalogue.apex.esa.int/apps/world_agrocommodities"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 100,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 50,
+            "name": "winter",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "WAC Sumatra",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "nir-vs-ndvi-2",
+      "name": "Sentinel NIR",
+      "isActive": false,
+      "timeframe": "Days",
+      "defaultTimestamp": 1609459200,
+      "meta": {
+        "description": "Shows an image of the Near Infrared (left) band from Sentinel 2, illustrating how different wavelengths show different properties. This is a composite images form 2021, used as an intermediate step in the WorldCover processing chain.",
+        "attribution": {
+          "text": "WorldCover via Terrascope"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 50,
+            "name": "yiorrd",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Supporting Information",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-s2rgbnir-10m-2021-v2_fcc",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ]
+    },
+    {
+      "id": "nir-vs-ndvi-3",
+      "name": "Sentinel-2 NDVI",
+      "isActive": false,
+      "timeframe": "Days",
+      "defaultTimestamp": 1609459200,
+      "meta": {
+        "description": "Shows the NDVI from Sentinel 2 in 2021, as a composite image used as an intermediate layer in WorldCover classificiation",
+        "attribution": {
+          "text": "WorldCover via Terrascope"
+        },
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 50,
+            "name": "yiorrd",
+            "reverse": true
+          }
+        ],
+        "min": 0,
+        "max": 1
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Supporting Information",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-ndvi-10m-2021-v2_ndvi",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": false
+        }
+      ]
     }
   ]
 }
