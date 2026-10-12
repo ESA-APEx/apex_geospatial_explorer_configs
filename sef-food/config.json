@@ -79,10 +79,10 @@
               "opacity": 0.85
             }
           ],
+          "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "world-cover-2021"
-          },
-          "baseLayer": "sentinel"
+          }
         },
         {
           "id": "crop-type-mapping",
@@ -102,10 +102,10 @@
               "id": "uk-crop-mapping-2022"
             }
           ],
+          "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "witer-spring-cereals"
-          },
-          "baseLayer": "sentinel"
+          }
         },
         {
           "id": "tools-supporting-the-eu-common-agricultural-policy",
@@ -126,10 +126,10 @@
               "date": "latest"
             }
           ],
+          "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "crop-types-2021-2023"
-          },
-          "baseLayer": "sentinel"
+          }
         },
         {
           "id": "assessing-agricultural-practices",
@@ -149,10 +149,10 @@
               "id": "verification-of-crop-rotation"
             }
           ],
+          "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "verification-of-crop-rotation"
-          },
-          "baseLayer": "sentinel"
+          }
         },
         {
           "id": "tools-supporting-the-eu-deforestation-regulation",
@@ -217,10 +217,10 @@
               "id": "european-soc-2020-22"
             }
           ],
+          "baseLayer": "sentinel",
           "panelState": {
             "focusLayer": "european-soc-2020-22"
-          },
-          "baseLayer": "sentinel"
+          }
         },
         {
           "id": "field-level-soil-carbon",
@@ -260,7 +260,13 @@
               "id": "nox"
             }
           ],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "nox",
+            "tab": {
+              "id": "overview"
+            }
+          }
         },
         {
           "id": "drought-monitoring",
@@ -290,11 +296,6 @@
             "title": "More Information",
             "description": "This story has given a high level overview of the types of EO-based tools that are available to support life cycle assessment.\n\nMany other tools are available, including a range of commercial products specifically aimed at meeting companies' supply chain management issues.\n\nPlease contact the [Stakeholder Engagement Facility](www.esa-sef.eu) team to discuss your needs and requirements.\n\n\nThis map shows a false colour image of agricultural production in the north of Saudi Arabia."
           },
-          "activeLayers": [
-            {
-              "id": "nir-vs-ndvi-3"
-            }
-          ],
           "viewport": {
             "zoom": 12,
             "center": [
@@ -302,6 +303,11 @@
               30.042349642213367
             ]
           },
+          "activeLayers": [
+            {
+              "id": "nir-vs-ndvi-3"
+            }
+          ],
           "baseLayer": "sentinel"
         }
       ]
@@ -7125,8 +7131,45 @@
     },
     {
       "id": "nox",
-      "name": "NOx",
+      "name": "European agricultural NOx emission 2025",
       "isActive": false,
+      "timeframe": "Months",
+      "meta": {
+        "description": "Monthly European agricultural NOx emissions in 2025 derived from TROPOMI tropospheric NO2 column satellite observation.",
+        "attribution": {
+          "text": "DESCO-NRT (TEMIS.nl)",
+          "url": "https://www.temis.nl/emissions/region_europe/archive_annual_data.php"
+        },
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 4,
+            "steps": 100,
+            "name": "bone",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Crop Monitoring",
+        "subinterfaceGroup": "Emissions",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
       "data": [
         {
           "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-01.tif",
@@ -7224,42 +7267,7 @@
             1764543600
           ]
         }
-      ],
-      "meta": {
-        "description": "Auto-generated description for NOx",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 4,
-            "steps": 100,
-            "name": "bone",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "European Crop Monitoring",
-        "subinterfaceGroup": "Emissions",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Months"
+      ]
     },
     {
       "id": "witer-spring-cereals",
@@ -8001,8 +8009,18 @@
       "id": "nir-vs-ndvi-2",
       "name": "Sentinel NIR",
       "isActive": false,
-      "timeframe": "Days",
-      "defaultTimestamp": 1609459200,
+      "data": [
+        {
+          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "esa-worldcover-s2rgbnir-10m-2021-v2_fcc",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Shows an image of the Near Infrared (left) band from Sentinel 2, illustrating how different wavelengths show different properties. This is a composite images form 2021, used as an intermediate step in the WorldCover processing chain.",
         "attribution": {
@@ -8041,62 +8059,13 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://titiler.terrascope.be/wms?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "esa-worldcover-s2rgbnir-10m-2021-v2_fcc",
-          "parameters": {
-            "version": "1.3.0"
-          },
-          "useTimeParameter": true
-        }
-      ]
+      "timeframe": "Days",
+      "defaultTimestamp": 1609459200
     },
     {
       "id": "nir-vs-ndvi-3",
       "name": "Sentinel-2 NDVI",
       "isActive": false,
-      "timeframe": "Days",
-      "defaultTimestamp": 1609459200,
-      "meta": {
-        "description": "Shows the NDVI from Sentinel 2 in 2021, as a composite image used as an intermediate layer in WorldCover classificiation",
-        "attribution": {
-          "text": "WorldCover via Terrascope"
-        },
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1,
-            "steps": 50,
-            "name": "yiorrd",
-            "reverse": true
-          }
-        ],
-        "min": 0,
-        "max": 1
-      },
-      "layout": {
-        "interfaceGroup": "Use Cases",
-        "subinterfaceGroup": "Supporting Information",
-        "contentLocation": "infoPanel",
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        },
-        "layerCard": {
-          "toggleable": true
-        }
-      },
       "data": [
         {
           "url": "https://mapproxy.terrascope.be/mapproxy/service",
@@ -8108,7 +8077,47 @@
           },
           "useTimeParameter": false
         }
-      ]
+      ],
+      "meta": {
+        "description": "Shows the NDVI from Sentinel 2 in 2021, as a composite image used as an intermediate layer in WorldCover classificiation",
+        "attribution": {
+          "text": "WorldCover via Terrascope"
+        },
+        "categories": [],
+        "min": 0,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1,
+            "steps": 50,
+            "name": "yiorrd",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Use Cases",
+        "subinterfaceGroup": "Supporting Information",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "defaultTimestamp": 1609459200
     }
   ]
 }
