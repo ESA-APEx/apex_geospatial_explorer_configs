@@ -240,7 +240,13 @@
               "id": "soc-raster-map-2017"
             }
           ],
-          "baseLayer": "sentinel"
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "soc-raster-map-2017",
+            "tab": {
+              "id": "overview"
+            }
+          }
         },
         {
           "id": "agricultural-emissions",
@@ -1873,9 +1879,6 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 1800,
         "colormaps": [
           {
             "min": 0,
@@ -1884,7 +1887,10 @@
             "name": "copper",
             "reverse": true
           }
-        ]
+        ],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -2640,9 +2646,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "units": "m³/ha",
-        "min": 0,
-        "max": 520,
         "colormaps": [
           {
             "min": 0,
@@ -2651,7 +2654,10 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "units": "m³/ha",
+        "min": 0,
+        "max": 520
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -2746,9 +2752,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "units": "t / ha",
-        "min": 0,
-        "max": 300,
         "colormaps": [
           {
             "min": 0,
@@ -2757,7 +2760,10 @@
             "name": "greens",
             "reverse": true
           }
-        ]
+        ],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -2826,9 +2832,6 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
-        "units": "t / ha",
-        "min": 0,
-        "max": 100,
         "colormaps": [
           {
             "min": 0,
@@ -2837,7 +2840,10 @@
             "name": "velocity-green",
             "reverse": true
           }
-        ]
+        ],
+        "units": "t / ha",
+        "min": 0,
+        "max": 100
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -2899,7 +2905,6 @@
           "url": "https://www.worldpeatland.org"
         },
         "categories": [],
-        "units": "mm/yr",
         "colormaps": [
           {
             "min": -40,
@@ -2908,7 +2913,8 @@
             "name": "jet",
             "reverse": true
           }
-        ]
+        ],
+        "units": "mm/yr"
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -2969,9 +2975,6 @@
           "url": "https://www.worldpeatland.org"
         },
         "categories": [],
-        "units": "mm/yr",
-        "min": -80,
-        "max": 80,
         "colormaps": [
           {
             "min": -80,
@@ -2980,7 +2983,10 @@
             "name": "jet",
             "reverse": true
           }
-        ]
+        ],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80
       },
       "layout": {
         "interfaceGroup": "Carbon Farming",
@@ -3019,12 +3025,12 @@
                 "stroke-width": 2
               },
               "filter": [
-                "!=",
+                "==",
                 [
                   "get",
                   "traffic_light"
                 ],
-                "[0]"
+                "[1]"
               ]
             },
             {
@@ -3057,10 +3063,17 @@
             },
             {
               "style": {
-                "stroke-color": "#f73bd4",
+                "stroke-color": "#9e9e9e",
                 "stroke-width": 2
               },
-              "else": true
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "traffic_light"
+                ],
+                "[0]"
+              ]
             }
           ]
         }
@@ -3599,8 +3612,6 @@
           "url": "https://business.esa.int/projects/eo4carbonfarming"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -3610,6 +3621,8 @@
             "reverse": true
           }
         ],
+        "min": 0,
+        "max": 1,
         "fields": {
           "relSOC": {}
         }
@@ -4265,9 +4278,10 @@
         }
       ],
       "meta": {
-        "description": "Time series of drought probabilities (0 to 1) computed by the ADM Kenya project.",
+        "description": "Monthly probability of agricultural drought across Kenya at about 1 km resolution. Values run from 0 (drought unlikely) to 1 (drought very likely). The layer covers every month of 2018 and 2022.\n\n### How to read the map\nPale yellow areas have a low drought probability and dark red areas a high one. Use the time slider to step through the months. The March to June maps show the contrast between the two years: the national median probability stays below 0.15 in 2018 and is around 0.7 in 2022.\n\nOnly grassland, shrubland and cropland are mapped, the land cover types the model was built for. Other areas are left blank.\n\n### Method\nA logistic regression model predicts the drought probability from four monthly predictors: anomalies of the Normalised Difference Vegetation Index (NDVI), the Normalised Difference Infrared Index (NDII) and land surface temperature from Sentinel-3, calibrated against MODIS to extend the time series, plus the 3-month Standardised Precipitation Index (SPI3). The model was trained on drought and non-drought years identified from FAO crop yield statistics and cross-checked against reported drought events.\n\n### About ADM-Kenya\nADM-Kenya (Integrated use of multisource remote sensing data for national scale agricultural drought monitoring in Kenya) is an ESA EO AFRICA project led by the Leibniz Centre for Agricultural Landscape Research (ZALF), with Remote Sensing Solutions (RSS), the International Centre of Insect Physiology and Ecology (icipe), the Regional Centre for Mapping of Resources for Development (RCMRD) and the Kenyan Ministry of Agriculture and Livestock Development. The project developed open processing chains for drought hazard, vulnerability and risk, crop condition, farming systems and evapotranspiration mapping in Kenya.\n\n[ADM-Kenya project page (ESA EO4Society)](https://eo4society.esa.int/projects/adm-kenya/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ADM-Kenya, ESA EO AFRICA (ZALF, RSS, icipe, RCMRD)",
+          "url": "https://eo4society.esa.int/projects/adm-kenya/"
         },
         "categories": [],
         "colormaps": [
@@ -4278,7 +4292,8 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "units": "probability (0-1)"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -4294,7 +4309,9 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
@@ -4338,7 +4355,7 @@
           ]
         },
         {
-          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/adm_kenya/droughtRisk_2022-05-01.tif",
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/africa/adm_kenya/droughtRisk_2018-05-01.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -4499,20 +4516,22 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Drought Risk",
+        "description": "Monthly agricultural drought risk for Kenya at about 1 km resolution. Risk combines the drought hazard (the probability of drought in that month) with the drought vulnerability index. High values mark areas where drought is likely and where people and farming systems are less able to cope. The layer covers every month of 2018 and 2022.\n\n### How to read the map\nValues run from 0 to 1. Pale areas have low risk and dark brown areas high risk. The colour scale stops at 0.8, which very few pixels exceed. Use the time slider to step through the months.\n\nAs with the hazard map, only grassland, shrubland and cropland are mapped.\n\n### Method\nFor each month, the drought probability map from the ADM-Kenya drought model is combined with the static drought vulnerability index. Drought hazard and drought vulnerability are also available as separate layers.\n\n### About ADM-Kenya\nADM-Kenya (Integrated use of multisource remote sensing data for national scale agricultural drought monitoring in Kenya) is an ESA EO AFRICA project led by the Leibniz Centre for Agricultural Landscape Research (ZALF), with Remote Sensing Solutions (RSS), the International Centre of Insect Physiology and Ecology (icipe), the Regional Centre for Mapping of Resources for Development (RCMRD) and the Kenyan Ministry of Agriculture and Livestock Development. The project developed open processing chains for drought hazard, vulnerability and risk, crop condition, farming systems and evapotranspiration mapping in Kenya.\n\n[ADM-Kenya project page (ESA EO4Society)](https://eo4society.esa.int/projects/adm-kenya/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ADM-Kenya, ESA EO AFRICA (ZALF, RSS, icipe, RCMRD)",
+          "url": "https://eo4society.esa.int/projects/adm-kenya/"
         },
         "categories": [],
         "colormaps": [
           {
             "min": 0,
-            "max": 1,
+            "max": 0.8,
             "steps": 50,
             "name": "turbidity",
             "reverse": true
           }
-        ]
+        ],
+        "units": "index (0-1)"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -4528,7 +4547,9 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
@@ -4546,22 +4567,22 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Drought Vulnerability",
+        "description": "Drought vulnerability index (DVI) for Kenya at about 1 km resolution. The index runs from 0 (low vulnerability) to 1 (high vulnerability); across Kenya it ranges from 0.2 to 0.9. It is a single static layer that does not change over time.\n\n### How to read the map\nPale areas have low vulnerability and dark red areas high vulnerability. Urban areas and land cover other than cropland, grassland and shrubland are masked out.\n\n### Method\nThe DVI is the average of five indicators, each normalised to a 0 to 1 range: gross domestic product (GDP), population density, livestock density (mean of cattle, sheep and goat density), the share of irrigated land and the Relative Wealth Index (RWI). GDP, irrigation share and RWI are inverted, so that poorer and less irrigated areas score as more vulnerable. Population density is capped at 300 people per km² and urban areas are excluded. The share of irrigated land comes from the ADM-Kenya farming systems map, which separates irrigated from rainfed cropland using Sentinel-2 time series at 10 m.\n\n### About ADM-Kenya\nADM-Kenya (Integrated use of multisource remote sensing data for national scale agricultural drought monitoring in Kenya) is an ESA EO AFRICA project led by the Leibniz Centre for Agricultural Landscape Research (ZALF), with Remote Sensing Solutions (RSS), the International Centre of Insect Physiology and Ecology (icipe), the Regional Centre for Mapping of Resources for Development (RCMRD) and the Kenyan Ministry of Agriculture and Livestock Development. The project developed open processing chains for drought hazard, vulnerability and risk, crop condition, farming systems and evapotranspiration mapping in Kenya.\n\n[ADM-Kenya project page (ESA EO4Society)](https://eo4society.esa.int/projects/adm-kenya/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ADM-Kenya, ESA EO AFRICA (ZALF, RSS, icipe, RCMRD)",
+          "url": "https://eo4society.esa.int/projects/adm-kenya/"
         },
         "categories": [],
-        "min": 0.2008226066827774,
-        "max": 0.8872729539871216,
         "colormaps": [
           {
-            "min": 0,
-            "max": 1,
+            "min": 0.2,
+            "max": 0.9,
             "steps": 50,
-            "name": "velocity-green",
-            "reverse": false
+            "name": "freesurface-red",
+            "reverse": true
           }
-        ]
+        ],
+        "units": "index (0-1)"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -4631,19 +4652,20 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Crop Condition Long Rain Season",
+        "description": "Map of drought-affected cropland in Kenya for the long rains season (roughly March to May), one map per year from 2018 to 2022. Each cropland pixel is classed as affected or not affected by drought, based on Sentinel-2 imagery.\n\n### How to read the map\nGreen pixels are cropland in normal condition and brown pixels are cropland affected by drought. Areas that are not cropland are left blank. Use the time slider to move between years.\n\n### Method\nRandom forest classifiers, one for each of Kenya's seven agro-ecological zones, were trained on monthly Sentinel-2 composites of four vegetation indices: NDVI, the Normalised Difference Moisture Index (NDMI), the Normalised Difference Red Edge index (NDRE) and the Green NDVI (GNDVI), together with the median and maximum of each time series. Training samples came from 2018 (a non-drought year) and 2021 (a drought year). The trained models were then applied to each season on the Copernicus Data Space Ecosystem (CDSE) openEO platform. Cropland was masked with ESA WorldCover v2.\n\n### About ADM-Kenya\nADM-Kenya (Integrated use of multisource remote sensing data for national scale agricultural drought monitoring in Kenya) is an ESA EO AFRICA project led by the Leibniz Centre for Agricultural Landscape Research (ZALF), with Remote Sensing Solutions (RSS), the International Centre of Insect Physiology and Ecology (icipe), the Regional Centre for Mapping of Resources for Development (RCMRD) and the Kenyan Ministry of Agriculture and Livestock Development. The project developed open processing chains for drought hazard, vulnerability and risk, crop condition, farming systems and evapotranspiration mapping in Kenya.\n\n[ADM-Kenya project page (ESA EO4Society)](https://eo4society.esa.int/projects/adm-kenya/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ADM-Kenya, ESA EO AFRICA (ZALF, RSS, icipe, RCMRD)",
+          "url": "https://eo4society.esa.int/projects/adm-kenya/"
         },
         "categories": [
           {
             "color": "#2AE411",
-            "label": "no drought",
+            "label": "Cropland not affected by drought",
             "value": 1
           },
           {
             "color": "#A97C2D",
-            "label": "drought",
+            "label": "Drought-affected cropland",
             "value": 2
           }
         ]
@@ -4662,7 +4684,9 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
@@ -4715,19 +4739,20 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Crop Condition Short Rain Season",
+        "description": "Map of drought-affected cropland in Kenya for the short rains season (roughly October to December), one map per year from 2018 to 2022. Each cropland pixel is classed as affected or not affected by drought, based on Sentinel-2 imagery.\n\n### How to read the map\nGreen pixels are cropland in normal condition and brown pixels are cropland affected by drought. Areas that are not cropland are left blank. Use the time slider to move between years.\n\n### Method\nRandom forest classifiers, one for each of Kenya's seven agro-ecological zones, were trained on monthly Sentinel-2 composites of four vegetation indices: NDVI, the Normalised Difference Moisture Index (NDMI), the Normalised Difference Red Edge index (NDRE) and the Green NDVI (GNDVI), together with the median and maximum of each time series. Training samples came from 2018 (a non-drought year) and 2021 (a drought year). The trained models were then applied to each season on the Copernicus Data Space Ecosystem (CDSE) openEO platform. Cropland was masked with ESA WorldCover v2.\n\n### About ADM-Kenya\nADM-Kenya (Integrated use of multisource remote sensing data for national scale agricultural drought monitoring in Kenya) is an ESA EO AFRICA project led by the Leibniz Centre for Agricultural Landscape Research (ZALF), with Remote Sensing Solutions (RSS), the International Centre of Insect Physiology and Ecology (icipe), the Regional Centre for Mapping of Resources for Development (RCMRD) and the Kenyan Ministry of Agriculture and Livestock Development. The project developed open processing chains for drought hazard, vulnerability and risk, crop condition, farming systems and evapotranspiration mapping in Kenya.\n\n[ADM-Kenya project page (ESA EO4Society)](https://eo4society.esa.int/projects/adm-kenya/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ADM-Kenya, ESA EO AFRICA (ZALF, RSS, icipe, RCMRD)",
+          "url": "https://eo4society.esa.int/projects/adm-kenya/"
         },
         "categories": [
           {
             "color": "#2AE411",
-            "label": "no drought",
+            "label": "Cropland not affected by drought",
             "value": 1
           },
           {
             "color": "#A97C2D",
-            "label": "drought",
+            "label": "Drought-affected cropland",
             "value": 2
           }
         ]
@@ -4746,7 +4771,9 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
@@ -4786,8 +4813,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -4796,7 +4821,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -6024,12 +6051,12 @@
         }
       ],
       "meta": {
-        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
+        "description": "Total precipitation for each day over Senegal, in millimetres, from ERA5-Land. The layer covers 14 days, from 4 to 17 November 2024.\n\n### How to read the map\nLight colours show little or no rain and dark blue the highest daily totals. These dates fall in the dry season, so the map looks almost empty: daily totals stay below 0.5 mm everywhere and most of the country records close to zero. Use the time slider to step through the days.\n\n### Method\nDaily sum of ERA5-Land total precipitation, computed by the WaSCIA Climate Indicators application.\n\n### About WaSCIA\nWater Stress and Climate Indices for Africa (WaSCIA) was an ESA EO AFRICA project (2022 to 2024) led by Telespazio UK with RSS-Hydro and Telespazio France, working with AGRHYMET, the Laboratoire de Physique de l'Atmosphère et de l'Océan Siméon Fongang (LPAOSF) and the Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE) of Senegal. Its Climate Indicators application computes 20 climate indices for Senegal from ERA5-Land reanalysis. Companion Jupyter notebooks compare current conditions with the 1991 to 2020 climatology and flag periods that cross user-defined warning thresholds. The layers in this group are sample outputs of the Climate Indicators application at about 9 km (0.1°) resolution.\n\n[WaSCIA project page (ESA EO4Society)](https://eo4society.esa.int/projects/wascia/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "WaSCIA, ESA EO AFRICA (Telespazio UK). Contains modified Copernicus ERA5-Land data",
+          "url": "https://eo4society.esa.int/projects/wascia/"
         },
         "categories": [],
-        "units": "mm",
         "colormaps": [
           {
             "min": 0,
@@ -6038,7 +6065,8 @@
             "name": "freesurface-blue",
             "reverse": true
           }
-        ]
+        ],
+        "units": "mm/day"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -6054,7 +6082,9 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
@@ -6179,12 +6209,12 @@
         }
       ],
       "meta": {
-        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
+        "description": "Mean air temperature 2 m above the ground for each day over Senegal, in °C, from ERA5-Land. The layer covers 14 days, from 5 to 18 November 2024.\n\n### How to read the map\nDark blue shows the coolest and yellow the warmest areas. The colour scale runs from 24 to 33 °C. The mean, maximum and minimum temperature layers each use their own scale, so compare values using the legend, not the colours. Use the time slider to step through the days.\n\n### Method\nDaily mean of ERA5-Land 2 m air temperature, computed by the WaSCIA Climate Indicators application.\n\n### About WaSCIA\nWater Stress and Climate Indices for Africa (WaSCIA) was an ESA EO AFRICA project (2022 to 2024) led by Telespazio UK with RSS-Hydro and Telespazio France, working with AGRHYMET, the Laboratoire de Physique de l'Atmosphère et de l'Océan Siméon Fongang (LPAOSF) and the Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE) of Senegal. Its Climate Indicators application computes 20 climate indices for Senegal from ERA5-Land reanalysis. Companion Jupyter notebooks compare current conditions with the 1991 to 2020 climatology and flag periods that cross user-defined warning thresholds. The layers in this group are sample outputs of the Climate Indicators application at about 9 km (0.1°) resolution.\n\n[WaSCIA project page (ESA EO4Society)](https://eo4society.esa.int/projects/wascia/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "WaSCIA, ESA EO AFRICA (Telespazio UK). Contains modified Copernicus ERA5-Land data",
+          "url": "https://eo4society.esa.int/projects/wascia/"
         },
         "categories": [],
-        "units": "°C",
         "colormaps": [
           {
             "min": 24,
@@ -6193,7 +6223,8 @@
             "name": "temperature",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -6209,7 +6240,9 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
@@ -6334,12 +6367,12 @@
         }
       ],
       "meta": {
-        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
+        "description": "Maximum air temperature 2 m above the ground for each day over Senegal, in °C, from ERA5-Land. The layer covers 14 days, from 5 to 18 November 2024.\n\n### How to read the map\nDark blue shows the coolest and yellow the warmest areas. The colour scale runs from 27 to 41 °C. The mean, maximum and minimum temperature layers each use their own scale, so compare values using the legend, not the colours. Use the time slider to step through the days.\n\n### Method\nDaily maximum of ERA5-Land 2 m air temperature, computed by the WaSCIA Climate Indicators application.\n\n### About WaSCIA\nWater Stress and Climate Indices for Africa (WaSCIA) was an ESA EO AFRICA project (2022 to 2024) led by Telespazio UK with RSS-Hydro and Telespazio France, working with AGRHYMET, the Laboratoire de Physique de l'Atmosphère et de l'Océan Siméon Fongang (LPAOSF) and the Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE) of Senegal. Its Climate Indicators application computes 20 climate indices for Senegal from ERA5-Land reanalysis. Companion Jupyter notebooks compare current conditions with the 1991 to 2020 climatology and flag periods that cross user-defined warning thresholds. The layers in this group are sample outputs of the Climate Indicators application at about 9 km (0.1°) resolution.\n\n[WaSCIA project page (ESA EO4Society)](https://eo4society.esa.int/projects/wascia/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "WaSCIA, ESA EO AFRICA (Telespazio UK). Contains modified Copernicus ERA5-Land data",
+          "url": "https://eo4society.esa.int/projects/wascia/"
         },
         "categories": [],
-        "units": "°C",
         "colormaps": [
           {
             "min": 27,
@@ -6348,7 +6381,8 @@
             "name": "temperature",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -6364,7 +6398,9 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
@@ -6489,12 +6525,12 @@
         }
       ],
       "meta": {
-        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
+        "description": "Minimum air temperature 2 m above the ground for each day over Senegal, in °C, from ERA5-Land. The layer covers 14 days, from 5 to 18 November 2024.\n\n### How to read the map\nDark blue shows the coolest and yellow the warmest areas. The colour scale runs from 16 to 28 °C. The mean, maximum and minimum temperature layers each use their own scale, so compare values using the legend, not the colours. Use the time slider to step through the days.\n\n### Method\nDaily minimum of ERA5-Land 2 m air temperature, computed by the WaSCIA Climate Indicators application.\n\n### About WaSCIA\nWater Stress and Climate Indices for Africa (WaSCIA) was an ESA EO AFRICA project (2022 to 2024) led by Telespazio UK with RSS-Hydro and Telespazio France, working with AGRHYMET, the Laboratoire de Physique de l'Atmosphère et de l'Océan Siméon Fongang (LPAOSF) and the Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE) of Senegal. Its Climate Indicators application computes 20 climate indices for Senegal from ERA5-Land reanalysis. Companion Jupyter notebooks compare current conditions with the 1991 to 2020 climatology and flag periods that cross user-defined warning thresholds. The layers in this group are sample outputs of the Climate Indicators application at about 9 km (0.1°) resolution.\n\n[WaSCIA project page (ESA EO4Society)](https://eo4society.esa.int/projects/wascia/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "WaSCIA, ESA EO AFRICA (Telespazio UK). Contains modified Copernicus ERA5-Land data",
+          "url": "https://eo4society.esa.int/projects/wascia/"
         },
         "categories": [],
-        "units": "°C",
         "colormaps": [
           {
             "min": 16,
@@ -6503,7 +6539,8 @@
             "name": "temperature",
             "reverse": false
           }
-        ]
+        ],
+        "units": "°C"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -6519,7 +6556,9 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
@@ -6628,21 +6667,22 @@
         }
       ],
       "meta": {
-        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
+        "description": "Longest run of consecutive dry days in each month over Senegal, where a dry day has less than 1 mm of precipitation. The layer covers 12 months, from September 2023 to August 2024.\n\n### How to read the map\nHigher values (darker red) mean longer dry spells, up to the full length of the month. From November to March almost all of Senegal is dry for the whole month, as expected in the dry season. The more informative months are June to October, the rainy season, when a long dry spell can stress crops. Use the time slider to step through the months.\n\n### Method\nFor each month, the WaSCIA Climate Indicators application counts the largest number of consecutive days with ERA5-Land daily precipitation below 1 mm.\n\n### About WaSCIA\nWater Stress and Climate Indices for Africa (WaSCIA) was an ESA EO AFRICA project (2022 to 2024) led by Telespazio UK with RSS-Hydro and Telespazio France, working with AGRHYMET, the Laboratoire de Physique de l'Atmosphère et de l'Océan Siméon Fongang (LPAOSF) and the Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE) of Senegal. Its Climate Indicators application computes 20 climate indices for Senegal from ERA5-Land reanalysis. Companion Jupyter notebooks compare current conditions with the 1991 to 2020 climatology and flag periods that cross user-defined warning thresholds. The layers in this group are sample outputs of the Climate Indicators application at about 9 km (0.1°) resolution.\n\n[WaSCIA project page (ESA EO4Society)](https://eo4society.esa.int/projects/wascia/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "WaSCIA, ESA EO AFRICA (Telespazio UK). Contains modified Copernicus ERA5-Land data",
+          "url": "https://eo4society.esa.int/projects/wascia/"
         },
         "categories": [],
-        "units": "Days",
         "colormaps": [
           {
             "min": 0,
             "max": 31,
             "steps": 100,
-            "name": "viridis",
-            "reverse": false
+            "name": "yiorrd",
+            "reverse": true
           }
-        ]
+        ],
+        "units": "days"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -6658,7 +6698,9 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
@@ -6767,20 +6809,22 @@
         }
       ],
       "meta": {
-        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
+        "description": "Standardised Precipitation Evapotranspiration Index (SPEI) for Senegal, monthly for 2023. SPEI compares the climatic water balance (precipitation minus potential evapotranspiration) of a period with its long-term distribution. Negative values mean drier than normal conditions and positive values wetter than normal.\n\n### How to read the map\nRed shows drier than normal, grey close to normal and blue wetter than normal conditions. A common reading is that values below -1 indicate moderate drought, below -1.5 severe drought and below -2 extreme drought. The colour scale runs from -2.5 to 2.5. A few pixels in June and September 2023 fall far below this range (around -8). Use the time slider to step through the months.\n\n### Method\nFor each month, the difference between precipitation and potential evapotranspiration from ERA5-Land is calculated and aggregated following Vicente-Serrano et al. (2010), then standardised.\n\n### About WaSCIA\nWater Stress and Climate Indices for Africa (WaSCIA) was an ESA EO AFRICA project (2022 to 2024) led by Telespazio UK with RSS-Hydro and Telespazio France, working with AGRHYMET, the Laboratoire de Physique de l'Atmosphère et de l'Océan Siméon Fongang (LPAOSF) and the Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE) of Senegal. Its Climate Indicators application computes 20 climate indices for Senegal from ERA5-Land reanalysis. Companion Jupyter notebooks compare current conditions with the 1991 to 2020 climatology and flag periods that cross user-defined warning thresholds. The layers in this group are sample outputs of the Climate Indicators application at about 9 km (0.1°) resolution.\n\n[WaSCIA project page (ESA EO4Society)](https://eo4society.esa.int/projects/wascia/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "WaSCIA, ESA EO AFRICA (Telespazio UK). Contains modified Copernicus ERA5-Land data",
+          "url": "https://eo4society.esa.int/projects/wascia/"
         },
         "categories": [],
         "colormaps": [
           {
-            "min": -8,
-            "max": 3,
+            "min": -2.5,
+            "max": 2.5,
             "steps": 100,
-            "name": "yignbu",
-            "reverse": false
+            "name": "rdbu",
+            "reverse": true
           }
-        ]
+        ],
+        "units": "index (unitless)"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -6796,7 +6840,9 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
@@ -6873,21 +6919,22 @@
         }
       ],
       "meta": {
-        "description": "‘Water Stress and Climate Indices for Africa’ (WaSCIA) was an ESA funded project that aims to deliver high-quality Water Stress and Climate Indices through an easy-to-use web interface to help the management of drought and water stress in Africa. The project started in 2022 and ended in 2024. The project was led by Telespazio UK in collaboration with RSS Hydro, Telespazio UK and three Stakeholders, Centre Régional de Formation et d'Application en Agrométéorologie et Hydrologie Opérationnelle (AGRHYMET), Laboratoire Physique de l'Atmosphère et de l'Océan Simeon Fongang (LPAOSF) and Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE).\nThe main outputs from WaSCIA were:\n- Climate Indices. Telespazio UK developed an application (wascia_processor_climate_indicators) that allows the generation of 20 climate indices. In addition, a set of Jupyter Notebooks were also developed for the flexible and interactive analysis of the climate data, enabling end-users to quickly assess the climate condition in their region of interest and analyse both the long-term trends in climate variability and the current season anomalies up to 5 days behind real time. The end-users can interrogate the data and produce customised metrics useful for their operations. The WASCIA results are limited to the area of Senegal.\n- Soil Moisture Indices ",
+        "description": "Total precipitation for each week over Senegal, in millimetres, from ERA5-Land. The layer covers 8 weekly steps dated 30 June to 18 August 2024, during the rainy season.\n\n### How to read the map\nLight colours show little rain and dark blue the highest weekly totals. The colour scale stops at 250 mm; a few pixels in late July and August exceed this, with a maximum of about 510 mm. Use the time slider to step through the weeks.\n\n### Method\nWeekly sum of ERA5-Land daily precipitation, computed by the WaSCIA Climate Indicators application.\n\n### About WaSCIA\nWater Stress and Climate Indices for Africa (WaSCIA) was an ESA EO AFRICA project (2022 to 2024) led by Telespazio UK with RSS-Hydro and Telespazio France, working with AGRHYMET, the Laboratoire de Physique de l'Atmosphère et de l'Océan Siméon Fongang (LPAOSF) and the Direction de la Gestion et de la Planification des Ressources en Eau (DGPRE) of Senegal. Its Climate Indicators application computes 20 climate indices for Senegal from ERA5-Land reanalysis. Companion Jupyter notebooks compare current conditions with the 1991 to 2020 climatology and flag periods that cross user-defined warning thresholds. The layers in this group are sample outputs of the Climate Indicators application at about 9 km (0.1°) resolution.\n\n[WaSCIA project page (ESA EO4Society)](https://eo4society.esa.int/projects/wascia/)",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "WaSCIA, ESA EO AFRICA (Telespazio UK). Contains modified Copernicus ERA5-Land data",
+          "url": "https://eo4society.esa.int/projects/wascia/"
         },
         "categories": [],
-        "units": "mm",
         "colormaps": [
           {
             "min": 0,
-            "max": 512,
+            "max": 250,
             "steps": 150,
             "name": "freesurface-blue",
             "reverse": true
           }
-        ]
+        ],
+        "units": "mm/week"
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -6903,7 +6950,9 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
@@ -7133,43 +7182,6 @@
       "id": "nox",
       "name": "European agricultural NOx emission 2025",
       "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "Monthly European agricultural NOx emissions in 2025 derived from TROPOMI tropospheric NO2 column satellite observation.",
-        "attribution": {
-          "text": "DESCO-NRT (TEMIS.nl)",
-          "url": "https://www.temis.nl/emissions/region_europe/archive_annual_data.php"
-        },
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 4,
-            "steps": 100,
-            "name": "bone",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "European Crop Monitoring",
-        "subinterfaceGroup": "Emissions",
-        "contentLocation": "infoPanel",
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        },
-        "layerCard": {
-          "toggleable": true
-        }
-      },
       "data": [
         {
           "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/food/nox/DECSO_Europe_agricultural_NOx_2025-01.tif",
@@ -7267,7 +7279,44 @@
             1764543600
           ]
         }
-      ]
+      ],
+      "meta": {
+        "description": "Monthly European agricultural NOx emissions in 2025 derived from TROPOMI tropospheric NO2 column satellite observation.",
+        "attribution": {
+          "text": "DESCO-NRT (TEMIS.nl)",
+          "url": "https://www.temis.nl/emissions/region_europe/archive_annual_data.php"
+        },
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 4,
+            "steps": 100,
+            "name": "bone",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "European Crop Monitoring",
+        "subinterfaceGroup": "Emissions",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Months"
     },
     {
       "id": "witer-spring-cereals",
@@ -7864,8 +7913,6 @@
           "url": "https://algorithm-catalogue.apex.esa.int/apps/world_agrocommodities"
         },
         "categories": [],
-        "min": 0,
-        "max": 100,
         "colormaps": [
           {
             "min": 0,
@@ -7874,7 +7921,9 @@
             "name": "summer",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 100
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -7918,8 +7967,6 @@
           "url": "https://algorithm-catalogue.apex.esa.int/apps/world_agrocommodities"
         },
         "categories": [],
-        "min": 0,
-        "max": 100,
         "colormaps": [
           {
             "min": 0,
@@ -7928,7 +7975,9 @@
             "name": "autumn",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 100
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -7972,8 +8021,6 @@
           "url": "https://algorithm-catalogue.apex.esa.int/apps/world_agrocommodities"
         },
         "categories": [],
-        "min": 0,
-        "max": 100,
         "colormaps": [
           {
             "min": 0,
@@ -7982,7 +8029,9 @@
             "name": "winter",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 100
       },
       "layout": {
         "interfaceGroup": "Demonstrators",
@@ -8027,8 +8076,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -8037,7 +8084,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
@@ -8084,8 +8133,6 @@
           "text": "WorldCover via Terrascope"
         },
         "categories": [],
-        "min": 0,
-        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -8094,7 +8141,9 @@
             "name": "yiorrd",
             "reverse": true
           }
-        ]
+        ],
+        "min": 0,
+        "max": 1
       },
       "layout": {
         "interfaceGroup": "Use Cases",
