@@ -1,0 +1,4087 @@
+{
+  "version": "3.3.5.1",
+  "exportPrefix": "tutorial-9-completion",
+  "layout": {
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "Multi-spectral datasets"
+    },
+    "theme": {
+      "primary-color": "#003247",
+      "secondary-color": "#335e6f",
+      "background-color": "#f3f7f8",
+      "text-color-primary": "#ffffff",
+      "text-color-secondary": "#333333"
+    }
+  },
+  "interfaceGroups": [
+    "Sentinel 2 data"
+  ],
+  "exclusivitySets": [
+    "labels",
+    "basemaps",
+    "worldcover",
+    "bristol-s2"
+  ],
+  "mapConstraints": {
+    "zoom": 7,
+    "center": [
+      -2,
+      54
+    ],
+    "projection": "EPSG:27700"
+  },
+  "projections": [
+    {
+      "name": "WGS84 / Arctic Polar Sterographic",
+      "code": "EPSG:3995",
+      "definition": "+proj=stere +lat_0=90 +lat_ts=71 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs"
+    },
+    {
+      "name": "OSNI 1952 / Irish National Grid",
+      "code": "EPSG:29901",
+      "definition": "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1 +x_0=200000 +y_0=250000 +ellps=airy +towgs84=482.5,-130.6,564.6,-1.042,-0.214,-0.631,8.15 +units=m +no_defs +type=crs"
+    },
+    {
+      "name": "British National Grid",
+      "code": "EPSG:27700",
+      "definition": "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.060,0.1502,0.2470,0.8421,-20.4894 +units=m +no_defs +type=crs"
+    },
+    {
+      "name": "RGF93 v1 / Lambert-93 - France",
+      "code": "EPSG:2154",
+      "definition": "+proj=lcc +lat_0=46.5 +lon_0=3 +lat_1=49 +lat_2=44 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs"
+    }
+  ],
+  "workflows": [],
+  "stories": [],
+  "services": [
+    {
+      "id": "wms-service-1749555952736",
+      "name": "VITO Terrascope",
+      "url": "https://services.terrascope.be/wms/v2",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1749572624524",
+      "name": "Copernicus Urban Atlas",
+      "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1750143419665",
+      "name": "Brockmann Xcube",
+      "url": "https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wmts-service-1750331396152",
+      "name": "Terrascope WMTS",
+      "url": "https://globalland.vito.be/wmts",
+      "format": "wmts"
+    },
+    {
+      "id": "wms-service-1750351088731",
+      "name": "EOX BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "s3-service-1750499655684",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    },
+    {
+      "id": "wms-service-1758122835061",
+      "name": "Copernicus N2K 2018",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122891131",
+      "name": "Copernicus 2012 N2K",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122986156",
+      "name": "Copernicus N2K 2006",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "stac-service-1758796621711",
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    },
+    {
+      "id": "stac-service-1758815789729",
+      "name": "VITO STAC catalogue",
+      "url": "https://stac.openeo.vito.be/",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1758879238525",
+      "name": "CLMS WMS Server",
+      "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1762193515847",
+      "name": "DLR GeoService",
+      "url": "https://a.geoservice.dlr.de/eoc/land/wms/",
+      "format": "wms"
+    }
+  ],
+  "sources": [
+    {
+      "id": "stadia-alidade-smooth-dark",
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Dark",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "sentinel",
+      "name": "Sentinel",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_S2_TCC",
+          "serviceId": "wms-service-1749555952736"
+        }
+      ],
+      "meta": {
+        "description": "True colour composite of 2021 Sentinel 2 data.",
+        "attribution": {
+          "text": "Copernicus Sentinel-2",
+          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
+    },
+    {
+      "id": "blue-marble",
+      "name": "Blue Marble",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "blue_marble:blue_marble"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Blue Marble",
+        "attribution": {
+          "text": "NASA via EOC Base Map Service from DLR",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png"
+    },
+    {
+      "id": "open-streetmap",
+      "name": "Open StreetMap",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Open StreetMap",
+        "attribution": {
+          "text": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "id": "stadia-alidade-smooth-light",
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Light",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "stadia-alidade-satellite",
+      "name": "Stadia Alidade Satellite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Satellite",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "dem",
+      "name": "DEM",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "COP_DEM_GLO_30M_COG"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: DEM",
+        "attribution": {
+          "text": "Copernicus"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png"
+    },
+    {
+      "id": "world-cover",
+      "name": "World Cover",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://services.terrascope.be/wms/v2",
+          "format": "wms",
+          "zIndex": 10,
+          "layers": "WORLDCOVER_2021_MAP"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: World Cover",
+        "attribution": {
+          "text": "(c) ESA World Cover"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/worldcover.png"
+    },
+    {
+      "id": "bristol-sentinel-2-true-colour-composite-3",
+      "name": "Bristol Sentinel 2 natural colour",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/10/S2A_20260110_latn519lonw0022_T30UWC_ORB037_20260110135337_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 390,
+              "gMin": 10,
+              "gMax": 380,
+              "bMin": 0,
+              "bMax": 350
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "convertToRGB": true,
+          "bands": [
+            3,
+            2,
+            1
+          ]
+        }
+      ],
+      "charts": [
+        {
+          "chartType": "xy",
+          "x": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "traces": [
+            {
+              "name": "Reflectance",
+              "type": "scatter",
+              "mode": "lines"
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Sentinel 2 data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "bristol-s2"
+      ]
+    },
+    {
+      "id": "bristol-sentinel-2-true-colour-composite-3-3",
+      "name": "Bristol Sentinel 2 false colour IR",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/10/S2A_20260110_latn519lonw0022_T30UWC_ORB037_20260110135337_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 50,
+              "rMax": 820,
+              "gMin": 10,
+              "gMax": 640,
+              "bMin": 20,
+              "bMax": 620
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "convertToRGB": true,
+          "bands": [
+            7,
+            3,
+            2
+          ]
+        }
+      ],
+      "charts": [],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Sentinel 2 data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "bristol-s2"
+      ]
+    },
+    {
+      "id": "bristol-sentinel-2-true-colour-composite-3-2",
+      "name": "Bristol Sentinel 2 agriculture",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/10/S2A_20260110_latn519lonw0022_T30UWC_ORB037_20260110135337_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 30,
+              "rMax": 340,
+              "gMin": 10,
+              "gMax": 750,
+              "bMin": 0,
+              "bMax": 350
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "bands": [
+            9,
+            7,
+            1
+          ],
+          "convertToRGB": true
+        }
+      ],
+      "charts": [],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Sentinel 2 data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "bristol-s2"
+      ]
+    },
+    {
+      "id": "bristol-sentinel-2-true-colour-composite-3-2-2",
+      "name": "Bristol Sentinel 2 urban / geology",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/10/S2A_20260110_latn519lonw0022_T30UWC_ORB037_20260110135337_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 10,
+              "rMax": 200,
+              "gMin": 10,
+              "gMax": 320,
+              "bMin": 10,
+              "bMax": 640
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "convertToRGB": true,
+          "bands": [
+            10,
+            9,
+            3
+          ]
+        }
+      ],
+      "charts": [],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Sentinel 2 data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "bristol-s2"
+      ]
+    },
+    {
+      "id": "bristol-sentinel-2-true-colour-composite-3-4",
+      "name": "Bristol Sentinel 2 NDWI",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/10/S2A_20260110_latn519lonw0022_T30UWC_ORB037_20260110135337_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                -0.5,
+                [
+                  166,
+                  97,
+                  26,
+                  1
+                ],
+                -0.25,
+                [
+                  223,
+                  194,
+                  125,
+                  1
+                ],
+                0,
+                [
+                  245,
+                  245,
+                  245,
+                  1
+                ],
+                0.15,
+                [
+                  171,
+                  217,
+                  233,
+                  1
+                ],
+                0.3,
+                [
+                  67,
+                  147,
+                  195,
+                  1
+                ],
+                0.5,
+                [
+                  33,
+                  102,
+                  172,
+                  1
+                ]
+              ]
+            ]
+          },
+          "spectralIndex": {
+            "recipe": "ndwi",
+            "bandA": 2,
+            "bandB": 7,
+            "colormap": "rdbu",
+            "reverse": true,
+            "min": -0.5,
+            "max": 0.5,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": -0.5,
+                "color": "#A6611A",
+                "label": "Dry land"
+              },
+              {
+                "value": -0.25,
+                "color": "#DFC27D",
+                "label": "Land"
+              },
+              {
+                "value": 0,
+                "color": "#F5F5F5",
+                "label": "Land / water transition"
+              },
+              {
+                "value": 0.15,
+                "color": "#ABD9E9",
+                "label": "Likely water"
+              },
+              {
+                "value": 0.3,
+                "color": "#4393C3",
+                "label": "Water"
+              },
+              {
+                "value": 0.5,
+                "color": "#2166AC",
+                "label": "Strong water response"
+              }
+            ]
+          },
+          "bands": [
+            2,
+            7
+          ]
+        }
+      ],
+      "charts": [],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Sentinel 2 data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "bristol-s2"
+      ]
+    },
+    {
+      "id": "bristol-sentinel-2-true-colour-composite-3-4-2",
+      "name": "Bristol Sentinel 2 NDVI",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/10/S2A_20260110_latn519lonw0022_T30UWC_ORB037_20260110135337_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                -0.2,
+                [
+                  140,
+                  81,
+                  10,
+                  1
+                ],
+                0,
+                [
+                  216,
+                  179,
+                  101,
+                  1
+                ],
+                0.2,
+                [
+                  246,
+                  232,
+                  166,
+                  1
+                ],
+                0.4,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.6,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "spectralIndex": {
+            "recipe": "ndvi",
+            "bandA": 7,
+            "bandB": 3,
+            "colormap": "greens",
+            "reverse": true,
+            "min": -0.2,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": -0.2,
+                "color": "#8C510A",
+                "label": "Very low / non-vegetated"
+              },
+              {
+                "value": 0,
+                "color": "#D8B365",
+                "label": "Bare / little vegetation"
+              },
+              {
+                "value": 0.2,
+                "color": "#F6E8A6",
+                "label": "Sparse vegetation"
+              },
+              {
+                "value": 0.4,
+                "color": "#A6D96A",
+                "label": "Moderate vegetation"
+              },
+              {
+                "value": 0.6,
+                "color": "#4D9221",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Dense vegetation"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            3
+          ]
+        }
+      ],
+      "charts": [],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Sentinel 2 data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "bristol-s2"
+      ]
+    },
+    {
+      "id": "bristol-sentinel-2-true-colour-composite-3-4-2-2",
+      "name": "Bristol Sentinel 2 NDBI",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/10/S2A_20260110_latn519lonw0022_T30UWC_ORB037_20260110135337_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                -0.5,
+                [
+                  33,
+                  102,
+                  172,
+                  1
+                ],
+                -0.25,
+                [
+                  146,
+                  197,
+                  222,
+                  1
+                ],
+                0,
+                [
+                  247,
+                  247,
+                  247,
+                  1
+                ],
+                0.15,
+                [
+                  253,
+                  174,
+                  97,
+                  1
+                ],
+                0.3,
+                [
+                  244,
+                  109,
+                  67,
+                  1
+                ],
+                0.5,
+                [
+                  178,
+                  24,
+                  43,
+                  1
+                ]
+              ]
+            ]
+          },
+          "spectralIndex": {
+            "recipe": "ndbi",
+            "bandA": 9,
+            "bandB": 7,
+            "colormap": "yiorrd",
+            "reverse": true,
+            "min": -0.5,
+            "max": 0.5,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": -0.5,
+                "color": "#2166AC",
+                "label": "Strong negative response"
+              },
+              {
+                "value": -0.25,
+                "color": "#92C5DE",
+                "label": "Vegetated / non-built"
+              },
+              {
+                "value": 0,
+                "color": "#F7F7F7",
+                "label": "Transition"
+              },
+              {
+                "value": 0.15,
+                "color": "#FDAE61",
+                "label": "Likely built-up"
+              },
+              {
+                "value": 0.3,
+                "color": "#F46D43",
+                "label": "Built-up"
+              },
+              {
+                "value": 0.5,
+                "color": "#B2182B",
+                "label": "Strong built-up response"
+              }
+            ]
+          },
+          "bands": [
+            9,
+            7
+          ]
+        }
+      ],
+      "charts": [],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Sentinel 2 data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "bristol-s2"
+      ]
+    },
+    {
+      "id": "bristol-sentinel-2-true-colour-composite-3-4-3",
+      "name": "Bristol Sentinel 2 Swipe - NDWI vs Natural Colour",
+      "isActive": false,
+      "exclusivitySets": [
+        "bristol-s2"
+      ],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Sentinel 2 data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/10/S2A_20260110_latn519lonw0022_T30UWC_ORB037_20260110135337_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "normalize": false,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 390,
+              "gMin": 10,
+              "gMax": 380,
+              "bMin": 0,
+              "bMax": 350
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "bands": [
+            3,
+            2,
+            1
+          ],
+          "position": "left",
+          "convertToRGB": true
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/10/S2A_20260110_latn519lonw0022_T30UWC_ORB037_20260110135337_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right",
+          "styleSource": "own",
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                -0.5,
+                [
+                  166,
+                  97,
+                  26,
+                  1
+                ],
+                -0.25,
+                [
+                  223,
+                  194,
+                  125,
+                  1
+                ],
+                0,
+                [
+                  245,
+                  245,
+                  245,
+                  1
+                ],
+                0.15,
+                [
+                  171,
+                  217,
+                  233,
+                  1
+                ],
+                0.3,
+                [
+                  67,
+                  147,
+                  195,
+                  1
+                ],
+                0.5,
+                [
+                  33,
+                  102,
+                  172,
+                  1
+                ]
+              ]
+            ]
+          },
+          "spectralIndex": {
+            "recipe": "ndwi",
+            "bandA": 2,
+            "bandB": 7,
+            "colormap": "rdbu",
+            "reverse": true,
+            "min": -0.5,
+            "max": 0.5,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": -0.5,
+                "color": "#A6611A",
+                "label": "Dry land"
+              },
+              {
+                "value": -0.25,
+                "color": "#DFC27D",
+                "label": "Land"
+              },
+              {
+                "value": 0,
+                "color": "#F5F5F5",
+                "label": "Land / water transition"
+              },
+              {
+                "value": 0.15,
+                "color": "#ABD9E9",
+                "label": "Likely water"
+              },
+              {
+                "value": 0.3,
+                "color": "#4393C3",
+                "label": "Water"
+              },
+              {
+                "value": 0.5,
+                "color": "#2166AC",
+                "label": "Strong water response"
+              }
+            ]
+          },
+          "bands": [
+            2,
+            7
+          ]
+        }
+      ],
+      "charts": [],
+      "isSwipeLayer": true
+    },
+    {
+      "id": "bristol-sentinel-2-true-colour-composite-2",
+      "name": "East London  and Thames Estuary time series",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/06/24/S2C_20260624_latn518lone0007_T30UYC_ORB137_20260624132136_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                0,
+                [
+                  118,
+                  42,
+                  131,
+                  1
+                ],
+                0.15,
+                [
+                  197,
+                  27,
+                  125,
+                  1
+                ],
+                0.3,
+                [
+                  241,
+                  182,
+                  218,
+                  1
+                ],
+                0.4,
+                [
+                  247,
+                  247,
+                  185,
+                  1
+                ],
+                0.55,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.7,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "timestamps": [
+            1782255600
+          ],
+          "spectralIndex": {
+            "recipe": "ndre",
+            "bandA": 7,
+            "bandB": 4,
+            "colormap": "viridis",
+            "reverse": false,
+            "min": 0,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": 0,
+                "color": "#762A83",
+                "label": "Very low vegetation response"
+              },
+              {
+                "value": 0.15,
+                "color": "#C51B7D",
+                "label": "Low vegetation response"
+              },
+              {
+                "value": 0.3,
+                "color": "#F1B6DA",
+                "label": "Low to moderate vegetation response"
+              },
+              {
+                "value": 0.4,
+                "color": "#F7F7B9",
+                "label": "Moderate vegetation response"
+              },
+              {
+                "value": 0.55,
+                "color": "#A6D96A",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.7,
+                "color": "#4D9221",
+                "label": "High vegetation response"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Very high vegetation response"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            4
+          ]
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/05/25/S2C_20260525_latn518lone0007_T30UYC_ORB137_20260525130916_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                0,
+                [
+                  118,
+                  42,
+                  131,
+                  1
+                ],
+                0.15,
+                [
+                  197,
+                  27,
+                  125,
+                  1
+                ],
+                0.3,
+                [
+                  241,
+                  182,
+                  218,
+                  1
+                ],
+                0.4,
+                [
+                  247,
+                  247,
+                  185,
+                  1
+                ],
+                0.55,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.7,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "timestamps": [
+            1779663600
+          ],
+          "spectralIndex": {
+            "recipe": "ndre",
+            "bandA": 7,
+            "bandB": 4,
+            "colormap": "viridis",
+            "reverse": false,
+            "min": 0,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": 0,
+                "color": "#762A83",
+                "label": "Very low vegetation response"
+              },
+              {
+                "value": 0.15,
+                "color": "#C51B7D",
+                "label": "Low vegetation response"
+              },
+              {
+                "value": 0.3,
+                "color": "#F1B6DA",
+                "label": "Low to moderate vegetation response"
+              },
+              {
+                "value": 0.4,
+                "color": "#F7F7B9",
+                "label": "Moderate vegetation response"
+              },
+              {
+                "value": 0.55,
+                "color": "#A6D96A",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.7,
+                "color": "#4D9221",
+                "label": "High vegetation response"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Very high vegetation response"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            4
+          ]
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/04/27/S2B_20260427_latn518lone0007_T30UYC_ORB094_20260427131545_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                0,
+                [
+                  118,
+                  42,
+                  131,
+                  1
+                ],
+                0.15,
+                [
+                  197,
+                  27,
+                  125,
+                  1
+                ],
+                0.3,
+                [
+                  241,
+                  182,
+                  218,
+                  1
+                ],
+                0.4,
+                [
+                  247,
+                  247,
+                  185,
+                  1
+                ],
+                0.55,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.7,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "timestamps": [
+            1777244400
+          ],
+          "spectralIndex": {
+            "recipe": "ndre",
+            "bandA": 7,
+            "bandB": 4,
+            "colormap": "viridis",
+            "reverse": false,
+            "min": 0,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": 0,
+                "color": "#762A83",
+                "label": "Very low vegetation response"
+              },
+              {
+                "value": 0.15,
+                "color": "#C51B7D",
+                "label": "Low vegetation response"
+              },
+              {
+                "value": 0.3,
+                "color": "#F1B6DA",
+                "label": "Low to moderate vegetation response"
+              },
+              {
+                "value": 0.4,
+                "color": "#F7F7B9",
+                "label": "Moderate vegetation response"
+              },
+              {
+                "value": 0.55,
+                "color": "#A6D96A",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.7,
+                "color": "#4D9221",
+                "label": "High vegetation response"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Very high vegetation response"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            4
+          ]
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/03/18/S2A_20260318_latn518lone0007_T30UYC_ORB137_20260318162447_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                0,
+                [
+                  118,
+                  42,
+                  131,
+                  1
+                ],
+                0.15,
+                [
+                  197,
+                  27,
+                  125,
+                  1
+                ],
+                0.3,
+                [
+                  241,
+                  182,
+                  218,
+                  1
+                ],
+                0.4,
+                [
+                  247,
+                  247,
+                  185,
+                  1
+                ],
+                0.55,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.7,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "timestamps": [
+            1773792000
+          ],
+          "spectralIndex": {
+            "recipe": "ndre",
+            "bandA": 7,
+            "bandB": 4,
+            "colormap": "viridis",
+            "reverse": false,
+            "min": 0,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": 0,
+                "color": "#762A83",
+                "label": "Very low vegetation response"
+              },
+              {
+                "value": 0.15,
+                "color": "#C51B7D",
+                "label": "Low vegetation response"
+              },
+              {
+                "value": 0.3,
+                "color": "#F1B6DA",
+                "label": "Low to moderate vegetation response"
+              },
+              {
+                "value": 0.4,
+                "color": "#F7F7B9",
+                "label": "Moderate vegetation response"
+              },
+              {
+                "value": 0.55,
+                "color": "#A6D96A",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.7,
+                "color": "#4D9221",
+                "label": "High vegetation response"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Very high vegetation response"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            4
+          ]
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/02/14/S2C_20260214_latn518lone0007_T30UYC_ORB137_20260214131010_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                0,
+                [
+                  118,
+                  42,
+                  131,
+                  1
+                ],
+                0.15,
+                [
+                  197,
+                  27,
+                  125,
+                  1
+                ],
+                0.3,
+                [
+                  241,
+                  182,
+                  218,
+                  1
+                ],
+                0.4,
+                [
+                  247,
+                  247,
+                  185,
+                  1
+                ],
+                0.55,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.7,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "timestamps": [
+            1771027200
+          ],
+          "spectralIndex": {
+            "recipe": "ndre",
+            "bandA": 7,
+            "bandB": 4,
+            "colormap": "viridis",
+            "reverse": false,
+            "min": 0,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": 0,
+                "color": "#762A83",
+                "label": "Very low vegetation response"
+              },
+              {
+                "value": 0.15,
+                "color": "#C51B7D",
+                "label": "Low vegetation response"
+              },
+              {
+                "value": 0.3,
+                "color": "#F1B6DA",
+                "label": "Low to moderate vegetation response"
+              },
+              {
+                "value": 0.4,
+                "color": "#F7F7B9",
+                "label": "Moderate vegetation response"
+              },
+              {
+                "value": 0.55,
+                "color": "#A6D96A",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.7,
+                "color": "#4D9221",
+                "label": "High vegetation response"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Very high vegetation response"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            4
+          ]
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/01/04/S2A_20260104_latn518lone0007_T30UYC_ORB094_20260104143622_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                0,
+                [
+                  118,
+                  42,
+                  131,
+                  1
+                ],
+                0.15,
+                [
+                  197,
+                  27,
+                  125,
+                  1
+                ],
+                0.3,
+                [
+                  241,
+                  182,
+                  218,
+                  1
+                ],
+                0.4,
+                [
+                  247,
+                  247,
+                  185,
+                  1
+                ],
+                0.55,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.7,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "timestamps": [
+            1767484800
+          ],
+          "spectralIndex": {
+            "recipe": "ndre",
+            "bandA": 7,
+            "bandB": 4,
+            "colormap": "viridis",
+            "reverse": false,
+            "min": 0,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": 0,
+                "color": "#762A83",
+                "label": "Very low vegetation response"
+              },
+              {
+                "value": 0.15,
+                "color": "#C51B7D",
+                "label": "Low vegetation response"
+              },
+              {
+                "value": 0.3,
+                "color": "#F1B6DA",
+                "label": "Low to moderate vegetation response"
+              },
+              {
+                "value": 0.4,
+                "color": "#F7F7B9",
+                "label": "Moderate vegetation response"
+              },
+              {
+                "value": 0.55,
+                "color": "#A6D96A",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.7,
+                "color": "#4D9221",
+                "label": "High vegetation response"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Very high vegetation response"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            4
+          ]
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2025/12/31/S2B_20251231_latn518lone0007_T30UYC_ORB137_20251231132639_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                0,
+                [
+                  118,
+                  42,
+                  131,
+                  1
+                ],
+                0.15,
+                [
+                  197,
+                  27,
+                  125,
+                  1
+                ],
+                0.3,
+                [
+                  241,
+                  182,
+                  218,
+                  1
+                ],
+                0.4,
+                [
+                  247,
+                  247,
+                  185,
+                  1
+                ],
+                0.55,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.7,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "timestamps": [
+            1767139200
+          ],
+          "spectralIndex": {
+            "recipe": "ndre",
+            "bandA": 7,
+            "bandB": 4,
+            "colormap": "viridis",
+            "reverse": false,
+            "min": 0,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": 0,
+                "color": "#762A83",
+                "label": "Very low vegetation response"
+              },
+              {
+                "value": 0.15,
+                "color": "#C51B7D",
+                "label": "Low vegetation response"
+              },
+              {
+                "value": 0.3,
+                "color": "#F1B6DA",
+                "label": "Low to moderate vegetation response"
+              },
+              {
+                "value": 0.4,
+                "color": "#F7F7B9",
+                "label": "Moderate vegetation response"
+              },
+              {
+                "value": 0.55,
+                "color": "#A6D96A",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.7,
+                "color": "#4D9221",
+                "label": "High vegetation response"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Very high vegetation response"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            4
+          ]
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2025/11/26/S2C_20251126_latn518lone0007_T30UYC_ORB137_20251126131101_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                0,
+                [
+                  118,
+                  42,
+                  131,
+                  1
+                ],
+                0.15,
+                [
+                  197,
+                  27,
+                  125,
+                  1
+                ],
+                0.3,
+                [
+                  241,
+                  182,
+                  218,
+                  1
+                ],
+                0.4,
+                [
+                  247,
+                  247,
+                  185,
+                  1
+                ],
+                0.55,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.7,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "timestamps": [
+            1764115200
+          ],
+          "spectralIndex": {
+            "recipe": "ndre",
+            "bandA": 7,
+            "bandB": 4,
+            "colormap": "viridis",
+            "reverse": false,
+            "min": 0,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": 0,
+                "color": "#762A83",
+                "label": "Very low vegetation response"
+              },
+              {
+                "value": 0.15,
+                "color": "#C51B7D",
+                "label": "Low vegetation response"
+              },
+              {
+                "value": 0.3,
+                "color": "#F1B6DA",
+                "label": "Low to moderate vegetation response"
+              },
+              {
+                "value": 0.4,
+                "color": "#F7F7B9",
+                "label": "Moderate vegetation response"
+              },
+              {
+                "value": 0.55,
+                "color": "#A6D96A",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.7,
+                "color": "#4D9221",
+                "label": "High vegetation response"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Very high vegetation response"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            4
+          ]
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2025/10/06/S2A_20251006_latn518lone0007_T30UYC_ORB094_20251006143621_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                0,
+                [
+                  118,
+                  42,
+                  131,
+                  1
+                ],
+                0.15,
+                [
+                  197,
+                  27,
+                  125,
+                  1
+                ],
+                0.3,
+                [
+                  241,
+                  182,
+                  218,
+                  1
+                ],
+                0.4,
+                [
+                  247,
+                  247,
+                  185,
+                  1
+                ],
+                0.55,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.7,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "timestamps": [
+            1759705200
+          ],
+          "spectralIndex": {
+            "recipe": "ndre",
+            "bandA": 7,
+            "bandB": 4,
+            "colormap": "viridis",
+            "reverse": false,
+            "min": 0,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": 0,
+                "color": "#762A83",
+                "label": "Very low vegetation response"
+              },
+              {
+                "value": 0.15,
+                "color": "#C51B7D",
+                "label": "Low vegetation response"
+              },
+              {
+                "value": 0.3,
+                "color": "#F1B6DA",
+                "label": "Low to moderate vegetation response"
+              },
+              {
+                "value": 0.4,
+                "color": "#F7F7B9",
+                "label": "Moderate vegetation response"
+              },
+              {
+                "value": 0.55,
+                "color": "#A6D96A",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.7,
+                "color": "#4D9221",
+                "label": "High vegetation response"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Very high vegetation response"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            4
+          ]
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/08/25/S2A_20260825_latn518lone0007_T30UYC_ORB137_20260825180456_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                0,
+                [
+                  118,
+                  42,
+                  131,
+                  1
+                ],
+                0.15,
+                [
+                  197,
+                  27,
+                  125,
+                  1
+                ],
+                0.3,
+                [
+                  241,
+                  182,
+                  218,
+                  1
+                ],
+                0.4,
+                [
+                  247,
+                  247,
+                  185,
+                  1
+                ],
+                0.55,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.7,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "timestamps": [
+            1787612400
+          ],
+          "spectralIndex": {
+            "recipe": "ndre",
+            "bandA": 7,
+            "bandB": 4,
+            "colormap": "viridis",
+            "reverse": false,
+            "min": 0,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": 0,
+                "color": "#762A83",
+                "label": "Very low vegetation response"
+              },
+              {
+                "value": 0.15,
+                "color": "#C51B7D",
+                "label": "Low vegetation response"
+              },
+              {
+                "value": 0.3,
+                "color": "#F1B6DA",
+                "label": "Low to moderate vegetation response"
+              },
+              {
+                "value": 0.4,
+                "color": "#F7F7B9",
+                "label": "Moderate vegetation response"
+              },
+              {
+                "value": 0.55,
+                "color": "#A6D96A",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.7,
+                "color": "#4D9221",
+                "label": "High vegetation response"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Very high vegetation response"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            4
+          ]
+        },
+        {
+          "url": "https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2026/07/29/S2B_20260729_latn518lone0007_T30UYC_ORB137_20260729132336_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "case",
+              [
+                "<=",
+                [
+                  "+",
+                  [
+                    "band",
+                    1
+                  ],
+                  [
+                    "band",
+                    2
+                  ]
+                ],
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "/",
+                  [
+                    "-",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ],
+                  [
+                    "+",
+                    [
+                      "band",
+                      1
+                    ],
+                    [
+                      "band",
+                      2
+                    ]
+                  ]
+                ],
+                0,
+                [
+                  118,
+                  42,
+                  131,
+                  1
+                ],
+                0.15,
+                [
+                  197,
+                  27,
+                  125,
+                  1
+                ],
+                0.3,
+                [
+                  241,
+                  182,
+                  218,
+                  1
+                ],
+                0.4,
+                [
+                  247,
+                  247,
+                  185,
+                  1
+                ],
+                0.55,
+                [
+                  166,
+                  217,
+                  106,
+                  1
+                ],
+                0.7,
+                [
+                  77,
+                  146,
+                  33,
+                  1
+                ],
+                0.8,
+                [
+                  27,
+                  94,
+                  32,
+                  1
+                ]
+              ]
+            ]
+          },
+          "timestamps": [
+            1785279600
+          ],
+          "spectralIndex": {
+            "recipe": "ndre",
+            "bandA": 7,
+            "bandB": 4,
+            "colormap": "viridis",
+            "reverse": false,
+            "min": 0,
+            "max": 0.8,
+            "paletteMode": "recipe",
+            "legendStops": [
+              {
+                "value": 0,
+                "color": "#762A83",
+                "label": "Very low vegetation response"
+              },
+              {
+                "value": 0.15,
+                "color": "#C51B7D",
+                "label": "Low vegetation response"
+              },
+              {
+                "value": 0.3,
+                "color": "#F1B6DA",
+                "label": "Low to moderate vegetation response"
+              },
+              {
+                "value": 0.4,
+                "color": "#F7F7B9",
+                "label": "Moderate vegetation response"
+              },
+              {
+                "value": 0.55,
+                "color": "#A6D96A",
+                "label": "Healthy vegetation"
+              },
+              {
+                "value": 0.7,
+                "color": "#4D9221",
+                "label": "High vegetation response"
+              },
+              {
+                "value": 0.8,
+                "color": "#1B5E20",
+                "label": "Very high vegetation response"
+              }
+            ]
+          },
+          "bands": [
+            7,
+            4
+          ]
+        }
+      ],
+      "charts": [
+        {
+          "title": "Spectral Signature (all)",
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature 1"
+            },
+            "showgrid": true
+          }
+        },
+        {
+          "title": "Spectral signature (labelled)",
+          "x": [
+            "B2",
+            "B3",
+            "B4",
+            "B5",
+            "B6",
+            "B7",
+            "B8",
+            "B8A",
+            "B11",
+            "B12"
+          ],
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature"
+            },
+            "showgrid": true
+          }
+        },
+        {
+          "title": "Spectral signature (labelled subset)",
+          "x": [
+            "Blue",
+            "Green",
+            "Red",
+            "Red Edge 1"
+          ],
+          "traces": [
+            {
+              "name": "Reflectance",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#2563eb",
+                "width": 2
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 1,
+              "y": 1,
+              "xanchor": "right",
+              "yanchor": "top",
+              "orientation": "v"
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelValues"
+            }
+          ],
+          "xaxis": {
+            "title": {
+              "text": "Band number"
+            },
+            "showgrid": true,
+            "type": "-"
+          },
+          "yaxis": {
+            "title": {
+              "text": "Spectral signature"
+            },
+            "showgrid": true
+          }
+        }
+      ],
+      "meta": {
+        "description": "This is a 10 band Sentinel 2 ARD COG from the UK Earth Observation Data Hub.  In this visualisation, the red, green and blue bands are used to create a colour composite that presents the data in natural colour, close to how it would be visualised by eye.\n\nThe data is in CRS for British National Grid (EPSG 27700), which is added as a custom CRS.",
+        "attribution": {
+          "text": "UK EO Data Hub",
+          "url": "https://eodatahub.org.uk/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Sentinel 2 data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Months"
+    },
+    {
+      "id": "bordeaux-sentinel-2",
+      "name": "Bordeaux Sentinel 2 True Colour Image",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/T/XQ/2026/9/S2B_T30TXQ_20260914T110804_L2A/TCI.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 150,
+              "gMin": 0,
+              "gMax": 130,
+              "bMin": 14,
+              "bMax": 91
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "styleSource": "batch",
+          "batchStretch": {
+            "method": "percent-2-98"
+          },
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        },
+        {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/T/XR/2026/9/S2C_T30TXR_20260919T110709_L2A/TCI.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 150,
+              "gMin": 0,
+              "gMax": 130,
+              "bMin": 14,
+              "bMax": 91
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "styleSource": "batch",
+          "batchStretch": {
+            "method": "percent-2-98"
+          },
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true
+        }
+      ],
+      "meta": {
+        "description": "Sentinel 2 ARD.  Source data is \"visual\" asset from AWS open data.  Pre-processed for three bands in red, green and blue channels. ",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Sentinel 2 data",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    }
+  ]
+}
