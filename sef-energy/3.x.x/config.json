@@ -1,5 +1,5 @@
 {
-  "version": "4.0.0",
+  "version": "1.82.0",
   "exportPrefix": "sef-energy-explorer",
   "layout": {
     "navigation": {
@@ -22,7 +22,8 @@
     "Hydropower",
     "Infrastructure",
     "Traditional Energy",
-    "Various"
+    "Various",
+    "Story layers"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
@@ -33,14 +34,11 @@
     ],
     "projection": "EPSG:3857"
   },
-  "workflows": [],
-  "stories": [],
   "services": [
     {
       "id": "stac-prr",
-      "name": "ESA Project Results Repository",
-      "url": "https://eoresults.esa.int/stac",
-      "format": "stac"
+      "name": "Project Results Repository",
+      "url": "https://eoresults.esa.int/stac"
     },
     {
       "id": "wms-service-1750143419665",
@@ -115,7 +113,7 @@
       "format": "wms"
     },
     {
-      "id": "wms-service-1783435830827",
+      "id": "wms-service-1780391601812",
       "name": "EUMETSAT",
       "url": "https://view.eumetsat.int/geoserver/wms?token=public",
       "format": "wms"
@@ -123,7 +121,6 @@
   ],
   "sources": [
     {
-      "id": "open-streetmap",
       "name": "Open StreetMap",
       "isActive": true,
       "data": [
@@ -142,10 +139,10 @@
         "categories": []
       },
       "isBaseLayer": true,
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "open-streetmap"
     },
     {
-      "id": "stadia-alidade-smooth-dark",
       "name": "Stadia Alidade Smooth Dark",
       "isActive": false,
       "data": [
@@ -164,10 +161,10 @@
         "categories": []
       },
       "isBaseLayer": true,
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "stadia-alidade-smooth-dark"
     },
     {
-      "id": "nasa-blue-marble",
       "name": "NASA Blue Marble",
       "isActive": false,
       "data": [
@@ -187,10 +184,10 @@
         "categories": []
       },
       "isBaseLayer": true,
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "nasa-blue-marble"
     },
     {
-      "id": "sentinel-2-cloudless-eox",
       "name": "Sentinel-2 Cloudless (EOX)",
       "isActive": false,
       "data": [
@@ -213,10 +210,10 @@
         "categories": []
       },
       "isBaseLayer": true,
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "sentinel-2-cloudless-eox"
     },
     {
-      "id": "terrain-eox",
       "name": "Terrain (EOX)",
       "isActive": false,
       "data": [
@@ -239,442 +236,10 @@
         "categories": []
       },
       "isBaseLayer": true,
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "terrain-eox"
     },
     {
-      "id": "ireland",
-      "name": "Ireland",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_01/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1546297200
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_02/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 47,
-          "timestamps": [
-            1548975600
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_03/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1551394800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_04/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1554069600
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_05/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1556661600
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_06/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1559340000
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_07/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1561932000
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_08/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1564610400
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_09/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1567288800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_10/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1569880800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_11/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1572562800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-Ireland/items/PVOUT_12/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1575154800
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Monthly Solar Power Output time series (Jan–Dec): W/m² hypothetically produced by photovoltaic panels for the current month displayed in the map.",
-        "attribution": {
-          "text": "GTIF-UKIF",
-          "url": "https://gtif-ukif.github.io/gtif-ukif-client/"
-        },
-        "categories": [],
-        "units": "W/m²",
-        "min": 2,
-        "max": 175,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 183,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Solar",
-        "subinterfaceGroup": "Monthly Solar Power Output time series",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Months"
-    },
-    {
-      "id": "france",
-      "name": "France",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_01/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1546297200
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_02/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 47,
-          "timestamps": [
-            1548975600
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_03/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1551394800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_04/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1554069600
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_05/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1556661600
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_06/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1559340000
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_07/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1561932000
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_08/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1564610400
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_09/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1567288800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_10/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1569880800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_11/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1572562800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-France/items/PVOUT_12/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,183",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1575154800
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Monthly Solar Power Output time series (Jan–Dec): W/m² hypothetically produced by photovoltaic panels for the current month displayed in the map.",
-        "attribution": {
-          "text": "GTIF-UKIF",
-          "url": "https://gtif-ukif.github.io/gtif-ukif-client/"
-        },
-        "categories": [],
-        "units": "W/m²",
-        "min": 2,
-        "max": 183,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 183,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Solar",
-        "subinterfaceGroup": "Monthly Solar Power Output time series",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Months"
-    },
-    {
-      "id": "unitedkingdom",
-      "name": "United Kingdom",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_01/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1546297200
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_02/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 47,
-          "timestamps": [
-            1548975600
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_03/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1551394800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_04/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1554069600
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_05/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1556661600
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_06/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1559340000
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_07/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1561932000
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_08/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1564610400
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_09/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1567288800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_10/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1569880800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_11/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1572562800
-          ]
-        },
-        {
-          "url": "https://eoapi.workspace.gtif-ukif.hub-otc.eox.at/raster/collections/UCL4-UK/items/PVOUT_12/tiles/WebMercatorQuad/{z}/{x}/{y}?assets=asset&colormap_name=jet&rescale=2,175",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1575154800
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Monthly Solar Power Output time series (Jan–Dec): W/m² hypothetically produced by photovoltaic panels for the current month displayed in the map.",
-        "attribution": {
-          "text": "GTIF-UKIF",
-          "url": "https://gtif-ukif.github.io/gtif-ukif-client/"
-        },
-        "categories": [],
-        "units": "W/m²",
-        "min": 2,
-        "max": 175,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 183,
-            "steps": 50,
-            "name": "jet",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Solar",
-        "subinterfaceGroup": "Monthly Solar Power Output time series",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Months"
-    },
-    {
-      "id": "annual-solar-power-potential-austria",
       "name": "Annual Solar Power Potential (Austria)",
       "isActive": false,
       "data": [
@@ -860,10 +425,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "annual-solar-power-potential-austria"
     },
     {
-      "id": "pv-mapping-puglia",
       "name": "PV Mapping (Puglia)",
       "isActive": false,
       "data": [
@@ -889,8 +454,7 @@
         "categories": [
           {
             "color": "#E8198B",
-            "label": "Detected PV",
-            "value": 0
+            "label": "Detected PV"
           }
         ]
       },
@@ -913,10 +477,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "pv-mapping-puglia"
     },
     {
-      "id": "cloud-cover",
       "name": "Cloud Cover",
       "isActive": false,
       "data": [
@@ -955,10 +519,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "cloud-cover"
     },
     {
-      "id": "atmospheric-aerosols",
       "name": "Atmospheric Aerosols",
       "isActive": false,
       "data": [
@@ -997,10 +561,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "atmospheric-aerosols"
     },
     {
-      "id": "surface-solar-radiation",
       "name": "Surface Solar Radiation",
       "isActive": false,
       "data": [
@@ -1039,10 +603,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "surface-solar-radiation"
     },
     {
-      "id": "wind-power-density-100m-austria",
       "name": "Wind Power Density (100m, Austria)",
       "isActive": false,
       "data": [
@@ -1228,10 +792,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "wind-power-density-100m-austria"
     },
     {
-      "id": "surface-wind-speed",
       "name": "Surface Wind Speed",
       "isActive": false,
       "data": [
@@ -1270,10 +834,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "surface-wind-speed"
     },
     {
-      "id": "offshore-wind-speed",
       "name": "Offshore Wind Speed",
       "isActive": false,
       "data": [
@@ -1313,10 +877,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "offshore-wind-speed"
     },
     {
-      "id": "turbine-wind-wakes-north-sea",
       "name": "Turbine Wind Wakes (North Sea)",
       "isActive": false,
       "data": [
@@ -1354,10 +918,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "turbine-wind-wakes-north-sea"
     },
     {
-      "id": "significant-wave-height",
       "name": "Significant Wave Height",
       "isActive": false,
       "data": [
@@ -1396,10 +960,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "significant-wave-height"
     },
     {
-      "id": "wave-energy-period",
       "name": "Wave Energy Period",
       "isActive": false,
       "data": [
@@ -1439,10 +1003,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "wave-energy-period"
     },
     {
-      "id": "sea-floor-depth",
       "name": "Sea-Floor Depth",
       "isActive": false,
       "data": [
@@ -1481,10 +1045,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "sea-floor-depth"
     },
     {
-      "id": "coastline",
       "name": "Coastline",
       "isActive": false,
       "data": [
@@ -1523,10 +1087,235 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "coastline"
     },
     {
-      "id": "surface-water-and-wetness",
+      "name": "Hydropower Plants (Europe)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/hydro/europe_hydropower_plants.geojson",
+          "format": "geojson",
+          "zIndex": 62,
+          "style": [
+            {
+              "circle-radius": [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "get",
+                  "capacity_mw"
+                ],
+                1,
+                3.5,
+                100,
+                5,
+                500,
+                7.5,
+                1000,
+                10,
+                2500,
+                15
+              ],
+              "circle-fill-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "type"
+                  ],
+                  "dam"
+                ],
+                "rgba(31,119,180,0.85)",
+                [
+                  "==",
+                  [
+                    "get",
+                    "type"
+                  ],
+                  "pumped"
+                ],
+                "rgba(112,48,160,0.85)",
+                [
+                  "==",
+                  [
+                    "get",
+                    "type"
+                  ],
+                  "ror"
+                ],
+                "rgba(23,190,207,0.85)",
+                "rgba(140,140,140,0.85)"
+              ],
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-width": 1
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Europe's hydropower fleet, about 4,700 plants and 240 GW, is the largest flexible and storable renewable resource on the continent, and the one most exposed to snowpack, drought and sediment. Plant location, installed capacity and type (reservoir, pumped storage, run-of-river) from the JRC Hydro-power plants database, with WRI Global Power Plant Database entries where JRC has none, including Türkiye, Ukraine, the Caucasus, Iceland and about 400 further plants across the EU. Symbol size scales with capacity; storage volume, dam height and average generation are carried as attributes where known.",
+        "attribution": {
+          "text": "JRC Hydro-power plants database v10 (CC BY 4.0) and WRI Global Power Plant Database v1.3 (CC BY 4.0), hosted by ESA SEF",
+          "url": "https://github.com/energy-modelling-toolkit/hydro-power-database"
+        },
+        "categories": [
+          {
+            "color": "#1f77b4",
+            "label": "Reservoir (size = capacity)"
+          },
+          {
+            "color": "#7030A0",
+            "label": "Pumped storage"
+          },
+          {
+            "color": "#17becf",
+            "label": "Run-of-river"
+          },
+          {
+            "color": "#8c8c8c",
+            "label": "Type not recorded (GPPD)"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "subinterfaceGroup": "Plants and Reservoirs",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [],
+      "id": "hydropower-plants-europe"
+    },
+    {
+      "name": "Surface Water Occurrence (JRC, 1984 to 2021)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://storage.googleapis.com/global-surface-water/tiles2021/occurrence/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 41,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Where water has stood over four decades of Landsat draws every reservoir and its drawdown zone: the pale fringe around a pool is storage that comes and goes with the season and the drought. Water occurrence from the JRC Global Surface Water dataset (30 m, 1984 to 2021), light blue for occasional, dark blue for permanent water. Works on any reservoir, gauged or not.",
+        "attribution": {
+          "text": "EC JRC / Google, Global Surface Water (Pekel et al. 2016)",
+          "url": "https://global-surface-water.appspot.com/"
+        },
+        "categories": [
+          {
+            "color": "#ffcccc",
+            "label": "Rarely water"
+          },
+          {
+            "color": "#9999ff",
+            "label": "Sometimes water"
+          },
+          {
+            "color": "#0000ff",
+            "label": "Always water"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "subinterfaceGroup": "Plants and Reservoirs",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [],
+      "id": "surface-water-occurrence-jrc-1984-to-2021"
+    },
+    {
+      "name": "Surface Water Change (JRC, 1984 to 2021)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://storage.googleapis.com/global-surface-water/tiles2021/change/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 43,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Where water has appeared or disappeared over four decades: new reservoirs filling, drying lakes, and the long-term trends behind hydropower planning and relicensing. Change in surface water occurrence between 1984 to 1999 and 2000 to 2021 from the JRC Global Surface Water dataset (30 m); green marks water gained, red water lost.",
+        "attribution": {
+          "text": "EC JRC / Google, Global Surface Water (Pekel et al. 2016)",
+          "url": "https://global-surface-water.appspot.com/"
+        },
+        "categories": [
+          {
+            "color": "#00cc00",
+            "label": "Water gained"
+          },
+          {
+            "color": "#ff0000",
+            "label": "Water lost"
+          },
+          {
+            "color": "#888888",
+            "label": "No change"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Hydropower",
+        "subinterfaceGroup": "Plants and Reservoirs",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [],
+      "id": "surface-water-change-jrc-1984-to-2021"
+    },
+    {
       "name": "Surface Water and Wetness",
       "isActive": false,
       "data": [
@@ -1552,7 +1341,7 @@
         }
       ],
       "meta": {
-        "description": "Surface water and seasonal wetness mark reservoir extent, river systems and saturated ground relevant to hydropower resource. Copernicus Land High Resolution Layer Water and Wetness 2015, at 10-metre resolution across Europe, mapping permanent and temporary water and wet surfaces.",
+        "description": "Surface water and seasonal wetness at 10 m mark reservoir extent, river systems and the saturated margin around them, the ground that sends rainfall straight to the river. Copernicus Land High Resolution Layer Water and Wetness 2015.",
         "attribution": {
           "text": "Copernicus Land Monitoring Service (CLMS), Water & Wetness HRL 2015 / EEA",
           "url": "https://land.copernicus.eu/en/products/high-resolution-layer-water-and-wetness"
@@ -1576,12 +1365,13 @@
             "constraintSlider": false,
             "blendControls": false
           }
-        }
+        },
+        "subinterfaceGroup": "Plants and Reservoirs"
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "surface-water-and-wetness"
     },
     {
-      "id": "observed-precipitation",
       "name": "Observed Precipitation",
       "isActive": false,
       "data": [
@@ -1592,7 +1382,8 @@
           "layers": "mapserver:obsPrecip",
           "parameters": {
             "STYLES": ""
-          }
+          },
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -1618,16 +1409,16 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "observed-precipitation"
     },
     {
-      "id": "snow-water-equivalent",
       "name": "Snow Water Equivalent",
       "isActive": false,
       "data": [
@@ -1649,7 +1440,6 @@
       },
       "layout": {
         "interfaceGroup": "Hydropower",
-        "subinterfaceGroup": "Water Availability",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1662,15 +1452,17 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
           }
-        }
+        },
+        "subinterfaceGroup": "Water Availability"
       },
       "exclusivitySets": [],
-      "timeframe": "Days"
+      "id": "snow-water-equivalent"
     },
     {
-      "id": "snow-anomaly-10-day",
       "name": "Snow Anomaly (10-day)",
       "isActive": false,
       "data": [
@@ -1681,7 +1473,8 @@
           "layers": "mapserver:10dSnowAnomaly",
           "parameters": {
             "STYLES": ""
-          }
+          },
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -1707,27 +1500,18 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "snow-anomaly-10-day"
     },
     {
-      "id": "soil-moisture",
       "name": "Soil Moisture",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:soilMoisture",
-          "useTimeParameter": true
-        }
-      ],
       "meta": {
         "description": "Soil moisture governs how much rainfall becomes river runoff, shaping the water available for hydropower generation and signalling drought stress on supply. Soil moisture from Copernicus EMS / EFAS, indicating how saturated the ground is across Europe.",
         "attribution": {
@@ -1738,7 +1522,6 @@
       },
       "layout": {
         "interfaceGroup": "Hydropower",
-        "subinterfaceGroup": "Water Availability",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -1751,15 +1534,25 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
+        },
+        "subinterfaceGroup": "Water Availability"
+      },
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:soilMoisture",
+          "useTimeParameter": true
         }
-      }
+      ],
+      "id": "soil-moisture"
     },
     {
-      "id": "soil-moisture-anomaly",
       "name": "Soil Moisture Anomaly",
       "isActive": false,
       "data": [
@@ -1770,7 +1563,8 @@
           "layers": "mapserver:soilMoistureAnomaly",
           "parameters": {
             "STYLES": ""
-          }
+          },
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -1796,34 +1590,27 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "soil-moisture-anomaly"
     },
     {
-      "id": "major-rivers",
       "name": "Major Rivers",
       "isActive": false,
       "data": [
         {
           "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
           "format": "wms",
-          "zIndex": 70,
+          "zIndex": 57,
           "layers": "mapserver:MajorRivers1",
           "parameters": {
             "STYLES": ""
           }
-        },
-        {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&REQUEST=GetMap",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "mapserver:ec_ldd",
-          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -1855,30 +1642,83 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "major-rivers"
     },
     {
-      "id": "catchments",
       "name": "Catchments",
       "isActive": false,
       "data": [
         {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
-          "format": "wms",
-          "zIndex": 71,
-          "layers": "mapserver:Catchments",
-          "parameters": {
-            "STYLES": ""
-          }
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/hydro/europe_catchments_hydrobasins.geojson",
+          "format": "geojson",
+          "zIndex": 99,
+          "style": [
+            {
+              "stroke-color": "rgba(255,255,255,0.85)",
+              "stroke-width": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "cls"
+                  ],
+                  "main"
+                ],
+                5,
+                3
+              ],
+              "fill-color": "rgba(0,0,0,0)"
+            },
+            {
+              "stroke-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "cls"
+                  ],
+                  "main"
+                ],
+                "#0B2A8A",
+                "#1F4FD1"
+              ],
+              "stroke-width": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "cls"
+                  ],
+                  "main"
+                ],
+                2.4,
+                1.2
+              ],
+              "fill-color": "rgba(0,0,0,0)"
+            }
+          ]
         }
       ],
       "meta": {
-        "description": "Catchments are the drainage basins that feed each river and reservoir, the unit hydropower operators plan in. Catchment boundaries from Copernicus EMS / EFAS.",
+        "description": "Catchments are the drainage basins that feed each river and reservoir, the unit hydropower operators plan in. Major basins (thick line) and sub-basins (thin line) from HydroBASINS levels 4 and 5, drawn above all other layers so that they stay readable over soil moisture, snow and precipitation.",
         "attribution": {
-          "text": "Copernicus EMS / EFAS",
-          "url": "https://european-flood.emergency.copernicus.eu/"
+          "text": "HydroBASINS v1.c, HydroSHEDS (WWF), hosted by ESA SEF",
+          "url": "https://www.hydrosheds.org/products/hydrobasins"
         },
-        "categories": []
+        "categories": [
+          {
+            "color": "#0B2A8A",
+            "label": "Major basin"
+          },
+          {
+            "color": "#1F4FD1",
+            "label": "Sub-basin"
+          }
+        ]
       },
       "layout": {
         "interfaceGroup": "Hydropower",
@@ -1889,8 +1729,7 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "image",
-            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:Catchments&styles=default&width=80&height=50"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -1901,10 +1740,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "catchments"
     },
     {
-      "id": "hv-transmission-grid-europe",
       "name": "HV Transmission Grid (Europe)",
       "isActive": false,
       "data": [
@@ -1974,7 +1813,7 @@
                   380
                 ],
                 1.3,
-                1
+                1.0
               ]
             }
           ]
@@ -1989,28 +1828,23 @@
         "categories": [
           {
             "color": "#FFC000",
-            "label": "220 kV",
-            "value": 0
+            "label": "220 kV"
           },
           {
             "color": "#ED7D31",
-            "label": "300 kV",
-            "value": 0
+            "label": "300 kV"
           },
           {
             "color": "#C00000",
-            "label": "400 kV",
-            "value": 0
+            "label": "400 kV"
           },
           {
             "color": "#7030A0",
-            "label": "≥500 kV",
-            "value": 0
+            "label": "≥500 kV"
           },
           {
             "color": "#0070C0",
-            "label": "HVDC",
-            "value": 0
+            "label": "HVDC"
           }
         ]
       },
@@ -2033,23 +1867,22 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "hv-transmission-grid-europe"
     },
     {
-      "id": "wildfire-frequency",
       "name": "Wildfire Frequency",
       "isActive": false,
       "data": [
         {
-          "url": "https://maps.effis.emergency.copernicus.eu/gwis?",
+          "url": "https://maps.effis.emergency.copernicus.eu/gwis",
           "format": "wms",
           "zIndex": 43,
           "layers": "mcd64a1.fire_frequency",
           "opacity": 0.8,
           "parameters": {
             "STYLES": ""
-          },
-          "useTimeParameter": true
+          }
         }
       ],
       "meta": {
@@ -2080,21 +1913,12 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "wildfire-frequency"
     },
     {
-      "id": "active-fire-monitoring",
       "name": "Active Fire Monitoring",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://view.eumetsat.int/geoserver/wms?token=public",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "msg_fes:fire",
-          "useTimeParameter": true
-        }
-      ],
       "meta": {
         "description": "Active fires near overhead lines and substations can trip circuits and force pre-emptive shutdowns, making real-time fire detection valuable for grid operators. Active fire detection from EUMETSAT, derived from the Meteosat SEVIRI 3.9 µm channel, flagging pixels with potential or active fire across Europe and Africa.",
         "attribution": {
@@ -2117,27 +1941,27 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
         }
       },
-      "exclusivitySets": []
-    },
-    {
-      "id": "flood-hazard-map",
-      "name": "Flood Hazard Map",
-      "isActive": false,
       "data": [
         {
-          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "url": "https://view.eumetsat.int/geoserver/wms?token=public",
           "format": "wms",
           "zIndex": 50,
-          "layers": "mapserver:Europe_combined_flood_scenarios",
+          "layers": "msg_fes:fire",
           "useTimeParameter": true
         }
       ],
+      "exclusivitySets": [],
+      "id": "active-fire-monitoring"
+    },
+    {
+      "name": "Flood Hazard Map",
+      "isActive": false,
       "meta": {
         "description": "Flooding is a direct physical threat to power plants, substations and transmission infrastructure sited near rivers. Combined river-flood hazard scenarios from Copernicus EMS / EFAS, mapping the areas across Europe exposed to flooding at low, medium and high severity (return-period) levels.",
         "attribution": {
@@ -2164,21 +1988,21 @@
             "blendControls": false
           }
         }
-      }
-    },
-    {
-      "id": "flood-probability",
-      "name": "Flood Probability",
-      "isActive": false,
+      },
       "data": [
         {
           "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
           "format": "wms",
           "zIndex": 50,
-          "layers": "mapserver:persistence",
+          "layers": "mapserver:Europe_combined_flood_scenarios",
           "useTimeParameter": true
         }
       ],
+      "id": "flood-hazard-map"
+    },
+    {
+      "name": "Flood Probability",
+      "isActive": false,
       "meta": {
         "description": "How likely a damaging flood is at a given location shapes the risk to energy assets and the need for operational mitigation. Flood Probability shows the likelihood that river flow will exceed a given flood severity level, based on Copernicus EMS / EFAS ensemble forecasts, where flood severity reflects return periods (2-year frequent, 5-year moderate, 20-year severe).",
         "attribution": {
@@ -2188,43 +2012,35 @@
         "categories": [
           {
             "color": "#FCFDB4",
-            "label": "2-year / Medium Probability",
-            "value": 0
+            "label": "2-year / Medium Probability"
           },
           {
             "color": "#FFFF00",
-            "label": "2-year / High Probability",
-            "value": 0
+            "label": "2-year / High Probability"
           },
           {
             "color": "#FF7373",
-            "label": "5-year / Low Probability",
-            "value": 0
+            "label": "5-year / Low Probability"
           },
           {
             "color": "#FF4343",
-            "label": "5-year / Medium Probability",
-            "value": 0
+            "label": "5-year / Medium Probability"
           },
           {
             "color": "#E60000",
-            "label": "5-year / High Probability",
-            "value": 0
+            "label": "5-year / High Probability"
           },
           {
             "color": "#E175FF",
-            "label": "20 year / Low Probability",
-            "value": 0
+            "label": "20 year / Low Probability"
           },
           {
             "color": "#D437FF",
-            "label": "20 year / Medium Probability",
-            "value": 0
+            "label": "20 year / Medium Probability"
           },
           {
             "color": "#A800D6",
-            "label": "20-year / High Probability",
-            "value": 0
+            "label": "20-year / High Probability"
           }
         ]
       },
@@ -2241,15 +2057,24 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
         }
-      }
+      },
+      "data": [
+        {
+          "url": "https://european-flood.emergency.copernicus.eu/api/wms/?service=WMS&request=GetCapabilities",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "mapserver:persistence",
+          "useTimeParameter": true
+        }
+      ],
+      "id": "flood-probability"
     },
     {
-      "id": "rapid-flood-mapping",
       "name": "Rapid Flood Mapping",
       "isActive": false,
       "data": [
@@ -2283,16 +2108,16 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "rapid-flood-mapping"
     },
     {
-      "id": "built-up-surface-density",
       "name": "Built-up Surface Density",
       "isActive": false,
       "data": [
@@ -2345,10 +2170,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "built-up-surface-density"
     },
     {
-      "id": "tropospheric-no2-sentinel-5p",
       "name": "Tropospheric NO2 (Sentinel-5P)",
       "isActive": false,
       "data": [
@@ -2361,11 +2186,6 @@
       ],
       "meta": {
         "description": "Nitrogen dioxide is produced by high-temperature combustion, so it traces fossil-fuel power plants, heavy industry, shipping lanes and road traffic. Tropospheric NO2 column from Copernicus Sentinel-5P TROPOMI, yearly mean processed by S5P-PAL, where higher values mark concentrated combustion activity such as coal-power clusters and industrial regions.",
-        "attribution": {
-          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
-          "url": "https://maps.s5p-pal.com/no2-tropospheric/"
-        },
-        "categories": [],
         "units": "µmol/m²",
         "colormaps": [
           {
@@ -2375,7 +2195,12 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "attribution": {
+          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
+          "url": "https://maps.s5p-pal.com/no2-tropospheric/"
+        },
+        "categories": []
       },
       "layout": {
         "interfaceGroup": "Traditional Energy",
@@ -2396,10 +2221,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "tropospheric-no2-sentinel-5p"
     },
     {
-      "id": "methane-concentration-sentinel-5p",
       "name": "Methane Concentration (Sentinel-5P)",
       "isActive": false,
       "data": [
@@ -2407,59 +2232,11 @@
           "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/methane/s5p_ch4_year_2025_cog.tif",
           "format": "cog",
           "zIndex": 37,
-          "timestamps": [
-            1735686000
-          ],
           "opacity": 0.85
-        },
-        {
-          "url": "https://s5p-pal-nl-l3-tms.obs.eu-nl.otc.t-systems.com/l3tms/s5p/ch4/001/month/2026/s5p-l3tms-ch4-001-month-20250601-20250703/{z}/{x}/{y}.png",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1748728800
-          ]
-        },
-        {
-          "url": "https://s5p-pal-nl-l3-tms.obs.eu-nl.otc.t-systems.com/l3tms/s5p/ch4/001/month/2026/s5p-l3tms-ch4-001-month-20250701-20250803/{z}/{x}/{y}.png",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1751320800
-          ]
-        },
-        {
-          "url": "https://s5p-pal-nl-l3-tms.obs.eu-nl.otc.t-systems.com/l3tms/s5p/ch4/001/month/2026/s5p-l3tms-ch4-001-month-20250801-20250903/{z}/{x}/{y}.png",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1753999200
-          ]
-        },
-        {
-          "url": "https://s5p-pal-nl-l3-tms.obs.eu-nl.otc.t-systems.com/l3tms/s5p/ch4/001/month/2026/s5p-l3tms-ch4-001-month-20250901-20251003/{z}/{x}/{y}.png",
-          "format": "xyz",
-          "zIndex": 50,
-          "timestamps": [
-            1756677600
-          ]
-        },
-        {
-          "url": "https://s5p-pal-nl-l3-tms.obs.eu-nl.otc.t-systems.com/l3tms/s5p/ch4/001/month/2026/s5p-l3tms-ch4-001-month-20251001-20251103/{z}/{x}/{y}.png",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1790805600
-          ]
         }
       ],
       "meta": {
         "description": "Methane is the main component of natural gas, so mapping atmospheric methane reveals enhancements over oil and gas fields and other major emitters. Column-averaged dry-air methane (XCH4) from Copernicus Sentinel-5P TROPOMI, yearly mean processed by S5P-PAL, where higher values flag regions of elevated methane such as super-emitting oil and gas basins.",
-        "attribution": {
-          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
-          "url": "https://maps.s5p-pal.com/ch4/"
-        },
-        "categories": [],
         "units": "ppbv",
         "colormaps": [
           {
@@ -2469,7 +2246,12 @@
             "name": "jet",
             "reverse": false
           }
-        ]
+        ],
+        "attribution": {
+          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
+          "url": "https://maps.s5p-pal.com/ch4/"
+        },
+        "categories": []
       },
       "layout": {
         "interfaceGroup": "Traditional Energy",
@@ -2484,27 +2266,27 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
           }
         }
       },
       "exclusivitySets": [],
-      "timeframe": "Months"
+      "id": "methane-concentration-sentinel-5p"
     },
     {
-      "id": "land-cover-corine-2018",
       "name": "Land Cover (CORINE 2018)",
       "isActive": false,
       "data": [
         {
-          "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer?service=WMS&request=GetCapabilities&version=1.3.0",
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer",
           "format": "wms",
           "zIndex": 40,
-          "layers": "1",
+          "layers": "0,1",
           "parameters": {
             "STYLES": ""
-          },
-          "useTimeParameter": true
+          }
         }
       ],
       "meta": {
@@ -2590,10 +2372,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "land-cover-corine-2018"
     },
     {
-      "id": "terrain-elevation",
       "name": "Terrain Elevation",
       "isActive": false,
       "data": [
@@ -2601,8 +2383,8 @@
           "url": "https://tiles.maps.eox.at/wms",
           "format": "wms",
           "zIndex": 21,
-          "layers": "terrain_3857",
           "opacity": 1,
+          "layers": "terrain_3857",
           "parameters": {
             "STYLES": ""
           }
@@ -2635,10 +2417,10 @@
           }
         }
       },
-      "exclusivitySets": []
+      "exclusivitySets": [],
+      "id": "terrain-elevation"
     },
     {
-      "id": "true-colour-satellite-imagery",
       "name": "True-Colour Satellite Imagery",
       "isActive": false,
       "data": [
@@ -2679,7 +2461,675 @@
           }
         }
       },
+      "exclusivitySets": [],
+      "id": "true-colour-satellite-imagery"
+    },
+    {
+      "id": "snow-water-equivalent-2024-04-15",
+      "name": "Snow Water Equivalent, 15 April 2024",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/tiles/snow-water-equivalent-2024-04-15/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 50,
+          "opacity": 0.9
+        }
+      ],
+      "meta": {
+        "description": "Snow water equivalent from Copernicus EMS / EFAS on 15 April 2024, the end of the snowiest Alpine winter in a decade. Fixed date, used by the Snow to turbine story. Rendered from the EFAS WMS and hosted by ESA SEF, so it does not depend on the live service.",
+        "attribution": {
+          "text": "Copernicus EMS / EFAS, snapshot hosted by ESA SEF",
+          "url": "https://european-flood.emergency.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:scWB&styles=default&width=80&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "snow-anomaly-10-day-2022-04-15",
+      "name": "Snow Anomaly, 15 April 2022",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/tiles/snow-anomaly-10-day-2022-04-15/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 50,
+          "opacity": 0.9
+        }
+      ],
+      "meta": {
+        "description": "Ten-day snow water equivalent anomaly from Copernicus EMS / EFAS on 15 April 2022, the spring before the Po ran dry. Fixed date, used by the Snow to turbine story. Rendered from the EFAS WMS and hosted by ESA SEF, so it does not depend on the live service.",
+        "attribution": {
+          "text": "Copernicus EMS / EFAS, snapshot hosted by ESA SEF",
+          "url": "https://european-flood.emergency.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:10dSnowAnomaly&styles=default&width=80&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "observed-precipitation-2024-04-01",
+      "name": "Observed Precipitation, 1 April 2024",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/tiles/observed-precipitation-2024-04-01/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 50,
+          "opacity": 0.9
+        }
+      ],
+      "meta": {
+        "description": "Observed precipitation from Copernicus EMS / EFAS for the Easter storm of 1 April 2024. Fixed date, used by the Snow to turbine story. Rendered from the EFAS WMS and hosted by ESA SEF, so it does not depend on the live service.",
+        "attribution": {
+          "text": "Copernicus EMS / EFAS, snapshot hosted by ESA SEF",
+          "url": "https://european-flood.emergency.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:obsPrecip&styles=default&width=80&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "soil-moisture-anomaly-2022-04-15",
+      "name": "Soil Moisture Anomaly, 15 April 2022",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/tiles/soil-moisture-anomaly-2022-04-15/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 50,
+          "opacity": 0.9
+        }
+      ],
+      "meta": {
+        "description": "Soil moisture anomaly from Copernicus EMS / EFAS on 15 April 2022. Fixed date, used by the Snow to turbine story. Rendered from the EFAS WMS and hosted by ESA SEF, so it does not depend on the live service.",
+        "attribution": {
+          "text": "Copernicus EMS / EFAS, snapshot hosted by ESA SEF",
+          "url": "https://european-flood.emergency.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://european-flood.emergency.copernicus.eu/api/wms/?request=GetLegend&layers=mapserver:soilMoistureAnomaly&styles=default&width=80&height=50"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "santa-giustina-water-occurrence-s2",
+      "name": "Santa Giustina Water Occurrence (Sentinel-2, 2017 to 2026)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/hydro/santa_giustina_water_occurrence_s2_2017_2026_3857_cog.tif",
+          "format": "cog",
+          "zIndex": 55,
+          "opacity": 0.9
+        }
+      ],
+      "meta": {
+        "description": "How often each 10 m pixel held water in 402 cloud-free Sentinel-2 passes over the Santa Giustina reservoir on the Noce between 2017 and 2026. The permanent pool held water in at least 90 per cent of passes, the drawdown zone in 50 to 90 per cent, and the occasional class in 5 to 50 per cent. Water from a green and near-infrared index, specks under 0.3 ha removed. Built for the Snow to turbine story.",
+        "attribution": {
+          "text": "Contains modified Copernicus Sentinel-2 data 2017 to 2026, processed and hosted by ESA SEF",
+          "url": "https://sef.apex.esa.int/"
+        },
+        "categories": [
+          {
+            "color": "#aadcff",
+            "label": "Occasional water (5 to 50% of passes)",
+            "value": 1
+          },
+          {
+            "color": "#3c8ce6",
+            "label": "Drawdown zone (50 to 90%)",
+            "value": 2
+          },
+          {
+            "color": "#0a2878",
+            "label": "Permanent pool (over 90%)",
+            "value": 3
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "alpine-glacier-outlines-rgi7-2003",
+      "name": "Alpine Glacier Outlines (RGI 7, 2003)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/hydro/alps_glacier_outlines_rgi7_2003.geojson",
+          "format": "geojson",
+          "zIndex": 70,
+          "style": [
+            {
+              "stroke-color": "rgba(20,20,20,0.75)",
+              "stroke-width": 5,
+              "fill-color": "rgba(0,0,0,0)"
+            },
+            {
+              "stroke-color": "#ff4d1a",
+              "stroke-width": 2.4,
+              "fill-color": "rgba(0,0,0,0)"
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Outlines of the 1,815 Alpine glaciers of 0.1 km² or more, 2,036 km² in all, from the Randolph Glacier Inventory version 7. The outlines were drawn from imagery of summer 2003 and are the reference against which later images show the retreat. Built for the story The ice in the inflow.",
+        "attribution": {
+          "text": "RGI Consortium, Randolph Glacier Inventory v7.0 (CC BY 4.0), hosted by ESA SEF",
+          "url": "https://www.glims.org/rgi_user_guide/"
+        },
+        "categories": [
+          {
+            "color": "#ff4d1a",
+            "label": "Glacier outline, 2003"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "adamello-s2-2018-09-26",
+      "name": "Adamello, Sentinel-2 True Colour, 26 September 2018",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/tiles/adamello-s2-2018-09-26/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 30
+        }
+      ],
+      "meta": {
+        "description": "Copernicus Sentinel-2 true-colour image of the Adamello and Presanella groups on 26 September 2018, at the end of the melt season, 10 m. Rendered as tiles and hosted by ESA SEF for the story The ice in the inflow.",
+        "attribution": {
+          "text": "Contains modified Copernicus Sentinel-2 data 2018, processed and hosted by ESA SEF",
+          "url": "https://dataspace.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "adamello-s2-2025-09-19",
+      "name": "Adamello, Sentinel-2 True Colour, 19 September 2025",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/tiles/adamello-s2-2025-09-19/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 30
+        }
+      ],
+      "meta": {
+        "description": "Copernicus Sentinel-2 true-colour image of the Adamello and Presanella groups on 19 September 2025, at the end of the melt season, 10 m. Rendered as tiles and hosted by ESA SEF for the story The ice in the inflow.",
+        "attribution": {
+          "text": "Contains modified Copernicus Sentinel-2 data 2025, processed and hosted by ESA SEF",
+          "url": "https://dataspace.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
       "exclusivitySets": []
     }
-  ]
+  ],
+  "stories": [
+    {
+      "id": "snow-to-turbine",
+      "title": "Snow to turbine",
+      "isActive": false,
+      "description": "How much water will reach an Alpine reservoir this summer, read from free Copernicus layers in April: catchment, snowpack, rain, soil, and the pool itself.",
+      "thumbnail": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/snow-to-turbine.jpg",
+      "steps": [
+        {
+          "id": "the-basin",
+          "content": {
+            "title": "The catchment",
+            "description": "A reservoir plant's summer output is set in winter, by the snow that falls in its catchment. The reading therefore starts upstream.\n\nThe map shows the drainage basins of the eastern Alps from HydroBASINS over the river network. Thick lines mark major basins and thin lines their sub-basins. Trentino, in the centre, drains to the Adige through the Noce and the Avisio.\n\nEach layer that follows is read inside one of these boundaries."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              11.0,
+              46.3
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "catchments"
+            },
+            {
+              "id": "major-rivers"
+            }
+          ],
+          "baseLayer": "terrain-eox"
+        },
+        {
+          "id": "where-the-water-is-stored",
+          "content": {
+            "title": "Snow water equivalent",
+            "description": "In April most of the year's inflow is still on the mountain. Snow water equivalent is the depth of water the snowpack would yield if it melted at once.\n\nThe layer shows the EFAS snow water equivalent for 15 April 2024, at the end of the snowiest Alpine winter in a decade. Pale colours mark a thin pack and dark colours a deep one.\n\nThe same product is available for every day since October 2019."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              11.0,
+              46.3
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "snow-water-equivalent-2024-04-15"
+            },
+            {
+              "id": "catchments"
+            }
+          ],
+          "baseLayer": "terrain-eox"
+        },
+        {
+          "id": "above-or-below-normal",
+          "content": {
+            "title": "Snow anomaly",
+            "description": "Operators read the departure from normal before the absolute depth, because the plant's rule curve already assumes an average year.\n\nThe layer shows the ten-day snow water equivalent anomaly for 15 April 2022, in the spring before the Po ran dry, against the EFAS climatology of 1990 to 2016. White is near normal, blue and purple above normal, yellow and red below. The deficit runs across the western and southern Alps and includes the Trentino catchments.\n\nOn the same date in 2024 the map was almost entirely white and blue."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              11.0,
+              46.3
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "snow-anomaly-10-day-2022-04-15"
+            },
+            {
+              "id": "catchments"
+            }
+          ],
+          "baseLayer": "terrain-eox"
+        },
+        {
+          "id": "what-is-arriving-now",
+          "content": {
+            "title": "Precipitation",
+            "description": "Snow is the stock and rain the flow. Observed precipitation shows what has arrived in the past 24 hours.\n\nThe layer shows 1 April 2024, when an Easter storm brought heavy rain to the valleys and about a metre of snow to the peaks. Rain on a deep spring snowpack melts it and adds to it at once, and the inflow arrives within days rather than weeks.\n\nOn most days the layer is empty, because it covers the last 24 hours only."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              11.0,
+              46.3
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "observed-precipitation-2024-04-01"
+            },
+            {
+              "id": "catchments"
+            }
+          ],
+          "baseLayer": "terrain-eox"
+        },
+        {
+          "id": "what-the-ground-absorbs",
+          "content": {
+            "title": "Soil moisture anomaly",
+            "description": "Dry ground absorbs the melt. Saturated ground passes it to the river. The same snowpack can therefore produce very different inflows.\n\nThe layer shows the soil moisture anomaly for 15 April 2022: yellow and red almost everywhere, a dry soil under a thin snowpack. Part of what melted that spring never reached a turbine.\n\nTwo years later the same map was blue and purple in the high valleys and red on the plain to the south."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              11.0,
+              46.3
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "soil-moisture-anomaly-2022-04-15"
+            },
+            {
+              "id": "catchments"
+            }
+          ],
+          "baseLayer": "terrain-eox"
+        },
+        {
+          "id": "down-to-the-reservoir",
+          "content": {
+            "title": "The reservoir",
+            "description": "The chain ends at the pool. This is Santa Giustina on the Noce, below Val di Sole, with the plants of the Noce cascade marked by capacity and type.\n\nThe shading records how often each 10 m pixel held water in 402 cloud-free Sentinel-2 passes since 2017. Dark blue is the permanent pool, water in at least nine passes out of ten. Mid blue is the drawdown zone, water in between half and nine tenths of the passes: the storage that the operator uses and the drought takes. Pale blue is occasional water at the inflow and on the northern arm.\n\nNo gauge was needed to draw it, and the same method works on any reservoir, including one upstream in another country."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              11.068,
+              46.362
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "santa-giustina-water-occurrence-s2"
+            },
+            {
+              "id": "hydropower-plants-europe"
+            }
+          ],
+          "baseLayer": "sentinel-2-cloudless-eox"
+        },
+        {
+          "id": "where-free-eo-stops",
+          "content": {
+            "title": "Where the free data stop",
+            "description": "Every layer in this story is free, covers all of Europe, and is updated daily or faster: the catchment, the snowpack and its anomaly, the rain, the soil, and the reservoir extent.\n\nNone of them gives an inflow forecast in cubic metres or the water level behind a particular dam. Commercial services start there, with snow water equivalent at 20 m assimilated into a catchment model, streamflow forecasts from hours to a season ahead, and altimetry for the level.\n\nThe free layers are the screening step. They show where a paid service would pay for itself."
+          },
+          "viewport": {
+            "zoom": 6,
+            "center": [
+              10.8,
+              46.4
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "hydropower-plants-europe"
+            },
+            {
+              "id": "catchments"
+            }
+          ],
+          "baseLayer": "terrain-eox"
+        }
+      ]
+    },
+    {
+      "id": "the-ice-in-the-inflow",
+      "title": "The ice in the inflow",
+      "isActive": false,
+      "description": "The Adamello and Presanella glaciers feed the Sarca, the Noce, and the Oglio. What the satellites show of their retreat, and what that means for late-summer inflow.",
+      "thumbnail": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/the-ice-in-the-inflow.jpg",
+      "steps": [
+        {
+          "id": "the-plants-below-the-ice",
+          "content": {
+            "title": "The plants below the ice",
+            "description": "The Adamello and Presanella groups feed three river systems with hydropower cascades: the Sarca to the east, the Noce to the north, and the Oglio to the west.\n\nIn August, once the winter snow has gone, melt from the ice is a large part of what still reaches these plants. The map shows the plants by capacity and type, the catchment boundaries, and the glacier outlines in red.\n\nThe outlines come from the Randolph Glacier Inventory and date from 2003. The next two steps show what has happened to the ice since."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              10.62,
+              46.15
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "alpine-glacier-outlines-rgi7-2003"
+            },
+            {
+              "id": "hydropower-plants-europe"
+            },
+            {
+              "id": "catchments"
+            }
+          ],
+          "baseLayer": "terrain-eox"
+        },
+        {
+          "id": "september-2018",
+          "content": {
+            "title": "September 2018",
+            "description": "Sentinel-2 on 26 September 2018, at the end of the melt season and before the first snow, at 10 m. Ice is white and grey, rock is brown, and the red line is the outline of 2003.\n\nWhere rock shows inside the line, the ice has gone. The lower tongues and the margins of the plateau already sit well inside it. Surveys reported by Copernicus put the Adamello glacier at about 14 km² today, about 4 km² less than 33 years earlier, and about 65 m thinner."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              10.54,
+              46.16
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "adamello-s2-2018-09-26"
+            },
+            {
+              "id": "alpine-glacier-outlines-rgi7-2003"
+            }
+          ],
+          "baseLayer": "terrain-eox"
+        },
+        {
+          "id": "september-2025",
+          "content": {
+            "title": "September 2025",
+            "description": "The same view on 19 September 2025, seven years later.\n\nThe Mandrone tongue retreated 139 m in 2022 alone, against an average of about 15 m a year over the previous five years, according to the glaciological commission of the Tridentine Alpinists Society. The surveys reported by Copernicus give a thinning of 5.9 m in 2021 and about 4.5 m a year on average.\n\nSentinel-2 gives the extent every year, free, for every glacier in the Alps. The thickness, which is what inflow depends on, comes from elevation models, altimetry, and field measurement."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              10.54,
+              46.16
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "adamello-s2-2025-09-19"
+            },
+            {
+              "id": "alpine-glacier-outlines-rgi7-2003"
+            }
+          ],
+          "baseLayer": "terrain-eox"
+        },
+        {
+          "id": "what-it-means-for-inflow",
+          "content": {
+            "title": "What it means for inflow",
+            "description": "A shrinking glacier first gives more water, then less. Melt rises while the ice thins and falls once the ice is gone. For most Alpine basins the rise is over.\n\nSwiss glaciers lost a tenth of their volume in 2022 and 2023 together and a further 2.5 per cent in 2024, according to GLAMOS. The Italian side has no equivalent network, which is one reason the satellite record matters here.\n\nFor the plants on the Sarca, the Noce, and the Oglio, the late-summer inflow that the ice guaranteed is becoming an inflow that the weather decides."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              10.62,
+              46.15
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "alpine-glacier-outlines-rgi7-2003"
+            },
+            {
+              "id": "hydropower-plants-europe"
+            },
+            {
+              "id": "major-rivers"
+            }
+          ],
+          "baseLayer": "sentinel-2-cloudless-eox"
+        },
+        {
+          "id": "the-resource-that-does-not-come-back",
+          "content": {
+            "title": "The resource that does not come back",
+            "description": "The 2003 inventory holds 1,815 Alpine glaciers of 0.1 km² or more, 2,036 km² of ice, almost all of it above the reservoirs that make the Alps the storage battery of the European grid.\n\nSnow returns each winter. Ice does not. The hydropower system was built on both, and the second is being withdrawn within the lifetime of the plants on this map."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              10.5,
+              46.4
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "alpine-glacier-outlines-rgi7-2003"
+            },
+            {
+              "id": "hydropower-plants-europe"
+            }
+          ],
+          "baseLayer": "terrain-eox"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "layerFetchTimeoutMs": 30000
+  }
 }
