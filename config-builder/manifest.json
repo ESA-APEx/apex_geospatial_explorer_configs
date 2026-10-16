@@ -45,5 +45,8 @@
           "file": "test-configs/config-stac-datasets.json"
         }
  ],
-  "appTemplates": [{ "file": "apps/s2-monitor/wizard.json" }]
+  "appTemplates": [
+      { "file": "apps/s2-monitor/wizard.json" },
+      { "file": "apps/change-swipe/wizard.json" } 
+  ]
 }
