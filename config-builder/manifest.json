@@ -44,5 +44,6 @@
           "description": "Sample layers for STAC as data source (not service).",
           "file": "test-configs/config-stac-datasets.json"
         }
- ]
+ ],
+  "appTemplates": [{ "file": "apps/s2-monitor/template.json" }]
 }
