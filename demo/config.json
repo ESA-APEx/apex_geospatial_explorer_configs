@@ -1,6 +1,12 @@
 {
   "version": "3.4.0.1",
   "exportPrefix": "config_demo",
+  "settings": {
+    "matomo": {
+      "url": "https://matomo-ext.esa.int/",
+      "siteId": "29"
+    }
+  },
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
