@@ -45,5 +45,5 @@
           "file": "test-configs/config-stac-datasets.json"
         }
  ],
-  "appTemplates": [{ "file": "apps/s2-monitor/template.json" }]
+  "appTemplates": [{ "file": "apps/s2-monitor/wizard.json" }]
 }
