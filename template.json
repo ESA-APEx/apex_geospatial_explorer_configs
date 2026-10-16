@@ -1,0 +1,122 @@
+{
+  "formatVersion": 1,
+  "id": "s2-monitor",
+  "name": "Satellite STAC Monitor",
+  "tagline": "Live satellite scenes from a STAC catalogue",
+  "description": "Finds satellite scenes over your area for a chosen period and shows them with time controls.",
+  "bestFor": ["Sentinel-2 archives", "Seasonal monitoring", "Agriculture"],
+  "baseConfig": "config.json",
+  "defaults": { "title": "Satellite Monitor", "center": [-2.6, 51.45], "zoom": 11, "layoutVariant": "sidebar" },
+  "steps": {
+    "data": {
+      "title": "Satellite data",
+      "description": "Choose the satellite collection to search.",
+      "fields": [
+        {
+          "id": "mission", "label": "Collection", "type": "choice", "default": "s2-c1",
+          "options": [
+            { "value": "s2-c1", "label": "Sentinel-2 L2A (Earth Search)", "description": "Latest processing, true-colour imagery." },
+            { "value": "s2-l2a", "label": "Sentinel-2 L2A legacy (Earth Search)", "description": "Original collection, true-colour imagery." },
+            { "value": "custom", "label": "Another STAC collection", "description": "Any collection with a viewable image asset." }
+          ],
+          "help": "Sentinel-1 radar on Earth Search is not publicly readable, so it is not offered yet."
+        },
+        { "id": "collectionUrl", "label": "STAC collection URL", "type": "text", "default": "", "placeholder": "https://…/collections/…", "showIf": { "field": "mission", "in": ["custom"] } },
+        { "id": "asset", "label": "Image asset name", "type": "text", "default": "visual", "showIf": { "field": "mission", "in": ["custom"] } }
+      ]
+    },
+    "options": {
+      "title": "Time period",
+      "description": "Which period should the app show scenes from?",
+      "fields": [
+        {
+          "id": "season", "label": "Season", "type": "choice", "default": "summer",
+          "options": [
+            { "value": "spring", "label": "Spring (Mar–May)" },
+            { "value": "summer", "label": "Summer (Jun–Aug)" },
+            { "value": "autumn", "label": "Autumn (Sep–Nov)" },
+            { "value": "winter", "label": "Winter (Dec–Feb)" },
+            { "value": "year", "label": "Whole year" },
+            { "value": "custom", "label": "Custom dates" }
+          ]
+        },
+        {
+          "id": "year", "label": "Year", "type": "choice", "default": "2025",
+          "options": [
+            { "value": "2025", "label": "2025" }, { "value": "2024", "label": "2024" }, { "value": "2023", "label": "2023" },
+            { "value": "2022", "label": "2022" }, { "value": "2021", "label": "2021" }, { "value": "2020", "label": "2020" }
+          ],
+          "optionsFrom": "extentYears",
+          "help": "Years the collection covers. Winter runs from December of the year before.",
+          "showIf": { "field": "season", "in": ["spring", "summer", "autumn", "winter", "year"] }
+        },
+        { "id": "start", "label": "From", "type": "date", "default": "2025-06-01", "showIf": { "field": "season", "in": ["custom"] }, "rangeFrom": "temporalExtent" },
+        { "id": "end", "label": "To", "type": "date", "default": "2025-08-31", "showIf": { "field": "season", "in": ["custom"] }, "rangeFrom": "temporalExtent" },
+        {
+          "id": "maxCloud", "label": "Maximum cloud cover", "type": "slider", "default": "20", "min": 0, "max": 100, "step": 5, "unit": "%",
+          "help": "Scenes cloudier than this are left out. 100% includes every scene."
+        }
+      ]
+    }
+  },
+  "computed": {
+    "collection": {
+      "map": "mission",
+      "cases": {
+        "s2-c1": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a",
+        "s2-l2a": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+      },
+      "default": { "from": "collectionUrl" }
+    },
+    "imageAsset": {
+      "map": "mission",
+      "cases": { "s2-c1": "visual", "s2-l2a": "visual" },
+      "default": { "use": "coalesce", "args": { "a": { "from": "asset" }, "b": { "value": "visual" } } }
+    },
+    "filterStyle": { "map": "mission", "cases": { "s2-c1": "query", "s2-l2a": "query" }, "default": { "value": "cql2" } },
+    "missionName": {
+      "map": "mission",
+      "cases": { "s2-c1": "Sentinel-2 true colour", "s2-l2a": "Sentinel-2 true colour (legacy collection)" },
+      "default": { "value": "Satellite scenes" }
+    },
+    "attribution": {
+      "map": "mission",
+      "cases": { "s2-c1": "Contains modified Copernicus Sentinel data", "s2-l2a": "Contains modified Copernicus Sentinel data" },
+      "default": { "value": "Data attribution not specified" }
+    },
+    "start": { "use": "periodStart", "args": { "season": { "from": "season" }, "year": { "from": "year" }, "start": { "from": "start" }, "end": { "from": "end" } } },
+    "end": { "use": "periodEnd", "args": { "season": { "from": "season" }, "year": { "from": "year" }, "start": { "from": "start" }, "end": { "from": "end" } } },
+    "searchUrl": {
+      "use": "stacSearchUrl",
+      "args": {
+        "collection": { "ref": "collection" },
+        "center": { "from": "center" },
+        "zoom": { "from": "zoom" },
+        "start": { "ref": "start" },
+        "end": { "ref": "end" },
+        "maxCloud": { "from": "maxCloud" },
+        "filterStyle": { "ref": "filterStyle" }
+      }
+    }
+  },
+  "probe": { "use": "stacCollection", "args": { "url": { "ref": "collection" } } },
+  "liveCheck": { "use": "stacSceneCount", "args": { "url": { "ref": "searchUrl" } } },
+  "patches": [
+    { "set": "/exportPrefix", "use": "slug", "args": { "text": { "from": "title" } } },
+    { "set": "/layout/design/variant", "from": "layoutVariant" },
+    { "set": "/layout/navigation/title", "from": "title" },
+    { "set": "/mapConstraints/zoom", "from": "zoom" },
+    { "set": "/mapConstraints/center", "from": "center" },
+    { "set": "/sources/1/name", "text": "{{missionName}} ({{start}} to {{end}})" },
+    { "set": "/sources/1/data/0/url", "ref": "searchUrl" },
+    { "set": "/sources/1/data/0/assets", "use": "list", "args": { "a": { "ref": "imageAsset" } } },
+    { "set": "/sources/1/data/0/assetFormats", "use": "singleKeyObject", "args": { "key": { "ref": "imageAsset" }, "value": { "value": "cog" } } },
+    { "remove": "/sources/1/data/0/convertToRGB", "when": { "field": "imageAsset", "notIn": ["visual"] } },
+    { "remove": "/sources/1/data/0/normalize", "when": { "field": "imageAsset", "notIn": ["visual"] } },
+    { "remove": "/sources/1/data/0/bands", "when": { "field": "imageAsset", "notIn": ["visual"] } },
+    { "remove": "/sources/1/data/0/style", "when": { "field": "imageAsset", "notIn": ["visual"] } },
+    { "set": "/sources/1/meta/description", "text": "Scenes fetched live from the STAC catalogue for the map area, {{start}} to {{end}}." },
+    { "set": "/sources/1/meta/attribution/text", "ref": "attribution" },
+    { "set": "/sources/1/meta/attribution/url", "ref": "collection" }
+  ]
+}

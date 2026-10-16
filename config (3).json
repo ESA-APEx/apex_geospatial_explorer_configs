@@ -1,0 +1,140 @@
+{
+  "version": "1.0.0",
+  "exportPrefix": "satellite-monitor",
+  "layout": {
+    "design": {
+      "variant": "sidebar"
+    },
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "Satellite Monitor"
+    }
+  },
+  "interfaceGroups": [
+    "Satellite scenes"
+  ],
+  "exclusivitySets": [],
+  "mapConstraints": {
+    "zoom": 11,
+    "center": [
+      -2.6,
+      51.45
+    ],
+    "projection": "EPSG:3857"
+  },
+  "projections": [],
+  "workflows": [],
+  "stories": [],
+  "services": [],
+  "sources": [
+    {
+      "id": "stadia-dark",
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": true,
+      "isBaseLayer": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Dark",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "stac-scenes",
+      "name": "Sentinel-2 true colour (2025-06-01 to 2025-08-31)",
+      "isActive": true,
+      "isBaseLayer": false,
+      "data": [
+        {
+          "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items?bbox=-2.688%2C51.406%2C-2.512%2C51.494&datetime=2025-06-01T00%3A00%3A00Z%2F2025-08-31T23%3A59%3A59Z&limit=20&query=%7B%22eo%3Acloud_cover%22%3A%7B%22lte%22%3A20%7D%7D",
+          "format": "stac",
+          "zIndex": 50,
+          "minZoom": 8,
+          "maxZoom": 20,
+          "assets": [
+            "visual"
+          ],
+          "assetFormats": {
+            "visual": "cog"
+          },
+          "convertToRGB": true,
+          "normalize": false,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "style": {
+            "color": [
+              "array",
+              [
+                "/",
+                [
+                  "band",
+                  1
+                ],
+                255
+              ],
+              [
+                "/",
+                [
+                  "band",
+                  2
+                ],
+                255
+              ],
+              [
+                "/",
+                [
+                  "band",
+                  3
+                ],
+                255
+              ],
+              1
+            ]
+          }
+        }
+      ],
+      "meta": {
+        "description": "Scenes fetched live from the STAC catalogue for the map area, 2025-06-01 to 2025-08-31.",
+        "attribution": {
+          "text": "Contains modified Copernicus Sentinel data",
+          "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Satellite scenes",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "exclusivitySets": []
+    }
+  ]
+}
