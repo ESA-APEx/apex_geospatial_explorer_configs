@@ -1,0 +1,113 @@
+{
+  "formatVersion": 1,
+  "id": "change-swipe",
+  "name": "Change & Swipe Viewer",
+  "tagline": "Compare two moments side by side",
+  "description": "A swipe comparison between two years of imagery. Ideal for showing change after floods, fires or construction.",
+  "bestFor": ["Before / after", "Disaster response", "Land change"],
+  "baseConfig": "config.json",
+  "defaults": { "title": "Change Explorer", "center": [15, 52], "zoom": 4, "layoutVariant": "fullscreen" },
+  "steps": {
+    "data": {
+      "title": "Imagery",
+      "description": "Choose where the before and after images come from.",
+      "fields": [
+        {
+          "id": "source", "label": "Imagery source", "type": "choice", "default": "eox",
+          "options": [
+            { "value": "eox", "label": "Sentinel-2 cloudless (EOX)", "description": "Cloud-free yearly mosaics of the whole world." },
+            { "value": "custom", "label": "My own map service", "description": "A WMS service with one layer per year." }
+          ]
+        },
+        { "id": "wmsUrl", "label": "WMS service URL", "type": "text", "default": "", "placeholder": "https://…/wms", "showIf": { "field": "source", "in": ["custom"] } }
+      ]
+    },
+    "options": {
+      "title": "Before and after",
+      "description": "Pick the two years to compare. The \"before\" image shows on the left of the swipe, \"after\" on the right.",
+      "fields": [
+        {
+          "id": "before", "label": "Before", "type": "choice", "default": "2018",
+          "options": [
+            { "value": "2016", "label": "2016" }, { "value": "2018", "label": "2018" }, { "value": "2019", "label": "2019" },
+            { "value": "2020", "label": "2020" }, { "value": "2021", "label": "2021" }, { "value": "2022", "label": "2022" },
+            { "value": "2023", "label": "2023" }, { "value": "2024", "label": "2024" }
+          ],
+          "optionsFrom": "extentYears",
+          "showIf": { "field": "source", "in": ["eox"] }
+        },
+        {
+          "id": "after", "label": "After", "type": "choice", "default": "2024",
+          "options": [
+            { "value": "2016", "label": "2016" }, { "value": "2018", "label": "2018" }, { "value": "2019", "label": "2019" },
+            { "value": "2020", "label": "2020" }, { "value": "2021", "label": "2021" }, { "value": "2022", "label": "2022" },
+            { "value": "2023", "label": "2023" }, { "value": "2024", "label": "2024" }
+          ],
+          "optionsFrom": "extentYears",
+          "showIf": { "field": "source", "in": ["eox"] }
+        },
+        { "id": "beforeLayer", "label": "Before layer", "type": "text", "default": "", "optionsFrom": "wmsLayers", "showIf": { "field": "source", "in": ["custom"] } },
+        { "id": "afterLayer", "label": "After layer", "type": "text", "default": "", "optionsFrom": "wmsLayers", "showIf": { "field": "source", "in": ["custom"] } }
+      ]
+    }
+  },
+  "computed": {
+    "wmsService": {
+      "map": "source",
+      "cases": { "custom": { "from": "wmsUrl" } },
+      "default": { "value": "https://tiles.maps.eox.at/wms" }
+    },
+    "beforeYearLayer": {
+      "map": "before",
+      "cases": { "2016": "s2cloudless_3857" },
+      "default": { "text": "s2cloudless-{{before}}_3857" }
+    },
+    "afterYearLayer": {
+      "map": "after",
+      "cases": { "2016": "s2cloudless_3857" },
+      "default": { "text": "s2cloudless-{{after}}_3857" }
+    },
+    "beforeLayerName": {
+      "map": "source",
+      "cases": { "custom": { "from": "beforeLayer" } },
+      "default": { "ref": "beforeYearLayer" }
+    },
+    "afterLayerName": {
+      "map": "source",
+      "cases": { "custom": { "from": "afterLayer" } },
+      "default": { "ref": "afterYearLayer" }
+    },
+    "layerName": {
+      "map": "source",
+      "cases": { "custom": "Before vs after" },
+      "default": { "text": "Sentinel-2 cloudless: {{before}} vs {{after}}" }
+    },
+    "layerDescription": {
+      "map": "source",
+      "cases": { "custom": "Swipe between the before (left) and after (right) images." },
+      "default": { "text": "Swipe between the {{before}} (left) and {{after}} (right) Sentinel-2 cloudless mosaics." }
+    },
+    "attributionText": {
+      "map": "source",
+      "cases": { "custom": "Data attribution not specified" },
+      "default": { "value": "Sentinel-2 cloudless by EOX (contains modified Copernicus data)" }
+    }
+  },
+  "probe": { "use": "wmsLayers", "args": { "url": { "ref": "wmsService" } } },
+  "patches": [
+    { "set": "/exportPrefix", "use": "slug", "args": { "text": { "from": "title" } } },
+    { "set": "/layout/design/variant", "from": "layoutVariant" },
+    { "set": "/layout/navigation/title", "from": "title" },
+    { "set": "/mapConstraints/zoom", "from": "zoom" },
+    { "set": "/mapConstraints/center", "from": "center" },
+    { "set": "/sources/1/id", "text": "change-{{before}}-vs-{{after}}" },
+    { "set": "/sources/1/name", "ref": "layerName" },
+    { "set": "/sources/1/data/0/url", "ref": "wmsService" },
+    { "set": "/sources/1/data/1/url", "ref": "wmsService" },
+    { "set": "/sources/1/data/0/layers", "ref": "beforeLayerName" },
+    { "set": "/sources/1/data/1/layers", "ref": "afterLayerName" },
+    { "set": "/sources/1/meta/description", "ref": "layerDescription" },
+    { "set": "/sources/1/meta/attribution/text", "ref": "attributionText" },
+    { "remove": "/sources/1/meta/attribution/url", "when": { "field": "source", "in": ["custom"] } }
+  ]
+}
