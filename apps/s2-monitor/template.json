@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "id": "s2-monitor",
-  "name": "Satellite STAC Monitor",
+  "name": "Sentinel 2 Time Series",
   "tagline": "Live satellite scenes from a STAC catalogue",
   "description": "Finds satellite scenes over your area for a chosen period and shows them with time controls.",
   "bestFor": ["Sentinel-2 archives", "Seasonal monitoring", "Agriculture"],
