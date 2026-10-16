@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "exportPrefix": "change-explorer",
+  "layout": {
+    "design": { "variant": "fullscreen" },
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "Change Explorer"
+    }
+  },
+  "interfaceGroups": ["Change comparison"],
+  "exclusivitySets": [],
+  "mapConstraints": { "zoom": 4, "center": [15, 52], "projection": "EPSG:3857" },
+  "projections": [],
+  "workflows": [],
+  "stories": [],
+  "services": [],
+  "sources": [
+    {
+      "id": "open-streetmap",
+      "name": "OpenStreetMap",
+      "isActive": true,
+      "isBaseLayer": true,
+      "data": [{ "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "format": "xyz", "zIndex": 10 }],
+      "meta": {
+        "description": "Base layer: OpenStreetMap",
+        "attribution": { "text": "Map data © OpenStreetMap contributors", "url": "https://www.openstreetmap.org/copyright" },
+        "categories": []
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "change-2018-vs-2024",
+      "name": "Sentinel-2 cloudless: 2018 vs 2024",
+      "isActive": true,
+      "isBaseLayer": false,
+      "isSwipeLayer": true,
+      "data": [
+        { "url": "https://tiles.maps.eox.at/wms", "format": "wms", "zIndex": 50, "layers": "s2cloudless-2018_3857", "position": "left" },
+        { "url": "https://tiles.maps.eox.at/wms", "format": "wms", "zIndex": 50, "layers": "s2cloudless-2024_3857", "position": "right" }
+      ],
+      "meta": {
+        "description": "Swipe between the 2018 (left) and 2024 (right) Sentinel-2 cloudless mosaics.",
+        "attribution": { "text": "Sentinel-2 cloudless by EOX (contains modified Copernicus data)", "url": "https://s2maps.eu" },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Change comparison",
+        "contentLocation": "infoPanel",
+        "layerCard": { "toggleable": true },
+        "infoPanel": {
+          "legend": { "type": "swatch" },
+          "controls": { "opacitySlider": true, "zoomToCenter": true, "temporalControls": false, "constraintSlider": false, "blendControls": false }
+        }
+      },
+      "exclusivitySets": []
+    }
+  ]
+}
