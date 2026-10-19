@@ -1,5 +1,5 @@
 {
-  "version": "1.82.0",
+  "version": "1.84.0",
   "exportPrefix": "sef-energy-explorer",
   "layout": {
     "navigation": {
@@ -842,10 +842,9 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://wmts.marine.copernicus.eu/teroWmts",
-          "format": "wmts",
+          "url": "https://wmts.marine.copernicus.eu/teroWmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&TILEMATRIXSET=EPSG:3857&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&LAYER=WIND_GLO_PHY_CLIMATE_L4_MY_012_003/cmems_obs-wind_glo_phy_my_l4_P1M_202411/wind_speed&STYLE=cmap:speed",
+          "format": "xyz",
           "zIndex": 29,
-          "layers": "WIND_GLO_PHY_CLIMATE_L4_MY_012_003/cmems_obs-wind_glo_phy_my_l4_P1M_202411/wind_speed",
           "opacity": 0.7
         }
       ],
@@ -926,10 +925,9 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://wmts.marine.copernicus.eu/teroWmts",
-          "format": "wmts",
-          "zIndex": 32,
-          "layers": "GLOBAL_ANALYSISFORECAST_WAV_001_027/cmems_mod_glo_wav_anfc_0.083deg_PT3H-i_202411/VHM0"
+          "url": "https://wmts.marine.copernicus.eu/teroWmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&TILEMATRIXSET=EPSG:3857&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&LAYER=GLOBAL_ANALYSISFORECAST_WAV_001_027/cmems_mod_glo_wav_anfc_0.083deg_PT3H-i_202411/VHM0&STYLE=cmap:amp",
+          "format": "xyz",
+          "zIndex": 32
         }
       ],
       "meta": {
@@ -968,10 +966,9 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://wmts.marine.copernicus.eu/teroWmts",
-          "format": "wmts",
+          "url": "https://wmts.marine.copernicus.eu/teroWmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&TILEMATRIXSET=EPSG:3857&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&LAYER=GLOBAL_ANALYSISFORECAST_WAV_001_027/cmems_mod_glo_wav_anfc_0.083deg_PT3H-i_202411/VTM10&STYLE=cmap:tempo",
+          "format": "xyz",
           "zIndex": 33,
-          "layers": "GLOBAL_ANALYSISFORECAST_WAV_001_027/cmems_mod_glo_wav_anfc_0.083deg_PT3H-i_202411/VTM10",
           "opacity": 0.8
         }
       ],
@@ -1089,6 +1086,111 @@
       },
       "exclusivitySets": [],
       "id": "coastline"
+    },
+    {
+      "id": "offshore-wind-farms-emodnet",
+      "name": "Offshore Wind Farms (EMODnet)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/offshore/europe_offshore_wind_farms_emodnet.geojson",
+          "format": "geojson",
+          "zIndex": 64,
+          "style": [
+            {
+              "stroke-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "status"
+                  ],
+                  "operating"
+                ],
+                "#FFD400",
+                [
+                  "==",
+                  [
+                    "get",
+                    "status"
+                  ],
+                  "planned"
+                ],
+                "rgba(220,220,220,0.9)",
+                "#00C2FF"
+              ],
+              "stroke-width": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "status"
+                  ],
+                  "operating"
+                ],
+                2,
+                1.4
+              ],
+              "fill-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "status"
+                  ],
+                  "operating"
+                ],
+                "rgba(255,212,0,0.18)",
+                "rgba(0,0,0,0)"
+              ]
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Offshore wind farms in European seas from EMODnet Human Activities: about 160 in operation, 80 under construction or approved, and 340 planned, with name, capacity, number of turbines, and year where known. Simplified and hosted by ESA SEF.",
+        "attribution": {
+          "text": "EMODnet Human Activities, wind farms (polygons), hosted by ESA SEF",
+          "url": "https://emodnet.ec.europa.eu/en/human-activities"
+        },
+        "categories": [
+          {
+            "color": "#FFD400",
+            "label": "In operation"
+          },
+          {
+            "color": "#00C2FF",
+            "label": "Under construction or approved"
+          },
+          {
+            "color": "#DCDCDC",
+            "label": "Planned"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Offshore Renewables",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
     },
     {
       "name": "Hydropower Plants (Europe)",
@@ -2283,7 +2385,7 @@
           "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer",
           "format": "wms",
           "zIndex": 40,
-          "layers": "0,1",
+          "layers": "12",
           "parameters": {
             "STYLES": ""
           }
@@ -2825,6 +2927,640 @@
         }
       },
       "exclusivitySets": []
+    },
+    {
+      "id": "offshore-wind-speed-2025-01",
+      "name": "Offshore Wind Speed, January 2025",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.marine.copernicus.eu/teroWmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&TILEMATRIXSET=EPSG:3857&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&LAYER=WIND_GLO_PHY_CLIMATE_L4_MY_012_003/cmems_obs-wind_glo_phy_my_l4_P1M_202411/wind_speed&STYLE=cmap:speed&TIME=2025-01-01T00:00:00Z",
+          "format": "xyz",
+          "zIndex": 29,
+          "opacity": 0.75
+        }
+      ],
+      "meta": {
+        "description": "Monthly mean wind speed 10 m above the sea for January 2025 from the Copernicus Marine multi-year L4 wind product (0.25 degree). Fixed month, used by the North Sea story.",
+        "attribution": {
+          "text": "E.U. Copernicus Marine Service (CMEMS), Global Ocean Wind L4",
+          "url": "https://data.marine.copernicus.eu/product/WIND_GLO_PHY_CLIMATE_L4_MY_012_003/description"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://wmts.marine.copernicus.eu/teroWmts?SERVICE=WMTS&REQUEST=GetLegend&LAYER=WIND_GLO_PHY_CLIMATE_L4_MY_012_003/cmems_obs-wind_glo_phy_my_l4_P1M_202411/wind_speed&STYLE=cmap:speed&FORMAT=image/svg%2Bxml"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "significant-wave-height-2025-01-24",
+      "name": "Significant Wave Height, 24 January 2025",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wmts.marine.copernicus.eu/teroWmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&TILEMATRIXSET=EPSG:3857&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&LAYER=GLOBAL_ANALYSISFORECAST_WAV_001_027/cmems_mod_glo_wav_anfc_0.083deg_PT3H-i_202411/VHM0&STYLE=cmap:amp&TIME=2025-01-24T06:00:00Z",
+          "format": "xyz",
+          "zIndex": 29,
+          "opacity": 0.75
+        }
+      ],
+      "meta": {
+        "description": "Significant wave height at 06:00 UTC on 24 January 2025, during Storm Éowyn, from the Copernicus Marine global wave analysis (1/12 degree). Fixed time, used by the North Sea story.",
+        "attribution": {
+          "text": "Copernicus Marine Service / Mercator Ocean International",
+          "url": "https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_WAV_001_027/description"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://wmts.marine.copernicus.eu/teroWmts?SERVICE=WMTS&REQUEST=GetLegend&LAYER=GLOBAL_ANALYSISFORECAST_WAV_001_027/cmems_mod_glo_wav_anfc_0.083deg_PT3H-i_202411/VHM0&STYLE=cmap:amp&FORMAT=image/svg%2Bxml"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "sentinel-1-wakes-2024-09-19",
+      "name": "Sentinel-1 Radar, German Bight, 19 September 2024",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/tiles/wake-2024-09-19/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 31
+        }
+      ],
+      "meta": {
+        "description": "Copernicus Sentinel-1 radar backscatter (VV, 10 m) over the German and Dutch wind farms north of Borkum on 19 September 2024, evening pass, wind from the west. Calmer water in the lee of a farm appears dark, so wakes show as dark plumes downwind. Turbines appear as bright points. Rendered as tiles and hosted by ESA SEF.",
+        "attribution": {
+          "text": "Contains modified Copernicus Sentinel-1 data 2024, rendered via Microsoft Planetary Computer, hosted by ESA SEF",
+          "url": "https://dataspace.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "sentinel-1-wakes-2025-12-25",
+      "name": "Sentinel-1 Radar, German Bight, 25 December 2025",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/tiles/wake-2025-12-25/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 31
+        }
+      ],
+      "meta": {
+        "description": "Copernicus Sentinel-1 radar backscatter (VV, 10 m) over the German and Dutch wind farms north of Borkum on 25 December 2025, evening pass, wind from the east. Calmer water in the lee of a farm appears dark, so wakes show as dark plumes downwind. Turbines appear as bright points. Rendered as tiles and hosted by ESA SEF.",
+        "attribution": {
+          "text": "Contains modified Copernicus Sentinel-1 data 2025, rendered via Microsoft Planetary Computer, hosted by ESA SEF",
+          "url": "https://dataspace.copernicus.eu/"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "burnt-areas-2025-effis",
+      "name": "Burnt Areas 2025 (EFFIS, north-west Iberia)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/tiles/burnt-2025/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 44,
+          "opacity": 0.9
+        }
+      ],
+      "meta": {
+        "description": "Burnt areas of 30 ha or more mapped in north-west Spain and northern Portugal in 2025 by the European Forest Fire Information System from MODIS and Sentinel-2. Rendered from the EFFIS WMS as tiles and hosted by ESA SEF.",
+        "attribution": {
+          "text": "Copernicus EMS / EFFIS burnt areas 2025, snapshot hosted by ESA SEF",
+          "url": "https://forest-fire.emergency.copernicus.eu/"
+        },
+        "categories": [
+          {
+            "color": "#7F4FA8",
+            "label": "Burnt area, 2025"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "meteosat-active-fire-2025-08-11-to-18",
+      "name": "Meteosat Active Fire, 11 to 18 August 2025",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/tiles/fires-2025-08/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 52,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Locations flagged by the Meteosat SEVIRI active-fire product over north-west Iberia in at least one of 96 two-hourly images between 11 and 18 August 2025. Red is fire, amber potential fire. Each pixel covers about 4 km by 5 km. Rendered from the EUMETSAT WMS and hosted by ESA SEF.",
+        "attribution": {
+          "text": "EUMETSAT, Meteosat SEVIRI active fire monitoring, snapshot hosted by ESA SEF",
+          "url": "https://user.eumetsat.int/catalogue"
+        },
+        "categories": [
+          {
+            "color": "#E61414",
+            "label": "Fire"
+          },
+          {
+            "color": "#FFC800",
+            "label": "Potential fire"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "no2-2025-story-stretch",
+      "name": "Tropospheric NO2, 2025 (stretched for cities and plants)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/no2/s5p_no2_year_2025_cog.tif",
+          "format": "cog",
+          "zIndex": 38,
+          "opacity": 0.8
+        }
+      ],
+      "meta": {
+        "description": "Sentinel-5P tropospheric nitrogen dioxide, 2025 annual average, as in the Traditional Energy group, with the colour scale set to 25 to 95 µmol/m² so that large power plants show against the rural background. Large cities reach the top colour.",
+        "attribution": {
+          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
+          "url": "https://maps.s5p-pal.com/no2-tropospheric/"
+        },
+        "categories": [],
+        "units": "µmol/m²",
+        "colormaps": [
+          {
+            "min": 25,
+            "max": 95,
+            "steps": 64,
+            "name": "inferno",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "ch4-2025-story-stretch",
+      "name": "Methane, 2025 (stretched for regional sources)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/methane/s5p_ch4_year_2025_cog.tif",
+          "format": "cog",
+          "zIndex": 38,
+          "opacity": 0.8
+        }
+      ],
+      "meta": {
+        "description": "Sentinel-5P methane, 2025 annual average, as in the Traditional Energy group, with the colour scale set to 1,880 to 1,980 ppb to show regional differences.",
+        "attribution": {
+          "text": "Copernicus Sentinel-5P (TROPOMI) / S5P-PAL, processed by S&T, hosted by ESA SEF",
+          "url": "https://maps.s5p-pal.com/ch4/"
+        },
+        "categories": [],
+        "units": "ppbv",
+        "colormaps": [
+          {
+            "min": 1880,
+            "max": 1980,
+            "steps": 64,
+            "name": "inferno",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "fossil-story-sites-plants",
+      "name": "Fossil Story Sites: Plants and Cities",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/fossil_story_sites_no2.geojson",
+          "format": "geojson",
+          "zIndex": 90,
+          "style": [
+            {
+              "circle-radius": 9,
+              "circle-fill-color": "rgba(0,0,0,0)",
+              "circle-stroke-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "kind"
+                  ],
+                  "city"
+                ],
+                "#FFFFFF",
+                [
+                  "==",
+                  [
+                    "get",
+                    "kind"
+                  ],
+                  "basin"
+                ],
+                "#00C2FF",
+                "#39FF14"
+              ],
+              "circle-stroke-width": 2.5,
+              "text-value": [
+                "get",
+                "name"
+              ],
+              "text-font": "bold 13px sans-serif",
+              "text-fill-color": "#111111",
+              "text-stroke-color": "#FFFFFF",
+              "text-stroke-width": 3,
+              "text-offset-y": -20
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Lignite power plants (green) and nearby cities (white) referred to in the Sentinel-5P story.",
+        "attribution": {
+          "text": "ESA SEF",
+          "url": "https://sef.apex.esa.int/"
+        },
+        "categories": [
+          {
+            "color": "#39FF14",
+            "label": "Lignite power plant"
+          },
+          {
+            "color": "#FFFFFF",
+            "label": "City, for comparison"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "fossil-story-sites-basins",
+      "name": "Fossil Story Sites: Oil and Gas Basins",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/fossil_story_sites_ch4.geojson",
+          "format": "geojson",
+          "zIndex": 90,
+          "style": [
+            {
+              "circle-radius": 9,
+              "circle-fill-color": "rgba(0,0,0,0)",
+              "circle-stroke-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "kind"
+                  ],
+                  "city"
+                ],
+                "#FFFFFF",
+                [
+                  "==",
+                  [
+                    "get",
+                    "kind"
+                  ],
+                  "basin"
+                ],
+                "#00C2FF",
+                "#39FF14"
+              ],
+              "circle-stroke-width": 2.5,
+              "text-value": [
+                "get",
+                "name"
+              ],
+              "text-font": "bold 13px sans-serif",
+              "text-fill-color": "#111111",
+              "text-stroke-color": "#FFFFFF",
+              "text-stroke-width": 3,
+              "text-offset-y": -20
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Oil and gas regions referred to in the Sentinel-5P story.",
+        "attribution": {
+          "text": "ESA SEF",
+          "url": "https://sef.apex.esa.int/"
+        },
+        "categories": [
+          {
+            "color": "#00C2FF",
+            "label": "Oil and gas basin"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "solar-potential-austria-story-stretch",
+      "name": "Annual Solar Power Potential, Austria (stretched)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/gtif_austria_solar_potential_100m_3857_cog.tif",
+          "format": "cog",
+          "zIndex": 36,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "GTIF Austria annual solar power potential (DHI), resampled from 13 m to 100 m, with the colour scale set to 2.8 to 3.7 kWh/m² a day to show differences within Austria. Hosted by ESA SEF.",
+        "attribution": {
+          "text": "ESA GTIF (DHI), resampled and hosted by ESA SEF",
+          "url": "https://gtif.esa.int/"
+        },
+        "categories": [],
+        "units": "kWh/m²/day",
+        "colormaps": [
+          {
+            "min": 2.8,
+            "max": 3.7,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "wind-power-density-austria-story-stretch",
+      "name": "Wind Power Density at 100 m, Austria (stretched)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/PowerDensity_100m_Austria_WGS84_COG_clipped_3857_fix.tif",
+          "format": "cog",
+          "zIndex": 36,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "GTIF Austria wind power density at 100 m (DHI), with the colour scale set to 0 to 800 W/m² to show differences across the lowlands. Alpine crests exceed the scale.",
+        "attribution": {
+          "text": "ESA GTIF (DHI)",
+          "url": "https://gtif.esa.int/"
+        },
+        "categories": [],
+        "units": "W/m²",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 800,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Story layers",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
     }
   ],
   "stories": [
@@ -2856,7 +3592,10 @@
               "id": "major-rivers"
             }
           ],
-          "baseLayer": "terrain-eox"
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "catchments"
+          }
         },
         {
           "id": "where-the-water-is-stored",
@@ -2879,7 +3618,10 @@
               "id": "catchments"
             }
           ],
-          "baseLayer": "terrain-eox"
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "snow-water-equivalent-2024-04-15"
+          }
         },
         {
           "id": "above-or-below-normal",
@@ -2902,7 +3644,10 @@
               "id": "catchments"
             }
           ],
-          "baseLayer": "terrain-eox"
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "snow-anomaly-10-day-2022-04-15"
+          }
         },
         {
           "id": "what-is-arriving-now",
@@ -2925,7 +3670,10 @@
               "id": "catchments"
             }
           ],
-          "baseLayer": "terrain-eox"
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "observed-precipitation-2024-04-01"
+          }
         },
         {
           "id": "what-the-ground-absorbs",
@@ -2948,7 +3696,10 @@
               "id": "catchments"
             }
           ],
-          "baseLayer": "terrain-eox"
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "soil-moisture-anomaly-2022-04-15"
+          }
         },
         {
           "id": "down-to-the-reservoir",
@@ -2971,7 +3722,10 @@
               "id": "hydropower-plants-europe"
             }
           ],
-          "baseLayer": "sentinel-2-cloudless-eox"
+          "baseLayer": "sentinel-2-cloudless-eox",
+          "panelState": {
+            "focusLayer": "santa-giustina-water-occurrence-s2"
+          }
         },
         {
           "id": "where-free-eo-stops",
@@ -2994,7 +3748,10 @@
               "id": "catchments"
             }
           ],
-          "baseLayer": "terrain-eox"
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "hydropower-plants-europe"
+          }
         }
       ]
     },
@@ -3029,7 +3786,10 @@
               "id": "catchments"
             }
           ],
-          "baseLayer": "terrain-eox"
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "alpine-glacier-outlines-rgi7-2003"
+          }
         },
         {
           "id": "september-2018",
@@ -3052,7 +3812,10 @@
               "id": "alpine-glacier-outlines-rgi7-2003"
             }
           ],
-          "baseLayer": "terrain-eox"
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "adamello-s2-2018-09-26"
+          }
         },
         {
           "id": "september-2025",
@@ -3075,7 +3838,10 @@
               "id": "alpine-glacier-outlines-rgi7-2003"
             }
           ],
-          "baseLayer": "terrain-eox"
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "adamello-s2-2025-09-19"
+          }
         },
         {
           "id": "what-it-means-for-inflow",
@@ -3101,7 +3867,10 @@
               "id": "major-rivers"
             }
           ],
-          "baseLayer": "sentinel-2-cloudless-eox"
+          "baseLayer": "sentinel-2-cloudless-eox",
+          "panelState": {
+            "focusLayer": "alpine-glacier-outlines-rgi7-2003"
+          }
         },
         {
           "id": "the-resource-that-does-not-come-back",
@@ -3124,7 +3893,850 @@
               "id": "hydropower-plants-europe"
             }
           ],
-          "baseLayer": "terrain-eox"
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "alpine-glacier-outlines-rgi7-2003"
+          }
+        }
+      ]
+    },
+    {
+      "id": "counting-panels-from-orbit",
+      "title": "Solar arrays in Puglia",
+      "isActive": false,
+      "description": "Ground-mounted solar arrays detected in Sentinel-2 imagery around Troia, Puglia, with the solar resource, land cover, and the transmission grid.",
+      "thumbnail": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/counting-panels-from-orbit.jpg",
+      "steps": [
+        {
+          "id": "the-resource",
+          "content": {
+            "title": "Solar resource",
+            "description": "Southern Italy receives some of the highest surface solar radiation in Europe. The layer shows all-sky downward shortwave radiation at the surface for June 2021 from NASA CERES, on a one-degree grid of about 80 km.\n\nAt this resolution the map shows only the regional gradient. Site assessments use finer satellite-derived irradiance data."
+          },
+          "viewport": {
+            "zoom": 5,
+            "center": [
+              13.0,
+              43.5
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "surface-solar-radiation"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "surface-solar-radiation"
+          }
+        },
+        {
+          "id": "what-thins-it",
+          "content": {
+            "title": "Aerosols",
+            "description": "Aerosols reduce the radiation that reaches a panel, most of all on clear summer days. The layer shows MODIS aerosol optical depth for 15 August 2024. That day the highest values lay over the Pannonian basin, the Balkans, and North Africa. Southern Italy was comparatively clear.\n\nDaily aerosol and cloud data explain much of the week-to-week variation in a plant's output."
+          },
+          "viewport": {
+            "zoom": 5,
+            "center": [
+              13.0,
+              43.5
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "atmospheric-aerosols"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "atmospheric-aerosols"
+          }
+        },
+        {
+          "id": "troia",
+          "content": {
+            "title": "Troia",
+            "description": "Troia lies south-west of Foggia, in farmland at the foot of the Monti Dauni. The province of Foggia is one of Italy's main areas for wind and solar development.\n\nThe base map is a cloud-free Sentinel-2 mosaic at 10 m. Solar arrays are present but hard to tell apart from the surrounding fields."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              15.36,
+              41.36
+            ]
+          },
+          "activeLayers": [],
+          "baseLayer": "sentinel-2-cloudless-eox"
+        },
+        {
+          "id": "the-arrays",
+          "content": {
+            "title": "Detected arrays",
+            "description": "EURAC Research detected 252 ground-mounted solar arrays in this area in Sentinel-2 imagery from 2025, with a method run on the ESA APEx platform. Together they cover about 218 ha.\n\nMost are small. The median array covers about a third of a hectare and the largest about 11 ha. A register limited to large plants would miss most of them."
+          },
+          "viewport": {
+            "zoom": 12,
+            "center": [
+              15.36,
+              41.36
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "pv-mapping-puglia"
+            }
+          ],
+          "baseLayer": "sentinel-2-cloudless-eox",
+          "panelState": {
+            "focusLayer": "pv-mapping-puglia"
+          }
+        },
+        {
+          "id": "the-land-beneath",
+          "content": {
+            "title": "Land cover",
+            "description": "CORINE Land Cover 2018 classifies almost the whole area as non-irrigated arable land, mostly durum wheat in this part of Puglia. Nearly all detected arrays stand on it.\n\nSolar on farmland is contested in Italian energy policy. Repeating the detection each year would show how much farmland is converted."
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              15.36,
+              41.36
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "land-cover-corine-2018"
+            },
+            {
+              "id": "pv-mapping-puglia"
+            }
+          ],
+          "baseLayer": "sentinel-2-cloudless-eox",
+          "panelState": {
+            "focusLayer": "land-cover-corine-2018"
+          }
+        },
+        {
+          "id": "the-connection",
+          "content": {
+            "title": "Grid",
+            "description": "Two 380 kV lines pass within a few kilometres of the arrays. In southern Italy, requests to connect new solar and wind far exceed what the network can take, so grid capacity is one of the main limits on new projects.\n\nThe layer shows line routes and voltages. Spare capacity at each substation comes from the grid operator."
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              15.36,
+              41.36
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "hv-transmission-grid-europe"
+            },
+            {
+              "id": "pv-mapping-puglia"
+            }
+          ],
+          "baseLayer": "sentinel-2-cloudless-eox",
+          "panelState": {
+            "focusLayer": "hv-transmission-grid-europe"
+          }
+        },
+        {
+          "id": "what-detection-gives",
+          "content": {
+            "title": "Uses and limits",
+            "description": "Satellite detection gives the location and footprint of every array, registered or not. Planners, grid operators, statistics offices, and insurers can all use it.\n\nIt does not give installed capacity, panel type, or output. Those come from registers, very high resolution imagery, and operators."
+          },
+          "viewport": {
+            "zoom": 9,
+            "center": [
+              15.4,
+              41.4
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "pv-mapping-puglia"
+            },
+            {
+              "id": "hv-transmission-grid-europe"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "pv-mapping-puglia"
+          }
+        }
+      ]
+    },
+    {
+      "id": "two-resources-one-country",
+      "title": "Solar and wind in Austria",
+      "isActive": false,
+      "description": "Solar and wind potential across Austria from the ESA GTIF Austria demonstrator, with land cover and the transmission grid.",
+      "thumbnail": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/two-resources-one-country.jpg",
+      "steps": [
+        {
+          "id": "the-sun",
+          "content": {
+            "title": "Solar potential",
+            "description": "Solar potential varies little across Austria. The layer shows annual solar power potential from the ESA GTIF Austria demonstrator, modelled by DHI from irradiance, temperature, and terrain, and resampled here from 13 m to 100 m. The colour scale runs from 2.8 to 3.7 kWh/m² a day to bring out the differences.\n\nThe highest values lie in the east and south-east and on high south-facing slopes. The lowest lie in Alpine valleys and on north-facing slopes."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              13.35,
+              47.6
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "solar-potential-austria-story-stretch"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "solar-potential-austria-story-stretch"
+          }
+        },
+        {
+          "id": "the-wind",
+          "content": {
+            "title": "Wind potential",
+            "description": "Wind varies far more. Wind power density at 100 m, also from GTIF, ranges from about 50 W/m² in sheltered basins to more than 1,500 W/m² on Alpine crests.\n\nThe crests are largely unbuildable. In the lowlands the resource is highest in the north-east. The colour scale stops at 800 W/m² so that differences in the lowlands remain visible."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              13.35,
+              47.6
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "wind-power-density-austria-story-stretch"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "wind-power-density-austria-story-stretch"
+          }
+        },
+        {
+          "id": "the-east",
+          "content": {
+            "title": "The north-east",
+            "description": "On the Parndorf plateau and in the Weinviertel, east and north of Vienna, wind power density at 100 m reaches 380 to 450 W/m². The Graz and Klagenfurt basins reach 50 to 120.\n\nMost Austrian wind farms stand in Lower Austria and Burgenland, close to the 220 kV and 380 kV lines that supply Vienna."
+          },
+          "viewport": {
+            "zoom": 9,
+            "center": [
+              16.6,
+              48.1
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "wind-power-density-austria-story-stretch"
+            },
+            {
+              "id": "hv-transmission-grid-europe"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "wind-power-density-austria-story-stretch"
+          }
+        },
+        {
+          "id": "what-is-in-the-way",
+          "content": {
+            "title": "Constraints",
+            "description": "Land use determines where a project can be permitted. CORINE Land Cover 2018 shows Vienna and surrounding towns in red, forest in green, farmland in yellow, and Lake Neusiedl, a national park and UNESCO site, to the south.\n\nSettlement buffers, forest, and protected areas narrow the area in which a good resource can be used."
+          },
+          "viewport": {
+            "zoom": 9,
+            "center": [
+              16.6,
+              48.1
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "land-cover-corine-2018"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "land-cover-corine-2018"
+          }
+        },
+        {
+          "id": "a-national-twin",
+          "content": {
+            "title": "GTIF Austria",
+            "description": "GTIF Austria combines resource, land, and grid data for one country at a resolution useful to municipalities. ESA has since applied the approach to other countries and regions.\n\nThe full Austrian layer set is open at gtif.esa.int."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              13.35,
+              47.6
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "solar-potential-austria-story-stretch"
+            },
+            {
+              "id": "hv-transmission-grid-europe"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "solar-potential-austria-story-stretch"
+          }
+        }
+      ]
+    },
+    {
+      "id": "the-wind-behind-the-turbine",
+      "title": "Offshore wind and wakes in the North Sea",
+      "isActive": false,
+      "description": "Wind, depth, and waves in the North Sea, the wind farms of the German Bight, and two Sentinel-1 scenes of wakes crossing between Dutch and German farms.",
+      "thumbnail": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/the-wind-behind-the-turbine.jpg",
+      "steps": [
+        {
+          "id": "the-resource",
+          "content": {
+            "title": "Wind",
+            "description": "Offshore wind farms cluster in the southern North Sea, where winds are strong, water shallow, and ports close. The layer shows mean wind speed 10 m above the sea for January 2025 from the Copernicus Marine wind product, which combines satellite scatterometer data with reanalysis. Darker green means stronger wind.\n\nThe outlines are wind farms from EMODnet: yellow in operation, blue under construction or approved, grey planned."
+          },
+          "viewport": {
+            "zoom": 5,
+            "center": [
+              3.5,
+              55.5
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "offshore-wind-speed-2025-01"
+            },
+            {
+              "id": "offshore-wind-farms-emodnet"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "offshore-wind-speed-2025-01"
+          }
+        },
+        {
+          "id": "the-floor",
+          "content": {
+            "title": "Depth",
+            "description": "Water depth determines the foundation. Fixed foundations are standard to about 50 m. Deeper sites need floating turbines, which remain more expensive.\n\nEMODnet bathymetry shows why the southern North Sea was built first. The Dogger Bank and the German Bight are shallow, while the Norwegian Trench is several hundred metres deep. Several planned zones lie in deeper water further offshore."
+          },
+          "viewport": {
+            "zoom": 5,
+            "center": [
+              3.5,
+              55.5
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "sea-floor-depth"
+            },
+            {
+              "id": "offshore-wind-farms-emodnet"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "sea-floor-depth"
+          }
+        },
+        {
+          "id": "the-waves",
+          "content": {
+            "title": "Waves",
+            "description": "Waves determine foundation loads and the days on which crews can reach turbines. The layer shows significant wave height from the Copernicus Marine wave analysis at 06:00 UTC on 24 January 2025, as Storm Éowyn crossed Ireland and Scotland. The storm left about a million people without power.\n\nThe highest waves lay west of Ireland. The North Sea, sheltered by Britain, saw much lower waves. The same product forecasts waves 10 days ahead."
+          },
+          "viewport": {
+            "zoom": 5,
+            "center": [
+              3.5,
+              55.5
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "significant-wave-height-2025-01-24"
+            },
+            {
+              "id": "offshore-wind-farms-emodnet"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "significant-wave-height-2025-01-24"
+          }
+        },
+        {
+          "id": "the-farms",
+          "content": {
+            "title": "German Bight",
+            "description": "North of the East Frisian islands, Dutch and German farms stand close together. The southern row runs from Gemini on the Dutch side to Borkum Riffgrund, Trianel Windpark Borkum, Merkur, and Gode Wind on the German side. Global Tech I, Hohe See, Albatros, and BARD Offshore 1 stand further north.\n\nEach farm is permitted separately, but each affects the wind that reaches its neighbours."
+          },
+          "viewport": {
+            "zoom": 8,
+            "center": [
+              6.6,
+              54.2
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "offshore-wind-farms-emodnet"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "offshore-wind-farms-emodnet"
+          }
+        },
+        {
+          "id": "wind-from-the-west",
+          "content": {
+            "title": "Wakes, westerly wind",
+            "description": "Sentinel-1 radar measures sea-surface roughness. Wind-roughened water appears bright, calmer water dark, and turbines as bright points. On 19 September 2024 the wind blew from the west.\n\nDark wakes extend east of the farms for tens of kilometres and reach the farms downwind. Turbines inside a wake produce less power."
+          },
+          "viewport": {
+            "zoom": 9,
+            "center": [
+              6.5,
+              54.2
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "sentinel-1-wakes-2024-09-19"
+            },
+            {
+              "id": "offshore-wind-farms-emodnet"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "sentinel-1-wakes-2024-09-19"
+          }
+        },
+        {
+          "id": "wind-from-the-east",
+          "content": {
+            "title": "Wakes, easterly wind",
+            "description": "On 25 December 2025 the wind blew from the east. The wakes run west, from the German farms across the border towards Gemini.\n\nWake losses between neighbouring farms are a growing issue in North Sea planning. Sentinel-1 covers the area every few days at no cost. Converting the images into wind-speed deficits requires processing that commercial providers offer."
+          },
+          "viewport": {
+            "zoom": 9,
+            "center": [
+              6.5,
+              54.2
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "sentinel-1-wakes-2025-12-25"
+            },
+            {
+              "id": "offshore-wind-farms-emodnet"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "sentinel-1-wakes-2025-12-25"
+          }
+        },
+        {
+          "id": "the-cables",
+          "content": {
+            "title": "Interconnectors",
+            "description": "High-voltage direct-current cables already cross the North Sea, including NorNed between Norway and the Netherlands, NordLink between Norway and Germany, and Viking Link between Denmark and Britain.\n\nFuture farms further offshore will connect through hubs shared by several countries. Planning them requires the wind, depth, wave, wake, and grid data shown in this story."
+          },
+          "viewport": {
+            "zoom": 6,
+            "center": [
+              5.0,
+              55.5
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "hv-transmission-grid-europe"
+            },
+            {
+              "id": "offshore-wind-farms-emodnet"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "hv-transmission-grid-europe"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fire-on-the-line",
+      "title": "Wildfire and the grid in north-west Iberia",
+      "isActive": false,
+      "description": "Wildfire exposure of the transmission grid in north-west Iberia, from long-term fire frequency to the August 2025 fires and the areas they burnt.",
+      "thumbnail": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/fire-on-the-line.jpg",
+      "steps": [
+        {
+          "id": "land-that-burns",
+          "content": {
+            "title": "Fire frequency",
+            "description": "North-west Iberia has one of the densest concentrations of repeatedly burnt land in western Europe. The layer, from the Global Wildfire Information System, counts how often MODIS has mapped each location as burnt since 2000. Darker colours mean more frequent fires.\n\nGalicia, northern Portugal, and the mountains of León and Zamora stand out."
+          },
+          "viewport": {
+            "zoom": 5,
+            "center": [
+              -3.0,
+              41.5
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "wildfire-frequency"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "wildfire-frequency"
+          }
+        },
+        {
+          "id": "the-lines",
+          "content": {
+            "title": "Transmission lines",
+            "description": "Several 400 kV (red) and 220 kV (orange) lines run from Galicia and the Sil valley towards central Spain through frequently burnt areas.\n\nFire near a line can force the operator to switch it off, because smoke and heat make the air conductive. Fire that reaches a pylon can bring the line down."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              -7.2,
+              41.9
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "wildfire-frequency"
+            },
+            {
+              "id": "hv-transmission-grid-europe"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "hv-transmission-grid-europe"
+          }
+        },
+        {
+          "id": "the-week",
+          "content": {
+            "title": "Active fires, 11 to 18 August 2025",
+            "description": "Between 11 and 18 August 2025, large fires burnt across Ourense, León, Zamora, and northern Portugal. By 21 August EFFIS estimated that more than 380,000 ha had burnt in Spain in 2025, the worst season since 1994.\n\nThe blocks show every location flagged by the Meteosat active-fire product in at least one of 96 two-hourly images that week, red for fire and amber for potential fire. Each Meteosat pixel covers about 4 km by 5 km here."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              -7.2,
+              41.9
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "meteosat-active-fire-2025-08-11-to-18"
+            },
+            {
+              "id": "hv-transmission-grid-europe"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "meteosat-active-fire-2025-08-11-to-18"
+          }
+        },
+        {
+          "id": "the-scars",
+          "content": {
+            "title": "Burnt areas, 2025",
+            "description": "EFFIS mapped every burnt area of 30 ha or more in 2025 from MODIS and Sentinel-2. The largest lie in eastern Ourense, around A Rúa and Larouco, and in León and Zamora.\n\nMeasured on this map, roughly 330 km of 220 kV and 400 kV line in north-west Iberia crossed land that burnt in 2025. The figure is approximate, given the map resolution."
+          },
+          "viewport": {
+            "zoom": 8,
+            "center": [
+              -7.0,
+              42.3
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "burnt-areas-2025-effis"
+            },
+            {
+              "id": "hv-transmission-grid-europe"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "burnt-areas-2025-effis"
+          }
+        },
+        {
+          "id": "close-up",
+          "content": {
+            "title": "Sil valley",
+            "description": "Eastern Ourense around the Sil valley, on a Sentinel-2 mosaic from 2024, before the fires. A 400 kV line and several 220 kV lines cross areas that burnt in August 2025.\n\nAt this scale the map identifies the spans that crossed burnt ground and the stretches where unburnt vegetation remains close to the line."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              -7.0,
+              42.3
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "burnt-areas-2025-effis"
+            },
+            {
+              "id": "hv-transmission-grid-europe"
+            }
+          ],
+          "baseLayer": "sentinel-2-cloudless-eox",
+          "panelState": {
+            "focusLayer": "burnt-areas-2025-effis"
+          }
+        },
+        {
+          "id": "from-hazard-to-watch",
+          "content": {
+            "title": "Summary",
+            "description": "The three layers serve different stages. Fire frequency supports line routing and vegetation management, Meteosat detection supports operations during a fire, and burnt-area maps support inspection afterwards.\n\nAll three are free and cover Europe. The condition of individual pylons, or of vegetation along a span, requires very high resolution imagery, lidar, or drone surveys. The live active-fire layer is in the Infrastructure group."
+          },
+          "viewport": {
+            "zoom": 7,
+            "center": [
+              -7.2,
+              41.9
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "wildfire-frequency"
+            },
+            {
+              "id": "burnt-areas-2025-effis"
+            },
+            {
+              "id": "hv-transmission-grid-europe"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "wildfire-frequency"
+          }
+        }
+      ]
+    },
+    {
+      "id": "what-fossil-fuels-leave-in-the-air",
+      "title": "Fossil fuel emissions from Sentinel-5P",
+      "isActive": false,
+      "description": "Sentinel-5P annual averages of nitrogen dioxide over large lignite plants and of methane over oil and gas regions, with the import rules of the EU Methane Regulation.",
+      "thumbnail": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/stories/what-fossil-fuels-leave-in-the-air.jpg",
+      "steps": [
+        {
+          "id": "a-year-of-no2",
+          "content": {
+            "title": "Nitrogen dioxide, 2025",
+            "description": "Sentinel-5P measures nitrogen dioxide, a product of combustion, daily across the globe. The layer shows the 2025 average on a grid of about 2.5 km.\n\nThe highest values lie over the Po valley, the Benelux and Rhine-Ruhr, Paris, London, and Madrid, driven mainly by traffic and industry. Most power plants are hard to separate from nearby cities."
+          },
+          "viewport": {
+            "zoom": 5,
+            "center": [
+              12.0,
+              48.5
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "no2-2025-story-stretch"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "no2-2025-story-stretch"
+          }
+        },
+        {
+          "id": "belchatow",
+          "content": {
+            "title": "Bełchatów",
+            "description": "Bełchatów, in central Poland, is Europe's largest lignite power plant at about 5 GW. It has topped rankings of the EU's largest carbon dioxide emitters for years and is due to close by 2036.\n\nIn the 2025 average the nitrogen dioxide column over the plant (green ring) is higher than over Łódź (white ring), a city of about 650,000 people 50 km to the north."
+          },
+          "viewport": {
+            "zoom": 8,
+            "center": [
+              19.4,
+              51.5
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "no2-2025-story-stretch"
+            },
+            {
+              "id": "fossil-story-sites-plants"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "no2-2025-story-stretch"
+          }
+        },
+        {
+          "id": "the-rhineland",
+          "content": {
+            "title": "Rhineland",
+            "description": "RWE's Neurath and Niederaussem plants, west of Cologne, burn lignite from the Rhineland mines. RWE closed five units there, 2.1 GW in total, on 31 March 2024 and plans to end coal use by 2030.\n\nIn the 2025 average the plants read only slightly higher than Cologne. At this resolution their signal merges with the traffic and industry of the Rhine-Ruhr."
+          },
+          "viewport": {
+            "zoom": 8,
+            "center": [
+              6.8,
+              51.0
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "no2-2025-story-stretch"
+            },
+            {
+              "id": "fossil-story-sites-plants"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "no2-2025-story-stretch"
+          }
+        },
+        {
+          "id": "obrenovac",
+          "content": {
+            "title": "Obrenovac",
+            "description": "The Nikola Tesla A and B plants at Obrenovac, on the Sava about 30 km from Belgrade, burn Kolubara lignite. With about 2.9 GW they supply almost half of Serbia's electricity.\n\nIn the 2025 average the column over the plant is higher than over Belgrade."
+          },
+          "viewport": {
+            "zoom": 8,
+            "center": [
+              20.3,
+              44.75
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "no2-2025-story-stretch"
+            },
+            {
+              "id": "fossil-story-sites-plants"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "no2-2025-story-stretch"
+          }
+        },
+        {
+          "id": "methane",
+          "content": {
+            "title": "Methane, 2025",
+            "description": "Sentinel-5P also measures methane, at about 5 km. Leaks from wells, pipelines, and compressors make oil and gas one of the largest human sources.\n\nIn the 2025 average, western Turkmenistan stands out clearly. Elsewhere, rice, livestock, and wetlands raise values over large areas. Stripes over the sea and gaps over mountains and snow are retrieval artefacts."
+          },
+          "viewport": {
+            "zoom": 4,
+            "center": [
+              45.0,
+              40.0
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "ch4-2025-story-stretch"
+            },
+            {
+              "id": "fossil-story-sites-basins"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "ch4-2025-story-stretch"
+          }
+        },
+        {
+          "id": "the-permian",
+          "content": {
+            "title": "Permian Basin",
+            "description": "The Permian Basin in Texas and New Mexico is the largest US oil field. Its gas supplies US LNG export terminals, now Europe's largest source of LNG. Aircraft and satellite surveys have found some of the world's largest methane leaks there.\n\nIn the 2025 average the basin barely stands out. Large leaks are intermittent, and annual averaging at 5 km removes them. Detecting individual leaks requires dedicated plume-mapping satellites."
+          },
+          "viewport": {
+            "zoom": 6,
+            "center": [
+              -102.5,
+              32.0
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "ch4-2025-story-stretch"
+            },
+            {
+              "id": "fossil-story-sites-basins"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "ch4-2025-story-stretch"
+          }
+        },
+        {
+          "id": "what-the-regulation-asks",
+          "content": {
+            "title": "EU Methane Regulation",
+            "description": "The EU Methane Regulation of 2024 applies to imports. From 1 January 2027, importers of oil, gas, and coal must show that their suppliers monitor and verify methane emissions to EU-equivalent standards. From August 2028 they must report the methane intensity of their supplies, and from 2030 meet maximum values.\n\nIn July 2026 the Commission recommended that member states not fine importers for 2027 to 2029. The obligations still apply. Satellite data offers an independent check on supplier claims."
+          },
+          "viewport": {
+            "zoom": 4,
+            "center": [
+              25.0,
+              45.0
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "ch4-2025-story-stretch"
+            }
+          ],
+          "baseLayer": "terrain-eox",
+          "panelState": {
+            "focusLayer": "ch4-2025-story-stretch"
+          }
         }
       ]
     }
