@@ -396,6 +396,11 @@
         "application": "opensartoolkit-v2-2-1"
       },
       "serviceTitle": "OpenSARToolkit (OST) for upscaling tasks"
+    },
+    {
+      "serviceId": "timeseries_statistics",
+      "serviceProvider": "vito",
+      "serviceTitle": "Timeseries Statitics"
     }
   ],
   "services": [
