@@ -1,5 +1,5 @@
 {
-  "version": "1.84.0",
+  "version": "1.85.0",
   "exportPrefix": "sef-energy-explorer",
   "layout": {
     "navigation": {
@@ -1971,6 +1971,240 @@
       },
       "exclusivitySets": [],
       "id": "hv-transmission-grid-europe"
+    },
+    {
+      "id": "oil-and-gas-pipelines-gem",
+      "name": "Oil and Gas Pipelines (GEM)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/pipelines/europe_pipelines_gem.geojson",
+          "format": "geojson",
+          "zIndex": 58,
+          "style": [
+            {
+              "stroke-color": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "fuel"
+                  ],
+                  "gas"
+                ],
+                [
+                  "case",
+                  [
+                    "==",
+                    [
+                      "get",
+                      "status"
+                    ],
+                    "operating"
+                  ],
+                  "rgba(27,127,59,0.95)",
+                  "rgba(27,127,59,0.55)"
+                ],
+                [
+                  "==",
+                  [
+                    "get",
+                    "fuel"
+                  ],
+                  "oil"
+                ],
+                [
+                  "case",
+                  [
+                    "==",
+                    [
+                      "get",
+                      "status"
+                    ],
+                    "operating"
+                  ],
+                  "rgba(74,44,23,0.95)",
+                  "rgba(74,44,23,0.55)"
+                ],
+                [
+                  "case",
+                  [
+                    "==",
+                    [
+                      "get",
+                      "status"
+                    ],
+                    "operating"
+                  ],
+                  "rgba(199,21,133,0.95)",
+                  "rgba(199,21,133,0.55)"
+                ]
+              ],
+              "stroke-width": [
+                "case",
+                [
+                  "==",
+                  [
+                    "get",
+                    "status"
+                  ],
+                  "operating"
+                ],
+                [
+                  "case",
+                  [
+                    ">=",
+                    [
+                      "get",
+                      "diameter_mm"
+                    ],
+                    900
+                  ],
+                  2.6,
+                  1.8
+                ],
+                [
+                  "==",
+                  [
+                    "get",
+                    "status"
+                  ],
+                  "construction"
+                ],
+                1.6,
+                1.1
+              ]
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Gas, oil, and NGL pipelines in Europe, Türkiye, and the Caucasus from Global Energy Monitor: about 1,080 pipelines and segments that are operating, under construction, proposed, or idle. Each line carries its name, status, owner, capacity, diameter, start year, and route accuracy, and links to its GEM wiki page. Route accuracy varies from within metres to approximate, so the layer suits corridor screening, not engineering work. Gas from the Global Gas Infrastructure Tracker (November 2025), oil and NGL from the Global Oil Infrastructure Tracker (June 2026).",
+        "attribution": {
+          "text": "Global Energy Monitor, Global Gas Infrastructure Tracker (Nov 2025) and Global Oil Infrastructure Tracker (Jun 2026), CC BY 4.0, hosted by ESA SEF",
+          "url": "https://globalenergymonitor.org/"
+        },
+        "categories": [
+          {
+            "color": "#1B7F3B",
+            "label": "Gas, operating"
+          },
+          {
+            "color": "rgba(27,127,59,0.55)",
+            "label": "Gas, construction, proposed, or idle (thinner)"
+          },
+          {
+            "color": "#4A2C17",
+            "label": "Crude oil, operating"
+          },
+          {
+            "color": "rgba(74,44,23,0.55)",
+            "label": "Crude oil, other status (thinner)"
+          },
+          {
+            "color": "#C71585",
+            "label": "NGL"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Infrastructure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
+    },
+    {
+      "id": "ground-motion-egms-vertical",
+      "name": "Ground Motion, Vertical (EGMS Ortho 2020 to 2024)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/energy/egms/egms_ortho_up_2020_2024_classes_3857_cog.tif",
+          "format": "cog",
+          "zIndex": 40,
+          "opacity": 0.85
+        }
+      ],
+      "meta": {
+        "description": "Average vertical ground motion for 2020 to 2024 from the Copernicus European Ground Motion Service (EGMS Ortho, 100 m), derived from Sentinel-1 radar and calibrated with GNSS. The values are grouped into seven classes: red for subsidence, blue for uplift, and grey for ground stable within 2 mm a year. The broad blue area over Scandinavia and Finland is the land still rising after the last ice age. Local red patches mark subsiding gas fields, mines, and reclaimed land, such as Groningen and the Rhineland lignite pits. Coverage is dense on bare ground and buildings and sparse in forest, farmland, and snow. The values are five-year averages updated once a year, suited to screening corridors and sites for ground movement, not to monitoring them.",
+        "attribution": {
+          "text": "Copernicus Land Monitoring Service, European Ground Motion Service (EGMS) Ortho 2020 to 2024, classified and hosted by ESA SEF",
+          "url": "https://egms.land.copernicus.eu/"
+        },
+        "categories": [
+          {
+            "value": 1,
+            "color": "#B2182B",
+            "label": "Subsidence, 10 mm/yr or more"
+          },
+          {
+            "value": 2,
+            "color": "#EF8A62",
+            "label": "Subsidence, 5 to 10 mm/yr"
+          },
+          {
+            "value": 3,
+            "color": "#FDDBC7",
+            "label": "Subsidence, 2 to 5 mm/yr"
+          },
+          {
+            "value": 4,
+            "color": "#D9D9D9",
+            "label": "Stable, within 2 mm/yr"
+          },
+          {
+            "value": 5,
+            "color": "#D1E5F0",
+            "label": "Uplift, 2 to 5 mm/yr"
+          },
+          {
+            "value": 6,
+            "color": "#67A9CF",
+            "label": "Uplift, 5 to 10 mm/yr"
+          },
+          {
+            "value": 7,
+            "color": "#2166AC",
+            "label": "Uplift, 10 mm/yr or more"
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Infrastructure",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": []
     },
     {
       "name": "Wildfire Frequency",
