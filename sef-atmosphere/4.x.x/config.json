@@ -1,8 +1,8 @@
 {
-  "version": "0.14.0-carbon-air-quality-EM2026-draft",
+  "version": "0.15.0-carbon-air-quality-EM2026-draft",
   "exportPrefix": "sef-carbon-air-quality-explorer",
   "settings": {
-    "layerFetchTimeoutMs": 15000
+    "layerFetchTimeoutMs": 30000
   },
   "layout": {
     "navigation": {
@@ -144144,7 +144144,7 @@
       "id": "continent-to-chimney",
       "title": "From continent to chimney",
       "isActive": false,
-      "description": "Seven steps from the global CO2 field down to a single steelworks and the people living next to it.",
+      "description": "Ten steps on emissions, from the global CO2 field and methane to inventories, satellite estimates and single plants.",
       "steps": [
         {
           "id": "co2-everywhere",
@@ -144201,152 +144201,7 @@
           "id": "where-fuel-is-burned",
           "content": {
             "title": "Where fuel is burned",
-            "description": "NO2 comes out of the same combustion as CO2 but lasts only a few hours, so it stays close to its source. The 2025 annual mean from Sentinel-5P, processed by [S5P-PAL](https://maps.s5p-pal.com/), traces power plants, industry, cities and shipping lanes across Europe."
-          },
-          "viewport": {
-            "zoom": 5,
-            "center": [
-              8,
-              50
-            ],
-            "duration": 2000
-          },
-          "activeLayers": [
-            {
-              "id": "nitrogen-dioxide-yearly-mean-sentinel-5p",
-              "opacity": 0.8
-            }
-          ],
-          "baseLayer": "open-streetmap",
-          "panelState": {
-            "focusLayer": "nitrogen-dioxide-yearly-mean-sentinel-5p"
-          }
-        },
-        {
-          "id": "rhine-ruhr",
-          "content": {
-            "title": "Rhine-Ruhr: emitters and what is burning",
-            "description": "The densest industrial cluster in Germany. Purple dots are NOx emissions estimated from Sentinel-5P NO2 and ERA5 winds, from the catalogue of the [Max Planck Institute for Chemistry](https://doi.org/10.5194/essd-15-3051-2023) distributed by ESA's [World Emission](https://www.world-emission.com/) service. The small markers are coal, gas, oil and waste plants from the [Global Power Plant Database](https://datasets.wri.org/dataset/globalpowerplantdatabase). Most satellite-detected sources match a power plant. The rest are cement plants, smelters, industrial areas and cities."
-          },
-          "viewport": {
-            "zoom": 8,
-            "center": [
-              6.6,
-              51.2
-            ],
-            "duration": 2000
-          },
-          "activeLayers": [
-            {
-              "id": "nitrogen-dioxide-yearly-mean-sentinel-5p",
-              "opacity": 0.8
-            },
-            {
-              "id": "power-plants"
-            },
-            {
-              "id": "emissions-points-nox-2021"
-            }
-          ],
-          "baseLayer": "open-streetmap",
-          "panelState": {
-            "focusLayer": "emissions-points-nox-2021"
-          }
-        },
-        {
-          "id": "shipping-lanes",
-          "content": {
-            "title": "Shipping lanes, counted ship by ship",
-            "description": "Ship NOx emissions in 2023 from the STEAM model of the Finnish Meteorological Institute, computed for each ship from its AIS positions, engine data and the weather, for the ESA [EO4SEM](https://eo4sem.apex.esa.int/) project. This is a bottom-up inventory. The North Sea and the Baltic are NOx Emission Control Areas under [MARPOL Annex VI](https://www.imo.org/en/OurWork/Environment/Pages/Special-Areas-Marpol.aspx), with tighter limits for ships built since 2021."
-          },
-          "viewport": {
-            "zoom": 5,
-            "center": [
-              5,
-              55
-            ],
-            "duration": 2000
-          },
-          "activeLayers": [
-            {
-              "id": "ship-traffic-nox-emissions-steam-model",
-              "date": "latest",
-              "opacity": 0.8
-            }
-          ],
-          "baseLayer": "open-streetmap",
-          "panelState": {
-            "focusLayer": "ship-traffic-nox-emissions-steam-model"
-          }
-        },
-        {
-          "id": "taranto-steelworks",
-          "content": {
-            "title": "One steelworks: Taranto",
-            "description": "The Acciaierie d'Italia plant in Taranto, Puglia, is one of the largest steelworks in Europe. Each shape is one CO2 plume detected by hyperspectral satellites ([EnMAP](https://www.enmap.org/), [PRISMA](https://www.asi.it/en/earth-science/prisma/), [EMIT](https://earth.jpl.nasa.gov/emit/) and [Tanager](https://carbonmapper.org/)) at 30 to 60 m and quantified by the ESA [ICO2NS](https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/ico2ns_co2_plumes?.language=en) project. There are six detections between April 2025 and April 2026. The NOx catalogue also lists a source here, with no power plant matched. Facility-level checks like these can support verification of emissions reported under the [EU ETS](https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en)."
-          },
-          "viewport": {
-            "zoom": 15,
-            "center": [
-              17.2178,
-              40.5101
-            ],
-            "duration": 2000
-          },
-          "activeLayers": [
-            {
-              "id": "co2-plume-taranto",
-              "date": "latest"
-            },
-            {
-              "id": "emissions-points-nox-2021"
-            }
-          ],
-          "baseLayer": "open-streetmap",
-          "panelState": {
-            "focusLayer": "co2-plume-taranto"
-          }
-        },
-        {
-          "id": "who-lives-next-to-it",
-          "content": {
-            "title": "Who lives next to it",
-            "description": "The plant borders the city of Taranto, home to close to 190,000 people, and its Tamburi district. Population from [WorldPop](https://www.worldpop.org/) shows where people live around the site. An emission becomes a health question once it reaches the people who breathe it, which is what the EU [Ambient Air Quality Directive](https://eur-lex.europa.eu/eli/dir/2024/2881/oj) is about."
-          },
-          "viewport": {
-            "zoom": 11,
-            "center": [
-              17.24,
-              40.48
-            ],
-            "duration": 2000
-          },
-          "activeLayers": [
-            {
-              "id": "population-density"
-            },
-            {
-              "id": "co2-emission-plumes-at-steelworks"
-            }
-          ],
-          "baseLayer": "open-streetmap",
-          "panelState": {
-            "focusLayer": "population-density"
-          }
-        }
-      ]
-    },
-    {
-      "id": "two-ways-to-count",
-      "title": "Counting emissions two ways",
-      "isActive": false,
-      "description": "Inventories count emissions from statistics; satellites infer them from the air. Six steps from the satellite view and a bottom-up inventory to checks on single plants.",
-      "steps": [
-        {
-          "id": "what-the-air-shows",
-          "content": {
-            "title": "What the air shows",
-            "description": "NO2 from the Copernicus [Sentinel-5P](https://sentiwiki.copernicus.eu/web/s5p-mission) satellite, averaged over 2025 by [S5P-PAL](https://maps.s5p-pal.com/). NO2 comes from burning fuel and lasts only a few hours, so the map shows where emissions happen: power plants, industry, cities and shipping lanes. Emissions can be counted from statistics or inferred from measurements like these, and the [IPCC 2019 Refinement](https://www.ipcc-nggip.iges.or.jp/public/2019rf/) describes comparing the two as a way to verify inventories."
+            "description": "NO2 comes out of the same combustion as CO2 but lasts only a few hours, so it stays close to its source. The 2025 annual mean from Copernicus [Sentinel-5P](https://sentiwiki.copernicus.eu/web/s5p-mission), processed by [S5P-PAL](https://maps.s5p-pal.com/), traces power plants, industry, cities and shipping lanes across Europe. Emissions can be counted from statistics or inferred from measurements like these, and the [IPCC 2019 Refinement](https://www.ipcc-nggip.iges.or.jp/public/2019rf/) describes comparing the two as a way to verify inventories."
           },
           "viewport": {
             "zoom": 4,
@@ -144368,16 +144223,16 @@
           }
         },
         {
-          "id": "inventory-view",
+          "id": "shipping-lanes",
           "content": {
-            "title": "Emissions from statistics",
-            "description": "Inventories estimate emissions from activity data multiplied by emission factors. For shipping, the STEAM model of the Finnish Meteorological Institute does this ship by ship, from AIS positions, engine data and the weather, for the ESA [EO4SEM](https://eo4sem.apex.esa.int/) project. This is ship NOx in 2023 over the Mediterranean, in kg per grid cell per year. The main routes and the ports stand out."
+            "title": "Emissions from statistics: shipping",
+            "description": "Inventories estimate emissions from activity data multiplied by emission factors. For shipping, the STEAM model of the Finnish Meteorological Institute does this ship by ship, from AIS positions, engine data and the weather, for the ESA [EO4SEM](https://eo4sem.apex.esa.int/) project. This is ship NOx in 2023, in kg per grid cell per year. The North Sea and the Baltic are NOx Emission Control Areas under [MARPOL Annex VI](https://www.imo.org/en/OurWork/Environment/Pages/Special-Areas-Marpol.aspx), with tighter limits for ships built since 2021."
           },
           "viewport": {
             "zoom": 5,
             "center": [
-              15,
-              38
+              5,
+              55
             ],
             "duration": 2000
           },
@@ -144411,6 +144266,37 @@
             {
               "id": "nitrogen-dioxide-yearly-mean-sentinel-5p",
               "opacity": 0.8
+            },
+            {
+              "id": "emissions-points-nox-2021"
+            }
+          ],
+          "baseLayer": "open-streetmap",
+          "panelState": {
+            "focusLayer": "emissions-points-nox-2021"
+          }
+        },
+        {
+          "id": "rhine-ruhr",
+          "content": {
+            "title": "Rhine-Ruhr: emitters and what is burning",
+            "description": "The densest industrial cluster in Germany. Purple dots are the satellite NOx estimates; the small markers are coal, gas, oil and waste plants from the [Global Power Plant Database](https://datasets.wri.org/dataset/globalpowerplantdatabase). Most satellite-detected sources match a power plant. The rest are cement plants, smelters, industrial areas and cities."
+          },
+          "viewport": {
+            "zoom": 8,
+            "center": [
+              6.6,
+              51.2
+            ],
+            "duration": 2000
+          },
+          "activeLayers": [
+            {
+              "id": "nitrogen-dioxide-yearly-mean-sentinel-5p",
+              "opacity": 0.8
+            },
+            {
+              "id": "power-plants"
             },
             {
               "id": "emissions-points-nox-2021"
@@ -144475,6 +144361,34 @@
           }
         },
         {
+          "id": "taranto-steelworks",
+          "content": {
+            "title": "One steelworks: Taranto",
+            "description": "The Acciaierie d'Italia plant in Taranto, Puglia, is one of the largest steelworks in Europe. The map shows its CO2 plume as the satellite saw it: CO2 above background, in ppm, in pixels of 30 to 60 m. The ESA [ICO2NS](https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/ico2ns_co2_plumes?.language=en) project found six plumes here between April 2025 and April 2026, from the hyperspectral satellites [EnMAP](https://www.enmap.org/), [EMIT](https://earth.jpl.nasa.gov/emit/) and [Tanager](https://carbonmapper.org/); the time control steps from one to the next. The satellite NOx catalogue also lists a source here, with no power plant matched. Facility-level checks like these can support verification of emissions reported under the [EU ETS](https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en)."
+          },
+          "viewport": {
+            "zoom": 15,
+            "center": [
+              17.2178,
+              40.5101
+            ],
+            "duration": 2000
+          },
+          "activeLayers": [
+            {
+              "id": "co2-plume-taranto",
+              "date": "latest"
+            },
+            {
+              "id": "emissions-points-nox-2021"
+            }
+          ],
+          "baseLayer": "open-streetmap",
+          "panelState": {
+            "focusLayer": "co2-plume-taranto"
+          }
+        },
+        {
           "id": "eregli-steelworks",
           "content": {
             "title": "Steel imports: Ereğli",
@@ -144505,7 +144419,7 @@
       "id": "air-we-breathe",
       "title": "The air Europe breathes",
       "isActive": false,
-      "description": "Five steps on air quality in Europe: today's particles, the Po Valley, Oslo and Warsaw street by street, and who is most exposed.",
+      "description": "Six steps on air quality in Europe: today's particles, the Po Valley, Oslo and Warsaw street by street, a city next to a steelworks, and who is most exposed.",
       "steps": [
         {
           "id": "pm25-today",
@@ -144606,6 +144520,34 @@
           "baseLayer": "open-streetmap",
           "panelState": {
             "focusLayer": "surface-no2-downscaled-to-500-m-warsaw"
+          }
+        },
+        {
+          "id": "taranto-neighbours",
+          "content": {
+            "title": "Living next to a steelworks: Taranto",
+            "description": "The Acciaierie d'Italia steelworks borders the city of Taranto, home to close to 190,000 people, and sits next to its Tamburi district. Population from [WorldPop](https://www.worldpop.org/) shows where people live around the site, which is marked by the dot. Large industrial sites emit particles and NO2 as well as CO2, and the EU [Ambient Air Quality Directive](https://eur-lex.europa.eu/eli/dir/2024/2881/oj) sets limits on what reaches the people who breathe it."
+          },
+          "viewport": {
+            "zoom": 11,
+            "center": [
+              17.24,
+              40.48
+            ],
+            "duration": 2000
+          },
+          "activeLayers": [
+            {
+              "id": "population-density",
+              "opacity": 0.7
+            },
+            {
+              "id": "steelworks-co2-plume-sites"
+            }
+          ],
+          "baseLayer": "open-streetmap",
+          "panelState": {
+            "focusLayer": "population-density"
           }
         },
         {
