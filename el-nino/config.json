@@ -1,33 +1,181 @@
 {
   "version": "1.0.0",
-  "exportPrefix": "config",
+  "exportPrefix": "el-nino-dash_config",
   "layout": {
     "navigation": {
-      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
-      "title": "El-nino"
+      "logo": "https://raw.githubusercontent.com/Patrick1G/scratch/b5d0b3b664f0efa3ff941d7e4b18d2b6580697ac/esa_earthaction2.jpg",
+      "title": "Earth Action - El Nino Dashboard"
+    },
+    "theme": {
+      "primary-color": "#0b1d26",
+      "secondary-color": "#335e6f",
+      "background-color": "#ffffff",
+      "text-color-primary": "#00ae9d",
+      "text-color-secondary": "#003247"
     }
   },
   "interfaceGroups": [
-    "Interface group 1",
-    "Interface group 2",
-    "Interface group 3"
+    "Sea Surface Temperature",
+    "Fire Dynamics",
+    "Floods",
+    "Droughts",
+    "Socio-Economic"
   ],
   "exclusivitySets": [],
   "mapConstraints": {
-    "zoom": 0,
+    "zoom": 4,
     "center": [
-      0,
+      -90,
       0
     ],
-    "projection": "EPSG:3857"
+    "projection": "EPSG:4326"
   },
-  "workflows": [],
-  "services": [],
+  "workflows": [
+    {
+      "serviceId": "gfm_temporal_aggregation",
+      "serviceProvider": "esa",
+      "serviceTitle": "GFM Temporal Aggregation",
+      "meta": {
+        "description": "Aggregates Copernicus Global Flood Monitoring (GFM) layers over a selected area and time period using temporal statistics such as maximum, mean, sum, median, minimum, or count. It supports rapid flood-event summaries, including maximum observed flood extent, flood frequency, and counts of flooded or valid observations.",
+        "attribution": {
+          "text": "esa",
+          "url": "https://www.esa.int"
+        }
+      },
+      "layout": {
+        "layerCard": {}
+      }
+    },
+    {
+      "serviceId": "random_forest_firemapping",
+      "serviceProvider": "vito",
+      "serviceTitle": "Forest Fire Mapping using Random Forest based on Sentinel-2 and Sentinel-1 data",
+      "meta": {
+        "description": "An openEO process example for mapping forest fires using Random Forest based on Sentinel-2 and Sentinel-1 data.",
+        "attribution": {
+          "text": "vito",
+          "url": "https://vito.be"
+        }
+      },
+      "layout": {
+        "layerCard": {}
+      }
+    }
+  ],
+  "stories": [],
+  "services": [
+    {
+      "id": "stac-service-1758796621711",
+      "name": "ESA Project Results Repository",
+      "url": "https://eoresults.esa.int/stac",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1758122891131",
+      "name": "Copernicus NDK 2012",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2012/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122986156",
+      "name": "Copernicus N2K 2006",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2006/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1758122835061",
+      "name": "Copernicus N2K 2018",
+      "url": "https://copernicus.discomap.eea.europa.eu/arcgis/services/Natura2000/N2K_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1749572624524",
+      "name": "Copernicus Urban Atlas",
+      "url": "https://image.discomap.eea.europa.eu/arcgis/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/WMSServer",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1750351088731",
+      "name": "DLR EOC BaseMap Service",
+      "url": "https://geoservice.dlr.de/eoc/basemap/wms",
+      "format": "wms"
+    },
+    {
+      "id": "s3-service-1750499655684",
+      "name": "Sparkgeo ESA Apex S3 bucket",
+      "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/",
+      "format": "cog"
+    },
+    {
+      "id": "stac-service-1758815789729",
+      "name": "VITO STAC catalogue",
+      "url": "https://stac.openeo.vito.be/",
+      "format": "stac"
+    },
+    {
+      "id": "wms-service-1785839112500",
+      "name": "Terrascope MapProxy WMS",
+      "url": "https://mapproxy.terrascope.be/mapproxy/service",
+      "format": "wms"
+    },
+    {
+      "id": "catalogue-0",
+      "name": "clms-wmts",
+      "url": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/config-builder/clms-public-layers.json",
+      "format": "catalogue"
+    },
+    {
+      "id": "wms-service-1791901993913",
+      "name": "",
+      "url": "https://geoserver.gfm.eodc.eu/geoserver/gfm/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1791903279647",
+      "name": "EOC Land Map Service",
+      "url": "https://geoservice.dlr.de/eoc/land/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wms-service-1792419782239",
+      "name": "MEEO WMS",
+      "url": "https://wms.eden.destine.eu/wms",
+      "format": "wms"
+    },
+    {
+      "id": "s3-service-1793013418950",
+      "name": "",
+      "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/",
+      "format": "cog"
+    }
+  ],
   "sources": [
     {
-      "name": "Open StreetMap",
+      "id": "stadia-alidade-satellite",
+      "name": "Stadia Alidade Satellite",
       "isActive": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Satellite",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
       "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "id": "open-streetmap",
+      "name": "Open StreetMap",
+      "isActive": false,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -35,15 +183,836 @@
           "zIndex": 10
         }
       ],
-      "exclusivitySets": [],
       "meta": {
-        "description": "",
+        "description": "Base layer: Open StreetMap",
         "attribution": {
           "text": "Map data (c) OpenStreetMap",
           "url": "https://www.openstreetmap.org/copyright"
         },
         "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "id": "cci-sst",
+      "name": "CCI SST Anomaly - June 2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/20260615_regridded_cog_sst.tif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261023T152513Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604799&X-Amz-Credential=HPUAP2FLGTWGGPWCYEEP%2F20261023%2Feu-nl%2Fs3%2Faws4_request&X-Amz-Signature=eb8fc6045ce30c45db2480f354c300672cf44c705df7fb9b0e03937214024cde",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
       }
+    },
+    {
+      "id": "stadia-alidade-smooth-dark",
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Dark",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
+      "id": "sentinel",
+      "name": "Sentinel",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.maps.eox.at/wms",
+          "format": "wms",
+          "zIndex": 23,
+          "layers": "s2cloudless-2025_3857",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Sentinel",
+        "attribution": {
+          "text": "Sentinel-2 Cloudless by EOX",
+          "url": "https://s2maps.eu"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
+    },
+    {
+      "id": "dem",
+      "name": "DEM",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
+          "format": "wms",
+          "zIndex": 2,
+          "layers": "cop-dem-glo-90m-cog_dem"
+        }
+      ],
+      "meta": {
+        "description": "Base layer: DEM",
+        "attribution": {
+          "text": "Copernicus"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/copdem.png"
+    },
+    {
+      "id": "cci-sst-anomaly-2026-monthly",
+      "name": "CCI SST Anomaly, 2026 monthly",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/20260115_regridded_cog_sst.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1768435200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/20260215_regridded_cog_sst.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1771113600
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/20260315_regridded_cog_sst.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1773532800
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/20260415_regridded_cog_sst.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1776207600
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/20260515_regridded_cog_sst.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1778799600
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/20260615_regridded_cog_sst.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1781478000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/20260815_regridded_cog_sst.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1786748400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/20260715_regridded_cog_sst.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1784070000
+          ]
+        }
+      ],
+      "charts": [
+        {
+          "chartType": "xy",
+          "title": "SST Anomaly time series",
+          "traces": [
+            {
+              "name": "SST Anomaly",
+              "type": "scatter",
+              "mode": "lines+markers",
+              "fill": "none",
+              "line": {
+                "color": "#002839",
+                "width": 3
+              },
+              "marker": {
+                "size": 12,
+                "color": "#02af88",
+                "symbol": "square"
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": false,
+            "xaxis": {
+              "title": {
+                "text": "Month"
+              },
+              "type": "date"
+            },
+            "yaxis": {
+              "title": {
+                "text": "SST Anomaly"
+              }
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelTimeSeries",
+              "bandIndex": 0
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
+        },
+        "categories": [],
+        "min": -5,
+        "max": 5,
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Months"
+    },
+    {
+      "id": "clms-burnt-area-ba-global-300m-daily-v3-cog",
+      "name": "CLMS Burnt Area (BA) Global 300m daily V3 (COG)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://stac.dataspace.copernicus.eu/v1/collections/clms_ba_global_300m_daily_v3_cog/items/c_gls_BA300-NRT_202510240000_GLOBE_S3_V3.1.1_cog",
+          "format": "stac",
+          "zIndex": 50,
+          "assets": [
+            "dob_nrt"
+          ],
+          "assetFormats": {
+            "dob_nrt": "cog"
+          }
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for CLMS Burnt Area (BA) Global 300m daily V3 (COG)",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "land-fire",
+      "name": "Burnt Area 2019 - 2025 (raster 300 m), global, monthly - version 3.1 (WMS)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v3/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "day_of_burn",
+          "version": "1.0.0",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Maps burn scars, surfaces which have been sufficiently affected by fire to display significant changes in the vegetation cover (destruction of dry material, reduction or loss of green material) and in the ground surface (temporarily darker because of ash). Monthly datasets are available at global scale, in the spatial resolution of 300 m, and with a time lag of two months. They cover the period from 2019 to 2025.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "day"
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "timeframe": "Days"
+    },
+    {
+      "id": "burnt-area-2018-present-raster-300-m-global-april-2026",
+      "name": "Burnt Area 2018-present (raster 300 m), global, April 2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/c_gls_BA300-DOB-NTC_202604010000_GLOBE_S3_V4.0.1.tiff?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261013T141137Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604799&X-Amz-Credential=HPUAP2FLGTWGGPWCYEEP%2F20261013%2Feu-nl%2Fs3%2Faws4_request&X-Amz-Signature=7e8e2c5ba29aace31c4e12fee1e3923eff68abff615e94e3f7c4567ce29c9064",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "Maps burn scars, surfaces which have been sufficiently affected by fire to display significant changes in the vegetation cover (destruction of dry material, reduction or loss of green material) and in the ground surface (temporarily darker because of ash). In addition to the date of burn, the Burnt Areas version 4.0 provides the burnt fraction of the pixel. Monthly datasets are available at global scale, in the spatial resolution of 300 m, and with a time lag of few months. They cover the period from July 2018 to present.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "Day of Burn",
+        "min": 1,
+        "max": 365,
+        "colormaps": [
+          {
+            "min": 91,
+            "max": 120,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                73,
+                18,
+                83,
+                27
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gfm-flood-monitoring",
+      "name": "GFM flood monitoring - water extent",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.gfm.eodc.eu/geoserver/gfm/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "observed_water_extent",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for GFM flood monitoring - water extent",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Floods",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "defaultTimestamp": 1791849600
+    },
+    {
+      "id": "gfm-flood-monitoring-2",
+      "name": "GFM flood monitoring - flood extent",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoserver.gfm.eodc.eu/geoserver/gfm/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "observed_flood_extent",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for GFM flood monitoring - flood extent",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Floods",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "defaultTimestamp": 1791849600
+    },
+    {
+      "id": "gfm-flood-monitoring-2-2",
+      "name": "GFM flood monitoring - flood footprint",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://geoserver.gfm.eodc.eu/geoserver/gfm/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "observed_flood_extent_footprint",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for GFM flood monitoring - flood footprint",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Floods",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "defaultTimestamp": 1791849600
+    },
+    {
+      "id": "world-settlement-footprint-evolution",
+      "name": "World Settlement Footprint Evolution",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_Evolution",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "World Settlement Footprint Evolution (WSF® Evolution): 30 m resolution dataset based on multispectral Landsat imagery outlining the global settlement extent on a yearly basis from 1985 to 2015.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Socio-Economic",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://geoservice.dlr.de/eoc/land/wms?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WSF_Evolution"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "burnt-fraction-daily-clms-ba-global-300m-daily-v4",
+      "name": "Burnt Fraction, daily - clms_ba_global_300m_daily_v4",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/c_gls_BA300-BF-NRT_202610170000_GLOBE_S3_V4.0.1.tiff?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261019T144218Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604799&X-Amz-Credential=HPUAP2FLGTWGGPWCYEEP%2F20261019%2Feu-nl%2Fs3%2Faws4_request&X-Amz-Signature=87c4c10b5ebd6124309f67c84324aa6f987d723aed3dbde82e2999d66419690b",
+          "format": "cog",
+          "zIndex": 50,
+          "style": {
+            "color": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "band",
+                1
+              ],
+              0,
+              [
+                68,
+                1,
+                84,
+                1
+              ],
+              0.08,
+              [
+                72,
+                40,
+                120,
+                1
+              ],
+              0.16,
+              [
+                62,
+                73,
+                137,
+                1
+              ],
+              0.24,
+              [
+                49,
+                104,
+                142,
+                1
+              ],
+              0.32,
+              [
+                38,
+                130,
+                142,
+                1
+              ],
+              0.4,
+              [
+                31,
+                158,
+                137,
+                1
+              ],
+              0.48,
+              [
+                53,
+                183,
+                121,
+                1
+              ],
+              0.56,
+              [
+                109,
+                205,
+                89,
+                1
+              ],
+              0.64,
+              [
+                180,
+                222,
+                44,
+                1
+              ],
+              0.72,
+              [
+                253,
+                231,
+                37,
+                1
+              ]
+            ]
+          }
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Burnt Fraction, daily - clms_ba_global_300m_daily_v4",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": 1,
+            "max": 840,
+            "steps": 50,
+            "name": "jet",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "soil-water-index-destine-eden",
+      "name": "Soil Water Index (DestinE EDEN)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wms.eden.destine.eu/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "EO:EDEN:DAT:DTEHYDRO:DAILY:SWI:COG|SWI001",
+          "parameters": {
+            "version": "1.1.1"
+          },
+          "useTimeParameter": true,
+          "__temporalSuggestion": {
+            "timeframe": "Days",
+            "defaultTime": "2026-10-17T12:00:00Z",
+            "defaultTimestamp": 1792238400
+          }
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for Soil Water Index (DestinE EDEN)",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Droughts",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "defaultTimestamp": 1792238400
+    },
+    {
+      "id": "eo-eden-dat-dteh-swi10dcm",
+      "name": "EO_EDEN_DAT_DTEH_SWI10DCM",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://wms.eden.destine.eu/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "EO:EDEN:DAT:DTEHYDRO:SWIDCM:COG|SWI10DCM",
+          "parameters": {
+            "version": "1.1.1"
+          },
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for EO_EDEN_DAT_DTEH_SWI10DCM",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Droughts",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "defaultTimestamp": 1792281600
+    },
+    {
+      "id": "stadia-alidade-smooth-light",
+      "name": "Stadia Alidade Smooth Light",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Light",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
     }
   ]
 }
