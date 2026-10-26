@@ -1,12 +1,17 @@
 {
-  "version": "3.6.0",
+  "version": "1.0.0",
+  "exportPrefix": "config",
   "layout": {
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
       "title": "EO4CM - Geospatial Explorer"
     }
   },
-  "interfaceGroups": [],
+  "interfaceGroups": [
+    "Planting of trees on unused and severely degraded land",
+    "Soil carbon in mineral soils and agroforestry",
+    "Rewetting of peatlands"
+  ],
   "exclusivitySets": [],
   "mapConstraints": {
     "zoom": 0,
@@ -16,12 +21,14 @@
     ],
     "projection": "EPSG:3857"
   },
+  "workflows": [],
+  "stories": [],
   "services": [],
   "sources": [
     {
+      "id": "open-streetmap",
       "name": "Open StreetMap",
       "isActive": true,
-      "isBaseLayer": true,
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -29,15 +36,390 @@
           "zIndex": 10
         }
       ],
-      "exclusivitySets": [],
       "meta": {
-        "description": "",
+        "description": "Base layer: Open StreetMap",
         "attribution": {
           "text": "Map data (c) OpenStreetMap",
           "url": "https://www.openstreetmap.org/copyright"
         },
         "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": []
+    },
+    {
+      "id": "soria-spain",
+      "name": "Soria, Spain",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/bfc4b2b010c2899e8778baf538d3773e/raw/fb7cb16339d91e959458cf98c9d83930499eea11/Spain_plots.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/415147c2027ab8bc8ce7aee4a8d34b66/raw/0dd38705fae33f550f5da903b941ca80f7010c72/Soria_Parcels.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/bde48087d08febe730949a78fba82113/raw/12afdbbd96cc4ab4bb37d66cd68ab991d5d5f6b6/Spain_trees.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        }
+      ],
+      "meta": {
+        "description": "**Soria (Spain)** is an afforestation pilot site in Castile and León, covering approximately 42 ha across seven stands established between 1994 and 2020. The stands include holm oak, stone pine, Aleppo pine and Spanish juniper, planted on marginal limestone soils previously occupied by shrubland, grassland and low-productivity agricultural land. \n\nThe plots are managed and monitored by **CESEFOR**, a Spanish private non-profit foundation specialising in nature-based solutions for climate change mitigation and sustainable ecosystem management.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Planting of trees on unused and severely degraded land",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
       }
+    },
+    {
+      "id": "vichada-colombia",
+      "name": "Vichada, Colombia",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/03ea00fff8db9719d33b2006a36ca287/raw/fc79b2a95657ebe4f710389840cfa43b596f7a1c/Colombia_MonitoringPlots.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/bccf7455c58391788a35a8f527da63b2/raw/2f0b58c9f23f65f0196f313c66c3c71118c785e9/Colombia_ProjectLandUse_Part1_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/1fc319560a46f2c2034b8cfd9117c6ec/raw/91b60f53f27036edc9d47479281d01b3901e43e1/Colombia_ProjectLandUse_Part2_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/e8e84fb18b6df04139b7505fb76c38c6/raw/4f1a700b863bd866e3678cd3efdc72ac40fde494/Colombia_ProjectLandUse_Part3_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/0c88610551aa867e8c9c0378c6501a25/raw/1ca5a0dd9dc5c617c2782d76aadd7f8e75ce5fef/Colombia_ProjectLandUse_Part5_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/9101243dfe205dacc33d2c5562ad86c9/raw/6bcb7f1d94eed7b5845b01a06497e6602d74e2c0/Colombia_ProjectLandUse_Part6_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/e019293a6d443965a5f41fed1190d43e/raw/3b31ee1fb529507b3ec2d944e8b5e4956d50da53/Colombia_ProjectLandUse_Part7_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/999871f7f1b52b466265bef938c377d6/raw/55c38b942da795d104db10e7cbddffac3e608ec9/Colombia_ProjectLandUse_Part8_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/69489f339a3ad5cff8cf1266654fd6c0/raw/806f52a40628653e4fd3b596170fef5d2c08c61c/Colombia_ProjectLandUse_Part9_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/65d09dd3ceb861cbf08ae3a5c8b97a2a/raw/cd5a083085952b27676845c03682182644f95890/Colombia_ProjectLandUse_Part10_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/3f66a64b65d47a88f9665b7dd2dd3861/raw/35307967e686bb4df0d7108927a76eb0a9874348/Colombia_ProjectLandUse_Part12_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/8b13f5a4e6de0cb8dc509ee947e0644e/raw/918375e1e81c67c67a6e2dfa9166df7ce0acf3ab/Colombia_ProjectLandUse_Part13_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/5d15c692f3a76b9f1c7cec6843f583f5/raw/78b13a086e9246521e95e019f6c382ad074111fc/Colombia_ProjectLandUse_Part14_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/7ab53581dd3b404f0d6d0d48d3b2a1da/raw/73c9efd2e83724712bcce154023b6580425fdfa3/Colombia_ProjectLandUse_Part15_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/ab635b8e85169baa0b513aaf84b1a726/raw/d1c0828ec8b80291e8f97d947fcf3470b94a86f3/Colombia_ProjectLandUse_Part16_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/6d781f8dcade156919155403fa9677d1/raw/1d5cdabd3814cef3c437018aa0ba5b02c3903bee/Colombia_ProjectLandUse_Part17_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/4f635d63f1923f56734f3d39ea88b135/raw/49dc6c67ca13ad0f4ad21b189dbea9311da8a47b/Colombia_ProjectLandUse_Part18_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/04d7c1ef91b79badd9bbdee1a3c71206/raw/5aa98f081af81ca7cc5fc67e95e76a42d98a0748/Colombia_ProjectLandUse_Part19_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        }
+      ],
+      "meta": {
+        "description": "**Vichada (Colombia)** is a large-scale reforestation and conservation pilot in the Orinoco River Basin, focused on above-ground biomass (AGB) estimation, ecosystem restoration and carbon sequestration. Approximately 35,000 ha of afforestation and conservation land provide reference areas, supported by around 1,000 monitoring plots and over 40,000 field measurement records. Tree species include Eucalyptus pellita, Pinus caribaea and Acacia mangium, established between 2007 and 2024. Field measurements of tree species, height, diameter at breast height (DBH) and measurement dates support the calibration and validation of Earth Observation (EO)-derived biomass products and long-term forest carbon monitoring.\n\n**Forliance** coordinates the pilot site and provides the relevant in-situ data. Forliance develops and manages nature-based climate projects, supporting companies in achieving their climate and environmental goals while contributing to the restoration and protection of forests and ecosystems.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Planting of trees on unused and severely degraded land",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "italy",
+      "name": "Italy",
+      "isActive": false,
+      "data": [],
+      "meta": {
+        "description": "Auto-generated description for Italy",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Soil carbon in mineral soils and agroforestry",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ecuador",
+      "name": "Ecuador",
+      "isActive": false,
+      "data": [],
+      "meta": {
+        "description": "Auto-generated description for Ecuador",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Soil carbon in mineral soils and agroforestry",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "madagascar",
+      "name": "Madagascar",
+      "isActive": false,
+      "data": [],
+      "meta": {
+        "description": "Auto-generated description for Madagascar",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Soil carbon in mineral soils and agroforestry",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "la-guette-france",
+      "name": "La Guette, France",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/0bab39e6b67946093ca1a0d861658cb3/raw/1470469e085cf509d413e73f2d050ce6c3e70bf2/France_laguette_PeatExtent.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/cd9a41b2468514515d84171694e282b7/raw/9e507833f248b51b31257e223e5157d4389c13f7/France_laguette_AOIextent.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        }
+      ],
+      "meta": {
+        "description": "**La Guette (France)** is a lowland acidic fen in Sologne, central France (~23–26 ha), monitored by the SNO Tourbières network and an ICOS associated ecosystem station. Affected by drainage infrastructure and peatland drying, the site underwent ecological engineering works in 2014 to reduce water loss. Long-term in-situ observations of water-table depth, discharge, water quality, dissolved organic carbon and greenhouse-gas fluxes (2008–2025) make La Guette a key pilot for assessing peatland hydrological recovery, vegetation change, carbon exchange and aquatic carbon losses using Earth Observation (EO) data and climate reanalysis.\n\n**WWF-France** manages the site and provides all relevant in-situ data.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Rewetting of peatlands",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "frasne-france",
+      "name": "Frasne, France",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/15963cfeb539bca2577e7dc5b1944483/raw/64c443f586b0e6d7e521f7428de4c015a9777982/France_fasne_PeatExtention.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/b767df33f50712b06149bcbc3b540a4e/raw/6dc5ec2a0aa58a0fb6259523a47ef41828763f8f/France_frasne_AOIextent.geojson",
+          "format": "geojson",
+          "zIndex": 100
+        }
+      ],
+      "meta": {
+        "description": "**Frasne (France)** is a cool, wet, mid-altitude peatland complex in the Jura Mountains (830 m; ~1,400 mm annual precipitation; 7.5 °C mean annual temperature). Monitored by the SNO Tourbières observatory since 2008, it provides a key test site for assessing peatland hydrology, rewetting, vegetation recovery, surface motion and carbon exchange. Restoration of the Forbonnet bog in 2015–2016 offers an opportunity to evaluate Earth Observation (EO) indicators using long-term in-situ meteorological, water-table and greenhouse-gas flux measurements (2008–2024). These data support EO validation and carbon-balance modelling using Sentinel-1/2, Landsat, thermal observations and climate reanalysis.\n\n**WWF-France** manages the site and provides all relevant in-situ data.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Rewetting of peatlands",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
+    },
+    {
+      "id": "stadia-alidade-satellite",
+      "name": "Stadia Alidade Satellite",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 2
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Satellite",
+        "attribution": {
+          "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
     }
   ]
 }
