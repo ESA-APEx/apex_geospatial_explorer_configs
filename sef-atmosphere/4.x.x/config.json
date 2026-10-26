@@ -1,5 +1,5 @@
 {
-  "version": "0.15.0-carbon-air-quality-EM2026-draft",
+  "version": "0.16.0-carbon-air-quality-EM2026-draft",
   "exportPrefix": "sef-carbon-air-quality-explorer",
   "settings": {
     "layerFetchTimeoutMs": 30000
@@ -460,7 +460,7 @@
         "description": "NOx emission rates in kg/s for **1,139 point sources worldwide**, **2021**. Estimated from Sentinel-5P NO2 and ERA5 winds with the flux divergence method, on a 0.025 degree grid (about 2.5 km).\n\nHow to read: larger dots are larger emitters. Click a dot and open Data Values for the rate and its error. Switch on the power plants layer to see which sources are power stations. The estimates agree with UBA and US EPA reports within 20% on average.",
         "attribution": {
           "text": "ESA World Emission, NOx point source catalogue",
-          "url": "https://doi.org/10.5194/essd-15-3051-2023"
+          "url": "https://www.world-emission.com/"
         },
         "units": "kg/s",
         "fields": {
@@ -895,7 +895,7 @@
         "description": "Steelworks where CO2 plumes have been detected from space: **18 plants in Asia, Türkiye and Italy**, detections **from 2022 to 2026** by the hyperspectral satellites EnMAP, PRISMA, EMIT and Tanager. Larger dots mean more detections.\n\nHow to read: visible at any zoom. Click a site and open Data Values for the number of detections, the satellites and the first and latest dates. Then zoom in on the site and switch on the plume footprints, or the Taranto and Ereğli plume layers, to see the plumes themselves.",
         "attribution": {
           "text": "ESA ICO2NS project",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/ico2ns_co2_plumes?.language=en"
+          "url": "https://qairbon.com/plume/"
         },
         "categories": [],
         "fields": {
@@ -976,7 +976,7 @@
         "description": "Footprints of single CO2 plumes at steel plants, one shape per detection, **2022 to 2026**, from imagery at **30 to 60 m**. Emission rates are in tonnes of CO2 per hour (t/h).\n\nHow to read: the shapes are about 1 km across, so they only appear when zoomed in on a plant; use the steelworks site layer to find them. Click a plume and open Data Values for the emission rate, its uncertainty, the satellite and the detection time. Each shape is one clear-sky overpass, so compare detections with each other rather than reading one as a yearly figure.",
         "attribution": {
           "text": "ESA ICO2NS project",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/ico2ns_co2_plumes?.language=en"
+          "url": "https://qairbon.com/plume/"
         },
         "categories": [],
         "fields": {
@@ -1266,7 +1266,7 @@
         ],
         "attribution": {
           "text": "ESA ICO2NS project",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/ico2ns_co2_plumes?.language=en"
+          "url": "https://qairbon.com/plume/"
         },
         "categories": [],
         "fields": {
@@ -1457,7 +1457,7 @@
         ],
         "attribution": {
           "text": "ESA ICO2NS project",
-          "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/ico2ns_co2_plumes?.language=en"
+          "url": "https://qairbon.com/plume/"
         },
         "categories": [],
         "fields": {
