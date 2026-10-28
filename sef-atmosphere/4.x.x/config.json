@@ -1,5 +1,5 @@
 {
-  "version": "0.16.0-carbon-air-quality-EM2026-draft",
+  "version": "0.17.0-carbon-air-quality-EM2026-draft",
   "exportPrefix": "sef-carbon-air-quality-explorer",
   "settings": {
     "layerFetchTimeoutMs": 30000
@@ -1621,7 +1621,7 @@
             "min": 0,
             "max": 4,
             "steps": 100,
-            "name": "bone",
+            "name": "copper",
             "reverse": true
           }
         ],
