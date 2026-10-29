@@ -1,5 +1,5 @@
 {
-  "version": "0.17.0-carbon-air-quality-EM2026-draft",
+  "version": "0.18.0-carbon-air-quality-EM2026-draft",
   "exportPrefix": "sef-carbon-air-quality-explorer",
   "settings": {
     "layerFetchTimeoutMs": 30000
@@ -892,9 +892,9 @@
         }
       ],
       "meta": {
-        "description": "Steelworks where CO2 plumes have been detected from space: **18 plants in Asia, Türkiye and Italy**, detections **from 2022 to 2026** by the hyperspectral satellites EnMAP, PRISMA, EMIT and Tanager. Larger dots mean more detections.\n\nHow to read: visible at any zoom. Click a site and open Data Values for the number of detections, the satellites and the first and latest dates. Then zoom in on the site and switch on the plume footprints, or the Taranto and Ereğli plume layers, to see the plumes themselves.",
+        "description": "Steelworks where CO2 plumes have been detected from space: **18 plants in Asia, Türkiye and Italy**, detections **from 2022 to 2026** by the hyperspectral satellites EnMAP, PRISMA, EMIT and Tanager. Larger dots mean more detections.\n\nHow to read: visible at any zoom. Click a site and open Data Values for the number of detections, the satellites and the first and latest dates. Then zoom in on the site and switch on the plume footprints, or the Taranto and Ereğli plume layers, to see the plumes themselves.\n\nData: plume dataset created by [Qairbon](https://qairbon.com/plume/) within the ESA ICO2NS project.",
         "attribution": {
-          "text": "ESA ICO2NS project",
+          "text": "Qairbon, ESA ICO2NS project",
           "url": "https://qairbon.com/plume/"
         },
         "categories": [],
@@ -973,9 +973,9 @@
         }
       ],
       "meta": {
-        "description": "Footprints of single CO2 plumes at steel plants, one shape per detection, **2022 to 2026**, from imagery at **30 to 60 m**. Emission rates are in tonnes of CO2 per hour (t/h).\n\nHow to read: the shapes are about 1 km across, so they only appear when zoomed in on a plant; use the steelworks site layer to find them. Click a plume and open Data Values for the emission rate, its uncertainty, the satellite and the detection time. Each shape is one clear-sky overpass, so compare detections with each other rather than reading one as a yearly figure.",
+        "description": "Footprints of single CO2 plumes at steel plants, one shape per detection, **2022 to 2026**, from imagery at **30 to 60 m**. Emission rates are in tonnes of CO2 per hour (t/h).\n\nHow to read: the shapes are about 1 km across, so they only appear when zoomed in on a plant; use the steelworks site layer to find them. Click a plume and open Data Values for the emission rate, its uncertainty, the satellite and the detection time. Each shape is one clear-sky overpass, so compare detections with each other rather than reading one as a yearly figure.\n\nData: plume dataset created by [Qairbon](https://qairbon.com/plume/) within the ESA ICO2NS project.",
         "attribution": {
-          "text": "ESA ICO2NS project",
+          "text": "Qairbon, ESA ICO2NS project",
           "url": "https://qairbon.com/plume/"
         },
         "categories": [],
@@ -1253,7 +1253,7 @@
         }
       ],
       "meta": {
-        "description": "The CO2 plume over the Taranto steelworks as the satellite saw it: the enhancement of the CO2 column above background (ΔXCO2) in ppm, in **30 to 60 m pixels**. **6 detections, 30 April 2025 to 11 April 2026**, by EMIT, EnMAP and Tanager.\n\nHow to read: use the zoom button in this panel to fly to the plant, then the time control to step from one detection to the next. Brighter colours mean more CO2 above background. Click a pixel and open Data Values for its ΔXCO2 and the emission rate of that detection in t/h.",
+        "description": "The CO2 plume over the Taranto steelworks as the satellite saw it: the enhancement of the CO2 column above background (ΔXCO2) in ppm, in **30 to 60 m pixels**. **6 detections, 30 April 2025 to 11 April 2026**, by EMIT, EnMAP and Tanager.\n\nHow to read: use the zoom button in this panel to fly to the plant, then the time control to step from one detection to the next. Brighter colours mean more CO2 above background. Click a pixel and open Data Values for its ΔXCO2 and the emission rate of that detection in t/h.\n\nData: plume dataset created by [Qairbon](https://qairbon.com/plume/) within the ESA ICO2NS project.",
         "units": "ppm (ΔXCO2)",
         "colormaps": [
           {
@@ -1265,7 +1265,7 @@
           }
         ],
         "attribution": {
-          "text": "ESA ICO2NS project",
+          "text": "Qairbon, ESA ICO2NS project",
           "url": "https://qairbon.com/plume/"
         },
         "categories": [],
@@ -1444,7 +1444,7 @@
         }
       ],
       "meta": {
-        "description": "The CO2 plume over the Erdemir steelworks in Ereğli as the satellite saw it: the enhancement of the CO2 column above background (ΔXCO2) in ppm, in **30 m pixels**. **3 detections, 24 July 2025 to 27 April 2026**, all by EnMAP.\n\nHow to read: use the zoom button in this panel to fly to the plant, then the time control to step from one detection to the next. Brighter colours mean more CO2 above background. Click a pixel and open Data Values for its ΔXCO2 and the emission rate of that detection in t/h.",
+        "description": "The CO2 plume over the Erdemir steelworks in Ereğli as the satellite saw it: the enhancement of the CO2 column above background (ΔXCO2) in ppm, in **30 m pixels**. **3 detections, 24 July 2025 to 27 April 2026**, all by EnMAP.\n\nHow to read: use the zoom button in this panel to fly to the plant, then the time control to step from one detection to the next. Brighter colours mean more CO2 above background. Click a pixel and open Data Values for its ΔXCO2 and the emission rate of that detection in t/h.\n\nData: plume dataset created by [Qairbon](https://qairbon.com/plume/) within the ESA ICO2NS project.",
         "units": "ppm (ΔXCO2)",
         "colormaps": [
           {
@@ -1456,7 +1456,7 @@
           }
         ],
         "attribution": {
-          "text": "ESA ICO2NS project",
+          "text": "Qairbon, ESA ICO2NS project",
           "url": "https://qairbon.com/plume/"
         },
         "categories": [],
@@ -144364,7 +144364,7 @@
           "id": "taranto-steelworks",
           "content": {
             "title": "One steelworks: Taranto",
-            "description": "The Acciaierie d'Italia plant in Taranto, Puglia, is one of the largest steelworks in Europe. The map shows its CO2 plume as the satellite saw it: CO2 above background, in ppm, in pixels of 30 to 60 m. The ESA [ICO2NS](https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/ico2ns_co2_plumes?.language=en) project found six plumes here between April 2025 and April 2026, from the hyperspectral satellites [EnMAP](https://www.enmap.org/), [EMIT](https://earth.jpl.nasa.gov/emit/) and [Tanager](https://carbonmapper.org/); the time control steps from one to the next. The satellite NOx catalogue also lists a source here, with no power plant matched. Facility-level checks like these can support verification of emissions reported under the [EU ETS](https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en)."
+            "description": "The Acciaierie d'Italia plant in Taranto, Puglia, is one of the largest steelworks in Europe. The map shows its CO2 plume as the satellite saw it: CO2 above background, in ppm, in pixels of 30 to 60 m. The ESA [ICO2NS](https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/ico2ns_co2_plumes?.language=en) project, with a plume dataset created by [Qairbon](https://qairbon.com/plume/), found six plumes here between April 2025 and April 2026, from the hyperspectral satellites [EnMAP](https://www.enmap.org/), [EMIT](https://earth.jpl.nasa.gov/emit/) and [Tanager](https://carbonmapper.org/); the time control steps from one to the next. The satellite NOx catalogue also lists a source here, with no power plant matched. Facility-level checks like these can support verification of emissions reported under the [EU ETS](https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en)."
           },
           "viewport": {
             "zoom": 15,
@@ -144392,7 +144392,7 @@
           "id": "eregli-steelworks",
           "content": {
             "title": "Steel imports: Ereğli",
-            "description": "The Erdemir plant in Ereğli, on the Black Sea coast, is one of the largest steelworks in Türkiye. The ESA ICO2NS project detected three CO2 plumes here with EnMAP in 2025 and 2026. Iron and steel are covered by the EU [Carbon Border Adjustment Mechanism](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en), which prices the emissions embedded in imports. Independent facility-level estimates are one way to check emissions reported by producers outside the EU."
+            "description": "The Erdemir plant in Ereğli, on the Black Sea coast, is one of the largest steelworks in Türkiye. The ESA ICO2NS project detected three CO2 plumes here with EnMAP in 2025 and 2026. The plume dataset was created by [Qairbon](https://qairbon.com/plume/). Iron and steel are covered by the EU [Carbon Border Adjustment Mechanism](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en), which prices the emissions embedded in imports. Independent facility-level estimates are one way to check emissions reported by producers outside the EU."
           },
           "viewport": {
             "zoom": 15,
