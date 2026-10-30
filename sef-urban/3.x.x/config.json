@@ -10,7 +10,7 @@
       "primary-color": "#660000",
       "secondary-color": "#990033",
       "tertiary-color": "#990000",
-      "background-color": "#ffffff"
+      "background-color": "#f9d7d7"
     }
   },
   "interfaceGroups": [
@@ -1411,6 +1411,12 @@
       "name": "",
       "url": "https://maps-cartes.services.geo.ca/egs_sgu/services/Flood_Inondation/EGS_Flood_Product_Current_en/MapServer/WMSServer?request=GetCapabilities&service=WMS",
       "format": "wms"
+    },
+    {
+      "id": "stac-service-1792057892155",
+      "name": "masae",
+      "url": "https://geolens.masae-analytics.com/api/stac/",
+      "format": "stac"
     }
   ],
   "sources": [
@@ -2283,6 +2289,56 @@
         }
       },
       "timeframe": "Years"
+    },
+    {
+      "id": "south-lebanon-war-damage-density",
+      "name": "South Lebanon War Damage Density",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://geolens.masae-analytics.com/api/datasets/61654941-9f0f-4161-b2d3-1fb859d962ad/download/cog",
+          "format": "cog",
+          "zIndex": 50
+        }
+      ],
+      "meta": {
+        "description": "For each built-up area in South Lebanon, the share of buildings destroyed (0 to 100 %), detected from radar satellite images that can see through cloud and at night. Covers the offensive beginning 2 March 2026, updated through 29 April 2026; later dates will show more destruction as new satellite passes are processed. Areas never surveyed are left blank rather than marked as undamaged.",
+        "attribution": {
+          "text": "Masae Analytics",
+          "url": "https://www.lemonde.fr/en/international/visuel/2026/05/22/israel-has-damaged-or-destroyed-45-of-towns-in-southern-lebanon_6753711_4.html"
+        },
+        "categories": [],
+        "units": "%",
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 100,
+            "steps": 150,
+            "name": "yiorrd",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "Masae Analytics",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
       "id": "lst-city-3",
@@ -42813,10 +42869,10 @@
           "url": "https://wmts.datastores.ecmwf.int/teroWmts/cams_global_atmospheric_composition_forecasts/?request=GetCapabilities&service=WMTS",
           "format": "wmts",
           "zIndex": 50,
-          "opacity": 0.7,
           "layers": "cams_global_atmospheric_composition_forecasts/sfc/pm2p5",
-          "useTimeParameter": true,
-          "version": "1.0.0"
+          "version": "1.0.0",
+          "opacity": 0.7,
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -42872,10 +42928,10 @@
           "url": "https://wmts.datastores.ecmwf.int/teroWmts/cams_global_atmospheric_composition_forecasts/?request=GetCapabilities&service=WMTS",
           "format": "wmts",
           "zIndex": 50,
-          "opacity": 0.7,
           "layers": "cams_global_atmospheric_composition_forecasts/pl/no2",
-          "useTimeParameter": true,
-          "version": "1.0.0"
+          "version": "1.0.0",
+          "opacity": 0.7,
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -42931,10 +42987,10 @@
           "url": "https://wmts.datastores.ecmwf.int/teroWmts/cams_global_atmospheric_composition_forecasts/?request=GetCapabilities&service=WMTS",
           "format": "wmts",
           "zIndex": 50,
-          "opacity": 0.7,
           "layers": "cams_global_atmospheric_composition_forecasts/sfc/gtco3",
-          "useTimeParameter": true,
-          "version": "1.0.0"
+          "version": "1.0.0",
+          "opacity": 0.7,
+          "useTimeParameter": true
         }
       ],
       "meta": {
@@ -100371,8 +100427,1423 @@
           }
         }
       },
-      "timeframe": "Days",
-      "isBaseLayer": false
+      "isBaseLayer": false,
+      "timeframe": "Days"
+    },
+    {
+      "id": "nox-exposure-madrid",
+      "name": "NOx Exposure (Madrid)",
+      "isActive": false,
+      "meta": {
+        "description": "High-resolution monthly mean nitrogen dioxide (NO2) maps for Madrid, Spain, 2025. ",
+        "attribution": {
+          "text": "CitySatAir project (ESA)",
+          "url": "https://air.lobelia.earth/madrid"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Demonstrators",
+        "subinterfaceGroup": "CitySatAir Project",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "image",
+            "url": "https://sef-prod-public.obs.eu-nl.otc.t-systems.com/urban/NOx_madrid_legend.png"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-01-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1735686000
+          ]
+        },
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-02-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1738364400
+          ]
+        },
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-03-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1740783600
+          ]
+        },
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-04-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1743458400
+          ]
+        },
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-05-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1746050400
+          ]
+        },
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-06-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1748728800
+          ]
+        },
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-07-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1751320800
+          ]
+        },
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-08-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1753999200
+          ]
+        },
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-09-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1756677600
+          ]
+        },
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-10-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1759269600
+          ]
+        },
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-11-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1761951600
+          ]
+        },
+        {
+          "url": "https://s3.waw3-1.cloudferro.com/lobelia-air-public/madrid/historical-cog/2025-12-01.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "bands": [
+            1,
+            2,
+            3
+          ],
+          "convertToRGB": true,
+          "style": {
+            "variables": {
+              "rBand": 1,
+              "gBand": 2,
+              "bBand": 3,
+              "rMin": 0,
+              "rMax": 240,
+              "gMin": 110.38,
+              "gMax": 210,
+              "bMin": 0,
+              "bMax": 34
+            },
+            "color": [
+              "array",
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "rBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "rMin"
+                ],
+                0,
+                [
+                  "var",
+                  "rMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "gBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "gMin"
+                ],
+                0,
+                [
+                  "var",
+                  "gMax"
+                ],
+                1
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "band",
+                  [
+                    "var",
+                    "bBand"
+                  ]
+                ],
+                [
+                  "var",
+                  "bMin"
+                ],
+                0,
+                [
+                  "var",
+                  "bMax"
+                ],
+                1
+              ],
+              [
+                "case",
+                [
+                  "==",
+                  [
+                    "band",
+                    [
+                      "var",
+                      "rBand"
+                    ]
+                  ],
+                  0
+                ],
+                0,
+                1
+              ]
+            ]
+          },
+          "timestamps": [
+            1764543600
+          ]
+        }
+      ],
+      "timeframe": "Months"
     }
   ]
 }
