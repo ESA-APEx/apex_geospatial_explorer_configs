@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "exportPrefix": "config",
   "layout": {
     "navigation": {
@@ -15,7 +15,7 @@
   ],
   "exclusivitySets": [],
   "mapConstraints": {
-    "zoom": 2,
+    "zoom": 0,
     "center": [
       0,
       0
@@ -54,19 +54,42 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://gist.githubusercontent.com/datae8059-afk/bfc4b2b010c2899e8778baf538d3773e/raw/fb7cb16339d91e959458cf98c9d83930499eea11/Spain_plots.geojson",
+          "url": "https://gist.githubusercontent.com/datae8059-afk/7c1dc4e6d547273f69e1ade6a0ab1d63/raw/b4d422ed7050aac410d9ac817c3f06088d6df220/Spain_plots_4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 90,
+          "style": [
+            {
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(193, 123, 69, 0.4)",
+              "circle-stroke-color": "#C17B45",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
-          "url": "https://gist.githubusercontent.com/datae8059-afk/415147c2027ab8bc8ce7aee4a8d34b66/raw/0dd38705fae33f550f5da903b941ca80f7010c72/Soria_Parcels.geojson",
+          "url": "https://gist.githubusercontent.com/datae8059-afk/534a9b073f3cdd585dfac35839e3127d/raw/2e40184edd1fecd377d82e8b189439664c6be40f/Soria_Parcels_4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 80,
+          "style": [
+            {
+              "fill-color": "rgba(59, 130, 246, 0.1)",
+              "stroke-color": "#1e3a8a",
+              "stroke-width": 2
+            }
+          ]
         },
         {
-          "url": "https://gist.githubusercontent.com/datae8059-afk/bde48087d08febe730949a78fba82113/raw/12afdbbd96cc4ab4bb37d66cd68ab991d5d5f6b6/Spain_trees.geojson",
+          "url": "https://gist.githubusercontent.com/datae8059-afk/cd565eab15ed99420099994d1c8c63c2/raw/a4c58479c19f5ec61c29e3e4755e4f6aafca59bb/Soria_Trees_4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(79, 125, 69, 0.4)",
+              "circle-stroke-color": "#4F7D45",
+              "circle-stroke-width": 1
+            }
+          ]
         }
       ],
       "meta": {
@@ -423,31 +446,21 @@
       "isBaseLayer": true
     },
     {
-      "id": "countries-aoi",
+      "id": "countries-of-interest",
       "name": "Countries of Interest",
       "isActive": true,
       "meta": {
-        "description": "",
+        "description": "Country location of **Early Adopters**",
         "attribution": {
-          "text": "Natural Earth Data"
+          "text": "Sources: Natural Earth Data"
         },
-        "categories": [],
-        "fields": {
-          "NAME": {
-            "order": 1,
-            "label": "Name"
-          },
-          "FORMAL_EN": {
-            "order": 2,
-            "label": "Formal Name English"
-          }
-        }
+        "categories": []
       },
       "layout": {
         "interfaceGroup": "Countries of Interest",
         "contentLocation": "infoPanel",
         "layerCard": {
-          "toggleable": false
+          "toggleable": true
         },
         "infoPanel": {
           "legend": {
@@ -466,15 +479,15 @@
         {
           "url": "https://gist.githubusercontent.com/GDF117/da55c4dec2fcf4813cc8d6f7c1ddf58d/raw/981c23dda3fd683a1debec213404e58bbe651638/eo4cm_countries_aoi.geojson",
           "format": "geojson",
-          "zIndex": 100,
-          "maxZoom": 6,
+          "zIndex": 50,
           "style": [
             {
               "fill-color": "rgba(199, 111, 82, 0.4)",
               "stroke-color": "#C76F52",
               "stroke-width": 2
             }
-          ]
+          ],
+          "maxZoom": 6
         }
       ]
     }
