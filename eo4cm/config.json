@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.1.1",
   "exportPrefix": "config",
   "layout": {
     "navigation": {
@@ -54,26 +54,13 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://gist.githubusercontent.com/datae8059-afk/7c1dc4e6d547273f69e1ade6a0ab1d63/raw/b4d422ed7050aac410d9ac817c3f06088d6df220/Spain_plots_4326.geojson",
-          "format": "geojson",
-          "zIndex": 90,
-          "style": [
-            {
-              "circle-radius": 5,
-              "circle-fill-color": "rgba(193, 123, 69, 0.4)",
-              "circle-stroke-color": "#C17B45",
-              "circle-stroke-width": 1
-            }
-          ]
-        },
-        {
           "url": "https://gist.githubusercontent.com/datae8059-afk/534a9b073f3cdd585dfac35839e3127d/raw/2e40184edd1fecd377d82e8b189439664c6be40f/Soria_Parcels_4326.geojson",
           "format": "geojson",
-          "zIndex": 80,
+          "zIndex": 100,
           "style": [
             {
-              "fill-color": "rgba(59, 130, 246, 0.1)",
-              "stroke-color": "#1e3a8a",
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
               "stroke-width": 2
             }
           ]
@@ -85,8 +72,21 @@
           "style": [
             {
               "circle-radius": 5,
-              "circle-fill-color": "rgba(79, 125, 69, 0.4)",
-              "circle-stroke-color": "#4F7D45",
+              "circle-fill-color": "rgba(10, 153, 10, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/7c1dc4e6d547273f69e1ade6a0ab1d63/raw/b4d422ed7050aac410d9ac817c3f06088d6df220/Spain_plots_4326.geojson",
+          "format": "geojson",
+          "zIndex": 100,
+          "style": [
+            {
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
               "circle-stroke-width": 1
             }
           ]
@@ -125,94 +125,292 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://gist.githubusercontent.com/datae8059-afk/03ea00fff8db9719d33b2006a36ca287/raw/fc79b2a95657ebe4f710389840cfa43b596f7a1c/Colombia_MonitoringPlots.geojson",
-          "format": "geojson",
-          "zIndex": 100
-        },
-        {
           "url": "https://gist.githubusercontent.com/datae8059-afk/bccf7455c58391788a35a8f527da63b2/raw/2f0b58c9f23f65f0196f313c66c3c71118c785e9/Colombia_ProjectLandUse_Part1_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/1fc319560a46f2c2034b8cfd9117c6ec/raw/91b60f53f27036edc9d47479281d01b3901e43e1/Colombia_ProjectLandUse_Part2_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/e8e84fb18b6df04139b7505fb76c38c6/raw/4f1a700b863bd866e3678cd3efdc72ac40fde494/Colombia_ProjectLandUse_Part3_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/0c88610551aa867e8c9c0378c6501a25/raw/1ca5a0dd9dc5c617c2782d76aadd7f8e75ce5fef/Colombia_ProjectLandUse_Part5_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/9101243dfe205dacc33d2c5562ad86c9/raw/6bcb7f1d94eed7b5845b01a06497e6602d74e2c0/Colombia_ProjectLandUse_Part6_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/e019293a6d443965a5f41fed1190d43e/raw/3b31ee1fb529507b3ec2d944e8b5e4956d50da53/Colombia_ProjectLandUse_Part7_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/999871f7f1b52b466265bef938c377d6/raw/55c38b942da795d104db10e7cbddffac3e608ec9/Colombia_ProjectLandUse_Part8_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/69489f339a3ad5cff8cf1266654fd6c0/raw/806f52a40628653e4fd3b596170fef5d2c08c61c/Colombia_ProjectLandUse_Part9_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/65d09dd3ceb861cbf08ae3a5c8b97a2a/raw/cd5a083085952b27676845c03682182644f95890/Colombia_ProjectLandUse_Part10_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/3f66a64b65d47a88f9665b7dd2dd3861/raw/35307967e686bb4df0d7108927a76eb0a9874348/Colombia_ProjectLandUse_Part12_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/8b13f5a4e6de0cb8dc509ee947e0644e/raw/918375e1e81c67c67a6e2dfa9166df7ce0acf3ab/Colombia_ProjectLandUse_Part13_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/5d15c692f3a76b9f1c7cec6843f583f5/raw/78b13a086e9246521e95e019f6c382ad074111fc/Colombia_ProjectLandUse_Part14_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/7ab53581dd3b404f0d6d0d48d3b2a1da/raw/73c9efd2e83724712bcce154023b6580425fdfa3/Colombia_ProjectLandUse_Part15_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/ab635b8e85169baa0b513aaf84b1a726/raw/d1c0828ec8b80291e8f97d947fcf3470b94a86f3/Colombia_ProjectLandUse_Part16_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/6d781f8dcade156919155403fa9677d1/raw/1d5cdabd3814cef3c437018aa0ba5b02c3903bee/Colombia_ProjectLandUse_Part17_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/4f635d63f1923f56734f3d39ea88b135/raw/49dc6c67ca13ad0f4ad21b189dbea9311da8a47b/Colombia_ProjectLandUse_Part18_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         },
         {
           "url": "https://gist.githubusercontent.com/datae8059-afk/04d7c1ef91b79badd9bbdee1a3c71206/raw/5aa98f081af81ca7cc5fc67e95e76a42d98a0748/Colombia_ProjectLandUse_Part19_EPSG4326.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/03ea00fff8db9719d33b2006a36ca287/raw/fc79b2a95657ebe4f710389840cfa43b596f7a1c/Colombia_MonitoringPlots.geojson",
+          "format": "geojson",
+          "zIndex": 200,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2,
+              "circle-radius": 5,
+              "circle-fill-color": "rgba(232, 37, 155, 1)",
+              "circle-stroke-color": "#000000",
+              "circle-stroke-width": 1
+            }
+          ]
         }
       ],
       "meta": {
@@ -344,14 +542,28 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://gist.githubusercontent.com/datae8059-afk/0bab39e6b67946093ca1a0d861658cb3/raw/1470469e085cf509d413e73f2d050ce6c3e70bf2/France_laguette_PeatExtent.geojson",
-          "format": "geojson",
-          "zIndex": 100
-        },
-        {
           "url": "https://gist.githubusercontent.com/datae8059-afk/cd9a41b2468514515d84171694e282b7/raw/9e507833f248b51b31257e223e5157d4389c13f7/France_laguette_AOIextent.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(202, 21, 207, 0.25)",
+              "stroke-color": "#ca15cf",
+              "stroke-width": 2
+            }
+          ]
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/0bab39e6b67946093ca1a0d861658cb3/raw/1470469e085cf509d413e73f2d050ce6c3e70bf2/France_laguette_PeatExtent.geojson",
+          "format": "geojson",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2
+            }
+          ]
         }
       ],
       "meta": {
@@ -387,14 +599,28 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://gist.githubusercontent.com/datae8059-afk/15963cfeb539bca2577e7dc5b1944483/raw/64c443f586b0e6d7e521f7428de4c015a9777982/France_fasne_PeatExtention.geojson",
-          "format": "geojson",
-          "zIndex": 100
-        },
-        {
           "url": "https://gist.githubusercontent.com/datae8059-afk/b767df33f50712b06149bcbc3b540a4e/raw/6dc5ec2a0aa58a0fb6259523a47ef41828763f8f/France_frasne_AOIextent.geojson",
           "format": "geojson",
-          "zIndex": 100
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(202, 21, 207, 0.25)",
+              "stroke-color": "#ca15cf",
+              "stroke-width": 2
+            }
+          ]
+        },
+        {
+          "url": "https://gist.githubusercontent.com/datae8059-afk/15963cfeb539bca2577e7dc5b1944483/raw/64c443f586b0e6d7e521f7428de4c015a9777982/France_fasne_PeatExtention.geojson",
+          "format": "geojson",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2
+            }
+          ]
         }
       ],
       "meta": {
@@ -449,6 +675,21 @@
       "id": "countries-of-interest",
       "name": "Countries of Interest",
       "isActive": true,
+      "data": [
+        {
+          "url": "https://gist.githubusercontent.com/GDF117/da55c4dec2fcf4813cc8d6f7c1ddf58d/raw/981c23dda3fd683a1debec213404e58bbe651638/eo4cm_countries_aoi.geojson",
+          "format": "geojson",
+          "zIndex": 50,
+          "style": [
+            {
+              "fill-color": "rgba(199, 111, 82, 0.4)",
+              "stroke-color": "#C76F52",
+              "stroke-width": 2
+            }
+          ],
+          "maxZoom": 6
+        }
+      ],
       "meta": {
         "description": "Country location of **Early Adopters**",
         "attribution": {
@@ -474,22 +715,7 @@
             "blendControls": false
           }
         }
-      },
-      "data": [
-        {
-          "url": "https://gist.githubusercontent.com/GDF117/da55c4dec2fcf4813cc8d6f7c1ddf58d/raw/981c23dda3fd683a1debec213404e58bbe651638/eo4cm_countries_aoi.geojson",
-          "format": "geojson",
-          "zIndex": 50,
-          "style": [
-            {
-              "fill-color": "rgba(199, 111, 82, 0.4)",
-              "stroke-color": "#C76F52",
-              "stroke-width": 2
-            }
-          ],
-          "maxZoom": 6
-        }
-      ]
+      }
     }
   ]
 }
