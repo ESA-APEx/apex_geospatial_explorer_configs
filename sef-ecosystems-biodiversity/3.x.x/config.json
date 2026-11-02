@@ -428,7 +428,7 @@
       "id": "donana-national-park",
       "title": "Donana National Park",
       "description": "Natura 200 site monitoring",
-      "isActive": false,
+      "isActive": true,
       "steps": [
         {
           "id": "introduction",
@@ -7806,8 +7806,8 @@
           }
         }
       },
-      "isSwipeLayer": true,
-      "isBaseLayer": false
+      "isBaseLayer": false,
+      "isSwipeLayer": true
     },
     {
       "id": "water-level-trends-human",
@@ -7949,9 +7949,9 @@
           }
         }
       },
+      "isBaseLayer": false,
       "isSwipeLayer": true,
-      "timeframe": "Years",
-      "isBaseLayer": false
+      "timeframe": "Years"
     },
     {
       "id": "soil-organic-carbon-2020-22",
