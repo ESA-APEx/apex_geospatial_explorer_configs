@@ -38,7 +38,7 @@
       "id": "showcase-eo-for-ecosystems-and-biodiversity",
       "title": "Showcase: EO for Ecosystems and Biodiversity",
       "description": "Mapping, monitoring and valuing nature with EO",
-      "isActive": true,
+      "isActive": false,
       "steps": [
         {
           "id": "introduction",
@@ -425,10 +425,306 @@
       ]
     },
     {
+      "id": "tatra-mountains",
+      "title": "Tatra Mountains",
+      "description": "Ecosystem Accounting",
+      "isActive": false,
+      "steps": [
+        {
+          "id": "introduction",
+          "content": {
+            "title": "Introduction",
+            "description": "The Tatra Mountains, on the border between Slovakia and Poland, are the highest range of the Carpathians, rising to 2,655 m at Gerlachovský štít. They are protected on both sides as national parks, including Slovakia's oldest, the [Tatra National Park](https://en.wikipedia.org/wiki/Tatra_National_Park,_Slovakia) (TANAP, 1949). Together with the Polish park, it has formed a UNESCO biosphere reserve since 1992, and it is part of Natura 2000.\n\nThe Tatra forests have changed sharply in recent decades. On 19 November 2004, a windstorm with gusts of around 200 km/h flattened about 12,600 ha of forest in TANAP ([The Slovak Spectator](https://spectator.sme.sk/c/22264194/15-years-ago-slovakias-tatra-mountains-turned-into-a-moonscape.html)), and [bark beetle outbreaks](https://bioone.org/journals/mountain-research-and-development/volume-34/issue-4/MRD-JOURNAL-D-13-00017.1/Post-disaster-Forest-Management-and-Bark-Beetle-Outbreak-in-Tatra/10.1659/MRD-JOURNAL-D-13-00017.1.full) followed.\n\nThis true colour image from Copernicus Sentinel-2 shows the bare rocky peaks of the Western and High Tatras, surrounded by forest and farmland."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              20.08,
+              49.21670007971533
+            ]
+          },
+          "activeLayers": [],
+          "baseLayer": "sentinel"
+        },
+        {
+          "id": "land-cover-across-europe-at-10-m",
+          "content": {
+            "title": "Land cover across Europe at 10 m",
+            "description": "The [Copernicus Land Monitoring Service](https://land.copernicus.eu) maps land cover across Europe at 10 m spatial resolution from Sentinel data. Its [CLC+ Backbone](https://land.copernicus.eu/api/en/products/clc-backbone/clc-backbone-2021) for 2021 clearly shows how land cover changes with altitude in the Tatras.\n\nNeedle-leaved forest covers the slopes. Above it lies a belt of low-growing woody plants, largely dwarf mountain pine, and above the treeline rock and sparse vegetation dominate the summits. Farmland, towns and reservoirs fill the valleys below."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              20.08,
+              49.21670007971533
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "european-land-cover-clc"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "european-land-cover-clc",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "from-land-cover-to-ecosystem-type",
+          "content": {
+            "title": "From land cover to ecosystem type",
+            "description": "Land cover is the starting point for mapping ecosystems. The ESA-funded [PEOPLE-EA](https://eo4society.esa.int/projects/people-ea/) project combined EO, including Copernicus land cover, with other spatial data to map ecosystem types across Slovakia for 2020, following the European EUNIS habitat classification.\n\nAt this first level, the map groups the main ecosystem types: woodland and forest, heathland and scrub, grasslands, inland unvegetated habitats, inland waters and cultivated land. Such maps are the basis of the ecosystem accounts that countries are starting to report under the UN [SEEA Ecosystem Accounting](https://seea.un.org/ecosystem-accounting) standard."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              20.08,
+              49.21670007971533
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "habitat-map-sk-level-1-2020-with-nuts-stats-copy"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "habitat-map-sk-level-1-2020-with-nuts-stats-copy",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "more-detail-on-habitats",
+          "content": {
+            "title": "More detail on habitats",
+            "description": "The second level of the habitat hierarchy adds more detail, for example separating standing and running waters, different types of grassland, scrub and forest.\n\nThis level of detail helps site managers and planners see which habitats dominate a protected area and where valuable habitats border on farmland or settlements."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              20.08,
+              49.21670007971533
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "habitat-map-sk-level-2-2020-with-nuts-stats"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "habitat-map-sk-level-2-2020-with-nuts-stats",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "ecosystem-statistics-by-region",
+          "content": {
+            "title": "Ecosystem statistics by region",
+            "description": "The habitat map can be summarised for any administrative region. Selecting a region, such as the Prešov region that includes the High Tatras, shows the area of each ecosystem type.\n\nThese figures form ecosystem extent accounts, which show how much of each ecosystem a region or country has and, when repeated over time, how this changes.\n\nClick on a region to see the detailed statistics."
+          },
+          "viewport": {
+            "zoom": 8,
+            "center": [
+              19.055786132812504,
+              48.748945343432936
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "habitat-map-sk-level-2-2020-with-nuts-stats"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "habitat-map-sk-level-2-2020-with-nuts-stats",
+            "tab": {
+              "id": "statistics"
+            }
+          }
+        },
+        {
+          "id": "weighing-the-forests-from-space",
+          "content": {
+            "title": "Weighing the forests from space",
+            "description": "Radar satellites see through clouds and, depending on their wavelength, partly into forest canopies. With models and field plots, their signal is used to estimate how much wood forests hold. This map from the ESA-funded [Forest Carbon Monitoring](https://eo4society.esa.int/projects/forest-carbon-monitoring) project combines Sentinel-1 and ALOS-2 PALSAR-2 radar data at 20 m resolution.\n\nThe highest above-ground biomass is found in the valley and lower-slope forests. Values drop above the treeline and are lower on parts of the southern slopes of the High Tatras, consistent with the forest lost in the 2004 windstorm and later bark beetle outbreaks. Biomass is a proxy for carbon stocks and for forest structure, which shapes habitat quality for many species."
+          },
+          "viewport": {
+            "zoom": 10,
+            "center": [
+              20.08,
+              49.21670007971533
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "above-ground-biomass-imported"
+            }
+          ],
+          "baseLayer": "sentinel",
+          "panelState": {
+            "focusLayer": "above-ground-biomass-imported",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "uk-peatlands",
+      "title": "UK Peatlands",
+      "description": "From Worldpeatland project",
+      "isActive": false,
+      "steps": [
+        {
+          "id": "introduction",
+          "content": {
+            "title": "Introduction",
+            "description": "Peatlands cover only 3% of the Earth’s terrestrial surface but store as much carbon as the rest of the entire terrestrial biosphere and have the potential for ongoing growth as continuing sinks of atmospheric carbon. However, they need to be suitably managed and preserved to moderate ongoing anthropogenic climate change. \n\nExisting maps of peatland extent and estimates of their carbon stocks are subject to significant uncertainties and gaps in knowledge, due to the difficulties associated with comprehensive mapping and monitoring of peatlands.\n\nSuccessful mapping and monitoring of peatlands requires robust, consistent, efficient, and accessible methodologies to map peatlands, identify and better understand the changes and impacts of natural and anthropogenic changes, including restoration measures, and provide proxy data for peatland greenhouse gas (GHG) emissions estimation."
+          },
+          "viewport": {
+            "zoom": 5,
+            "center": [
+              -3.1201171875,
+              54.597527852113885
+            ]
+          },
+          "activeLayers": []
+        },
+        {
+          "id": "peatland-site-as-seen-from-above",
+          "content": {
+            "title": "Peatland site as seen from above",
+            "description": "The [Humberhead Peatlands](https://humberheadpeatlands.org.uk/) in the United Kingdom are a remnant of a large wetland that occupied parts of the floodplain of the River Humber thousands of years ago. They have been used for peat extraction throughout recorded history, and the remaining area has too varied a water table to allow new peat formation.\n\nThis true colour image shows extensive areas of bare peat and open water as dark patches within the heart of the Thorne Moor. Bare peat represents the death of peatlands ([IUCN news article](https://www.iucn-uk-peatlandprogramme.org/news/restoring-humberhead-peatlands-ongoing-story)).\n\nTo restore the Peatlands and return them to favourable condition, Natural England and Lincolnshire Wildlife Trust are undertaking restoration works on Thorne and Crowle Moors. The project is supported by LIFE+ ([link to the project](https://webgate.ec.europa.eu/life/publicWebsite/project/LIFE13-NAT-UK-000451/restoring-humberhead-peatlands-life-project)), which is a financial instrument of the European Union."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              -0.8825111389160157,
+              53.63720873237931
+            ]
+          },
+          "activeLayers": []
+        },
+        {
+          "id": "exploring-peatlands-with-satellite-based-indices",
+          "content": {
+            "title": "Exploring peatlands with satellite-based indices",
+            "description": "Here are two different views of the area provided by the Copernicus Sentinel-2 mission, which provides multi-spectral imagery with a spatial resolution down to 10 m and a revisit time of 3 to 5 days in the UK (depending on cloud cover). \n\nThe swipe function (line and arrows in the middle of the viewer) allows the two different views to be compared. On the left is a false colour infrared (FCIR) image which uses green red and near infrared (NIR) wavebands to emphasis the distribution of vegetation (red areas) and water (black areas). On the right is the normalised difference vegetation index (NDVI) which is a combination red and NIR wavebands which emphasise the density of vegetation.\n\nThe extent of Thorne and Crowle Moors can easily be seen by the change in character compared to the surrounding land which is dominated by agriculture. The patterns of peat cutting are still evident by the linear features of vegetation density."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              -0.8825111389160157,
+              53.63720873237931
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "alternative-nir-vs-ndvi"
+            }
+          ]
+        },
+        {
+          "id": "peatlands-as-the-most-efficient-carbon-sinks-on-land",
+          "content": {
+            "title": "Peatlands as the most efficient carbon sinks on land",
+            "description": "A key property of peatlands is their ability to store carbon in the soils. Soils, the key to life, are a mixture of organic matter, minerals, gases, liquids and organisms, in varying proportions. The organic matter content can provide an estimate of the amount of carbon stored.\n\nThe ESA-funded WorldSoils project has used space-based EO systems to support the monitoring of some soil chemical and physical properties, directly or indirectly, through the interaction of radiation with the upper soil layer (or topsoil). The approach combined optical EO data together with in-situ measurements and modelling.\n\nThe Topsoil Organic Carbon (2020-22) product shows the elevated amounts of carbon storage (darker hues) in the soils on the peatlands."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              -0.8825111389160157,
+              53.63720873237931
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "topsoil-organic-carbon-2020-22-2"
+            }
+          ],
+          "panelState": {
+            "focusLayer": "topsoil-organic-carbon-2020-22-2",
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "water-level",
+          "content": {
+            "title": "Water Level",
+            "description": "[Need to toggle only “Peatland” on]\n\nWater level in peatland is a vital control on whether the area is a carbon source or sink. If peatlands are drained and dry out, then peat formation stops and the peat is eroded becoming a carbon source into the atmosphere. Peatlands must remain wet to grow and sequester carbon with a water table at between 0 and 15 cm below the surface.\n\nThe ESA [WorldPeatland project](https://www.worldpeatland.org/) worked with stakeholders to understand their needs and then facilitated Earth observation-based tools and products to map and monitor tropical, temperate and boreal peatlands.\n\nThis water level trends product shows that the Thorne and Crowle Moors as a whole have a relatively constant water level between 2017 and 2024. However, within the area there are patches of increasing (cyan and blue) and decreasing (yellow and orange) water levels which may be related to ongoing management activity."
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              -0.8825111389160157,
+              53.63720873237931
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "water-level-trends-3"
+            }
+          ],
+          "panelState": {
+            "focusLayer": "water-level-trends-3",
+            "controls": {
+              "filters": {
+                "expanded": true
+              }
+            },
+            "tab": {
+              "id": "overview"
+            }
+          }
+        },
+        {
+          "id": "water-level-human-induced",
+          "content": {
+            "title": "Water Level (human induced)",
+            "description": "To be written"
+          },
+          "viewport": {
+            "zoom": 13,
+            "center": [
+              -0.8825111389160157,
+              53.63720873237931
+            ]
+          },
+          "activeLayers": [
+            {
+              "id": "water-level-trends-human"
+            }
+          ],
+          "panelState": {
+            "focusLayer": "water-level-trends-human",
+            "controls": {
+              "filters": {
+                "expanded": true
+              }
+            },
+            "tab": {
+              "id": "overview"
+            }
+          }
+        }
+      ]
+    },
+    {
       "id": "donana-national-park",
       "title": "Donana National Park",
       "description": "Natura 200 site monitoring",
-      "isActive": true,
+      "isActive": false,
       "steps": [
         {
           "id": "introduction",
@@ -1325,6 +1621,9 @@
           "url": "https://stac-browser.worldpeatland.org/#/moor-house/catalog.json"
         },
         "categories": [],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80,
         "colormaps": [
           {
             "min": -80,
@@ -1333,10 +1632,7 @@
             "name": "jet",
             "reverse": true
           }
-        ],
-        "units": "mm/yr",
-        "min": -80,
-        "max": 80
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatlands",
@@ -1397,6 +1693,7 @@
           "url": "https://stac-browser.worldpeatland.org/#/saddleworth/catalog.json"
         },
         "categories": [],
+        "units": "mm/yr",
         "colormaps": [
           {
             "min": -40,
@@ -1405,8 +1702,7 @@
             "name": "jet",
             "reverse": true
           }
-        ],
-        "units": "mm/yr"
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatlands",
@@ -1467,6 +1763,9 @@
           "url": "https://stac-browser.worldpeatland.org/#/hatfield-thorne/catalog.json"
         },
         "categories": [],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80,
         "colormaps": [
           {
             "min": -80,
@@ -1475,10 +1774,7 @@
             "name": "jet",
             "reverse": true
           }
-        ],
-        "units": "mm/yr",
-        "min": -80,
-        "max": 80
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatlands",
@@ -1919,6 +2215,10 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
+        "min": 0,
+        "max": 254,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -1927,11 +2227,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "min": 0,
-        "max": 254,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff"
+        ]
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality",
@@ -1971,6 +2267,8 @@
           "url": "https://browser.apex.esa.int/external/eoresults.esa.int/stac/collections/esa_sen4ldn_carbon_stocks?.language=en"
         },
         "categories": [],
+        "min": -206,
+        "max": 129,
         "colormaps": [
           {
             "min": -206,
@@ -1979,9 +2277,7 @@
             "name": "jet",
             "reverse": true
           }
-        ],
-        "min": -206,
-        "max": 129
+        ]
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality",
@@ -2065,6 +2361,10 @@
           "url": "https://esa-sen4ldn.org/en"
         },
         "categories": [],
+        "min": 0,
+        "max": 234,
+        "startColor": "#ffffff",
+        "endColor": "#ffffff",
         "colormaps": [
           {
             "min": 0,
@@ -2073,11 +2373,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "min": 0,
-        "max": 234,
-        "startColor": "#ffffff",
-        "endColor": "#ffffff"
+        ]
       },
       "layout": {
         "interfaceGroup": "Land Degradation Neutrality",
@@ -2530,30 +2826,6 @@
       "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/bluemarble.png"
     },
     {
-      "id": "sentinel",
-      "name": "Sentinel",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
-          "zIndex": 10,
-          "layers": "WORLDCOVER_2021_S2_TCC"
-        }
-      ],
-      "meta": {
-        "description": "True colour composite of 2021 Sentinel 2 data.",
-        "attribution": {
-          "text": "Copernicus Sentinel-2",
-          "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2"
-        },
-        "categories": []
-      },
-      "isBaseLayer": true,
-      "exclusivitySets": [],
-      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
-    },
-    {
       "id": "worldcover",
       "name": "WorldCover",
       "isActive": false,
@@ -2820,6 +3092,9 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
         "colormaps": [
           {
             "min": 0,
@@ -2828,10 +3103,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 1800
+        ]
       },
       "layout": {
         "interfaceGroup": "Ecosystem Accounting",
@@ -2939,6 +3211,7 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
+        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -2947,8 +3220,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "Kelvin (K)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Urban Environment",
@@ -2995,6 +3267,7 @@
           "url": "https://docs.terrascope.be/DataProducts/Sentinel-3/ProductsOverview.html#sentinel-3-level-3-land-surface-temperature-10-daily-synthesis-product---v1"
         },
         "categories": [],
+        "units": "Kelvin (K)",
         "colormaps": [
           {
             "min": 250,
@@ -3003,8 +3276,7 @@
             "name": "jet",
             "reverse": false
           }
-        ],
-        "units": "Kelvin (K)"
+        ]
       },
       "layout": {
         "interfaceGroup": "Urban Environment",
@@ -3221,6 +3493,9 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300,
         "colormaps": [
           {
             "min": 0,
@@ -3229,10 +3504,7 @@
             "name": "greens",
             "reverse": true
           }
-        ],
-        "units": "t / ha",
-        "min": 0,
-        "max": 300
+        ]
       },
       "layout": {
         "interfaceGroup": "Ecosystem Accounting",
@@ -3301,6 +3573,9 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 100,
         "colormaps": [
           {
             "min": 0,
@@ -3309,10 +3584,7 @@
             "name": "greens",
             "reverse": true
           }
-        ],
-        "units": "t / ha",
-        "min": 0,
-        "max": 100
+        ]
       },
       "layout": {
         "interfaceGroup": "Ecosystem Accounting",
@@ -3388,6 +3660,8 @@
           "text": "Data attribution not specified"
         },
         "categories": [],
+        "min": 0,
+        "max": 70000,
         "colormaps": [
           {
             "min": 10000,
@@ -3403,9 +3677,7 @@
             "name": "freesurface-red",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 70000
+        ]
       },
       "layout": {
         "interfaceGroup": "Coasts & Oceans",
@@ -3667,6 +3939,7 @@
           "url": "https://data.marine.copernicus.eu/viewer/expert?view=dataset&dataset=GLOBAL_ANALYSISFORECAST_PHY_001_024"
         },
         "categories": [],
+        "units": "°C",
         "colormaps": [
           {
             "min": -2,
@@ -3675,8 +3948,7 @@
             "name": "plasma",
             "reverse": false
           }
-        ],
-        "units": "°C"
+        ]
       },
       "layout": {
         "interfaceGroup": "Coasts & Oceans",
@@ -3719,6 +3991,9 @@
           "url": "https://data.marine.copernicus.eu/viewer/expert?view=layers&dataset=GLOBAL_ANALYSISFORECAST_PHY_001_024"
         },
         "categories": [],
+        "units": "/10^3",
+        "min": 29,
+        "max": 37,
         "colormaps": [
           {
             "min": 29,
@@ -3727,10 +4002,7 @@
             "name": "salinity",
             "reverse": false
           }
-        ],
-        "units": "/10^3",
-        "min": 29,
-        "max": 37
+        ]
       },
       "layout": {
         "interfaceGroup": "Coasts & Oceans",
@@ -3773,6 +4045,9 @@
           "url": "https://data.marine.copernicus.eu/viewer/expert?view=layers&dataset=GLOBAL_ANALYSISFORECAST_BGC_001_028"
         },
         "categories": [],
+        "units": "mg/m^3",
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -3781,10 +4056,7 @@
             "name": "chlorophyll",
             "reverse": true
           }
-        ],
-        "units": "mg/m^3",
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Coasts & Oceans",
@@ -3827,6 +4099,9 @@
           "url": "https://data.marine.copernicus.eu/viewer/expert?view=dataset&dataset=GLOBAL_ANALYSISFORECAST_BGC_001_028"
         },
         "categories": [],
+        "units": "mmol/m^3",
+        "min": 0,
+        "max": 4,
         "colormaps": [
           {
             "min": 0,
@@ -3835,10 +4110,7 @@
             "name": "magma",
             "reverse": true
           }
-        ],
-        "units": "mmol/m^3",
-        "min": 0,
-        "max": 4
+        ]
       },
       "layout": {
         "interfaceGroup": "Coasts & Oceans",
@@ -3881,6 +4153,9 @@
           "url": "https://data.marine.copernicus.eu/viewer/expert?view=dataset&dataset=GLOBAL_ANALYSISFORECAST_BGC_001_028"
         },
         "categories": [],
+        "units": "mmol/m^3",
+        "min": 0,
+        "max": 3,
         "colormaps": [
           {
             "min": 0,
@@ -3889,10 +4164,7 @@
             "name": "magma",
             "reverse": true
           }
-        ],
-        "units": "mmol/m^3",
-        "min": 0,
-        "max": 3
+        ]
       },
       "layout": {
         "interfaceGroup": "Coasts & Oceans",
@@ -5756,6 +6028,9 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300,
         "colormaps": [
           {
             "min": 0,
@@ -5764,10 +6039,7 @@
             "name": "greens",
             "reverse": true
           }
-        ],
-        "units": "t / ha",
-        "min": 0,
-        "max": 300
+        ]
       },
       "layout": {
         "interfaceGroup": "Vegetation & Forest",
@@ -5836,6 +6108,9 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 100,
         "colormaps": [
           {
             "min": 0,
@@ -5844,10 +6119,7 @@
             "name": "greens",
             "reverse": true
           }
-        ],
-        "units": "t / ha",
-        "min": 0,
-        "max": 100
+        ]
       },
       "layout": {
         "interfaceGroup": "Vegetation & Forest",
@@ -7251,6 +7523,9 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "g kg^(-1)",
+        "min": 0,
+        "max": 4000,
         "colormaps": [
           {
             "min": 0,
@@ -7259,10 +7534,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "g kg^(-1)",
-        "min": 0,
-        "max": 4000
+        ]
       },
       "layout": {
         "interfaceGroup": "Biodiversity & Habitats",
@@ -7712,6 +7984,9 @@
           "url": "https://www.forestcarbonplatform.org/"
         },
         "categories": [],
+        "units": "t / ha",
+        "min": 0,
+        "max": 300,
         "colormaps": [
           {
             "min": 0,
@@ -7720,10 +7995,7 @@
             "name": "greens",
             "reverse": true
           }
-        ],
-        "units": "t / ha",
-        "min": 0,
-        "max": 300
+        ]
       },
       "layout": {
         "interfaceGroup": "Demo datasets",
@@ -7775,6 +8047,8 @@
           "text": "Data attribution not specified"
         },
         "categories": [],
+        "min": 0,
+        "max": 1,
         "colormaps": [
           {
             "min": 0,
@@ -7783,9 +8057,7 @@
             "name": "hot",
             "reverse": true
           }
-        ],
-        "min": 0,
-        "max": 1
+        ]
       },
       "layout": {
         "interfaceGroup": "Demo datasets",
@@ -7847,6 +8119,9 @@
           "url": "https://stac-browser.worldpeatland.org/#/hatfield-thorne/catalog.json"
         },
         "categories": [],
+        "units": "mm/yr",
+        "min": -80,
+        "max": 80,
         "colormaps": [
           {
             "min": -80,
@@ -7855,10 +8130,7 @@
             "name": "jet",
             "reverse": true
           }
-        ],
-        "units": "mm/yr",
-        "min": -80,
-        "max": 80
+        ]
       },
       "layout": {
         "interfaceGroup": "Peatland Monitoring",
@@ -8050,6 +8322,9 @@
           "url": "https://world-soils.com/"
         },
         "categories": [],
+        "units": "dg kg^(-1)",
+        "min": 0,
+        "max": 1800,
         "colormaps": [
           {
             "min": 0,
@@ -8058,10 +8333,7 @@
             "name": "copper",
             "reverse": true
           }
-        ],
-        "units": "dg kg^(-1)",
-        "min": 0,
-        "max": 1800
+        ]
       },
       "layout": {
         "interfaceGroup": "Demo datasets",
@@ -8083,6 +8355,31 @@
         }
       },
       "isBaseLayer": false
+    },
+    {
+      "id": "sentinel",
+      "name": "Sentinel",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://tiles.maps.eox.at/wms",
+          "format": "wms",
+          "zIndex": 23,
+          "layers": "s2cloudless-2025_3857",
+          "useTimeParameter": true
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Sentinel",
+        "attribution": {
+          "text": "Sentinel-2 Cloudless by EOX",
+          "url": "https://s2maps.eu"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [],
+      "preview": "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/refs/heads/main/resources/sentinel.png"
     }
   ]
 }
