@@ -38,7 +38,7 @@
     {
       "id": "showcase-eo-for-ecosystems-and-biodiversity",
       "title": "Showcase: EO for Ecosystems and Biodiversity",
-      "description": "Mapping, monitoring and valuing nature with EO",
+      "description": "Mapping, monitoring and valuing nature with satellite Earth Observation",
       "isActive": false,
       "steps": [
         {
@@ -428,7 +428,7 @@
     {
       "id": "tatra-mountains",
       "title": "Tatra Mountains",
-      "description": "Ecosystem Accounting",
+      "description": "Mapping the extent and condition of ecosystems.",
       "isActive": false,
       "steps": [
         {
@@ -582,7 +582,7 @@
     {
       "id": "uk-peatlands",
       "title": "UK Peatlands",
-      "description": "From Worldpeatland project",
+      "description": "Looking at peatland restoration with satellite data",
       "isActive": false,
       "steps": [
         {
@@ -724,7 +724,7 @@
     {
       "id": "donana-national-park",
       "title": "Donana National Park",
-      "description": "Natura 200 site monitoring",
+      "description": "An example of how EO can monitor a Natura 2000 site",
       "isActive": false,
       "steps": [
         {
