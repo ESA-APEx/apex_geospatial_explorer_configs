@@ -160,9 +160,30 @@
   ],
   "sources": [
     {
+      "id": "stadia-alidade-smooth-dark",
+      "name": "Stadia Alidade Smooth Dark",
+      "isActive": true,
+      "data": [
+        {
+          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
+          "format": "xyz",
+          "zIndex": 3
+        }
+      ],
+      "meta": {
+        "description": "Base layer: Stadia Alidade Smooth Dark",
+        "attribution": {
+          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
+          "url": "https://stadiamaps.com/"
+        },
+        "categories": []
+      },
+      "isBaseLayer": true
+    },
+    {
       "id": "stadia-alidade-satellite",
       "name": "Stadia Alidade Satellite",
-      "isActive": true,
+      "isActive": false,
       "data": [
         {
           "url": "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.png",
@@ -206,7 +227,7 @@
     {
       "id": "cci-sst-2",
       "name": "CCI SST Anomalies 2026",
-      "isActive": false,
+      "isActive": true,
       "timeframe": "Months",
       "meta": {
         "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
@@ -321,41 +342,6 @@
       "id": "cci-sst",
       "name": "CCI SST Anomalies 2025",
       "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified",
-          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250115_regridded_cog_sst_anomaly.tif",
@@ -453,28 +439,42 @@
             1765753200
           ]
         }
-      ]
-    },
-    {
-      "id": "stadia-alidade-smooth-dark",
-      "name": "Stadia Alidade Smooth Dark",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}@2x.png",
-          "format": "xyz",
-          "zIndex": 3
-        }
       ],
       "meta": {
-        "description": "Base layer: Stadia Alidade Smooth Dark",
+        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
         "attribution": {
-          "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
-          "url": "https://stadiamaps.com/"
+          "text": "Data attribution not specified",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
-        "categories": []
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
       },
-      "isBaseLayer": true
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Months"
     },
     {
       "id": "sentinel",
@@ -528,33 +528,6 @@
       "id": "gfm-flood-monitoring-all",
       "name": "GFM flood monitoring - all",
       "isActive": false,
-      "timeframe": "Days",
-      "defaultTimestamp": 1791849600,
-      "meta": {
-        "description": "The Global Flood Monitoring (GFM) product is a new component of the EU’s Copernicus Emergency Management Service (CEMS) that provides continuous monitoring of floods worldwide, by processing and analysing in near real-time (NRT) all incoming Synthetic Aperture Radar (SAR) imagery acquired by the EU’s Copernicus Sentinel-1 satellites, in Interferometric Wide Swath (IW) mode and as Ground Range Detected (GRD) products. The GFM product is designed to deliver, in NRT, critical information on ongoing floods events to users worldwide, including national authorities, emergency units, research centres, decision-makers and other stakeholders.",
-        "attribution": {
-          "text": "GFM flood monitoring: observed water extent, observed flood extent and observed flood extent footprint, shown together.",
-          "url": "https://extwiki.eodc.eu/en/GFM"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Floods",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://geoserver.gfm.eodc.eu/geoserver/gfm/wms",
@@ -586,7 +559,34 @@
           },
           "useTimeParameter": true
         }
-      ]
+      ],
+      "meta": {
+        "description": "The Global Flood Monitoring (GFM) product is a new component of the EU’s Copernicus Emergency Management Service (CEMS) that provides continuous monitoring of floods worldwide, by processing and analysing in near real-time (NRT) all incoming Synthetic Aperture Radar (SAR) imagery acquired by the EU’s Copernicus Sentinel-1 satellites, in Interferometric Wide Swath (IW) mode and as Ground Range Detected (GRD) products. The GFM product is designed to deliver, in NRT, critical information on ongoing floods events to users worldwide, including national authorities, emergency units, research centres, decision-makers and other stakeholders.",
+        "attribution": {
+          "text": "GFM flood monitoring: observed water extent, observed flood extent and observed flood extent footprint, shown together.",
+          "url": "https://extwiki.eodc.eu/en/GFM"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Floods",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Days",
+      "defaultTimestamp": 1791849600
     },
     {
       "id": "world-settlement-footprint-evolution",
@@ -636,6 +636,42 @@
       "id": "soil-moisture-anomalies-2025",
       "name": "Soil Moisture Anomalies 2025 Time Series",
       "isActive": false,
+      "timeframe": "Months",
+      "meta": {
+        "description": "Monthly soil moisture anomalies, 2025.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "min": -1,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": -0.5,
+            "max": 0.5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Soil Moisture",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202501.tif",
@@ -733,9 +769,15 @@
             1765753200
           ]
         }
-      ],
+      ]
+    },
+    {
+      "id": "soil-moisture-anomalies-2026",
+      "name": "Soil Moisture Anomalies 2026 Time Series",
+      "isActive": false,
+      "timeframe": "Months",
       "meta": {
-        "description": "Monthly soil moisture anomalies, 2025.",
+        "description": "Monthly soil moisture anomalies, 2026.",
         "attribution": {
           "text": "Data attribution not specified"
         },
@@ -754,11 +796,9 @@
       },
       "layout": {
         "interfaceGroup": "Soil Moisture",
-        "contentLocation": "infoPanel",
+        "contentLocation": "layerCard",
         "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
+          "toggleable": true,
           "legend": {
             "type": "gradient"
           },
@@ -771,12 +811,6 @@
           }
         }
       },
-      "timeframe": "Months"
-    },
-    {
-      "id": "soil-moisture-anomalies-2026",
-      "name": "Soil Moisture Anomalies 2026 Time Series",
-      "isActive": false,
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202601.tif",
@@ -850,34 +884,25 @@
             1789423200
           ]
         }
-      ],
+      ]
+    },
+    {
+      "id": "soil-moisture-daily",
+      "name": "Soil Moisture Daily",
+      "isActive": false,
       "meta": {
-        "description": "Monthly soil moisture anomalies, 2026.",
+        "description": "Auto-generated description for Soil Moisture Daily",
         "attribution": {
           "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "min": -1,
-        "max": 1,
-        "colormaps": [
-          {
-            "min": -0.5,
-            "max": 0.5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": true
-          }
-        ]
+        }
       },
       "layout": {
         "interfaceGroup": "Soil Moisture",
-        "contentLocation": "infoPanel",
+        "contentLocation": "layerCard",
         "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
+          "toggleable": true,
           "legend": {
-            "type": "gradient"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -888,12 +913,6 @@
           }
         }
       },
-      "timeframe": "Months"
-    },
-    {
-      "id": "soil-moisture-daily",
-      "name": "Soil Moisture Daily",
-      "isActive": false,
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Anomalies/daily_anomalies_cog_anomaly.tif",
@@ -920,33 +939,7 @@
             22
           ]
         }
-      ],
-      "meta": {
-        "description": "Auto-generated description for Soil Moisture Daily",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Soil Moisture",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
+      ]
     },
     {
       "id": "soil-water-index-destine-eden",
@@ -1000,8 +993,18 @@
       "id": "eo-eden-dat-dteh-swi10dcm",
       "name": "EO_EDEN_DAT_DTEH_SWI10DCM",
       "isActive": false,
-      "timeframe": "Days",
-      "defaultTimestamp": 1792281600,
+      "data": [
+        {
+          "url": "https://wms.eden.destine.eu/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "EO:EDEN:DAT:DTEHYDRO:SWIDCM:COG|SWI10DCM",
+          "parameters": {
+            "version": "1.1.1"
+          },
+          "useTimeParameter": true
+        }
+      ],
       "meta": {
         "description": "Auto-generated description for EO_EDEN_DAT_DTEH_SWI10DCM",
         "attribution": {
@@ -1026,18 +1029,8 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://wms.eden.destine.eu/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "EO:EDEN:DAT:DTEHYDRO:SWIDCM:COG|SWI10DCM",
-          "parameters": {
-            "version": "1.1.1"
-          },
-          "useTimeParameter": true
-        }
-      ]
+      "timeframe": "Days",
+      "defaultTimestamp": 1792281600
     },
     {
       "id": "stadia-alidade-smooth-light",
@@ -2151,7 +2144,10 @@
           "text": "Data attribution not specified"
         },
         "categories": [],
-        "units": "day"
+        "units": "day",
+        "min": 1,
+        "max": 365,
+        "colormaps": []
       },
       "layout": {
         "interfaceGroup": "Fire Dynamics",
@@ -2159,7 +2155,7 @@
         "layerCard": {
           "toggleable": true,
           "legend": {
-            "type": "swatch"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
@@ -2184,12 +2180,22 @@
       "id": "clms-burnt-area-ba-global-300m-daily-v3-cog-2-2",
       "name": "CLMS Burnt Area (BA) Global 300m daily V4 (WMTS) MONTHLY - FRACTION OF BURNED AREA",
       "isActive": false,
-      "timeframe": "Months",
+      "data": [
+        {
+          "url": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v4/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "BF",
+          "version": "1.0.0"
+        }
+      ],
       "meta": {
         "description": "Auto-generated description for CLMS Burnt Area (BA) Global 300m daily V3 (COG)",
         "attribution": {
           "text": "Data attribution not specified"
         },
+        "categories": [],
+        "units": "day",
         "colormaps": [
           {
             "min": 0,
@@ -2198,8 +2204,7 @@
             "name": "magma",
             "reverse": true
           }
-        ],
-        "units": "day"
+        ]
       },
       "layout": {
         "interfaceGroup": "Fire Dynamics",
@@ -2218,15 +2223,7 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v4/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "BF",
-          "version": "1.0.0"
-        }
-      ]
+      "timeframe": "Months"
     },
     {
       "id": "sst-monthly-anomaly-comparison-january-3",
@@ -2397,95 +2394,9 @@
       ]
     },
     {
-      "id": "net-biome-productivity-nbp-anomaly-2026-monthly",
-      "name": "Net Biome Productivity (NBP) Anomaly - July 2026",
+      "id": "net-biome-productivity-nbp-anomaly-2026-monthly-3",
+      "name": "Net Biome Productivity (NBP) Anomaly - July - December 2026",
       "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": ""
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -0.5,
-            "max": 0.5,
-            "steps": 5,
-            "name": "blackbody",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Net Biome Productivity - Forecast",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1782860400
-          ],
-          "bands": [
-            1
-          ]
-        }
-      ]
-    },
-    {
-      "id": "net-biome-productivity-nbp-anomaly-2026-monthly-2",
-      "name": "Net Biome Productivity (NBP) Anomaly - August 2026",
-      "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": ""
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -0.5,
-            "max": 0.5,
-            "steps": 5,
-            "name": "blackbody",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Net Biome Productivity - Forecast",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
@@ -2495,50 +2406,20 @@
             1785538800
           ],
           "bands": [
+            1
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1788217200
+          ],
+          "bands": [
             2
           ]
-        }
-      ]
-    },
-    {
-      "id": "net-biome-productivity-nbp-anomaly-2026-monthly-2-2",
-      "name": "Net Biome Productivity (NBP) Anomaly - September 2026",
-      "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": ""
         },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -0.5,
-            "max": 0.5,
-            "steps": 5,
-            "name": "blackbody",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Net Biome Productivity - Forecast",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
           "format": "cog",
@@ -2549,48 +2430,7 @@
           "bands": [
             3
           ]
-        }
-      ]
-    },
-    {
-      "id": "net-biome-productivity-nbp-anomaly-2026-monthly-2-2-2",
-      "name": "Net Biome Productivity (NBP) Anomaly - October 2026",
-      "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": ""
         },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -0.5,
-            "max": 0.5,
-            "steps": 5,
-            "name": "blackbody",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Net Biome Productivity - Forecast",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
           "format": "cog",
@@ -2601,48 +2441,7 @@
           "bands": [
             4
           ]
-        }
-      ]
-    },
-    {
-      "id": "net-biome-productivity-nbp-anomaly-2026-monthly-2-2-2-2",
-      "name": "Net Biome Productivity (NBP) Anomaly - November 2026",
-      "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": ""
         },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -0.5,
-            "max": 0.5,
-            "steps": 5,
-            "name": "blackbody",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Net Biome Productivity - Forecast",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
           "format": "cog",
@@ -2653,48 +2452,7 @@
           "bands": [
             5
           ]
-        }
-      ]
-    },
-    {
-      "id": "net-biome-productivity-nbp-anomaly-2026-monthly-2-2-2-2-2",
-      "name": "Net Biome Productivity (NBP) Anomaly - December 2026",
-      "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "",
-        "attribution": {
-          "text": ""
         },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -0.5,
-            "max": 0.5,
-            "steps": 5,
-            "name": "blackbody",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Net Biome Productivity - Forecast",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
           "format": "cog",
@@ -2706,7 +2464,41 @@
             6
           ]
         }
-      ]
+      ],
+      "meta": {
+        "description": "Spatial patterns of projected net biome production anomalies for July - December 2026. ",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -0.5,
+            "max": 0.5,
+            "steps": 5,
+            "name": "blackbody",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Net Biome Productivity - Forecast",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Months"
     },
     {
       "id": "burned-area-forecast-anomaly-202607-202612",
@@ -2714,16 +2506,16 @@
       "isActive": false,
       "timeframe": "Months",
       "meta": {
-        "description": "# ====== Burned_area_forecast_anomaly_202607-202612_05deg.nc ======== #\n-Positive values indicate increased burned area.\n    burned_area_anomaly_mean: Ensemble-mean monthly burned-area anomaly per grid cell [ha]. ",
+        "description": "# ====== Burned_area_forecast_anomaly_202607-202612_05deg.nc ======== #\n-Positive values indicate increased burned area.\n    burned_area_anomaly_mean: Ensemble-mean monthly burned-area anomaly per grid cell [ha].",
         "attribution": {
-          "text": ""
+          "text": "Data attribution not specified"
         },
         "categories": [],
-        "min": 1,
+        "min": -3000,
         "max": 3000,
         "colormaps": [
           {
-            "min": 1,
+            "min": -3000,
             "max": 3000,
             "steps": 10,
             "name": "inferno",
@@ -2742,7 +2534,7 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": false,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
