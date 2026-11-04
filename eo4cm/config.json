@@ -1,5 +1,5 @@
 {
-  "version": "1.1.1",
+  "version": "1.2.0.",
   "exportPrefix": "config",
   "layout": {
     "navigation": {
@@ -476,9 +476,34 @@
       "id": "ecuador",
       "name": "Ecuador",
       "isActive": false,
-      "data": [],
+      "data": [
+        {
+          "url": "https://gist.githubusercontent.com/GDF117/d0057a643bb5a4f546752a5d2aff8ef9/raw/894a044a40afb45f3a6ad3cfc8fd3ef482e59705/bbox_ecuador_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(202, 21, 207, 0.25)",
+              "stroke-color": "#ca15cf",
+              "stroke-width": 2
+            }
+          ]
+        },
+        {
+          "url": "https://gist.githubusercontent.com/GDF117/dbad317db4fda17a94cc51945cec0174/raw/460bbc2e0fbbcdc155959405ba0d9e1e2eb9a661/ecuador_areas_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2
+            }
+          ]
+        }
+      ],
       "meta": {
-        "description": "Auto-generated description for Ecuador",
+        "description": "**The Manabí (Ecuador)** territory features Chromic Luvisols characterized by high intrinsic natural fertility, but set within intricate, severely steep hilly chains. Despite the high fertility, the continuous iteration of corn monocultures paired with slash-and-burn practices collapses soil nutrients within just few years. This rapid degradation historically causes crop failure, land abandonment, and severe rural migration. Launched in 2019, the Ecuador project utilizes a multi-center operational scheme managed by the company Business & Development (B&D) alongside the university UNESUM (Universidad Estatal del Sur de Manabí) and various local cooperatives (such as FOCAZSUM, ASOPROSUCOT, Assosumaco and Engim). The intervention covers approximately 252 hectares, containing 176,630 geotagged and surveyed plants at an average density of 700 plants/ha. Due to the advanced agronomic expertise of the farmers, a bottom-up botanical selection model is applied. The plant species dataset is dominated by high-value cash crops and timber, specifically Coffee (162,685 plants), Banana (6,270), Orange (2,557), Cedar (2,316), Mahogany (2,060) and Inga (733). Planting flows accelerated exponentially from 2021, driven by spring peaks (March-May) corresponding to the monsoonal cycle.  \n\n\n**Treedom** manages the sites and provides all relevant in-situ data.",
         "attribution": {
           "text": "Data attribution not specified"
         },
@@ -508,9 +533,34 @@
       "id": "madagascar",
       "name": "Madagascar",
       "isActive": false,
-      "data": [],
+      "data": [
+        {
+          "url": "https://gist.githubusercontent.com/GDF117/c98b9f59be82a5042b2dae70e5342229/raw/7b753cb508aa1a92e029337d3673799bf38004d7/bbox_madagascar_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(202, 21, 207, 0.25)",
+              "stroke-color": "#ca15cf",
+              "stroke-width": 2
+            }
+          ]
+        },
+        {
+          "url": "https://gist.githubusercontent.com/GDF117/e779f16961fbe81b2d35248d819ad7ea/raw/36c4204ce04477fcba22c578795557eaa0afca4e/madagascar_areas_EPSG4326.geojson",
+          "format": "geojson",
+          "zIndex": 100,
+          "style": [
+            {
+              "fill-color": "rgba(25, 41, 148, 0.35)",
+              "stroke-color": "#27346e",
+              "stroke-width": 2
+            }
+          ]
+        }
+      ],
       "meta": {
-        "description": "Auto-generated description for Madagascar",
+        "description": "**Madagascar**: The pedological baseline is dominated by Orthic Ferralsols and Dystric Regosols, which are ancient, heavily leached soil matrices characterized by low to poor organic fertility. This fragility is severely exacerbated by anthropogenic degradation, such as surrounding the Marolambo Protected Area, where \"slash and burn\" practices continuously convert forests into sugarcane monocultures, while Ambositra's rural areas suffer from rice monocropping, leading to intense soil degradation. Initiated in 2021 with the organization Bondy, the **Madagascar** site spans approximately 84 hectares across multiple smallholders. The total operational scale consists of about 28.800 new trees planted and geotagged. The site has mortality rate of around 25-30%. Botanically, the system has 8 species planted since the first forestry plan in 2022 and it is dominated by Coffea arabica (7854), Cinnamomum verum (6607), Acacia Mangium (5411), Annona muricata (5057) Morinda citrifolia (1333), Siris (1199), Samanea saman (669), and Litchi chinensis (690).\n\n**Treedom** manages the sites and provides all relevant in-situ data.",
         "attribution": {
           "text": "Data attribution not specified"
         },
