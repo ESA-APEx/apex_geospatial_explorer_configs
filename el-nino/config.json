@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "exportPrefix": "config_DO-el-nino-dash_config",
+  "exportPrefix": "config_PG_el-nino-dash_config",
   "layout": {
     "navigation": {
       "logo": "https://raw.githubusercontent.com/Patrick1G/scratch/b5d0b3b664f0efa3ff941d7e4b18d2b6580697ac/esa_earthaction2.jpg",
@@ -17,6 +17,7 @@
   "interfaceGroups": [
     "Sea Surface Temperature",
     "Fire Dynamics",
+    "Carbon Emissions from Fires",
     "Soil Moisture",
     "Net Biome Productivity - Forecast",
     "Burned Area - Forecast Anomaly July - December 2026",
@@ -37,7 +38,7 @@
       -90,
       0
     ],
-    "projection": "EPSG:4326"
+    "projection": "EPSG:3857"
   },
   "workflows": [
     {
@@ -225,258 +226,6 @@
       "exclusivitySets": []
     },
     {
-      "id": "cci-sst-2",
-      "name": "CCI SST Anomalies 2026",
-      "isActive": true,
-      "timeframe": "Months",
-      "meta": {
-        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified",
-          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260215_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1771110000
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260315_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1773529200
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260415_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1776204000
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260515_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1778796000
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260615_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1781474400
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260715_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1784066400
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260815_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1786744800
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260915_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1789423200
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260115_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1768435200
-          ]
-        }
-      ]
-    },
-    {
-      "id": "cci-sst",
-      "name": "CCI SST Anomalies 2025",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250115_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1736895600
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250215_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1739574000
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250315_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1741993200
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250415_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1744668000
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250515_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1747260000
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250615_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1749938400
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250715_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1752530400
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250815_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1755208800
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250915_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1757887200
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20251015_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1760479200
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20251115_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1763161200
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20251215_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1765753200
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified",
-          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Months"
-    },
-    {
       "id": "sentinel",
       "name": "Sentinel",
       "isActive": false,
@@ -527,7 +276,55 @@
     {
       "id": "gfm-flood-monitoring-all",
       "name": "GFM flood monitoring - all",
-      "isActive": false,
+      "isActive": true,
+      "timeframe": "Days",
+      "defaultTimestamp": 1791849600,
+      "meta": {
+        "description": "The Global Flood Monitoring (GFM) product is a new component of the EU’s Copernicus Emergency Management Service (CEMS) that provides continuous monitoring of floods worldwide, by processing and analysing in near real-time (NRT) all incoming Synthetic Aperture Radar (SAR) imagery acquired by the EU’s Copernicus Sentinel-1 satellites, in Interferometric Wide Swath (IW) mode and as Ground Range Detected (GRD) products. The GFM product is designed to deliver, in NRT, critical information on ongoing floods events to users worldwide, including national authorities, emergency units, research centres, decision-makers and other stakeholders.",
+        "attribution": {
+          "text": "GFM flood monitoring: observed water extent, observed flood extent and observed flood extent footprint, shown together.",
+          "url": "https://extwiki.eodc.eu/en/GFM"
+        },
+        "categories": [
+          {
+            "color": "#E84C78",
+            "label": "Flood Extent",
+            "value": 0
+          },
+          {
+            "color": "#0584AA",
+            "label": "Water Extent",
+            "value": 1
+          },
+          {
+            "color": "#AB110E",
+            "label": "Flooding Detected - unusually high amount",
+            "value": 2
+          },
+          {
+            "color": "#659844",
+            "label": "Flooding Detected - not unusually high amount",
+            "value": 3
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Floods",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
       "data": [
         {
           "url": "https://geoserver.gfm.eodc.eu/geoserver/gfm/wms",
@@ -559,34 +356,7 @@
           },
           "useTimeParameter": true
         }
-      ],
-      "meta": {
-        "description": "The Global Flood Monitoring (GFM) product is a new component of the EU’s Copernicus Emergency Management Service (CEMS) that provides continuous monitoring of floods worldwide, by processing and analysing in near real-time (NRT) all incoming Synthetic Aperture Radar (SAR) imagery acquired by the EU’s Copernicus Sentinel-1 satellites, in Interferometric Wide Swath (IW) mode and as Ground Range Detected (GRD) products. The GFM product is designed to deliver, in NRT, critical information on ongoing floods events to users worldwide, including national authorities, emergency units, research centres, decision-makers and other stakeholders.",
-        "attribution": {
-          "text": "GFM flood monitoring: observed water extent, observed flood extent and observed flood extent footprint, shown together.",
-          "url": "https://extwiki.eodc.eu/en/GFM"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Floods",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Days",
-      "defaultTimestamp": 1791849600
+      ]
     },
     {
       "id": "world-settlement-footprint-evolution",
@@ -636,42 +406,6 @@
       "id": "soil-moisture-anomalies-2025",
       "name": "Soil Moisture Anomalies 2025 Time Series",
       "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "Monthly soil moisture anomalies, 2025.",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "min": -1,
-        "max": 1,
-        "colormaps": [
-          {
-            "min": -0.5,
-            "max": 0.5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Soil Moisture",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202501.tif",
@@ -769,15 +503,9 @@
             1765753200
           ]
         }
-      ]
-    },
-    {
-      "id": "soil-moisture-anomalies-2026",
-      "name": "Soil Moisture Anomalies 2026 Time Series",
-      "isActive": false,
-      "timeframe": "Months",
+      ],
       "meta": {
-        "description": "Monthly soil moisture anomalies, 2026.",
+        "description": "Monthly soil moisture anomalies, 2025.",
         "attribution": {
           "text": "Data attribution not specified"
         },
@@ -786,9 +514,9 @@
         "max": 1,
         "colormaps": [
           {
-            "min": -0.5,
-            "max": 0.5,
-            "steps": 50,
+            "min": -0.3,
+            "max": 0.3,
+            "steps": 10,
             "name": "rdbu",
             "reverse": true
           }
@@ -811,6 +539,12 @@
           }
         }
       },
+      "timeframe": "Months"
+    },
+    {
+      "id": "soil-moisture-anomalies-2026",
+      "name": "Soil Moisture Anomalies 2026 Time Series",
+      "isActive": false,
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202601.tif",
@@ -884,17 +618,24 @@
             1789423200
           ]
         }
-      ]
-    },
-    {
-      "id": "soil-moisture-daily",
-      "name": "Soil Moisture Daily",
-      "isActive": false,
+      ],
       "meta": {
-        "description": "Auto-generated description for Soil Moisture Daily",
+        "description": "Monthly soil moisture anomalies, 2026.",
         "attribution": {
           "text": "Data attribution not specified"
-        }
+        },
+        "categories": [],
+        "min": -1,
+        "max": 1,
+        "colormaps": [
+          {
+            "min": -0.3,
+            "max": 0.3,
+            "steps": 10,
+            "name": "rdbu",
+            "reverse": true
+          }
+        ]
       },
       "layout": {
         "interfaceGroup": "Soil Moisture",
@@ -902,7 +643,7 @@
         "layerCard": {
           "toggleable": true,
           "legend": {
-            "type": "swatch"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
@@ -913,6 +654,12 @@
           }
         }
       },
+      "timeframe": "Months"
+    },
+    {
+      "id": "soil-moisture-daily",
+      "name": "Soil Moisture Daily",
+      "isActive": false,
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Anomalies/daily_anomalies_cog_anomaly.tif",
@@ -939,7 +686,31 @@
             22
           ]
         }
-      ]
+      ],
+      "meta": {
+        "description": "Auto-generated description for Soil Moisture Daily",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": []
+      },
+      "layout": {
+        "interfaceGroup": "Soil Moisture",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      }
     },
     {
       "id": "soil-water-index-destine-eden",
@@ -1603,541 +1374,18 @@
       "isSwipeLayer": true
     },
     {
-      "id": "sst-monthly-anomaly-comparison-january",
-      "name": "January 2025 vs 2026 SST Anomalies",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250115_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "left"
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260115_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "right"
-        }
-      ],
-      "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison January 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ],
-      "isSwipeLayer": true
-    },
-    {
-      "id": "sst-monthly-anomaly-comparison-january-2",
-      "name": "February 2025 vs 2026 SST Anomalies",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250215_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "left"
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260215_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "right"
-        }
-      ],
-      "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison February 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ],
-      "isSwipeLayer": true
-    },
-    {
-      "id": "sst-monthly-anomaly-comparison-march",
-      "name": "March 2025 vs 2026 SST Anomalies",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250315_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "left"
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260315_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "right"
-        }
-      ],
-      "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison March 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ],
-      "isSwipeLayer": true
-    },
-    {
-      "id": "sst-monthly-anomaly-comparison-april",
-      "name": "April 2025 vs 2026 SST Anomalies",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250415_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "left"
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260415_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "right"
-        }
-      ],
-      "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison April 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ],
-      "isSwipeLayer": true
-    },
-    {
-      "id": "sst-monthly-anomaly-comparison-may",
-      "name": "May 2025 vs 2026 SST Anomalies",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250515_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "left"
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260515_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "right"
-        }
-      ],
-      "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison May 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ],
-      "isSwipeLayer": true
-    },
-    {
-      "id": "sst-monthly-anomaly-comparison-january-2-2",
-      "name": "June 2025 vs 2026 SST Anomalies",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250615_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "left"
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260615_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "right"
-        }
-      ],
-      "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison June 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ],
-      "isSwipeLayer": true
-    },
-    {
-      "id": "sst-monthly-anomaly-comparison-july",
-      "name": "July 2025 vs 2026 SST Anomalies",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250715_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "left"
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260715_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "right"
-        }
-      ],
-      "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison July 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ],
-      "isSwipeLayer": true
-    },
-    {
-      "id": "sst-monthly-anomaly-comparison-august",
-      "name": "August 2025 vs 2026 SST Anomalies",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250815_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "left"
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260815_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "right"
-        }
-      ],
-      "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison August 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ],
-      "isSwipeLayer": true
-    },
-    {
-      "id": "sst-monthly-anomaly-comparison-september",
-      "name": "September 2025 vs 2026 SST Anomalies",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250915_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "left"
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260915_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "right"
-        }
-      ],
-      "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison September 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ],
-      "isSwipeLayer": true
-    },
-    {
       "id": "clms-burnt-area-ba-global-300m-daily-v3-cog-2",
       "name": "CLMS Burnt Area (BA) Global 300m daily V4 (WMTS) ANNUAL - DAY OF BURN",
       "isActive": false,
-      "timeframe": "Years",
+      "data": [
+        {
+          "url": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v4/",
+          "format": "wmts",
+          "zIndex": 50,
+          "layers": "DOB",
+          "version": "1.0.0"
+        }
+      ],
       "meta": {
         "description": "Auto-generated description for CLMS Burnt Area (BA) Global 300m daily V3 (COG)",
         "attribution": {
@@ -2147,7 +1395,8 @@
         "units": "day",
         "min": 1,
         "max": 365,
-        "colormaps": []
+        "startColor": "#000000",
+        "endColor": "#ffffff"
       },
       "layout": {
         "interfaceGroup": "Fire Dynamics",
@@ -2166,15 +1415,7 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v4/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "DOB",
-          "version": "1.0.0"
-        }
-      ]
+      "timeframe": "Months"
     },
     {
       "id": "clms-burnt-area-ba-global-300m-daily-v3-cog-2-2",
@@ -2226,180 +1467,12 @@
       "timeframe": "Months"
     },
     {
-      "id": "sst-monthly-anomaly-comparison-january-3",
-      "name": "January 2026",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250115_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260115_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for SST Monthly Anomaly Comparison January",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ]
-    },
-    {
-      "id": "sst-monthly-anomaly-comparison-january-2-3",
-      "name": "February 2026",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250215_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260215_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for SST Monthly Anomaly Comparison January",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ]
-    },
-    {
-      "id": "sst-monthly-anomaly-comparison-january-2-2-2",
-      "name": "June 2026",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20250615_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_Anomalies/20260615_regridded_cog_sst_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for SST Monthly Anomaly Comparison January",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "subinterfaceGroup": "SST Monthly Comparisons 2025 - 2026",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ]
-    },
-    {
       "id": "net-biome-productivity-nbp-anomaly-2026-monthly-3",
       "name": "Net Biome Productivity (NBP) Anomaly - July - December 2026",
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model_forecasts_july–december-2026_reprojected/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG_3857.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -2410,7 +1483,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model_forecasts_july–december-2026_reprojected/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG_3857.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -2421,7 +1494,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model_forecasts_july–december-2026_reprojected/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG_3857.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -2432,7 +1505,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model_forecasts_july–december-2026_reprojected/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG_3857.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -2443,7 +1516,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model_forecasts_july–december-2026_reprojected/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG_3857.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -2454,7 +1527,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model forecasts_july–december-2026/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model_forecasts_july–december-2026_reprojected/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG_3857.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -2466,17 +1539,24 @@
         }
       ],
       "meta": {
-        "description": "Spatial patterns of projected net biome production anomalies for July - December 2026. ",
+        "description": "Spatial patterns of projected net biome production anomalies for July - December 2026.",
         "attribution": {
           "text": "Data attribution not specified"
         },
         "categories": [],
         "colormaps": [
           {
-            "min": -0.5,
-            "max": 0.5,
-            "steps": 5,
-            "name": "blackbody",
+            "min": -0.25,
+            "max": 0,
+            "steps": 10,
+            "name": "turbidity",
+            "reverse": false
+          },
+          {
+            "min": 0,
+            "max": 0.25,
+            "steps": 10,
+            "name": "greens",
             "reverse": true
           }
         ]
@@ -2504,42 +1584,6 @@
       "id": "burned-area-forecast-anomaly-202607-202612",
       "name": "Burned_area_forecast_anomaly_202607-202612",
       "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "# ====== Burned_area_forecast_anomaly_202607-202612_05deg.nc ======== #\n-Positive values indicate increased burned area.\n    burned_area_anomaly_mean: Ensemble-mean monthly burned-area anomaly per grid cell [ha].",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "min": -3000,
-        "max": 3000,
-        "colormaps": [
-          {
-            "min": -3000,
-            "max": 3000,
-            "steps": 10,
-            "name": "inferno",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Burned Area - Forecast Anomaly July - December 2026",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Burned_area_forecast_anomaly_202607-202612_05deg_COG.tif",
@@ -2604,7 +1648,1320 @@
             1796083200
           ]
         }
+      ],
+      "meta": {
+        "description": "# ====== Burned_area_forecast_anomaly_202607-202612_05deg.nc ======== #\n-Positive values indicate increased burned area.\n    burned_area_anomaly_mean: Ensemble-mean monthly burned-area anomaly per grid cell [ha].",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "min": -3000,
+        "max": 3000,
+        "colormaps": [
+          {
+            "min": -3000,
+            "max": 3000,
+            "steps": 10,
+            "name": "inferno",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Burned Area - Forecast Anomaly July - December 2026",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Months"
+    },
+    {
+      "id": "country-statistics-3857",
+      "name": "Cumulative fire carbon emissions - Global Fire Emissions Database (GFED)",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/El-NINO-DEMO/CO2-emmissions/countries_3857.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50
+        }
+      ],
+      "charts": [
+        {
+          "chartType": "xy",
+          "title": "GFED Cumulative Fire Carbon Emissions",
+          "subtitle": "2026 highlighted",
+          "x": "MONTH-DAY",
+          "traces": [
+            {
+              "y": "2001",
+              "name": "2001",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2002",
+              "name": "2002",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2003",
+              "name": "2003",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2004",
+              "name": "2004",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2005",
+              "name": "2005",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2006",
+              "name": "2006",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2007",
+              "name": "2007",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2008",
+              "name": "2008",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2009",
+              "name": "2009",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2010",
+              "name": "2010",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2011",
+              "name": "2011",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2012",
+              "name": "2012",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2013",
+              "name": "2013",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2014",
+              "name": "2014",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2015",
+              "name": "2015",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2016",
+              "name": "2016",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2017",
+              "name": "2017",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2018",
+              "name": "2018",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2019",
+              "name": "2019",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2020",
+              "name": "2020",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2021",
+              "name": "2021",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2022",
+              "name": "2022",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2023",
+              "name": "2023",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2025",
+              "name": "2025",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "2024",
+              "name": "2024",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#c4c4c4",
+                "width": 2
+              },
+              "showlegend": false
+            },
+            {
+              "y": "Mean",
+              "name": "Mean",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#0000ff",
+                "width": 3
+              },
+              "marker": {
+                "size": 2,
+                "color": "#0000ff"
+              },
+              "showlegend": true
+            },
+            {
+              "y": "2026",
+              "name": "2026",
+              "type": "scatter",
+              "mode": "lines",
+              "line": {
+                "color": "#ff0000",
+                "width": 3
+              },
+              "marker": {
+                "size": 2,
+                "color": "#ff0000"
+              },
+              "showlegend": true
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "legend": {
+              "x": 0.5,
+              "y": 1,
+              "xanchor": "center",
+              "yanchor": "top",
+              "orientation": "h"
+            },
+            "xaxis": {
+              "type": "-",
+              "showgrid": true
+            },
+            "yaxis": {
+              "title": {
+                "text": "Emissions (Mt C)"
+              }
+            }
+          },
+          "sources": [
+            {
+              "type": "lookupURL",
+              "field": "CO2-emissions-csv",
+              "format": "csv",
+              "label": "Data lookup via CO2-emissions-CSV URL"
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Example configuration of a GeoJSON layer from external source",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "fields": {
+          "name": {
+            "order": 1
+          },
+          "ISO3166-1-Alpha-3": {
+            "order": 2
+          },
+          "ISO3166-1-Alpha-2": {
+            "order": 3
+          },
+          "CO2-emissions-csv": {
+            "order": 4
+          }
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Emissions from Fires",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "isBaseLayer": false
+    },
+    {
+      "id": "cci-sst-anomalies-2026-imported",
+      "name": "CCI SST - 2026 Monthly Anomalies",
+      "isActive": true,
+      "timeframe": "Months",
+      "meta": {
+        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260215_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1771110000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260315_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1773529200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260415_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1776204000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260515_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1778796000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260615_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1781474400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260715_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1784066400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260815_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1786744800
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260915_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1789423200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260115_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1768435200
+          ]
+        }
+      ],
+      "charts": [
+        {
+          "chartType": "xy",
+          "title": "SST anomaly monthly 2026",
+          "traces": [
+            {
+              "name": "Value",
+              "type": "scatter",
+              "mode": "lines+markers",
+              "marker": {
+                "symbol": "square",
+                "size": 10,
+                "color": "#01a999"
+              },
+              "line": {
+                "color": "#0b1d26",
+                "dash": "dash"
+              },
+              "fill": "none"
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "xaxis": {
+              "type": "category",
+              "title": {
+                "text": "Date"
+              }
+            },
+            "yaxis": {
+              "title": {
+                "text": "SST Anomaly"
+              }
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelTimeSeries",
+              "bandIndex": 0
+            }
+          ]
+        }
       ]
+    },
+    {
+      "id": "cci-sst-anomalies-2025-imported",
+      "name": "CCI SST - 2025 Monthly Anomalies",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250115_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1736895600
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250215_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1739574000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250315_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1741993200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250415_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1744668000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250515_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1747260000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250615_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1749938400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250715_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1752530400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250815_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1755208800
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250915_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1757887200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20251015_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1760479200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20251115_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1763161200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20251215_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1765753200
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Months",
+      "isBaseLayer": false,
+      "charts": [
+        {
+          "chartType": "xy",
+          "title": "SST anomaly monthly 2026",
+          "traces": [
+            {
+              "name": "Value",
+              "type": "scatter",
+              "mode": "lines+markers",
+              "marker": {
+                "symbol": "square",
+                "size": 10,
+                "color": "#01a999"
+              },
+              "line": {
+                "color": "#0b1d26",
+                "dash": "dash"
+              },
+              "fill": "none"
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "xaxis": {
+              "type": "category",
+              "title": {
+                "text": "Date"
+              }
+            },
+            "yaxis": {
+              "title": {
+                "text": "SST Anomaly"
+              }
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelTimeSeries",
+              "bandIndex": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "january-2025-vs-2026-sst-anomalies-imported",
+      "name": "January 2025 vs 2026 SST Anomalies",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250115_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260115_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "**Sea Surface Temperature Anomaly comparison January 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "subinterfaceGroup": "SST anomaly - monthly comparison 2025 - 2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "isSwipeLayer": true,
+      "isBaseLayer": false
+    },
+    {
+      "id": "february-2025-vs-2026-sst-anomalies-imported",
+      "name": "February 2025 vs 2026 SST Anomalies",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250215_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260215_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "**Sea Surface Temperature Anomaly comparison February 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "subinterfaceGroup": "SST anomaly - monthly comparison 2025 - 2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "isSwipeLayer": true,
+      "isBaseLayer": false
+    },
+    {
+      "id": "march-2025-vs-2026-sst-anomalies-imported",
+      "name": "March 2025 vs 2026 SST Anomalies",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250315_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260315_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "**Sea Surface Temperature Anomaly comparison March 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "subinterfaceGroup": "SST anomaly - monthly comparison 2025 - 2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "isSwipeLayer": true,
+      "isBaseLayer": false
+    },
+    {
+      "id": "april-2025-vs-2026-sst-anomalies-imported",
+      "name": "April 2025 vs 2026 SST Anomalies",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250415_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260415_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "**Sea Surface Temperature Anomaly comparison April 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "subinterfaceGroup": "SST anomaly - monthly comparison 2025 - 2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "isSwipeLayer": true,
+      "isBaseLayer": false
+    },
+    {
+      "id": "may-2025-vs-2026-sst-anomalies-imported",
+      "name": "May 2025 vs 2026 SST Anomalies",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250515_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260515_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "**Sea Surface Temperature Anomaly comparison May 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "subinterfaceGroup": "SST anomaly - monthly comparison 2025 - 2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "isSwipeLayer": true,
+      "isBaseLayer": false
+    },
+    {
+      "id": "june-2025-vs-2026-sst-anomalies-imported",
+      "name": "June 2025 vs 2026 SST Anomalies",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250615_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260615_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "**Sea Surface Temperature Anomaly comparison June 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "subinterfaceGroup": "SST anomaly - monthly comparison 2025 - 2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "isSwipeLayer": true,
+      "isBaseLayer": false
+    },
+    {
+      "id": "july-2025-vs-2026-sst-anomalies-imported",
+      "name": "July 2025 vs 2026 SST Anomalies",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250715_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260715_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "**Sea Surface Temperature Anomaly comparison July 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "subinterfaceGroup": "SST anomaly - monthly comparison 2025 - 2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "isSwipeLayer": true,
+      "isBaseLayer": false
+    },
+    {
+      "id": "august-2025-vs-2026-sst-anomalies-imported",
+      "name": "August 2025 vs 2026 SST Anomalies",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250815_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260815_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "**Sea Surface Temperature Anomaly comparison August 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "subinterfaceGroup": "SST anomaly - monthly comparison 2025 - 2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "isSwipeLayer": true,
+      "isBaseLayer": false
+    },
+    {
+      "id": "september-2025-vs-2026-sst-anomalies-imported",
+      "name": "September 2025 vs 2026 SST Anomalies",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250915_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260915_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "**Sea Surface Temperature Anomaly comparison September 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "subinterfaceGroup": "SST anomaly - monthly comparison 2025 - 2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "isSwipeLayer": true,
+      "isBaseLayer": false
     }
   ]
 }
