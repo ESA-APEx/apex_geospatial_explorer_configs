@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "exportPrefix": "config_PG_el-nino-dash_config",
+  "exportPrefix": "config_JW_el-nino-dash_config",
   "layout": {
     "navigation": {
       "logo": "https://raw.githubusercontent.com/Patrick1G/scratch/b5d0b3b664f0efa3ff941d7e4b18d2b6580697ac/esa_earthaction2.jpg",
@@ -8,9 +8,9 @@
     },
     "theme": {
       "primary-color": "#0b1d26",
-      "secondary-color": "#335e6f",
+      "secondary-color": "#222222",
       "background-color": "#ffffff",
-      "text-color-primary": "#00ae9d",
+      "text-color-primary": "#ffffff",
       "text-color-secondary": "#003247"
     }
   },
@@ -27,7 +27,8 @@
   ],
   "exclusivitySets": [
     "monthly-sst-swipe",
-    "monthly-soil-moisture-swipe"
+    "monthly-soil-moisture-swipe",
+    "monthly-burned-fraction"
   ],
   "settings": {
     "layerFetchTimeoutMs": 15000
@@ -276,7 +277,7 @@
     {
       "id": "gfm-flood-monitoring-all",
       "name": "GFM flood monitoring - all",
-      "isActive": true,
+      "isActive": false,
       "timeframe": "Days",
       "defaultTimestamp": 1791849600,
       "meta": {
@@ -408,7 +409,7 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202501.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202501.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -416,7 +417,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202502.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202502.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -424,7 +425,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202503.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202503.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -432,7 +433,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202504.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202504.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -440,7 +441,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202505.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202505.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -448,7 +449,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202506.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202506.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -456,7 +457,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202507.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202507.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -464,7 +465,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202508.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202508.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -472,7 +473,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202509.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202509.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -480,7 +481,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202510.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202510.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -488,7 +489,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202511.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202511.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -496,7 +497,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202512.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202512.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -516,7 +517,7 @@
           {
             "min": -0.3,
             "max": 0.3,
-            "steps": 10,
+            "steps": 6,
             "name": "rdbu",
             "reverse": true
           }
@@ -547,7 +548,7 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202601.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202601.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -555,7 +556,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202602.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202602.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -563,7 +564,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202603.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202603.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -571,7 +572,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202604.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202604.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -579,7 +580,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202605.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202605.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -587,7 +588,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202606.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202606.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -595,7 +596,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202607.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202607.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -603,7 +604,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202608.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202608.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -611,7 +612,7 @@
           ]
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202609.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202609.tif",
           "format": "cog",
           "zIndex": 50,
           "timestamps": [
@@ -830,13 +831,13 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202501.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202501.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "left"
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202601.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202601.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "right"
@@ -852,8 +853,8 @@
         "max": 1,
         "colormaps": [
           {
-            "min": -0.5,
-            "max": 0.5,
+            "min": -0.3,
+            "max": 0.3,
             "steps": 50,
             "name": "rdbu",
             "reverse": true
@@ -891,13 +892,13 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202502.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202502.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "left"
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202602.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202602.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "right"
@@ -913,8 +914,8 @@
         "max": 1,
         "colormaps": [
           {
-            "min": -0.5,
-            "max": 0.5,
+            "min": -0.3,
+            "max": 0.3,
             "steps": 50,
             "name": "rdbu",
             "reverse": true
@@ -952,13 +953,13 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202503.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202503.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "left"
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202603.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202603.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "right"
@@ -974,8 +975,8 @@
         "max": 1,
         "colormaps": [
           {
-            "min": -0.5,
-            "max": 0.5,
+            "min": -0.3,
+            "max": 0.3,
             "steps": 50,
             "name": "rdbu",
             "reverse": true
@@ -1013,13 +1014,13 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202504.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202504.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "left"
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202604.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202604.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "right"
@@ -1035,8 +1036,8 @@
         "max": 1,
         "colormaps": [
           {
-            "min": -0.5,
-            "max": 0.5,
+            "min": -0.3,
+            "max": 0.3,
             "steps": 50,
             "name": "rdbu",
             "reverse": true
@@ -1074,13 +1075,13 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202505.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202505.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "left"
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202605.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202605.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "right"
@@ -1096,8 +1097,8 @@
         "max": 1,
         "colormaps": [
           {
-            "min": -0.5,
-            "max": 0.5,
+            "min": -0.3,
+            "max": 0.3,
             "steps": 50,
             "name": "rdbu",
             "reverse": true
@@ -1135,13 +1136,13 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202506.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202506.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "left"
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202606.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202606.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "right"
@@ -1157,8 +1158,8 @@
         "max": 1,
         "colormaps": [
           {
-            "min": -0.5,
-            "max": 0.5,
+            "min": -0.3,
+            "max": 0.3,
             "steps": 50,
             "name": "rdbu",
             "reverse": true
@@ -1196,13 +1197,13 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202507.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202507.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "left"
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202607.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202607.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "right"
@@ -1218,8 +1219,8 @@
         "max": 1,
         "colormaps": [
           {
-            "min": -0.5,
-            "max": 0.5,
+            "min": -0.3,
+            "max": 0.3,
             "steps": 50,
             "name": "rdbu",
             "reverse": true
@@ -1257,13 +1258,13 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202508.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202508.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "left"
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202608.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202608.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "right"
@@ -1279,8 +1280,8 @@
         "max": 1,
         "colormaps": [
           {
-            "min": -0.5,
-            "max": 0.5,
+            "min": -0.3,
+            "max": 0.3,
             "steps": 50,
             "name": "rdbu",
             "reverse": true
@@ -1318,13 +1319,13 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202509.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202509.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "left"
         },
         {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies/monthly_anomalies_cog_anomaly_202609.tif",
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Soil_Moisture_Monthly_Anomalies_4326/monthly_anomalies_cog_anomaly_202609.tif",
           "format": "cog",
           "zIndex": 50,
           "position": "right"
@@ -1340,8 +1341,8 @@
         "max": 1,
         "colormaps": [
           {
-            "min": -0.5,
-            "max": 0.5,
+            "min": -0.3,
+            "max": 0.3,
             "steps": 50,
             "name": "rdbu",
             "reverse": true
@@ -1416,6 +1417,160 @@
         }
       },
       "timeframe": "Months"
+    },
+    {
+      "id": "clms-daily-burned-fraction-timeseries-animation-2025",
+      "name": "CLMS Daily Burned Fraction Timeseries Animation 2025",
+      "isActive": false,
+      "timeframe": "Days",
+      "meta": {
+        "description": "Auto-generated description for CLMS Daily Burned Fraction Timeseries Animation 2025",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ],
+        "min": 0,
+        "max": 1000
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "contentLocation": "infoPanel",
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        },
+        "layerCard": {
+          "toggleable": true
+        }
+      },
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1790805600
+          ],
+          "bands": [
+            1
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1790892000
+          ],
+          "bands": [
+            2
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1790978400
+          ],
+          "bands": [
+            3
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1791064800
+          ],
+          "bands": [
+            4
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1791151200
+          ],
+          "bands": [
+            5
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1791237600
+          ],
+          "bands": [
+            6
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1791324000
+          ],
+          "bands": [
+            7
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1791410400
+          ],
+          "bands": [
+            8
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1791496800
+          ],
+          "bands": [
+            9
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1791583200
+          ],
+          "bands": [
+            10
+          ]
+        }
+      ]
     },
     {
       "id": "clms-burnt-area-ba-global-300m-daily-v3-cog-2-2",
@@ -2086,41 +2241,6 @@
       "id": "cci-sst-anomalies-2026-imported",
       "name": "CCI SST - 2026 Monthly Anomalies",
       "isActive": true,
-      "timeframe": "Months",
-      "meta": {
-        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified",
-          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260215_regridded_sst_cog_anomaly.tif",
@@ -2204,26 +2324,26 @@
               "name": "Value",
               "type": "scatter",
               "mode": "lines+markers",
-              "marker": {
-                "symbol": "square",
-                "size": 10,
-                "color": "#01a999"
-              },
+              "fill": "none",
               "line": {
                 "color": "#0b1d26",
                 "dash": "dash"
               },
-              "fill": "none"
+              "marker": {
+                "size": 10,
+                "color": "#01a999",
+                "symbol": "square"
+              }
             }
           ],
           "layout": {
             "height": 400,
             "showlegend": true,
             "xaxis": {
-              "type": "category",
               "title": {
                 "text": "Date"
-              }
+              },
+              "type": "category"
             },
             "yaxis": {
               "title": {
@@ -2238,7 +2358,45 @@
             }
           ]
         }
-      ]
+      ],
+      "meta": {
+        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "attribution": {
+          "text": "Data attribution not specified",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "timeframe": "Months"
     },
     {
       "id": "cci-sst-anomalies-2025-imported",
@@ -2342,6 +2500,50 @@
           ]
         }
       ],
+      "charts": [
+        {
+          "chartType": "xy",
+          "title": "SST anomaly monthly 2026",
+          "traces": [
+            {
+              "name": "Value",
+              "type": "scatter",
+              "mode": "lines+markers",
+              "fill": "none",
+              "line": {
+                "color": "#0b1d26",
+                "dash": "dash"
+              },
+              "marker": {
+                "size": 10,
+                "color": "#01a999",
+                "symbol": "square"
+              }
+            }
+          ],
+          "layout": {
+            "height": 400,
+            "showlegend": true,
+            "xaxis": {
+              "title": {
+                "text": "Date"
+              },
+              "type": "category"
+            },
+            "yaxis": {
+              "title": {
+                "text": "SST Anomaly"
+              }
+            }
+          },
+          "sources": [
+            {
+              "type": "pixelTimeSeries",
+              "bandIndex": 0
+            }
+          ]
+        }
+      ],
       "meta": {
         "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
         "attribution": {
@@ -2376,52 +2578,10 @@
           }
         }
       },
-      "timeframe": "Months",
-      "isBaseLayer": false,
-      "charts": [
-        {
-          "chartType": "xy",
-          "title": "SST anomaly monthly 2026",
-          "traces": [
-            {
-              "name": "Value",
-              "type": "scatter",
-              "mode": "lines+markers",
-              "marker": {
-                "symbol": "square",
-                "size": 10,
-                "color": "#01a999"
-              },
-              "line": {
-                "color": "#0b1d26",
-                "dash": "dash"
-              },
-              "fill": "none"
-            }
-          ],
-          "layout": {
-            "height": 400,
-            "showlegend": true,
-            "xaxis": {
-              "type": "category",
-              "title": {
-                "text": "Date"
-              }
-            },
-            "yaxis": {
-              "title": {
-                "text": "SST Anomaly"
-              }
-            }
-          },
-          "sources": [
-            {
-              "type": "pixelTimeSeries",
-              "bandIndex": 0
-            }
-          ]
-        }
-      ]
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "timeframe": "Months"
     },
     {
       "id": "january-2025-vs-2026-sst-anomalies-imported",
@@ -2477,11 +2637,11 @@
           }
         }
       },
+      "isBaseLayer": false,
       "exclusivitySets": [
         "monthly-sst-swipe"
       ],
-      "isSwipeLayer": true,
-      "isBaseLayer": false
+      "isSwipeLayer": true
     },
     {
       "id": "february-2025-vs-2026-sst-anomalies-imported",
@@ -2537,11 +2697,11 @@
           }
         }
       },
+      "isBaseLayer": false,
       "exclusivitySets": [
         "monthly-sst-swipe"
       ],
-      "isSwipeLayer": true,
-      "isBaseLayer": false
+      "isSwipeLayer": true
     },
     {
       "id": "march-2025-vs-2026-sst-anomalies-imported",
@@ -2597,11 +2757,11 @@
           }
         }
       },
+      "isBaseLayer": false,
       "exclusivitySets": [
         "monthly-sst-swipe"
       ],
-      "isSwipeLayer": true,
-      "isBaseLayer": false
+      "isSwipeLayer": true
     },
     {
       "id": "april-2025-vs-2026-sst-anomalies-imported",
@@ -2657,11 +2817,11 @@
           }
         }
       },
+      "isBaseLayer": false,
       "exclusivitySets": [
         "monthly-sst-swipe"
       ],
-      "isSwipeLayer": true,
-      "isBaseLayer": false
+      "isSwipeLayer": true
     },
     {
       "id": "may-2025-vs-2026-sst-anomalies-imported",
@@ -2717,11 +2877,11 @@
           }
         }
       },
+      "isBaseLayer": false,
       "exclusivitySets": [
         "monthly-sst-swipe"
       ],
-      "isSwipeLayer": true,
-      "isBaseLayer": false
+      "isSwipeLayer": true
     },
     {
       "id": "june-2025-vs-2026-sst-anomalies-imported",
@@ -2777,11 +2937,11 @@
           }
         }
       },
+      "isBaseLayer": false,
       "exclusivitySets": [
         "monthly-sst-swipe"
       ],
-      "isSwipeLayer": true,
-      "isBaseLayer": false
+      "isSwipeLayer": true
     },
     {
       "id": "july-2025-vs-2026-sst-anomalies-imported",
@@ -2837,11 +2997,11 @@
           }
         }
       },
+      "isBaseLayer": false,
       "exclusivitySets": [
         "monthly-sst-swipe"
       ],
-      "isSwipeLayer": true,
-      "isBaseLayer": false
+      "isSwipeLayer": true
     },
     {
       "id": "august-2025-vs-2026-sst-anomalies-imported",
@@ -2897,11 +3057,11 @@
           }
         }
       },
+      "isBaseLayer": false,
       "exclusivitySets": [
         "monthly-sst-swipe"
       ],
-      "isSwipeLayer": true,
-      "isBaseLayer": false
+      "isSwipeLayer": true
     },
     {
       "id": "september-2025-vs-2026-sst-anomalies-imported",
@@ -2957,11 +3117,851 @@
           }
         }
       },
+      "isBaseLayer": false,
       "exclusivitySets": [
         "monthly-sst-swipe"
       ],
-      "isSwipeLayer": true,
-      "isBaseLayer": false
+      "isSwipeLayer": true
+    },
+    {
+      "id": "january-2025-2026",
+      "name": "January 2025/2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202501_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202601_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for January 2025/2026",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "%",
+        "min": 1,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "subinterfaceGroup": "CLMS Fraction of Burned Area Monthly Comparison 2025/2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "id": "february-2025-2026-2",
+      "name": "February 2025/2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202502_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202602_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for February 2025/2026",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "%",
+        "min": 1,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "subinterfaceGroup": "CLMS Fraction of Burned Area Monthly Comparison 2025/2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "id": "march-2025-2026",
+      "name": "March 2025/2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202503_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202603_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for March 2025/2026",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "%",
+        "min": 1,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "subinterfaceGroup": "CLMS Fraction of Burned Area Monthly Comparison 2025/2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "id": "april-2025-2026",
+      "name": "April 2025/2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202504_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202604_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for April 2025/2026",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "%",
+        "min": 1,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "subinterfaceGroup": "CLMS Fraction of Burned Area Monthly Comparison 2025/2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "id": "may-2025-2026",
+      "name": "May 2025/2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202505_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202605_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for May 2025/2026",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "%",
+        "min": 1,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "subinterfaceGroup": "CLMS Fraction of Burned Area Monthly Comparison 2025/2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "id": "june-2025-2026",
+      "name": "June 2025/2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202506_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202606_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for June 2025/2026",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "%",
+        "min": 1,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "subinterfaceGroup": "CLMS Fraction of Burned Area Monthly Comparison 2025/2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "id": "july-2025-2026",
+      "name": "July 2025/2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202507_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202607_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for July 2025/2026",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "%",
+        "min": 1,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "subinterfaceGroup": "CLMS Fraction of Burned Area Monthly Comparison 2025/2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "id": "august-2025-2026",
+      "name": "August 2025/2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202508_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202608_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for August 2025/2026",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "%",
+        "min": 1,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "subinterfaceGroup": "CLMS Fraction of Burned Area Monthly Comparison 2025/2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "id": "september-2025-2026",
+      "name": "September 2025/2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202509_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202609_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for September 2025/2026",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "%",
+        "min": 1,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "subinterfaceGroup": "CLMS Fraction of Burned Area Monthly Comparison 2025/2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "id": "october-2025-2026",
+      "name": "October 2025/2026",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202510_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202610_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
+      ],
+      "meta": {
+        "description": "Auto-generated description for October 2025/2026",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "%",
+        "min": 1,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "subinterfaceGroup": "CLMS Fraction of Burned Area Monthly Comparison 2025/2026",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "isSwipeLayer": true
+    },
+    {
+      "id": "clms-burnt-area-ba-global-300m-daily-v4-cog",
+      "name": "CLMS Burnt Area (BA) Global 300m daily V4 (COG) MONTHLY - FRACTION OF BURNED AREA",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202501_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1736895600
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202502_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1739574000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202503_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1741993200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202504_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1744668000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202505_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1747260000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202506_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1749938400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202507_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1752530400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202508_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1755208800
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202509_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1757887200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202510_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1760479200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202511_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1763161200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202512_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1765753200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202601_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1768431600
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202602_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1771110000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202603_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1773529200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202604_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1776204000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202605_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1778796000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202606_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1781474400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202607_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1784066400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202608_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1786744800
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202609_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1789423200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202610_BF.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1792015200
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Monthly product computed directly from Daily NRT data.",
+        "attribution": {
+          "text": "Data attribution not specified"
+        },
+        "categories": [],
+        "units": "percent",
+        "min": 0,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "timeframe": "Months"
     }
   ]
 }
