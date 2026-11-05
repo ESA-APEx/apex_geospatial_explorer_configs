@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "exportPrefix": "config_sdgs",
   "layout": {
     "navigation": {
@@ -26,12 +26,6 @@
     "projection": "EPSG:3857"
   },
   "services": [
-    {
-      "id": "wms-service-1773221733420",
-      "name": "VITO Terrascope",
-      "url": "https://services.terrascope.be/wms/v2",
-      "format": "wms"
-    },
     {
       "id": "wms-service-1773221734846",
       "name": "Copernicus Urban Atlas",
@@ -93,9 +87,33 @@
       "format": "stac"
     },
     {
-      "id": "wms-service-1773221742316",
-      "name": "CLMS WMS Server",
-      "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+      "id": "wms-terrascope-mapproxy",
+      "name": "Terrascope MapProxy (WorldCover)",
+      "url": "https://mapproxy.terrascope.be/mapproxy/service",
+      "format": "wms"
+    },
+    {
+      "id": "wmts-terrascope",
+      "name": "Terrascope WMTS",
+      "url": "https://wmts.terrascope.be/",
+      "format": "wmts"
+    },
+    {
+      "id": "wms-geoville-nvlcc",
+      "name": "CLMS GeoVille NVLCC",
+      "url": "https://geoserver.geoville.com/geoserver/nvlcc/ows",
+      "format": "wms"
+    },
+    {
+      "id": "wms-gdo",
+      "name": "Copernicus EMS Drought Observatory",
+      "url": "https://drought.emergency.copernicus.eu/api/wms",
+      "format": "wms"
+    },
+    {
+      "id": "wms-cams",
+      "name": "ECMWF CAMS eccharts",
+      "url": "https://eccharts.ecmwf.int/wms/",
       "format": "wms"
     }
   ],
@@ -193,13 +211,25 @@
       }
     },
     {
-      "name": "Drought hazard context",
+      "name": "Agricultural drought risk",
       "isActive": false,
-      "data": [],
+      "data": [
+        {
+          "url": "https://drought.emergency.copernicus.eu/api/wms",
+          "format": "wms",
+          "zIndex": 43,
+          "opacity": 0.8,
+          "layers": "rdria",
+          "parameters": {
+            "STYLES": ""
+          }
+        }
+      ],
       "meta": {
-        "description": "Auto-generated description for Drought hazard context",
+        "description": "Risk of drought impact for agriculture, **latest 10-day update**, **global**, from the Global Drought Observatory. It combines the hazard (precipitation, soil moisture and vegetation condition) with exposure and vulnerability.\n\nHow to read: darker classes mean higher risk that drought hits crops and rural livelihoods.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Copernicus Emergency Management Service, Global Drought Observatory (JRC)",
+          "url": "https://drought.emergency.copernicus.eu/"
         },
         "categories": []
       },
@@ -212,7 +242,8 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "swatch"
+            "type": "image",
+            "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=rdria&FORMAT=image/png"
           },
           "controls": {
             "opacitySlider": true,
@@ -225,13 +256,26 @@
       }
     },
     {
-      "name": "Air quality exposure proxies",
+      "name": "Fine particulate matter (PM2.5)",
       "isActive": false,
-      "data": [],
+      "data": [
+        {
+          "url": "https://eccharts.ecmwf.int/wms/?token=public",
+          "format": "wms",
+          "zIndex": 32,
+          "opacity": 0.6,
+          "layers": "composition_pm2p5",
+          "parameters": {
+            "token": "public"
+          }
+        }
+      ],
       "meta": {
-        "description": "Satellite-derived pollutant fields (e.g., NO₂/SO₂/CO columns depending on product) to build population exposure proxies and support health-impact screening and reporting context for air-pollution reduction.",
+        "description": "Fine particle (PM2.5) concentration near the surface, **latest CAMS forecast**, **global**.\n\nHow to read: use it to compare regions and follow pollution episodes linked to health risk. This is a live model forecast, so the map changes over time; official exposure figures come from monitoring stations.",
+        "units": "µg/m³",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Atmosphere Monitoring Service information 2026",
+          "url": "https://atmosphere.copernicus.eu/"
         },
         "categories": []
       },
@@ -244,7 +288,8 @@
         },
         "infoPanel": {
           "legend": {
-            "type": "swatch"
+            "type": "image",
+            "url": "https://eccharts.ecmwf.int/wms/?token=public&request=GetLegend&layers=composition_pm2p5&styles=sh_all_pm2p5_defra_daqi&width=350&height=50"
           },
           "controls": {
             "opacitySlider": true,
@@ -261,10 +306,10 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
           "format": "wms",
           "zIndex": 50,
-          "layers": "WORLDCOVER_2020_MAP"
+          "layers": "esa-worldcover-map-10m-2020-v1_map"
         }
       ],
       "statistics": [
@@ -306,7 +351,7 @@
         }
       ],
       "meta": {
-        "description": "Land cover map for 2021 with statistics by NUTS.  Click on the \"Statistics\" tab and then select a geographic area of interest.",
+        "description": "Land cover map for 2020 with statistics by NUTS.  Click on the \"Statistics\" tab and then select a geographic area of interest.",
         "attribution": {
           "text": "World Cover Project",
           "url": "https://esa-worldcover.org/"
@@ -395,10 +440,10 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
           "format": "wms",
           "zIndex": 50,
-          "layers": "WORLDCOVER_2021_MAP"
+          "layers": "esa-worldcover-map-10m-2021-v2_map"
         }
       ],
       "statistics": [
@@ -521,22 +566,28 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
           "format": "wms",
           "zIndex": 50,
-          "layers": "WORLDCOVER_2020_MAP"
+          "layers": "esa-worldcover-map-10m-2020-v1_map",
+          "timestamps": [
+            1577836800
+          ]
         },
         {
-          "url": "https://services.terrascope.be/wms/v2",
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
           "format": "wms",
           "zIndex": 50,
-          "layers": "WORLDCOVER_2021_MAP"
+          "layers": "esa-worldcover-map-10m-2021-v2_map",
+          "timestamps": [
+            1609459200
+          ]
         }
       ],
       "statistics": [],
       "timeframe": "Years",
       "meta": {
-        "description": "Land cover map for 2021",
+        "description": "Global land cover maps for 2020 and 2021 at 10 m. Use the time slider to switch between the two years.",
         "attribution": {
           "text": "World Cover Project",
           "url": "https://esa-worldcover.org/"
@@ -618,7 +669,8 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "defaultTimestamp": 1609459200
     },
     {
       "name": "European Above Ground Biomass",
@@ -730,11 +782,10 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-springcereals-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
           "zIndex": 50,
-          "layers": "WORLDCEREAL_SPRINGCEREALS_V1",
-          "serviceId": "wms-service-1749555952736"
+          "minZoom": 3
         }
       ],
       "meta": {
@@ -769,11 +820,10 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-wintercereals-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
           "zIndex": 50,
-          "layers": "WORLDCEREAL_WINTERCEREALS_V1",
-          "serviceId": "wms-service-1749555952736"
+          "minZoom": 3
         }
       ],
       "meta": {
@@ -808,11 +858,10 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-temporarycrops-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
           "zIndex": 50,
-          "layers": "WORLDCEREAL_TEMPORARYCROPS_V1",
-          "serviceId": "wms-service-1749555952736"
+          "minZoom": 3
         }
       ],
       "meta": {
@@ -847,11 +896,10 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
-          "format": "wms",
+          "url": "https://wmts.terrascope.be/?service=WMTS&request=GetTile&version=1.0.0&layer=esa-worldcereal-maize-10m-2021-v1_classification&style=default&format=image/png&tilematrixset=EPSG:3857&tilematrix={z}&tilecol={x}&tilerow={y}&time=2021-01-01",
+          "format": "xyz",
           "zIndex": 50,
-          "layers": "WORLDCEREAL_MAIZE_V1",
-          "serviceId": "wms-service-1749555952736"
+          "minZoom": 3
         }
       ],
       "meta": {
@@ -877,102 +925,6 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "European crop rotation over 3 years",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPCST_P2020-2022",
-          "timestamps": [
-            1640991600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPCST_P2021-2023",
-          "timestamps": [
-            1672527600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPCST_S2017-2019",
-          "timestamps": [
-            1546297200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPCST_S2018-2020",
-          "timestamps": [
-            1577833200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPCST_S2019-2021",
-          "timestamps": [
-            1609455600
-          ]
-        }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Multi-year crop-rotation layer indicating temporal crop sequencing, useful for rotation and diversification assessments.",
-        "attribution": {
-          "text": "CLMS HRL Cropland",
-          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-croplands"
-        },
-        "categories": [
-          {
-            "color": "#E79D1E",
-            "label": "One crop type",
-            "value": 0
-          },
-          {
-            "color": "#8AE936",
-            "label": "Two crop types",
-            "value": 1
-          },
-          {
-            "color": "#F339FC",
-            "label": "Three crop types",
-            "value": 2
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
-        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
@@ -1110,34 +1062,46 @@
       }
     },
     {
-      "name": "European Tree Cover Change 2018-2021",
+      "name": "European Tree Cover Change 2015-2018",
       "isActive": false,
       "data": [
         {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
+          "url": "https://image.discomap.eea.europa.eu/arcgis/services/GioLandPublic/HRL_TreeCoverChangeMask_15_18/ImageServer/WMSServer",
           "format": "wms",
           "zIndex": 50,
-          "layers": "HRL_TCF:TCPC_C2018-2021",
-          "useTimeParameter": true
+          "layers": "HRL_TreeCoverChangeMask_15_18",
+          "opacity": 0.85,
+          "parameters": {
+            "STYLES": ""
+          }
         }
       ],
-      "timeframe": "Years",
       "meta": {
-        "description": "Shows the change in tree cover between 2018 and 2021.",
+        "description": "Change in tree cover presence between **2015 and 2018**, **pan-European (EEA-39)** at **20 m**, from the Copernicus High Resolution Layer Tree Cover Change Mask.\n\nHow to read: red marks tree cover lost, green marks new tree cover, greys are unchanged areas with or without trees.",
         "attribution": {
-          "text": "Copernicus Land Monitoring Service",
+          "text": "Copernicus Land Monitoring Service (CLMS), HRL Tree Cover Change Mask 2015-2018",
           "url": "https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover"
         },
         "categories": [
           {
-            "color": "#13FF15",
+            "color": "#ff0000",
+            "label": "Loss of tree cover",
+            "value": 2
+          },
+          {
+            "color": "#14ff14",
             "label": "New tree cover",
             "value": 1
           },
           {
-            "color": "#FF0000",
-            "label": "Loss of Tree Cover",
-            "value": 2
+            "color": "#999999",
+            "label": "Unchanged, with tree cover",
+            "value": 10
+          },
+          {
+            "color": "#bfbfbf",
+            "label": "Unchanged, no tree cover",
+            "value": 0
           }
         ]
       },
@@ -1156,29 +1120,28 @@
             "opacitySlider": true,
             "zoomToCenter": true,
             "temporalControls": false,
-            "constraintSlider": true,
+            "constraintSlider": false,
             "blendControls": false
           }
         }
       }
     },
     {
-      "name": "Sentinel-2 NDVI",
+      "name": "Sentinel-2 NDVI 2021",
       "isActive": false,
       "data": [
         {
-          "url": "https://services.terrascope.be/wms/v2",
+          "url": "https://mapproxy.terrascope.be/mapproxy/service",
           "format": "wms",
           "zIndex": 50,
-          "layers": "PROBAV_L3_S10_TOC_333M_NDVI",
-          "useTimeParameter": true
+          "layers": "esa-worldcover-ndvi-10m-2021-v2_ndvi"
         }
       ],
-      "timeframe": "Days",
       "meta": {
-        "description": "Vegetation index representing plant vigor and productivity derived from Sentinel-2.",
+        "description": "Annual median NDVI composite from Sentinel-2 for **2021**, **global** at **10 m**, produced as an input to the ESA WorldCover 2021 map.\n\nHow to read: higher values mean denser, greener vegetation; bare soil, built-up areas and water score low.",
         "attribution": {
-          "text": "Copernicus Global Land Service"
+          "text": "ESA WorldCover project / Copernicus Sentinel data, via Terrascope",
+          "url": "https://esa-worldcover.org"
         },
         "categories": []
       },
@@ -1196,418 +1159,7 @@
           "controls": {
             "opacitySlider": true,
             "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "European Main Crop Types",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CTY_S2023",
-          "timestamps": [
-            1672527600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CTY_S2022",
-          "timestamps": [
-            1640991600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CTY_S2021",
-          "timestamps": [
-            1609455600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CTY_S2020",
-          "timestamps": [
-            1577833200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CTY_S2019",
-          "timestamps": [
-            1546297200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CTY_S2018",
-          "timestamps": [
-            1514761200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CTY_S2017",
-          "timestamps": [
-            1483225200
-          ]
-        }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Annual (2017-2023) pan-European mapping of primary crops at a spatial resolution of 10 m and a MMU of 0.25 ha.",
-        "attribution": {
-          "text": "CLMS HRL Cropland",
-          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-croplands"
-        },
-        "categories": [
-          {
-            "color": "#EE6E31",
-            "label": "Wheat",
-            "value": 0
-          },
-          {
-            "color": "#FBA249",
-            "label": "Barley",
-            "value": 1
-          },
-          {
-            "color": "#F0D313",
-            "label": "Maize",
-            "value": 2
-          },
-          {
-            "color": "#E94300",
-            "label": "Rice",
-            "value": 3
-          },
-          {
-            "color": "#E8A995",
-            "label": "Other Cereals",
-            "value": 4
-          },
-          {
-            "color": "#ADC5E6",
-            "label": "Fresh Vegetables",
-            "value": 5
-          },
-          {
-            "color": "#4997BF",
-            "label": "Dry Pulses",
-            "value": 6
-          },
-          {
-            "color": "#C98C43",
-            "label": "Potatoes",
-            "value": 7
-          },
-          {
-            "color": "#9C5B0D",
-            "label": "Sugar Beet",
-            "value": 8
-          },
-          {
-            "color": "#FE7979",
-            "label": "Sunflower",
-            "value": 9
-          },
-          {
-            "color": "#A4568C",
-            "label": "Soybeans",
-            "value": 10
-          },
-          {
-            "color": "#BC63A1",
-            "label": "Rapeseed",
-            "value": 11
-          },
-          {
-            "color": "#F6B6D2",
-            "label": "Flax, cotton and hemp",
-            "value": 12
-          },
-          {
-            "color": "#DBDB8D",
-            "label": "Grapes",
-            "value": 13
-          },
-          {
-            "color": "#C1CE11",
-            "label": "Olives",
-            "value": 14
-          },
-          {
-            "color": "#79A03B",
-            "label": "Fruits",
-            "value": 15
-          },
-          {
-            "color": "#5A7C30",
-            "label": "Nuts",
-            "value": 16
-          },
-          {
-            "color": "#D7D7D7",
-            "label": "Undecided (arable)",
-            "value": 17
-          },
-          {
-            "color": "#ABABAB",
-            "label": "Undecided (permanent)",
-            "value": 18
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
-        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "European Secondary Crop Types",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPSCT_S2017",
-          "timestamps": [
-            1483225200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPSCT_S2018",
-          "timestamps": [
-            1514761200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPSCT_S2019",
-          "timestamps": [
-            1546297200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPSCT_S2020",
-          "timestamps": [
-            1577833200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPSCT_S2021",
-          "timestamps": [
-            1609455600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPSCE_S2022",
-          "timestamps": [
-            1640991600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPSCT_S2023",
-          "timestamps": [
-            1672527600
-          ]
-        }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Annual (2017-2023) pan-European mapping of secondary crops at a spatial resolution of 10 m and a MMU of 0.25 ha.",
-        "attribution": {
-          "text": "CLMS HRL Cropland",
-          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-croplands"
-        },
-        "categories": [
-          {
-            "color": "#FECB5B",
-            "label": "Short Summer Cover Crop",
-            "value": 0
-          },
-          {
-            "color": "#FF9E00",
-            "label": "Long Summer Cover Crop",
-            "value": 1
-          },
-          {
-            "color": "#63E53C",
-            "label": "Short Winter Cover Crop",
-            "value": 2
-          },
-          {
-            "color": "#106400",
-            "label": "Long Winter Cover Crop",
-            "value": 3
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
-        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      }
-    },
-    {
-      "name": "European Fallow Land",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2017",
-          "timestamps": [
-            1483225200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2018",
-          "timestamps": [
-            1514761200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2019",
-          "timestamps": [
-            1546297200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2020",
-          "timestamps": [
-            1577833200
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2021",
-          "timestamps": [
-            1609455600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2022",
-          "timestamps": [
-            1640991600
-          ]
-        },
-        {
-          "url": "https://geoserver.vlcc.geoville.com/geoserver/ows",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "HRL_CPL:CPFLP_S2023",
-          "timestamps": [
-            1672527600
-          ]
-        }
-      ],
-      "timeframe": "Years",
-      "meta": {
-        "description": "Annual (2017-2023) pan-European level amapping of the presence of fallow land over cropland, at a spatial resolution of 10 m and a MMU of 0.25 ha",
-        "attribution": {
-          "text": "CLMS HRL Cropland",
-          "url": "clms hrl cropland"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "2. ZERO HUNGER (Agriculture & Nutrition)",
-        "subinterfaceGroup": "2.4 Sustainable & resilient agriculture",
-        "contentLocation": "infoPanel",
-        "layerCard": {
-          "toggleable": true
-        },
-        "infoPanel": {
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
+            "temporalControls": false,
             "constraintSlider": false,
             "blendControls": false
           }
@@ -2300,31 +1852,52 @@
       }
     },
     {
-      "name": "Built-Up Areas 2021",
+      "name": "Built-up Change 2018-2021",
       "isActive": false,
       "data": [
         {
-          "url": "https://geoserver.geoville.com/geoserver/nvlcc/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+          "url": "https://geoserver.geoville.com/geoserver/nvlcc/ows",
           "format": "wms",
           "zIndex": 50,
-          "layers": "HRL_NVLCC_IBU_10m",
-          "useTimeParameter": true
+          "layers": "HRL_NVLCC_IBUC_20m",
+          "parameters": {
+            "STYLES": ""
+          }
         }
       ],
       "meta": {
-        "description": "Provides pan-European binary information on built-up areas at 10 m spatial resolution for the 2021 reference year. Built-up areas correspond to artificial above-ground constructions (e.g. buildings) within the sealing outline derived from the Imperviousness Density 2021 layer.",
+        "description": "Change in built-up areas between **2018 and 2021**, **pan-European (EEA-38 + UK)** at **20 m**, from the Copernicus High Resolution Layer Impervious Built-up Change.\n\nHow to read: red is new built-up cover, dark green is lost cover, amber and light green show built-up density going up or down, grey is unchanged built-up land.",
         "attribution": {
-          "text": "Copernicus Land Monitoring Service (CLMS) – HRL Non-Vegetated Land Cover Characteristics (Built-Up 2021), data service by GeoVille",
-          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-imperviousness/impervious-built-up-2021"
+          "text": "Copernicus Land Monitoring Service (CLMS), HRL Impervious Built-up Change 2018-2021",
+          "url": "https://land.copernicus.eu/en/products/high-resolution-layer-imperviousness"
         },
         "categories": [
           {
-            "color": "#ffb200",
-            "label": "Built-Up",
-            "value": 0
+            "color": "#FF0000",
+            "label": "New built-up cover",
+            "value": 1
+          },
+          {
+            "color": "#006400",
+            "label": "Loss of built-up cover",
+            "value": 2
+          },
+          {
+            "color": "#9C9C9C",
+            "label": "Unchanged built-up",
+            "value": 10
+          },
+          {
+            "color": "#FFBF00",
+            "label": "Increased built-up density",
+            "value": 11
+          },
+          {
+            "color": "#40B200",
+            "label": "Decreased built-up density",
+            "value": 12
           }
-        ],
-        "units": "Binary (built-up / non built-up)"
+        ]
       },
       "layout": {
         "interfaceGroup": "11. SUSTAINABLE CITIES & COMMUNITIES (Cities)",
