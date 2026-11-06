@@ -19,7 +19,7 @@
     "Fire Dynamics",
     "Carbon Emissions from Fires",
     "Soil Moisture",
-    "Net Biome Productivity - Forecast",
+    "Net Biome Productivity - Forecast Anomaly July - December 2026",
     "Burned Area - Forecast Anomaly July - December 2026",
     "Floods",
     "Drought",
@@ -1504,7 +1504,7 @@
         ]
       },
       "layout": {
-        "interfaceGroup": "Net Biome Productivity - Forecast",
+        "interfaceGroup": "Net Biome Productivity - Forecast Anomaly July - December 2026",
         "contentLocation": "layerCard",
         "layerCard": {
           "toggleable": true,
