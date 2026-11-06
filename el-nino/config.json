@@ -173,7 +173,7 @@
         }
       ],
       "meta": {
-        "description": "Base layer: Stadia Alidade Smooth Dark",
+        "description": "Dark basemap by Stadia Maps (Alidade Smooth Dark), built on OpenStreetMap data.",
         "attribution": {
           "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
           "url": "https://stadiamaps.com/"
@@ -194,7 +194,7 @@
         }
       ],
       "meta": {
-        "description": "Base layer: Stadia Alidade Satellite",
+        "description": "Satellite basemap by Stadia Maps (Alidade Satellite), built on OpenStreetMap data.",
         "attribution": {
           "text": "© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | © Stadia Maps © OpenMapTiles © OpenStreetMap",
           "url": "https://stadiamaps.com/"
@@ -216,7 +216,7 @@
         }
       ],
       "meta": {
-        "description": "Base layer: Open StreetMap",
+        "description": "Street map from OpenStreetMap contributors.",
         "attribution": {
           "text": "Map data (c) OpenStreetMap",
           "url": "https://www.openstreetmap.org/copyright"
@@ -240,7 +240,7 @@
         }
       ],
       "meta": {
-        "description": "Base layer: Sentinel",
+        "description": "Sentinel-2 cloudless mosaic for 2025 by EOX, built from Copernicus Sentinel-2 imagery.",
         "attribution": {
           "text": "Sentinel-2 Cloudless by EOX",
           "url": "https://s2maps.eu"
@@ -264,7 +264,7 @@
         }
       ],
       "meta": {
-        "description": "Base layer: DEM",
+        "description": "Copernicus global digital elevation model (DEM) at 90 m resolution.",
         "attribution": {
           "text": "Copernicus"
         },
@@ -311,9 +311,9 @@
         }
       ],
       "meta": {
-        "description": "The Global Flood Monitoring (GFM) product is a new component of the EU’s Copernicus Emergency Management Service (CEMS) that provides continuous monitoring of floods worldwide, by processing and analysing in near real-time (NRT) all incoming Synthetic Aperture Radar (SAR) imagery acquired by the EU’s Copernicus Sentinel-1 satellites, in Interferometric Wide Swath (IW) mode and as Ground Range Detected (GRD) products. The GFM product is designed to deliver, in NRT, critical information on ongoing floods events to users worldwide, including national authorities, emergency units, research centres, decision-makers and other stakeholders.",
+        "description": "**Global Flood Monitoring (GFM)**\n\nNear-real-time flood mapping from the Copernicus Emergency Management Service, derived from Sentinel-1 radar imagery.\n\nShows observed water extent, observed flood extent and the observed flood footprint together.",
         "attribution": {
-          "text": "GFM flood monitoring: observed water extent, observed flood extent and observed flood extent footprint, shown together.",
+          "text": "Global Flood Monitoring (GFM), Copernicus Emergency Management Service, operated by EODC. Based on Copernicus Sentinel-1 data",
           "url": "https://extwiki.eodc.eu/en/GFM"
         },
         "categories": [
@@ -376,11 +376,23 @@
         }
       ],
       "meta": {
-        "description": "World Settlement Footprint Evolution (WSF® Evolution): 30 m resolution dataset based on multispectral Landsat imagery outlining the global settlement extent on a yearly basis from 1985 to 2015.",
+        "description": "**World Settlement Footprint (WSF®) Evolution**\n\nGlobal settlement extent at 30 m resolution, 1985–2015, mapped from Landsat imagery.\n\nEach colour is the estimated **year a settlement was first detected**. See the legend.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "© DLR. World Settlement Footprint (WSF®) Evolution, CC BY 4.0. Marconcini et al. (2021)",
+          "url": "https://geoservice.dlr.de/web/datasets/wsf_evo"
         },
-        "categories": []
+        "categories": [],
+        "min": 1985,
+        "max": 2015,
+        "colormaps": [
+          {
+            "min": 1985,
+            "max": 2015,
+            "steps": 30,
+            "name": "jet",
+            "reverse": true
+          }
+        ]
       },
       "layout": {
         "interfaceGroup": "Socio-Economic",
@@ -388,8 +400,7 @@
         "layerCard": {
           "toggleable": true,
           "legend": {
-            "type": "image",
-            "url": "https://geoservice.dlr.de/eoc/land/wms?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WSF_Evolution"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
@@ -548,9 +559,10 @@
         }
       ],
       "meta": {
-        "description": "Monthly soil moisture anomalies, 2025.",
+        "description": "**Monthly soil moisture anomalies, 2025**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Click the map to plot the monthly values at that location.\n\nSource: C3S satellite surface soil moisture, combined product (v202505), 0.25° resolution.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
@@ -715,9 +727,10 @@
         }
       ],
       "meta": {
-        "description": "Monthly soil moisture anomalies, 2026.",
+        "description": "**Monthly soil moisture anomalies, 2026**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Click the map to plot the monthly values at that location.\n\nSource: C3S satellite surface soil moisture, combined product (v202505), 0.25° resolution.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
@@ -783,9 +796,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Soil Moisture Daily",
+        "description": "**Daily soil moisture anomalies**\n\nDaily surface soil moisture anomaly relative to the 1991–2020 climatology. Positive values mean wetter than normal, negative values drier.\n\nSource: C3S satellite surface soil moisture, combined product, 0.25° resolution.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": []
       },
@@ -829,9 +843,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for Soil Water Index (DestinE EDEN)",
+        "description": "**Soil Water Index (SWI), daily**\n\nGlobal soil moisture from 0% (completely dry) to 100% (fully saturated), at 0.1° (about 12.5 km) resolution. Derived from Metop ASCAT surface soil moisture and updated daily.\n\nLayer shown: SWI001 (characteristic time length T = 1 day).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Soil Water Index: Copernicus Land Monitoring Service, derived from Metop ASCAT surface soil moisture (EUMETSAT H SAF). Served via DestinE EDEN",
+          "url": "https://land.copernicus.eu/en/news/new-soil-water-index-datasets-bring-deeper-insight-into-global-soil-moisture"
         },
         "categories": []
       },
@@ -855,24 +870,15 @@
     },
     {
       "id": "eo-eden-dat-dteh-swi10dcm",
-      "name": "EO_EDEN_DAT_DTEH_SWI10DCM",
+      "name": "EDEN DTEH – Soil Water Index (10-Day Composite)",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://wms.eden.destine.eu/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "EO:EDEN:DAT:DTEHYDRO:SWIDCM:COG|SWI10DCM",
-          "parameters": {
-            "version": "1.1.1"
-          },
-          "useTimeParameter": true
-        }
-      ],
+      "timeframe": "Days",
+      "defaultTimestamp": 1792281600,
       "meta": {
-        "description": "Auto-generated description for EO_EDEN_DAT_DTEH_SWI10DCM",
+        "description": "The dataset tracks soil moisture anomalies and surface water dynamics across Europe. Developed by TU Wien under the European Commission's DestinE initiative, it feeds directly into the Weather-Induced Extremes Digital Twin. It uses an exponential filter to turn surface soil moisture retrievals, mainly from ASCAT and Sentinel-1 radar, into estimates of moisture deeper in the soil.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Soil Water Index: Copernicus Land Monitoring Service, derived from Metop ASCAT surface soil moisture (EUMETSAT H SAF). Served via DestinE EDEN",
+          "url": "https://land.copernicus.eu/en/news/new-soil-water-index-datasets-bring-deeper-insight-into-global-soil-moisture"
         },
         "categories": []
       },
@@ -893,8 +899,18 @@
           }
         }
       },
-      "timeframe": "Days",
-      "defaultTimestamp": 1792281600
+      "data": [
+        {
+          "url": "https://wms.eden.destine.eu/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "EO:EDEN:DAT:DTEHYDRO:SWIDCM:COG|SWI10DCM",
+          "parameters": {
+            "version": "1.1.1"
+          },
+          "useTimeParameter": true
+        }
+      ]
     },
     {
       "id": "stadia-alidade-smooth-light",
@@ -908,7 +924,7 @@
         }
       ],
       "meta": {
-        "description": "Base layer: Stadia Alidade Smooth Light",
+        "description": "Light basemap by Stadia Maps (Alidade Smooth Light), built on OpenStreetMap data.",
         "attribution": {
           "text": "© Stadia Maps © OpenMapTiles © OpenStreetMap",
           "url": "https://stadiamaps.com/"
@@ -936,9 +952,10 @@
         }
       ],
       "meta": {
-        "description": "**Soil Moisture Anomaly comparison January 2025 (left) vs 2026 (right)**\n\nMonthly soil moisture anomalies.",
+        "description": "**Soil moisture anomaly comparison: January 2025 (left) vs 2026 (right)**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Drag the divider to compare the two years.\n\nSource: C3S satellite surface soil moisture, combined product (v202505).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
@@ -995,9 +1012,10 @@
         }
       ],
       "meta": {
-        "description": "**Soil Moisture Anomaly comparison February 2025 (left) vs 2026 (right)**\n\nMonthly soil moisture anomalies.",
+        "description": "**Soil moisture anomaly comparison: February 2025 (left) vs 2026 (right)**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Drag the divider to compare the two years.\n\nSource: C3S satellite surface soil moisture, combined product (v202505).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
@@ -1054,9 +1072,10 @@
         }
       ],
       "meta": {
-        "description": "**Soil Moisture Anomaly comparison March 2025 (left) vs 2026 (right)**\n\nMonthly soil moisture anomalies.",
+        "description": "**Soil moisture anomaly comparison: March 2025 (left) vs 2026 (right)**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Drag the divider to compare the two years.\n\nSource: C3S satellite surface soil moisture, combined product (v202505).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
@@ -1113,9 +1132,10 @@
         }
       ],
       "meta": {
-        "description": "**Soil Moisture Anomaly comparison April 2025 (left) vs 2026 (right)**\n\nMonthly soil moisture anomalies.",
+        "description": "**Soil moisture anomaly comparison: April 2025 (left) vs 2026 (right)**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Drag the divider to compare the two years.\n\nSource: C3S satellite surface soil moisture, combined product (v202505).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
@@ -1172,9 +1192,10 @@
         }
       ],
       "meta": {
-        "description": "**Soil Moisture Anomaly comparison May 2025 (left) vs 2026 (right)**\n\nMonthly soil moisture anomalies.",
+        "description": "**Soil moisture anomaly comparison: May 2025 (left) vs 2026 (right)**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Drag the divider to compare the two years.\n\nSource: C3S satellite surface soil moisture, combined product (v202505).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
@@ -1231,9 +1252,10 @@
         }
       ],
       "meta": {
-        "description": "**Soil Moisture Anomaly comparison June 2025 (left) vs 2026 (right)**\n\nMonthly soil moisture anomalies.",
+        "description": "**Soil moisture anomaly comparison: June 2025 (left) vs 2026 (right)**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Drag the divider to compare the two years.\n\nSource: C3S satellite surface soil moisture, combined product (v202505).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
@@ -1290,9 +1312,10 @@
         }
       ],
       "meta": {
-        "description": "**Soil Moisture Anomaly comparison July 2025 (left) vs 2026 (right)**\n\nMonthly soil moisture anomalies.",
+        "description": "**Soil moisture anomaly comparison: July 2025 (left) vs 2026 (right)**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Drag the divider to compare the two years.\n\nSource: C3S satellite surface soil moisture, combined product (v202505).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
@@ -1349,9 +1372,10 @@
         }
       ],
       "meta": {
-        "description": "**Soil Moisture Anomaly comparison August 2025 (left) vs 2026 (right)**\n\nMonthly soil moisture anomalies.",
+        "description": "**Soil moisture anomaly comparison: August 2025 (left) vs 2026 (right)**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Drag the divider to compare the two years.\n\nSource: C3S satellite surface soil moisture, combined product (v202505).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
@@ -1408,9 +1432,10 @@
         }
       ],
       "meta": {
-        "description": "**Soil Moisture Anomaly comparison September 2025 (left) vs 2026 (right)**\n\nMonthly soil moisture anomalies.",
+        "description": "**Soil moisture anomaly comparison: September 2025 (left) vs 2026 (right)**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Drag the divider to compare the two years.\n\nSource: C3S satellite surface soil moisture, combined product (v202505).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
@@ -1449,263 +1474,18 @@
       "isSwipeLayer": true
     },
     {
-      "id": "clms-burnt-area-ba-global-300m-daily-v3-cog-2",
-      "name": "CLMS Burnt Area (BA) Global 300m daily V4 (WMTS) ANNUAL - DAY OF BURN",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v4/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "DOB",
-          "version": "1.0.0"
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for CLMS Burnt Area (BA) Global 300m daily V3 (COG)",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "units": "day",
-        "min": 1,
-        "max": 365,
-        "startColor": "#000000",
-        "endColor": "#ffffff"
-      },
-      "layout": {
-        "interfaceGroup": "Fire Dynamics",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Months"
-    },
-    {
-      "id": "clms-daily-burned-fraction-timeseries-animation-2025",
-      "name": "CLMS Daily Burned Fraction Timeseries Animation 2025",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1790805600
-          ],
-          "bands": [
-            1
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1790892000
-          ],
-          "bands": [
-            2
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1790978400
-          ],
-          "bands": [
-            3
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1791064800
-          ],
-          "bands": [
-            4
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1791151200
-          ],
-          "bands": [
-            5
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1791237600
-          ],
-          "bands": [
-            6
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1791324000
-          ],
-          "bands": [
-            7
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1791410400
-          ],
-          "bands": [
-            8
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1791496800
-          ],
-          "bands": [
-            9
-          ]
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Daily_BF/test.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "timestamps": [
-            1791583200
-          ],
-          "bands": [
-            10
-          ]
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for CLMS Daily Burned Fraction Timeseries Animation 2025",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "min": 0,
-        "max": 1000,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1000,
-            "steps": 50,
-            "name": "magma",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Fire Dynamics",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Days"
-    },
-    {
-      "id": "clms-burnt-area-ba-global-300m-daily-v3-cog-2-2",
-      "name": "CLMS Burnt Area (BA) Global 300m daily V4 (WMTS) MONTHLY - FRACTION OF BURNED AREA",
-      "isActive": false,
-      "data": [
-        {
-          "url": "https://land.copernicus.eu/cdse/ba_global_300m_monthly_v4/",
-          "format": "wmts",
-          "zIndex": 50,
-          "layers": "BF",
-          "version": "1.0.0"
-        }
-      ],
-      "meta": {
-        "description": "Auto-generated description for CLMS Burnt Area (BA) Global 300m daily V3 (COG)",
-        "attribution": {
-          "text": "Data attribution not specified"
-        },
-        "categories": [],
-        "units": "day",
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1,
-            "steps": 16,
-            "name": "magma",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Fire Dynamics",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "timeframe": "Months"
-    },
-    {
       "id": "net-biome-productivity-nbp-anomaly-2026-monthly-3",
       "name": "Net Biome Productivity (NBP) Anomaly - July - December 2026",
       "isActive": false,
       "timeframe": "Months",
       "meta": {
-        "description": "Spatial patterns of projected net biome production anomalies for July - December 2026.",
+        "description": "**Net biome productivity (NBP) anomaly: forecast, July–December 2026**\n\nProjected net biome productivity anomalies for each month from July to December 2026. Developed using dynamic global vegetation models driven by an ensemble of ECMWF seasonal climate forecasts and machine-learning burned area predictions",
         "attribution": {
           "text": "Du, X., Jiang, R., Ciais, P., Friedlingstein, P., Sitch, S., O’Sullivan, M., de Souza, J. G., Stripp, T., Lindas, E., Ke, P., Xi, Y., Sun, M., Wu, X., Han, M., Song, S., Zhang, Q., & Li, W. (2026). Forecasting carbon-risk hotspots ahead of the extreme 2026 El Niño. arXiv preprint, arXiv:2610.16714.",
           "url": "https://doi.org/10.48550/arXiv.2610.16714"
         },
         "categories": [],
+        "units": "Pg C/month",
         "colormaps": [
           {
             "min": -0.25,
@@ -1815,27 +1595,28 @@
       "isActive": false,
       "timeframe": "Months",
       "meta": {
-        "description": "# ====== Burned_area_forecast_anomaly_202607-202612_05deg.nc ======== #\n-Positive values indicate increased burned area.\n    burned_area_anomaly_mean: Ensemble-mean monthly burned-area anomaly per grid cell [ha].",
+        "description": "**Burned area forecast anomaly: July–December 2026**\n\nEnsemble-mean monthly burned-area anomaly per 0.5° grid cell, in hectares. Positive values indicate increased burned area. Developed using dynamic global vegetation models driven by an ensemble of ECMWF seasonal climate forecasts and machine-learning burned area predictions.",
         "attribution": {
           "text": "Du, X., Jiang, R., Ciais, P., Friedlingstein, P., Sitch, S., O’Sullivan, M., de Souza, J. G., Stripp, T., Lindas, E., Ke, P., Xi, Y., Sun, M., Wu, X., Han, M., Song, S., Zhang, Q., & Li, W. (2026). Forecasting carbon-risk hotspots ahead of the extreme 2026 El Niño. arXiv preprint, arXiv:2610.16714.",
           "url": "https://doi.org/10.48550/arXiv.2610.16714"
         },
         "categories": [],
+        "units": "Ha/month",
         "min": -3000,
         "max": 3000,
         "colormaps": [
           {
             "min": -75000,
-            "max": 0,
+            "max": 1,
             "steps": 30,
             "name": "bone",
             "reverse": false
           },
           {
-            "min": 0,
+            "min": 1,
             "max": 75000,
             "steps": 30,
-            "name": "hot",
+            "name": "yiorrd",
             "reverse": true
           }
         ]
@@ -1930,6 +1711,46 @@
       "id": "country-statistics-3857",
       "name": "Cumulative fire carbon emissions - Global Fire Emissions Database (GFED)",
       "isActive": false,
+      "meta": {
+        "description": "**Cumulative fire carbon emissions by country**\n\nYear-to-date emissions from landscape fires for each country, 2001–2026, from the Global Fire Emissions Database (GFED). Click a country to compare the current year (highlighted) with earlier years.\n\nUnit: megatonnes of carbon (Mt C). Multiply by 3.67 to convert to CO₂. Data from 2023 onward are provisional (beta).",
+        "attribution": {
+          "text": "Global Fire Emissions Database (GFED). Van der Werf et al. (2025); Chen et al. (2026)",
+          "url": "https://globalfiredata.org/"
+        },
+        "categories": [],
+        "units": "Mt C",
+        "fields": {
+          "name": {
+            "order": 1
+          },
+          "ISO3166-1-Alpha-3": {
+            "order": 2
+          },
+          "ISO3166-1-Alpha-2": {
+            "order": 3
+          },
+          "CO2-emissions-csv": {
+            "order": 4
+          }
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Carbon Emissions from Fires",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": false,
+            "temporalControls": false,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
       "data": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/El-NINO-DEMO/CO2-emmissions/countries_3857.fgb",
@@ -2268,7 +2089,7 @@
             },
             "yaxis": {
               "title": {
-                "text": "Emissions (Mt C)"
+                "text": "Emissions (Mt of C)"
               }
             }
           },
@@ -2281,30 +2102,35 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "id": "cci-sst-anomalies-2026-imported",
+      "name": "CCI SST - 2026 Monthly Anomalies",
+      "isActive": true,
+      "exclusivitySets": [
+        "monthly-sst-swipe"
       ],
+      "timeframe": "Months",
       "meta": {
-        "description": "Example configuration of a GeoJSON layer from external source",
+        "description": "**ESA CCI sea surface temperature: 2026 monthly anomalies**\n\nMonthly sea surface temperature (SST) anomaly in kelvin (K) at 0.1° resolution, from the ESA SST CCI Analysis v3.0 climate data record. After selecting the Chart tab, Click the map to plot the monthly values at that location.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
         "categories": [],
-        "fields": {
-          "name": {
-            "order": 1
-          },
-          "ISO3166-1-Alpha-3": {
-            "order": 2
-          },
-          "ISO3166-1-Alpha-2": {
-            "order": 3
-          },
-          "CO2-emissions-csv": {
-            "order": 4
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
           }
-        }
+        ]
       },
       "layout": {
-        "interfaceGroup": "Carbon Emissions from Fires",
+        "interfaceGroup": "Sea Surface Temperature",
         "contentLocation": "layerCard",
         "layerCard": {
           "toggleable": true,
@@ -2313,19 +2139,13 @@
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": false,
-            "temporalControls": false,
+            "zoomToCenter": true,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
         }
       },
-      "isBaseLayer": false
-    },
-    {
-      "id": "cci-sst-anomalies-2026-imported",
-      "name": "CCI SST - 2026 Monthly Anomalies",
-      "isActive": true,
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260215_regridded_sst_cog_anomaly.tif",
@@ -2443,11 +2263,20 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "id": "cci-sst-anomalies-2025-imported",
+      "name": "CCI SST - 2025 Monthly Anomalies",
+      "isActive": false,
+      "exclusivitySets": [
+        "monthly-sst-swipe"
       ],
+      "timeframe": "Months",
       "meta": {
-        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "description": "**ESA CCI sea surface temperature: 2025 monthly anomalies**\n\nMonthly sea surface temperature (SST) anomaly in kelvin (K) at 0.1° resolution, from the ESA SST CCI Analysis v3.0 climate data record. After selecting the Chart tab, Click the map to plot the monthly values at that location.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
-          "text": "Data attribution not specified",
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
           "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
         "categories": [],
@@ -2478,15 +2307,6 @@
           }
         }
       },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ],
-      "timeframe": "Months"
-    },
-    {
-      "id": "cci-sst-anomalies-2025-imported",
-      "name": "CCI SST - 2025 Monthly Anomalies",
-      "isActive": false,
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250115_regridded_sst_cog_anomaly.tif",
@@ -2628,45 +2448,7 @@
             }
           ]
         }
-      ],
-      "meta": {
-        "description": "Version 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
-        "attribution": {
-          "text": "Data attribution not specified",
-          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
-        },
-        "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
-      "exclusivitySets": [
-        "monthly-sst-swipe"
-      ],
-      "timeframe": "Months"
+      ]
     },
     {
       "id": "january-2025-vs-2026-sst-anomalies-imported",
@@ -2676,9 +2458,10 @@
         "monthly-sst-swipe"
       ],
       "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison January 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "description": "**Sea surface temperature anomaly comparison: January 2025 (left) vs 2026 (right)**\n\nMonthly SST anomaly in kelvin (K) from the ESA SST CCI Analysis v3.0 record. Drag the divider to compare the two years.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
         "categories": [],
         "colormaps": [
@@ -2744,9 +2527,10 @@
         }
       ],
       "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison February 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "description": "**Sea surface temperature anomaly comparison: February 2025 (left) vs 2026 (right)**\n\nMonthly SST anomaly in kelvin (K) from the ESA SST CCI Analysis v3.0 record. Drag the divider to compare the two years.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
         "categories": [],
         "colormaps": [
@@ -2802,9 +2586,10 @@
         }
       ],
       "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison March 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "description": "**Sea surface temperature anomaly comparison: March 2025 (left) vs 2026 (right)**\n\nMonthly SST anomaly in kelvin (K) from the ESA SST CCI Analysis v3.0 record. Drag the divider to compare the two years.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
         "categories": [],
         "colormaps": [
@@ -2860,9 +2645,10 @@
         }
       ],
       "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison April 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "description": "**Sea surface temperature anomaly comparison: April 2025 (left) vs 2026 (right)**\n\nMonthly SST anomaly in kelvin (K) from the ESA SST CCI Analysis v3.0 record. Drag the divider to compare the two years.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
         "categories": [],
         "colormaps": [
@@ -2918,9 +2704,10 @@
         }
       ],
       "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison May 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "description": "**Sea surface temperature anomaly comparison: May 2025 (left) vs 2026 (right)**\n\nMonthly SST anomaly in kelvin (K) from the ESA SST CCI Analysis v3.0 record. Drag the divider to compare the two years.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
         "categories": [],
         "colormaps": [
@@ -2976,9 +2763,10 @@
         }
       ],
       "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison June 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "description": "**Sea surface temperature anomaly comparison: June 2025 (left) vs 2026 (right)**\n\nMonthly SST anomaly in kelvin (K) from the ESA SST CCI Analysis v3.0 record. Drag the divider to compare the two years.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
         "categories": [],
         "colormaps": [
@@ -3034,9 +2822,10 @@
         }
       ],
       "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison July 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "description": "**Sea surface temperature anomaly comparison: July 2025 (left) vs 2026 (right)**\n\nMonthly SST anomaly in kelvin (K) from the ESA SST CCI Analysis v3.0 record. Drag the divider to compare the two years.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
         "categories": [],
         "colormaps": [
@@ -3092,9 +2881,10 @@
         }
       ],
       "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison August 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "description": "**Sea surface temperature anomaly comparison: August 2025 (left) vs 2026 (right)**\n\nMonthly SST anomaly in kelvin (K) from the ESA SST CCI Analysis v3.0 record. Drag the divider to compare the two years.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
         "categories": [],
         "colormaps": [
@@ -3150,9 +2940,10 @@
         }
       ],
       "meta": {
-        "description": "**Sea Surface Temperature Anomaly comparison September 2025 (left) vs 2026 (right)**\n\nVersion 3 sea surface temperature (SST) data from University of Reading / National Centre for Earth Observation in partnership with the UK Met Office and Danish Meteorological Institute.\n\nReprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). This re-gridding and time-series extraction service is supported by the National Centre for Earth Observation (https://www.nceo.ac.uk), funded by the Natural Environment Research Council.",
+        "description": "**Sea surface temperature anomaly comparison: September 2025 (left) vs 2026 (right)**\n\nMonthly SST anomaly in kelvin (K) from the ESA SST CCI Analysis v3.0 record. Drag the divider to compare the two years.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
         },
         "categories": [],
         "colormaps": [
@@ -3208,9 +2999,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for January 2025/2026",
+        "description": "**Burned fraction comparison: January 2025 (left) vs 2026 (right)**\n\nFraction of each 300 m pixel burned during the month, from the CLMS Burnt Area V4 monthly product. Drag the divider to compare the two years.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
         "units": "%",
@@ -3222,7 +3014,7 @@
             "max": 1000,
             "steps": 50,
             "name": "magma",
-            "reverse": false
+            "reverse": true
           }
         ]
       },
@@ -3268,9 +3060,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for February 2025/2026",
+        "description": "**Burned fraction comparison: February 2025 (left) vs 2026 (right)**\n\nFraction of each 300 m pixel burned during the month, from the CLMS Burnt Area V4 monthly product. Drag the divider to compare the two years.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
         "units": "%",
@@ -3282,7 +3075,7 @@
             "max": 1000,
             "steps": 50,
             "name": "magma",
-            "reverse": false
+            "reverse": true
           }
         ]
       },
@@ -3328,9 +3121,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for March 2025/2026",
+        "description": "**Burned fraction comparison: March 2025 (left) vs 2026 (right)**\n\nFraction of each 300 m pixel burned during the month, from the CLMS Burnt Area V4 monthly product. Drag the divider to compare the two years.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
         "units": "%",
@@ -3342,7 +3136,7 @@
             "max": 1000,
             "steps": 50,
             "name": "magma",
-            "reverse": false
+            "reverse": true
           }
         ]
       },
@@ -3388,9 +3182,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for April 2025/2026",
+        "description": "**Burned fraction comparison: April 2025 (left) vs 2026 (right)**\n\nFraction of each 300 m pixel burned during the month, from the CLMS Burnt Area V4 monthly product. Drag the divider to compare the two years.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
         "units": "%",
@@ -3402,7 +3197,7 @@
             "max": 1000,
             "steps": 50,
             "name": "magma",
-            "reverse": false
+            "reverse": true
           }
         ]
       },
@@ -3448,9 +3243,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for May 2025/2026",
+        "description": "**Burned fraction comparison: May 2025 (left) vs 2026 (right)**\n\nFraction of each 300 m pixel burned during the month, from the CLMS Burnt Area V4 monthly product. Drag the divider to compare the two years.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
         "units": "%",
@@ -3462,7 +3258,7 @@
             "max": 1000,
             "steps": 50,
             "name": "magma",
-            "reverse": false
+            "reverse": true
           }
         ]
       },
@@ -3508,9 +3304,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for June 2025/2026",
+        "description": "**Burned fraction comparison: June 2025 (left) vs 2026 (right)**\n\nFraction of each 300 m pixel burned during the month, from the CLMS Burnt Area V4 monthly product. Drag the divider to compare the two years.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
         "units": "%",
@@ -3522,7 +3319,7 @@
             "max": 1000,
             "steps": 50,
             "name": "magma",
-            "reverse": false
+            "reverse": true
           }
         ]
       },
@@ -3568,9 +3365,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for July 2025/2026",
+        "description": "**Burned fraction comparison: July 2025 (left) vs 2026 (right)**\n\nFraction of each 300 m pixel burned during the month, from the CLMS Burnt Area V4 monthly product. Drag the divider to compare the two years.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
         "units": "%",
@@ -3582,7 +3380,7 @@
             "max": 1000,
             "steps": 50,
             "name": "magma",
-            "reverse": false
+            "reverse": true
           }
         ]
       },
@@ -3628,9 +3426,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for August 2025/2026",
+        "description": "**Burned fraction comparison: August 2025 (left) vs 2026 (right)**\n\nFraction of each 300 m pixel burned during the month, from the CLMS Burnt Area V4 monthly product. Drag the divider to compare the two years.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
         "units": "%",
@@ -3642,7 +3441,7 @@
             "max": 1000,
             "steps": 50,
             "name": "magma",
-            "reverse": false
+            "reverse": true
           }
         ]
       },
@@ -3688,9 +3487,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for September 2025/2026",
+        "description": "**Burned fraction comparison: September 2025 (left) vs 2026 (right)**\n\nFraction of each 300 m pixel burned during the month, from the CLMS Burnt Area V4 monthly product. Drag the divider to compare the two years.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
         "units": "%",
@@ -3702,7 +3502,7 @@
             "max": 1000,
             "steps": 50,
             "name": "magma",
-            "reverse": false
+            "reverse": true
           }
         ]
       },
@@ -3748,9 +3548,10 @@
         }
       ],
       "meta": {
-        "description": "Auto-generated description for October 2025/2026",
+        "description": "**Burned fraction comparison: October 2025 (left) vs 2026 (right)**\n\nFraction of each 300 m pixel burned during the month, from the CLMS Burnt Area V4 monthly product. Drag the divider to compare the two years.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
         "units": "%",
@@ -3762,7 +3563,7 @@
             "max": 1000,
             "steps": 50,
             "name": "magma",
-            "reverse": false
+            "reverse": true
           }
         ]
       },
@@ -3791,8 +3592,49 @@
     },
     {
       "id": "clms-burnt-area-ba-global-300m-daily-v4-cog",
-      "name": "CLMS Burnt Area (BA) Global 300m daily V4 (COG) MONTHLY - FRACTION OF BURNED AREA",
+      "name": "CLMS Burnt Area (BA) Global 300m V4 MONTHLY - FRACTION OF BURNED AREA",
       "isActive": false,
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "timeframe": "Months",
+      "meta": {
+        "description": "**CLMS Burnt Area 300 m: fraction of burned area (V4, derived-monthly)**\n\nFraction (‰) of each 300 m pixel affected by fire during the month, from Sentinel-3 data. Monthly product computed from the daily near-real-time product using pixel with the highest scoring probability of burn. Use the time control to step from January 2025 to October 2026.",
+        "attribution": {
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
+        },
+        "categories": [],
+        "units": "‰",
+        "min": 0,
+        "max": 1000,
+        "colormaps": [
+          {
+            "min": 0,
+            "max": 1000,
+            "steps": 50,
+            "name": "magma",
+            "reverse": true
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202501_BF.tif",
@@ -3970,22 +3812,32 @@
             1792015200
           ]
         }
+      ]
+    },
+    {
+      "id": "clms-burnt-area-ba-global-300m-daily-v4-cog-monthly-day-of-burn",
+      "name": "CLMS Burnt Area (BA) Global 300m V4 MONTHLY - DAY OF BURN",
+      "isActive": false,
+      "exclusivitySets": [
+        "monthly-burned-fraction"
       ],
+      "timeframe": "Months",
       "meta": {
-        "description": "Monthly product computed directly from Daily NRT data.",
+        "description": "**CLMS Burnt Area 300 m: day of burn (V4, monthly)**\n\nDay of the year (1–366) on which burning was detected in each 300 m pixel, from Sentinel-3 data. Monthly product computed from the daily near-real-time product. Use the time control to step from January 2025 to October 2026.",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
-        "units": "percent",
-        "min": 0,
-        "max": 1000,
+        "units": "day",
+        "min": 1,
+        "max": 366,
         "colormaps": [
           {
-            "min": 0,
-            "max": 1000,
+            "min": 1,
+            "max": 366,
             "steps": 50,
-            "name": "magma",
+            "name": "viridis",
             "reverse": false
           }
         ]
@@ -4007,7 +3859,184 @@
           }
         }
       },
-      "timeframe": "Months"
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202501_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1736895600
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202502_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1739574000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202503_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1741993200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202504_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1744668000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202505_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1747260000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202506_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1749938400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202507_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1752530400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202508_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1755208800
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202509_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1757887200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202510_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1760479200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202511_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1763161200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202512_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1765753200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202601_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1768431600
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202602_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1771110000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202603_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1773529200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202604_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1776204000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202605_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1778796000
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202606_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1781474400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202607_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1784066400
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202608_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1786744800
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202609_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1789423200
+          ]
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202610_DOB.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "timestamps": [
+            1792015200
+          ]
+        }
+      ]
     },
     {
       "id": "soil-moisture-anomaly-comparison-september-2",
@@ -4028,9 +4057,10 @@
         }
       ],
       "meta": {
-        "description": "**Soil Moisture Anomaly comparison October 2025 (left) vs 2026 (right)**\n\nMonthly soil moisture anomalies.",
+        "description": "**Soil moisture anomaly comparison: October 2025 (left) vs 2026 (right)**\n\nMonthly surface soil moisture anomaly (m³ m⁻³) relative to the 1991–2020 monthly climatology. Positive values mean wetter than normal, negative values drier. Drag the divider to compare the two years.\n\nSource: C3S satellite surface soil moisture, combined product (v202505).",
         "attribution": {
-          "text": "Data attribution not specified"
+          "text": "Generated using Copernicus Climate Change Service information 2026. C3S Satellite Surface Soil Moisture, combined product v202505: TU Wien, Planet Labs and EODC",
+          "url": "https://doi.org/10.24381/cds.d7782f18"
         },
         "categories": [],
         "min": -1,
