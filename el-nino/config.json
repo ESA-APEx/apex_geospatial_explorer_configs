@@ -363,18 +363,6 @@
       "id": "world-settlement-footprint-evolution",
       "name": "World Settlement Footprint Evolution",
       "isActive": false,
-      "data": [
-        {
-          "url": "https://geoservice.dlr.de/eoc/land/wms",
-          "format": "wms",
-          "zIndex": 50,
-          "layers": "WSF_Evolution",
-          "parameters": {
-            "version": "1.3.0"
-          },
-          "useTimeParameter": true
-        }
-      ],
       "meta": {
         "description": "**World Settlement Footprint (WSF®) Evolution**\n\nGlobal settlement extent at 30 m resolution, 1985–2015, mapped from Landsat imagery.\n\nEach colour is the estimated **year a settlement was first detected**. See the legend.",
         "attribution": {
@@ -410,7 +398,19 @@
             "blendControls": false
           }
         }
-      }
+      },
+      "data": [
+        {
+          "url": "https://geoservice.dlr.de/eoc/land/wms",
+          "format": "wms",
+          "zIndex": 50,
+          "layers": "WSF_Evolution",
+          "parameters": {
+            "version": "1.3.0"
+          },
+          "useTimeParameter": true
+        }
+      ]
     },
     {
       "id": "soil-moisture-anomalies-2025",
@@ -768,6 +768,59 @@
       "id": "soil-water-index-destine-eden",
       "name": "Soil Water Index (DestinE EDEN)",
       "isActive": false,
+      "timeframe": "Days",
+      "defaultTimestamp": 1792238400,
+      "meta": {
+        "description": "**Soil Water Index (SWI), daily**\n\nGlobal soil moisture from 0% (completely dry) to 100% (fully saturated), at 0.1° (about 12.5 km) resolution. Derived from Metop ASCAT surface soil moisture and updated daily.\n\nLayer shown: SWI001 (characteristic time length T = 1 day).",
+        "attribution": {
+          "text": "Soil Water Index: Copernicus Land Monitoring Service, derived from Metop ASCAT surface soil moisture (EUMETSAT H SAF). Served via DestinE EDEN",
+          "url": "https://land.copernicus.eu/en/news/new-soil-water-index-datasets-bring-deeper-insight-into-global-soil-moisture"
+        },
+        "categories": [
+          {
+            "label": "SWI 0-6 %",
+            "color": "#730000",
+            "value": 0
+          },
+          {
+            "label": "SWI 6-12 %",
+            "color": "#E60000",
+            "value": 1
+          },
+          {
+            "label": "SWI 12-18 %",
+            "color": "#FFAA00",
+            "value": 2
+          },
+          {
+            "label": "SWI 18-24 %",
+            "color": "#FCD37F",
+            "value": 3
+          },
+          {
+            "label": "SWI 24-30 %",
+            "color": "#FFFE01",
+            "value": 4
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Soil Moisture",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
       "data": [
         {
           "url": "https://wms.eden.destine.eu/wms",
@@ -784,39 +837,14 @@
             "defaultTimestamp": 1792238400
           }
         }
-      ],
-      "meta": {
-        "description": "**Soil Water Index (SWI), daily**\n\nGlobal soil moisture from 0% (completely dry) to 100% (fully saturated), at 0.1° (about 12.5 km) resolution. Derived from Metop ASCAT surface soil moisture and updated daily.\n\nLayer shown: SWI001 (characteristic time length T = 1 day).",
-        "attribution": {
-          "text": "Soil Water Index: Copernicus Land Monitoring Service, derived from Metop ASCAT surface soil moisture (EUMETSAT H SAF). Served via DestinE EDEN",
-          "url": "https://land.copernicus.eu/en/news/new-soil-water-index-datasets-bring-deeper-insight-into-global-soil-moisture"
-        },
-        "categories": []
-      },
-      "layout": {
-        "interfaceGroup": "Soil Moisture",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true
-          }
-        }
-      },
-      "timeframe": "Days",
-      "defaultTimestamp": 1792238400
+      ]
     },
     {
       "id": "eo-eden-dat-dteh-swi10dcm",
-      "name": "EDEN DTEH – Soil Water Index (10-Km Daily) Drought Classification",
+      "name": "EDEN DTEH - Soil Water Index (10-Km Daily) Drought Classification",
       "isActive": false,
       "timeframe": "Days",
-      "defaultTimestamp": 1792281600,
+      "defaultTimestamp": 1794096000,
       "meta": {
         "description": "Global drought classification daily soil water index (SWI) data: the 'exceptional drought' is when the soil water index at the location falls under 2% of the soil water index history (2007-20249); the similar thresholds for remaining classes are 5% for 'extreme drought', 10% for 'severe drought', 20% for 'moderate drought', and 30% for 'abnormally dry.",
         "attribution": {
@@ -825,61 +853,62 @@
         },
         "categories": [
           {
-            "label": "SWI 2 %",
             "color": "#730000",
+            "label": "SWI 2 %",
             "value": 2
           },
           {
-            "label": "SWI 5 %",
             "color": "#E60000",
+            "label": "SWI 5 %",
             "value": 5
           },
           {
-            "label": "SWI 10 %",
             "color": "#FFAA00",
+            "label": "SWI 10 %",
             "value": 10
           },
           {
-            "label": "SWI 20 %",
             "color": "#FCD37F",
+            "label": "SWI 20 %",
             "value": 20
           },
           {
-            "label": "SWI 30 %",
             "color": "#FFFE01",
+            "label": "SWI 30 %",
             "value": 30
           },
           {
-            "label": "SWI 80 %",
             "color": "#79CA6C",
+            "label": "SWI 80 %",
             "value": 80
           },
           {
-            "label": "SWI 90 %",
             "color": "#4CA666",
+            "label": "SWI 90 %",
             "value": 90
           },
           {
-            "label": "SWI 95 %",
             "color": "#2C6476",
+            "label": "SWI 95 %",
             "value": 95
           },
           {
-            "label": "SWI 98 %",
             "color": "#0E1D43",
+            "label": "SWI 98 %",
             "value": 98
           },
           {
-            "label": "SWI 100 %",
             "color": "#0A0F2D",
+            "label": "SWI 100 %",
             "value": 100
           },
           {
-            "label": "Excluded / not retrievable",
             "color": "#C8C8C8",
+            "label": "Excluded / not retrievable",
             "value": 254
           }
-        ]
+        ],
+        "units": "%"
       },
       "layout": {
         "interfaceGroup": "Drought",
@@ -1476,49 +1505,6 @@
       "id": "net-biome-productivity-nbp-anomaly-2026-monthly-3",
       "name": "Net Biome Productivity (NBP) Anomaly - July - December 2026",
       "isActive": false,
-      "timeframe": "Months",
-      "meta": {
-        "description": "**Net biome productivity (NBP) anomaly: forecast, July–December 2026**\n\nProjected net biome productivity anomalies for each month from July to December 2026. Developed using dynamic global vegetation models driven by an ensemble of ECMWF seasonal climate forecasts and machine-learning burned area predictions",
-        "attribution": {
-          "text": "Du, X., Jiang, R., Ciais, P., Friedlingstein, P., Sitch, S., O’Sullivan, M., de Souza, J. G., Stripp, T., Lindas, E., Ke, P., Xi, Y., Sun, M., Wu, X., Han, M., Song, S., Zhang, Q., & Li, W. (2026). Forecasting carbon-risk hotspots ahead of the extreme 2026 El Niño. arXiv preprint, arXiv:2610.16714.",
-          "url": "https://doi.org/10.48550/arXiv.2610.16714"
-        },
-        "categories": [],
-        "units": "Pg C/month",
-        "colormaps": [
-          {
-            "min": -0.25,
-            "max": 0,
-            "steps": 10,
-            "name": "turbidity",
-            "reverse": false
-          },
-          {
-            "min": 0,
-            "max": 0.25,
-            "steps": 10,
-            "name": "greens",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Net Biome Productivity - Forecast Anomaly July - December 2026",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "swatch"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/NBP-model_forecasts_july–december-2026_reprojected/NBP_forecast_anomaly_202607-202612_05deg_nbp_anomaly_mean_COG_3857.tif",
@@ -1586,47 +1572,39 @@
             6
           ]
         }
-      ]
-    },
-    {
-      "id": "burned-area-forecast-anomaly-202607-202612",
-      "name": "Burned_area_forecast_anomaly_202607-202612",
-      "isActive": false,
-      "timeframe": "Months",
+      ],
       "meta": {
-        "description": "**Burned area forecast anomaly: July–December 2026**\n\nEnsemble-mean monthly burned-area anomaly per 0.5° grid cell, in hectares. Positive values indicate increased burned area. Developed using dynamic global vegetation models driven by an ensemble of ECMWF seasonal climate forecasts and machine-learning burned area predictions.",
+        "description": "**Net biome productivity (NBP) anomaly: forecast, July–December 2026**\n\nProjected net biome productivity anomalies for each month from July to December 2026. Developed using dynamic global vegetation models driven by an ensemble of ECMWF seasonal climate forecasts and machine-learning burned area predictions",
         "attribution": {
           "text": "Du, X., Jiang, R., Ciais, P., Friedlingstein, P., Sitch, S., O’Sullivan, M., de Souza, J. G., Stripp, T., Lindas, E., Ke, P., Xi, Y., Sun, M., Wu, X., Han, M., Song, S., Zhang, Q., & Li, W. (2026). Forecasting carbon-risk hotspots ahead of the extreme 2026 El Niño. arXiv preprint, arXiv:2610.16714.",
           "url": "https://doi.org/10.48550/arXiv.2610.16714"
         },
         "categories": [],
-        "units": "Ha/month",
-        "min": -3000,
-        "max": 3000,
+        "units": "Pg C/month",
         "colormaps": [
           {
-            "min": -75000,
+            "min": -0.25,
             "max": 0,
-            "steps": 30,
-            "name": "bone",
+            "steps": 10,
+            "name": "turbidity",
             "reverse": false
           },
           {
             "min": 0,
-            "max": 75000,
-            "steps": 30,
-            "name": "hot",
+            "max": 0.25,
+            "steps": 10,
+            "name": "greens",
             "reverse": true
           }
         ]
       },
       "layout": {
-        "interfaceGroup": "Burned Area - Forecast Anomaly July - December 2026",
+        "interfaceGroup": "Net Biome Productivity - Forecast Anomaly July - December 2026",
         "contentLocation": "layerCard",
         "layerCard": {
           "toggleable": true,
           "legend": {
-            "type": "gradient"
+            "type": "swatch"
           },
           "controls": {
             "opacitySlider": true,
@@ -1637,6 +1615,12 @@
           }
         }
       },
+      "timeframe": "Months"
+    },
+    {
+      "id": "burned-area-forecast-anomaly-202607-202612",
+      "name": "Burned area forecast anomaly: July–December 2026",
+      "isActive": false,
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/Burned_area_Forecast_anomaly/Burned_area_forecast_anomaly_202607-202612_05deg_COG_3857.tif",
@@ -1704,52 +1688,57 @@
             6
           ]
         }
-      ]
-    },
-    {
-      "id": "country-statistics-3857",
-      "name": "Cumulative fire carbon emissions - Global Fire Emissions Database (GFED)",
-      "isActive": false,
+      ],
       "meta": {
-        "description": "**Cumulative fire carbon emissions by country**\n\nYear-to-date emissions from landscape fires for each country, 2001–2026, from the Global Fire Emissions Database (GFED). Click a country to compare the current year (highlighted) with earlier years.\n\nUnit: megatonnes of carbon (Mt C). Multiply by 3.67 to convert to CO₂. Data from 2023 onward are provisional (beta).",
+        "description": "**Burned area forecast anomaly: July–December 2026**\n\nEnsemble-mean monthly burned-area anomaly per 0.5° grid cell, in hectares. Positive values indicate increased burned area. Developed using dynamic global vegetation models driven by an ensemble of ECMWF seasonal climate forecasts and machine-learning burned area predictions.",
         "attribution": {
-          "text": "Global Fire Emissions Database (GFED). Van der Werf et al. (2025); Chen et al. (2026)",
-          "url": "https://globalfiredata.org/"
+          "text": "Du, X., Jiang, R., Ciais, P., Friedlingstein, P., Sitch, S., O’Sullivan, M., de Souza, J. G., Stripp, T., Lindas, E., Ke, P., Xi, Y., Sun, M., Wu, X., Han, M., Song, S., Zhang, Q., & Li, W. (2026). Forecasting carbon-risk hotspots ahead of the extreme 2026 El Niño. arXiv preprint, arXiv:2610.16714.",
+          "url": "https://doi.org/10.48550/arXiv.2610.16714"
         },
         "categories": [],
-        "units": "Mt C",
-        "fields": {
-          "name": {
-            "order": 1
+        "units": "Ha/month",
+        "min": -3000,
+        "max": 3000,
+        "colormaps": [
+          {
+            "min": -75000,
+            "max": 0,
+            "steps": 30,
+            "name": "bone",
+            "reverse": false
           },
-          "ISO3166-1-Alpha-3": {
-            "order": 2
-          },
-          "ISO3166-1-Alpha-2": {
-            "order": 3
-          },
-          "CO2-emissions-csv": {
-            "order": 4
+          {
+            "min": 0,
+            "max": 75000,
+            "steps": 30,
+            "name": "hot",
+            "reverse": true
           }
-        }
+        ]
       },
       "layout": {
-        "interfaceGroup": "Carbon Emissions from Fires",
+        "interfaceGroup": "Burned Area - Forecast Anomaly July - December 2026",
         "contentLocation": "layerCard",
         "layerCard": {
           "toggleable": true,
           "legend": {
-            "type": "swatch"
+            "type": "gradient"
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": false,
-            "temporalControls": false,
+            "zoomToCenter": true,
+            "temporalControls": true,
             "constraintSlider": false,
             "blendControls": false
           }
         }
       },
+      "timeframe": "Months"
+    },
+    {
+      "id": "country-statistics-3857",
+      "name": "Cumulative fire carbon emissions - Global Fire Emissions Database (GFED)",
+      "isActive": false,
       "data": [
         {
           "url": "https://esa-apex.s3.eu-west-1.amazonaws.com/APEX-example-data/El-NINO-DEMO/CO2-emmissions/countries_3857.fgb",
@@ -2101,35 +2090,32 @@
             }
           ]
         }
-      ]
-    },
-    {
-      "id": "cci-sst-anomalies-2026-imported",
-      "name": "CCI SST - 2026 Monthly Anomalies",
-      "isActive": true,
-      "exclusivitySets": [
-        "monthly-sst-swipe"
       ],
-      "timeframe": "Months",
       "meta": {
-        "description": "**ESA CCI sea surface temperature: 2026 monthly anomalies**\n\nMonthly sea surface temperature (SST) anomaly in kelvin (K) at 0.1° resolution, from the ESA SST CCI Analysis v3.0 climate data record. After selecting the Chart tab, Click the map to plot the monthly values at that location.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
+        "description": "**Cumulative fire carbon emissions by country**\n\nYear-to-date emissions from landscape fires for each country, 2001–2026, from the Global Fire Emissions Database (GFED). Click a country to compare the current year (highlighted) with earlier years.\n\nUnit: megatonnes of carbon (Mt C). Multiply by 3.67 to convert to CO₂. Data from 2023 onward are provisional (beta).",
         "attribution": {
-          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
-          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
+          "text": "Global Fire Emissions Database (GFED). Van der Werf et al. (2025); Chen et al. (2026)",
+          "url": "https://globalfiredata.org/"
         },
         "categories": [],
-        "colormaps": [
-          {
-            "min": -5,
-            "max": 5,
-            "steps": 50,
-            "name": "rdbu",
-            "reverse": false
+        "units": "Mt C",
+        "fields": {
+          "name": {
+            "order": 1
+          },
+          "ISO3166-1-Alpha-3": {
+            "order": 2
+          },
+          "ISO3166-1-Alpha-2": {
+            "order": 3
+          },
+          "CO2-emissions-csv": {
+            "order": 4
           }
-        ]
+        }
       },
       "layout": {
-        "interfaceGroup": "Sea Surface Temperature",
+        "interfaceGroup": "Carbon Emissions from Fires",
         "contentLocation": "layerCard",
         "layerCard": {
           "toggleable": true,
@@ -2138,13 +2124,18 @@
           },
           "controls": {
             "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
+            "zoomToCenter": false,
+            "temporalControls": false,
             "constraintSlider": false,
             "blendControls": false
           }
         }
-      },
+      }
+    },
+    {
+      "id": "cci-sst-anomalies-2026-imported",
+      "name": "CCI SST - 2026 Monthly Anomalies",
+      "isActive": true,
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260215_regridded_sst_cog_anomaly.tif",
@@ -2262,18 +2253,9 @@
             }
           ]
         }
-      ]
-    },
-    {
-      "id": "cci-sst-anomalies-2025-imported",
-      "name": "CCI SST - 2025 Monthly Anomalies",
-      "isActive": false,
-      "exclusivitySets": [
-        "monthly-sst-swipe"
       ],
-      "timeframe": "Months",
       "meta": {
-        "description": "**ESA CCI sea surface temperature: 2025 monthly anomalies**\n\nMonthly sea surface temperature (SST) anomaly in kelvin (K) at 0.1° resolution, from the ESA SST CCI Analysis v3.0 climate data record. After selecting the Chart tab, Click the map to plot the monthly values at that location.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
+        "description": "**ESA CCI sea surface temperature: 2026 monthly anomalies**\n\nMonthly sea surface temperature (SST) anomaly in kelvin (K) at 0.1° resolution, from the ESA SST CCI Analysis v3.0 climate data record. After selecting the Chart tab, Click the map to plot the monthly values at that location.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
         "attribution": {
           "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
           "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
@@ -2306,6 +2288,15 @@
           }
         }
       },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "timeframe": "Months"
+    },
+    {
+      "id": "cci-sst-anomalies-2025-imported",
+      "name": "CCI SST - 2025 Monthly Anomalies",
+      "isActive": false,
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250115_regridded_sst_cog_anomaly.tif",
@@ -2447,14 +2438,63 @@
             }
           ]
         }
-      ]
+      ],
+      "meta": {
+        "description": "**ESA CCI sea surface temperature: 2025 monthly anomalies**\n\nMonthly sea surface temperature (SST) anomaly in kelvin (K) at 0.1° resolution, from the ESA SST CCI Analysis v3.0 climate data record. After selecting the Chart tab, Click the map to plot the monthly values at that location.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
+        "attribution": {
+          "text": "ESA SST CCI Analysis v3.0 (ICDR), produced by the Met Office and regridded by the University of Reading. CC BY 4.0.",
+          "url": "https://climate.esa.int/en/projects/sea-surface-temperature/"
+        },
+        "categories": [],
+        "colormaps": [
+          {
+            "min": -5,
+            "max": 5,
+            "steps": 50,
+            "name": "rdbu",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Sea Surface Temperature",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-sst-swipe"
+      ],
+      "timeframe": "Months"
     },
     {
       "id": "january-2025-vs-2026-sst-anomalies-imported",
       "name": "January 2025 vs 2026 SST Anomalies",
       "isActive": false,
-      "exclusivitySets": [
-        "monthly-sst-swipe"
+      "data": [
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250115_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "left"
+        },
+        {
+          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260115_regridded_sst_cog_anomaly.tif",
+          "format": "cog",
+          "zIndex": 50,
+          "position": "right"
+        }
       ],
       "meta": {
         "description": "**Sea surface temperature anomaly comparison: January 2025 (left) vs 2026 (right)**\n\nMonthly SST anomaly in kelvin (K) from the ESA SST CCI Analysis v3.0 record. Drag the divider to compare the two years.\n\n*Acknowledgement:* [ESA SST CCI Analysis v3.0](https://doi.org/10.5285/4a9654136a7148e39b7feb56f8bb02d2), produced by the University of Reading/National Centre for Earth Observation (NCEO) in partnership with the UK Met Office and the Danish Meteorological Institute. Reprocessed data to 2021 were generated for the European Space Agency Climate Change Initiative (https://climate.esa.int/en/projects/sea-surface-temperature/), for 2022 the dataset was extended for the Copernicus Climate Change Service, and the extension from January 2023 to recent time is funded by the UK Earth Observation Climate Information Service (https://eocis.org). Please cite [Embury et al. (2024)](https://doi.org/10.1038/s41597-024-03147-w).",
@@ -2491,19 +2531,8 @@
           }
         }
       },
-      "data": [
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20250115_regridded_sst_cog_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "left"
-        },
-        {
-          "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/SST_monthly_COG_projected/20260115_regridded_sst_cog_anomaly.tif",
-          "format": "cog",
-          "zIndex": 50,
-          "position": "right"
-        }
+      "exclusivitySets": [
+        "monthly-sst-swipe"
       ],
       "isSwipeLayer": true
     },
@@ -3593,47 +3622,6 @@
       "id": "clms-burnt-area-ba-global-300m-daily-v4-cog",
       "name": "CLMS Burnt Area (BA) Global 300m V4 MONTHLY - FRACTION OF BURNED AREA",
       "isActive": false,
-      "exclusivitySets": [
-        "monthly-burned-fraction"
-      ],
-      "timeframe": "Months",
-      "meta": {
-        "description": "**CLMS Burnt Area 300 m: fraction of burned area (V4, derived-monthly)**\n\nFraction (‰) of each 300 m pixel affected by fire during the month, from Sentinel-3 data. Monthly product computed from the daily near-real-time product using pixel with the highest scoring probability of burn. Use the time control to step from January 2025 to October 2026.",
-        "attribution": {
-          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
-          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
-        },
-        "categories": [],
-        "units": "‰",
-        "min": 0,
-        "max": 1000,
-        "colormaps": [
-          {
-            "min": 0,
-            "max": 1000,
-            "steps": 50,
-            "name": "magma",
-            "reverse": true
-          }
-        ]
-      },
-      "layout": {
-        "interfaceGroup": "Fire Dynamics",
-        "contentLocation": "layerCard",
-        "layerCard": {
-          "toggleable": true,
-          "legend": {
-            "type": "gradient"
-          },
-          "controls": {
-            "opacitySlider": true,
-            "zoomToCenter": true,
-            "temporalControls": true,
-            "constraintSlider": false,
-            "blendControls": false
-          }
-        }
-      },
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_BF/BA300_202501_BF.tif",
@@ -3811,33 +3799,24 @@
             1792015200
           ]
         }
-      ]
-    },
-    {
-      "id": "clms-burnt-area-ba-global-300m-daily-v4-cog-monthly-day-of-burn",
-      "name": "CLMS Burnt Area (BA) Global 300m V4 MONTHLY - DAY OF BURN",
-      "isActive": false,
-      "exclusivitySets": [
-        "monthly-burned-fraction"
       ],
-      "timeframe": "Months",
       "meta": {
-        "description": "**CLMS Burnt Area 300 m: day of burn (V4, monthly)**\n\nDay of the year (1–366) on which burning was detected in each 300 m pixel, from Sentinel-3 data. Monthly product computed from the daily near-real-time product. Use the time control to step from January 2025 to October 2026.",
+        "description": "**CLMS Burnt Area 300 m: fraction of burned area (V4, derived-monthly)**\n\nFraction (‰) of each 300 m pixel affected by fire during the month, from Sentinel-3 data. Monthly product computed from the daily near-real-time product using pixel with the highest scoring probability of burn. Use the time control to step from January 2025 to October 2026.",
         "attribution": {
           "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
           "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
         },
         "categories": [],
-        "units": "day",
-        "min": 1,
-        "max": 366,
+        "units": "‰",
+        "min": 0,
+        "max": 1000,
         "colormaps": [
           {
-            "min": 1,
-            "max": 366,
+            "min": 0,
+            "max": 1000,
             "steps": 50,
-            "name": "viridis",
-            "reverse": false
+            "name": "magma",
+            "reverse": true
           }
         ]
       },
@@ -3858,6 +3837,15 @@
           }
         }
       },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "timeframe": "Months"
+    },
+    {
+      "id": "clms-burnt-area-ba-global-300m-daily-v4-cog-monthly-day-of-burn",
+      "name": "CLMS Burnt Area (BA) Global 300m V4 MONTHLY - DAY OF BURN",
+      "isActive": false,
       "data": [
         {
           "url": "https://apex-prod-public.obs.eu-nl.otc.t-systems.com/el-nino-dashboard/BA_Monthly_DOB/BA300_202501_DOB.tif",
@@ -4035,7 +4023,48 @@
             1792015200
           ]
         }
-      ]
+      ],
+      "meta": {
+        "description": "**CLMS Burnt Area 300 m: day of burn (V4, monthly)**\n\nDay of the year (1–366) on which burning was detected in each 300 m pixel, from Sentinel-3 data. Monthly product computed from the daily near-real-time product. Use the time control to step from January 2025 to October 2026.",
+        "attribution": {
+          "text": "Burnt Area 300 m, version 4: generated by the Copernicus Land Monitoring Service, based on Copernicus Sentinel-3 data",
+          "url": "https://land.copernicus.eu/en/products/vegetation/burnt-area-v4-monthly-300m"
+        },
+        "categories": [],
+        "units": "day",
+        "min": 1,
+        "max": 366,
+        "colormaps": [
+          {
+            "min": 1,
+            "max": 366,
+            "steps": 50,
+            "name": "viridis",
+            "reverse": false
+          }
+        ]
+      },
+      "layout": {
+        "interfaceGroup": "Fire Dynamics",
+        "contentLocation": "layerCard",
+        "layerCard": {
+          "toggleable": true,
+          "legend": {
+            "type": "gradient"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": true,
+            "temporalControls": true,
+            "constraintSlider": false,
+            "blendControls": false
+          }
+        }
+      },
+      "exclusivitySets": [
+        "monthly-burned-fraction"
+      ],
+      "timeframe": "Months"
     },
     {
       "id": "soil-moisture-anomaly-comparison-september-2",
