@@ -813,17 +813,73 @@
     },
     {
       "id": "eo-eden-dat-dteh-swi10dcm",
-      "name": "EDEN DTEH – Soil Water Index (10-Day Composite)",
+      "name": "EDEN DTEH – Soil Water Index (10-Km Daily) Drought Classification",
       "isActive": false,
       "timeframe": "Days",
       "defaultTimestamp": 1792281600,
       "meta": {
-        "description": "The dataset tracks soil moisture anomalies and surface water dynamics across Europe. Developed by TU Wien under the European Commission's DestinE initiative, it feeds directly into the Weather-Induced Extremes Digital Twin. It uses an exponential filter to turn surface soil moisture retrievals, mainly from ASCAT and Sentinel-1 radar, into estimates of moisture deeper in the soil.",
+        "description": "Global drought classification daily soil water index (SWI) data: the 'exceptional drought' is when the soil water index at the location falls under 2% of the soil water index history (2007-20249); the similar thresholds for remaining classes are 5% for 'extreme drought', 10% for 'severe drought', 20% for 'moderate drought', and 30% for 'abnormally dry.",
         "attribution": {
           "text": "Soil Water Index: Copernicus Land Monitoring Service, derived from Metop ASCAT surface soil moisture (EUMETSAT H SAF). Served via DestinE EDEN",
           "url": "https://land.copernicus.eu/en/news/new-soil-water-index-datasets-bring-deeper-insight-into-global-soil-moisture"
         },
-        "categories": []
+        "categories": [
+          {
+            "label": "SWI 2 %",
+            "color": "#730000",
+            "value": 2
+          },
+          {
+            "label": "SWI 5 %",
+            "color": "#E60000",
+            "value": 5
+          },
+          {
+            "label": "SWI 10 %",
+            "color": "#FFAA00",
+            "value": 10
+          },
+          {
+            "label": "SWI 20 %",
+            "color": "#FCD37F",
+            "value": 20
+          },
+          {
+            "label": "SWI 30 %",
+            "color": "#FFFE01",
+            "value": 30
+          },
+          {
+            "label": "SWI 80 %",
+            "color": "#79CA6C",
+            "value": 80
+          },
+          {
+            "label": "SWI 90 %",
+            "color": "#4CA666",
+            "value": 90
+          },
+          {
+            "label": "SWI 95 %",
+            "color": "#2C6476",
+            "value": 95
+          },
+          {
+            "label": "SWI 98 %",
+            "color": "#0E1D43",
+            "value": 98
+          },
+          {
+            "label": "SWI 100 %",
+            "color": "#0A0F2D",
+            "value": 100
+          },
+          {
+            "label": "Excluded / not retrievable",
+            "color": "#C8C8C8",
+            "value": 254
+          }
+        ]
       },
       "layout": {
         "interfaceGroup": "Drought",
