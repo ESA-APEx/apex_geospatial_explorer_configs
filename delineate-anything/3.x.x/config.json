@@ -15,9 +15,9 @@
   ],
   "exclusivitySets": [],
   "mapConstraints": {
-    "zoom": 2,
+    "zoom": 0,
     "center": [
-      0,
+      45,
       20
     ],
     "projection": "EPSG:3857"
